@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "faraday-industrial-benchmark"
-version = "0.5.0"
+version = "0.6.0"
 description = "Dynamic, deterministic evaluations for AI agents operating across industrial ERP, SCM, MES, and back-office workflows."
 readme = "README.md"
 requires-python = ">=3.11"

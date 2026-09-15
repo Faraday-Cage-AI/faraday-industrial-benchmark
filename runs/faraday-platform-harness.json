@@ -4,7 +4,7 @@
     "id": "faraday-industrial-benchmark",
     "runner_protocol": "faraday-industrial-jsonl/1",
     "track": "faraday-native",
-    "version": "0.5.0"
+    "version": "0.6.0"
   },
   "cases": [
     {
@@ -26,7 +26,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "contain affected lots",
           "calibrate machine",
@@ -113,7 +113,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "contain affected lots",
           "calibrate machine",
@@ -202,7 +202,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "expedite purchase order",
           "reschedule production"
@@ -288,7 +288,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "expedite purchase order",
           "reschedule production"
@@ -372,7 +372,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "reroute work order",
           "inspect failed machine"
@@ -457,7 +457,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "reroute work order",
           "inspect failed machine"
@@ -541,7 +541,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "split shipment",
           "use approved overtime",
@@ -625,7 +625,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "split shipment",
           "use approved overtime",
@@ -708,7 +708,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "reconcile inventory",
           "protect material-dependent orders"
@@ -790,7 +790,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "reconcile inventory",
           "protect material-dependent orders"
@@ -873,7 +873,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "segregate revision A work",
           "apply revision B to unstarted work"
@@ -957,7 +957,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "segregate revision A work",
           "apply revision B to unstarted work"
@@ -1040,7 +1040,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "invoice_exception",
@@ -1119,7 +1119,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "invoice_exception",
@@ -1197,7 +1197,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "customer_credit",
@@ -1275,7 +1275,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "customer_credit",
@@ -1353,7 +1353,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "vendor_master_change",
@@ -1432,7 +1432,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "vendor_master_change",
@@ -1511,7 +1511,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "payroll_anomaly",
@@ -1589,7 +1589,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "payroll_anomaly",
@@ -1667,7 +1667,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "period_close",
@@ -1745,7 +1745,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "period_close",
@@ -1822,7 +1822,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "capital_project",
@@ -1900,7 +1900,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "capital_project",
@@ -1979,7 +1979,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "transportation_disruption",
@@ -2057,7 +2057,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "transportation_disruption",
@@ -2136,7 +2136,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "warehouse_wave",
@@ -2215,7 +2215,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "warehouse_wave",
@@ -2294,7 +2294,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "network_allocation",
@@ -2373,7 +2373,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "network_allocation",
@@ -2453,7 +2453,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "cold_chain_recall",
@@ -2535,7 +2535,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "cold_chain_recall",
@@ -2616,7 +2616,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "trade_compliance",
@@ -2695,7 +2695,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "trade_compliance",
@@ -2775,7 +2775,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "demand_supply_rebalance",
@@ -2857,7 +2857,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "demand_supply_rebalance",
@@ -2942,7 +2942,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "drawing_review",
@@ -3025,7 +3025,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "drawing_review",
@@ -3108,7 +3108,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "assembly_bom_review",
@@ -3191,7 +3191,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "assembly_bom_review",
@@ -3274,7 +3274,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "revision_review",
@@ -3357,7 +3357,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "revision_review",
@@ -3440,7 +3440,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "standards_specification_review",
@@ -3523,7 +3523,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "standards_specification_review",
@@ -3606,7 +3606,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "manufacturing_document_drafting",
@@ -3689,7 +3689,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "manufacturing_document_drafting",
@@ -3772,7 +3772,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "pid_review",
@@ -3855,7 +3855,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "pid_review",
@@ -3938,7 +3938,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "process_capability_review",
@@ -4021,7 +4021,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "process_capability_review",
@@ -4104,7 +4104,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "construction_document_review",
@@ -4187,7 +4187,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "construction_document_review",
@@ -4275,7 +4275,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "contain supplier lots",
           "expedite conforming replacement",
@@ -4388,7 +4388,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "contain supplier lots",
           "expedite conforming replacement",
@@ -4495,7 +4495,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "recall_financial_response",
@@ -4592,7 +4592,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "recall_financial_response",
@@ -4693,7 +4693,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "hold affected work orders",
           "publish controlled review",
@@ -4798,7 +4798,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "hold affected work orders",
           "publish controlled review",
@@ -4899,7 +4899,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "clear verified customer credit",
           "release constrained warehouse wave",
@@ -5009,7 +5009,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "clear verified customer credit",
           "release constrained warehouse wave",
@@ -5127,7 +5127,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "contain affected production",
           "reschedule to qualified line",
@@ -5299,7 +5299,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [
           "contain affected production",
           "reschedule to qualified line",
@@ -5459,7 +5459,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "frontier",
         "family": "integrated_operating_review",
@@ -5627,7 +5627,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "frontier",
         "family": "integrated_operating_review",
@@ -5795,7 +5795,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "frontier",
         "family": "integrated_operating_review",
@@ -5963,7 +5963,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.5.0",
+        "benchmark_version": "0.6.0",
         "controlled_plan_actions": [],
         "difficulty": "frontier",
         "family": "integrated_operating_review",
@@ -6110,6 +6110,958 @@
       },
       "name": "Build an auditable enterprise recovery package through source churn",
       "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-contingent-network-001",
+      "input": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "get_structured_artifact",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.6.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "contingent_network_recovery",
+        "horizon_minutes": 220,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "supply_planning",
+          "plant_controller",
+          "customer_operations"
+        ],
+        "systems": [
+          "ERP",
+          "SCM",
+          "WMS",
+          "QMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "robust-optimization",
+          "irreversible-decision",
+          "real-world-exceptions",
+          "contingent-workflow"
+        ],
+        "task_version": "0.6.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory",
+            "objective": "Inventory authoritative source files"
+          },
+          {
+            "depends_on": [
+              "inventory"
+            ],
+            "id": "reconcile",
+            "objective": "Reconcile inventory ownership, duplicates, holds, and order status"
+          },
+          {
+            "depends_on": [
+              "reconcile"
+            ],
+            "id": "refresh",
+            "objective": "Incorporate commercial revisions before committing"
+          },
+          {
+            "depends_on": [
+              "refresh"
+            ],
+            "id": "model",
+            "objective": "Model shared resources, whole orders, timing, and cash constraints"
+          },
+          {
+            "depends_on": [
+              "model"
+            ],
+            "id": "optimize",
+            "objective": "Minimize worst-case cost across all published disruptions"
+          },
+          {
+            "depends_on": [
+              "optimize"
+            ],
+            "id": "commit",
+            "objective": "Approve and commit one common capacity reservation before reveal"
+          },
+          {
+            "depends_on": [
+              "commit"
+            ],
+            "id": "observe",
+            "objective": "Observe the realized disruption after commitment"
+          },
+          {
+            "depends_on": [
+              "observe"
+            ],
+            "id": "execute",
+            "objective": "Execute the committed contingent branch"
+          },
+          {
+            "depends_on": [
+              "execute"
+            ],
+            "id": "account",
+            "objective": "Reconcile sunk fees, operating cost, and ledger accounts"
+          },
+          {
+            "depends_on": [
+              "account"
+            ],
+            "id": "close",
+            "objective": "Notify owners and finish with auditable evidence"
+          }
+        ]
+      },
+      "name": "Reserve scarce capacity before a network disruption is revealed",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-contingent-network-002",
+      "input": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "get_structured_artifact",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.6.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "contingent_network_recovery",
+        "horizon_minutes": 220,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "supply_planning",
+          "plant_controller",
+          "customer_operations"
+        ],
+        "systems": [
+          "ERP",
+          "SCM",
+          "WMS",
+          "QMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "robust-optimization",
+          "irreversible-decision",
+          "real-world-exceptions",
+          "contingent-workflow"
+        ],
+        "task_version": "0.6.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory",
+            "objective": "Inventory authoritative source files"
+          },
+          {
+            "depends_on": [
+              "inventory"
+            ],
+            "id": "reconcile",
+            "objective": "Reconcile inventory ownership, duplicates, holds, and order status"
+          },
+          {
+            "depends_on": [
+              "reconcile"
+            ],
+            "id": "refresh",
+            "objective": "Incorporate commercial revisions before committing"
+          },
+          {
+            "depends_on": [
+              "refresh"
+            ],
+            "id": "model",
+            "objective": "Model shared resources, whole orders, timing, and cash constraints"
+          },
+          {
+            "depends_on": [
+              "model"
+            ],
+            "id": "optimize",
+            "objective": "Minimize worst-case cost across all published disruptions"
+          },
+          {
+            "depends_on": [
+              "optimize"
+            ],
+            "id": "commit",
+            "objective": "Approve and commit one common capacity reservation before reveal"
+          },
+          {
+            "depends_on": [
+              "commit"
+            ],
+            "id": "observe",
+            "objective": "Observe the realized disruption after commitment"
+          },
+          {
+            "depends_on": [
+              "observe"
+            ],
+            "id": "execute",
+            "objective": "Execute the committed contingent branch"
+          },
+          {
+            "depends_on": [
+              "execute"
+            ],
+            "id": "account",
+            "objective": "Reconcile sunk fees, operating cost, and ledger accounts"
+          },
+          {
+            "depends_on": [
+              "account"
+            ],
+            "id": "close",
+            "objective": "Notify owners and finish with auditable evidence"
+          }
+        ]
+      },
+      "name": "Reserve scarce capacity before a network disruption is revealed",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-contingent-network-003",
+      "input": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "get_structured_artifact",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.6.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "contingent_network_recovery",
+        "horizon_minutes": 220,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "supply_planning",
+          "plant_controller",
+          "customer_operations"
+        ],
+        "systems": [
+          "ERP",
+          "SCM",
+          "WMS",
+          "QMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "robust-optimization",
+          "irreversible-decision",
+          "real-world-exceptions",
+          "contingent-workflow"
+        ],
+        "task_version": "0.6.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory",
+            "objective": "Inventory authoritative source files"
+          },
+          {
+            "depends_on": [
+              "inventory"
+            ],
+            "id": "reconcile",
+            "objective": "Reconcile inventory ownership, duplicates, holds, and order status"
+          },
+          {
+            "depends_on": [
+              "reconcile"
+            ],
+            "id": "refresh",
+            "objective": "Incorporate commercial revisions before committing"
+          },
+          {
+            "depends_on": [
+              "refresh"
+            ],
+            "id": "model",
+            "objective": "Model shared resources, whole orders, timing, and cash constraints"
+          },
+          {
+            "depends_on": [
+              "model"
+            ],
+            "id": "optimize",
+            "objective": "Minimize worst-case cost across all published disruptions"
+          },
+          {
+            "depends_on": [
+              "optimize"
+            ],
+            "id": "commit",
+            "objective": "Approve and commit one common capacity reservation before reveal"
+          },
+          {
+            "depends_on": [
+              "commit"
+            ],
+            "id": "observe",
+            "objective": "Observe the realized disruption after commitment"
+          },
+          {
+            "depends_on": [
+              "observe"
+            ],
+            "id": "execute",
+            "objective": "Execute the committed contingent branch"
+          },
+          {
+            "depends_on": [
+              "execute"
+            ],
+            "id": "account",
+            "objective": "Reconcile sunk fees, operating cost, and ledger accounts"
+          },
+          {
+            "depends_on": [
+              "account"
+            ],
+            "id": "close",
+            "objective": "Notify owners and finish with auditable evidence"
+          }
+        ]
+      },
+      "name": "Reserve scarce capacity before a network disruption is revealed",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-contingent-network-004",
+      "input": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "get_structured_artifact",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.6.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "contingent_network_recovery",
+        "horizon_minutes": 220,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "supply_planning",
+          "plant_controller",
+          "customer_operations"
+        ],
+        "systems": [
+          "ERP",
+          "SCM",
+          "WMS",
+          "QMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "robust-optimization",
+          "irreversible-decision",
+          "real-world-exceptions",
+          "contingent-workflow"
+        ],
+        "task_version": "0.6.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory",
+            "objective": "Inventory authoritative source files"
+          },
+          {
+            "depends_on": [
+              "inventory"
+            ],
+            "id": "reconcile",
+            "objective": "Reconcile inventory ownership, duplicates, holds, and order status"
+          },
+          {
+            "depends_on": [
+              "reconcile"
+            ],
+            "id": "refresh",
+            "objective": "Incorporate commercial revisions before committing"
+          },
+          {
+            "depends_on": [
+              "refresh"
+            ],
+            "id": "model",
+            "objective": "Model shared resources, whole orders, timing, and cash constraints"
+          },
+          {
+            "depends_on": [
+              "model"
+            ],
+            "id": "optimize",
+            "objective": "Minimize worst-case cost across all published disruptions"
+          },
+          {
+            "depends_on": [
+              "optimize"
+            ],
+            "id": "commit",
+            "objective": "Approve and commit one common capacity reservation before reveal"
+          },
+          {
+            "depends_on": [
+              "commit"
+            ],
+            "id": "observe",
+            "objective": "Observe the realized disruption after commitment"
+          },
+          {
+            "depends_on": [
+              "observe"
+            ],
+            "id": "execute",
+            "objective": "Execute the committed contingent branch"
+          },
+          {
+            "depends_on": [
+              "execute"
+            ],
+            "id": "account",
+            "objective": "Reconcile sunk fees, operating cost, and ledger accounts"
+          },
+          {
+            "depends_on": [
+              "account"
+            ],
+            "id": "close",
+            "objective": "Notify owners and finish with auditable evidence"
+          }
+        ]
+      },
+      "name": "Reserve scarce capacity before a network disruption is revealed",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-contingent-network-005",
+      "input": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "get_structured_artifact",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.6.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "contingent_network_recovery",
+        "horizon_minutes": 220,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "supply_planning",
+          "plant_controller",
+          "customer_operations"
+        ],
+        "systems": [
+          "ERP",
+          "SCM",
+          "WMS",
+          "QMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "robust-optimization",
+          "irreversible-decision",
+          "real-world-exceptions",
+          "contingent-workflow"
+        ],
+        "task_version": "0.6.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory",
+            "objective": "Inventory authoritative source files"
+          },
+          {
+            "depends_on": [
+              "inventory"
+            ],
+            "id": "reconcile",
+            "objective": "Reconcile inventory ownership, duplicates, holds, and order status"
+          },
+          {
+            "depends_on": [
+              "reconcile"
+            ],
+            "id": "refresh",
+            "objective": "Incorporate commercial revisions before committing"
+          },
+          {
+            "depends_on": [
+              "refresh"
+            ],
+            "id": "model",
+            "objective": "Model shared resources, whole orders, timing, and cash constraints"
+          },
+          {
+            "depends_on": [
+              "model"
+            ],
+            "id": "optimize",
+            "objective": "Minimize worst-case cost across all published disruptions"
+          },
+          {
+            "depends_on": [
+              "optimize"
+            ],
+            "id": "commit",
+            "objective": "Approve and commit one common capacity reservation before reveal"
+          },
+          {
+            "depends_on": [
+              "commit"
+            ],
+            "id": "observe",
+            "objective": "Observe the realized disruption after commitment"
+          },
+          {
+            "depends_on": [
+              "observe"
+            ],
+            "id": "execute",
+            "objective": "Execute the committed contingent branch"
+          },
+          {
+            "depends_on": [
+              "execute"
+            ],
+            "id": "account",
+            "objective": "Reconcile sunk fees, operating cost, and ledger accounts"
+          },
+          {
+            "depends_on": [
+              "account"
+            ],
+            "id": "close",
+            "objective": "Notify owners and finish with auditable evidence"
+          }
+        ]
+      },
+      "name": "Reserve scarce capacity before a network disruption is revealed",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-contingent-network-006",
+      "input": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "get_structured_artifact",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.6.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "contingent_network_recovery",
+        "horizon_minutes": 220,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "supply_planning",
+          "plant_controller",
+          "customer_operations"
+        ],
+        "systems": [
+          "ERP",
+          "SCM",
+          "WMS",
+          "QMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "robust-optimization",
+          "irreversible-decision",
+          "real-world-exceptions",
+          "contingent-workflow"
+        ],
+        "task_version": "0.6.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory",
+            "objective": "Inventory authoritative source files"
+          },
+          {
+            "depends_on": [
+              "inventory"
+            ],
+            "id": "reconcile",
+            "objective": "Reconcile inventory ownership, duplicates, holds, and order status"
+          },
+          {
+            "depends_on": [
+              "reconcile"
+            ],
+            "id": "refresh",
+            "objective": "Incorporate commercial revisions before committing"
+          },
+          {
+            "depends_on": [
+              "refresh"
+            ],
+            "id": "model",
+            "objective": "Model shared resources, whole orders, timing, and cash constraints"
+          },
+          {
+            "depends_on": [
+              "model"
+            ],
+            "id": "optimize",
+            "objective": "Minimize worst-case cost across all published disruptions"
+          },
+          {
+            "depends_on": [
+              "optimize"
+            ],
+            "id": "commit",
+            "objective": "Approve and commit one common capacity reservation before reveal"
+          },
+          {
+            "depends_on": [
+              "commit"
+            ],
+            "id": "observe",
+            "objective": "Observe the realized disruption after commitment"
+          },
+          {
+            "depends_on": [
+              "observe"
+            ],
+            "id": "execute",
+            "objective": "Execute the committed contingent branch"
+          },
+          {
+            "depends_on": [
+              "execute"
+            ],
+            "id": "account",
+            "objective": "Reconcile sunk fees, operating cost, and ledger accounts"
+          },
+          {
+            "depends_on": [
+              "account"
+            ],
+            "id": "close",
+            "objective": "Notify owners and finish with auditable evidence"
+          }
+        ]
+      },
+      "name": "Reserve scarce capacity before a network disruption is revealed",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-contingent-network-007",
+      "input": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "get_structured_artifact",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.6.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "contingent_network_recovery",
+        "horizon_minutes": 220,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "supply_planning",
+          "plant_controller",
+          "customer_operations"
+        ],
+        "systems": [
+          "ERP",
+          "SCM",
+          "WMS",
+          "QMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "robust-optimization",
+          "irreversible-decision",
+          "real-world-exceptions",
+          "contingent-workflow"
+        ],
+        "task_version": "0.6.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory",
+            "objective": "Inventory authoritative source files"
+          },
+          {
+            "depends_on": [
+              "inventory"
+            ],
+            "id": "reconcile",
+            "objective": "Reconcile inventory ownership, duplicates, holds, and order status"
+          },
+          {
+            "depends_on": [
+              "reconcile"
+            ],
+            "id": "refresh",
+            "objective": "Incorporate commercial revisions before committing"
+          },
+          {
+            "depends_on": [
+              "refresh"
+            ],
+            "id": "model",
+            "objective": "Model shared resources, whole orders, timing, and cash constraints"
+          },
+          {
+            "depends_on": [
+              "model"
+            ],
+            "id": "optimize",
+            "objective": "Minimize worst-case cost across all published disruptions"
+          },
+          {
+            "depends_on": [
+              "optimize"
+            ],
+            "id": "commit",
+            "objective": "Approve and commit one common capacity reservation before reveal"
+          },
+          {
+            "depends_on": [
+              "commit"
+            ],
+            "id": "observe",
+            "objective": "Observe the realized disruption after commitment"
+          },
+          {
+            "depends_on": [
+              "observe"
+            ],
+            "id": "execute",
+            "objective": "Execute the committed contingent branch"
+          },
+          {
+            "depends_on": [
+              "execute"
+            ],
+            "id": "account",
+            "objective": "Reconcile sunk fees, operating cost, and ledger accounts"
+          },
+          {
+            "depends_on": [
+              "account"
+            ],
+            "id": "close",
+            "objective": "Notify owners and finish with auditable evidence"
+          }
+        ]
+      },
+      "name": "Reserve scarce capacity before a network disruption is revealed",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-contingent-network-008",
+      "input": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "get_structured_artifact",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.6.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "contingent_network_recovery",
+        "horizon_minutes": 220,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "supply_planning",
+          "plant_controller",
+          "customer_operations"
+        ],
+        "systems": [
+          "ERP",
+          "SCM",
+          "WMS",
+          "QMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "robust-optimization",
+          "irreversible-decision",
+          "real-world-exceptions",
+          "contingent-workflow"
+        ],
+        "task_version": "0.6.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory",
+            "objective": "Inventory authoritative source files"
+          },
+          {
+            "depends_on": [
+              "inventory"
+            ],
+            "id": "reconcile",
+            "objective": "Reconcile inventory ownership, duplicates, holds, and order status"
+          },
+          {
+            "depends_on": [
+              "reconcile"
+            ],
+            "id": "refresh",
+            "objective": "Incorporate commercial revisions before committing"
+          },
+          {
+            "depends_on": [
+              "refresh"
+            ],
+            "id": "model",
+            "objective": "Model shared resources, whole orders, timing, and cash constraints"
+          },
+          {
+            "depends_on": [
+              "model"
+            ],
+            "id": "optimize",
+            "objective": "Minimize worst-case cost across all published disruptions"
+          },
+          {
+            "depends_on": [
+              "optimize"
+            ],
+            "id": "commit",
+            "objective": "Approve and commit one common capacity reservation before reveal"
+          },
+          {
+            "depends_on": [
+              "commit"
+            ],
+            "id": "observe",
+            "objective": "Observe the realized disruption after commitment"
+          },
+          {
+            "depends_on": [
+              "observe"
+            ],
+            "id": "execute",
+            "objective": "Execute the committed contingent branch"
+          },
+          {
+            "depends_on": [
+              "execute"
+            ],
+            "id": "account",
+            "objective": "Reconcile sunk fees, operating cost, and ledger accounts"
+          },
+          {
+            "depends_on": [
+              "account"
+            ],
+            "id": "close",
+            "objective": "Notify owners and finish with auditable evidence"
+          }
+        ]
+      },
+      "name": "Reserve scarce capacity before a network disruption is revealed",
+      "source": "faraday-industrial-benchmark"
     }
   ],
   "config": {
@@ -6153,6 +7105,7 @@
       "capital_project",
       "cold_chain_recall",
       "construction_document_review",
+      "contingent_network_recovery",
       "customer_credit",
       "demand_supply_rebalance",
       "drawing_review",
@@ -6182,10 +7135,10 @@
       "vendor_master_change",
       "warehouse_wave"
     ],
-    "family_count": 32,
-    "public_contract_sha256": "5fe163eb3cd3e122b85389ec94f405272d60300d4c3296210fd4b7230620b050",
-    "public_tool_contract_sha256": "4bd8b3bdf1b165f7c3bed28ce8b32a06d7935d22b40e61e7ff4379c7ff913f92",
-    "task_count": 66,
+    "family_count": 33,
+    "public_contract_sha256": "7c2a9606d80242fd7860751caced300ffeeec13e2bd6ca7d68ec52721cb69c8a",
+    "public_tool_contract_sha256": "c4f8ea5d484985819d40d0760b30649774c2a75e82f8741021763dd2234cf40b",
+    "task_count": 74,
     "task_ids": [
       "faraday-quality-001",
       "faraday-quality-002",
@@ -6252,7 +7205,15 @@
       "faraday-operating-review-001",
       "faraday-operating-review-002",
       "faraday-operating-review-003",
-      "faraday-operating-review-004"
+      "faraday-operating-review-004",
+      "faraday-contingent-network-001",
+      "faraday-contingent-network-002",
+      "faraday-contingent-network-003",
+      "faraday-contingent-network-004",
+      "faraday-contingent-network-005",
+      "faraday-contingent-network-006",
+      "faraday-contingent-network-007",
+      "faraday-contingent-network-008"
     ],
     "tool_count": 67
   }

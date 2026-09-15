@@ -135,6 +135,7 @@ def main() -> int:
             model=args.model,
             reasoning={"effort": args.reasoning_effort},
             previous_response_id=response.id,
+            instructions=instructions,
             input=outputs,
             tools=function_tools,
             parallel_tool_calls=False,

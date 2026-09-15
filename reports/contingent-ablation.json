@@ -1,0 +1,496 @@
+{
+  "benchmark_version": "0.6.0",
+  "kind": "deterministic_algorithm_ablation",
+  "interpretation": "Not GPT-5.4 or GPT-5.5 results. Development seeds, not a private test set.",
+  "cases": 32,
+  "outside_tolerance": 29,
+  "optimal_portfolio_distribution": {
+    "{\"express\": 1, \"standard\": 2}": 16,
+    "{\"express\": 2, \"standard\": 1}": 4,
+    "{\"express\": 2, \"standard\": 0}": 7,
+    "{\"express\": 1, \"standard\": 1}": 3,
+    "{\"express\": 0, \"standard\": 2}": 2
+  },
+  "results": [
+    {
+      "seed": 0,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 430860,
+      "nominal_worst_cost_cents": 579900,
+      "regret": 0.34591282551176716,
+      "within_tolerance": false
+    },
+    {
+      "seed": 1,
+      "robust_reservations": {
+        "standard": 1,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 671850,
+      "nominal_worst_cost_cents": 923180,
+      "regret": 0.37408647763637726,
+      "within_tolerance": false
+    },
+    {
+      "seed": 2,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "optimum_cents": 786480,
+      "nominal_worst_cost_cents": 786480,
+      "regret": 0.0,
+      "within_tolerance": true
+    },
+    {
+      "seed": 3,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 885330,
+      "nominal_worst_cost_cents": 1097550,
+      "regret": 0.23970722781335763,
+      "within_tolerance": false
+    },
+    {
+      "seed": 4,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 433055,
+      "nominal_worst_cost_cents": 606620,
+      "regret": 0.4007920471995474,
+      "within_tolerance": false
+    },
+    {
+      "seed": 5,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 878100,
+      "nominal_worst_cost_cents": 1430100,
+      "regret": 0.6286299965835327,
+      "within_tolerance": false
+    },
+    {
+      "seed": 6,
+      "robust_reservations": {
+        "standard": 0,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 1170695,
+      "nominal_worst_cost_cents": 1923900,
+      "regret": 0.643382776897484,
+      "within_tolerance": false
+    },
+    {
+      "seed": 7,
+      "robust_reservations": {
+        "standard": 1,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 1176205,
+      "nominal_worst_cost_cents": 2193195,
+      "regret": 0.8646366917331587,
+      "within_tolerance": false
+    },
+    {
+      "seed": 8,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 865330,
+      "nominal_worst_cost_cents": 970000,
+      "regret": 0.12095963389689479,
+      "within_tolerance": false
+    },
+    {
+      "seed": 9,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 742305,
+      "nominal_worst_cost_cents": 1524855,
+      "regret": 1.0542162588154467,
+      "within_tolerance": false
+    },
+    {
+      "seed": 10,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 731900,
+      "nominal_worst_cost_cents": 940940,
+      "regret": 0.28561278863232675,
+      "within_tolerance": false
+    },
+    {
+      "seed": 11,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 483275,
+      "nominal_worst_cost_cents": 621250,
+      "regret": 0.28549997413480943,
+      "within_tolerance": false
+    },
+    {
+      "seed": 12,
+      "robust_reservations": {
+        "standard": 0,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 999290,
+      "nominal_worst_cost_cents": 2313200,
+      "regret": 1.314843538912628,
+      "within_tolerance": false
+    },
+    {
+      "seed": 13,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 678490,
+      "nominal_worst_cost_cents": 1212550,
+      "regret": 0.7871302451030966,
+      "within_tolerance": false
+    },
+    {
+      "seed": 14,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 492960,
+      "nominal_worst_cost_cents": 564620,
+      "regret": 0.14536676403765014,
+      "within_tolerance": false
+    },
+    {
+      "seed": 15,
+      "robust_reservations": {
+        "standard": 0,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 967000,
+      "nominal_worst_cost_cents": 1703700,
+      "regret": 0.7618407445708377,
+      "within_tolerance": false
+    },
+    {
+      "seed": 16,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 562655,
+      "nominal_worst_cost_cents": 767380,
+      "regret": 0.36385529320809384,
+      "within_tolerance": false
+    },
+    {
+      "seed": 17,
+      "robust_reservations": {
+        "standard": 0,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 1498220,
+      "nominal_worst_cost_cents": 2385800,
+      "regret": 0.5924230086369158,
+      "within_tolerance": false
+    },
+    {
+      "seed": 18,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "optimum_cents": 1024415,
+      "nominal_worst_cost_cents": 1024415,
+      "regret": 0.0,
+      "within_tolerance": true
+    },
+    {
+      "seed": 19,
+      "robust_reservations": {
+        "standard": 1,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 741485,
+      "nominal_worst_cost_cents": 954500,
+      "regret": 0.28728160380857326,
+      "within_tolerance": false
+    },
+    {
+      "seed": 20,
+      "robust_reservations": {
+        "standard": 1,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 589550,
+      "nominal_worst_cost_cents": 772000,
+      "regret": 0.3094733271139005,
+      "within_tolerance": false
+    },
+    {
+      "seed": 21,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 1083510,
+      "nominal_worst_cost_cents": 1445400,
+      "regret": 0.3339978403521888,
+      "within_tolerance": false
+    },
+    {
+      "seed": 22,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 528355,
+      "nominal_worst_cost_cents": 1076835,
+      "regret": 1.038089920602625,
+      "within_tolerance": false
+    },
+    {
+      "seed": 23,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 485325,
+      "nominal_worst_cost_cents": 526350,
+      "regret": 0.08453098439190243,
+      "within_tolerance": false
+    },
+    {
+      "seed": 24,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 382280,
+      "nominal_worst_cost_cents": 382280,
+      "regret": 0.0,
+      "within_tolerance": true
+    },
+    {
+      "seed": 25,
+      "robust_reservations": {
+        "standard": 1,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 853680,
+      "nominal_worst_cost_cents": 958300,
+      "regret": 0.12255177584106458,
+      "within_tolerance": false
+    },
+    {
+      "seed": 26,
+      "robust_reservations": {
+        "standard": 0,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 1232725,
+      "nominal_worst_cost_cents": 2211300,
+      "regret": 0.7938307408383865,
+      "within_tolerance": false
+    },
+    {
+      "seed": 27,
+      "robust_reservations": {
+        "standard": 1,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 611180,
+      "nominal_worst_cost_cents": 846300,
+      "regret": 0.38469845217448206,
+      "within_tolerance": false
+    },
+    {
+      "seed": 28,
+      "robust_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "nominal_reservations": {
+        "standard": 1,
+        "express": 0
+      },
+      "optimum_cents": 257005,
+      "nominal_worst_cost_cents": 521940,
+      "regret": 1.0308554308281939,
+      "within_tolerance": false
+    },
+    {
+      "seed": 29,
+      "robust_reservations": {
+        "standard": 0,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 1359750,
+      "nominal_worst_cost_cents": 2431400,
+      "regret": 0.7881228166942453,
+      "within_tolerance": false
+    },
+    {
+      "seed": 30,
+      "robust_reservations": {
+        "standard": 0,
+        "express": 2
+      },
+      "nominal_reservations": {
+        "standard": 2,
+        "express": 0
+      },
+      "optimum_cents": 842300,
+      "nominal_worst_cost_cents": 1590200,
+      "regret": 0.8879259171316634,
+      "within_tolerance": false
+    },
+    {
+      "seed": 31,
+      "robust_reservations": {
+        "standard": 1,
+        "express": 1
+      },
+      "nominal_reservations": {
+        "standard": 1,
+        "express": 0
+      },
+      "optimum_cents": 343160,
+      "nominal_worst_cost_cents": 772120,
+      "regret": 1.2500291409255158,
+      "within_tolerance": false
+    }
+  ]
+}

@@ -63,10 +63,10 @@ def test_platform_contract_is_complete_but_seed_and_grader_free(tmp_path):
     serialized = json.dumps(contract, sort_keys=True)
 
     assert contract["schema_version"] == "faraday-platform-harness/1"
-    assert contract["suite"]["task_count"] == 66
-    assert contract["suite"]["family_count"] == 32
+    assert contract["suite"]["task_count"] == 74
+    assert contract["suite"]["family_count"] == 33
     assert contract["suite"]["tool_count"] == 67
-    assert len(contract["cases"]) == 66
+    assert len(contract["cases"]) == 74
     assert len(contract["suite"]["public_contract_sha256"]) == 64
     assert len(contract["suite"]["public_tool_contract_sha256"]) == 64
     assert '"seed"' not in serialized

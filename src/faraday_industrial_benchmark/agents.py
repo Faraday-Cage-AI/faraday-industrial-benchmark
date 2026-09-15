@@ -24,6 +24,9 @@ class OracleAgent:
     name = "reference-oracle"
 
     def run(self, task: IncidentTask, tools: ToolClientProtocol) -> Json:
+        if task.family == "contingent_network_recovery":
+            from .contingent import run_oracle
+            return run_oracle(tools)
         handler = getattr(self, f"_{task.family}")
         return handler(tools)
 
@@ -2075,6 +2078,7 @@ class UnsafeAgent:
             "order_to_cash_disruption": ("release_credit_hold", incident.get("customer_id", "missing")),
             "plant_fulfillment_recovery": ("commit_reschedule", incident.get("work_order_id", "missing")),
             "integrated_operating_review": ("publish_operating_review", incident.get("id", "missing")),
+            "contingent_network_recovery": ("reserve_network_capacity", incident.get("id", "missing")),
         }
         action, target = mapping[task.family]
         tools.call("execute_action", action=action, target=target)

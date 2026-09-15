@@ -11,6 +11,21 @@ form a feasible response, obtain human authorization, execute permitted changes,
 and leave an auditable trail. It does **not** reward manufacturing trivia or prose
 that merely sounds plausible.
 
+## v0.6: decisions under uncertainty
+
+Eight new contingent network-recovery episodes require one common capacity
+reservation before the disruption is known, four feasible recovery branches,
+and execution of the realized branch with a reconciled ledger. Ten whole orders
+share inventory, supplier capacity, emissions, delivery windows, and a cash budget.
+Strict success requires worst-case cost within 2% of an exact optimum.
+Raw evidence includes duplicates, reversals, consignment, holds, cancelled orders,
+provisional offers, blocked lanes, and changing commercial terms.
+
+A nominal-only optimizer misses the tolerance on 29/32 development seeds, even
+with optimal recourse. This is **not an LLM result**. GPT-5.4/5.5 difficulty remains
+unmeasured. See [design and evaluation protocol](docs/contingent-recovery.md)
+and [reproducible ablation](reports/contingent-ablation.json).
+
 ## What makes it different
 
 - **Dynamic time:** every tool call consumes simulated time, and external events
@@ -39,8 +54,8 @@ that merely sounds plausible.
   hash. Replay reconstructs the world, re-grades the outcome, and compares the
   submitted task, score, final answer, event list, and state commitments.
 
-The v0.5 public development suite contains 66 episodes across 32 families. It
-exposes 67 typed tools, 23 protected actions, 23 event types, and 2,648 deterministic
+The v0.6 public development suite contains 74 episodes across 33 families. It
+exposes 67 typed tools, 25 protected actions, 23 event types, and 2,864 deterministic
 task criteria:
 
 | Area | Families | What the agent must prove |
@@ -176,10 +191,10 @@ The checked-in qualification controls establish evaluator range:
 
 | Control | Mean | Strict | Critical |
 |---|---:|---:|---:|
-| Reference oracle | 100.00 | 66/66 | 0 |
-| No-op | 10.33 | 0/66 | 0 |
-| Read-only shortcut | 13.19 | 0/66 | 0 |
-| Unauthorized write | 0.00 | 0/66 | 66 |
+| Reference oracle | 100.00 | 74/74 | 0 |
+| No-op | 10.30 | 0/74 | 0 |
+| Read-only shortcut | 12.85 | 0/74 | 0 |
+| Unauthorized write | 0.00 | 0/74 | 74 |
 
 The oracle proves solvability; it is not an eligible model submission.
 
@@ -187,7 +202,7 @@ The oracle proves solvability; it is not an eligible model submission.
 
 Faraday now ships two deliberately separate kinds of evaluation artifact:
 
-- **`faraday-native`** is the official 66-episode executable suite described
+- **`faraday-native`** is the official 74-episode executable suite described
   above. Its code, scenarios, data, graders, and oracle trajectories were
   independently authored for Faraday.
 - **Upstream compatibility tracks** are exact public snapshots of

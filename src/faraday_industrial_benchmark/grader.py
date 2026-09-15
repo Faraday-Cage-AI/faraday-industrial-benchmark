@@ -109,6 +109,10 @@ def _known_record_ids(world: IndustrialWorld) -> set[str]:
 
 def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
     check = contract["check"]
+    if check == "network_assessment":
+        from .contingent import assess
+        passed = bool(assess(world).get(contract["field"], False))
+        return passed, "satisfied" if passed else "not satisfied"
     if check == "trace_tool":
         expected_args = contract.get("args", {})
         matches = [

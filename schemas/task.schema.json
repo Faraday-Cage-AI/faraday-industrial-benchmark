@@ -52,7 +52,8 @@
         "engineering_production_release",
         "order_to_cash_disruption",
         "plant_fulfillment_recovery",
-        "integrated_operating_review"
+        "integrated_operating_review",
+        "contingent_network_recovery"
       ]
     },
     "title": {"type": "string", "minLength": 8},

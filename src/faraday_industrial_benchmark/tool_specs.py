@@ -29,6 +29,8 @@ PROTECTED_ACTIONS = (
     "initiate_product_recall",
     "publish_engineering_review",
     "publish_operating_review",
+    "reserve_network_capacity",
+    "execute_network_recovery",
 )
 
 PROTECTED_ACTION_CONTRACTS = {
@@ -55,6 +57,8 @@ PROTECTED_ACTION_CONTRACTS = {
     "initiate_product_recall": "target=lot_id; payload={recall_case_id}",
     "publish_engineering_review": "target=review_id; payload={package_id}",
     "publish_operating_review": "target=case_id; payload={package_id}",
+    "reserve_network_capacity": "target=case_id; payload={artifact_id}; commit before the deadline",
+    "execute_network_recovery": "target=case_id; payload={artifact_id}; realized ledger must match committed recourse",
 }
 
 PROTECTED_ACTION_GUIDE = "Protected action contracts: " + "; ".join(
@@ -497,6 +501,8 @@ TOOL_SPECS = [
                     "control_action_register",
                     "executive_decision_brief",
                     "customer_commitment_schedule",
+                    "contingent_network_policy",
+                    "realized_recovery_ledger",
                 ],
             },
             "title": {"type": "string"},
@@ -649,6 +655,7 @@ _ENGINEERING_REVIEW_TOOLS = {
 }
 
 FAMILY_TOOL_NAMES = {
+    "contingent_network_recovery": {"get_incident", "list_case_files", "read_case_file", "create_structured_artifact", "get_structured_artifact", "request_approval", "execute_action", "notify", "wait", "finish"},
     "quality_drift": {"get_incident", "get_sensor_readings", "get_machine", "trace_lot", "get_quality_status", "get_order", "place_quality_hold", "create_maintenance_order", "create_plan_proposal", "notify", "wait", "finish"},
     "supplier_delay": {"get_incident", "get_purchase_order", "get_supplier", "query_inventory", "get_order", "get_messages", "get_shipment", "get_production_schedule", "create_plan_proposal", "request_approval", "execute_action", "notify", "wait", "finish"},
     "machine_failure": {"get_incident", "get_machine", "get_sensor_readings", "get_production_schedule", "get_maintenance_status", "create_maintenance_order", "create_plan_proposal", "request_approval", "execute_action", "notify", "wait", "finish"},

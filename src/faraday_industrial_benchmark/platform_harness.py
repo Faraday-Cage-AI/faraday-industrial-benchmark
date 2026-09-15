@@ -16,7 +16,7 @@ from .tool_specs import FAMILY_TOOL_NAMES, TOOL_SPECS, tool_specs_for_family
 
 
 SCHEMA_VERSION = "faraday-platform-harness/1"
-BENCHMARK_VERSION = "0.5.0"
+BENCHMARK_VERSION = "0.6.0"
 
 
 def _canonical_hash(value: object) -> str:

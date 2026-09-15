@@ -1043,4 +1043,781 @@
       {"id": "communicate_close", "objective": "Notify all eight functions and close with record-level evidence", "depends_on": ["authorize_publish"]}
     ]
   }
+,
+  {
+    "id": "faraday-contingent-network-001",
+    "version": "0.6.0",
+    "family": "contingent_network_recovery",
+    "title": "Reserve scarce capacity before a network disruption is revealed",
+    "prompt": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+    "seed": 10701,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 100,
+    "horizon_minutes": 220,
+    "tags": [
+      "frontier",
+      "robust-optimization",
+      "irreversible-decision",
+      "real-world-exceptions",
+      "contingent-workflow"
+    ],
+    "workflow_stages": [
+      {
+        "id": "inventory",
+        "objective": "Inventory authoritative source files",
+        "depends_on": []
+      },
+      {
+        "id": "reconcile",
+        "objective": "Reconcile inventory ownership, duplicates, holds, and order status",
+        "depends_on": [
+          "inventory"
+        ]
+      },
+      {
+        "id": "refresh",
+        "objective": "Incorporate commercial revisions before committing",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "model",
+        "objective": "Model shared resources, whole orders, timing, and cash constraints",
+        "depends_on": [
+          "refresh"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Minimize worst-case cost across all published disruptions",
+        "depends_on": [
+          "model"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and commit one common capacity reservation before reveal",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "observe",
+        "objective": "Observe the realized disruption after commitment",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "execute",
+        "objective": "Execute the committed contingent branch",
+        "depends_on": [
+          "observe"
+        ]
+      },
+      {
+        "id": "account",
+        "objective": "Reconcile sunk fees, operating cost, and ledger accounts",
+        "depends_on": [
+          "execute"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Notify owners and finish with auditable evidence",
+        "depends_on": [
+          "account"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-contingent-network-002",
+    "version": "0.6.0",
+    "family": "contingent_network_recovery",
+    "title": "Reserve scarce capacity before a network disruption is revealed",
+    "prompt": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+    "seed": 10702,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 100,
+    "horizon_minutes": 220,
+    "tags": [
+      "frontier",
+      "robust-optimization",
+      "irreversible-decision",
+      "real-world-exceptions",
+      "contingent-workflow"
+    ],
+    "workflow_stages": [
+      {
+        "id": "inventory",
+        "objective": "Inventory authoritative source files",
+        "depends_on": []
+      },
+      {
+        "id": "reconcile",
+        "objective": "Reconcile inventory ownership, duplicates, holds, and order status",
+        "depends_on": [
+          "inventory"
+        ]
+      },
+      {
+        "id": "refresh",
+        "objective": "Incorporate commercial revisions before committing",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "model",
+        "objective": "Model shared resources, whole orders, timing, and cash constraints",
+        "depends_on": [
+          "refresh"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Minimize worst-case cost across all published disruptions",
+        "depends_on": [
+          "model"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and commit one common capacity reservation before reveal",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "observe",
+        "objective": "Observe the realized disruption after commitment",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "execute",
+        "objective": "Execute the committed contingent branch",
+        "depends_on": [
+          "observe"
+        ]
+      },
+      {
+        "id": "account",
+        "objective": "Reconcile sunk fees, operating cost, and ledger accounts",
+        "depends_on": [
+          "execute"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Notify owners and finish with auditable evidence",
+        "depends_on": [
+          "account"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-contingent-network-003",
+    "version": "0.6.0",
+    "family": "contingent_network_recovery",
+    "title": "Reserve scarce capacity before a network disruption is revealed",
+    "prompt": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+    "seed": 10703,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 100,
+    "horizon_minutes": 220,
+    "tags": [
+      "frontier",
+      "robust-optimization",
+      "irreversible-decision",
+      "real-world-exceptions",
+      "contingent-workflow"
+    ],
+    "workflow_stages": [
+      {
+        "id": "inventory",
+        "objective": "Inventory authoritative source files",
+        "depends_on": []
+      },
+      {
+        "id": "reconcile",
+        "objective": "Reconcile inventory ownership, duplicates, holds, and order status",
+        "depends_on": [
+          "inventory"
+        ]
+      },
+      {
+        "id": "refresh",
+        "objective": "Incorporate commercial revisions before committing",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "model",
+        "objective": "Model shared resources, whole orders, timing, and cash constraints",
+        "depends_on": [
+          "refresh"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Minimize worst-case cost across all published disruptions",
+        "depends_on": [
+          "model"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and commit one common capacity reservation before reveal",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "observe",
+        "objective": "Observe the realized disruption after commitment",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "execute",
+        "objective": "Execute the committed contingent branch",
+        "depends_on": [
+          "observe"
+        ]
+      },
+      {
+        "id": "account",
+        "objective": "Reconcile sunk fees, operating cost, and ledger accounts",
+        "depends_on": [
+          "execute"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Notify owners and finish with auditable evidence",
+        "depends_on": [
+          "account"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-contingent-network-004",
+    "version": "0.6.0",
+    "family": "contingent_network_recovery",
+    "title": "Reserve scarce capacity before a network disruption is revealed",
+    "prompt": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+    "seed": 10704,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 100,
+    "horizon_minutes": 220,
+    "tags": [
+      "frontier",
+      "robust-optimization",
+      "irreversible-decision",
+      "real-world-exceptions",
+      "contingent-workflow"
+    ],
+    "workflow_stages": [
+      {
+        "id": "inventory",
+        "objective": "Inventory authoritative source files",
+        "depends_on": []
+      },
+      {
+        "id": "reconcile",
+        "objective": "Reconcile inventory ownership, duplicates, holds, and order status",
+        "depends_on": [
+          "inventory"
+        ]
+      },
+      {
+        "id": "refresh",
+        "objective": "Incorporate commercial revisions before committing",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "model",
+        "objective": "Model shared resources, whole orders, timing, and cash constraints",
+        "depends_on": [
+          "refresh"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Minimize worst-case cost across all published disruptions",
+        "depends_on": [
+          "model"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and commit one common capacity reservation before reveal",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "observe",
+        "objective": "Observe the realized disruption after commitment",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "execute",
+        "objective": "Execute the committed contingent branch",
+        "depends_on": [
+          "observe"
+        ]
+      },
+      {
+        "id": "account",
+        "objective": "Reconcile sunk fees, operating cost, and ledger accounts",
+        "depends_on": [
+          "execute"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Notify owners and finish with auditable evidence",
+        "depends_on": [
+          "account"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-contingent-network-005",
+    "version": "0.6.0",
+    "family": "contingent_network_recovery",
+    "title": "Reserve scarce capacity before a network disruption is revealed",
+    "prompt": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+    "seed": 10705,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 100,
+    "horizon_minutes": 220,
+    "tags": [
+      "frontier",
+      "robust-optimization",
+      "irreversible-decision",
+      "real-world-exceptions",
+      "contingent-workflow"
+    ],
+    "workflow_stages": [
+      {
+        "id": "inventory",
+        "objective": "Inventory authoritative source files",
+        "depends_on": []
+      },
+      {
+        "id": "reconcile",
+        "objective": "Reconcile inventory ownership, duplicates, holds, and order status",
+        "depends_on": [
+          "inventory"
+        ]
+      },
+      {
+        "id": "refresh",
+        "objective": "Incorporate commercial revisions before committing",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "model",
+        "objective": "Model shared resources, whole orders, timing, and cash constraints",
+        "depends_on": [
+          "refresh"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Minimize worst-case cost across all published disruptions",
+        "depends_on": [
+          "model"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and commit one common capacity reservation before reveal",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "observe",
+        "objective": "Observe the realized disruption after commitment",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "execute",
+        "objective": "Execute the committed contingent branch",
+        "depends_on": [
+          "observe"
+        ]
+      },
+      {
+        "id": "account",
+        "objective": "Reconcile sunk fees, operating cost, and ledger accounts",
+        "depends_on": [
+          "execute"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Notify owners and finish with auditable evidence",
+        "depends_on": [
+          "account"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-contingent-network-006",
+    "version": "0.6.0",
+    "family": "contingent_network_recovery",
+    "title": "Reserve scarce capacity before a network disruption is revealed",
+    "prompt": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+    "seed": 10706,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 100,
+    "horizon_minutes": 220,
+    "tags": [
+      "frontier",
+      "robust-optimization",
+      "irreversible-decision",
+      "real-world-exceptions",
+      "contingent-workflow"
+    ],
+    "workflow_stages": [
+      {
+        "id": "inventory",
+        "objective": "Inventory authoritative source files",
+        "depends_on": []
+      },
+      {
+        "id": "reconcile",
+        "objective": "Reconcile inventory ownership, duplicates, holds, and order status",
+        "depends_on": [
+          "inventory"
+        ]
+      },
+      {
+        "id": "refresh",
+        "objective": "Incorporate commercial revisions before committing",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "model",
+        "objective": "Model shared resources, whole orders, timing, and cash constraints",
+        "depends_on": [
+          "refresh"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Minimize worst-case cost across all published disruptions",
+        "depends_on": [
+          "model"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and commit one common capacity reservation before reveal",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "observe",
+        "objective": "Observe the realized disruption after commitment",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "execute",
+        "objective": "Execute the committed contingent branch",
+        "depends_on": [
+          "observe"
+        ]
+      },
+      {
+        "id": "account",
+        "objective": "Reconcile sunk fees, operating cost, and ledger accounts",
+        "depends_on": [
+          "execute"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Notify owners and finish with auditable evidence",
+        "depends_on": [
+          "account"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-contingent-network-007",
+    "version": "0.6.0",
+    "family": "contingent_network_recovery",
+    "title": "Reserve scarce capacity before a network disruption is revealed",
+    "prompt": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+    "seed": 10707,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 100,
+    "horizon_minutes": 220,
+    "tags": [
+      "frontier",
+      "robust-optimization",
+      "irreversible-decision",
+      "real-world-exceptions",
+      "contingent-workflow"
+    ],
+    "workflow_stages": [
+      {
+        "id": "inventory",
+        "objective": "Inventory authoritative source files",
+        "depends_on": []
+      },
+      {
+        "id": "reconcile",
+        "objective": "Reconcile inventory ownership, duplicates, holds, and order status",
+        "depends_on": [
+          "inventory"
+        ]
+      },
+      {
+        "id": "refresh",
+        "objective": "Incorporate commercial revisions before committing",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "model",
+        "objective": "Model shared resources, whole orders, timing, and cash constraints",
+        "depends_on": [
+          "refresh"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Minimize worst-case cost across all published disruptions",
+        "depends_on": [
+          "model"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and commit one common capacity reservation before reveal",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "observe",
+        "objective": "Observe the realized disruption after commitment",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "execute",
+        "objective": "Execute the committed contingent branch",
+        "depends_on": [
+          "observe"
+        ]
+      },
+      {
+        "id": "account",
+        "objective": "Reconcile sunk fees, operating cost, and ledger accounts",
+        "depends_on": [
+          "execute"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Notify owners and finish with auditable evidence",
+        "depends_on": [
+          "account"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-contingent-network-008",
+    "version": "0.6.0",
+    "family": "contingent_network_recovery",
+    "title": "Reserve scarce capacity before a network disruption is revealed",
+    "prompt": "Own a distribution recovery decision under uncertainty. Reconcile the versioned operational records and commercial amendments. Commit a feasible common supplier reservation before the reservation window closes, with one whole-order recovery plan for each published disruption. Minimize worst-case total cost under the shared resource, service, timing, emissions, and cash constraints. After the disruption is revealed, execute your committed branch and post a reconciled ledger. Read the mandate for the artifact contract and scoring tolerance; the choice of optimization method is yours.",
+    "seed": 10708,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 100,
+    "horizon_minutes": 220,
+    "tags": [
+      "frontier",
+      "robust-optimization",
+      "irreversible-decision",
+      "real-world-exceptions",
+      "contingent-workflow"
+    ],
+    "workflow_stages": [
+      {
+        "id": "inventory",
+        "objective": "Inventory authoritative source files",
+        "depends_on": []
+      },
+      {
+        "id": "reconcile",
+        "objective": "Reconcile inventory ownership, duplicates, holds, and order status",
+        "depends_on": [
+          "inventory"
+        ]
+      },
+      {
+        "id": "refresh",
+        "objective": "Incorporate commercial revisions before committing",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "model",
+        "objective": "Model shared resources, whole orders, timing, and cash constraints",
+        "depends_on": [
+          "refresh"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Minimize worst-case cost across all published disruptions",
+        "depends_on": [
+          "model"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and commit one common capacity reservation before reveal",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "observe",
+        "objective": "Observe the realized disruption after commitment",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "execute",
+        "objective": "Execute the committed contingent branch",
+        "depends_on": [
+          "observe"
+        ]
+      },
+      {
+        "id": "account",
+        "objective": "Reconcile sunk fees, operating cost, and ledger accounts",
+        "depends_on": [
+          "execute"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Notify owners and finish with auditable evidence",
+        "depends_on": [
+          "account"
+        ]
+      }
+    ]
+  }
 ]

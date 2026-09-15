@@ -13,8 +13,9 @@ from faraday_industrial_benchmark.world import IndustrialWorld, canonical_hash
 
 def test_public_suite_shape():
     tasks = load_tasks(DEFAULT_TASKS)
-    assert len(tasks) == 66
+    assert len(tasks) == 74
     assert {task.family for task in tasks} == {
+        "contingent_network_recovery",
         "capital_project",
         "customer_credit",
         "engineering_change",
@@ -81,9 +82,9 @@ def test_heldout_generation_is_reproducible_and_unique():
     first = generate_tasks(templates, per_family=5, root_seed=8675309)
     second = generate_tasks(templates, per_family=5, root_seed=8675309)
     assert first == second
-    assert len(first) == 160
-    assert len({task.id for task in first}) == 160
-    assert len({task.seed for task in first}) == 160
+    assert len(first) == 165
+    assert len({task.id for task in first}) == 165
+    assert len({task.seed for task in first}) == 165
     assert generation_commitment(first) == generation_commitment(second)
 
 
@@ -98,7 +99,7 @@ def test_public_task_manifest_matches_published_json_schema():
 
 def test_composite_workflow_stage_graphs_are_public_and_topological():
     composite = [task for task in load_tasks(DEFAULT_TASKS) if task.workflow_stages]
-    assert len(composite) == 14
+    assert len(composite) == 22
     public_stage_count = 0
     for task in load_tasks(DEFAULT_TASKS):
         public_stages = task.public_dict()["workflow_stages"]
@@ -108,8 +109,8 @@ def test_composite_workflow_stage_graphs_are_public_and_topological():
         for stage in public_stages:
             assert set(stage["depends_on"]) <= seen
             seen.add(stage["id"])
-    assert sum(len(task.workflow_stages) for task in composite) == 138
-    assert public_stage_count == 398
+    assert sum(len(task.workflow_stages) for task in composite) == 218
+    assert public_stage_count == 478
 
 
 def test_frontier_operating_reviews_have_professional_work_sample_depth():
@@ -134,10 +135,10 @@ def test_difficulty_profile_is_deterministic_and_frontier_gated():
     second = build_difficulty_profile(tasks)
     assert first == second
     assert first["summary"] == {
-        "tasks": 66,
-        "families": 32,
-        "frontier_tasks": 4,
-        "total_criteria": 2648,
+        "tasks": 74,
+        "families": 33,
+        "frontier_tasks": 12,
+        "total_criteria": 2864,
         "max_criteria_per_task": 419,
         "max_workflow_stages": 15,
         "max_oracle_tool_calls": 93,

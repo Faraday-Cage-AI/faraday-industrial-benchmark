@@ -1118,6 +1118,7 @@ class IndustrialWorld:
             for truth in self.state["operating_review_truth"].values()
             for required_type in truth.get("required_types", [])
         }
+        required_types.update(self.state.get("network_artifact_types", []))
         if artifact_type not in required_types:
             return {"ok": False, "error": "unsupported_artifact_type"}
         if not title.strip() or not isinstance(content, dict) or not content:
@@ -1272,6 +1273,13 @@ class IndustrialWorld:
                 for row in self.state["audit_log"]
             ):
                 missing.append(f"file_version:{file_id}@{version}")
+        for required in requirements.get("section_reads", []):
+            if not any(
+                row["action"] == "case_file_read"
+                and all(row.get("details", {}).get(key) == value for key, value in required.items())
+                for row in self.state["audit_log"]
+            ):
+                missing.append(f"section_read:{required['file_id']}/{required['section_id']}@{required['version']}")
         return not missing, missing
 
     def _tool_request_approval(
@@ -1380,6 +1388,11 @@ class IndustrialWorld:
         return {"ok": True, "execution": deepcopy(record)}
 
     def _apply_protected_action(self, action: str, target: str, payload: Json) -> tuple[bool, str]:
+        if action in {"reserve_network_capacity", "execute_network_recovery"}:
+            if "network_truth" not in self.state:
+                return False, "network_case_required"
+            from .contingent import apply_action
+            return apply_action(self, action, target, payload)
         if action == "expedite_purchase_order":
             record = self.state["purchase_orders"].get(target)
             if not record:

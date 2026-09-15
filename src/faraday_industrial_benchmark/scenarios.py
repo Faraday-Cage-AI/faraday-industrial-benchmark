@@ -4053,7 +4053,13 @@ def _integrated_operating_review(
     return ScenarioInstance(state, events, criteria, economics)
 
 
+def _contingent_network_recovery(task, rng):
+    from .contingent import build
+    return build(task, rng)
+
+
 BUILDERS: dict[str, ScenarioBuilder] = {
+    "contingent_network_recovery": _contingent_network_recovery,
     "quality_drift": _quality_drift,
     "supplier_delay": _supplier_delay,
     "machine_failure": _machine_failure,

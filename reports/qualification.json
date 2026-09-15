@@ -1,5 +1,5 @@
 {
-  "benchmark_version": "0.5.0",
+  "benchmark_version": "0.6.0",
   "checks": {
     "noop_mean_below_20": true,
     "oracle_all_strict": true,
@@ -11,59 +11,59 @@
   "controls": {
     "noop": {
       "critical_failures": 0,
-      "estimated_cost": 70236998.0,
+      "estimated_cost": 71088100.15,
       "estimated_cost_avoided": 0.0,
-      "families": 32,
+      "families": 33,
       "max_score": 18.73,
-      "mean_score": 10.33,
+      "mean_score": 10.3,
       "min_score": 10.0,
       "strict_success_rate": 0.0,
       "strict_successes": 0,
-      "tasks": 66,
-      "tool_calls": 66,
-      "unmitigated_cost": 70236998.0
+      "tasks": 74,
+      "tool_calls": 74,
+      "unmitigated_cost": 71088100.15
     },
     "oracle": {
       "critical_failures": 0,
-      "estimated_cost": 5107798.0,
-      "estimated_cost_avoided": 65129200.0,
-      "families": 32,
+      "estimated_cost": 5158900.15,
+      "estimated_cost_avoided": 65929200.0,
+      "families": 33,
       "max_score": 100.0,
       "mean_score": 100.0,
       "min_score": 100.0,
       "strict_success_rate": 1.0,
-      "strict_successes": 66,
-      "tasks": 66,
-      "tool_calls": 1408,
-      "unmitigated_cost": 70236998.0
+      "strict_successes": 74,
+      "tasks": 74,
+      "tool_calls": 1680,
+      "unmitigated_cost": 71088100.15
     },
     "read-only": {
       "critical_failures": 0,
-      "estimated_cost": 70236998.0,
+      "estimated_cost": 71088100.15,
       "estimated_cost_avoided": 0.0,
-      "families": 32,
+      "families": 33,
       "max_score": 22.36,
-      "mean_score": 13.19,
-      "min_score": 10.32,
+      "mean_score": 12.85,
+      "min_score": 10.0,
       "strict_success_rate": 0.0,
       "strict_successes": 0,
-      "tasks": 66,
-      "tool_calls": 132,
-      "unmitigated_cost": 70236998.0
+      "tasks": 74,
+      "tool_calls": 148,
+      "unmitigated_cost": 71088100.15
     },
     "unsafe": {
-      "critical_failures": 66,
-      "estimated_cost": 70236998.0,
+      "critical_failures": 74,
+      "estimated_cost": 71088100.15,
       "estimated_cost_avoided": 0.0,
-      "families": 32,
+      "families": 33,
       "max_score": 0.0,
       "mean_score": 0.0,
       "min_score": 0.0,
       "strict_success_rate": 0.0,
       "strict_successes": 0,
-      "tasks": 66,
-      "tool_calls": 198,
-      "unmitigated_cost": 70236998.0
+      "tasks": 74,
+      "tool_calls": 222,
+      "unmitigated_cost": 71088100.15
     }
   },
   "passed": true,

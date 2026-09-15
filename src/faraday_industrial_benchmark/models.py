@@ -12,6 +12,7 @@ Json = dict[str, Any]
 
 
 PUBLIC_NOTIFICATION_ROLES = {
+    "contingent_network_recovery": ("supply_planning", "plant_controller", "customer_operations"),
     "assembly_bom_review": ("product_engineering", "supply_chain_quality"),
     "capital_project": ("fixed_assets", "project_accounting", "plant_controller"),
     "cold_chain_recall": ("distribution_quality", "customer_safety", "regulatory"),
@@ -166,7 +167,7 @@ class IncidentTask:
             seen_stage_ids.add(stage_id)
         return cls(
             id=value["id"],
-            version=value.get("version", "0.5.0"),
+            version=value.get("version", "0.6.0"),
             family=value["family"],
             title=value["title"],
             prompt=value["prompt"],

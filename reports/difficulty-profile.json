@@ -1,5 +1,15 @@
 {
-  "benchmark_version": "0.5.0",
+  "benchmark_version": "0.6.0",
+  "contingent_optimization": {
+    "disruption_branches": 4,
+    "note": "Search-space size is not measured model difficulty; efficient solvers can prune it.",
+    "oracle_strict_success_each": true,
+    "reservation_portfolios": 9,
+    "strict_cost_regret_tolerance": 0.02,
+    "tasks": 8,
+    "unconstrained_assignments_per_branch": 1048576,
+    "whole_orders_per_branch": 10
+  },
   "frontier_gates": {
     "at_least_10_source_files_each": true,
     "at_least_12_exception_resolutions_each": true,
@@ -12,14 +22,14 @@
   "interpretation": "Structural workload diagnostics and oracle solvability evidence; not a substitute for measured model results.",
   "schema_version": "faraday-industrial-difficulty-profile/1",
   "summary": {
-    "families": 32,
+    "families": 33,
     "frontier_gates_passed": true,
-    "frontier_tasks": 4,
+    "frontier_tasks": 12,
     "max_criteria_per_task": 419,
     "max_oracle_tool_calls": 93,
     "max_workflow_stages": 15,
-    "tasks": 66,
-    "total_criteria": 2648
+    "tasks": 74,
+    "total_criteria": 2864
   },
   "tasks": [
     {
@@ -3151,6 +3161,382 @@
       "task_id": "faraday-operating-review-004",
       "workflow_depth": 11,
       "workflow_stages": 15
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 3,
+      "criteria": 27,
+      "criteria_by_check": {
+        "case_file_read": 18,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "network_assessment": 6,
+        "notification_roles": 1
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "artifact_consistency": 1,
+        "communication": 2,
+        "containment": 1,
+        "exception_handling": 1,
+        "governance": 1,
+        "grounding": 18,
+        "optimization": 1,
+        "planning": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "contingent_network_recovery",
+      "horizon_minutes": 220,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 93,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 66,
+        "tool_calls": 34
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 3,
+      "source_files": 10,
+      "source_sections": 19,
+      "systems": 7,
+      "task_id": "faraday-contingent-network-001",
+      "workflow_depth": 10,
+      "workflow_stages": 10
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 3,
+      "criteria": 27,
+      "criteria_by_check": {
+        "case_file_read": 18,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "network_assessment": 6,
+        "notification_roles": 1
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "artifact_consistency": 1,
+        "communication": 2,
+        "containment": 1,
+        "exception_handling": 1,
+        "governance": 1,
+        "grounding": 18,
+        "optimization": 1,
+        "planning": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "contingent_network_recovery",
+      "horizon_minutes": 220,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 93,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 66,
+        "tool_calls": 34
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 3,
+      "source_files": 10,
+      "source_sections": 19,
+      "systems": 7,
+      "task_id": "faraday-contingent-network-002",
+      "workflow_depth": 10,
+      "workflow_stages": 10
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 3,
+      "criteria": 27,
+      "criteria_by_check": {
+        "case_file_read": 18,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "network_assessment": 6,
+        "notification_roles": 1
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "artifact_consistency": 1,
+        "communication": 2,
+        "containment": 1,
+        "exception_handling": 1,
+        "governance": 1,
+        "grounding": 18,
+        "optimization": 1,
+        "planning": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "contingent_network_recovery",
+      "horizon_minutes": 220,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 93,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 66,
+        "tool_calls": 34
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 3,
+      "source_files": 10,
+      "source_sections": 19,
+      "systems": 7,
+      "task_id": "faraday-contingent-network-003",
+      "workflow_depth": 10,
+      "workflow_stages": 10
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 3,
+      "criteria": 27,
+      "criteria_by_check": {
+        "case_file_read": 18,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "network_assessment": 6,
+        "notification_roles": 1
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "artifact_consistency": 1,
+        "communication": 2,
+        "containment": 1,
+        "exception_handling": 1,
+        "governance": 1,
+        "grounding": 18,
+        "optimization": 1,
+        "planning": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "contingent_network_recovery",
+      "horizon_minutes": 220,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 93,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 66,
+        "tool_calls": 34
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 3,
+      "source_files": 10,
+      "source_sections": 19,
+      "systems": 7,
+      "task_id": "faraday-contingent-network-004",
+      "workflow_depth": 10,
+      "workflow_stages": 10
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 3,
+      "criteria": 27,
+      "criteria_by_check": {
+        "case_file_read": 18,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "network_assessment": 6,
+        "notification_roles": 1
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "artifact_consistency": 1,
+        "communication": 2,
+        "containment": 1,
+        "exception_handling": 1,
+        "governance": 1,
+        "grounding": 18,
+        "optimization": 1,
+        "planning": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "contingent_network_recovery",
+      "horizon_minutes": 220,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 93,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 66,
+        "tool_calls": 34
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 3,
+      "source_files": 10,
+      "source_sections": 19,
+      "systems": 7,
+      "task_id": "faraday-contingent-network-005",
+      "workflow_depth": 10,
+      "workflow_stages": 10
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 3,
+      "criteria": 27,
+      "criteria_by_check": {
+        "case_file_read": 18,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "network_assessment": 6,
+        "notification_roles": 1
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "artifact_consistency": 1,
+        "communication": 2,
+        "containment": 1,
+        "exception_handling": 1,
+        "governance": 1,
+        "grounding": 18,
+        "optimization": 1,
+        "planning": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "contingent_network_recovery",
+      "horizon_minutes": 220,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 93,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 66,
+        "tool_calls": 34
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 3,
+      "source_files": 10,
+      "source_sections": 19,
+      "systems": 7,
+      "task_id": "faraday-contingent-network-006",
+      "workflow_depth": 10,
+      "workflow_stages": 10
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 3,
+      "criteria": 27,
+      "criteria_by_check": {
+        "case_file_read": 18,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "network_assessment": 6,
+        "notification_roles": 1
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "artifact_consistency": 1,
+        "communication": 2,
+        "containment": 1,
+        "exception_handling": 1,
+        "governance": 1,
+        "grounding": 18,
+        "optimization": 1,
+        "planning": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "contingent_network_recovery",
+      "horizon_minutes": 220,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 93,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 66,
+        "tool_calls": 34
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 3,
+      "source_files": 10,
+      "source_sections": 19,
+      "systems": 7,
+      "task_id": "faraday-contingent-network-007",
+      "workflow_depth": 10,
+      "workflow_stages": 10
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 3,
+      "criteria": 27,
+      "criteria_by_check": {
+        "case_file_read": 18,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "network_assessment": 6,
+        "notification_roles": 1
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "artifact_consistency": 1,
+        "communication": 2,
+        "containment": 1,
+        "exception_handling": 1,
+        "governance": 1,
+        "grounding": 18,
+        "optimization": 1,
+        "planning": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "contingent_network_recovery",
+      "horizon_minutes": 220,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 93,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 66,
+        "tool_calls": 34
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 3,
+      "source_files": 10,
+      "source_sections": 19,
+      "systems": 7,
+      "task_id": "faraday-contingent-network-008",
+      "workflow_depth": 10,
+      "workflow_stages": 10
     }
   ]
 }
