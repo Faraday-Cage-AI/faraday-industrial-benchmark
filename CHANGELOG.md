@@ -2,6 +2,28 @@
 
 ## Unreleased
 
+- Added the v0.5 frontier operating-review track: four 15-stage professional
+  work samples across ERP, MES, QMS, SCM, WMS, TMS, CRM, and GRC.
+- Added an 11-file, 26-section versioned data room with four independently timed
+  source revisions, a superseded distractor, exact source precedence, and
+  file-section-version citations.
+- Added 15 evidence-backed real-world exception resolutions per frontier task,
+  covering quality scope, document precedence, inventory double-counting,
+  constrained supply, line qualification, supplier certification, contract
+  revisions, withdrawn/late/customs-held routes, shared capacity, reserve
+  offsets, penalties, rounding, and approval dependencies.
+- Added four mutually consistent structured deliverables, artifact read-back,
+  controlled packaging, protected publication, and 415–419 field-level criteria
+  per frontier episode. Exact schemas and exception vocabulary are public while
+  instance values and evaluator contracts remain sealed.
+- Added `faraday-bench difficulty` and a checked-in structural profile. v0.5 now
+  contains 66 tasks, 32 families, 67 tools, 23 protected actions, 23 event types,
+  108 scheduled events, 398 workflow nodes, and 2,648 criteria.
+- Qualified v0.5 at oracle 100.00/66 strict, no-op 10.33, read-only 13.19, and
+  unauthorized-write 0.00 with 66 critical failures.
+
+## 0.4.0 — 2026-09-14
+
 - Expanded the public development suite to v0.4: 62 tasks, 31 families, 61
   tools, 22 protected actions, 22 event types, 92 scheduled event instances,
   and 974 deterministic criteria.

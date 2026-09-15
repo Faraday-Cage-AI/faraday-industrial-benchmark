@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://faraday-industrial-benchmark.faraday-2894.chatgpt.site'),
+  metadataBase: new URL('https://www.faradaycompute.com/faraday-industrial-benchmark'),
   title: {
     default: 'Faraday Industrial Benchmark',
     template: '%s · Faraday Industrial Benchmark',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: '/',
     title: 'Faraday Industrial Benchmark',
     description:
-      'Can your agent run the industrial enterprise? 62 executable episodes across manufacturing, supply chain, distribution, and the back office.',
+      'A 66-episode executable benchmark across manufacturing, supply chain, distribution, and the industrial back office.',
   },
   twitter: {
     card: 'summary',

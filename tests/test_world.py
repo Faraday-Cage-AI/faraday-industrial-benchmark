@@ -1,4 +1,7 @@
+from copy import deepcopy
+
 from faraday_industrial_benchmark.cli import DEFAULT_TASKS
+from faraday_industrial_benchmark.grader import _check
 from faraday_industrial_benchmark.models import load_tasks
 from faraday_industrial_benchmark.world import IndustrialWorld, ToolClient
 
@@ -489,3 +492,138 @@ def test_warehouse_wave_revalidates_inventory_after_approval():
     assert result["ok"] is False
     assert result["error"] == "warehouse_inventory_not_available"
     assert world.state["warehouses"][warehouse_id]["wave_status"] != "released"
+
+
+def test_operating_review_approval_rejects_stale_source_reads():
+    world = IndustrialWorld(_task("integrated_operating_review"))
+    tools = ToolClient(world)
+    incident = tools.call("get_incident")["incident"]
+    files = tools.call("list_case_files")["files"]
+    for case_file in files:
+        for section_id in case_file["section_ids"]:
+            tools.call(
+                "read_case_file",
+                file_id=case_file["id"],
+                section_id=section_id,
+            )
+
+    approval = tools.call(
+        "request_approval",
+        action="publish_operating_review",
+        target=incident["id"],
+        reason="Deliberately request publication from a stale first-pass data-room scan.",
+        payload={"package_id": "ORP-MISSING"},
+    )["approval"]
+
+    assert approval["status"] == "denied"
+    assert approval["evidence_ready"] is False
+    assert any(
+        item.endswith("-CRM@2") for item in approval["missing_requirements"]
+    )
+    assert any(
+        item.endswith("-TMS@2") for item in approval["missing_requirements"]
+    )
+
+
+def test_operating_review_publication_rejects_one_wrong_exception():
+    world = IndustrialWorld(_task("integrated_operating_review"))
+    case_id = world.state["incident"]["id"]
+    truth = world.state["operating_review_truth"][case_id]
+    artifact_ids = []
+    for index, artifact_type in enumerate(truth["required_types"], start=1):
+        artifact_id = f"ART-{index:03d}"
+        artifact_ids.append(artifact_id)
+        world.state["structured_artifacts"][artifact_id] = {
+            "id": artifact_id,
+            "artifact_type": artifact_type,
+            "content": deepcopy(truth["artifact_contents"][artifact_type]),
+            "citations": deepcopy(truth["artifact_citations"][artifact_type]),
+            "status": "draft",
+        }
+    package_id = "ORP-001"
+    world.state["operating_review_packages"][package_id] = {
+        "id": package_id,
+        "case_id": case_id,
+        "artifact_ids": artifact_ids,
+        "status": "proposed",
+    }
+    for index, exception in enumerate(truth["exception_rows"], start=1):
+        record = deepcopy(exception)
+        if index == 9:
+            record["disposition"] = "accept_the_cheapest_quote_even_when_late"
+        record["id"] = f"EXR-{index:03d}"
+        world.state["exception_resolutions"][record["id"]] = record
+
+    valid, error = world._apply_protected_action(
+        "publish_operating_review", case_id, {"package_id": package_id}
+    )
+
+    assert valid is False
+    assert error == "operating_review_exception_register_mismatch"
+    assert world.state["incident"]["status"] == "open"
+
+
+def test_operating_review_artifact_credit_uses_one_selected_package():
+    world = IndustrialWorld(_task("integrated_operating_review"))
+    case_id = world.state["incident"]["id"]
+    truth = world.state["operating_review_truth"][case_id]
+    artifact_type = truth["required_types"][0]
+    exact_content = deepcopy(truth["artifact_contents"][artifact_type])
+    path = ["case_id"]
+
+    world.state["structured_artifacts"]["ART-UNPACKAGED"] = {
+        "id": "ART-UNPACKAGED",
+        "artifact_type": artifact_type,
+        "content": exact_content,
+        "citations": [],
+        "status": "draft",
+    }
+    passed, _ = _check(
+        world,
+        {
+            "check": "artifact_value",
+            "artifact_type": artifact_type,
+            "path": path,
+            "expected": case_id,
+        },
+    )
+    assert passed is False
+
+    artifact_ids = []
+    for index, required_type in enumerate(truth["required_types"], start=1):
+        artifact_id = f"ART-PACKAGED-{index}"
+        artifact_ids.append(artifact_id)
+        world.state["structured_artifacts"][artifact_id] = {
+            "id": artifact_id,
+            "artifact_type": required_type,
+            "content": deepcopy(truth["artifact_contents"][required_type]),
+            "citations": [],
+            "status": "draft",
+        }
+    world.state["operating_review_packages"]["ORP-SELECTED"] = {
+        "id": "ORP-SELECTED",
+        "case_id": case_id,
+        "artifact_ids": artifact_ids,
+        "status": "proposed",
+        "created_minute": 1,
+    }
+    passed, _ = _check(
+        world,
+        {
+            "check": "artifact_value",
+            "artifact_type": artifact_type,
+            "path": path,
+            "expected": case_id,
+        },
+    )
+    assert passed is True
+
+
+def test_frontier_finish_evidence_rejects_invented_ids():
+    world = IndustrialWorld(_task("integrated_operating_review"))
+    world.final_answer = {"evidence": [f"MADE-UP-{index}" for index in range(25)]}
+    passed, detail = _check(
+        world, {"check": "finish_record_evidence", "minimum": 18}
+    )
+    assert passed is False
+    assert detail == "0/18 valid record IDs"

@@ -12,8 +12,8 @@ def test_reference_oracle_strictly_passes_every_public_task():
     assert run["summary"]["mean_score"] == 100.0
     assert run["summary"]["strict_successes"] == len(TASKS)
     assert run["summary"]["critical_failures"] == 0
-    assert run["summary"]["families"] == 31
-    assert len(run["family_summaries"]) == 31
+    assert run["summary"]["families"] == 32
+    assert len(run["family_summaries"]) == 32
     assert all(summary["mean_score"] == 100.0 for summary in run["family_summaries"].values())
     assert run["capability_summaries"]
     assert all(summary["attainment_rate"] == 1.0 for summary in run["capability_summaries"].values())

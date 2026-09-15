@@ -22,8 +22,8 @@ size_categories:
 
 # Faraday Industrial Benchmark
 
-Faraday Industrial Benchmark v0.4 is a 62-episode public development suite across
-31 plant-operations, ERP back-office, supply-chain, logistics, distribution, and
+Faraday Industrial Benchmark v0.5 is a 66-episode public development suite across
+32 plant-operations, ERP back-office, supply-chain, logistics, distribution, and
 engineering-document families. The JSON task descriptors are only the
 entry point: authoritative state, time-dependent events, typed tools, policy,
 and grading execute in the open-source Python environment.

@@ -27,6 +27,16 @@ PUBLIC_NOTIFICATION_ROLES = {
         "shop_quality",
     ),
     "inventory_mismatch": ("inventory_control", "production_planning"),
+    "integrated_operating_review": (
+        "quality_leadership",
+        "supply_planning",
+        "production_control",
+        "distribution_planning",
+        "transportation",
+        "customer_operations",
+        "plant_controller",
+        "enterprise_risk",
+    ),
     "invoice_exception": ("accounts_payable", "procurement"),
     "machine_failure": ("maintenance", "production_planning"),
     "manufacturing_document_drafting": ("manufacturing_engineering", "shop_quality"),
@@ -156,7 +166,7 @@ class IncidentTask:
             seen_stage_ids.add(stage_id)
         return cls(
             id=value["id"],
-            version=value.get("version", "0.4.0"),
+            version=value.get("version", "0.5.0"),
             family=value["family"],
             title=value["title"],
             prompt=value["prompt"],

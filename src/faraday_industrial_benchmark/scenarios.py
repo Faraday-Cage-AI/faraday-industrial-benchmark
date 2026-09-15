@@ -11,7 +11,7 @@ from dataclasses import dataclass
 import random
 from typing import Any, Callable
 
-from .models import IncidentTask, Json, ScheduledEvent
+from .models import PUBLIC_NOTIFICATION_ROLES, IncidentTask, Json, ScheduledEvent
 from .tool_specs import PROTECTED_ACTIONS
 
 
@@ -88,6 +88,11 @@ def _base_state(task: IncidentTask, incident: Json) -> Json:
         "engineering_review_packages": {},
         "document_holds": {},
         "engineering_review_truth": {},
+        "case_files": {},
+        "structured_artifacts": {},
+        "operating_review_packages": {},
+        "operating_review_truth": {},
+        "exception_resolutions": {},
         "messages": [],
         "quality_holds": {},
         "work_order_holds": {},
@@ -3114,6 +3119,940 @@ def _engineering_production_release(
     return instance
 
 
+def _case_file(
+    file_id: str,
+    title: str,
+    system: str,
+    sections: Json,
+    *,
+    version: int = 1,
+    status: str = "authoritative",
+) -> Json:
+    return {
+        "id": file_id,
+        "title": title,
+        "system": system,
+        "version": version,
+        "status": status,
+        "sections": deepcopy(sections),
+    }
+
+
+def _artifact_leaf_criteria(
+    artifact_type: str,
+    content: Any,
+    *,
+    path: tuple[str | int, ...] = (),
+) -> list[Json]:
+    """Expand a deliverable into sealed, independently scored leaf facts."""
+
+    if isinstance(content, dict):
+        rows: list[Json] = []
+        for key in sorted(content):
+            rows.extend(
+                _artifact_leaf_criteria(
+                    artifact_type, content[key], path=(*path, str(key))
+                )
+            )
+        return rows
+    if isinstance(content, list):
+        rows = []
+        for index, value in enumerate(content):
+            rows.extend(
+                _artifact_leaf_criteria(
+                    artifact_type, value, path=(*path, index)
+                )
+            )
+        return rows
+    slug = "-".join(str(part).replace("_", "-") for part in path)
+    return [
+        _criterion(
+            f"artifact-{artifact_type}-{slug}",
+            "artifact_accuracy",
+            1,
+            "artifact_value",
+            artifact_type=artifact_type,
+            path=list(path),
+            expected=deepcopy(content),
+        )
+    ]
+
+
+def _integrated_operating_review(
+    task: IncidentTask, rng: random.Random
+) -> ScenarioInstance:
+    """A long-horizon, multi-source, multi-artifact operating review.
+
+    The task is deliberately closer to a professional work sample than a short
+    tool-use puzzle: sources change while they are being reviewed, the final
+    allocation is computed from policy and capacity, and four deliverables must
+    agree at the individual-field level before publication.
+    """
+
+    case_id = f"IOR-{rng.randint(10000, 99999)}"
+    period = rng.choice(("2026-Q2", "2026-Q3", "2026-Q4"))
+    file_ids = {
+        "brief": f"FILE-{case_id}-BRIEF",
+        "quality": f"FILE-{case_id}-QMS",
+        "genealogy": f"FILE-{case_id}-GENEALOGY",
+        "inventory": f"FILE-{case_id}-WMS",
+        "orders": f"FILE-{case_id}-CRM",
+        "capacity": f"FILE-{case_id}-MES",
+        "supplier": f"FILE-{case_id}-SCM",
+        "transport": f"FILE-{case_id}-TMS",
+        "finance": f"FILE-{case_id}-ERP",
+        "governance": f"FILE-{case_id}-CONTROL",
+        "legacy": f"FILE-{case_id}-LEGACY",
+    }
+
+    lot_root = f"LOT-{rng.randint(3000, 8999)}"
+    affected_lots = [f"{lot_root}-{suffix}" for suffix in ("A", "B", "C", "D")]
+    initial_lots = affected_lots[:2]
+    lot_quantities = {
+        lot_id: rng.randint(18, 34) for lot_id in affected_lots
+    }
+    held_quantity = sum(lot_quantities.values())
+
+    source_ids = ["DC-EAST", "DC-CENTRAL", "DC-WEST", "PLANT-RECOVERY"]
+    source_supply = {
+        "DC-EAST": rng.randint(30, 44),
+        "DC-CENTRAL": rng.randint(27, 39),
+        "DC-WEST": rng.randint(22, 34),
+        "PLANT-RECOVERY": rng.randint(34, 48),
+    }
+    total_supply = sum(source_supply.values())
+
+    customer_classes = [
+        ("regulated", 4, 36),
+        ("contract", 3, 28),
+        ("strategic", 2, 20),
+        ("strategic", 2, 14),
+        ("standard", 1, 0),
+    ]
+    orders = []
+    for index, (service_class, rank, minimum) in enumerate(customer_classes, start=1):
+        quantity = rng.randint(38, 62)
+        minimum = min(minimum, quantity)
+        orders.append(
+            {
+                "order_id": f"SO-{case_id}-{index}",
+                "customer_id": f"CUST-{rng.randint(100, 999)}",
+                "requested_quantity": quantity,
+                "minimum_commitment": minimum,
+                "priority_rank": rank,
+                "late_penalty_per_unit": rng.randrange(900, 5200, 100),
+                "due_minute": 88 + index * 9 + rng.randint(0, 5),
+                "service_class": service_class,
+            }
+        )
+    # The final commercial revision raises the fourth order's contractual floor.
+    final_orders = deepcopy(orders)
+    final_orders[3]["minimum_commitment"] = min(
+        final_orders[3]["requested_quantity"],
+        final_orders[3]["minimum_commitment"] + 8,
+    )
+    final_orders[3]["priority_rank"] = 3
+    final_orders[3]["late_penalty_per_unit"] += 1700
+    if sum(row["minimum_commitment"] for row in final_orders) > total_supply:
+        final_orders[4]["minimum_commitment"] = 0
+
+    priority_orders = sorted(
+        final_orders,
+        key=lambda row: (
+            -row["priority_rank"],
+            -row["late_penalty_per_unit"],
+            row["due_minute"],
+            row["order_id"],
+        ),
+    )
+    commitments = {row["order_id"]: 0 for row in final_orders}
+    remaining_supply = total_supply
+    for row in priority_orders:
+        allocation = min(row["minimum_commitment"], remaining_supply)
+        commitments[row["order_id"]] += allocation
+        remaining_supply -= allocation
+    for row in priority_orders:
+        if remaining_supply <= 0:
+            break
+        residual = row["requested_quantity"] - commitments[row["order_id"]]
+        allocation = min(residual, remaining_supply)
+        commitments[row["order_id"]] += allocation
+        remaining_supply -= allocation
+
+    route_rows = []
+    for order_index, order in enumerate(final_orders):
+        for source_index, source_id in enumerate(source_ids):
+            route_rows.append(
+                {
+                    "route_id": f"R-{order_index + 1}-{source_index + 1}",
+                    "order_id": order["order_id"],
+                    "source_id": source_id,
+                    "arrival_minute": 58 + order_index * 5 + source_index * 4,
+                    "capacity": source_supply[source_id],
+                    "unit_freight": 18 + source_index * 5 + order_index * 2,
+                    "status": "active",
+                }
+            )
+    withdrawn = next(
+        row
+        for row in route_rows
+        if row["order_id"] == priority_orders[0]["order_id"]
+        and row["source_id"] == "DC-EAST"
+    )
+    withdrawn["status"] = "withdrawn"
+    replacement = {
+        "route_id": "R-RECOVERY-EXPRESS",
+        "order_id": priority_orders[0]["order_id"],
+        "source_id": "DC-EAST",
+        "arrival_minute": priority_orders[0]["due_minute"] - 4,
+        "capacity": source_supply["DC-EAST"],
+        "unit_freight": withdrawn["unit_freight"] + 13,
+        "status": "active",
+    }
+    late_quote = {
+        "route_id": "R-LATE-DISTRACTOR",
+        "order_id": priority_orders[0]["order_id"],
+        "source_id": "DC-CENTRAL",
+        "arrival_minute": priority_orders[0]["due_minute"] + 7,
+        "capacity": source_supply["DC-CENTRAL"],
+        "unit_freight": 3,
+        "status": "active",
+    }
+    customs_hold_quote = {
+        "route_id": "R-CUSTOMS-HOLD",
+        "order_id": priority_orders[1]["order_id"],
+        "source_id": "DC-WEST",
+        "arrival_minute": priority_orders[1]["due_minute"] - 9,
+        "capacity": source_supply["DC-WEST"],
+        "unit_freight": 2,
+        "status": "customs_hold",
+    }
+    final_routes = [*route_rows, replacement, late_quote, customs_hold_quote]
+
+    remaining_by_source = deepcopy(source_supply)
+    allocation_rows = []
+    for order in priority_orders:
+        remaining_order = commitments[order["order_id"]]
+        candidates = sorted(
+            (
+                row
+                for row in final_routes
+                if row["order_id"] == order["order_id"]
+                and row["status"] == "active"
+                and row["arrival_minute"] <= order["due_minute"]
+            ),
+            key=lambda row: (row["unit_freight"], row["arrival_minute"], row["route_id"]),
+        )
+        for route in candidates:
+            if remaining_order <= 0:
+                break
+            quantity = min(
+                remaining_order,
+                remaining_by_source[route["source_id"]],
+                route["capacity"],
+            )
+            if quantity <= 0:
+                continue
+            allocation_rows.append(
+                {
+                    "order_id": order["order_id"],
+                    "source_id": route["source_id"],
+                    "route_id": route["route_id"],
+                    "quantity": quantity,
+                    "arrival_minute": route["arrival_minute"],
+                    "unit_freight": route["unit_freight"],
+                }
+            )
+            remaining_by_source[route["source_id"]] -= quantity
+            remaining_order -= quantity
+        if remaining_order:
+            raise ValueError("generated operating-review routes cannot satisfy commitment")
+    allocation_rows.sort(key=lambda row: (row["order_id"], row["source_id"], row["route_id"]))
+
+    production_quantity = source_supply["PLANT-RECOVERY"]
+    production_line = f"LINE-{rng.choice((7, 9, 11))}"
+    production_completion = 54 + rng.randint(0, 5)
+    supplier_po_id = f"PO-{case_id}-EXPEDITE"
+    supplier_quantity = production_quantity + rng.randint(8, 18)
+    expedite_cost = float(rng.randrange(24_000, 48_000, 1_000))
+    disposal_rate = float(rng.randrange(180, 320, 10))
+    overtime_rate = float(rng.randrange(120, 220, 10))
+    inspection_cost = float(rng.randrange(8_000, 18_000, 1_000))
+    insurance_recovery = float(rng.randrange(12_000, 28_000, 1_000))
+    disposal_cost = float(held_quantity * disposal_rate)
+    production_cost = float(production_quantity * overtime_rate)
+    premium_freight = float(
+        sum(row["quantity"] * row["unit_freight"] for row in allocation_rows)
+    )
+    shortfalls = {
+        row["order_id"]: row["requested_quantity"] - commitments[row["order_id"]]
+        for row in final_orders
+    }
+    penalty_exposure = float(
+        sum(
+            shortfalls[row["order_id"]] * row["late_penalty_per_unit"]
+            for row in final_orders
+        )
+    )
+    reserve_amount = round(
+        disposal_cost
+        + production_cost
+        + premium_freight
+        + expedite_cost
+        + inspection_cost
+        + penalty_exposure
+        - insurance_recovery,
+        2,
+    )
+
+    source_versions = {
+        file_ids["brief"]: 1,
+        file_ids["quality"]: 2,
+        file_ids["genealogy"]: 1,
+        file_ids["inventory"]: 1,
+        file_ids["orders"]: 2,
+        file_ids["capacity"]: 1,
+        file_ids["supplier"]: 2,
+        file_ids["transport"]: 2,
+        file_ids["finance"]: 1,
+        file_ids["governance"]: 1,
+        file_ids["legacy"]: 1,
+    }
+    section_ids = {
+        "brief": (
+            "objective",
+            "delivery_contract",
+            "decision_policy",
+            "source_precedence",
+            "exception_policy",
+            "exception_contract",
+        ),
+        "quality": ("scope", "disposition"),
+        "genealogy": ("lot_links", "trace_notes"),
+        "inventory": ("verified_supply", "inventory_controls"),
+        "orders": ("commitments", "commercial_rules"),
+        "capacity": ("line_options", "production_constraints"),
+        "supplier": ("recovery_options", "supplier_controls"),
+        "transport": ("route_quotes", "routing_rules"),
+        "finance": ("reserve_policy", "ledger_controls"),
+        "governance": ("required_actions", "approval_policy"),
+        "legacy": ("superseded_plan", "warning"),
+    }
+
+    action_rows = [
+        {"action_id": "A01", "owner": "quality_leadership", "due_minute": 18, "depends_on": [], "control": "freeze affected genealogy", "evidence_file_ids": [file_ids["quality"], file_ids["genealogy"]]},
+        {"action_id": "A02", "owner": "supply_planning", "due_minute": 28, "depends_on": ["A01"], "control": "confirm clean supply", "evidence_file_ids": [file_ids["inventory"], file_ids["supplier"]]},
+        {"action_id": "A03", "owner": "production_control", "due_minute": 42, "depends_on": ["A02"], "control": "lock recovery capacity", "evidence_file_ids": [file_ids["capacity"], file_ids["supplier"]]},
+        {"action_id": "A04", "owner": "distribution_planning", "due_minute": 48, "depends_on": ["A02", "A03"], "control": "allocate constrained supply", "evidence_file_ids": [file_ids["inventory"], file_ids["orders"]]},
+        {"action_id": "A05", "owner": "transportation", "due_minute": 58, "depends_on": ["A04"], "control": "book current feasible routes", "evidence_file_ids": [file_ids["transport"]]},
+        {"action_id": "A06", "owner": "customer_operations", "due_minute": 64, "depends_on": ["A04", "A05"], "control": "issue order-level commitments", "evidence_file_ids": [file_ids["orders"], file_ids["transport"]]},
+        {"action_id": "A07", "owner": "plant_controller", "due_minute": 72, "depends_on": ["A01", "A03", "A05"], "control": "book evidence-backed reserve", "evidence_file_ids": [file_ids["finance"]]},
+        {"action_id": "A08", "owner": "enterprise_risk", "due_minute": 78, "depends_on": ["A06", "A07"], "control": "challenge cross-artifact consistency", "evidence_file_ids": [file_ids["brief"], file_ids["governance"]]},
+        {"action_id": "A09", "owner": "enterprise_risk", "due_minute": 84, "depends_on": ["A08"], "control": "obtain publication approval", "evidence_file_ids": [file_ids["governance"]]},
+        {"action_id": "A10", "owner": "enterprise_risk", "due_minute": 90, "depends_on": ["A09"], "control": "publish controlled operating review", "evidence_file_ids": [file_ids["brief"], file_ids["governance"]]},
+    ]
+
+    exception_rows = [
+        {
+            "case_id": case_id,
+            "exception_id": "EX-01-SCOPE-EXPANSION",
+            "category": "quality_scope_revision",
+            "affected_record_ids": affected_lots,
+            "disposition": "use_expanded_authoritative_genealogy_and_dispose_all_affected_lots",
+            "evidence_file_ids": [file_ids["quality"], file_ids["genealogy"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-02-SUPERSEDED-PLAN",
+            "category": "document_precedence",
+            "affected_record_ids": [file_ids["legacy"]],
+            "disposition": "exclude_superseded_draft_from_all_decisions_and_citations",
+            "evidence_file_ids": [file_ids["brief"], file_ids["legacy"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-03-TRANSFER-DOUBLE-COUNT",
+            "category": "inventory_reconciliation",
+            "affected_record_ids": source_ids[:3],
+            "disposition": "use_verified_available_supply_with_zero_double_counted_transfers",
+            "evidence_file_ids": [file_ids["inventory"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-04-PORTFOLIO-SHORTFALL",
+            "category": "constrained_supply",
+            "affected_record_ids": sorted(row["order_id"] for row in final_orders),
+            "disposition": "fund_contractual_minimums_then_residual_priority_and_record_every_shortfall",
+            "evidence_file_ids": [file_ids["brief"], file_ids["inventory"], file_ids["capacity"], file_ids["orders"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-05-UNQUALIFIED-LINE",
+            "category": "production_effectivity",
+            "affected_record_ids": ["LINE-LEGACY"],
+            "disposition": "exclude_capacity_not_qualified_for_the_current_revision",
+            "evidence_file_ids": [file_ids["capacity"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-06-SUPPLIER-CERTIFICATE",
+            "category": "supplier_quality_gate",
+            "affected_record_ids": [supplier_po_id],
+            "disposition": "use_only_final_confirmed_quantity_after_certificate_verification",
+            "evidence_file_ids": [file_ids["supplier"], file_ids["capacity"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-07-CUSTOMER-FLOOR-REVISION",
+            "category": "commercial_contract_revision",
+            "affected_record_ids": [final_orders[3]["order_id"]],
+            "disposition": "apply_the_legal_reviewed_minimum_priority_and_penalty_terms",
+            "evidence_file_ids": [file_ids["orders"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-08-WITHDRAWN-LANE",
+            "category": "carrier_capacity_change",
+            "affected_record_ids": [withdrawn["route_id"], replacement["route_id"]],
+            "disposition": "exclude_withdrawn_lane_and_consider_the_confirmed_express_replacement",
+            "evidence_file_ids": [file_ids["transport"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-09-LATE-CHEAP-QUOTE",
+            "category": "customer_promise_constraint",
+            "affected_record_ids": [late_quote["route_id"]],
+            "disposition": "exclude_low_cost_quote_that_arrives_after_the_revised_due_minute",
+            "evidence_file_ids": [file_ids["transport"], file_ids["orders"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-10-CUSTOMS-HOLD",
+            "category": "trade_compliance_hold",
+            "affected_record_ids": [customs_hold_quote["route_id"]],
+            "disposition": "exclude_route_without_active_customs_clearance",
+            "evidence_file_ids": [file_ids["transport"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-11-SHARED-SOURCE-CAPACITY",
+            "category": "network_capacity_consumption",
+            "affected_record_ids": source_ids,
+            "disposition": "decrement_each_source_once_across_the_entire_order_portfolio",
+            "evidence_file_ids": [file_ids["brief"], file_ids["transport"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-12-INSURANCE-OFFSET",
+            "category": "reserve_offset",
+            "affected_record_ids": ["insurance_recovery"],
+            "disposition": "subtract_verified_insurance_recovery_once_from_the_gross_reserve",
+            "evidence_file_ids": [file_ids["finance"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-13-CUSTOMER-PENALTIES",
+            "category": "contingent_liability",
+            "affected_record_ids": sorted(order_id for order_id, quantity in shortfalls.items() if quantity > 0),
+            "disposition": "include_each_uncommitted_unit_at_its_revised_order_penalty_rate",
+            "evidence_file_ids": [file_ids["orders"], file_ids["finance"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-14-CURRENCY-ROUNDING",
+            "category": "financial_precision",
+            "affected_record_ids": [period],
+            "disposition": "round_only_the_final_usd_reserve_to_two_decimal_places",
+            "evidence_file_ids": [file_ids["brief"], file_ids["finance"]],
+            "status": "resolved",
+        },
+        {
+            "case_id": case_id,
+            "exception_id": "EX-15-APPROVAL-DEPENDENCY",
+            "category": "segregation_of_duties",
+            "affected_record_ids": [row["action_id"] for row in action_rows],
+            "disposition": "complete_the_action_dependency_chain_before_controlled_publication",
+            "evidence_file_ids": [file_ids["governance"]],
+            "status": "resolved",
+        },
+    ]
+    exception_rows.sort(key=lambda row: row["exception_id"])
+    affected_record_rules = {
+        "EX-01-SCOPE-EXPANSION": "all lot IDs in the final authoritative QMS scope",
+        "EX-02-SUPERSEDED-PLAN": "the superseded shared-drive file ID",
+        "EX-03-TRANSFER-DOUBLE-COUNT": "source IDs in verified WMS supply, preserving source order",
+        "EX-04-PORTFOLIO-SHORTFALL": "all final order IDs sorted ascending",
+        "EX-05-UNQUALIFIED-LINE": "every line option not qualified for the current revision",
+        "EX-06-SUPPLIER-CERTIFICATE": "the final confirmed supplier recovery PO ID",
+        "EX-07-CUSTOMER-FLOOR-REVISION": "the order whose final contractual floor, priority, and penalty differ from the first read",
+        "EX-08-WITHDRAWN-LANE": "the withdrawn route ID followed by its confirmed express replacement route ID",
+        "EX-09-LATE-CHEAP-QUOTE": "every active quote arriving after its order's final due minute",
+        "EX-10-CUSTOMS-HOLD": "every route whose final status is customs_hold",
+        "EX-11-SHARED-SOURCE-CAPACITY": "all distribution and plant-recovery source IDs in decision-policy order",
+        "EX-12-INSURANCE-OFFSET": "the literal reserve component name insurance_recovery",
+        "EX-13-CUSTOMER-PENALTIES": "all final order IDs with positive shortfall, sorted ascending",
+        "EX-14-CURRENCY-ROUNDING": "the open ledger period",
+        "EX-15-APPROVAL-DEPENDENCY": "all required action IDs in register order",
+    }
+    exception_contract = [
+        {
+            "exception_id": row["exception_id"],
+            "category": row["category"],
+            "affected_record_rule": affected_record_rules[row["exception_id"]],
+            "required_disposition": row["disposition"],
+            "required_evidence_file_ids": row["evidence_file_ids"],
+            "required_status": "resolved",
+        }
+        for row in exception_rows
+    ]
+
+    artifact_schemas = {
+        "integrated_recovery_model": {
+            "case_id": "string",
+            "source_cutoff_minute": "integer",
+            "affected_scope": {"lot_ids": "sorted[string]", "held_quantity": "integer"},
+            "priority_order": "ordered[order_id]",
+            "allocations": "sorted[{order_id,source_id,route_id,quantity,arrival_minute,unit_freight}]",
+            "production_plan": "{line_id,quantity,completion_minute,supplier_po_id}",
+            "totals": "{demand_quantity,committed_quantity,unfilled_quantity}",
+            "financial_impact": {
+                "disposal_cost": "number",
+                "inspection_cost": "number",
+                "recovery_production_cost": "number",
+                "supplier_expedite_cost": "number",
+                "premium_freight": "number",
+                "customer_penalty_exposure": "number",
+                "insurance_recovery": "number",
+                "reserve_amount": "number",
+                "debit_account": "string",
+                "credit_account": "string",
+                "period": "string",
+            },
+        },
+        "control_action_register": {
+            "case_id": "string",
+            "actions": "ordered required action rows",
+            "exceptions": "sorted resolved real-world exception rows",
+        },
+        "executive_decision_brief": {
+            "case_id": "string",
+            "recommendation": "literal publish_constrained_recovery",
+            "source_cutoff_minute": "integer",
+            "affected_lot_count": "integer",
+            "held_quantity": "integer",
+            "demand_quantity": "integer",
+            "committed_quantity": "integer",
+            "unfilled_quantity": "integer",
+            "reserve_amount": "number",
+            "priority_order": "ordered[order_id]",
+            "escalation_order_ids": "sorted positive-shortfall order IDs",
+            "decision_status": "literal approval_required",
+        },
+        "customer_commitment_schedule": {
+            "case_id": "string",
+            "orders": "sorted[{order_id,requested_quantity,committed_quantity,shortfall_quantity,latest_arrival_minute,status}]",
+            "totals": "{demand_quantity,committed_quantity,unfilled_quantity}",
+        },
+    }
+
+    state = _base_state(
+        task,
+        {
+            "id": case_id,
+            "type": "integrated_operating_review",
+            "severity": "critical",
+            "status": "open",
+            "reported_minute": 0,
+            "period": period,
+            "notification_roles": list(
+                PUBLIC_NOTIFICATION_ROLES["integrated_operating_review"]
+            ),
+            "summary": (
+                "Prepare and publish a controlled operating review for a cross-enterprise "
+                "quality, supply, fulfillment, customer, and financial disruption."
+            ),
+        },
+    )
+    state["case_files"] = {
+        file_ids["brief"]: _case_file(
+            file_ids["brief"],
+            "Operating review instructions",
+            "program-office",
+            {
+                "objective": {
+                    "case_id": case_id,
+                    "decision": "publish one internally consistent constrained-recovery recommendation",
+                    "cutoff_minute": 40,
+                },
+                "delivery_contract": {
+                    "required_artifact_types": list(artifact_schemas),
+                    "schemas": artifact_schemas,
+                    "sorting": "sort allocations by order_id, source_id, route_id; preserve action register order",
+                    "rounding": "currency to two decimals; quantities and minutes are integers",
+                },
+                "decision_policy": {
+                    "allocation": "fund every minimum commitment in priority order, then allocate residual supply by priority_rank descending, late_penalty_per_unit descending, due_minute ascending, order_id ascending",
+                    "routing": "for each order in the same priority order, consume the lowest unit_freight active route that arrives by the revised due minute; break ties by arrival_minute then route_id",
+                    "source_use": "all verified supply and confirmed recovery production must be assigned while demand remains",
+                },
+                "source_precedence": {
+                    "rule": "latest authoritative version wins; legacy and superseded material is never decision evidence",
+                    "required_cutoff": "include every source revision available at minute 40",
+                },
+                "exception_policy": {
+                    "requirement": "identify, evidence, and resolve every material operational, commercial, logistics, financial, and governance exception before packaging",
+                    "resolution_contract": "record category, affected record IDs, exact disposition, evidence file IDs, and resolved status; preserve exception_id order in the control register",
+                    "prohibited_shortcut": "unresolved exceptions, provisional evidence, and narrative-only treatment cannot support approval",
+                },
+                "exception_contract": exception_contract,
+            },
+        ),
+        file_ids["quality"]: _case_file(
+            file_ids["quality"],
+            "QMS containment scope",
+            "QMS",
+            {
+                "scope": {"affected_lot_ids": initial_lots, "lot_quantities": {lot_id: lot_quantities[lot_id] for lot_id in initial_lots}},
+                "disposition": {"status": "pending expanded genealogy", "disposal_cost_per_unit": disposal_rate},
+            },
+            status="provisional",
+        ),
+        file_ids["genealogy"]: _case_file(
+            file_ids["genealogy"],
+            "MES genealogy extract",
+            "MES-genealogy",
+            {
+                "lot_links": [{"lot_id": lot_id, "parent_batch": lot_root, "finished_good": f"FG-{case_id}"} for lot_id in affected_lots],
+                "trace_notes": {"completeness": "four-child-lot batch", "source": "validated electronic batch record"},
+            },
+        ),
+        file_ids["inventory"]: _case_file(
+            file_ids["inventory"],
+            "Verified distribution inventory",
+            "WMS",
+            {
+                "verified_supply": [{"source_id": source_id, "available_quantity": quantity} for source_id, quantity in source_supply.items() if source_id != "PLANT-RECOVERY"],
+                "inventory_controls": {"reservation_status": "released for controlled reallocation", "double_counted_transfers": 0},
+            },
+        ),
+        file_ids["orders"]: _case_file(
+            file_ids["orders"],
+            "Customer order commitments",
+            "CRM-ERP",
+            {
+                "commitments": orders,
+                "commercial_rules": {"status": "pre-legal-review", "shortfall_treatment": "record every uncommitted unit as penalty exposure"},
+            },
+            status="provisional",
+        ),
+        file_ids["capacity"]: _case_file(
+            file_ids["capacity"],
+            "Recovery production capacity",
+            "MES-APS",
+            {
+                "line_options": [{"line_id": production_line, "confirmed_quantity": production_quantity, "completion_minute": production_completion, "status": "qualified"}, {"line_id": "LINE-LEGACY", "confirmed_quantity": production_quantity + 20, "completion_minute": 82, "status": "not_revision_qualified"}],
+                "production_constraints": {"selected_line_rule": "use only qualified capacity available before customer routing", "overtime_cost_per_unit": overtime_rate},
+            },
+        ),
+        file_ids["supplier"]: _case_file(
+            file_ids["supplier"],
+            "Supplier recovery commitment",
+            "SCM",
+            {
+                "recovery_options": [{"po_id": supplier_po_id, "quantity": supplier_quantity - 6, "arrival_minute": 58, "expedite_cost": expedite_cost - 3000, "status": "unconfirmed"}],
+                "supplier_controls": {"material_required_for_line": production_quantity, "certificate_status": "pending"},
+            },
+            status="provisional",
+        ),
+        file_ids["transport"]: _case_file(
+            file_ids["transport"],
+            "Carrier capacity and route quotes",
+            "TMS",
+            {
+                "route_quotes": [row for row in route_rows if row["status"] != "withdrawn"],
+                "routing_rules": {"capacity_is_consumed_per_route": True, "late_routes_are_infeasible": True},
+            },
+            status="provisional",
+        ),
+        file_ids["finance"]: _case_file(
+            file_ids["finance"],
+            "ERP reserve methodology",
+            "ERP-GL",
+            {
+                "reserve_policy": {
+                    "formula": "disposal + inspection + recovery production + supplier expedite + premium freight + customer penalty exposure - insurance recovery",
+                    "inspection_cost": inspection_cost,
+                    "insurance_recovery": insurance_recovery,
+                    "debit_account": "531800-INCIDENT-RESPONSE",
+                    "credit_account": "219850-OPERATING-REVIEW-RESERVE",
+                },
+                "ledger_controls": {"period": period, "currency": "USD", "rounding": 2, "posting_status": "open"},
+            },
+        ),
+        file_ids["governance"]: _case_file(
+            file_ids["governance"],
+            "Enterprise control and approval matrix",
+            "GRC",
+            {
+                "required_actions": action_rows,
+                "approval_policy": {"action": "publish_operating_review", "required_artifacts": list(artifact_schemas), "minimum_reason_characters": 24},
+            },
+        ),
+        file_ids["legacy"]: _case_file(
+            file_ids["legacy"],
+            "Superseded recovery draft",
+            "shared-drive",
+            {
+                "superseded_plan": {"instruction": "ship all available inventory to the largest customer", "reserve_amount": 0, "approval": "verbal"},
+                "warning": {"status": "superseded", "not_authoritative": True, "reason": "predates verified genealogy and legal priority revision"},
+            },
+            status="superseded",
+        ),
+    }
+
+    final_quality_sections = {
+        "scope": {"affected_lot_ids": affected_lots, "lot_quantities": lot_quantities},
+        "disposition": {"status": "dispose_all_affected_lots", "disposal_cost_per_unit": disposal_rate},
+    }
+    final_supplier_sections = {
+        "recovery_options": [{"po_id": supplier_po_id, "quantity": supplier_quantity, "arrival_minute": production_completion - 12, "expedite_cost": expedite_cost, "status": "confirmed"}],
+        "supplier_controls": {"material_required_for_line": production_quantity, "certificate_status": "verified"},
+    }
+    final_order_sections = {
+        "commitments": final_orders,
+        "commercial_rules": {"status": "legal-reviewed", "shortfall_treatment": "record every uncommitted unit as penalty exposure"},
+    }
+    final_transport_sections = {
+        "route_quotes": final_routes,
+        "routing_rules": {"capacity_is_consumed_per_route": True, "late_routes_are_infeasible": True},
+    }
+    events = [
+        _event(12, "case_file_update", "EVT-IOR-QMS-V2", file_id=file_ids["quality"], version=2, status="authoritative", sections=final_quality_sections, sender="quality_leadership", message="Expanded genealogy confirmed two additional affected child lots."),
+        _event(18, "case_file_update", "EVT-IOR-SCM-V2", file_id=file_ids["supplier"], version=2, status="authoritative", sections=final_supplier_sections, sender="supply_planning", message="Supplier recovery quantity and certificate are now confirmed."),
+        _event(26, "case_file_update", "EVT-IOR-CRM-V2", file_id=file_ids["orders"], version=2, status="authoritative", sections=final_order_sections, sender="commercial_legal", message="Revised contractual floor and priority are authoritative."),
+        _event(40, "case_file_update", "EVT-IOR-TMS-V2", file_id=file_ids["transport"], version=2, status="authoritative", sections=final_transport_sections, sender="transportation", message="A preferred lane was withdrawn and an express replacement was confirmed."),
+    ]
+
+    demand_quantity = sum(row["requested_quantity"] for row in final_orders)
+    committed_quantity = sum(commitments.values())
+    unfilled_quantity = demand_quantity - committed_quantity
+    recovery_model = {
+        "case_id": case_id,
+        "source_cutoff_minute": 40,
+        "affected_scope": {"lot_ids": sorted(affected_lots), "held_quantity": held_quantity},
+        "priority_order": [row["order_id"] for row in priority_orders],
+        "allocations": allocation_rows,
+        "production_plan": {"line_id": production_line, "quantity": production_quantity, "completion_minute": production_completion, "supplier_po_id": supplier_po_id},
+        "totals": {"demand_quantity": demand_quantity, "committed_quantity": committed_quantity, "unfilled_quantity": unfilled_quantity},
+        "financial_impact": {
+            "disposal_cost": disposal_cost,
+            "inspection_cost": inspection_cost,
+            "recovery_production_cost": production_cost,
+            "supplier_expedite_cost": expedite_cost,
+            "premium_freight": premium_freight,
+            "customer_penalty_exposure": penalty_exposure,
+            "insurance_recovery": insurance_recovery,
+            "reserve_amount": reserve_amount,
+            "debit_account": "531800-INCIDENT-RESPONSE",
+            "credit_account": "219850-OPERATING-REVIEW-RESERVE",
+            "period": period,
+        },
+    }
+    control_register = {
+        "case_id": case_id,
+        "actions": action_rows,
+        "exceptions": exception_rows,
+    }
+    executive_brief = {
+        "case_id": case_id,
+        "recommendation": "publish_constrained_recovery",
+        "source_cutoff_minute": 40,
+        "affected_lot_count": len(affected_lots),
+        "held_quantity": held_quantity,
+        "demand_quantity": demand_quantity,
+        "committed_quantity": committed_quantity,
+        "unfilled_quantity": unfilled_quantity,
+        "reserve_amount": reserve_amount,
+        "priority_order": [row["order_id"] for row in priority_orders],
+        "escalation_order_ids": sorted(order_id for order_id, quantity in shortfalls.items() if quantity > 0),
+        "decision_status": "approval_required",
+    }
+    schedule_rows = []
+    for order in sorted(final_orders, key=lambda row: row["order_id"]):
+        arrivals = [row["arrival_minute"] for row in allocation_rows if row["order_id"] == order["order_id"]]
+        schedule_rows.append(
+            {
+                "order_id": order["order_id"],
+                "requested_quantity": order["requested_quantity"],
+                "committed_quantity": commitments[order["order_id"]],
+                "shortfall_quantity": shortfalls[order["order_id"]],
+                "latest_arrival_minute": max(arrivals) if arrivals else None,
+                "status": "fully_committed" if shortfalls[order["order_id"]] == 0 else "executive_escalation",
+            }
+        )
+    customer_schedule = {
+        "case_id": case_id,
+        "orders": schedule_rows,
+        "totals": {"demand_quantity": demand_quantity, "committed_quantity": committed_quantity, "unfilled_quantity": unfilled_quantity},
+    }
+
+    artifact_contents = {
+        "integrated_recovery_model": recovery_model,
+        "control_action_register": control_register,
+        "executive_decision_brief": executive_brief,
+        "customer_commitment_schedule": customer_schedule,
+    }
+    artifact_citations = {
+        "integrated_recovery_model": [
+            {"file_id": file_ids[key], "section_id": section, "version": source_versions[file_ids[key]]}
+            for key, section in (
+                ("quality", "scope"), ("genealogy", "lot_links"), ("inventory", "verified_supply"),
+                ("orders", "commitments"), ("capacity", "line_options"), ("supplier", "recovery_options"),
+                ("transport", "route_quotes"), ("finance", "reserve_policy"), ("brief", "decision_policy"),
+            )
+        ],
+        "control_action_register": [
+            {"file_id": file_ids["governance"], "section_id": "required_actions", "version": 1},
+            {"file_id": file_ids["brief"], "section_id": "source_precedence", "version": 1},
+            {"file_id": file_ids["brief"], "section_id": "exception_policy", "version": 1},
+            {"file_id": file_ids["brief"], "section_id": "exception_contract", "version": 1},
+            {"file_id": file_ids["quality"], "section_id": "scope", "version": 2},
+            {"file_id": file_ids["inventory"], "section_id": "inventory_controls", "version": 1},
+            {"file_id": file_ids["capacity"], "section_id": "line_options", "version": 1},
+            {"file_id": file_ids["supplier"], "section_id": "supplier_controls", "version": 2},
+            {"file_id": file_ids["orders"], "section_id": "commercial_rules", "version": 2},
+            {"file_id": file_ids["transport"], "section_id": "route_quotes", "version": 2},
+            {"file_id": file_ids["finance"], "section_id": "reserve_policy", "version": 1},
+            {"file_id": file_ids["legacy"], "section_id": "warning", "version": 1},
+        ],
+        "executive_decision_brief": [
+            {"file_id": file_ids[key], "section_id": section, "version": source_versions[file_ids[key]]}
+            for key, section in (("brief", "objective"), ("quality", "scope"), ("orders", "commitments"), ("finance", "reserve_policy"))
+        ],
+        "customer_commitment_schedule": [
+            {"file_id": file_ids[key], "section_id": section, "version": source_versions[file_ids[key]]}
+            for key, section in (("orders", "commitments"), ("transport", "route_quotes"), ("brief", "decision_policy"))
+        ],
+    }
+    state["operating_review_truth"][case_id] = {
+        "artifact_contents": artifact_contents,
+        "artifact_citations": artifact_citations,
+        "required_types": list(artifact_contents),
+        "exception_rows": exception_rows,
+    }
+    state["policies"]["approval_requirements"]["publish_operating_review"] = {
+        "tools": ["list_case_files", "read_case_file", "get_structured_artifact"],
+        "events": [event.id for event in events],
+        "collections": {
+            "structured_artifacts": 4,
+            "operating_review_packages": 1,
+            "exception_resolutions": len(exception_rows),
+        },
+        "file_versions": source_versions,
+    }
+
+    criteria = [
+        _criterion("read-incident", "investigation", 2, "trace_tool", tool="get_incident"),
+        _criterion("inventory-data-room", "investigation", 2, "trace_tool", tool="list_case_files"),
+    ]
+    for key, sections in section_ids.items():
+        file_id = file_ids[key]
+        for section_id in sections:
+            criteria.append(
+                _criterion(
+                    f"read-{key}-{section_id.replace('_', '-')}-v{source_versions[file_id]}",
+                    "investigation",
+                    1,
+                    "case_file_read",
+                    file_id=file_id,
+                    section_id=section_id,
+                    version=source_versions[file_id],
+                )
+            )
+    for event in events:
+        criteria.append(
+            _criterion(
+                f"observe-{event.id.lower()}",
+                "adaptation",
+                2,
+                "event_applied",
+                event_id=event.id,
+            )
+        )
+    for exception in exception_rows:
+        criteria.append(
+            _criterion(
+                f"resolve-{exception['exception_id'].lower()}",
+                "exception_handling",
+                2,
+                "record_matches",
+                collection="exception_resolutions",
+                fields=exception,
+            )
+        )
+    for artifact_type, content in artifact_contents.items():
+        criteria.extend(_artifact_leaf_criteria(artifact_type, content))
+        for index, citation in enumerate(artifact_citations[artifact_type], start=1):
+            criteria.append(
+                _criterion(
+                    f"citation-{artifact_type}-{index}",
+                    "grounding",
+                    1,
+                    "artifact_citation",
+                    artifact_type=artifact_type,
+                    citation=citation,
+                )
+            )
+    criteria.extend(
+        [
+            _criterion("cross-artifact-consistency", "artifact_consistency", 16, "operating_review_consistent", case_id=case_id),
+            _criterion("complete-review-package", "artifact_consistency", 8, "operating_review_package", case_id=case_id, status="published"),
+            _criterion("publication-approval", "governance", 8, "approval_action", action="publish_operating_review", target=case_id),
+            _criterion("publication-execution", "governance", 12, "executed_action", action="publish_operating_review", target=case_id),
+            _criterion("notify-all-functions", "communication", 8, "notification_roles", roles=list(PUBLIC_NOTIFICATION_ROLES.get("integrated_operating_review", ()))),
+            _criterion("finish-with-record-evidence", "communication", 4, "finish_record_evidence", minimum=18),
+            _criterion(
+                "revision-before-publication",
+                "orchestration",
+                10,
+                "audit_sequence",
+                steps=[
+                    {"action": "event_applied", "details": {"event_id": "EVT-IOR-QMS-V2"}},
+                    {"action": "event_applied", "details": {"event_id": "EVT-IOR-SCM-V2"}},
+                    {"action": "event_applied", "details": {"event_id": "EVT-IOR-CRM-V2"}},
+                    {"action": "event_applied", "details": {"event_id": "EVT-IOR-TMS-V2"}},
+                    {"action": "approval_requested", "details": {"action": "publish_operating_review"}},
+                    {"action": "protected_action_executed", "details": {"action": "publish_operating_review"}},
+                ],
+            ),
+        ]
+    )
+    economics = _economics(
+        reserve_amount + 1_800_000,
+        reserve_amount,
+        25_000,
+        [
+            {"weight": 0.25, "check": "operating_review_consistent", "case_id": case_id},
+            {"weight": 0.75, "check": "executed_action", "action": "publish_operating_review", "target": case_id},
+        ],
+    )
+    economics["target_minutes"] = 140
+    return ScenarioInstance(state, events, criteria, economics)
+
+
 BUILDERS: dict[str, ScenarioBuilder] = {
     "quality_drift": _quality_drift,
     "supplier_delay": _supplier_delay,
@@ -3146,6 +4085,7 @@ BUILDERS: dict[str, ScenarioBuilder] = {
     "engineering_production_release": _engineering_production_release,
     "order_to_cash_disruption": _order_to_cash_disruption,
     "plant_fulfillment_recovery": _plant_fulfillment_recovery,
+    "integrated_operating_review": _integrated_operating_review,
 }
 
 

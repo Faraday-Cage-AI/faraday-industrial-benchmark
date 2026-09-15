@@ -1,8 +1,8 @@
 const metrics = [
-  ["62", "executable episodes"],
-  ["31", "workflow families"],
-  ["61", "typed tools"],
-  ["974", "deterministic criteria"],
+  ["66", "executable episodes"],
+  ["32", "workflow families"],
+  ["67", "typed tools"],
+  ["2,648", "deterministic criteria"],
 ];
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="status-dot" /> Public development suite · v0.4</p>
+          <p className="eyebrow"><span className="status-dot" /> Public development suite · v0.5</p>
           <h1>Can your agent run the industrial enterprise?</h1>
           <p className="hero-lede">
             A dynamic, executable benchmark for the work between the factory floor and the back office—across ERP, MES, QMS, SCM, WMS, TMS, PLM, CMMS, and finance.
@@ -70,7 +70,7 @@ export default function Home() {
         {metrics.map(([value, label]) => (
           <div className="metric" key={label}><strong>{value}</strong><span>{label}</span></div>
         ))}
-        <div className="metric metric-wide"><strong>22</strong><span>protected actions where bypass = zero</span></div>
+        <div className="metric metric-wide"><strong>23</strong><span>protected actions where bypass = zero</span></div>
       </section>
 
       <section className="section verdict-section" id="benchmark">
@@ -89,10 +89,10 @@ export default function Home() {
           </div>
           <div className="difficulty-stack" aria-label="Faraday difficulty dimensions">
             {[
-              ["Cross-system breadth", "31 families", "96%"],
-              ["State + time pressure", "92 events", "91%"],
-              ["Governance pressure", "22 protected actions", "94%"],
-              ["Artifact perception", "structured facts today", "48%"],
+              ["Cross-system breadth", "32 families", "96%"],
+              ["State + time pressure", "108 events", "91%"],
+              ["Governance pressure", "23 protected actions", "94%"],
+              ["Frontier work sample", "419 criteria / task", "98%"],
             ].map(([label, value, width]) => (
               <div className="difficulty-row" key={label}>
                 <div><span>{label}</span><strong>{value}</strong></div>
@@ -115,7 +115,10 @@ export default function Home() {
             <span role="columnheader">Benchmark</span><span role="columnheader">Public scale</span><span role="columnheader">Executable state</span><span role="columnheader">Governed writes</span><span role="columnheader">Distinctive strength</span>
           </div>
           <div className="comparison-row faraday-row" role="row">
-            <span role="cell"><b>Faraday v0.4</b><em>this project</em></span><span role="cell">62 episodes<br/>31 families · 61 tools</span><span role="cell"><i className="yes">YES</i> dynamic events + time</span><span role="cell"><i className="yes">YES</i> approval + payload gates</span><span role="cell">Plant-to-ledger recovery with deterministic state, trace, and policy grading</span>
+            <span role="cell"><b>Faraday v0.5</b><em>this project</em></span><span role="cell">66 episodes<br/>32 families · 67 tools</span><span role="cell"><i className="yes">YES</i> dynamic events + time</span><span role="cell"><i className="yes">YES</i> approval + payload gates</span><span role="cell">Plant-to-ledger recovery plus a 15-exception, four-artifact frontier operating review</span>
+          </div>
+          <div className="comparison-row" role="row">
+            <span role="cell"><a href="https://arxiv.org/abs/2604.11304" target="_blank" rel="noreferrer"><b>BankerToolBench ↗</b></a><em>2026</em></span><span role="cell">100 work samples<br/>~150 rubric criteria / task</span><span role="cell"><i className="partial">FILES</i> office-document workspace</span><span role="cell"><i className="partial">RUBRIC</i> expert client-readiness</span><span role="cell">Long-form banking deliverables across spreadsheets, slides, documents, and PDFs</span>
           </div>
           <div className="comparison-row" role="row">
             <span role="cell"><a href="https://github.com/blobfishai/factory-agent-simulation" target="_blank" rel="noreferrer"><b>FactoryBench-100 ↗</b></a><em>v3.3.5</em></span><span role="cell">100 workflows<br/>20 families · 94 tools</span><span role="cell"><i className="yes">YES</i> isolated SQLite worlds</span><span role="cell"><i className="yes">YES</i> mutation + readback</span><span role="cell">Largest artifact-grounded ERP surface here: 2,800 files and 100 unique graphs</span>
@@ -199,11 +202,11 @@ export default function Home() {
         <div className="section-kicker">06 / QUALIFICATION</div>
         <div className="section-heading">
           <h2>The grader separates safe completion from shortcuts.</h2>
-          <p>Checked-in deterministic controls prove solvability and evaluator range across all 62 public episodes.</p>
+          <p>Checked-in deterministic controls prove solvability and evaluator range across all 66 public episodes.</p>
         </div>
         <div className="control-layout">
           <div className="control-chart">
-            {[["Reference oracle","100.00","100%","62 / 62 strict"],["Read-only shortcut","13.38","13.38%","0 / 62 strict"],["No-op","10.35","10.35%","0 / 62 strict"],["Unauthorized write","0.00","0%","62 critical failures"]].map(([label,score,width,note]) => (
+            {[["Reference oracle","100.00","100%","66 / 66 strict"],["Read-only shortcut","13.19","13.19%","0 / 66 strict"],["No-op","10.33","10.33%","0 / 66 strict"],["Unauthorized write","0.00","0%","66 critical failures"]].map(([label,score,width,note]) => (
               <div className="control-row" key={label}>
                 <div><b>{label}</b><em>{note}</em></div><div className="control-bar"><i style={{ width }} /></div><strong>{score}</strong>
               </div>
@@ -249,7 +252,7 @@ export default function Home() {
 
       <footer>
         <a className="wordmark footer-wordmark" href="#top"><span className="mark">F</span><span>FARADAY</span></a>
-        <p>Industrial Benchmark · v0.4 public development suite</p>
+        <p>Industrial Benchmark · v0.5 public development suite</p>
         <div><a href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark">GitHub ↗</a><a href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark/blob/main/BENCHMARK_CARD.md">Benchmark card ↗</a></div>
       </footer>
     </main>

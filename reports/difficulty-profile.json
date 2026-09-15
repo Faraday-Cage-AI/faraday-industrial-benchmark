@@ -1,0 +1,3156 @@
+{
+  "benchmark_version": "0.5.0",
+  "frontier_gates": {
+    "at_least_10_source_files_each": true,
+    "at_least_12_exception_resolutions_each": true,
+    "at_least_15_workflow_stages_each": true,
+    "at_least_400_criteria_each": true,
+    "at_least_4_artifacts_each": true,
+    "at_least_4_dynamic_source_revisions_each": true,
+    "oracle_strict_success_each": true
+  },
+  "interpretation": "Structural workload diagnostics and oracle solvability evidence; not a substitute for measured model results.",
+  "schema_version": "faraday-industrial-difficulty-profile/1",
+  "summary": {
+    "families": 32,
+    "frontier_gates_passed": true,
+    "frontier_tasks": 4,
+    "max_criteria_per_task": 419,
+    "max_oracle_tool_calls": 93,
+    "max_workflow_stages": 15,
+    "tasks": 66,
+    "total_criteria": 2648
+  },
+  "tasks": [
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 12,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "audit_order": 1,
+        "event_applied": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "records_cover": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 4,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "message",
+        "quality_result"
+      ],
+      "family": "quality_drift",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 17,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 6,
+      "task_id": "faraday-quality-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 12,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "audit_order": 1,
+        "event_applied": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "records_cover": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 4,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "message",
+        "quality_result"
+      ],
+      "family": "quality_drift",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 17,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 6,
+      "task_id": "faraday-quality-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "trace_tool": 5
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 6,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "alternate_capacity_lost",
+        "supplier_update"
+      ],
+      "family": "supplier_delay",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 17,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 17,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-supply-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "trace_tool": 5
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 6,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "alternate_capacity_lost",
+        "supplier_update"
+      ],
+      "family": "supplier_delay",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 17,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 17,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-supply-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 12,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "records_cover": 1,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 5,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "technician_message"
+      ],
+      "family": "machine_failure",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 17,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 5,
+      "task_id": "faraday-machine-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 12,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "records_cover": 1,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 5,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "technician_message"
+      ],
+      "family": "machine_failure",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 17,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 5,
+      "task_id": "faraday-machine-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 11,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "trace_order": 1,
+        "trace_tool": 5
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "customer_window_closed"
+      ],
+      "family": "rush_order",
+      "horizon_minutes": 50,
+      "max_tool_calls": 28,
+      "oracle": {
+        "elapsed_minutes": 15,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 17,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-rush-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 11,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "trace_order": 1,
+        "trace_tool": 5
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "customer_window_closed"
+      ],
+      "family": "rush_order",
+      "horizon_minutes": 50,
+      "max_tool_calls": 28,
+      "oracle": {
+        "elapsed_minutes": 15,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 17,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-rush-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_kind_applied": 1,
+        "executed_action": 1,
+        "inventory_reconciled": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "records_cover": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 3,
+        "governance": 2,
+        "investigation": 4,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [],
+      "family": "inventory_mismatch",
+      "horizon_minutes": 50,
+      "max_tool_calls": 28,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 16,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 0,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-inventory-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_kind_applied": 1,
+        "executed_action": 1,
+        "inventory_reconciled": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "records_cover": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 3,
+        "governance": 2,
+        "investigation": 4,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [],
+      "family": "inventory_mismatch",
+      "horizon_minutes": 50,
+      "max_tool_calls": 28,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 16,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 0,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-inventory-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 11,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "records_cover": 1,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 5,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_change_effective"
+      ],
+      "family": "engineering_change",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 24,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 16,
+        "tool_calls": 14
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 5,
+      "task_id": "faraday-change-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 11,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "records_cover": 1,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 5,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_change_effective"
+      ],
+      "family": "engineering_change",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 24,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 16,
+        "tool_calls": 14
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 5,
+      "task_id": "faraday-change-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 1,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "goods_receipt_posted"
+      ],
+      "family": "invoice_exception",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-ap-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 1,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "goods_receipt_posted"
+      ],
+      "family": "invoice_exception",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-ap-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 4,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "customer_payment_posted"
+      ],
+      "family": "customer_credit",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 20,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 19,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-ar-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 4,
+        "planning": 1
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "customer_payment_posted"
+      ],
+      "family": "customer_credit",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 20,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 19,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-ar-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "vendor_callback_verified"
+      ],
+      "family": "vendor_master_change",
+      "horizon_minutes": 50,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 17,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-vendor-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "vendor_callback_verified"
+      ],
+      "family": "vendor_master_change",
+      "horizon_minutes": 50,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 17,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-vendor-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "manager_timecard_confirmed"
+      ],
+      "family": "payroll_anomaly",
+      "horizon_minutes": 55,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 19,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 19,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-payroll-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "manager_timecard_confirmed"
+      ],
+      "family": "payroll_anomaly",
+      "horizon_minutes": 55,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 19,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 19,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-payroll-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "subledger_posted"
+      ],
+      "family": "period_close",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 22,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 19,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-close-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "subledger_posted"
+      ],
+      "family": "period_close",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 22,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 19,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-close-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 8,
+      "changing_source_files": 0,
+      "criteria": 9,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "asset_commissioned"
+      ],
+      "family": "capital_project",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 20,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 19,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-capex-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 8,
+      "changing_source_files": 0,
+      "criteria": 9,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "hard",
+      "event_types": [
+        "asset_commissioned"
+      ],
+      "family": "capital_project",
+      "horizon_minutes": 60,
+      "max_tool_calls": 30,
+      "oracle": {
+        "elapsed_minutes": 20,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 19,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-capex-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 2,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "carrier_disruption_confirmed",
+        "carrier_quote_received"
+      ],
+      "family": "transportation_disruption",
+      "horizon_minutes": 60,
+      "max_tool_calls": 32,
+      "oracle": {
+        "elapsed_minutes": 19,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 21,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-transport-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 9,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 2,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "carrier_disruption_confirmed",
+        "carrier_quote_received"
+      ],
+      "family": "transportation_disruption",
+      "horizon_minutes": 60,
+      "max_tool_calls": 32,
+      "oracle": {
+        "elapsed_minutes": 19,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 21,
+        "tool_calls": 11
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-transport-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "outbound_truck_update"
+      ],
+      "family": "warehouse_wave",
+      "horizon_minutes": 55,
+      "max_tool_calls": 32,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 20,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-warehouse-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "outbound_truck_update"
+      ],
+      "family": "warehouse_wave",
+      "horizon_minutes": 55,
+      "max_tool_calls": 32,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 20,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-warehouse-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "dc_inventory_verified"
+      ],
+      "family": "network_allocation",
+      "horizon_minutes": 60,
+      "max_tool_calls": 34,
+      "oracle": {
+        "elapsed_minutes": 19,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 21,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-network-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "dc_inventory_verified"
+      ],
+      "family": "network_allocation",
+      "horizon_minutes": 60,
+      "max_tool_calls": 34,
+      "oracle": {
+        "elapsed_minutes": 19,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 21,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-network-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 11,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "cold_chain_lab_result"
+      ],
+      "family": "cold_chain_recall",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 22,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 21,
+        "tool_calls": 15
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 5,
+      "task_id": "faraday-coldchain-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 11,
+      "changing_source_files": 0,
+      "criteria": 10,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 1,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 2,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "cold_chain_lab_result"
+      ],
+      "family": "cold_chain_recall",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 22,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 21,
+        "tool_calls": 15
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 5,
+      "task_id": "faraday-coldchain-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 3,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "trade_screening_result"
+      ],
+      "family": "trade_compliance",
+      "horizon_minutes": 60,
+      "max_tool_calls": 32,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 20,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-trade-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 10,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 1,
+        "records_cover": 2,
+        "trace_tool": 3
+      },
+      "criteria_by_dimension": {
+        "accuracy": 1,
+        "communication": 1,
+        "containment": 3,
+        "governance": 2,
+        "investigation": 4
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "trade_screening_result"
+      ],
+      "family": "trade_compliance",
+      "horizon_minutes": 60,
+      "max_tool_calls": 32,
+      "oracle": {
+        "elapsed_minutes": 18,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 20,
+        "tool_calls": 12
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-trade-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 11,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "demand_signal_confirmed"
+      ],
+      "family": "demand_supply_rebalance",
+      "horizon_minutes": 60,
+      "max_tool_calls": 34,
+      "oracle": {
+        "elapsed_minutes": 21,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 21,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 5,
+      "task_id": "faraday-demand-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 11,
+      "changing_source_files": 0,
+      "criteria": 11,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "notification_roles": 1,
+        "record_matches": 2,
+        "trace_tool": 4
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 1,
+        "containment": 1,
+        "governance": 2,
+        "investigation": 5
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "demand_signal_confirmed"
+      ],
+      "family": "demand_supply_rebalance",
+      "horizon_minutes": 60,
+      "max_tool_calls": 34,
+      "oracle": {
+        "elapsed_minutes": 21,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 21,
+        "tool_calls": 13
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 5,
+      "task_id": "faraday-demand-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "drawing_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-drawing-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "drawing_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-drawing-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "assembly_bom_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-bomreview-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "assembly_bom_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-bomreview-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "revision_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-revision-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "revision_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-revision-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "standards_specification_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-standards-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "standards_specification_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-standards-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "manufacturing_document_drafting",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-workinstruction-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "manufacturing_document_drafting",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-workinstruction-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "pid_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-pid-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "pid_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-pid-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "process_capability_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-capability-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "process_capability_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-capability-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "construction_document_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-construction-001",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 20,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "audit_order": 1,
+        "event_applied": 1,
+        "executed_action": 1,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 7,
+        "records_cover": 1,
+        "trace_tool": 6
+      },
+      "criteria_by_dimension": {
+        "accuracy": 6,
+        "communication": 2,
+        "containment": 2,
+        "governance": 3,
+        "investigation": 7
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_source_update"
+      ],
+      "family": "construction_document_review",
+      "horizon_minutes": 60,
+      "max_tool_calls": 36,
+      "oracle": {
+        "elapsed_minutes": 27,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 18,
+        "tool_calls": 18
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 1,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 4,
+      "task_id": "faraday-construction-002",
+      "workflow_depth": 5,
+      "workflow_stages": 5
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 19,
+      "changing_source_files": 0,
+      "criteria": 22,
+      "criteria_by_check": {
+        "approval_action": 2,
+        "audit_sequence": 1,
+        "event_applied": 2,
+        "executed_action": 2,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "record_matches": 2,
+        "records_cover": 2,
+        "trace_tool": 8
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 2,
+        "containment": 4,
+        "governance": 2,
+        "investigation": 10,
+        "orchestration": 1,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "quality_result",
+        "supplier_update"
+      ],
+      "family": "supplier_quality_recovery",
+      "horizon_minutes": 110,
+      "max_tool_calls": 48,
+      "oracle": {
+        "elapsed_minutes": 37,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 22,
+        "tool_calls": 26
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 7,
+      "task_id": "faraday-supplier-quality-001",
+      "workflow_depth": 7,
+      "workflow_stages": 7
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 19,
+      "changing_source_files": 0,
+      "criteria": 22,
+      "criteria_by_check": {
+        "approval_action": 2,
+        "audit_sequence": 1,
+        "event_applied": 2,
+        "executed_action": 2,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "record_matches": 2,
+        "records_cover": 2,
+        "trace_tool": 8
+      },
+      "criteria_by_dimension": {
+        "accuracy": 2,
+        "communication": 2,
+        "containment": 4,
+        "governance": 2,
+        "investigation": 10,
+        "orchestration": 1,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "quality_result",
+        "supplier_update"
+      ],
+      "family": "supplier_quality_recovery",
+      "horizon_minutes": 110,
+      "max_tool_calls": 48,
+      "oracle": {
+        "elapsed_minutes": 37,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 22,
+        "tool_calls": 26
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 7,
+      "task_id": "faraday-supplier-quality-002",
+      "workflow_depth": 7,
+      "workflow_stages": 7
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 18,
+      "criteria_by_check": {
+        "approval_action": 2,
+        "audit_sequence": 1,
+        "event_applied": 2,
+        "executed_action": 2,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 3,
+        "records_cover": 1,
+        "trace_tool": 5
+      },
+      "criteria_by_dimension": {
+        "accuracy": 3,
+        "communication": 2,
+        "containment": 3,
+        "governance": 2,
+        "investigation": 7,
+        "orchestration": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "cold_chain_lab_result",
+        "subledger_posted"
+      ],
+      "family": "recall_financial_response",
+      "horizon_minutes": 110,
+      "max_tool_calls": 48,
+      "oracle": {
+        "elapsed_minutes": 48,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 23,
+        "tool_calls": 25
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 7,
+      "task_id": "faraday-recall-finance-001",
+      "workflow_depth": 6,
+      "workflow_stages": 6
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 14,
+      "changing_source_files": 0,
+      "criteria": 18,
+      "criteria_by_check": {
+        "approval_action": 2,
+        "audit_sequence": 1,
+        "event_applied": 2,
+        "executed_action": 2,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "record_matches": 3,
+        "records_cover": 1,
+        "trace_tool": 5
+      },
+      "criteria_by_dimension": {
+        "accuracy": 3,
+        "communication": 2,
+        "containment": 3,
+        "governance": 2,
+        "investigation": 7,
+        "orchestration": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "cold_chain_lab_result",
+        "subledger_posted"
+      ],
+      "family": "recall_financial_response",
+      "horizon_minutes": 110,
+      "max_tool_calls": 48,
+      "oracle": {
+        "elapsed_minutes": 48,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 23,
+        "tool_calls": 25
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 7,
+      "task_id": "faraday-recall-finance-002",
+      "workflow_depth": 6,
+      "workflow_stages": 6
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 19,
+      "changing_source_files": 0,
+      "criteria": 31,
+      "criteria_by_check": {
+        "approval_action": 2,
+        "audit_order": 1,
+        "audit_sequence": 1,
+        "event_applied": 2,
+        "executed_action": 2,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "record_matches": 9,
+        "records_cover": 2,
+        "trace_tool": 9
+      },
+      "criteria_by_dimension": {
+        "accuracy": 8,
+        "communication": 2,
+        "containment": 4,
+        "governance": 4,
+        "investigation": 11,
+        "orchestration": 1,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_change_effective",
+        "engineering_source_update"
+      ],
+      "family": "engineering_production_release",
+      "horizon_minutes": 130,
+      "max_tool_calls": 56,
+      "oracle": {
+        "elapsed_minutes": 47,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 26,
+        "tool_calls": 30
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 7,
+      "task_id": "faraday-engineering-release-001",
+      "workflow_depth": 6,
+      "workflow_stages": 6
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 19,
+      "changing_source_files": 0,
+      "criteria": 31,
+      "criteria_by_check": {
+        "approval_action": 2,
+        "audit_order": 1,
+        "audit_sequence": 1,
+        "event_applied": 2,
+        "executed_action": 2,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "record_matches": 9,
+        "records_cover": 2,
+        "trace_tool": 9
+      },
+      "criteria_by_dimension": {
+        "accuracy": 8,
+        "communication": 2,
+        "containment": 4,
+        "governance": 4,
+        "investigation": 11,
+        "orchestration": 1,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "engineering_change_effective",
+        "engineering_source_update"
+      ],
+      "family": "engineering_production_release",
+      "horizon_minutes": 130,
+      "max_tool_calls": 56,
+      "oracle": {
+        "elapsed_minutes": 47,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 26,
+        "tool_calls": 30
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 2,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 7,
+      "task_id": "faraday-engineering-release-002",
+      "workflow_depth": 6,
+      "workflow_stages": 6
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 16,
+      "changing_source_files": 0,
+      "criteria": 24,
+      "criteria_by_check": {
+        "audit_sequence": 1,
+        "event_applied": 4,
+        "executed_action": 3,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "record_matches": 5,
+        "trace_tool": 8
+      },
+      "criteria_by_dimension": {
+        "accuracy": 5,
+        "communication": 2,
+        "containment": 3,
+        "investigation": 12,
+        "orchestration": 1,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "carrier_disruption_confirmed",
+        "carrier_quote_received",
+        "customer_payment_posted",
+        "outbound_truck_update"
+      ],
+      "family": "order_to_cash_disruption",
+      "horizon_minutes": 120,
+      "max_tool_calls": 52,
+      "oracle": {
+        "elapsed_minutes": 44,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 25,
+        "tool_calls": 27
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 4,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 6,
+      "task_id": "faraday-order-cash-001",
+      "workflow_depth": 7,
+      "workflow_stages": 7
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 16,
+      "changing_source_files": 0,
+      "criteria": 24,
+      "criteria_by_check": {
+        "audit_sequence": 1,
+        "event_applied": 4,
+        "executed_action": 3,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "record_matches": 5,
+        "trace_tool": 8
+      },
+      "criteria_by_dimension": {
+        "accuracy": 5,
+        "communication": 2,
+        "containment": 3,
+        "investigation": 12,
+        "orchestration": 1,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "carrier_disruption_confirmed",
+        "carrier_quote_received",
+        "customer_payment_posted",
+        "outbound_truck_update"
+      ],
+      "family": "order_to_cash_disruption",
+      "horizon_minutes": 120,
+      "max_tool_calls": 52,
+      "oracle": {
+        "elapsed_minutes": 44,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 25,
+        "tool_calls": 27
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 4,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 6,
+      "task_id": "faraday-order-cash-002",
+      "workflow_depth": 7,
+      "workflow_stages": 7
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 25,
+      "changing_source_files": 0,
+      "criteria": 44,
+      "criteria_by_check": {
+        "approval_action": 4,
+        "audit_sequence": 1,
+        "event_applied": 8,
+        "executed_action": 4,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "record_matches": 8,
+        "records_cover": 2,
+        "trace_tool": 14
+      },
+      "criteria_by_dimension": {
+        "accuracy": 7,
+        "communication": 2,
+        "containment": 7,
+        "governance": 4,
+        "investigation": 22,
+        "orchestration": 1,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "carrier_disruption_confirmed",
+        "carrier_quote_received",
+        "message",
+        "outbound_truck_update",
+        "production_completion_confirmed",
+        "quality_result",
+        "subledger_posted",
+        "technician_message"
+      ],
+      "family": "plant_fulfillment_recovery",
+      "horizon_minutes": 160,
+      "max_tool_calls": 68,
+      "oracle": {
+        "elapsed_minutes": 87,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 22,
+        "tool_calls": 46
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 8,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 10,
+      "task_id": "faraday-plant-recovery-001",
+      "workflow_depth": 11,
+      "workflow_stages": 13
+    },
+    {
+      "artifact_leaf_checks": 0,
+      "available_tools": 25,
+      "changing_source_files": 0,
+      "criteria": 44,
+      "criteria_by_check": {
+        "approval_action": 4,
+        "audit_sequence": 1,
+        "event_applied": 8,
+        "executed_action": 4,
+        "finish_evidence": 1,
+        "notification_roles": 1,
+        "proposal_actions": 1,
+        "record_matches": 8,
+        "records_cover": 2,
+        "trace_tool": 14
+      },
+      "criteria_by_dimension": {
+        "accuracy": 7,
+        "communication": 2,
+        "containment": 7,
+        "governance": 4,
+        "investigation": 22,
+        "orchestration": 1,
+        "planning": 1
+      },
+      "difficulty": "expert",
+      "event_types": [
+        "carrier_disruption_confirmed",
+        "carrier_quote_received",
+        "message",
+        "outbound_truck_update",
+        "production_completion_confirmed",
+        "quality_result",
+        "subledger_posted",
+        "technician_message"
+      ],
+      "family": "plant_fulfillment_recovery",
+      "horizon_minutes": 160,
+      "max_tool_calls": 68,
+      "oracle": {
+        "elapsed_minutes": 87,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 22,
+        "tool_calls": 46
+      },
+      "required_artifacts": 0,
+      "required_exception_resolutions": 0,
+      "scheduled_events": 8,
+      "source_files": 0,
+      "source_sections": 0,
+      "systems": 10,
+      "task_id": "faraday-plant-recovery-002",
+      "workflow_depth": 11,
+      "workflow_stages": 13
+    },
+    {
+      "artifact_leaf_checks": 337,
+      "available_tools": 13,
+      "changing_source_files": 4,
+      "criteria": 419,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "artifact_citation": 28,
+        "artifact_value": 337,
+        "audit_sequence": 1,
+        "case_file_read": 26,
+        "event_applied": 4,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "notification_roles": 1,
+        "operating_review_consistent": 1,
+        "operating_review_package": 1,
+        "record_matches": 15,
+        "trace_tool": 2
+      },
+      "criteria_by_dimension": {
+        "adaptation": 4,
+        "artifact_accuracy": 337,
+        "artifact_consistency": 2,
+        "communication": 2,
+        "exception_handling": 15,
+        "governance": 2,
+        "grounding": 28,
+        "investigation": 28,
+        "orchestration": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "integrated_operating_review",
+      "horizon_minutes": 180,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 132,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 7,
+        "tool_calls": 93
+      },
+      "required_artifacts": 4,
+      "required_exception_resolutions": 15,
+      "scheduled_events": 4,
+      "source_files": 11,
+      "source_sections": 26,
+      "systems": 8,
+      "task_id": "faraday-operating-review-001",
+      "workflow_depth": 11,
+      "workflow_stages": 15
+    },
+    {
+      "artifact_leaf_checks": 337,
+      "available_tools": 13,
+      "changing_source_files": 4,
+      "criteria": 419,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "artifact_citation": 28,
+        "artifact_value": 337,
+        "audit_sequence": 1,
+        "case_file_read": 26,
+        "event_applied": 4,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "notification_roles": 1,
+        "operating_review_consistent": 1,
+        "operating_review_package": 1,
+        "record_matches": 15,
+        "trace_tool": 2
+      },
+      "criteria_by_dimension": {
+        "adaptation": 4,
+        "artifact_accuracy": 337,
+        "artifact_consistency": 2,
+        "communication": 2,
+        "exception_handling": 15,
+        "governance": 2,
+        "grounding": 28,
+        "investigation": 28,
+        "orchestration": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "integrated_operating_review",
+      "horizon_minutes": 180,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 132,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 7,
+        "tool_calls": 93
+      },
+      "required_artifacts": 4,
+      "required_exception_resolutions": 15,
+      "scheduled_events": 4,
+      "source_files": 11,
+      "source_sections": 26,
+      "systems": 8,
+      "task_id": "faraday-operating-review-002",
+      "workflow_depth": 11,
+      "workflow_stages": 15
+    },
+    {
+      "artifact_leaf_checks": 335,
+      "available_tools": 13,
+      "changing_source_files": 4,
+      "criteria": 417,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "artifact_citation": 28,
+        "artifact_value": 335,
+        "audit_sequence": 1,
+        "case_file_read": 26,
+        "event_applied": 4,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "notification_roles": 1,
+        "operating_review_consistent": 1,
+        "operating_review_package": 1,
+        "record_matches": 15,
+        "trace_tool": 2
+      },
+      "criteria_by_dimension": {
+        "adaptation": 4,
+        "artifact_accuracy": 335,
+        "artifact_consistency": 2,
+        "communication": 2,
+        "exception_handling": 15,
+        "governance": 2,
+        "grounding": 28,
+        "investigation": 28,
+        "orchestration": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "integrated_operating_review",
+      "horizon_minutes": 180,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 132,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 7,
+        "tool_calls": 93
+      },
+      "required_artifacts": 4,
+      "required_exception_resolutions": 15,
+      "scheduled_events": 4,
+      "source_files": 11,
+      "source_sections": 26,
+      "systems": 8,
+      "task_id": "faraday-operating-review-003",
+      "workflow_depth": 11,
+      "workflow_stages": 15
+    },
+    {
+      "artifact_leaf_checks": 337,
+      "available_tools": 13,
+      "changing_source_files": 4,
+      "criteria": 419,
+      "criteria_by_check": {
+        "approval_action": 1,
+        "artifact_citation": 28,
+        "artifact_value": 337,
+        "audit_sequence": 1,
+        "case_file_read": 26,
+        "event_applied": 4,
+        "executed_action": 1,
+        "finish_record_evidence": 1,
+        "notification_roles": 1,
+        "operating_review_consistent": 1,
+        "operating_review_package": 1,
+        "record_matches": 15,
+        "trace_tool": 2
+      },
+      "criteria_by_dimension": {
+        "adaptation": 4,
+        "artifact_accuracy": 337,
+        "artifact_consistency": 2,
+        "communication": 2,
+        "exception_handling": 15,
+        "governance": 2,
+        "grounding": 28,
+        "investigation": 28,
+        "orchestration": 1
+      },
+      "difficulty": "frontier",
+      "event_types": [
+        "case_file_update"
+      ],
+      "family": "integrated_operating_review",
+      "horizon_minutes": 180,
+      "max_tool_calls": 100,
+      "oracle": {
+        "elapsed_minutes": 132,
+        "score": 100.0,
+        "strict_success": true,
+        "tool_call_headroom": 7,
+        "tool_calls": 93
+      },
+      "required_artifacts": 4,
+      "required_exception_resolutions": 15,
+      "scheduled_events": 4,
+      "source_files": 11,
+      "source_sections": 26,
+      "systems": 8,
+      "task_id": "faraday-operating-review-004",
+      "workflow_depth": 11,
+      "workflow_stages": 15
+    }
+  ]
+}

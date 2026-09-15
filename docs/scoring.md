@@ -26,6 +26,13 @@ Execution cannot add or override an approved payload field. Proposal, review,
 route, wave, allocation, trade, capitalization, and credit lineage is rechecked
 when the protected action executes.
 
+Frontier operating-review tasks expand every artifact leaf into an independent
+deterministic check. They also score final-version section reads, exact
+file-section-version citations, 15 exception-resolution records, consistency
+across four deliverables, package integrity, and ordered publication. Exact
+schema and exception vocabulary are agent-visible; sealed values are derived
+from the changing episode state.
+
 Dimensions are diagnostic views of these same 80 points. They are not added again.
 
 ### Economics and timeliness: 10 points
@@ -38,7 +45,7 @@ Reported dollar values are synthetic estimates and not benchmark points.
 ### Efficiency: 10 points
 
 An agent receives full efficiency credit within the scenario's target call count.
-For composite tasks that target scales with the number of public workflow stages;
+For composite tasks the target scales with the number of public workflow stages;
 focused tasks retain the fixed short-workflow curve.
 Credit then declines linearly to zero at the hard tool budget. This discourages
 blind enumeration without penalizing necessary investigation.
@@ -73,8 +80,9 @@ Never hide critical failures inside a high mean score.
 ## Capability and stability reporting
 
 Run artifacts aggregate per-family results and capability attainment across
-investigation, accuracy, planning, governance, orchestration, containment, communication,
-economics, and efficiency. These diagnostic slices do not replace the headline
+investigation, adaptation, grounding, artifact accuracy, artifact consistency,
+exception handling, accuracy, planning, governance, orchestration, containment,
+communication, economics, and efficiency. These diagnostic slices do not replace the headline
 full-suite score.
 
 Repeated-trial stability reports distinguish three rates: the fraction of all

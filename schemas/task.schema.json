@@ -51,13 +51,14 @@
         "recall_financial_response",
         "engineering_production_release",
         "order_to_cash_disruption",
-        "plant_fulfillment_recovery"
+        "plant_fulfillment_recovery",
+        "integrated_operating_review"
       ]
     },
     "title": {"type": "string", "minLength": 8},
     "prompt": {"type": "string", "minLength": 40},
     "seed": {"type": "integer", "minimum": 1},
-    "difficulty": {"type": "string", "enum": ["medium", "hard", "expert"]},
+    "difficulty": {"type": "string", "enum": ["medium", "hard", "expert", "frontier"]},
     "systems": {"type": "array", "minItems": 2, "items": {"type": "string"}, "uniqueItems": true},
     "max_tool_calls": {"type": "integer", "minimum": 10},
     "horizon_minutes": {"type": "integer", "minimum": 30},

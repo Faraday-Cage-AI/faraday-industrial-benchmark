@@ -1,6 +1,6 @@
 # Workflow coverage and complexity claim
 
-Faraday v0.4 is designed to test unusually broad and difficult industrial-agent
+Faraday v0.5 is designed to test unusually broad and difficult industrial-agent
 work, but the project does not claim that it is the world's most complex
 industrial benchmark. A superlative is a comparative research result, not a
 feature description. It should be used only after a dated audit of current
@@ -26,7 +26,7 @@ trajectories are independently authored and synthetic.
 | Process capability | `process_capability_review` | Compare material, envelope, and batch constraints before sourcing disposition |
 | Construction document review | `construction_document_review` | Reconcile submittal facts with contract addendum, coordination, and decision history |
 
-Every family contains two public episodes and supports unlimited deterministic
+Every engineering-document family contains two public episodes and supports deterministic
 held-out seeds. An episode requires the agent to:
 
 1. Discover and read three controlled documents plus a requirement graph and
@@ -57,31 +57,63 @@ wrong package is rejected without mutating the review state.
 | `engineering_production_release` | PLM, document control, QMS, BOM, MES, APS, CRM | Publish exact review → map and hold work → apply effectivity without rewriting started work |
 | `order_to_cash_disruption` | AR, CRM, OMS, WMS, TMS, carrier network | Release credit → release feasible wave → select and execute lowest-cost feasible reroute |
 | `plant_fulfillment_recovery` | Historian, QMS, CMMS, MES, APS, WMS, TMS, CRM, close | Converge quality and maintenance → reschedule before output deadline → release wave → reroute → post reserve |
+| `integrated_operating_review` | QMS, MES, SCM, WMS, CRM/ERP, TMS, GL, GRC, program office | Refresh four changing sources → resolve 15 exceptions → allocate shared constrained supply → reconcile reserve → build/read/package/publish four artifacts |
 
 Every task publishes a topological `workflow_stages` contract. The 52 focused
 episodes use a common five-stage lifecycle, while each composite task replaces
-that lifecycle with a workflow-specific graph of up to 13 stages. The plant
+that lifecycle with a workflow-specific graph of up to 15 stages. The plant
 recovery graph has two independent diagnostic roots, an explicit convergence
 gate, and four protected decisions. The sealed
 evaluator checks concrete events, records, audit ordering, and upstream
 executions. A downstream approval is denied until its named upstream protected
 action has actually succeeded.
 
-## Measured v0.4 surface
+## Frontier operating-review workload
 
-| Measure | Public v0.4 value |
+The four `integrated_operating_review` tasks model a professional work sample,
+not a short tool-use puzzle. Each episode requires 26 section reads across an
+11-file data room; four files receive independent authoritative revisions while
+the review is in progress. A plausible superseded file is present but prohibited
+as decision evidence.
+
+The agent must explicitly resolve 15 exceptions covering expanded quality scope,
+document precedence, transfer double-counting, constrained supply, revision
+qualification, supplier certification, contractual-floor revision, withdrawn
+lanes, late quotes, customs holds, shared capacity, insurance offsets, customer
+penalties, currency rounding, and approval dependencies. It then creates four
+deliverables: an integrated recovery model, control-action register, executive
+decision brief, and customer commitment schedule. The evaluator expands these
+deliverables into 335–337 field-level checks and separately checks citations,
+source versions, exception records, cross-artifact consistency, packaging,
+approval, publication, notifications, and audit order.
+
+Exact output vocabulary is not hidden. The program-office source publishes the
+full artifact schema, exception IDs, categories, affected-record selection rules,
+required dispositions, evidence-file requirements, and status vocabulary. The
+agent still has to find the final records, apply those rules, solve the allocation,
+calculate the reserve, and keep all repeated facts consistent.
+
+## Measured v0.5 surface
+
+| Measure | Public v0.5 value |
 |---|---:|
-| Executable episodes | 62 |
-| Workflow families | 31 |
+| Executable episodes | 66 |
+| Workflow families | 32 |
 | Engineering-document episodes / families | 16 / 8 |
-| Composite orchestration episodes / families | 10 / 5 |
-| Typed tools | 61 |
-| Protected actions | 22 |
-| Dynamic event types | 22 |
-| Scheduled event instances | 92 |
-| Total public workflow-stage nodes | 338 |
-| Workflow-specific composite stage nodes | 78 |
-| Deterministic task criteria | 974 |
+| Composite orchestration episodes / families | 14 / 6 |
+| Frontier professional-work-sample episodes / families | 4 / 1 |
+| Typed tools | 67 |
+| Protected actions | 23 |
+| Dynamic event types | 23 |
+| Scheduled event instances | 108 |
+| Total public workflow-stage nodes | 398 |
+| Workflow-specific composite stage nodes | 138 |
+| Deterministic task criteria | 2,648 |
+| Maximum criteria in one episode | 419 |
+| Maximum oracle tool calls in one episode | 93 |
+| Frontier source files / sections per episode | 11 / 26 |
+| Frontier required exception resolutions per episode | 15 |
+| Frontier structured deliverables per episode | 4 |
 | Source systems represented in an engineering-document episode | 3 controlled documents plus requirements and history |
 | Exact discrepancy contracts per engineering-document episode | 3 findings plus 1 correction draft and 1 package |
 
@@ -114,7 +146,7 @@ Anything stronger waits for the audit.
 
 ## Current boundary and roadmap
 
-The v0.4 track evaluates workflow reasoning over structured synthetic document
+The v0.5 track evaluates workflow reasoning over structured synthetic document
 facts. It does not yet prove visual interpretation of PDFs or scans, CAD geometry,
 STEP assemblies, P&ID symbols, tolerance-stack computation, or BIM/IFC spatial
 coordination. Those should become separate artifact-grounded perception and

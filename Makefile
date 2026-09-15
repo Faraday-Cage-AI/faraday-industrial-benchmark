@@ -1,4 +1,4 @@
-.PHONY: validate upstreams test qualify oracle replay export-platform release-check
+.PHONY: validate upstreams test difficulty qualify oracle replay export-platform release-check
 
 validate:
 	python3 -m faraday_industrial_benchmark validate
@@ -8,6 +8,9 @@ upstreams:
 
 test:
 	python3 -m pytest -q
+
+difficulty:
+	python3 -m faraday_industrial_benchmark difficulty --output reports/difficulty-profile.json
 
 qualify:
 	python3 -m faraday_industrial_benchmark qualify --output reports/qualification.json
@@ -21,4 +24,4 @@ replay:
 export-platform:
 	python3 -m faraday_industrial_benchmark export-harness --output runs/faraday-platform-harness.json
 
-release-check: validate upstreams test qualify oracle replay
+release-check: validate upstreams test difficulty qualify oracle replay export-platform

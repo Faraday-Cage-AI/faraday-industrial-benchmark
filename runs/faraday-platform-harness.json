@@ -4,7 +4,7 @@
     "id": "faraday-industrial-benchmark",
     "runner_protocol": "faraday-industrial-jsonl/1",
     "track": "faraday-native",
-    "version": "0.4.0"
+    "version": "0.5.0"
   },
   "cases": [
     {
@@ -26,7 +26,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "contain affected lots",
           "calibrate machine",
@@ -113,7 +113,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "contain affected lots",
           "calibrate machine",
@@ -202,7 +202,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "expedite purchase order",
           "reschedule production"
@@ -288,7 +288,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "expedite purchase order",
           "reschedule production"
@@ -372,7 +372,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "reroute work order",
           "inspect failed machine"
@@ -457,7 +457,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "reroute work order",
           "inspect failed machine"
@@ -541,7 +541,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "split shipment",
           "use approved overtime",
@@ -625,7 +625,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "split shipment",
           "use approved overtime",
@@ -708,7 +708,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "reconcile inventory",
           "protect material-dependent orders"
@@ -790,7 +790,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "reconcile inventory",
           "protect material-dependent orders"
@@ -873,7 +873,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "segregate revision A work",
           "apply revision B to unstarted work"
@@ -957,7 +957,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "segregate revision A work",
           "apply revision B to unstarted work"
@@ -1040,7 +1040,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "invoice_exception",
@@ -1119,7 +1119,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "invoice_exception",
@@ -1197,7 +1197,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "customer_credit",
@@ -1275,7 +1275,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "customer_credit",
@@ -1353,7 +1353,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "vendor_master_change",
@@ -1432,7 +1432,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "vendor_master_change",
@@ -1511,7 +1511,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "payroll_anomaly",
@@ -1589,7 +1589,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "payroll_anomaly",
@@ -1667,7 +1667,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "period_close",
@@ -1745,7 +1745,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "period_close",
@@ -1822,7 +1822,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "capital_project",
@@ -1900,7 +1900,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "hard",
         "family": "capital_project",
@@ -1979,7 +1979,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "transportation_disruption",
@@ -2057,7 +2057,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "transportation_disruption",
@@ -2136,7 +2136,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "warehouse_wave",
@@ -2215,7 +2215,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "warehouse_wave",
@@ -2294,7 +2294,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "network_allocation",
@@ -2373,7 +2373,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "network_allocation",
@@ -2453,7 +2453,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "cold_chain_recall",
@@ -2535,7 +2535,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "cold_chain_recall",
@@ -2616,7 +2616,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "trade_compliance",
@@ -2695,7 +2695,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "trade_compliance",
@@ -2775,7 +2775,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "demand_supply_rebalance",
@@ -2857,7 +2857,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "demand_supply_rebalance",
@@ -2942,7 +2942,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "drawing_review",
@@ -3025,7 +3025,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "drawing_review",
@@ -3108,7 +3108,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "assembly_bom_review",
@@ -3191,7 +3191,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "assembly_bom_review",
@@ -3274,7 +3274,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "revision_review",
@@ -3357,7 +3357,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "revision_review",
@@ -3440,7 +3440,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "standards_specification_review",
@@ -3523,7 +3523,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "standards_specification_review",
@@ -3606,7 +3606,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "manufacturing_document_drafting",
@@ -3689,7 +3689,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "manufacturing_document_drafting",
@@ -3772,7 +3772,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "pid_review",
@@ -3855,7 +3855,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "pid_review",
@@ -3938,7 +3938,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "process_capability_review",
@@ -4021,7 +4021,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "process_capability_review",
@@ -4104,7 +4104,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "construction_document_review",
@@ -4187,7 +4187,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "construction_document_review",
@@ -4275,7 +4275,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "contain supplier lots",
           "expedite conforming replacement",
@@ -4388,7 +4388,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "contain supplier lots",
           "expedite conforming replacement",
@@ -4495,7 +4495,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "recall_financial_response",
@@ -4592,7 +4592,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [],
         "difficulty": "expert",
         "family": "recall_financial_response",
@@ -4693,7 +4693,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "hold affected work orders",
           "publish controlled review",
@@ -4798,7 +4798,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "hold affected work orders",
           "publish controlled review",
@@ -4899,7 +4899,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "clear verified customer credit",
           "release constrained warehouse wave",
@@ -5009,7 +5009,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "clear verified customer credit",
           "release constrained warehouse wave",
@@ -5127,7 +5127,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "contain affected production",
           "reschedule to qualified line",
@@ -5299,7 +5299,7 @@
           "wait",
           "finish"
         ],
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "controlled_plan_actions": [
           "contain affected production",
           "reschedule to qualified line",
@@ -5438,6 +5438,678 @@
       },
       "name": "Orchestrate a convergent factory recovery under expiring windows",
       "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-operating-review-001",
+      "input": "A quality escape has disrupted constrained supply, recovery production, customer commitments, transportation, and the current-period reserve. Work from the versioned data room and its stated source-precedence, allocation, routing, and rounding policies. Sources will change during the review: re-inventory and re-read every authoritative section through the required cutoff, and never use the superseded draft as decision evidence. Produce all four required professional deliverables with exact file-section-version citations, make every repeated quantity and financial value reconcile across artifacts, package them, obtain publication approval, publish the controlled review, and notify every contracted function. A narrative summary without the structured artifacts is not completion.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "get_messages",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "create_exception_resolution",
+          "get_structured_artifact",
+          "create_operating_review_package",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.5.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "integrated_operating_review",
+        "horizon_minutes": 180,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "quality_leadership",
+          "supply_planning",
+          "production_control",
+          "distribution_planning",
+          "transportation",
+          "customer_operations",
+          "plant_controller",
+          "enterprise_risk"
+        ],
+        "systems": [
+          "ERP",
+          "MES",
+          "QMS",
+          "SCM",
+          "WMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "multi-artifact",
+          "data-room",
+          "dynamic-revisions",
+          "cross-artifact-consistency",
+          "optimization"
+        ],
+        "task_version": "0.5.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory_sources",
+            "objective": "Inventory the complete versioned cross-enterprise data room"
+          },
+          {
+            "depends_on": [
+              "inventory_sources"
+            ],
+            "id": "read_policy",
+            "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_quality",
+            "objective": "Reconcile containment scope and authoritative genealogy"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_supply",
+            "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_demand",
+            "objective": "Reconcile customer floors, priority, due dates, and penalty exposure"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_routes",
+            "objective": "Reconcile route status, timing, capacity, and freight"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_controls",
+            "objective": "Reconcile reserve methodology, ledger policy, and governance actions"
+          },
+          {
+            "depends_on": [
+              "reconcile_quality",
+              "reconcile_supply",
+              "reconcile_demand",
+              "reconcile_routes",
+              "reconcile_controls"
+            ],
+            "id": "refresh_revisions",
+            "objective": "Observe every scheduled revision and re-read all final source sections"
+          },
+          {
+            "depends_on": [
+              "refresh_revisions"
+            ],
+            "id": "solve_allocation",
+            "objective": "Solve the constrained priority allocation and feasible routing problem"
+          },
+          {
+            "depends_on": [
+              "solve_allocation"
+            ],
+            "id": "reconcile_financials",
+            "objective": "Compute the exact evidence-backed reserve and account treatment"
+          },
+          {
+            "depends_on": [
+              "reconcile_financials"
+            ],
+            "id": "build_deliverables",
+            "objective": "Create four complete version-cited professional artifacts"
+          },
+          {
+            "depends_on": [
+              "build_deliverables"
+            ],
+            "id": "quality_control",
+            "objective": "Read back every artifact and challenge field-level cross-artifact consistency"
+          },
+          {
+            "depends_on": [
+              "quality_control"
+            ],
+            "id": "package",
+            "objective": "Bundle exactly one artifact of each required type"
+          },
+          {
+            "depends_on": [
+              "package"
+            ],
+            "id": "authorize_publish",
+            "objective": "Obtain approval and publish the exact controlled package"
+          },
+          {
+            "depends_on": [
+              "authorize_publish"
+            ],
+            "id": "communicate_close",
+            "objective": "Notify all eight functions and close with record-level evidence"
+          }
+        ]
+      },
+      "name": "Publish a cross-enterprise operating review from a changing data room",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-operating-review-002",
+      "input": "Prepare the controlled integrated operating review for this cross-system disruption. The first values you see are not necessarily final: quality scope, supplier recovery, commercial priority, and carrier feasibility will be revised on independent clocks. Follow the data-room contract, use only final authoritative versions, solve minimum commitments before residual allocation, choose feasible routes under the published tie-breakers, and calculate the exact reserve. Deliver a recovery model, control-action register, executive brief, and customer commitment schedule whose shared facts reconcile exactly and whose citations identify source file, section, and version. Read back the artifacts, package all four, secure authorization, publish, and communicate the result to every required role.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "get_messages",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "create_exception_resolution",
+          "get_structured_artifact",
+          "create_operating_review_package",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.5.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "integrated_operating_review",
+        "horizon_minutes": 180,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "quality_leadership",
+          "supply_planning",
+          "production_control",
+          "distribution_planning",
+          "transportation",
+          "customer_operations",
+          "plant_controller",
+          "enterprise_risk"
+        ],
+        "systems": [
+          "ERP",
+          "MES",
+          "QMS",
+          "SCM",
+          "WMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "professional-work-sample",
+          "source-revisions",
+          "allocation",
+          "routing",
+          "reserve"
+        ],
+        "task_version": "0.5.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory_sources",
+            "objective": "Inventory the complete versioned cross-enterprise data room"
+          },
+          {
+            "depends_on": [
+              "inventory_sources"
+            ],
+            "id": "read_policy",
+            "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_quality",
+            "objective": "Reconcile containment scope and authoritative genealogy"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_supply",
+            "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_demand",
+            "objective": "Reconcile customer floors, priority, due dates, and penalty exposure"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_routes",
+            "objective": "Reconcile route status, timing, capacity, and freight"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_controls",
+            "objective": "Reconcile reserve methodology, ledger policy, and governance actions"
+          },
+          {
+            "depends_on": [
+              "reconcile_quality",
+              "reconcile_supply",
+              "reconcile_demand",
+              "reconcile_routes",
+              "reconcile_controls"
+            ],
+            "id": "refresh_revisions",
+            "objective": "Observe every scheduled revision and re-read all final source sections"
+          },
+          {
+            "depends_on": [
+              "refresh_revisions"
+            ],
+            "id": "solve_allocation",
+            "objective": "Solve the constrained priority allocation and feasible routing problem"
+          },
+          {
+            "depends_on": [
+              "solve_allocation"
+            ],
+            "id": "reconcile_financials",
+            "objective": "Compute the exact evidence-backed reserve and account treatment"
+          },
+          {
+            "depends_on": [
+              "reconcile_financials"
+            ],
+            "id": "build_deliverables",
+            "objective": "Create four complete version-cited professional artifacts"
+          },
+          {
+            "depends_on": [
+              "build_deliverables"
+            ],
+            "id": "quality_control",
+            "objective": "Read back every artifact and challenge field-level cross-artifact consistency"
+          },
+          {
+            "depends_on": [
+              "quality_control"
+            ],
+            "id": "package",
+            "objective": "Bundle exactly one artifact of each required type"
+          },
+          {
+            "depends_on": [
+              "package"
+            ],
+            "id": "authorize_publish",
+            "objective": "Obtain approval and publish the exact controlled package"
+          },
+          {
+            "depends_on": [
+              "authorize_publish"
+            ],
+            "id": "communicate_close",
+            "objective": "Notify all eight functions and close with record-level evidence"
+          }
+        ]
+      },
+      "name": "Reconcile a revised recovery plan across operations and finance",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-operating-review-003",
+      "input": "Act as the operating-review owner for a quality-driven fulfillment portfolio disruption. Evidence arrives asynchronously across QMS, SCM, CRM, and TMS while static source files define genealogy, inventory, production, accounting, and governance. Read the full room, detect and incorporate all later revisions through the cutoff, and exclude superseded evidence. Execute the stated deterministic allocation and route-selection policies; then make the quality scope, supply use, order commitments, customer shortfalls, freight, penalties, and reserve agree at leaf level across four structured deliverables. Cite exact source versions, inspect each artifact before packaging, request approval only when the evidence gates are satisfied, publish without payload drift, and notify all contracted stakeholders.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "get_messages",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "create_exception_resolution",
+          "get_structured_artifact",
+          "create_operating_review_package",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.5.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "integrated_operating_review",
+        "horizon_minutes": 180,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "quality_leadership",
+          "supply_planning",
+          "production_control",
+          "distribution_planning",
+          "transportation",
+          "customer_operations",
+          "plant_controller",
+          "enterprise_risk"
+        ],
+        "systems": [
+          "ERP",
+          "MES",
+          "QMS",
+          "SCM",
+          "WMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "late-evidence",
+          "portfolio-fulfillment",
+          "version-grounding",
+          "multi-deliverable",
+          "governance"
+        ],
+        "task_version": "0.5.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory_sources",
+            "objective": "Inventory the complete versioned cross-enterprise data room"
+          },
+          {
+            "depends_on": [
+              "inventory_sources"
+            ],
+            "id": "read_policy",
+            "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_quality",
+            "objective": "Reconcile containment scope and authoritative genealogy"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_supply",
+            "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_demand",
+            "objective": "Reconcile customer floors, priority, due dates, and penalty exposure"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_routes",
+            "objective": "Reconcile route status, timing, capacity, and freight"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_controls",
+            "objective": "Reconcile reserve methodology, ledger policy, and governance actions"
+          },
+          {
+            "depends_on": [
+              "reconcile_quality",
+              "reconcile_supply",
+              "reconcile_demand",
+              "reconcile_routes",
+              "reconcile_controls"
+            ],
+            "id": "refresh_revisions",
+            "objective": "Observe every scheduled revision and re-read all final source sections"
+          },
+          {
+            "depends_on": [
+              "refresh_revisions"
+            ],
+            "id": "solve_allocation",
+            "objective": "Solve the constrained priority allocation and feasible routing problem"
+          },
+          {
+            "depends_on": [
+              "solve_allocation"
+            ],
+            "id": "reconcile_financials",
+            "objective": "Compute the exact evidence-backed reserve and account treatment"
+          },
+          {
+            "depends_on": [
+              "reconcile_financials"
+            ],
+            "id": "build_deliverables",
+            "objective": "Create four complete version-cited professional artifacts"
+          },
+          {
+            "depends_on": [
+              "build_deliverables"
+            ],
+            "id": "quality_control",
+            "objective": "Read back every artifact and challenge field-level cross-artifact consistency"
+          },
+          {
+            "depends_on": [
+              "quality_control"
+            ],
+            "id": "package",
+            "objective": "Bundle exactly one artifact of each required type"
+          },
+          {
+            "depends_on": [
+              "package"
+            ],
+            "id": "authorize_publish",
+            "objective": "Obtain approval and publish the exact controlled package"
+          },
+          {
+            "depends_on": [
+              "authorize_publish"
+            ],
+            "id": "communicate_close",
+            "objective": "Notify all eight functions and close with record-level evidence"
+          }
+        ]
+      },
+      "name": "Resolve a constrained fulfillment portfolio under late evidence",
+      "source": "faraday-industrial-benchmark"
+    },
+    {
+      "expected": "Complete the executable workflow with correct state, exact evidence, safe side effects, required authorization, and an auditable finish.",
+      "id": "faraday-operating-review-004",
+      "input": "Own the auditable recovery package for an enterprise incident spanning plant quality, supply, production, distribution, customer obligations, transportation, finance, and risk. The data room contains both provisional revisions and a plausible superseded plan. Establish the authoritative cutoff, re-read every final section, apply the documented optimization rules exactly, and show the resulting decision in four distinct but reconciled artifacts. Field-level correctness, exact citations, action dependencies, reserve math, and package integrity are all independently graded. Do not request publication while a final source version is unread or an artifact is missing. After read-back quality control, publish the approved package, communicate to all eight functions, and finish with the complete evidence chain.",
+      "metadata": {
+        "available_tools": [
+          "get_incident",
+          "get_messages",
+          "list_case_files",
+          "read_case_file",
+          "create_structured_artifact",
+          "create_exception_resolution",
+          "get_structured_artifact",
+          "create_operating_review_package",
+          "request_approval",
+          "execute_action",
+          "notify",
+          "wait",
+          "finish"
+        ],
+        "benchmark_version": "0.5.0",
+        "controlled_plan_actions": [],
+        "difficulty": "frontier",
+        "family": "integrated_operating_review",
+        "horizon_minutes": 180,
+        "max_tool_calls": 100,
+        "required_notification_roles": [
+          "quality_leadership",
+          "supply_planning",
+          "production_control",
+          "distribution_planning",
+          "transportation",
+          "customer_operations",
+          "plant_controller",
+          "enterprise_risk"
+        ],
+        "systems": [
+          "ERP",
+          "MES",
+          "QMS",
+          "SCM",
+          "WMS",
+          "TMS",
+          "CRM",
+          "GRC"
+        ],
+        "tags": [
+          "frontier",
+          "auditability",
+          "distractor-source",
+          "professional-artifacts",
+          "control-lineage",
+          "cross-system"
+        ],
+        "task_version": "0.5.0",
+        "workflow_stages": [
+          {
+            "depends_on": [],
+            "id": "inventory_sources",
+            "objective": "Inventory the complete versioned cross-enterprise data room"
+          },
+          {
+            "depends_on": [
+              "inventory_sources"
+            ],
+            "id": "read_policy",
+            "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_quality",
+            "objective": "Reconcile containment scope and authoritative genealogy"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_supply",
+            "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_demand",
+            "objective": "Reconcile customer floors, priority, due dates, and penalty exposure"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_routes",
+            "objective": "Reconcile route status, timing, capacity, and freight"
+          },
+          {
+            "depends_on": [
+              "read_policy"
+            ],
+            "id": "reconcile_controls",
+            "objective": "Reconcile reserve methodology, ledger policy, and governance actions"
+          },
+          {
+            "depends_on": [
+              "reconcile_quality",
+              "reconcile_supply",
+              "reconcile_demand",
+              "reconcile_routes",
+              "reconcile_controls"
+            ],
+            "id": "refresh_revisions",
+            "objective": "Observe every scheduled revision and re-read all final source sections"
+          },
+          {
+            "depends_on": [
+              "refresh_revisions"
+            ],
+            "id": "solve_allocation",
+            "objective": "Solve the constrained priority allocation and feasible routing problem"
+          },
+          {
+            "depends_on": [
+              "solve_allocation"
+            ],
+            "id": "reconcile_financials",
+            "objective": "Compute the exact evidence-backed reserve and account treatment"
+          },
+          {
+            "depends_on": [
+              "reconcile_financials"
+            ],
+            "id": "build_deliverables",
+            "objective": "Create four complete version-cited professional artifacts"
+          },
+          {
+            "depends_on": [
+              "build_deliverables"
+            ],
+            "id": "quality_control",
+            "objective": "Read back every artifact and challenge field-level cross-artifact consistency"
+          },
+          {
+            "depends_on": [
+              "quality_control"
+            ],
+            "id": "package",
+            "objective": "Bundle exactly one artifact of each required type"
+          },
+          {
+            "depends_on": [
+              "package"
+            ],
+            "id": "authorize_publish",
+            "objective": "Obtain approval and publish the exact controlled package"
+          },
+          {
+            "depends_on": [
+              "authorize_publish"
+            ],
+            "id": "communicate_close",
+            "objective": "Notify all eight functions and close with record-level evidence"
+          }
+        ]
+      },
+      "name": "Build an auditable enterprise recovery package through source churn",
+      "source": "faraday-industrial-benchmark"
     }
   ],
   "config": {
@@ -5458,6 +6130,11 @@
       "orchestration",
       "containment",
       "communication",
+      "adaptation",
+      "grounding",
+      "artifact_accuracy",
+      "artifact_consistency",
+      "exception_handling",
       "economics",
       "efficiency"
     ],
@@ -5481,6 +6158,7 @@
       "drawing_review",
       "engineering_change",
       "engineering_production_release",
+      "integrated_operating_review",
       "inventory_mismatch",
       "invoice_exception",
       "machine_failure",
@@ -5504,10 +6182,10 @@
       "vendor_master_change",
       "warehouse_wave"
     ],
-    "family_count": 31,
-    "public_contract_sha256": "3c01f15ba247dfe24e974a34b2a2af79953328f4f7d48a9357b51e0c7c4b8498",
-    "public_tool_contract_sha256": "b5d25d07f6d6864c91303fcb1c6077a897ac5407d9f30ed1dbec1b2b6bc87e86",
-    "task_count": 62,
+    "family_count": 32,
+    "public_contract_sha256": "5fe163eb3cd3e122b85389ec94f405272d60300d4c3296210fd4b7230620b050",
+    "public_tool_contract_sha256": "4bd8b3bdf1b165f7c3bed28ce8b32a06d7935d22b40e61e7ff4379c7ff913f92",
+    "task_count": 66,
     "task_ids": [
       "faraday-quality-001",
       "faraday-quality-002",
@@ -5570,8 +6248,12 @@
       "faraday-order-cash-001",
       "faraday-order-cash-002",
       "faraday-plant-recovery-001",
-      "faraday-plant-recovery-002"
+      "faraday-plant-recovery-002",
+      "faraday-operating-review-001",
+      "faraday-operating-review-002",
+      "faraday-operating-review-003",
+      "faraday-operating-review-004"
     ],
-    "tool_count": 61
+    "tool_count": 67
   }
 }

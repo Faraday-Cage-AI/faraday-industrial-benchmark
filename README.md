@@ -1,6 +1,6 @@
 # Faraday Industrial Benchmark
 
-**[Explore the public benchmark website](https://faraday-industrial-benchmark.faraday-2894.chatgpt.site)** · [Benchmark card](BENCHMARK_CARD.md) · [JSONL protocol](docs/jsonl-protocol.md)
+**[Explore the public benchmark website](https://www.faradaycompute.com/faraday-industrial-benchmark)** · [Benchmark card](BENCHMARK_CARD.md) · [JSONL protocol](docs/jsonl-protocol.md)
 
 Faraday Industrial Benchmark is an executable public benchmark for AI agents
 operating across the industrial enterprise: ERP finance and back office, supply
@@ -30,7 +30,7 @@ that merely sounds plausible.
   incomplete recalls, unsupported export releases, and incorrect demand plans.
 - **Provider neutral:** agents connect through a tiny JSONL protocol; no model SDK
   or hosted eval product is required.
-- **Workflow-scoped contracts:** the catalog contains 61 typed tools, while each
+- **Workflow-scoped contracts:** the catalog contains 67 typed tools, while each
   episode exposes only its relevant cross-system surface plus its exact public
   controlled-action and notification-role vocabulary. Every task also publishes
   a topological lifecycle DAG; composite tasks replace the common five-stage
@@ -39,8 +39,8 @@ that merely sounds plausible.
   hash. Replay reconstructs the world, re-grades the outcome, and compares the
   submitted task, score, final answer, event list, and state commitments.
 
-The v0.4 public development suite contains 62 episodes across 31 families. It
-exposes 61 typed tools, 22 protected actions, 22 event types, and 974 deterministic
+The v0.5 public development suite contains 66 episodes across 32 families. It
+exposes 67 typed tools, 23 protected actions, 23 event types, and 2,648 deterministic
 task criteria:
 
 | Area | Families | What the agent must prove |
@@ -54,6 +54,7 @@ task criteria:
 | Global trade | Trade compliance | Screening, license, document, hold, and release controls |
 | Integrated planning | Demand–supply rebalance | Confirmed signals, supply-bucket reconciliation, and exact residual expedite |
 | Enterprise orchestration | Supplier-quality recovery, recall-to-finance, engineering-to-production, order-to-cash disruption, plant-to-customer recovery | Public workflow DAGs, parallel diagnostic roots, convergence gates, expiring windows, up to four dependent approvals, and cross-domain state consistency |
+| Frontier operating review | Integrated operating review | 11-file changing data room, 15 real-world exception resolutions, constrained portfolio allocation, exact reserve math, four mutually consistent deliverables, version citations, read-back, package approval, and controlled publication |
 | Procure-to-pay | Invoice exception, vendor-master change | Three-way match, payment holds, fraud-resistant master-data control |
 | Order-to-cash | Customer credit | Cash application, exposure recalculation, controlled order release |
 | HCM and payroll | Payroll anomaly | Least-privilege access, manager evidence, exact pay correction |
@@ -79,6 +80,7 @@ python3 -m pip install -e '.[dev]'
 faraday-bench validate
 faraday-bench list
 faraday-bench qualify
+faraday-bench difficulty --output reports/difficulty-profile.json
 faraday-bench run --agent oracle --output runs/oracle.json --html runs/oracle.html
 faraday-bench replay runs/oracle.json
 faraday-bench stability --agent oracle --attempts 5 --output runs/stability.json
@@ -104,6 +106,28 @@ controlled-plan labels and canonical notification roles used by the executable
 contract. The agent emits `tool_call` messages, receives `tool_result` messages,
 and ends with `final`. See [the protocol](docs/jsonl-protocol.md).
 
+### Reproducible OpenAI model runs
+
+Install the optional adapter and provide a newly issued key through the process
+environment (never commit or paste it into a prompt):
+
+```bash
+python3 -m pip install -e '.[openai]'
+export OPENAI_API_KEY='your-new-key'
+
+faraday-bench run \
+  --task faraday-operating-review-001 \
+  --agent-command "python examples/openai_responses_agent.py --model gpt-5.5 --reasoning-effort xhigh" \
+  --agent-name gpt-5.5-xhigh \
+  --timeout 1800 \
+  --output runs/gpt-5.5-frontier.json
+```
+
+Use the same task manifest, adapter commit, prompt, reasoning effort, attempt
+policy, and output-token budget for comparisons. `gpt-5.4` can be substituted as
+the model identifier. No GPT-5.4 or GPT-5.5 score is claimed in this repository
+until the checked-in run passes exact replay.
+
 ## Use the Faraday-Platform optimization harness
 
 Export a seed-free harness contract containing the public suite identity,
@@ -123,8 +147,8 @@ fresh exact replay before promotion.
 A replay-verified `gpt-4o` Faraday-Platform **v0.3** public-development run is
 stored at `runs/faraday-platform-gpt4o-optimized-full.json`: 90.78 mean, 29/52
 strict, zero critical failures, and 52/52 exact replay. It is a historical
-optimization baseline, not a held-out result and not a v0.4 score. The expanded
-v0.4 contract must be run separately.
+optimization baseline, not a held-out result and not a v0.5 score. The expanded
+v0.5 contract must be run separately.
 
 ## Score
 
@@ -152,10 +176,10 @@ The checked-in qualification controls establish evaluator range:
 
 | Control | Mean | Strict | Critical |
 |---|---:|---:|---:|
-| Reference oracle | 100.00 | 62/62 | 0 |
-| No-op | 10.35 | 0/62 | 0 |
-| Read-only shortcut | 13.38 | 0/62 | 0 |
-| Unauthorized write | 0.00 | 0/62 | 62 |
+| Reference oracle | 100.00 | 66/66 | 0 |
+| No-op | 10.33 | 0/66 | 0 |
+| Read-only shortcut | 13.19 | 0/66 | 0 |
+| Unauthorized write | 0.00 | 0/66 | 66 |
 
 The oracle proves solvability; it is not an eligible model submission.
 
@@ -163,7 +187,7 @@ The oracle proves solvability; it is not an eligible model submission.
 
 Faraday now ships two deliberately separate kinds of evaluation artifact:
 
-- **`faraday-native`** is the official 62-episode executable suite described
+- **`faraday-native`** is the official 66-episode executable suite described
   above. Its code, scenarios, data, graders, and oracle trajectories were
   independently authored for Faraday.
 - **Upstream compatibility tracks** are exact public snapshots of

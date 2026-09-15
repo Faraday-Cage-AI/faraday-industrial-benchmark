@@ -34,6 +34,79 @@ def _details_subset(actual: Json, expected: Json) -> bool:
     return all(actual.get(key) == value for key, value in expected.items())
 
 
+def _nested_value(value: Any, path: list[str | int]) -> tuple[bool, Any]:
+    current = value
+    for part in path:
+        if isinstance(part, int):
+            if not isinstance(current, list) or not 0 <= part < len(current):
+                return False, None
+            current = current[part]
+        else:
+            if not isinstance(current, dict) or part not in current:
+                return False, None
+            current = current[part]
+    return True, current
+
+
+def _artifacts_by_type(world: IndustrialWorld) -> dict[str, list[Json]]:
+    grouped: dict[str, list[Json]] = defaultdict(list)
+    for artifact in world.state.get("structured_artifacts", {}).values():
+        grouped[str(artifact.get("artifact_type"))].append(artifact)
+    return grouped
+
+
+def _latest_packaged_artifacts_by_type(world: IndustrialWorld) -> dict[str, list[Json]]:
+    """Return the single artifact set the agent most recently chose to package.
+
+    Frontier artifact criteria must describe one mutually reviewable submission.
+    Without this boundary, an agent could scatter unrelated correct leaves across
+    many drafts and receive artifact credit for a package that never existed.
+    """
+
+    packages = list(world.state.get("operating_review_packages", {}).values())
+    if not packages:
+        return {}
+    package = max(
+        packages,
+        key=lambda row: (int(row.get("created_minute", -1)), str(row.get("id", ""))),
+    )
+    grouped: dict[str, list[Json]] = defaultdict(list)
+    for artifact_id in package.get("artifact_ids", []):
+        artifact = world.state.get("structured_artifacts", {}).get(artifact_id)
+        if artifact is not None:
+            grouped[str(artifact.get("artifact_type"))].append(artifact)
+    return grouped
+
+
+def _known_record_ids(world: IndustrialWorld) -> set[str]:
+    """Collect identifiers for records that actually exist in the final state."""
+
+    identifiers: set[str] = set()
+
+    def visit(value: Any) -> None:
+        if isinstance(value, dict):
+            record_id = value.get("id")
+            if isinstance(record_id, str) and record_id:
+                identifiers.add(record_id)
+            for key, child in value.items():
+                if isinstance(child, (dict, list)):
+                    if isinstance(child, dict):
+                        identifiers.update(
+                            str(item)
+                            for item, record in child.items()
+                            if isinstance(record, dict) and record.get("id") == item
+                        )
+                    visit(child)
+                elif key.endswith("_id") and isinstance(child, str) and child:
+                    identifiers.add(child)
+        elif isinstance(value, list):
+            for child in value:
+                visit(child)
+
+    visit(world.state)
+    return identifiers
+
+
 def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
     check = contract["check"]
     if check == "trace_tool":
@@ -90,10 +163,91 @@ def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
     if check == "event_kind_applied":
         passed = contract["kind"] in world.applied_event_kinds
         return passed, "observed" if passed else "event type not reached"
+    if check == "case_file_read":
+        matches = [
+            row
+            for row in world.state["audit_log"]
+            if row["action"] == "case_file_read"
+            and row.get("details", {}).get("file_id") == contract["file_id"]
+            and row.get("details", {}).get("section_id") == contract["section_id"]
+            and row.get("details", {}).get("version") == contract["version"]
+        ]
+        return bool(matches), f"{len(matches)} matching versioned section read(s)"
+    if check == "artifact_value":
+        matches = []
+        grouped = (
+            _latest_packaged_artifacts_by_type(world)
+            if world.task.family == "integrated_operating_review"
+            else _artifacts_by_type(world)
+        )
+        for artifact in grouped.get(contract["artifact_type"], []):
+            found, actual = _nested_value(artifact.get("content", {}), contract["path"])
+            if found and actual == contract["expected"]:
+                matches.append(artifact)
+        return bool(matches), f"{len(matches)} artifact(s) contain the exact leaf value"
+    if check == "artifact_citation":
+        expected = contract["citation"]
+        grouped = (
+            _latest_packaged_artifacts_by_type(world)
+            if world.task.family == "integrated_operating_review"
+            else _artifacts_by_type(world)
+        )
+        matches = [
+            artifact
+            for artifact in grouped.get(contract["artifact_type"], [])
+            if any(citation == expected for citation in artifact.get("citations", []))
+        ]
+        return bool(matches), f"{len(matches)} artifact(s) contain the exact citation"
+    if check == "operating_review_consistent":
+        truth = world.state.get("operating_review_truth", {}).get(contract["case_id"])
+        if not truth:
+            return False, "sealed operating-review truth missing"
+        grouped = _latest_packaged_artifacts_by_type(world)
+        exact_types: list[str] = []
+        for artifact_type in truth["required_types"]:
+            exact = [
+                artifact
+                for artifact in grouped.get(artifact_type, [])
+                if artifact.get("content") == truth["artifact_contents"][artifact_type]
+            ]
+            if not exact:
+                return False, f"no exact {artifact_type} artifact"
+            exact_types.append(artifact_type)
+        return True, f"exact, mutually consistent artifacts: {sorted(exact_types)}"
+    if check == "operating_review_package":
+        truth = world.state.get("operating_review_truth", {}).get(contract["case_id"])
+        if not truth:
+            return False, "sealed operating-review truth missing"
+        matches = []
+        for package in world.state.get("operating_review_packages", {}).values():
+            artifacts = [
+                world.state["structured_artifacts"].get(artifact_id)
+                for artifact_id in package.get("artifact_ids", [])
+            ]
+            artifact_types = sorted(
+                artifact["artifact_type"]
+                for artifact in artifacts
+                if artifact is not None
+            )
+            if (
+                package.get("case_id") == contract["case_id"]
+                and package.get("status") == contract["status"]
+                and len(artifacts) == len(truth["required_types"])
+                and all(artifact is not None for artifact in artifacts)
+                and artifact_types == sorted(truth["required_types"])
+            ):
+                matches.append(package)
+        return bool(matches), f"{len(matches)} complete published package(s)"
     if check == "finish_evidence":
         count = len(world.final_answer.get("evidence", []))
         minimum = int(contract["minimum"])
         return count >= minimum, f"{count}/{minimum} evidence IDs"
+    if check == "finish_record_evidence":
+        evidence = world.final_answer.get("evidence", [])
+        known = _known_record_ids(world)
+        valid = {item for item in evidence if isinstance(item, str) and item in known}
+        minimum = int(contract["minimum"])
+        return len(valid) >= minimum, f"{len(valid)}/{minimum} valid record IDs"
     if check == "inventory_reconciled":
         expected_quantity = world.state.get("cycle_count_truth", {}).get(
             f"{contract['sku']}@{contract['location']}"
@@ -184,7 +338,16 @@ def _economic_score(world: IndustrialWorld) -> tuple[float, float]:
 
 def _efficiency_score(world: IndustrialWorld) -> float:
     calls = len(world.trace)
-    if world.task.workflow_stages:
+    if world.task.difficulty == "frontier" and world.task.workflow_stages:
+        # Frontier professional-work-sample tasks deliberately require broad
+        # source review, explicit exception dispositions, artifact read-back,
+        # and controlled publication. Scale the efficient trajectory to that
+        # published workflow rather than penalizing mandatory evidence calls.
+        target = min(
+            world.task.max_tool_calls - 4,
+            4 + 6 * len(world.task.workflow_stages),
+        )
+    elif world.task.workflow_stages:
         # Composite workflows legitimately require more evidence and protected
         # transitions. Scale the no-penalty target with the published DAG while
         # retaining a meaningful tail before the hard task budget.

@@ -2,7 +2,7 @@
 
 ## Intended use
 
-Faraday Industrial Benchmark v0.4 evaluates tool-using AI systems on synthetic
+Faraday Industrial Benchmark v0.5 evaluates tool-using AI systems on synthetic
 industrial-enterprise workflows. It supports development comparisons, regression
 testing, agent design, cost/quality experiments, and post-training reward signals.
 
@@ -15,7 +15,7 @@ episode ends at `finish`, at the tool budget, or at the time horizon.
 
 ## Coverage
 
-- Thirty-one scenario families and 62 public development episodes
+- Thirty-two scenario families and 66 public development episodes
 - Transportation, carrier routing, warehouse waves, multi-DC allocation, cold-chain recall, global trade, and integrated demand–supply planning
 - ERP AP, AR, GL, vendor master, payroll, project accounting, and fixed assets
 - MES, QMS, WMS, APS, PLM, CMMS, historian, procurement, supplier, and customer-service concepts
@@ -25,9 +25,13 @@ episode ends at `finish`, at the tool budget, or at the time horizon.
   P&ID, process-capability, and construction-document review workflows
 - Exact requirement-to-finding traceability, correction drafts, document holds,
   evidence-gated approval, and protected publication to human engineering review
-- Five composite enterprise families with public dependency graphs, parallel
+- Six composite enterprise families with public dependency graphs, parallel
   diagnostic branches, convergence and deadline gates, up to four chained
   approvals, and cross-domain end-state checks
+- Four frontier operating-review episodes with an 11-file versioned data room,
+  four independently authored source revisions, 15 evidence-backed exception
+  dispositions, four mutually consistent artifacts, exact version citations,
+  artifact read-back, and controlled package publication
 
 ## Exclusions
 
@@ -35,7 +39,7 @@ The benchmark does not claim exhaustive ERP coverage and does not test tax filin
 benefits administration, statutory consolidation, warehouse slotting, street-level
 vehicle routing, PLC programming, direct machine control, robotics,
 cybersecurity, worker surveillance, autonomous safety shutdowns, or compliance
-certification. The v0.4 engineering-document track operates on structured
+certification. The v0.5 engineering-document and operating-review tracks operate on structured
 synthetic document facts; it does not yet evaluate native CAD geometry, STEP,
 BIM/IFC, scanned drawings, OCR, or pixel-level symbol detection. It is not
 representative of every plant, geography, industry,
@@ -69,13 +73,15 @@ only the best attempt.
 
 - Economic amounts are synthetic and useful for relative scoring, not ROI claims.
 - The reference agent uses a family-specific playbook and is not a learned baseline.
-- Sixty-two public episodes are a development suite, not statistically sufficient for
+- Sixty-six public episodes are a development suite, not statistically sufficient for
   a high-stakes model ranking.
 - Procedural variants do not yet vary the dependency topology within a family.
 - Deterministic checks can miss semantically poor explanations that achieve correct state.
 - Simulation cannot establish safety in a real plant.
 - No "most complex" or "best" claim is established without a dated comparative
   audit using the published dimensions in `docs/workflow-coverage.md`.
+- Structural workload gates and oracle solvability do not establish that any
+  named frontier model struggles; that requires a dated, reproducible model run.
 
 ## Recommended reporting
 

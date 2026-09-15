@@ -15,6 +15,10 @@
 | Reading hidden state or grader files | Separate agent and evaluator containers; mount no benchmark source into the agent |
 | Memorizing public tasks | Use private procedural seeds, rotate rounds, publish seed commitments |
 | Grader gaming through keywords | Grade state and typed trace records; never score final prose by keyword stuffing |
+| Hidden exact-match vocabulary | Publish artifact schemas, exception IDs, selection rules, dispositions, role vocabularies, and action contracts; keep only instance values and evaluator checks sealed |
+| Passing with stale mixed-version evidence | Audit every section read with its version, require final-version reads before approval, and check exact citation triples at publication |
+| Fragmenting partial artifacts to farm points | Require one exact artifact of every type in the published package and revalidate whole-artifact consistency after approval |
+| Ignoring operational exceptions | Require a complete exact exception register plus separately persisted resolution records before publication |
 | Forging tool results | Tools execute in the evaluator service; submissions cannot submit their own traces |
 | Guessing a tool hidden from the workflow | Enforce family tool scopes at execution and replay, record the rejection, and treat an out-of-scope protected write as a critical boundary attack |
 | Changing an action after approval | Bind action, target, and payload to the approval; reject conflicting or additional execution fields as a critical failure |

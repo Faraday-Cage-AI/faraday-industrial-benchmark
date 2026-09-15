@@ -1,16 +1,17 @@
 # Benchmark tracks
 
-Faraday v0.4 defines one official full-suite score and four diagnostic tracks.
-Track scores are useful for analysis, but only the 62-task full-suite result is
-eligible to be described as a complete Faraday v0.4 result.
+Faraday v0.5 defines one official full-suite score and five diagnostic tracks.
+Track scores are useful for analysis, but only the 66-task full-suite result is
+eligible to be described as a complete Faraday v0.5 result.
 
 | Track | Families | Public tasks | Focus |
 |---|---:|---:|---|
-| Full Industrial Enterprise | 31 | 62 | Official aggregate across all domains |
+| Full Industrial Enterprise | 32 | 66 | Official aggregate across all domains |
 | Core Operations and ERP | 12 | 24 | Manufacturing, maintenance, engineering, finance, HCM, and asset accounting |
 | Advanced Supply and Distribution | 6 | 12 | Transportation, warehousing, allocation, recall, trade, and integrated planning |
 | Engineering Document Workflows | 8 | 16 | Drawing, BOM, revision, specification, drafting, P&ID, capability, and construction review |
-| Composite Enterprise Orchestration | 5 | 10 | Supplier-quality, recall-to-finance, engineering-to-production, credit-to-fulfillment, and plant-to-customer-to-finance chains |
+| Composite Enterprise Orchestration | 6 | 14 | Supplier-quality, recall-to-finance, engineering-to-production, credit-to-fulfillment, plant-to-customer-to-finance, and integrated operating-review chains |
+| Frontier Professional Work Sample | 1 | 4 | Changing 11-file data room, 15 exception resolutions, portfolio optimization, four reconciled artifacts, and controlled publication |
 
 ## Complexity dimensions
 
@@ -31,6 +32,12 @@ prompts. Episodes combine several of the following:
 - cross-document fact reconciliation with requirement-to-source traceability;
 - exact finding-set and correction-draft contracts that remain binding even
   after a human approval is granted.
+- plausible superseded, late, withdrawn, unqualified, provisional, and
+  compliance-held records that must be dispositioned explicitly;
+- field-level grading over four mutually consistent deliverables, with exact
+  file-section-version citations and read-back before packaging;
+- 15 separately persisted real-world exception resolutions spanning quality,
+  inventory, production, supplier, customer, transport, finance, and governance.
 
 ## Reporting rules
 

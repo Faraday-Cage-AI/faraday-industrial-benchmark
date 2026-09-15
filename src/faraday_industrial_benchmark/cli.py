@@ -9,6 +9,7 @@ import sys
 from typing import Any
 
 from .agents import BUILTIN_AGENTS
+from .difficulty import build_difficulty_profile, save_difficulty_profile
 from .generation import generate_tasks, generation_commitment, save_task_manifest
 from .models import IncidentTask, load_tasks
 from .platform_harness import build_platform_harness_contract, save_platform_harness_contract
@@ -178,7 +179,7 @@ def cmd_qualify(args: argparse.Namespace) -> int:
     passed = all(qualifications.values())
     report = {
         "schema_version": "faraday-industrial-qualification/1",
-        "benchmark_version": "0.4.0",
+        "benchmark_version": "0.5.0",
         "passed": passed,
         "checks": qualifications,
         "controls": {name: run["summary"] for name, run in runs.items()},
@@ -240,6 +241,23 @@ def cmd_export_harness(args: argparse.Namespace) -> int:
     )
     print(f"Public contract SHA-256: {contract['suite']['public_contract_sha256']}")
     return 0
+
+
+def cmd_difficulty(args: argparse.Namespace) -> int:
+    tasks = _load_selected(args.tasks, args.task)
+    errors = _validate(tasks)
+    if errors:
+        raise ValueError("; ".join(errors))
+    profile = build_difficulty_profile(tasks)
+    output = save_difficulty_profile(profile, args.output)
+    summary = profile["summary"]
+    print(
+        f"Profiled {summary['tasks']} tasks across {summary['families']} families; "
+        f"criteria={summary['total_criteria']} frontier={summary['frontier_tasks']} "
+        f"gates={'PASS' if summary['frontier_gates_passed'] else 'FAIL'}"
+    )
+    print(f"Difficulty JSON: {output}")
+    return 0 if summary["frontier_gates_passed"] else 1
 
 
 def cmd_upstreams(args: argparse.Namespace) -> int:
@@ -336,7 +354,7 @@ def build_parser() -> argparse.ArgumentParser:
     generate_parser.add_argument("--per-family", type=int, default=20)
     generate_parser.add_argument("--root-seed", type=int, required=True)
     generate_parser.add_argument("--split", default="heldout")
-    generate_parser.add_argument("--version", default="0.4.0")
+    generate_parser.add_argument("--version", default="0.5.0")
     generate_parser.add_argument("--output", default="data/generated/tasks.json")
     generate_parser.set_defaults(func=cmd_generate)
 
@@ -347,6 +365,18 @@ def build_parser() -> argparse.ArgumentParser:
     harness_parser.add_argument("--task", action="append", help="task ID; repeat to select multiple")
     harness_parser.add_argument("--output", default="runs/faraday-platform-harness.json")
     harness_parser.set_defaults(func=cmd_export_harness)
+
+    difficulty_parser = subparsers.add_parser(
+        "difficulty", help="measure structural workload and oracle solvability"
+    )
+    difficulty_parser.add_argument("--tasks", default=str(DEFAULT_TASKS))
+    difficulty_parser.add_argument(
+        "--task", action="append", help="task ID; repeat to select multiple"
+    )
+    difficulty_parser.add_argument(
+        "--output", default="reports/difficulty-profile.json"
+    )
+    difficulty_parser.set_defaults(func=cmd_difficulty)
 
     upstreams_parser = subparsers.add_parser(
         "upstreams", help="list or verify pinned third-party benchmark tracks"

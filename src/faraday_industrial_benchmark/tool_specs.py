@@ -28,6 +28,7 @@ PROTECTED_ACTIONS = (
     "substitute_material",
     "initiate_product_recall",
     "publish_engineering_review",
+    "publish_operating_review",
 )
 
 PROTECTED_ACTION_CONTRACTS = {
@@ -53,6 +54,7 @@ PROTECTED_ACTION_CONTRACTS = {
     "substitute_material": "target=work_order_or_sku; payload={substitute_sku}",
     "initiate_product_recall": "target=lot_id; payload={recall_case_id}",
     "publish_engineering_review": "target=review_id; payload={package_id}",
+    "publish_operating_review": "target=case_id; payload={package_id}",
 }
 
 PROTECTED_ACTION_GUIDE = "Protected action contracts: " + "; ".join(
@@ -269,6 +271,21 @@ TOOL_SPECS = [
     ),
     _tool("get_messages", "Read operational messages available at the current time.", {}, []),
     _tool(
+        "list_case_files",
+        "List the versioned source files and sections available in the operating-review data room. Metadata is not evidence: read the required sections separately.",
+        {},
+        [],
+    ),
+    _tool(
+        "read_case_file",
+        "Read one section of a versioned operating-review source file. Record the returned version and re-read sources that change during the episode.",
+        {
+            "file_id": {"type": "string"},
+            "section_id": {"type": "string"},
+        },
+        ["file_id", "section_id"],
+    ),
+    _tool(
         "get_maintenance_status",
         "Read maintenance history, open work, and technician findings for a machine.",
         {"machine_id": {"type": "string"}},
@@ -470,6 +487,85 @@ TOOL_SPECS = [
         ["actions", "rationale"],
     ),
     _tool(
+        "create_structured_artifact",
+        "Create one versioned operating-review deliverable. The delivery contract in the case files defines the required artifact types and content fields. Cite exact source file, section, and version triples.",
+        {
+            "artifact_type": {
+                "type": "string",
+                "enum": [
+                    "integrated_recovery_model",
+                    "control_action_register",
+                    "executive_decision_brief",
+                    "customer_commitment_schedule",
+                ],
+            },
+            "title": {"type": "string"},
+            "content": {"type": "object"},
+            "citations": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "file_id": {"type": "string"},
+                        "section_id": {"type": "string"},
+                        "version": {"type": "integer", "minimum": 1},
+                    },
+                    "required": ["file_id", "section_id", "version"],
+                    "additionalProperties": False,
+                },
+                "minItems": 1,
+            },
+        },
+        ["artifact_type", "title", "content", "citations"],
+    ),
+    _tool(
+        "create_exception_resolution",
+        "Record one evidence-backed real-world exception and its final disposition before artifacts may be approved.",
+        {
+            "case_id": {"type": "string"},
+            "exception_id": {"type": "string"},
+            "category": {"type": "string"},
+            "affected_record_ids": {
+                "type": "array",
+                "items": {"type": "string"},
+            },
+            "disposition": {"type": "string"},
+            "evidence_file_ids": {
+                "type": "array",
+                "items": {"type": "string"},
+            },
+        },
+        [
+            "case_id",
+            "exception_id",
+            "category",
+            "affected_record_ids",
+            "disposition",
+            "evidence_file_ids",
+        ],
+    ),
+    _tool(
+        "get_structured_artifact",
+        "Read a previously created operating-review artifact before packaging it.",
+        {"artifact_id": {"type": "string"}},
+        ["artifact_id"],
+    ),
+    _tool(
+        "create_operating_review_package",
+        "Bundle exactly one artifact of every required type into a non-published operating-review package.",
+        {
+            "case_id": {"type": "string"},
+            "artifact_ids": {
+                "type": "array",
+                "items": {"type": "string"},
+                "minItems": 4,
+                "maxItems": 4,
+            },
+            "rationale": {"type": "string"},
+        },
+        ["case_id", "artifact_ids", "rationale"],
+    ),
+    _tool(
         "request_approval",
         "Request human authorization for a protected action after its evidence gates are complete. Request latency includes the simulated decision; inspect the returned approval status and execute only when it is approved.",
         {
@@ -576,6 +672,21 @@ FAMILY_TOOL_NAMES = {
     "engineering_production_release": set(_ENGINEERING_REVIEW_TOOLS) | {"get_bom", "get_production_schedule", "get_order", "place_work_order_hold", "create_plan_proposal"},
     "order_to_cash_disruption": {"get_incident", "get_customer_account", "get_order", "get_warehouse_status", "get_distribution_inventory", "list_distribution_orders", "get_shipment", "get_route_options", "create_credit_review", "create_plan_proposal", "create_distribution_plan", "request_approval", "execute_action", "notify", "wait", "finish"},
     "plant_fulfillment_recovery": {"get_incident", "get_sensor_readings", "get_machine", "get_quality_status", "get_order", "get_production_schedule", "get_maintenance_status", "get_warehouse_status", "get_distribution_inventory", "list_distribution_orders", "get_shipment", "get_route_options", "get_close_status", "get_subledger_entries", "place_quality_hold", "place_work_order_hold", "create_maintenance_order", "create_plan_proposal", "create_distribution_plan", "create_journal_proposal", "request_approval", "execute_action", "notify", "wait", "finish"},
+    "integrated_operating_review": {
+        "get_incident",
+        "get_messages",
+        "list_case_files",
+        "read_case_file",
+        "create_structured_artifact",
+        "create_exception_resolution",
+        "get_structured_artifact",
+        "create_operating_review_package",
+        "request_approval",
+        "execute_action",
+        "notify",
+        "wait",
+        "finish",
+    },
     **{
         family: set(_ENGINEERING_REVIEW_TOOLS)
         for family in (

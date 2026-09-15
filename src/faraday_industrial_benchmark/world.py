@@ -369,6 +369,24 @@ class IndustrialWorld:
                     "body": payload["message"],
                 }
             )
+        elif kind == "case_file_update":
+            case_file = self.state["case_files"].get(payload["file_id"])
+            if not case_file:
+                raise ValueError(f"case file not found for event: {payload['file_id']}")
+            case_file.update(
+                version=payload["version"],
+                status=payload["status"],
+                sections=deepcopy(payload["sections"]),
+            )
+            self.state["messages"].append(
+                {
+                    "id": event.id,
+                    "minute": event.at_minute,
+                    "sender": payload["sender"],
+                    "subject": f"Authoritative source revision: {case_file['title']}",
+                    "body": payload["message"],
+                }
+            )
         else:
             raise ValueError(f"unsupported event kind: {kind}")
         self.applied_events.append(event.id)
@@ -394,7 +412,7 @@ class IndustrialWorld:
         if name == "wait":
             pass
         elif name != "finish":
-            latency = READ_LATENCY_MINUTES if name.startswith(("get_", "list_", "query_", "trace_")) else WRITE_LATENCY_MINUTES
+            latency = READ_LATENCY_MINUTES if name.startswith(("get_", "list_", "query_", "trace_", "read_")) else WRITE_LATENCY_MINUTES
             self.advance(latency)
         if name == "request_approval" and result.get("ok"):
             approval_id = result.get("approval", {}).get("id")
@@ -639,6 +657,54 @@ class IndustrialWorld:
 
     def _tool_get_messages(self) -> Json:
         return {"ok": True, "messages": deepcopy(self.state["messages"])}
+
+    def _tool_list_case_files(self) -> Json:
+        files = []
+        for case_file in sorted(
+            self.state["case_files"].values(), key=lambda row: row["id"]
+        ):
+            files.append(
+                {
+                    "id": case_file["id"],
+                    "title": case_file["title"],
+                    "system": case_file["system"],
+                    "version": case_file["version"],
+                    "status": case_file["status"],
+                    "section_ids": sorted(case_file["sections"]),
+                }
+            )
+        self._audit("case_file_inventory_read", file_count=len(files))
+        return {"ok": True, "files": files}
+
+    def _tool_read_case_file(self, file_id: str, section_id: str) -> Json:
+        case_file = self.state["case_files"].get(file_id)
+        if not case_file:
+            return {"ok": False, "error": "case_file_not_found"}
+        if section_id not in case_file["sections"]:
+            return {
+                "ok": False,
+                "error": "case_file_section_not_found",
+                "available_section_ids": sorted(case_file["sections"]),
+            }
+        self._audit(
+            "case_file_read",
+            file_id=file_id,
+            section_id=section_id,
+            version=case_file["version"],
+            status=case_file["status"],
+        )
+        return {
+            "ok": True,
+            "file": {
+                "id": case_file["id"],
+                "title": case_file["title"],
+                "system": case_file["system"],
+                "version": case_file["version"],
+                "status": case_file["status"],
+                "section_id": section_id,
+                "content": deepcopy(case_file["sections"][section_id]),
+            },
+        }
 
     def _tool_get_maintenance_status(self, machine_id: str) -> Json:
         rows = [
@@ -1040,6 +1106,136 @@ class IndustrialWorld:
         self._audit("plan_proposed", proposal_id=proposal_id)
         return {"ok": True, "proposal": deepcopy(record)}
 
+    def _tool_create_structured_artifact(
+        self,
+        artifact_type: str,
+        title: str,
+        content: Json,
+        citations: list[Json],
+    ) -> Json:
+        required_types = {
+            required_type
+            for truth in self.state["operating_review_truth"].values()
+            for required_type in truth.get("required_types", [])
+        }
+        if artifact_type not in required_types:
+            return {"ok": False, "error": "unsupported_artifact_type"}
+        if not title.strip() or not isinstance(content, dict) or not content:
+            return {"ok": False, "error": "artifact_title_and_content_required"}
+        if not isinstance(citations, list) or not citations:
+            return {"ok": False, "error": "artifact_citations_required"}
+        normalized_citations: list[Json] = []
+        for citation in citations:
+            if not isinstance(citation, dict):
+                return {"ok": False, "error": "invalid_artifact_citation"}
+            file_id = citation.get("file_id")
+            section_id = citation.get("section_id")
+            version = citation.get("version")
+            case_file = self.state["case_files"].get(file_id)
+            if (
+                not case_file
+                or section_id not in case_file["sections"]
+                or not isinstance(version, int)
+            ):
+                return {"ok": False, "error": "invalid_artifact_citation"}
+            normalized_citations.append(
+                {
+                    "file_id": file_id,
+                    "section_id": section_id,
+                    "version": version,
+                }
+            )
+        artifact_id = self._next_id("ART")
+        record = {
+            "id": artifact_id,
+            "artifact_type": artifact_type,
+            "title": title,
+            "content": deepcopy(content),
+            "citations": deepcopy(normalized_citations),
+            "version": 1,
+            "status": "draft",
+            "created_minute": self.minute,
+        }
+        self.state["structured_artifacts"][artifact_id] = record
+        self._audit(
+            "structured_artifact_created",
+            artifact_id=artifact_id,
+            artifact_type=artifact_type,
+        )
+        return {"ok": True, "artifact": deepcopy(record)}
+
+    def _tool_create_exception_resolution(
+        self,
+        case_id: str,
+        exception_id: str,
+        category: str,
+        affected_record_ids: list[str],
+        disposition: str,
+        evidence_file_ids: list[str],
+    ) -> Json:
+        truth = self.state["operating_review_truth"].get(case_id)
+        if not truth:
+            return {"ok": False, "error": "operating_review_case_not_found"}
+        if not exception_id.strip() or not category.strip() or not disposition.strip():
+            return {"ok": False, "error": "exception_resolution_fields_required"}
+        if not affected_record_ids or not evidence_file_ids:
+            return {"ok": False, "error": "exception_resolution_evidence_required"}
+        resolution_id = self._next_id("EXR")
+        record = {
+            "id": resolution_id,
+            "case_id": case_id,
+            "exception_id": exception_id,
+            "category": category,
+            "affected_record_ids": list(affected_record_ids),
+            "disposition": disposition,
+            "evidence_file_ids": list(evidence_file_ids),
+            "status": "resolved",
+            "created_minute": self.minute,
+        }
+        self.state["exception_resolutions"][resolution_id] = record
+        self._audit(
+            "exception_resolution_created",
+            resolution_id=resolution_id,
+            case_id=case_id,
+            exception_id=exception_id,
+        )
+        return {"ok": True, "exception_resolution": deepcopy(record)}
+
+    def _tool_get_structured_artifact(self, artifact_id: str) -> Json:
+        artifact = self.state["structured_artifacts"].get(artifact_id)
+        return {"ok": bool(artifact), "artifact": deepcopy(artifact)}
+
+    def _tool_create_operating_review_package(
+        self, case_id: str, artifact_ids: list[str], rationale: str
+    ) -> Json:
+        truth = self.state["operating_review_truth"].get(case_id)
+        if not truth or not rationale.strip():
+            return {"ok": False, "error": "invalid_operating_review_package"}
+        if len(artifact_ids) != 4 or len(set(artifact_ids)) != 4:
+            return {"ok": False, "error": "exactly_four_unique_artifacts_required"}
+        artifacts = [self.state["structured_artifacts"].get(item) for item in artifact_ids]
+        if any(artifact is None for artifact in artifacts):
+            return {"ok": False, "error": "structured_artifact_not_found"}
+        actual_types = sorted(artifact["artifact_type"] for artifact in artifacts if artifact)
+        if actual_types != sorted(truth["required_types"]):
+            return {"ok": False, "error": "required_artifact_types_mismatch"}
+        package_id = self._next_id("ORP")
+        record = {
+            "id": package_id,
+            "case_id": case_id,
+            "artifact_ids": list(artifact_ids),
+            "rationale": rationale,
+            "status": "proposed",
+            "created_minute": self.minute,
+        }
+        self.state["operating_review_packages"][package_id] = record
+        self._audit(
+            "operating_review_package_created",
+            package_id=package_id,
+            case_id=case_id,
+        )
+        return {"ok": True, "operating_review_package": deepcopy(record)}
+
     def _approval_evidence(self, action: str) -> tuple[bool, list[str]]:
         """Check scenario-specific evidence gates without exposing sealed criteria."""
 
@@ -1068,6 +1264,14 @@ class IndustrialWorld:
                 missing.append(
                     f"executed_action:{required['action']}@{required['target']}"
                 )
+        for file_id, version in requirements.get("file_versions", {}).items():
+            if not any(
+                row["action"] == "case_file_read"
+                and row.get("details", {}).get("file_id") == file_id
+                and row.get("details", {}).get("version") == version
+                for row in self.state["audit_log"]
+            ):
+                missing.append(f"file_version:{file_id}@{version}")
         return not missing, missing
 
     def _tool_request_approval(
@@ -1553,6 +1757,78 @@ class IndustrialWorld:
             package["status"] = "published"
             review["status"] = "published_for_engineering_review"
             review["published_package_id"] = package["id"]
+        elif action == "publish_operating_review":
+            incident = self.state["incident"]
+            truth = self.state["operating_review_truth"].get(target)
+            package = self.state["operating_review_packages"].get(
+                payload.get("package_id")
+            )
+            if (
+                incident.get("id") != target
+                or not truth
+                or not package
+                or package.get("case_id") != target
+            ):
+                return False, "operating_review_package_required"
+            artifacts = [
+                self.state["structured_artifacts"].get(artifact_id)
+                for artifact_id in package.get("artifact_ids", [])
+            ]
+            if any(artifact is None for artifact in artifacts):
+                return False, "operating_review_artifact_missing"
+            by_type = {
+                artifact["artifact_type"]: artifact
+                for artifact in artifacts
+                if artifact is not None
+            }
+            if sorted(by_type) != sorted(truth["required_types"]):
+                return False, "operating_review_artifact_types_mismatch"
+            actual_exceptions = [
+                {
+                    key: row[key]
+                    for key in (
+                        "case_id",
+                        "exception_id",
+                        "category",
+                        "affected_record_ids",
+                        "disposition",
+                        "evidence_file_ids",
+                        "status",
+                    )
+                }
+                for row in self.state["exception_resolutions"].values()
+                if row.get("case_id") == target
+            ]
+            actual_exceptions.sort(key=lambda row: row["exception_id"])
+            if actual_exceptions != truth.get("exception_rows", []):
+                return False, "operating_review_exception_register_mismatch"
+            for artifact_type in truth["required_types"]:
+                artifact = by_type[artifact_type]
+                if artifact.get("content") != truth["artifact_contents"][artifact_type]:
+                    return False, f"operating_review_content_mismatch:{artifact_type}"
+                actual_citations = {
+                    (
+                        citation.get("file_id"),
+                        citation.get("section_id"),
+                        citation.get("version"),
+                    )
+                    for citation in artifact.get("citations", [])
+                }
+                required_citations = {
+                    (
+                        citation["file_id"],
+                        citation["section_id"],
+                        citation["version"],
+                    )
+                    for citation in truth["artifact_citations"][artifact_type]
+                }
+                if not required_citations.issubset(actual_citations):
+                    return False, f"operating_review_citations_incomplete:{artifact_type}"
+                artifact["status"] = "published"
+            package["status"] = "published"
+            package["published_minute"] = self.minute
+            incident["status"] = "published"
+            incident["published_package_id"] = package["id"]
         else:
             return False, "unsupported_action"
         return True, "ok"

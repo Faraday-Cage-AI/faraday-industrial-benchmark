@@ -30,6 +30,14 @@ revealing scenario values or grader checks. Scenario policy can require a
 specific upstream protected action to have executed before a downstream approval
 becomes evidence-ready.
 
+Frontier operating-review tasks add a versioned data-room layer. File inventory
+returns metadata only; evidence is created by reading individual sections at a
+specific version. Scheduled revisions replace authoritative section contents and
+are recorded independently in the audit log. The agent persists each exception
+resolution, creates four structured artifacts, reads them back, and packages them.
+Publication revalidates the exact exception set, artifact fields, citations, and
+package membership after approval rather than treating approval as correctness.
+
 For a hosted leaderboard, run the world and grader in a separate container or
 service account from the submitted agent. The local in-process interface exists
 for development convenience and is not a security boundary against hostile code.
