@@ -19,7 +19,7 @@ export default function Home() {
           <a href="#compare">Compare</a>
           <a href="#run">Run it</a>
         </div>
-        <a className="button button-small" href="https://github.com/DattaKaligotla/faraday-industrial-benchmark">View on GitHub</a>
+        <a className="button button-small" href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark">View on GitHub</a>
       </nav>
 
       <section className="hero" id="top">
@@ -219,8 +219,8 @@ export default function Home() {
           <h2>Provider-neutral by design.</h2>
           <p>Connect any agent that reads and writes newline-delimited JSON. No hosted eval product—and no model key for the qualification controls.</p>
           <div className="run-links">
-            <a href="https://github.com/DattaKaligotla/faraday-industrial-benchmark" className="button button-acid">Open the repository <span>↗</span></a>
-            <a href="https://github.com/DattaKaligotla/faraday-industrial-benchmark/blob/main/docs/jsonl-protocol.md" className="run-text-link">Read the JSONL protocol →</a>
+            <a href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark" className="button button-acid">Open the repository <span>↗</span></a>
+            <a href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark/blob/main/docs/jsonl-protocol.md" className="run-text-link">Read the JSONL protocol →</a>
           </div>
         </div>
         <div className="code-window" aria-label="Quickstart commands">
@@ -244,13 +244,13 @@ export default function Home() {
       <section className="final-cta">
         <p>THE FACTORY FLOOR IS ONLY HALF THE TEST.</p>
         <h2>Benchmark the whole industrial enterprise.</h2>
-        <a className="button button-large" href="https://github.com/DattaKaligotla/faraday-industrial-benchmark">Run Faraday <span>↗</span></a>
+        <a className="button button-large" href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark">Run Faraday <span>↗</span></a>
       </section>
 
       <footer>
         <a className="wordmark footer-wordmark" href="#top"><span className="mark">F</span><span>FARADAY</span></a>
         <p>Industrial Benchmark · v0.4 public development suite</p>
-        <div><a href="https://github.com/DattaKaligotla/faraday-industrial-benchmark">GitHub ↗</a><a href="https://github.com/DattaKaligotla/faraday-industrial-benchmark/blob/main/BENCHMARK_CARD.md">Benchmark card ↗</a></div>
+        <div><a href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark">GitHub ↗</a><a href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark/blob/main/BENCHMARK_CARD.md">Benchmark card ↗</a></div>
       </footer>
     </main>
   );
