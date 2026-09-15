@@ -1,0 +1,1 @@
+An emergency repair is waiting for a spare that may already be reserved for it. Determine the exact need and usable reserved lot, what stock belongs to other priorities, and whether issuing now protects the service date better than replenishing. Post only the supported material issue.

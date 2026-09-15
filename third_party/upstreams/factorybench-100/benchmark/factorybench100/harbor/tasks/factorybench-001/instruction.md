@@ -1,0 +1,1 @@
+Sales needs a date for one pallet of Luma lamps. When can we honestly have it finished with today's schedule and stock, what is preventing an earlier run, and do expediting parts or adding a shift change the answer? Commit the best approved plan and prepare the launch-team update for review.

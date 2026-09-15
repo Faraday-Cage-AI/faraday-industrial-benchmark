@@ -1,0 +1,16 @@
+Faraday Industrial Benchmark
+Copyright 2026 Faraday Industrial Benchmark contributors
+
+The Faraday-native implementation and authored benchmark content are original
+synthetic work. Separately namespaced, pinned snapshots of permissively licensed
+public benchmarks are distributed under third_party/upstreams for compatibility
+and comparative evaluation. They are not Faraday-authored content and are not
+part of the Faraday-native headline score.
+
+This distribution includes software developed by Blobfish AI, the Industrial
+Agent Benchmark project, the SupChain-Bench project, and IBM's AssetOpsBench
+contributors. Their original license and notice files are preserved in each
+snapshot. See THIRD_PARTY_NOTICES.md and third_party/manifest.json.
+
+No customer data, proprietary vendor UI, private benchmark split, or restricted
+question bank is included.

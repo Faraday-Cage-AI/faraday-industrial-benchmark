@@ -1,0 +1,1 @@
+A repair order needs the governing service bulletin, but several revisions and model ranges are available. Determine which released bulletin applies to this asset and work date, what happens if the wrong one is used, and whether the repair can proceed. Attach only the verified technical reference.

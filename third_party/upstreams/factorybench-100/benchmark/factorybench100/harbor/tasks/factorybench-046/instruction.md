@@ -1,0 +1,1 @@
+The incumbent molded-parts source is constrained and procurement wants to use an alternate under conditions. Decide whether the alternate has cleared the necessary risk and quality evidence, how much demand the trial approval can cover, and what remains exposed if it is not used. Create only the supply allowed by the conditional approval.

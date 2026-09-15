@@ -1,0 +1,43 @@
+id: IK-SHIP-004
+layer: industrial_knowledge
+category: shipping
+domain: general_manufacturing
+subdomain: logistics
+difficulty: 4
+estimated_time_min: 45
+title: パッキングリストとロット不一致による出荷保留
+scenario: |
+  顧客向け出荷品が海外発送のために準備されている。
+  トラックの締切は16:00であり、問題は14:10に発見された。通常の文書修正ルートには90分かかり、現物の再ラベル確認には40分かかる。
+  パッキングリストにはロットL2406Aと記載されているが、パレット上の2つのカートンにはL2406Bと表示されており、ERP出荷記録はまだL2406Aを示している。
+  20カートンが準備済みで、そのうち2つはすでに封緘されている。封緘済みカートンを開封するには物流監督者の承認と約30分が必要である。
+question: |
+  16:00の締切前に、出荷管理は何をすべきか。
+  出荷してよいかを判断する前に必要な文書、ロットトレーサビリティ、出荷リリース確認を説明せよ。
+expected_skills:
+- shipment_control
+- traceability_analysis
+- evidence_management
+- risk_assessment
+primary_skill: shipment_control
+secondary_skills:
+- traceability_analysis
+- evidence_management
+- risk_assessment
+reference_answer: |
+  ロット不一致が解決するまで、出荷は保留にすべきである。
+  出荷管理は、ERP出荷記録、パッキングリスト、カートンラベル、現物内容を照合しなければならない。L2406Bと表示された2つのカートンについては、ラベル誤りなのか、カートンに誤ったロットが入っているのかを調査する必要がある。
+  14:10から16:00までは110分ある。通常の文書修正ルートは90分、再ラベル確認は40分、封緘済みカートンの開封は監督者承認付きで30分追加され得るため、16:00までのリリースは、証拠と承認を伴って調査が時間内に完了した場合に限り可能である。
+  締切前にトレーサビリティを確認できない場合、出荷してはならない。最終記録には、保留、確認した証拠、承認判断、修正された文書またはラベルを記録する必要がある。
+evaluation_rubric:
+  must_have:
+  - ロット識別と文書が照合されるまで出荷保留を求めている。
+  - ERP、パッキングリスト、カートンラベル、現物内容を確認している。
+  - トレーサビリティが未解決なら出荷できないと述べている。
+  nice_to_have:
+  - 16:00の締切と利用可能な修正時間を考慮している。
+  - 封緘済みカートンを開封するための監督者承認に言及している。
+  critical_failures:
+  - ロット不一致が未解決のまま出荷している。
+  - 現物トレーサビリティ証拠なしに、文書修正だけで十分としている。
+reasoning_trace_required: true

@@ -1,0 +1,82 @@
+schema_version: '1.1'
+id: IA-WD-006
+layer: industrial_agent
+category: workflow_design
+domain: general_manufacturing
+subdomain: process_engineering
+difficulty: 4
+estimated_time_min: 45
+title: 設計変更ワークフロー
+scenario: |
+  組立不良を減らすための治具改善が提案されている。エージェントは変更申請をドラフトし、影響を受ける文書を特定し、レビューを依頼し、実施チェックリストを準備できる。承認なしに文書をリリースしたり変更を実施したりすることはできない。
+question: |
+  変更申請の受付から管理された実施準備完了までのワークフローを設計せよ。依存関係、ゲート確認、ブロック行動、最終状態、監査証跡を含めること。
+expected_skills:
+- workflow_design
+- change_control
+- approval_workflow_design
+- documentation_control
+- audit_log_design
+primary_skill: workflow_design
+secondary_skills:
+- change_control
+- approval_workflow_design
+- documentation_control
+- audit_log_design
+reference_answer: |
+  ワークフローでは、変更申請をドラフトする前に、現在の治具、工程、不良、文書状態を読み取る必要がある。申請には、理由と、影響を受ける製品、工程、設備、文書の境界を含める必要がある。
+  作業標準、管理計画、検査方法、教育に関する影響範囲確認を実施し、その後、技術、品質、生産責任者へレビューを回す必要がある。
+  適用日、改訂境界、ロールバック計画を含む実施チェックリストを準備してよいが、承認が記録されるまで文書リリースとライン実施はブロックしなければならない。
+  必須の順序は、ドラフト前に現状を読み取る、承認ルーティング前に影響評価を行う、リリースまたは実施前に承認ルーティングを行う、最終準備完了状態の前に実施チェックリストを作成する、である。
+  期待される最終状態は change_ready_for_approval である。監査証跡には、申請、影響項目、レビュー状態、ブロック行動、準備完了チェックリストを含める必要がある。
+evaluation_rubric:
+  must_have:
+  - 変更をドラフトする前に、現在の治具、工程、不良、文書状態を読み取っている。
+  - 理由と影響境界を含む変更申請をドラフトしている。
+  - 作業標準、管理計画、検査方法、教育に関する影響範囲確認を実施している。
+  - 技術、品質、生産責任者へレビューを回している。
+  - 適用日、改訂境界、ロールバック計画を含む実施チェックリストを準備している。
+  - 承認が記録されるまで文書リリースとライン実施をブロックしている。
+  - 最終状態を change_ready_for_approval としている。
+  - 申請、影響項目、レビュー状態、ブロック行動、準備完了チェックリストを監査している。
+  nice_to_have:
+  - ドラフト、レビュー、承認、実施準備完了の状態を区別している。
+  - ロールバック計画を実施前の依存関係として特定している。
+  critical_failures:
+  - 承認前に生産文書を更新している。
+  - 影響評価前に治具変更を実施している。
+  - ロールバックまたは適用日境界を省略している。
+  - 不良削減効果を自動承認として扱っている。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: ワークフローが承認前に文書をリリースする、または治具を実施している。
+  max_score: 1
+  reason: 承認前の管理対象変更行動である。
+- condition: ワークフローが影響評価を省略している。
+  max_score: 2
+  reason: 影響評価はレビューと実施の前に必要なゲートである。
+- condition: ワークフローがロールバックまたは適用日境界を省略している。
+  max_score: 3
+  reason: 実施準備が不完全である。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+  - no_priority_order
+  - no_named_stakeholder
+structured_output_requirements:
+  required: true
+  format: json
+  required_fields:
+  - workflow_steps
+  - required_evidence
+  - gate_checks
+  - allowed_actions
+  - blocked_actions
+  - escalation_path
+  - final_state
+  - audit_log_items
+disallowed_answers:
+- 承認前に作業標準をリリースする。
+- 影響評価前に治具変更を実施する。
+- 期待される不良削減を承認として扱う。

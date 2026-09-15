@@ -1,0 +1,1 @@
+A sanctions alert may match one of our suppliers, but a similar-name false positive would be costly. Determine whether the hit belongs to the supplier on the open order, what commitments are still stoppable, and how continuity can be protected. Suspend only the purchase document covered by legal direction.

@@ -1,0 +1,1 @@
+The signed project scope calls for a prototype, but the team needs a realistic quantity and finish date before committing. Determine what the released design, funding, material, and isolated capacity support, compare the useful alternatives, and create only the project order authorized by that conclusion.

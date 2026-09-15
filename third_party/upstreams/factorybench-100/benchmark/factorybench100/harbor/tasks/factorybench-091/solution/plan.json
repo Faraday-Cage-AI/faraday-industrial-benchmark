@@ -1,0 +1,257 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-FINANCE",
+      "limit": 100,
+      "ts": "1768000091.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "includeGridData": false,
+      "ranges": [
+        "Control!A1:I50"
+      ],
+      "spreadsheetId": "sheet-091"
+    },
+    "tool": "google_sheets.spreadsheets.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-091' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-091-27"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-091"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-091-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-091-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-091-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-091-15"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-091-18",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-091-19",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-091"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-091-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-091-22",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-091-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-091-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-091-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-091\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "id": "att-091",
+      "messageId": "msg-091-1",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.attachments.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-091"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "HeaderInterfaceId": 700091,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.receiving_receipt_transactions.list"
+  },
+  {
+    "arguments": {
+      "invoicesUniqID": "invoicesUniqID-0091"
+    },
+    "tool": "oracle_fusion.invoices.get"
+  },
+  {
+    "arguments": {
+      "purchaseOrdersUniqID": "purchaseOrdersUniqID-0091"
+    },
+    "tool": "oracle_fusion.purchase_orders.get"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "purchaseOrdersUniqID": "purchaseOrdersUniqID-0091"
+    },
+    "tool": "oracle_fusion.purchase_order_lines.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-091",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "purchaseOrdersUniqID": "purchaseOrdersUniqID-0091",
+      "requestBody": {
+        "closeAction": "finallyClose",
+        "closeReason": "PO close exception resolved: close_fully_settled_po; completion 2026-01-17; constraint all source activity must be complete before the close cutoff; open retainage or unmatched value = 0 USD; uncovered or unsupported scope = 0.0 USD; approval AP-0091"
+      }
+    },
+    "tool": "oracle_fusion.purchase_orders.close"
+  },
+  {
+    "arguments": {
+      "purchaseOrdersUniqID": "purchaseOrdersUniqID-0091"
+    },
+    "tool": "oracle_fusion.purchase_orders.get"
+  },
+  {
+    "arguments": {
+      "raw": "RnJvbTogcGxhbnQuY29udHJvbGxlckBub3J0aHN0YXIuZXhhbXBsZQ0KVG86IHBsYW50LmNvbnRyb2xsZXJAbm9ydGhzdGFyLmV4YW1wbGUNClN1YmplY3Q6IENBU0UtMDkxIOKAlCBDb21wbGV0ZWQgb3BlcmF0aW5nIGRlY2lzaW9uDQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9VVRGLTgNCg0KRGVjaXNpb246IGNsb3NlX2Z1bGx5X3NldHRsZWRfcG8uIENvbXBsZXRpb246IDIwMjYtMDEtMTcuDQpCaW5kaW5nIGNvbnN0cmFpbnQ6IGFsbCBzb3VyY2UgYWN0aXZpdHkgbXVzdCBiZSBjb21wbGV0ZSBiZWZvcmUgdGhlIGNsb3NlIGN1dG9mZjsgb3BlbiByZXRhaW5hZ2Ugb3IgdW5tYXRjaGVkIHZhbHVlID0gMCBVU0Q7IHVuY292ZXJlZCBvciB1bnN1cHBvcnRlZCBzY29wZSA9IDAuMCBVU0QuDQpBbHRlcm5hdGl2ZXM6IGNsb3NlX2Z1bGx5X3NldHRsZWRfcG86IG91dGNvbWUgMjAyNi0wMS0xNywgZWNvbm9taWMgaW1wYWN0IFVTRCAwLCBTVVBQT1JURURfQU5EX0FQUFJPVkVEOyBjbG9zZV93aXRoX29wZW5fYmFsYW5jZTogb3V0Y29tZSAyMDI2LTAxLTE4LCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIEZBSUxTX0NVUlJFTlRfQ09OVFJPTDsgZGVmZXJfY29tcGxldGVfcG86IG91dGNvbWUgMjAyNi0wMS0xOSwgZWNvbm9taWMgaW1wYWN0IFVTRCAxOTk5MCwgU0VQQVJBVEVfQVBQUk9WQUxfT1JfUE9MSUNZX0VYQ0VQVElPTl9SRVFVSVJFRC4NCk9yYWNsZSByZWNvcmQ6IE5TLTAwMDA5MS4gQXBwcm92YWw6IEFQLTAwOTEuIENhc2U6IENBU0UtMDkxLg0K",
+      "threadId": "thread-091",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.send"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "sent-091",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-091",
+      "requestBody": {
+        "content": "CASE-091: close_fully_settled_po recorded on Oracle record NS-000091; completion 2026-01-17; constraint all source activity must be complete before the close cutoff; open retainage or unmatched value = 0 USD; uncovered or unsupported scope = 0.0 USD; approval AP-0091."
+      }
+    },
+    "tool": "google_drive.comments.create"
+  },
+  {
+    "arguments": {
+      "commentId": "comment-091",
+      "fields": "id,content,resolved,createdTime",
+      "fileId": "drive-091"
+    },
+    "tool": "google_drive.comments.get"
+  },
+  {
+    "arguments": {
+      "baseline_settlement_date": "2026-01-17",
+      "business_need_date": "2026-01-17",
+      "control_threshold_usd": 0.0,
+      "controlled_settlement_date": "2026-01-18",
+      "decision_timing_status": "ON_TIME",
+      "document_amount_usd": 19989.75,
+      "escalated_settlement_date": "2026-01-19",
+      "escalation_approval_required": 1,
+      "exception_amount_usd": 0.0,
+      "financial_control": "final-close residual balance",
+      "financial_document_or_record": "PO-0091",
+      "outcome_vs_control_days": 0,
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "close_fully_settled_po",
+      "recommended_outcome_date": "2026-01-17",
+      "supported_amount_usd": 19989.75
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

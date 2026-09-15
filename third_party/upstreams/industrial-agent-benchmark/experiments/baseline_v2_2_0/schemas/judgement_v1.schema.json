@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "question_id",
+    "final_score",
+    "must_have_missing_count",
+    "numeric_check_failed_ratio",
+    "generic_penalty_triggered",
+    "critical_failure_triggered",
+    "score_cap_applied",
+    "structured_output_missing_count",
+    "judge_summary",
+    "evidence_summary"
+  ],
+  "properties": {
+    "question_id": { "type": "string" },
+    "final_score": { "type": "number", "minimum": 0, "maximum": 5 },
+    "must_have_missing_count": { "type": "integer", "minimum": 0 },
+    "numeric_check_failed_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+    "generic_penalty_triggered": { "type": "boolean" },
+    "critical_failure_triggered": { "type": "boolean" },
+    "score_cap_applied": { "type": "boolean" },
+    "structured_output_missing_count": { "type": "integer", "minimum": 0 },
+    "judge_summary": { "type": "string" },
+    "evidence_summary": { "type": "string" }
+  }
+}

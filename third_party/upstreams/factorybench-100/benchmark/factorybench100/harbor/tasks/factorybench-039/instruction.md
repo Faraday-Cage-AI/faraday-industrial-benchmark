@@ -1,0 +1,1 @@
+Copper for a project order has passed receiving, but not all of the header quantity is eligible for project stores. Work out the quantity that preserves the right project, task, lot, and acceptance status, explain the consequence of holding the balance, and post only the supported delivery.

@@ -1,0 +1,1 @@
+A relay shipment is at the dock, but the packing slip, PO, certificate, and physical count do not obviously agree. Decide what quantity and lot can enter receiving today, what must remain outside the receipt, and the production impact of holding the discrepancy. Create only the supported receipt request.

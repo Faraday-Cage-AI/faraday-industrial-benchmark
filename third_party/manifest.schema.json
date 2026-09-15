@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://faraday.example/schemas/upstream-manifest.schema.json",
+  "title": "Faraday upstream source manifest",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "policy", "sources"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": "faraday-upstream-manifest/1"},
+    "generated_at": {"type": "string", "format": "date"},
+    "policy": {"type": "object"},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "status", "upstream", "licenses"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "name": {"type": "string", "minLength": 1},
+          "status": {"enum": ["vendored", "reference-only"]},
+          "path": {"type": "string"},
+          "upstream": {"type": "object"},
+          "licenses": {"type": "object"},
+          "reason": {"type": "string"},
+          "snapshot": {
+            "type": "object",
+            "required": ["tree_sha256", "files", "bytes"],
+            "properties": {
+              "tree_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+              "files": {"type": "integer", "minimum": 1},
+              "bytes": {"type": "integer", "minimum": 1}
+            },
+            "additionalProperties": false
+          }
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"status": {"const": "vendored"}}},
+            "then": {"required": ["path", "snapshot", "included", "modifications"]},
+            "else": {"required": ["reason"]}
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

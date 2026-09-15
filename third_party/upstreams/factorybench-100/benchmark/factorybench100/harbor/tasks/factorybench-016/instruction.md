@@ -1,0 +1,1 @@
+The primary assembly cell is down after a spindle failure and the customer order is exposed. Find the earliest qualified recovery plan that does not displace protected work, compare it with waiting for repair and adding an extra shift, and show operations the cost and completion impact. Reroute the operation if the best choice is already approved.

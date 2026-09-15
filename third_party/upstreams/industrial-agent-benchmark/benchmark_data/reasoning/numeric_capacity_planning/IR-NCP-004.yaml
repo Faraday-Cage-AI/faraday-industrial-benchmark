@@ -1,0 +1,77 @@
+schema_version: '1.1'
+id: IR-NCP-004
+layer: industrial_reasoning
+category: numeric_capacity_planning
+domain: heavy_machinery
+subdomain: welding
+difficulty: 3
+estimated_time_min: 30
+title: 複数工程のボトルネック能力
+scenario: |
+  製品は切断、溶接、検査を順番に通過する。
+  1直あたりの能力は、切断520台、溶接460台、検査500台である。
+  顧客需要は1直あたり480台である。
+question: |
+  ボトルネック工程を特定し、ラインが需要を満たせるか判断し、不足または余裕を計算せよ。
+expected_skills:
+- bottleneck_reasoning
+- capacity_calculation
+- feasibility_judgement
+- evidence_traceability
+primary_skill: bottleneck_reasoning
+secondary_skills:
+- capacity_calculation
+- feasibility_judgement
+- evidence_traceability
+reference_answer: |
+  直列工程では、ライン能力は最も低い工程能力に制約される。
+  切断は1直あたり520台、溶接は1直あたり460台、検査は1直あたり500台を処理できる。
+  ボトルネックは、1直あたり460台の溶接である。
+  需要は1直あたり480台であるため、ラインは 480 - 460 = 20台/直 不足し、現在の制約下では需要を満たせない。
+evaluation_rubric:
+  must_have:
+  - 3つすべての工程能力を比較している。
+  - 溶接をボトルネックとして特定している。
+  - ライン能力として1直あたり460台を使用している。
+  - 1直あたり480台に対してラインは実現不可能と結論づけている。
+  - 1直あたり20台の不足を計算している。
+  nice_to_have:
+  - 直列能力が最小工程能力に制約される理由を説明している。
+  - 能力を平均していない。
+  critical_failures:
+  - 実現可能性判断のために工程能力を平均している。
+  - 切断または検査をボトルネックとして選んでいる。
+  - 溶接の460台制約に対処せず、1直あたり480台を実現可能としている。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: ボトルネックが溶接として特定されていない。
+  max_score: 2
+  reason: ボトルネック特定がこの項目の中心である。
+- condition: 平均能力をライン能力として使用している。
+  max_score: 1
+  reason: 直列工程能力を平均することは不適切である。
+numeric_checks:
+- name: bottleneck_capacity
+  expected_value: 460
+  tolerance: exact
+  unit: units_per_shift
+  required: true
+- name: shortfall
+  expected_value: 20
+  tolerance: exact
+  unit: units_per_shift
+  required: true
+- name: feasibility
+  expected_value: infeasible
+  tolerance: exact
+  unit: decision
+  required: true
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - scenario_specific_numbers_not_used
+  - generic_framework_only
+disallowed_answers:
+- 平均能力が需要を上回るため、ラインは実現可能である。
+- 切断がボトルネックである。
+- 検査がボトルネックである。

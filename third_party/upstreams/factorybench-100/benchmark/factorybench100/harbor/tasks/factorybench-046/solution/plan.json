@@ -1,0 +1,270 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "id": "att-046",
+      "messageId": "msg-046-1",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.attachments.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-046"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "channel": "C-QUALITY",
+      "limit": 100,
+      "ts": "1768000046.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "includeGridData": false,
+      "ranges": [
+        "Control!A1:I50"
+      ],
+      "spreadsheetId": "sheet-046"
+    },
+    "tool": "google_sheets.spreadsheets.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-046' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-046-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-046-28"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-046-14"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-046-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-046-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-046-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-046"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-046-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-046-27"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-046-19",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-046"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-046-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-046-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-046-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-046\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "OrderNumber='SO-47046'"
+    },
+    "tool": "oracle_fusion.sales_orders.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "OrderNumber='PO-0046'"
+    },
+    "tool": "oracle_fusion.purchase_orders.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-046' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplyOrderReferenceNumber='SUPPLY-0046'"
+    },
+    "tool": "oracle_fusion.supply_requests.list"
+  },
+  {
+    "arguments": {
+      "SupplierId": 600046
+    },
+    "tool": "oracle_fusion.suppliers.get"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "SupplyOrderReferenceNumber": "SUPPLY-0046",
+        "SupplyRequestDate": "2026-01-12",
+        "SupplyRequestSystem": "EXT",
+        "supplyRequestLines": [
+          {
+            "DestinationOrganizationCode": "SEA",
+            "ItemNumber": "NS-COMP-046",
+            "NeedByDate": "2026-01-13",
+            "Quantity": 1,
+            "SupplyOrderSource": "EXT",
+            "SupplyType": "BUY"
+          }
+        ]
+      }
+    },
+    "tool": "oracle_fusion.supply_requests.create"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplyOrderReferenceNumber='SUPPLY-0046'"
+    },
+    "tool": "oracle_fusion.supply_requests.list"
+  },
+  {
+    "arguments": {
+      "raw": "RnJvbTogc3VwcGxpZXIucXVhbGl0eS5tYW5hZ2VyQG5vcnRoc3Rhci5leGFtcGxlDQpUbzogcHJvY3VyZW1lbnQubGVhZGVyc2hpcEBub3J0aHN0YXIuZXhhbXBsZQ0KU3ViamVjdDogQ0FTRS0wNDYg4oCUIENvbXBsZXRlZCBvcGVyYXRpbmcgZGVjaXNpb24NCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD1VVEYtOA0KDQpEZWNpc2lvbjogZW5hYmxlX2NvbmRpdGlvbmFsX3NvdXJjZS4gQ29tcGxldGlvbjogMjAyNi0wMS0xMy4NCkJpbmRpbmcgY29uc3RyYWludDogY29uZGl0aW9uYWwgdXNlIGlzIGxpbWl0ZWQgYnkgaXRlbSwgcXVhbnRpdHksIGR1cmF0aW9uLCBhbmQgYXBwcm92YWw7IGV4cGlyZWQsIGZhaWxlZCwgb3IgdW5hcHByb3ZlZCBzaXRlcyA9IDMgU0lURVM7IHVuY292ZXJlZCBvciB1bnN1cHBvcnRlZCBzY29wZSA9IDMuMCBTSVRFUy4NCkFsdGVybmF0aXZlczogZW5hYmxlX2NvbmRpdGlvbmFsX3NvdXJjZTogb3V0Y29tZSAyMDI2LTAxLTEzLCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIFNVUFBPUlRFRF9BTkRfQVBQUk9WRUQ7IGFwcHJvdmVfc3VwcGxpZXJfZ2xvYmFsbHk6IG91dGNvbWUgMjAyNi0wMS0xMiwgZWNvbm9taWMgaW1wYWN0IFVTRCAwLCBGQUlMU19DVVJSRU5UX0NPTlRST0w7IHN0YXlfc29sZV9zb3VyY2U6IG91dGNvbWUgMjAyNi0wMS0xOSwgZWNvbm9taWMgaW1wYWN0IFVTRCAwLCBTRVBBUkFURV9BUFBST1ZBTF9PUl9QT0xJQ1lfRVhDRVBUSU9OX1JFUVVJUkVELg0KT3JhY2xlIHJlY29yZDogTlMtMDAwMDQ2LiBBcHByb3ZhbDogQVAtMDA0Ni4gQ2FzZTogQ0FTRS0wNDYuDQo",
+      "threadId": "thread-046",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.send"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "sent-046",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-046",
+      "requestBody": {
+        "content": "CASE-046: enable_conditional_source recorded on Oracle record NS-000046; completion 2026-01-13; constraint conditional use is limited by item, quantity, duration, and approval; expired, failed, or unapproved sites = 3 SITES; uncovered or unsupported scope = 3.0 SITES; approval AP-0046."
+      }
+    },
+    "tool": "google_drive.comments.create"
+  },
+  {
+    "arguments": {
+      "commentId": "comment-046",
+      "fields": "id,content,resolved,createdTime",
+      "fileId": "drive-046"
+    },
+    "tool": "google_drive.comments.get"
+  },
+  {
+    "arguments": {
+      "baseline_action_date": "2026-01-13",
+      "business_need_date": "2026-01-16",
+      "candidate_record_count": 4,
+      "controlled_action_date": "2026-01-12",
+      "decision_timing_status": "ON_TIME",
+      "effective_revision": "R5",
+      "escalated_action_date": "2026-01-19",
+      "escalation_approval_required": 1,
+      "excluded_record_count": 3,
+      "immutable_match_key": "NS-000046|R5|CASE-046",
+      "matching_record_count": 1,
+      "outcome_vs_control_days": -3,
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "enable_conditional_source",
+      "recommended_outcome_date": "2026-01-13",
+      "source_or_target_record": "NS-000046"
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

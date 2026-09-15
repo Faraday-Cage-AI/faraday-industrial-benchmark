@@ -1,0 +1,1 @@
+We discovered that a torque tool expired while serial-controlled work was in process. Establish which units are exposed and which were completed under a valid calibration, then advise whether replacement tooling or recalibration is the fastest safe recovery. Open the necessary corrective work and keep only the affected production held.

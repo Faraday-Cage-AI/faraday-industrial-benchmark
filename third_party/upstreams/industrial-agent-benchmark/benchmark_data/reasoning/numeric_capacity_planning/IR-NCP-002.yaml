@@ -1,0 +1,80 @@
+schema_version: '1.1'
+id: IR-NCP-002
+layer: industrial_reasoning
+category: numeric_capacity_planning
+domain: electronics
+subdomain: inspection
+difficulty: 3
+estimated_time_min: 25
+title: 稼働率を考慮した検査能力
+scenario: |
+  検査機は1直あたり正味7.5時間稼働する。公称処理能力は1時間あたり80台である。
+  段取りロスと小停止を考慮した計画稼働率は85%である。日次需要は検査済み500台である。
+question: |
+  1直あたりの有効な検査済み台数能力を計算し、1台の機械で日次需要を満たせるか判断せよ。
+  余裕または不足を説明せよ。
+expected_skills:
+- capacity_calculation
+- constraint_handling
+- feasibility_judgement
+- numeric_result_explanation
+primary_skill: capacity_calculation
+secondary_skills:
+- constraint_handling
+- feasibility_judgement
+- numeric_result_explanation
+reference_answer: |
+  公称の1直能力は 7.5時間 * 80台/時間 = 600台/直である。
+  計画稼働率を適用すると、600 * 0.85 = 510検査済み台/直となる。
+  需要は検査済み500台であるため、1台の機械で実現可能であり、余裕は1直あたり10台である。
+  余裕は小さいため、追加停止や需要変動を監視する必要がある。
+evaluation_rubric:
+  must_have:
+  - 公称能力を1直あたり600台と計算している。
+  - 稼働率85%を適用し、有効能力を1直あたり510台と計算している。
+  - 有効能力510台を需要500台と比較している。
+  - 1台の機械で実現可能と結論づけている。
+  nice_to_have:
+  - 10台の余裕は小さいと指摘している。
+  - 停止時間または需要変動の監視に言及している。
+  critical_failures:
+  - 稼働率を無視し、600台を有効能力として報告している。
+  - 510台が500台を上回っているにもかかわらず、計画を実現不可能としている。
+  - 稼働率を逆方向に適用し、判断を変えている。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: 有効能力が計画稼働率を無視している。
+  max_score: 2
+  reason: 稼働率は中心的な制約である。
+- condition: 最終的な実現可能性判断が誤っている。
+  max_score: 2
+  reason: この項目では数値に基づく実現可能性判断が必要である。
+numeric_checks:
+- name: nominal_capacity
+  expected_value: 600
+  tolerance: exact
+  unit: units_per_shift
+  required: true
+- name: effective_capacity
+  expected_value: 510
+  tolerance: +/-1
+  unit: units_per_shift
+  required: true
+- name: margin
+  expected_value: 10
+  tolerance: +/-1
+  unit: units_per_shift
+  required: true
+- name: feasibility
+  expected_value: feasible
+  tolerance: exact
+  unit: decision
+  required: true
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - scenario_specific_numbers_not_used
+  - generic_framework_only
+disallowed_answers:
+- 有効能力は1直あたり600台である。
+- 稼働率が85%なので、1台の機械では500台を満たせない。

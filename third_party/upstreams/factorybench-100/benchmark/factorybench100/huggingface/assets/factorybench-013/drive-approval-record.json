@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-013",
+  "approvedScope": "Approval AP-0013 permits one control-compliant action on NS-000013 up to 1 RECORDS, provided reverse the erroneous lot movement before posting the verified lot. It does not select an option in advance and does not authorize broader records or leave_scan_for_period_end.",
+  "businessNeedBy": "2026-01-16",
+  "case": "CASE-013",
+  "fileId": "drive-approval-013",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}

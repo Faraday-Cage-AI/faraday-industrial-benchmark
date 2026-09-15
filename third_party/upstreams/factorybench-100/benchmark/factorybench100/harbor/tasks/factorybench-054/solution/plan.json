@@ -1,0 +1,285 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "ranges": [
+        "Control!A1:I50",
+        "Approvals!A1:G20"
+      ],
+      "spreadsheetId": "sheet-054",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.batchGet"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-054\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-054",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "file": "F-000054"
+    },
+    "tool": "slack.files_info"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-054' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-054-20",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-054-22",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-054-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-054-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-054"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-054-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-054-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-054-21",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-054"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-054-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-054-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-054-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-054-14"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-054-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "DocumentNumber='RCV-0054'"
+    },
+    "tool": "oracle_fusion.quality_inspection_results.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "InspectionPlanName='PLAN-07'"
+    },
+    "tool": "oracle_fusion.inspection_plans.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-054' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100054,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_materials.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplyOrderReferenceNumber='SUPPLY-0054'"
+    },
+    "tool": "oracle_fusion.supply_requests.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-054",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "SourceSystemCode": "EXTERNAL",
+        "TransactionLines": [
+          {
+            "Item": "NS-COMP-054",
+            "LotNumber": "LOT-0054",
+            "OrganizationCode": "SEA",
+            "Subinventory": "STORES",
+            "TransactionQuantity": 53,
+            "TransactionType": "Subinventory Transfer",
+            "TransactionUnitOfMeasure": "KG",
+            "TransferSubinventory": "CONTROLLED"
+          }
+        ],
+        "TransactionMode": "ONLINE"
+      }
+    },
+    "tool": "oracle_fusion.inventory_transactions.create"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-054' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "channel": "C-QUALITY",
+      "text": "CASE-054: Oracle record NS-000054 now reflects quarantine_expired_lot with completion 2026-01-13. Binding constraint: expiry, lot, location, and open reservations define containment scope; other lots and quantity already consumed = 6 KG; uncovered or unsupported scope = 8.0 KG. Alternatives: quarantine_expired_lot: outcome 2026-01-13, economic impact USD 0, SUPPORTED_AND_APPROVED; quarantine_all_chemical_stock: outcome 2026-01-14, economic impact USD 0, FAILS_CURRENT_CONTROL; extend_expiry_without_waiver: outcome 2026-01-15, economic impact USD 0, SEPARATE_APPROVAL_OR_POLICY_EXCEPTION_REQUIRED. Approval AP-0054.",
+      "thread_ts": "1768000054.000100"
+    },
+    "tool": "slack.chat_postMessage"
+  },
+  {
+    "arguments": {
+      "channel": "C-QUALITY",
+      "limit": 100,
+      "ts": "1768000054.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "includeValuesInResponse": true,
+      "range": "Control!H16",
+      "requestBody": {
+        "majorDimension": "ROWS",
+        "values": [
+          [
+            "CASE-054 | quarantine_expired_lot | 2026-01-13 | NS-000054 | expiry, lot, location, and open reservations define containment scope; other lots and quantity already consumed = 6 KG; uncovered or unsupported scope = 8.0 KG | AP-0054"
+          ]
+        ]
+      },
+      "spreadsheetId": "sheet-054",
+      "valueInputOption": "RAW"
+    },
+    "tool": "google_sheets.spreadsheets.values.update"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Control!H16",
+      "spreadsheetId": "sheet-054",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "baseline_resolution_date": "2026-01-13",
+      "business_need_date": "2026-01-13",
+      "controlled_item_or_record": "NS-COMP-054",
+      "controlled_resolution_date": "2026-01-14",
+      "decision_timing_status": "ON_TIME",
+      "escalated_resolution_date": "2026-01-15",
+      "escalation_approval_required": 1,
+      "excluded_quantity": 6,
+      "observed_quantity": 59,
+      "outcome_vs_control_days": 0,
+      "quantity_unit": "KG",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "quarantine_expired_lot",
+      "recommended_outcome_date": "2026-01-13",
+      "source_quantity": 61,
+      "supported_quantity": 53,
+      "transaction_quantity": 53
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

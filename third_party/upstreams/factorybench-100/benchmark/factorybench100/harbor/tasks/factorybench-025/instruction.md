@@ -1,0 +1,1 @@
+Reliability wants to know whether the repeated bearing alarm has crossed the threshold for planned maintenance or is still noise. Determine what events genuinely count, when the work can be done without disrupting protected production, and how a recurring program compares with one-time repair or continued monitoring. Record the approved decision.

@@ -1,0 +1,283 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-007"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "count": 50,
+      "query": "\"CASE-007\"",
+      "sort": "timestamp",
+      "sort_dir": "asc"
+    },
+    "tool": "slack.search_messages"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-007\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-007",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "includeGridData": false,
+      "ranges": [
+        "Control!A1:I50"
+      ],
+      "spreadsheetId": "sheet-007"
+    },
+    "tool": "google_sheets.spreadsheets.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-007' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-007-19",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-007-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-007-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-007-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-007-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-007-16",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-007-17",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-007-23"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-007-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-007-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-007-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-007"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-007-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-007"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100007,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_resources.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100007
+    },
+    "tool": "oracle_fusion.maintenance_work_orders.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100007,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_operations.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "WorkOrderNumber='WO-0007'"
+    },
+    "tool": "oracle_fusion.work_orders.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-007",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100007,
+      "WorkOrderOperationId": 200007,
+      "requestBody": {
+        "OperationName": "Controlled operation CASE-007",
+        "PlannedCompletionDate": "2026-01-18",
+        "PlannedStartDate": "2026-01-16",
+        "WorkCenterCode": "WC-ALT-2"
+      }
+    },
+    "tool": "oracle_fusion.work_order_operations.update"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100007,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_operations.list"
+  },
+  {
+    "arguments": {
+      "insertDataOption": "INSERT_ROWS",
+      "range": "Audit!A:G",
+      "requestBody": {
+        "majorDimension": "ROWS",
+        "values": [
+          [
+            "2026-01-12",
+            "CASE-007",
+            "production_planner",
+            "move_burn_in_forward",
+            "2026-01-18",
+            "NS-000007",
+            "AP-0007"
+          ]
+        ]
+      },
+      "spreadsheetId": "sheet-007",
+      "valueInputOption": "RAW"
+    },
+    "tool": "google_sheets.spreadsheets.values.append"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Audit!A:G",
+      "spreadsheetId": "sheet-007",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-007",
+      "requestBody": {
+        "content": "CASE-007: move_burn_in_forward recorded on Oracle record NS-000007; completion 2026-01-18; constraint precedence, cure time, and completed quantities cannot be violated; protected qualification runs = 11 HR; uncovered or unsupported scope = 26.0 HR; approval AP-0007."
+      }
+    },
+    "tool": "google_drive.comments.create"
+  },
+  {
+    "arguments": {
+      "commentId": "comment-007",
+      "fields": "id,content,resolved,createdTime",
+      "fileId": "drive-007"
+    },
+    "tool": "google_drive.comments.get"
+  },
+  {
+    "arguments": {
+      "affected_resource_or_operation": "NS-000007",
+      "base_completion": "2026-01-21",
+      "business_need_date": "2026-01-18",
+      "candidate_capacity": 17,
+      "capacity_gap": 26,
+      "capacity_unit": "HR",
+      "decision_timing_status": "ON_TIME",
+      "escalated_completion": "2026-01-17",
+      "escalation_approval_required": 1,
+      "net_usable_capacity": 6,
+      "outcome_vs_control_days": 0,
+      "qualified_alternative_completion": "2026-01-18",
+      "recommended_incremental_cost_usd": 469,
+      "recommended_option": "move_burn_in_forward",
+      "recommended_outcome_date": "2026-01-18",
+      "required_capacity": 32,
+      "selected_resource_or_control": "WC-ALT-2",
+      "unavailable_or_protected_capacity": 11
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

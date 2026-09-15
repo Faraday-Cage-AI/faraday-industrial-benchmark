@@ -1,0 +1,5600 @@
+[
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "factorybench",
+        "upstream": {
+          "method": "MCP",
+          "path": "factorybench://context",
+          "source": "https://github.com/blobfishai/factory-agent-simulation"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "factorybench.context.get"
+    },
+    "description": "Discover the isolated task scope, mounted systems, evidence index, and reference identifiers.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "name": "factorybench.context.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "factorybench",
+        "upstream": {
+          "method": "MCP",
+          "path": "factorybench://answers",
+          "source": "https://github.com/blobfishai/factory-agent-simulation"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "factorybench.submit_answer"
+    },
+    "description": "Submit the task-specific exact answer fields to the deterministic benchmark harness.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "baseline_resolution_date": {
+          "description": "Resolution date for quarantine_expired_lot.",
+          "type": "string"
+        },
+        "business_need_date": {
+          "description": "Documented business or control date that the decision must protect.",
+          "type": "string"
+        },
+        "controlled_item_or_record": {
+          "description": "Immutable item, lot, serial set, or transaction record in scope.",
+          "type": "string"
+        },
+        "controlled_resolution_date": {
+          "description": "Resolution date for quarantine_all_chemical_stock.",
+          "type": "string"
+        },
+        "decision_timing_status": {
+          "description": "Use ON_TIME when the selected outcome is on or before the control date; otherwise use LATE.",
+          "enum": [
+            "ON_TIME",
+            "LATE"
+          ],
+          "type": "string"
+        },
+        "escalated_resolution_date": {
+          "description": "Resolution date for extend_expiry_without_waiver.",
+          "type": "string"
+        },
+        "escalation_approval_required": {
+          "description": "Use 1 because the third option is outside current authority; otherwise use 0.",
+          "type": "integer"
+        },
+        "excluded_quantity": {
+          "description": "other lots and quantity already consumed",
+          "type": "integer"
+        },
+        "observed_quantity": {
+          "description": "Observed source quantity before applying the control for expired chemical lot.",
+          "type": "integer"
+        },
+        "outcome_vs_control_days": {
+          "description": "Selected outcome date minus the independently documented business/control date; positive means late.",
+          "type": "integer"
+        },
+        "quantity_unit": {
+          "description": "Unit of measure for every controlled quantity: KG.",
+          "type": "string"
+        },
+        "recommended_incremental_cost_usd": {
+          "description": "Documented incremental spend or avoidable exposure of the selected option in USD; zero when spend is not a decision driver.",
+          "type": "integer"
+        },
+        "recommended_option": {
+          "description": "Best authorized option identifier after comparing quarantine_expired_lot, quarantine_all_chemical_stock, extend_expiry_without_waiver.",
+          "enum": [
+            "quarantine_expired_lot",
+            "quarantine_all_chemical_stock",
+            "extend_expiry_without_waiver"
+          ],
+          "type": "string"
+        },
+        "recommended_outcome_date": {
+          "description": "Date produced by the selected option after applying all source constraints.",
+          "type": "string"
+        },
+        "source_quantity": {
+          "description": "on-hand quantity in the named lot",
+          "type": "integer"
+        },
+        "supported_quantity": {
+          "description": "quantity physically present and traceable to the expired lot",
+          "type": "integer"
+        },
+        "transaction_quantity": {
+          "description": "Exact quantity the Oracle mutation may persist.",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "baseline_resolution_date",
+        "business_need_date",
+        "controlled_item_or_record",
+        "controlled_resolution_date",
+        "decision_timing_status",
+        "escalated_resolution_date",
+        "escalation_approval_required",
+        "excluded_quantity",
+        "observed_quantity",
+        "outcome_vs_control_days",
+        "quantity_unit",
+        "recommended_incremental_cost_usd",
+        "recommended_option",
+        "recommended_outcome_date",
+        "source_quantity",
+        "supported_quantity",
+        "transaction_quantity"
+      ],
+      "type": "object"
+    },
+    "name": "factorybench.submit_answer"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "gmail",
+        "upstream": {
+          "method": "POST",
+          "path": "/gmail/v1/users/{userId}/drafts",
+          "source": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/create"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "gmail.drafts.create"
+    },
+    "description": "Create a Gmail draft from a base64url RFC 2822 message.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "additionalProperties": false,
+          "properties": {
+            "raw": {
+              "type": "string"
+            },
+            "threadId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "raw"
+          ],
+          "type": "object"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId",
+        "message"
+      ],
+      "type": "object"
+    },
+    "name": "gmail.drafts.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "gmail",
+        "upstream": {
+          "method": "GET",
+          "path": "/gmail/v1/users/{userId}/drafts/{id}",
+          "source": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/get"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "gmail.drafts.get"
+    },
+    "description": "Get one Gmail draft and its current message.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "enum": [
+            "minimal",
+            "full",
+            "raw",
+            "metadata"
+          ],
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId",
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "gmail.drafts.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "gmail",
+        "upstream": {
+          "method": "GET",
+          "path": "/gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}",
+          "source": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages.attachments/get"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "gmail.messages.attachments.get"
+    },
+    "description": "Get an externalized Gmail attachment body.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "messageId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId",
+        "messageId",
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "gmail.messages.attachments.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "gmail",
+        "upstream": {
+          "method": "GET",
+          "path": "/gmail/v1/users/{userId}/messages/{id}",
+          "source": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "gmail.messages.get"
+    },
+    "description": "Get one Gmail message.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "enum": [
+            "minimal",
+            "full",
+            "raw",
+            "metadata"
+          ],
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "metadataHeaders": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId",
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "gmail.messages.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "gmail",
+        "upstream": {
+          "method": "GET",
+          "path": "/gmail/v1/users/{userId}/messages",
+          "source": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/list"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "gmail.messages.list"
+    },
+    "description": "Search messages using Gmail's q grammar.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "includeSpamTrash": {
+          "type": "boolean"
+        },
+        "labelIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "maxResults": {
+          "type": "integer"
+        },
+        "pageToken": {
+          "type": "string"
+        },
+        "q": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ],
+      "type": "object"
+    },
+    "name": "gmail.messages.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "gmail",
+        "upstream": {
+          "method": "POST",
+          "path": "/gmail/v1/users/{userId}/messages/send",
+          "source": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/send"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "gmail.messages.send"
+    },
+    "description": "Send a base64url RFC 2822 Gmail message.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "raw": {
+          "type": "string"
+        },
+        "threadId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId",
+        "raw"
+      ],
+      "type": "object"
+    },
+    "name": "gmail.messages.send"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "gmail",
+        "upstream": {
+          "method": "GET",
+          "path": "/gmail/v1/users/{userId}/threads/{id}",
+          "source": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.threads/get"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "gmail.threads.get"
+    },
+    "description": "Get one Gmail thread.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "metadataHeaders": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId",
+        "id"
+      ],
+      "type": "object"
+    },
+    "name": "gmail.threads.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_drive",
+        "upstream": {
+          "method": "POST",
+          "path": "/drive/v3/files/{fileId}/comments",
+          "source": "https://developers.google.com/workspace/drive/api/reference/rest/v3/comments/create"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "google_drive.comments.create"
+    },
+    "description": "Create a comment on a Drive file.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "fileId": {
+          "type": "string"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "content": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "content"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "fileId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "google_drive.comments.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_drive",
+        "upstream": {
+          "method": "GET",
+          "path": "/drive/v3/files/{fileId}/comments/{commentId}",
+          "source": "https://developers.google.com/workspace/drive/api/reference/rest/v3/comments/get"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "google_drive.comments.get"
+    },
+    "description": "Get one Drive comment.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "commentId": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "fileId": {
+          "type": "string"
+        },
+        "includeDeleted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "fileId",
+        "commentId"
+      ],
+      "type": "object"
+    },
+    "name": "google_drive.comments.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_drive",
+        "upstream": {
+          "method": "GET",
+          "path": "/drive/v3/files/{fileId}/comments",
+          "source": "https://developers.google.com/workspace/drive/api/reference/rest/v3/comments/list"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "google_drive.comments.list"
+    },
+    "description": "List comments on a Drive file.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "type": "string"
+        },
+        "fileId": {
+          "type": "string"
+        },
+        "includeDeleted": {
+          "type": "boolean"
+        },
+        "pageSize": {
+          "type": "integer"
+        },
+        "pageToken": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fileId"
+      ],
+      "type": "object"
+    },
+    "name": "google_drive.comments.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_drive",
+        "upstream": {
+          "method": "POST",
+          "path": "/drive/v3/files/{fileId}/download",
+          "source": "https://developers.google.com/workspace/drive/api/reference/rest/v3/files/download"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "google_drive.files.download"
+    },
+    "description": "Download file content from Drive.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "fileId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fileId"
+      ],
+      "type": "object"
+    },
+    "name": "google_drive.files.download"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_drive",
+        "upstream": {
+          "method": "GET",
+          "path": "/drive/v3/files/{fileId}/export",
+          "source": "https://developers.google.com/workspace/drive/api/reference/rest/v3/files/export"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "google_drive.files.export"
+    },
+    "description": "Export a Google Workspace document.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "fileId": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fileId",
+        "mimeType"
+      ],
+      "type": "object"
+    },
+    "name": "google_drive.files.export"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_drive",
+        "upstream": {
+          "method": "GET",
+          "path": "/drive/v3/files/{fileId}",
+          "source": "https://developers.google.com/workspace/drive/api/reference/rest/v3/files/get"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "google_drive.files.get"
+    },
+    "description": "Get Drive file metadata or media.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "acknowledgeAbuse": {
+          "type": "boolean"
+        },
+        "alt": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "fileId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fileId"
+      ],
+      "type": "object"
+    },
+    "name": "google_drive.files.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_drive",
+        "upstream": {
+          "method": "GET",
+          "path": "/drive/v3/files",
+          "source": "https://developers.google.com/workspace/drive/api/reference/rest/v3/files/list"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "google_drive.files.list"
+    },
+    "description": "Search Drive files using the q grammar.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "type": "string"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "pageSize": {
+          "type": "integer"
+        },
+        "pageToken": {
+          "type": "string"
+        },
+        "q": {
+          "type": "string"
+        },
+        "spaces": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "google_drive.files.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_sheets",
+        "upstream": {
+          "method": "GET",
+          "path": "/v4/spreadsheets/{spreadsheetId}",
+          "source": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets/get"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "google_sheets.spreadsheets.get"
+    },
+    "description": "Get a spreadsheet.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "type": "string"
+        },
+        "includeGridData": {
+          "type": "boolean"
+        },
+        "ranges": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "spreadsheetId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "spreadsheetId"
+      ],
+      "type": "object"
+    },
+    "name": "google_sheets.spreadsheets.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_sheets",
+        "upstream": {
+          "method": "POST",
+          "path": "/v4/spreadsheets/{spreadsheetId}/values/{range}:append",
+          "source": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/append"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "google_sheets.spreadsheets.values.append"
+    },
+    "description": "Append values to a spreadsheet table.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "insertDataOption": {
+          "type": "string"
+        },
+        "range": {
+          "type": "string"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "majorDimension": {
+              "type": "string"
+            },
+            "range": {
+              "type": "string"
+            },
+            "values": {
+              "items": {
+                "type": "array"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "values"
+          ],
+          "type": "object"
+        },
+        "spreadsheetId": {
+          "type": "string"
+        },
+        "valueInputOption": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "spreadsheetId",
+        "range",
+        "valueInputOption",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "google_sheets.spreadsheets.values.append"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_sheets",
+        "upstream": {
+          "method": "GET",
+          "path": "/v4/spreadsheets/{spreadsheetId}/values:batchGet",
+          "source": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/batchGet"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "google_sheets.spreadsheets.values.batchGet"
+    },
+    "description": "Get multiple spreadsheet ranges.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "majorDimension": {
+          "type": "string"
+        },
+        "ranges": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "spreadsheetId": {
+          "type": "string"
+        },
+        "valueRenderOption": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "spreadsheetId",
+        "ranges"
+      ],
+      "type": "object"
+    },
+    "name": "google_sheets.spreadsheets.values.batchGet"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_sheets",
+        "upstream": {
+          "method": "GET",
+          "path": "/v4/spreadsheets/{spreadsheetId}/values/{range}",
+          "source": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/get"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "google_sheets.spreadsheets.values.get"
+    },
+    "description": "Get values from a spreadsheet range.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "dateTimeRenderOption": {
+          "type": "string"
+        },
+        "majorDimension": {
+          "type": "string"
+        },
+        "range": {
+          "type": "string"
+        },
+        "spreadsheetId": {
+          "type": "string"
+        },
+        "valueRenderOption": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "spreadsheetId",
+        "range"
+      ],
+      "type": "object"
+    },
+    "name": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "google_sheets",
+        "upstream": {
+          "method": "PUT",
+          "path": "/v4/spreadsheets/{spreadsheetId}/values/{range}",
+          "source": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/update"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "google_sheets.spreadsheets.values.update"
+    },
+    "description": "Set values in a spreadsheet range.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "includeValuesInResponse": {
+          "type": "boolean"
+        },
+        "range": {
+          "type": "string"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "majorDimension": {
+              "type": "string"
+            },
+            "range": {
+              "type": "string"
+            },
+            "values": {
+              "items": {
+                "type": "array"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "values"
+          ],
+          "type": "object"
+        },
+        "spreadsheetId": {
+          "type": "string"
+        },
+        "valueInputOption": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "spreadsheetId",
+        "range",
+        "valueInputOption",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "google_sheets.spreadsheets.values.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/cycleCountDefinitions",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-cyclecountdefinitions-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.cycle_count_definitions.list"
+    },
+    "description": "Get cycle-count definitions and approval tolerances.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.cycle_count_definitions.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/cycleCountSequenceDetails/{cycleCountSequenceDetailsUniqID}/child/history",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-cyclecountsequencedetails-cyclecountsequencedetailsuniqid-child-history-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.cycle_count_history.list"
+    },
+    "description": "Get the independently recorded count history for one cycle-count sequence.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "cycleCountSequenceDetailsUniqID": {
+          "type": "string"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "cycleCountSequenceDetailsUniqID"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.cycle_count_history.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/cycleCountSequenceDetails",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-cyclecountsequencedetails-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.cycle_count_sequence_details.list"
+    },
+    "description": "Get cycle-count sequence quantities, recounts, and approval status.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.cycle_count_sequence_details.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/draftPurchaseOrders",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-draftpurchaseorders-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.draft_purchase_orders.create"
+    },
+    "description": "Create a draft purchase order at the documented resource.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "BuyerId": {
+              "type": "integer"
+            },
+            "CurrencyCode": {
+              "type": "string"
+            },
+            "Description": {
+              "type": "string"
+            },
+            "DocumentStyleId": {
+              "type": "integer"
+            },
+            "ProcurementBUId": {
+              "type": "integer"
+            },
+            "RequiredAcknowledgment": {
+              "type": "string"
+            },
+            "RequisitioningBUId": {
+              "type": "integer"
+            },
+            "SupplierId": {
+              "type": "integer"
+            },
+            "SupplierSiteId": {
+              "type": "integer"
+            },
+            "lines": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "Item": {
+                    "type": "string"
+                  },
+                  "ItemDescription": {
+                    "type": "string"
+                  },
+                  "LineNumber": {
+                    "type": "integer"
+                  },
+                  "LineType": {
+                    "type": "string"
+                  },
+                  "Price": {
+                    "type": "number"
+                  },
+                  "Quantity": {
+                    "type": "number"
+                  },
+                  "UOM": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "SupplierId",
+            "ProcurementBUId",
+            "BuyerId",
+            "DocumentStyleId",
+            "lines"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.draft_purchase_orders.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/draftPurchaseOrders",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-draftpurchaseorders-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.draft_purchase_orders.list"
+    },
+    "description": "Get draft purchase orders.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.draft_purchase_orders.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/inspectionPlans",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-inspectionplans-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.inspection_plans.list"
+    },
+    "description": "Get quality inspection plans.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.inspection_plans.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/inventoryOnhandBalances",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-inventoryonhandbalances-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.inventory_onhand_balances.list"
+    },
+    "description": "Get inventory on-hand balances.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/inventoryTransactions",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-inventorytransactions-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.inventory_transactions.create"
+    },
+    "description": "Create inventory transactions.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "SourceSystemCode": {
+              "type": "string"
+            },
+            "TransactionLines": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "Item": {
+                    "type": "string"
+                  },
+                  "LotNumber": {
+                    "type": "string"
+                  },
+                  "OrganizationCode": {
+                    "type": "string"
+                  },
+                  "Subinventory": {
+                    "type": "string"
+                  },
+                  "TransactionQuantity": {
+                    "type": "number"
+                  },
+                  "TransactionType": {
+                    "type": "string"
+                  },
+                  "TransactionUnitOfMeasure": {
+                    "type": "string"
+                  },
+                  "TransferSubinventory": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "TransactionMode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "SourceSystemCode",
+            "TransactionLines"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.inventory_transactions.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/invoiceHolds",
+          "source": "https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/op-invoiceholds-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.invoice_holds.create"
+    },
+    "description": "Create one Payables invoice hold.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "HoldName": {
+              "type": "string"
+            },
+            "HoldReason": {
+              "type": "string"
+            },
+            "InvoiceId": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "InvoiceId",
+            "HoldName"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.invoice_holds.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/invoiceHolds/{HoldId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/op-invoiceholds-holdid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.invoice_holds.update"
+    },
+    "description": "Update one Payables invoice hold, including release details.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "HoldId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "ReleaseName": {
+              "type": "string"
+            },
+            "ReleaseReason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ReleaseName"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "HoldId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.invoice_holds.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/invoices",
+          "source": "https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/op-invoices-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.invoices.create"
+    },
+    "description": "Create one Payables invoice.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "BusinessUnit": {
+              "type": "string"
+            },
+            "InvoiceAmount": {
+              "type": "number"
+            },
+            "InvoiceCurrency": {
+              "type": "string"
+            },
+            "InvoiceDate": {
+              "type": "string"
+            },
+            "InvoiceNumber": {
+              "type": "string"
+            },
+            "PaymentTerms": {
+              "type": "string"
+            },
+            "Supplier": {
+              "type": "string"
+            },
+            "SupplierSite": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "BusinessUnit",
+            "Supplier",
+            "InvoiceNumber",
+            "InvoiceAmount",
+            "InvoiceCurrency"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.invoices.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/invoices/{invoicesUniqID}",
+          "source": "https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/op-invoices-invoicesuniqid-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.invoices.get"
+    },
+    "description": "Get one Payables invoice.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "invoicesUniqID": {
+          "type": "string"
+        },
+        "onlyData": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "invoicesUniqID"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.invoices.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/invoices",
+          "source": "https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/op-invoices-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.invoices.list"
+    },
+    "description": "Get Payables invoices.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.invoices.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/invoices/{invoicesUniqID}",
+          "source": "https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/op-invoices-invoicesuniqid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.invoices.update"
+    },
+    "description": "Update one Payables invoice.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "invoicesUniqID": {
+          "type": "string"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "BusinessUnit": {
+              "type": "string"
+            },
+            "InvoiceAmount": {
+              "type": "number"
+            },
+            "InvoiceCurrency": {
+              "type": "string"
+            },
+            "InvoiceDate": {
+              "type": "string"
+            },
+            "InvoiceNumber": {
+              "type": "string"
+            },
+            "PaymentTerms": {
+              "type": "string"
+            },
+            "Supplier": {
+              "type": "string"
+            },
+            "SupplierSite": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "invoicesUniqID",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.invoices.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/invoices/action/validateInvoice",
+          "source": "https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/op-invoices-action-validateinvoice-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.invoices.validate"
+    },
+    "description": "Validate an invoice; Oracle checks tax and matching tolerances and may place holds.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "BusinessUnit": {
+              "type": "string"
+            },
+            "InvoiceNumber": {
+              "type": "string"
+            },
+            "ProcessAction": {
+              "const": "Validate",
+              "type": "string"
+            },
+            "Supplier": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ProcessAction",
+            "BusinessUnit",
+            "Supplier",
+            "InvoiceNumber"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.invoices.validate"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders/{WorkOrderId}/child/documentReference",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-workorderid-child-documentreference-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.maintenance_documents.create"
+    },
+    "description": "Create a maintenance work-order document reference.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "Description": {
+              "type": "string"
+            },
+            "DocumentName": {
+              "type": "string"
+            },
+            "DocumentNumber": {
+              "type": "string"
+            },
+            "DocumentType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "DocumentName",
+            "DocumentType"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_documents.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders/{WorkOrderId}/child/documentReference",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-workorderid-child-documentreference-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.maintenance_documents.list"
+    },
+    "description": "Get document references for a maintenance work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "WorkOrderId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_documents.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders/{WorkOrderId}/child/WorkOrderOperation/{WoOperationId}/child/WorkOrderOperationMaterial",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-workorderid-child-workorderoperation-wooperationid-child-workorderoperationmaterial-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.maintenance_materials.list"
+    },
+    "description": "Get material requirements for one maintenance work-order operation.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WoOperationId": {
+          "type": "integer"
+        },
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "WoOperationId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_materials.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders/{WorkOrderId}/child/WorkOrderOperation",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-workorderid-child-workorderoperation-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.maintenance_operations.list"
+    },
+    "description": "Get operations for a maintenance work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "WorkOrderId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_operations.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders/{WorkOrderId}/child/WorkOrderOperation/{WoOperationId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-workorderid-child-workorderoperation-wooperationid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.maintenance_operations.update"
+    },
+    "description": "Update one maintenance operation.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WoOperationId": {
+          "type": "integer"
+        },
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationName": {
+              "type": "string"
+            },
+            "PlannedStartDate": {
+              "type": "string"
+            },
+            "WorkCenterCode": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "WoOperationId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_operations.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenancePrograms",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceprograms-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.maintenance_programs.create"
+    },
+    "description": "Create one maintenance program.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "ForecastEndDate": {
+              "type": "string"
+            },
+            "ForecastStartDate": {
+              "type": "string"
+            },
+            "MaintenanceProgramCode": {
+              "type": "string"
+            },
+            "MaintenanceProgramName": {
+              "type": "string"
+            },
+            "OrganizationCode": {
+              "type": "string"
+            },
+            "StatusCode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "MaintenanceProgramCode",
+            "MaintenanceProgramName",
+            "OrganizationCode"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_programs.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenancePrograms/action/generateProgramForecasts",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceprograms-action-generateprogramforecasts-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.maintenance_programs.generate_forecasts"
+    },
+    "description": "Generate maintenance-program forecasts.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "ForecastEndDate": {
+              "type": "string"
+            },
+            "ForecastStartDate": {
+              "type": "string"
+            },
+            "MaintenanceProgramCode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "MaintenanceProgramCode"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_programs.generate_forecasts"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenancePrograms/action/generateProgramWorkOrders",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceprograms-action-generateprogramworkorders-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.maintenance_programs.generate_work_orders"
+    },
+    "description": "Generate maintenance work orders from a program forecast.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "MaintenanceProgramCode": {
+              "type": "string"
+            },
+            "WorkOrderEndDate": {
+              "type": "string"
+            },
+            "WorkOrderStartDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "MaintenanceProgramCode"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_programs.generate_work_orders"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenancePrograms/{MaintenanceProgramId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceprograms-maintenanceprogramid-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.maintenance_programs.get"
+    },
+    "description": "Get one maintenance program.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "MaintenanceProgramId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "onlyData": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "MaintenanceProgramId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_programs.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenancePrograms",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceprograms-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.maintenance_programs.list"
+    },
+    "description": "Get maintenance programs.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_programs.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenancePrograms/{MaintenanceProgramId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceprograms-maintenanceprogramid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.maintenance_programs.update"
+    },
+    "description": "Update one maintenance program.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "MaintenanceProgramId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "ForecastEndDate": {
+              "type": "string"
+            },
+            "ForecastStartDate": {
+              "type": "string"
+            },
+            "MaintenanceProgramCode": {
+              "type": "string"
+            },
+            "MaintenanceProgramName": {
+              "type": "string"
+            },
+            "OrganizationCode": {
+              "type": "string"
+            },
+            "StatusCode": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "MaintenanceProgramId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_programs.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders/{WorkOrderId}/child/WorkOrderOperation/{WoOperationId}/child/WorkOrderOperationResource",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-workorderid-child-workorderoperation-wooperationid-child-workorderoperationresource-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.maintenance_resources.list"
+    },
+    "description": "Get labor and equipment resources for one maintenance work-order operation.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WoOperationId": {
+          "type": "integer"
+        },
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "WoOperationId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_resources.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.maintenance_work_orders.create"
+    },
+    "description": "Create one maintenance work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "AssetNumber": {
+              "type": "string"
+            },
+            "OrganizationCode": {
+              "type": "string"
+            },
+            "PlannedCompletionDate": {
+              "type": "string"
+            },
+            "PlannedStartDate": {
+              "type": "string"
+            },
+            "WorkOrderDescription": {
+              "type": "string"
+            },
+            "WorkOrderNumber": {
+              "type": "string"
+            },
+            "WorkOrderStatusCode": {
+              "type": "string"
+            },
+            "WorkOrderTypeCode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "OrganizationCode",
+            "AssetNumber",
+            "WorkOrderDescription",
+            "WorkOrderTypeCode",
+            "PlannedStartDate"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_work_orders.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders/{WorkOrderId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-workorderid-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.maintenance_work_orders.get"
+    },
+    "description": "Get one maintenance work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "onlyData": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "WorkOrderId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_work_orders.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.maintenance_work_orders.list"
+    },
+    "description": "Get maintenance work orders.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_work_orders.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/maintenanceWorkOrders/{WorkOrderId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-maintenanceworkorders-workorderid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.maintenance_work_orders.update"
+    },
+    "description": "Update one maintenance work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "AssetNumber": {
+              "type": "string"
+            },
+            "OrganizationCode": {
+              "type": "string"
+            },
+            "PlannedCompletionDate": {
+              "type": "string"
+            },
+            "PlannedStartDate": {
+              "type": "string"
+            },
+            "WorkOrderDescription": {
+              "type": "string"
+            },
+            "WorkOrderNumber": {
+              "type": "string"
+            },
+            "WorkOrderStatusCode": {
+              "type": "string"
+            },
+            "WorkOrderTypeCode": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.maintenance_work_orders.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/materialTransactions",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-materialtransactions-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.material_transactions.create"
+    },
+    "description": "Create work-order material transactions.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialTransactionDetail": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "InventoryItemNumber": {
+                    "type": "string"
+                  },
+                  "LotNumber": {
+                    "type": "string"
+                  },
+                  "OrganizationCode": {
+                    "type": "string"
+                  },
+                  "SubinventoryCode": {
+                    "type": "string"
+                  },
+                  "TransactionQuantity": {
+                    "type": "number"
+                  },
+                  "TransactionTypeCode": {
+                    "type": "string"
+                  },
+                  "TransactionUnitOfMeasure": {
+                    "type": "string"
+                  },
+                  "WorkOrderNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "SourceSystemCode": {
+              "type": "string"
+            },
+            "SourceSystemType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "SourceSystemCode",
+            "MaterialTransactionDetail"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.material_transactions.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/operationTransactions",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-operationtransactions-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.operation_transactions.create"
+    },
+    "description": "Create work-order operation transactions.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationTransactionDetail": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "FromDispatchState": {
+                    "type": "string"
+                  },
+                  "OrganizationCode": {
+                    "type": "string"
+                  },
+                  "ToDispatchState": {
+                    "type": "string"
+                  },
+                  "TransactionQuantity": {
+                    "type": "number"
+                  },
+                  "TransactionUnitOfMeasure": {
+                    "type": "string"
+                  },
+                  "WoOperationSequenceNumber": {
+                    "type": "number"
+                  },
+                  "WorkOrderNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "SourceSystemCode": {
+              "type": "string"
+            },
+            "SourceSystemType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "SourceSystemCode",
+            "OperationTransactionDetail"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.operation_transactions.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/purchaseOrders/{purchaseOrdersUniqID}/child/lines",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-purchaseorders-purchaseordersuniqid-child-lines-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.purchase_order_lines.list"
+    },
+    "description": "Get purchase-order lines.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "purchaseOrdersUniqID": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "purchaseOrdersUniqID"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.purchase_order_lines.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/purchaseOrders/{purchaseOrdersUniqID}/action/acknowledge",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-purchaseorders-purchaseordersuniqid-action-acknowledge-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.purchase_orders.acknowledge"
+    },
+    "description": "Record supplier acknowledgment for a purchase order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "purchaseOrdersUniqID": {
+          "type": "string"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "acknowledgementNote": {
+              "type": "string"
+            },
+            "supplierOrder": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "purchaseOrdersUniqID",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.purchase_orders.acknowledge"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/purchaseOrders/{purchaseOrdersUniqID}/action/cancel",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-purchaseorders-purchaseordersuniqid-action-cancel-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.purchase_orders.cancel"
+    },
+    "description": "Cancel a purchase order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "purchaseOrdersUniqID": {
+          "type": "string"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "BCCEmail": {
+              "type": "string"
+            },
+            "CCEmail": {
+              "type": "string"
+            },
+            "acknowledgeWithinDays": {
+              "type": "number"
+            },
+            "cancelUnfulfilledDemandFlag": {
+              "type": "boolean"
+            },
+            "cancellationReason": {
+              "type": "string"
+            },
+            "communicationMethod": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "fax": {
+              "type": "string"
+            },
+            "initiatingParty": {
+              "enum": [
+                "buyer",
+                "requester",
+                "supplier"
+              ],
+              "type": "string"
+            },
+            "requiredAcknowledgment": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "purchaseOrdersUniqID",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.purchase_orders.cancel"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/purchaseOrders/{purchaseOrdersUniqID}/action/close",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-purchaseorders-purchaseordersuniqid-action-close-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.purchase_orders.close"
+    },
+    "description": "Close a purchase order using a documented close action.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "purchaseOrdersUniqID": {
+          "type": "string"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "closeAction": {
+              "enum": [
+                "closeForReceiving",
+                "closeForInvoicing",
+                "close",
+                "finallyClose"
+              ],
+              "type": "string"
+            },
+            "closeReason": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "purchaseOrdersUniqID",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.purchase_orders.close"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/purchaseOrders/{purchaseOrdersUniqID}",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-purchaseorders-purchaseordersuniqid-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.purchase_orders.get"
+    },
+    "description": "Get one purchase order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "purchaseOrdersUniqID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "purchaseOrdersUniqID"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.purchase_orders.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/purchaseOrders",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-purchaseorders-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.purchase_orders.list"
+    },
+    "description": "Get purchase orders.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.purchase_orders.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/inspectionResults",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-inspectionresults-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.quality_inspection_results.create"
+    },
+    "description": "Create one quality inspection result.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "DocumentNumber": {
+              "type": "string"
+            },
+            "DocumentType": {
+              "type": "string"
+            },
+            "InspectionPlanId": {
+              "type": "integer"
+            },
+            "InspectionPlanName": {
+              "type": "string"
+            },
+            "InspectionStatus": {
+              "type": "string"
+            },
+            "ItemNumber": {
+              "type": "string"
+            },
+            "LotNumber": {
+              "type": "string"
+            },
+            "OrganizationCode": {
+              "type": "string"
+            },
+            "Quantity": {
+              "type": "number"
+            },
+            "samples": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "Result": {
+                    "type": "string"
+                  },
+                  "SampleNumber": {
+                    "type": "integer"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "OrganizationCode",
+            "InspectionPlanName",
+            "DocumentType",
+            "DocumentNumber"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.quality_inspection_results.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/inspectionResults",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-inspectionresults-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.quality_inspection_results.list"
+    },
+    "description": "Get quality inspection results.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.quality_inspection_results.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/inspectionResults/{InspectionEventId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-inspectionresults-inspectioneventid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.quality_inspection_results.update"
+    },
+    "description": "Update one quality inspection result.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "InspectionEventId": {
+          "type": "string"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "InspectionResult": {
+              "type": "string"
+            },
+            "InspectionStatus": {
+              "type": "string"
+            },
+            "QuantityAccepted": {
+              "type": "number"
+            },
+            "QuantityRejected": {
+              "type": "number"
+            },
+            "samples": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "Result": {
+                    "type": "string"
+                  },
+                  "SampleNumber": {
+                    "type": "integer"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "InspectionEventId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.quality_inspection_results.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/receivingReceiptRequests",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-receivingreceipttransactionrequests-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.receiving_receipt_requests.create"
+    },
+    "description": "Create a receiving receipt request.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "EmployeeId": {
+              "type": "integer"
+            },
+            "OrganizationCode": {
+              "type": "string"
+            },
+            "ReceiptSourceCode": {
+              "type": "string"
+            },
+            "VendorName": {
+              "type": "string"
+            },
+            "lines": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "ItemNumber": {
+                    "type": "string"
+                  },
+                  "LotNumber": {
+                    "type": "string"
+                  },
+                  "POHeaderId": {
+                    "type": "integer"
+                  },
+                  "POLineId": {
+                    "type": "integer"
+                  },
+                  "Quantity": {
+                    "type": "number"
+                  },
+                  "SourceDocumentCode": {
+                    "type": "string"
+                  },
+                  "UnitOfMeasure": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "ReceiptSourceCode",
+            "OrganizationCode",
+            "lines"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.receiving_receipt_requests.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/receivingReceiptRequests",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-receivingreceiptrequests-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.receiving_receipt_requests.list"
+    },
+    "description": "Get receiving receipt requests.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.receiving_receipt_requests.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/receivingReceiptRequests/{HeaderInterfaceId}/child/lines",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-receivingreceiptrequests-headerinterfaceid-child-lines-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.receiving_receipt_transactions.create"
+    },
+    "description": "Create a receiving transaction request.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "HeaderInterfaceId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "InspectionQualityCode": {
+              "type": "string"
+            },
+            "ItemNumber": {
+              "type": "string"
+            },
+            "Quantity": {
+              "type": "number"
+            },
+            "TransactionType": {
+              "type": "string"
+            },
+            "lotItemLots": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "LotNumber": {
+                    "type": "string"
+                  },
+                  "PrimaryQuantity": {
+                    "type": "number"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "TransactionType",
+            "Quantity"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "HeaderInterfaceId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.receiving_receipt_transactions.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/receivingReceiptRequests/{HeaderInterfaceId}/child/lines",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-receivingreceiptrequests-headerinterfaceid-child-lines-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.receiving_receipt_transactions.list"
+    },
+    "description": "Get receiving transaction requests.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "HeaderInterfaceId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "HeaderInterfaceId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.receiving_receipt_transactions.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/receivingReceiptRequests/{HeaderInterfaceId}/child/lines/{InterfaceTransactionId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-receivingreceiptrequests-headerinterfaceid-child-lines-interfacetransactionid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.receiving_receipt_transactions.update"
+    },
+    "description": "Update one receiving transaction request.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "HeaderInterfaceId": {
+          "type": "integer"
+        },
+        "InterfaceTransactionId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "Comments": {
+              "type": "string"
+            },
+            "InspectionQualityCode": {
+              "type": "string"
+            },
+            "Quantity": {
+              "type": "number"
+            },
+            "TransactionType": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "HeaderInterfaceId",
+        "InterfaceTransactionId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.receiving_receipt_transactions.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/resourceTransactions",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-resourcetransactions-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.resource_transactions.create"
+    },
+    "description": "Create work-order resource transactions.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "ResourceTransactionDetail": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "OrganizationCode": {
+                    "type": "string"
+                  },
+                  "ResourceCode": {
+                    "type": "string"
+                  },
+                  "TransactionQuantity": {
+                    "type": "number"
+                  },
+                  "TransactionUnitOfMeasure": {
+                    "type": "string"
+                  },
+                  "WoOperationSequenceNumber": {
+                    "type": "number"
+                  },
+                  "WorkOrderNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "SourceSystemCode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "SourceSystemCode",
+            "ResourceTransactionDetail"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.resource_transactions.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/{OrderKey}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-salesordersfororderhub-orderkey-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.sales_orders.get"
+    },
+    "description": "Get one sales order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "OrderKey": {
+          "type": "string"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "onlyData": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "OrderKey"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.sales_orders.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-salesordersfororderhub-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.sales_orders.list"
+    },
+    "description": "Get sales orders from Order Management.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.sales_orders.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/suppliers/{SupplierId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-suppliers-supplierid-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.suppliers.get"
+    },
+    "description": "Get one supplier.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "SupplierId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "onlyData": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "SupplierId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.suppliers.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/suppliers",
+          "source": "https://docs.oracle.com/en/cloud/saas/procurement/26a/fapra/op-suppliers-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.suppliers.list"
+    },
+    "description": "Get suppliers.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.suppliers.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/supplyRequests",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-supplyrequests-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.supply_requests.create"
+    },
+    "description": "Create one supply request.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "SupplyOrderReferenceNumber": {
+              "type": "string"
+            },
+            "SupplyRequestDate": {
+              "type": "string"
+            },
+            "SupplyRequestSystem": {
+              "type": "string"
+            },
+            "supplyRequestLines": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "DestinationOrganizationCode": {
+                    "type": "string"
+                  },
+                  "ItemNumber": {
+                    "type": "string"
+                  },
+                  "NeedByDate": {
+                    "type": "string"
+                  },
+                  "Quantity": {
+                    "type": "number"
+                  },
+                  "SupplyOrderSource": {
+                    "type": "string"
+                  },
+                  "SupplyType": {
+                    "type": "string"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "SupplyOrderReferenceNumber",
+            "SupplyRequestSystem",
+            "SupplyRequestDate",
+            "supplyRequestLines"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.supply_requests.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/supplyRequests",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-supplyrequests-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.supply_requests.list"
+    },
+    "description": "Get supply requests.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.supply_requests.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}/child/WorkOrderMaterial",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-child-workordermaterial-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.work_order_materials.list"
+    },
+    "description": "Get materials for a discrete work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "WorkOrderId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_order_materials.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}/child/WorkOrderMaterial/{WorkOrderOperationMaterialId}/action/replaceWithSubstitute",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-child-workordermaterial-workorderoperationmaterialid-action-replacewithsubstitute-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.work_order_materials.replace_with_substitute"
+    },
+    "description": "Replace a work-order material with a documented substitute item identifier or item number.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "WorkOrderOperationMaterialId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "substituteItemId": {
+              "type": "number"
+            },
+            "substituteItemNumber": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "WorkOrderOperationMaterialId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_order_materials.replace_with_substitute"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}/child/WorkOrderOperation/{WorkOrderOperationId2}/child/WorkOrderOperationMaterial/{WorkOrderOperationMaterialId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-child-workorderoperation-workorderoperationid2-child-workorderoperationmaterial-workorderoperationmaterialid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.work_order_materials.update"
+    },
+    "description": "Update one work-order operation material.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "WorkOrderOperationId2": {
+          "type": "integer"
+        },
+        "WorkOrderOperationMaterialId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "BasisType": {
+              "type": "string"
+            },
+            "ContributeToYieldFlag": {
+              "type": "boolean"
+            },
+            "EnforceIntRequirements": {
+              "type": "string"
+            },
+            "ExtendedQuantity": {
+              "type": "number"
+            },
+            "IncludeInPlanningFlag": {
+              "type": "boolean"
+            },
+            "InverseQuantity": {
+              "type": "number"
+            },
+            "QuantityPERProduct": {
+              "type": "number"
+            },
+            "RequiredDate": {
+              "type": "string"
+            },
+            "SupplyLocator": {
+              "type": "string"
+            },
+            "SupplyLocatorId": {
+              "type": "integer"
+            },
+            "SupplySubinventory": {
+              "type": "string"
+            },
+            "SupplyType": {
+              "type": "string"
+            },
+            "WdOperationMaterialId": {
+              "type": "integer"
+            },
+            "YieldFactor": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "WorkOrderOperationId2",
+        "WorkOrderOperationMaterialId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_order_materials.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}/child/WorkOrderOperation",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-child-workorderoperation-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.work_order_operations.create"
+    },
+    "description": "Create an active operation for a discrete work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationName": {
+              "type": "string"
+            },
+            "OperationSequenceNumber": {
+              "type": "integer"
+            },
+            "PlannedCompletionDate": {
+              "type": "string"
+            },
+            "PlannedStartDate": {
+              "type": "string"
+            },
+            "WorkCenterCode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "OperationSequenceNumber",
+            "OperationName",
+            "WorkCenterCode"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_order_operations.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}/child/WorkOrderOperation",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-child-workorderoperation-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.work_order_operations.list"
+    },
+    "description": "Get active operations for a discrete work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "WorkOrderId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_order_operations.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}/child/WorkOrderOperation/{WorkOrderOperationId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-child-workorderoperation-workorderoperationid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.work_order_operations.update"
+    },
+    "description": "Update one active work-order operation.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "WorkOrderOperationId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationName": {
+              "type": "string"
+            },
+            "PlannedCompletionDate": {
+              "type": "string"
+            },
+            "PlannedStartDate": {
+              "type": "string"
+            },
+            "WorkCenterCode": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "WorkOrderOperationId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_order_operations.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}/child/WorkOrderOperation/{WorkOrderOperationId}/child/WorkOrderOperationResource",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-child-workorderoperation-workorderoperationid-child-workorderoperationresource-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.work_order_resources.create"
+    },
+    "description": "Create a resource requirement for a work-order operation.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "WorkOrderOperationId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "AssignedUnits": {
+              "type": "number"
+            },
+            "BasisType": {
+              "type": "string"
+            },
+            "ResourceCode": {
+              "type": "string"
+            },
+            "UsageRate": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "ResourceCode"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "WorkOrderOperationId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_order_resources.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}/child/WorkOrderResource",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-child-workorderresource-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.work_order_resources.list"
+    },
+    "description": "Get resources for a discrete work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "WorkOrderId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_order_resources.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}/child/WorkOrderOperation/{WorkOrderOperationId}/child/WorkOrderOperationResource/{WorkOrderOperationResourceId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-child-workorderoperation-workorderoperationid-child-workorderoperationresource-workorderoperationresourceid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.work_order_resources.update"
+    },
+    "description": "Update one work-order operation resource without changing its immutable resource identity.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "WorkOrderOperationId": {
+          "type": "integer"
+        },
+        "WorkOrderOperationResourceId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "AssignedUnits": {
+              "type": "number"
+            },
+            "BasisType": {
+              "type": "string"
+            },
+            "ChargeType": {
+              "type": "string"
+            },
+            "EquipmentProfileCode": {
+              "type": "string"
+            },
+            "EquipmentProfileId": {
+              "type": "integer"
+            },
+            "InverseRequiredUsage": {
+              "type": "number"
+            },
+            "PlannedCompletionDate": {
+              "type": "string"
+            },
+            "PlannedStartDate": {
+              "type": "string"
+            },
+            "PrincipalFlag": {
+              "type": "boolean"
+            },
+            "ProfileCode": {
+              "type": "string"
+            },
+            "ProfileId": {
+              "type": "integer"
+            },
+            "RequiredUsage": {
+              "type": "number"
+            },
+            "ResourceActivityCode": {
+              "type": "string"
+            },
+            "ResourceSequenceNumber": {
+              "type": "number"
+            },
+            "ScheduledIndicator": {
+              "type": "string"
+            },
+            "UnsetPrincipalFlag": {
+              "type": "boolean"
+            },
+            "UsageRate": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "WorkOrderOperationId",
+        "WorkOrderOperationResourceId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_order_resources.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "POST",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-post.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.work_orders.create"
+    },
+    "description": "Create one discrete manufacturing work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "ItemNumber": {
+              "type": "string"
+            },
+            "OrganizationCode": {
+              "type": "string"
+            },
+            "PlannedCompletionDate": {
+              "type": "string"
+            },
+            "PlannedStartDate": {
+              "type": "string"
+            },
+            "WorkOrderNumber": {
+              "type": "string"
+            },
+            "WorkOrderQuantity": {
+              "type": "number"
+            },
+            "WorkOrderStatusCode": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "OrganizationCode",
+            "ItemNumber",
+            "WorkOrderQuantity",
+            "PlannedStartDate",
+            "PlannedCompletionDate"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_orders.create"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.work_orders.get"
+    },
+    "description": "Get one discrete work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "onlyData": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "WorkOrderId"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_orders.get"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "GET",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-get.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "oracle_fusion.work_orders.list"
+    },
+    "description": "Get discrete manufacturing work orders.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "finder": {
+          "type": "string"
+        },
+        "limit": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "onlyData": {
+          "type": "boolean"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "q": {
+          "description": "Documented Oracle REST query expression.",
+          "type": "string"
+        },
+        "totalResults": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_orders.list"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "oracle_fusion",
+        "upstream": {
+          "method": "PATCH",
+          "path": "/fscmRestApi/resources/11.13.18.05/workOrders/{WorkOrderId}",
+          "source": "https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fasrp/op-workorders-workorderid-patch.html"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "oracle_fusion.work_orders.update"
+    },
+    "description": "Update one discrete manufacturing work order.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "WorkOrderId": {
+          "type": "integer"
+        },
+        "requestBody": {
+          "additionalProperties": false,
+          "properties": {
+            "ItemNumber": {
+              "type": "string"
+            },
+            "OrganizationCode": {
+              "type": "string"
+            },
+            "PlannedCompletionDate": {
+              "type": "string"
+            },
+            "PlannedStartDate": {
+              "type": "string"
+            },
+            "WorkOrderNumber": {
+              "type": "string"
+            },
+            "WorkOrderQuantity": {
+              "type": "number"
+            },
+            "WorkOrderStatusCode": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        }
+      },
+      "required": [
+        "WorkOrderId",
+        "requestBody"
+      ],
+      "type": "object"
+    },
+    "name": "oracle_fusion.work_orders.update"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "slack",
+        "upstream": {
+          "method": "POST",
+          "path": "/api/chat.postMessage",
+          "source": "https://api.slack.com/methods/chat.postMessage"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "slack.chat_postMessage"
+    },
+    "description": "Post a Slack message or thread reply.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "channel": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "thread_ts": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "channel",
+        "text"
+      ],
+      "type": "object"
+    },
+    "name": "slack.chat_postMessage"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "slack",
+        "upstream": {
+          "method": "GET",
+          "path": "/api/conversations.history",
+          "source": "https://api.slack.com/methods/conversations.history"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "slack.conversations_history"
+    },
+    "description": "Get top-level messages in a Slack conversation.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "channel": {
+          "type": "string"
+        },
+        "cursor": {
+          "type": "string"
+        },
+        "inclusive": {
+          "type": "boolean"
+        },
+        "latest": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "oldest": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "channel"
+      ],
+      "type": "object"
+    },
+    "name": "slack.conversations_history"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "slack",
+        "upstream": {
+          "method": "GET",
+          "path": "/api/conversations.replies",
+          "source": "https://api.slack.com/methods/conversations.replies"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "slack.conversations_replies"
+    },
+    "description": "Get a Slack thread, parent first.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "channel": {
+          "type": "string"
+        },
+        "cursor": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "ts": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "channel",
+        "ts"
+      ],
+      "type": "object"
+    },
+    "name": "slack.conversations_replies"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "slack",
+        "upstream": {
+          "method": "GET",
+          "path": "/api/files.info",
+          "source": "https://api.slack.com/methods/files.info"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "slack.files_info"
+    },
+    "description": "Get information about a Slack file.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "file": {
+          "type": "string"
+        },
+        "page": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "file"
+      ],
+      "type": "object"
+    },
+    "name": "slack.files_info"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "slack",
+        "upstream": {
+          "method": "POST",
+          "path": "/api/reactions.add",
+          "source": "https://api.slack.com/methods/reactions.add"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+      "title": "slack.reactions_add"
+    },
+    "description": "Add a reaction to a Slack message.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "channel": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "channel",
+        "timestamp",
+        "name"
+      ],
+      "type": "object"
+    },
+    "name": "slack.reactions_add"
+  },
+  {
+    "_meta": {
+      "factorybench": {
+        "contractMode": "documented-operation",
+        "implementation": "closed deterministic sandbox",
+        "server": "slack",
+        "upstream": {
+          "method": "GET",
+          "path": "/api/search.messages",
+          "source": "https://api.slack.com/methods/search.messages"
+        }
+      }
+    },
+    "annotations": {
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false,
+      "readOnlyHint": true,
+      "title": "slack.search_messages"
+    },
+    "description": "Search Slack messages visible to the caller.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "query": {
+          "type": "string"
+        },
+        "sort": {
+          "type": "string"
+        },
+        "sort_dir": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object"
+    },
+    "name": "slack.search_messages"
+  }
+]

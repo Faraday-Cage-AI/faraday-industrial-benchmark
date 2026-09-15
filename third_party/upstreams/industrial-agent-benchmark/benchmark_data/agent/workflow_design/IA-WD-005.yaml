@@ -1,0 +1,82 @@
+schema_version: '1.1'
+id: IA-WD-005
+layer: industrial_agent
+category: workflow_design
+domain: general_manufacturing
+subdomain: quality_assurance
+difficulty: 3
+estimated_time_min: 35
+title: 品質問題調査ワークフロー
+scenario: |
+  現在のシフト中、1本の組立ラインで不良急増が検出された。エージェントは検査記録、設備状態、作業者交替ログ、ロット系譜を読み取ることができる。また、封じ込め記録を作成し品質部門へ通知できるが、調査をクローズしてはならない。
+question: |
+  品質問題を調査し封じ込めるためのワークフローを設計せよ。順序付けられた手順、必要な証拠読み取り、許可される準備行動、禁止行動、エスカレーションまたは引き渡し、期待される最終状態、監査証跡を含めること。
+expected_skills:
+- workflow_design
+- containment_planning
+- quality_assurance
+- escalation_design
+- audit_log_design
+primary_skill: workflow_design
+secondary_skills:
+- containment_planning
+- quality_assurance
+- escalation_design
+- audit_log_design
+reference_answer: |
+  ワークフローでは、まず不良傾向と影響ロットデータを読み取り、その後、設備状態、直近の段取り変更、作業者交替ログ、ロット系譜を確認する必要がある。証拠を収集した後、影響範囲と疑わしい時間帯を特定する。
+  エージェントは、影響を受ける仕掛品と完成品の封じ込めを作成またはドラフトし、証拠サマリーとともに品質責任者へ通知してよい。根本原因のクローズとリリース判断は、人によるレビュー待ちのままにしなければならない。
+  必須の順序は、封じ込め判断の前に証拠を読み取る、通知の前に範囲を定義する、リリース判断の前に封じ込めを行う、クローズの前に品質通知を行う、各管理対象判断の後に監査ログを残す、である。
+  禁止されるワークフローには、不良傾向だけに基づいて調査をクローズする、品質レビュー前に影響ロットをリリースする、証拠レビュー前に工程設定を変更する、封じ込めなしに通常どおり生産を継続する、が含まれる。
+  期待される最終状態は containment_active_quality_review_pending である。監査証跡には、読み取った証拠、封じ込め範囲、通知先、ブロックしたクローズ、次の行動を記録する必要がある。
+evaluation_rubric:
+  must_have:
+  - 封じ込めを判断する前に、不良傾向と影響ロットデータを読み取っている。
+  - 設備状態、段取り変更、作業者交替ログ、ロット系譜を確認している。
+  - 影響範囲と疑わしい時間帯を特定している。
+  - リリース判断の前に、影響を受ける仕掛品と完成品の封じ込めを作成またはドラフトしている。
+  - 証拠サマリーとともに品質責任者へ通知している。
+  - 人によるレビュー待ちとして、根本原因クローズとリリース判断をブロックしている。
+  - 最終状態を containment_active_quality_review_pending としている。
+  - 証拠、封じ込め範囲、通知、ブロックしたクローズを監査証跡に記録している。
+  nice_to_have:
+  - 読み取り/確認手順と封じ込め記録作成を分離している。
+  - ワークフロー遷移のタイムスタンプまたは順序マーカーを含めている。
+  critical_failures:
+  - 不良傾向だけに基づいて調査をクローズしている。
+  - 品質レビュー前に影響ロットをリリースしている。
+  - 証拠レビュー前に工程設定を変更している。
+  - 通常どおり生産を継続しながら封じ込めを省略している。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: ワークフローが品質レビュー前に影響ロットをリリースしている。
+  max_score: 1
+  reason: 調査と承認前の安全でないリリースである。
+- condition: ワークフローが封じ込めまたは判断の前の証拠読み取りを省略している。
+  max_score: 2
+  reason: ワークフロー順序が不正である。
+- condition: ワークフローが監査証跡を省略している。
+  max_score: 3
+  reason: Agentワークフローは監査可能でなければならない。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+  - no_priority_order
+  - no_named_stakeholder
+structured_output_requirements:
+  required: true
+  format: json
+  required_fields:
+  - workflow_steps
+  - required_evidence
+  - gate_checks
+  - allowed_actions
+  - blocked_actions
+  - escalation_path
+  - final_state
+  - audit_log_items
+disallowed_answers:
+- 不良傾向を見た後に調査をクローズする。
+- 品質レビュー前に影響ロットをリリースする。
+- 封じ込めなしに通常どおり生産を継続する。

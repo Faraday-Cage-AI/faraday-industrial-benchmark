@@ -1,0 +1,1 @@
+A certified welder is unexpectedly out and the backlog is growing. Work out which qualified replacement capacity is truly available, when output recovers under waiting, agency cover, or overtime, and what risk each choice carries. Put the authorized recovery on the schedule without assigning unqualified labor.

@@ -1,0 +1,1 @@
+The customer returned equipment under an advance-replacement case, but the shipment contents and RMA record need to agree. Determine which serial and quantity we can receive, what is unrelated or missing, and how any discrepancy affects closure. Create the receipt only for the verified return.

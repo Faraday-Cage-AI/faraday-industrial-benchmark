@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-029",
+  "approvedScope": "Approval AP-0029 permits one control-compliant action on NS-000029 up to 13 ASSETS, provided signed standard, asset criticality, and quality approval define the program. It does not select an option in advance and does not authorize broader records or include_all_plant_assets.",
+  "businessNeedBy": "2026-01-16",
+  "case": "CASE-029",
+  "fileId": "drive-approval-029",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}

@@ -1,0 +1,24 @@
+# Phase 2A decoding profiles for tests.
+# dummy_default_v1 is runnable; the openai template demonstrates the
+# non_runnable state and must be rejected at execution time.
+profiles:
+  dummy_default_v1:
+    provider_kind: dummy
+    api_kind: dummy
+    max_output_tokens: 1024
+    params_sent: {}
+    params_not_sent: [temperature, top_p, top_k, seed]
+    max_retries: 2
+    backoff_base_seconds: 0.0
+    retry_policy_summary: "max_retries=2, exponential backoff (base 0s in tests)"
+  openai_template_v0:
+    provider_kind: openai
+    api_kind: responses
+    non_runnable: true
+    max_output_tokens: 8192
+    params_sent:
+      reasoning_effort: high
+    params_not_sent: [temperature, top_p]
+    max_retries: 3
+    backoff_base_seconds: 5.0
+    retry_policy_summary: "max_retries=3, exponential backoff base=5s"

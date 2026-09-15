@@ -1,0 +1,57 @@
+schema_version: '1.1'
+id: IK-CC-003
+layer: industrial_knowledge
+category: change_control
+domain: automotive
+subdomain: process_engineering
+difficulty: 3
+estimated_time_min: 30
+title: 影響評価の対象範囲
+scenario: |
+  提案されている工程条件の変更により、製品寸法と検査頻度に影響が出る可能性がある。
+question: |
+  影響評価において、その変更が何に影響するかを特定するために確認すべき範囲を挙げよ。
+expected_skills:
+- change_control
+- impact_assessment
+- documentation_control
+- traceability_analysis
+primary_skill: impact_assessment
+secondary_skills:
+- change_control
+- documentation_control
+- traceability_analysis
+reference_answer: |
+  影響評価では、影響を受ける製品、品番、派生品、または顧客プログラムを特定する必要がある。
+  影響を受ける工程、生産ライン、設備、治具、工具、ソフトウェア設定を確認する。
+  また、検査計画、管理計画、ゲージ、試験方法、サンプリング頻度、図面、作業標準、段取り表、帳票、その他の管理文書、影響を受けるロット、仕掛品、在庫、出荷状態、適用日境界を含める。該当する場合は、サプライヤー、顧客、後工程、包装、補給部品への影響も確認する。
+evaluation_rubric:
+  must_have:
+  - 影響を受ける製品、品番、派生品、または顧客プログラムを含めている。
+  - 影響を受ける工程、ライン、設備、治具、工具、またはソフトウェア設定を含めている。
+  - 検査計画、管理計画、ゲージ、試験方法、またはサンプリング頻度を含めている。
+  - 図面、作業標準、段取り表、帳票、またはその他の管理文書を含めている。
+  - 影響を受けるロット、仕掛品、在庫、出荷状態、または適用日境界を含めている。
+  - 該当する場合、サプライヤー、顧客、後工程、包装、または補給部品を含めている。
+  nice_to_have:
+  - 影響範囲とリスクの重大度を明確に区別している。
+  - この評価が承認および実施管理の境界を定義することに言及している。
+  critical_failures:
+  - 製品品質リスクだけを列挙し、工程、文書、検査、材料の境界を省略している。
+  - 工程条件を変更する前の影響評価を任意のものとして扱っている。
+  - 影響を受ける範囲を特定せず、主観的な改善助言だけを示している。
+reasoning_trace_required: false
+score_cap_rules:
+- condition: 回答が製品そのもの以外の影響範囲を特定していない。
+  max_score: 2
+  reason: この項目は影響範囲の網羅性を評価する。
+- condition: 回答が管理文書および検査計画または管理計画への影響を省略している。
+  max_score: 3
+  reason: 文書と検査の境界はこの項目の中心である。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+disallowed_answers:
+- 品質が改善するかどうかだけを確認すればよい。
+- 条件変更が小さければ影響評価は不要である。

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:faraday-industrial-benchmark:platform-harness:v1",
+  "title": "Faraday-Platform benchmark harness contract",
+  "type": "object",
+  "required": ["schema_version", "benchmark", "suite", "cases", "rubric", "config"],
+  "properties": {
+    "schema_version": {"const": "faraday-platform-harness/1"},
+    "benchmark": {
+      "type": "object",
+      "required": ["id", "version", "track", "runner_protocol", "evaluation_method"]
+    },
+    "suite": {
+      "type": "object",
+      "required": ["task_count", "family_count", "families", "task_ids", "tool_count", "public_tool_contract_sha256", "public_contract_sha256"],
+      "properties": {
+        "task_count": {"type": "integer", "minimum": 1},
+        "family_count": {"type": "integer", "minimum": 1},
+        "families": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "task_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "tool_count": {"type": "integer", "minimum": 1},
+        "public_tool_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "public_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "input", "expected", "source", "metadata"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "input": {"type": "string"},
+          "expected": {"type": "string"},
+          "source": {"const": "faraday-industrial-benchmark"},
+          "metadata": {
+            "type": "object",
+            "required": [
+              "benchmark_version",
+              "task_version",
+              "family",
+              "difficulty",
+              "systems",
+              "tags",
+              "controlled_plan_actions",
+              "workflow_stages",
+              "required_notification_roles",
+              "available_tools",
+              "max_tool_calls",
+              "horizon_minutes"
+            ],
+            "properties": {
+              "benchmark_version": {"type": "string"},
+              "task_version": {"type": "string"},
+              "family": {"type": "string"},
+              "difficulty": {"type": "string"},
+              "systems": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "controlled_plan_actions": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "workflow_stages": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": ["id", "objective", "depends_on"],
+                  "properties": {
+                    "id": {"type": "string"},
+                    "objective": {"type": "string"},
+                    "depends_on": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "required_notification_roles": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "available_tools": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+              "max_tool_calls": {"type": "integer", "minimum": 1},
+              "horizon_minutes": {"type": "integer", "minimum": 1}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "rubric": {"type": "object"},
+    "config": {"type": "object"}
+  },
+  "additionalProperties": false
+}

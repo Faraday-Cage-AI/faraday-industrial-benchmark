@@ -1,0 +1,1 @@
+Operation 20 was canceled and there is copper left at the work center. Establish how much was genuinely issued, consumed, scrapped, and still physically present, then decide what can return to stores without losing its project ownership. Post the bounded return and leave the shift with the discrepancy, if any.

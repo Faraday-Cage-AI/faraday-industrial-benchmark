@@ -1,0 +1,1 @@
+A servo drive has failed and production needs a return-to-service date, not just a repair ticket. Compare an internal repair, an OEM exchange, and running to the next shutdown using the actual fault, parts, and qualified labor situation. Open the approved repair with the scope and date the evidence supports.

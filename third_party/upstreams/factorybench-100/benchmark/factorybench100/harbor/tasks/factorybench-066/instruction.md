@@ -1,0 +1,1 @@
+Engineering released a relay substitution, but only some open work may be inside its revision and serial effectivity. Identify the orders and quantity that can change now, what must remain on the old design, and whether rework or deferment is the better fallback. Implement only the authorized material change.

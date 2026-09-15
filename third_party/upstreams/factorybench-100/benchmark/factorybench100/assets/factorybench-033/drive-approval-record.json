@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-033",
+  "approvedScope": "Approval AP-0033 permits one control-compliant action on NS-000033 up to 58 KG, provided bulletin material code, lot scope, and cancellation authority. It does not select an option in advance and does not authorize broader records or continue_receiving_resin.",
+  "businessNeedBy": "2026-01-13",
+  "case": "CASE-033",
+  "fileId": "drive-approval-033",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}

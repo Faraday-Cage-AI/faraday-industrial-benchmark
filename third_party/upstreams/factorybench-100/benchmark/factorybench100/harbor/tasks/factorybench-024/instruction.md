@@ -1,0 +1,1 @@
+The vendor sent several similarly named diagnostic reports and the maintenance team needs the one that governs this asset failure. Identify the report that truly belongs to the open order, explain why the other candidates are unsafe to use, and decide whether we can proceed or need a new report. Link only the verified reference.

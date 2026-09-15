@@ -1,0 +1,1 @@
+The demand behind an open purchase order was deleted, but part of that supply may have been re-pegged or received. Establish what is truly redundant and still cancelable, the risk of canceling too much, and whether leaving it open has a better use. Stop only the unsupported supply.

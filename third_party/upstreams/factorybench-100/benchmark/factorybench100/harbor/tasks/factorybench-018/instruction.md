@@ -1,0 +1,1 @@
+Our coating supplier has shut down with work due back before assembly. Decide whether the approved alternate can take the right quantity and process in time, what remains stranded at the incumbent, and how rerouting compares with waiting. Move only the eligible outside operation and give production a defensible new date.

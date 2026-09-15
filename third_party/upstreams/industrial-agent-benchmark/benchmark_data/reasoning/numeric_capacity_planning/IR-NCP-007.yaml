@@ -1,0 +1,82 @@
+schema_version: '1.1'
+id: IR-NCP-007
+layer: industrial_reasoning
+category: numeric_capacity_planning
+domain: general_manufacturing
+subdomain: logistics
+difficulty: 4
+estimated_time_min: 35
+title: シフト稼働時間能力
+scenario: |
+  包装ラインは稼働中、1時間あたり300台を処理できる。
+  有給シフトは8時間だが、計画には30分の段替えと45分の計画清掃が含まれている。
+  そのシフトの需要は2,100台である。
+question: |
+  利用可能な稼働時間、シフト能力、シフト計画が実現可能かを計算せよ。
+  不足または余裕を説明せよ。
+expected_skills:
+- shift_capacity_calculation
+- unit_conversion
+- constraint_handling
+- feasibility_judgement
+primary_skill: shift_capacity_calculation
+secondary_skills:
+- unit_conversion
+- constraint_handling
+- feasibility_judgement
+reference_answer: |
+  非稼働時間は30分 + 45分 = 75分、つまり1.25時間である。
+  利用可能な稼働時間は 8 - 1.25 = 6.75時間である。
+  能力は 6.75時間 * 300台/時間 = 2,025台である。
+  需要は2,100台であるため、計画は75台不足し、非稼働時間の削減、承認済み時間/能力の追加、または需要の再スケジュールなしには実現不可能である。
+evaluation_rubric:
+  must_have:
+  - 有給シフトから段替え時間と清掃時間を差し引いている。
+  - 利用可能な稼働時間を6.75時間または405分と計算している。
+  - 能力を2,025台と計算している。
+  - 2,025台を需要2,100台と比較している。
+  - 75台不足し、計画は実現不可能と結論づけている。
+  nice_to_have:
+  - 75分を1.25時間に換算している。
+  - 停止時間削減、承認済み時間の追加、再スケジュールなど、制約を守る選択肢を提案している。
+  critical_failures:
+  - 有給8時間すべてを生産稼働時間として使用している。
+  - 計画非稼働時間に対処せず、計画は実現可能と主張している。
+  - 能力計算で段替えまたは清掃を無視している。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: 利用可能な稼働時間として8時間を使用している。
+  max_score: 2
+  reason: 計画非稼働時間は中心的な制約である。
+- condition: 最終回答が、現在の計画でシフトは実現可能としている。
+  max_score: 1
+  reason: 実現可能性判断が誤っている。
+numeric_checks:
+- name: available_run_time_hours
+  expected_value: 6.75
+  tolerance: +/-0.01
+  unit: hours
+  required: true
+- name: shift_capacity
+  expected_value: 2025
+  tolerance: exact
+  unit: units
+  required: true
+- name: shortfall
+  expected_value: 75
+  tolerance: exact
+  unit: units
+  required: true
+- name: feasibility
+  expected_value: infeasible
+  tolerance: exact
+  unit: decision
+  required: true
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - scenario_specific_numbers_not_used
+  - generic_framework_only
+disallowed_answers:
+- 有給シフトが8時間なので、能力は2400台である。
+- 現在のシフトで計画は実現可能である。

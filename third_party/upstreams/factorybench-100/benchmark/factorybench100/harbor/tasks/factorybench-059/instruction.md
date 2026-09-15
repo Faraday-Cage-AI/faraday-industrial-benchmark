@@ -1,0 +1,1 @@
+A completed project has copper left over and another program could use it. Determine what quantity is truly excess, whether finance has released its ownership, and the impact of transferring it versus leaving it with the project. Move only the approved residual quantity to common stores.

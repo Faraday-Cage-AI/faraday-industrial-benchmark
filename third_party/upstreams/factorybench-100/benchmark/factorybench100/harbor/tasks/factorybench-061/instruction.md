@@ -1,0 +1,1 @@
+Demand for copper jumped after the latest plan and production wants a coverage date. Net the new requirement against usable stock and firm inbound, compare buy, transfer, and schedule alternatives, and identify the constraint behind the earliest feasible plan. Create supply only for the remaining gap.

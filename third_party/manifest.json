@@ -1,0 +1,164 @@
+{
+  "$schema": "./manifest.schema.json",
+  "schema_version": "faraday-upstream-manifest/1",
+  "generated_at": "2026-09-14",
+  "policy": {
+    "headline_suite": "faraday-native",
+    "vendored_sources_are_separate_tracks": true,
+    "pooled_score_allowed": false,
+    "purpose": "Reproducible compatibility and comparative evaluation without misrepresenting upstream work as Faraday-authored content."
+  },
+  "sources": [
+    {
+      "id": "factorybench-100",
+      "name": "FactoryBench-100 / Factory Agent Simulation",
+      "status": "vendored",
+      "path": "upstreams/factorybench-100",
+      "upstream": {
+        "repository": "https://github.com/blobfishai/factory-agent-simulation",
+        "commit": "f2253481cba6f9f2e423ec85c8378b432991ac88",
+        "branch": "main"
+      },
+      "licenses": {
+        "code": "Apache-2.0",
+        "data": "CC-BY-4.0",
+        "files": ["LICENSE", "LICENSE-DATA", "NOTICE"]
+      },
+      "included": ["code", "public benchmark data", "synthetic source artifacts", "published model-run artifacts"],
+      "modifications": ["Removed Git metadata.", "Materialized benchmark/factorybench100/huggingface/data/tasks.jsonl from its Git LFS object without changing its SHA-256."],
+      "snapshot": {
+        "tree_sha256": "34db9f1f611d8ebee3ef26ee3ade987a76009d6f29aeaf7c3cd0d3528bf5a639",
+        "files": 8785,
+        "bytes": 297094575
+      }
+    },
+    {
+      "id": "industrial-agent-benchmark",
+      "name": "Industrial Agent Benchmark",
+      "status": "vendored",
+      "path": "upstreams/industrial-agent-benchmark",
+      "upstream": {
+        "repository": "https://github.com/masahirosakae/industrial-agent-benchmark",
+        "commit": "b27e76ffd8eda7ba922b9a07a0aa2c93d15dcacf",
+        "branch": "main"
+      },
+      "licenses": {
+        "code": "Apache-2.0",
+        "data": "Apache-2.0",
+        "files": ["LICENSE", "LICENSE_DATASET.md"]
+      },
+      "included": ["code", "public benchmark data", "documentation"],
+      "modifications": ["Removed Git metadata."],
+      "snapshot": {
+        "tree_sha256": "0d7b93fc6f1b365145520b95a5f0d2aaf27409d2fbc317db8f6cd85b919e6a2a",
+        "files": 342,
+        "bytes": 2412874
+      }
+    },
+    {
+      "id": "supchain-bench",
+      "name": "SupChain-Bench",
+      "status": "vendored",
+      "path": "upstreams/supchain-bench",
+      "upstream": {
+        "repository": "https://github.com/Damon-GSY/SC-bench",
+        "commit": "28d500d42d1710b99a501204f2bd2ba2b78ad070",
+        "branch": "main"
+      },
+      "licenses": {
+        "code": "Apache-2.0",
+        "data": "Apache-2.0 (repository-level license; no separate data license present)",
+        "files": ["LICENSE", "THIRD-PARTY-NOTICES"]
+      },
+      "included": ["code", "synthetic order data", "questions", "ground-truth answers", "prompt templates"],
+      "modifications": ["Removed Git metadata."],
+      "snapshot": {
+        "tree_sha256": "e0896a23aeca5cd8ecd0298ece4a464f6b360f313f4f2d77ede9e3b41ccc1327",
+        "files": 23,
+        "bytes": 507057
+      }
+    },
+    {
+      "id": "assetopsbench",
+      "name": "AssetOpsBench",
+      "status": "vendored",
+      "path": "upstreams/assetopsbench",
+      "upstream": {
+        "repository": "https://github.com/IBM/AssetOpsBench",
+        "commit": "8ea62868134ba3e9a83fabe91add339a5ec69234",
+        "branch": "main"
+      },
+      "licenses": {
+        "code": "Apache-2.0",
+        "data": "Apache-2.0 for material shipped in the repository; separately linked datasets retain their own terms",
+        "files": ["LICENSE"]
+      },
+      "included": ["code", "public scenarios and sample data", "documentation"],
+      "excluded": ["external datasets", "internal ground truth", "private competition artifacts"],
+      "modifications": ["Removed Git metadata."],
+      "snapshot": {
+        "tree_sha256": "558f3c91f41f600bfefa9e72f8152239c303533f95b0eb0b02b615f68d23fe4d",
+        "files": 291,
+        "bytes": 18558299
+      }
+    },
+    {
+      "id": "spas-bench-full",
+      "name": "SPAS-Bench full question bank",
+      "status": "reference-only",
+      "upstream": {
+        "repository": "https://github.com/ADT-GenAI/SPAS-Bench",
+        "commit_audited": "af7066176362f74db45e5be186f0269863e42932"
+      },
+      "licenses": {
+        "public_repository_code": "MIT",
+        "full_question_bank": "Restricted: no redistribution, reproduction, distribution, or commercial use"
+      },
+      "reason": "The complete bank is application-only and its published usage rules prohibit redistribution and commercial use. Faraday does not copy it."
+    },
+    {
+      "id": "factorybench-machine-understanding",
+      "name": "FactoryBench: Evaluating Industrial Machine Understanding",
+      "status": "reference-only",
+      "upstream": {
+        "repositories": [
+          "https://github.com/Forgis-Labs/FactoryBench",
+          "https://github.com/Forgis-Labs/FactoryBench_Generation"
+        ],
+        "commits_audited": [
+          "74c7d26ba0e5d535d052ea1a94a51b215a593a7c",
+          "b66bc8656a5049f25c9297c7aac3085e6329b180"
+        ]
+      },
+      "licenses": {
+        "repository_files": "CC-BY-NC-SA-4.0"
+      },
+      "reason": "The audited repository LICENSE files are noncommercial and share-alike. They are not copied into Faraday's commercial-friendly distribution."
+    },
+    {
+      "id": "phmforge",
+      "name": "PHMForge",
+      "status": "reference-only",
+      "upstream": {
+        "repository": "https://github.com/DeveloperMindset123/PHMForge-A-Scenario-Driven-Agentic-Benchmark-for-Industrial-Asset-Lifecycle-Maintenance",
+        "commit_audited": "28430199f7b8ccba924d49e06c2d59b761846038"
+      },
+      "licenses": {
+        "repository_license_file": "MIT with a generic 2022 GitHub copyright notice",
+        "readme_badge": "Apache-2.0",
+        "underlying_datasets": "Multiple upstream terms"
+      },
+      "reason": "License metadata is internally inconsistent and bundled PHM datasets have separate upstream terms. Await authoritative clarification before redistribution."
+    },
+    {
+      "id": "cfagentbench",
+      "name": "CFAgentBench",
+      "status": "reference-only",
+      "upstream": {
+        "paper": "https://arxiv.org/abs/2606.22000"
+      },
+      "licenses": {},
+      "reason": "No authoritative public code repository or redistribution license was located during the audit. The paper is used only as a design reference."
+    }
+  ]
+}

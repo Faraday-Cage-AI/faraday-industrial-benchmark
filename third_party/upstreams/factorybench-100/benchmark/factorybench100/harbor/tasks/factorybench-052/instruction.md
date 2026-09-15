@@ -1,0 +1,1 @@
+The dielectric lab reports failed samples, but the inspection header does not yet reflect them. Determine which sample results belong to this lot and plan, the accepted and rejected quantities, and what downstream material must be held. Record the defensible result without overwriting another inspection.

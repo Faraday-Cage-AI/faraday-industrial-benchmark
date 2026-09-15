@@ -1,0 +1,1 @@
+WIP appears to include the same copper issue twice. Prove whether the second posting is a true duplicate, reconcile the physical quantity and cost still on hand, and show the period impact of reversing it versus leaving it. Post only the return needed to restore the correct WIP balance.

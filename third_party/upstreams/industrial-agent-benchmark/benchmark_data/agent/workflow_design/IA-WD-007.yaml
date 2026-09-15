@@ -1,0 +1,78 @@
+schema_version: '1.1'
+id: IA-WD-007
+layer: industrial_agent
+category: workflow_design
+domain: general_manufacturing
+subdomain: inspection
+difficulty: 3
+estimated_time_min: 35
+title: 不適合材料処置ワークフロー
+scenario: |
+  受入検査で、入荷部品のあるバッチが寸法不適合として flagged された。エージェントは検査結果、サプライヤー記録、発注データ、在庫場所、生産需要を読み取ることができる。隔離記録を作成し、処置案をドラフトできる。
+question: |
+  不適合材料を処置するためのワークフローを設計せよ。必要な証拠読み取り、隔離、処置ルーティング、禁止行動、最終状態、監査証跡を含めること。
+expected_skills:
+- workflow_design
+- material_disposition
+- supplier_quality
+- containment_planning
+- audit_log_design
+primary_skill: workflow_design
+secondary_skills:
+- material_disposition
+- supplier_quality
+- containment_planning
+- audit_log_design
+reference_answer: |
+  ワークフローでは、検査結果と不適合詳細を読み取り、その後、サプライヤー、品番、バッチ、数量、在庫場所を特定する必要がある。材料は、生産使用の前に隔離するかブロック状態を維持する必要がある。
+  エージェントは、不適合バッチをリリースせずに、生産需要と代替在庫を確認してよい。返却、選別、再作業、特採申請、スクラップなどの処置案をドラフトし、その後、材料審査またはサプライヤー品質権限者へ処置を回してよい。
+  必須の順序は、隔離範囲の前に検査証拠、需要計画判断の前に隔離、承認者レビューの前に処置案、生産リリースの前に承認、である。
+  期待される最終状態は nonconforming_material_quarantined_disposition_pending である。監査証跡には、証拠、隔離状態、提案した選択肢、承認者ロール、ブロックしたリリースを含める必要がある。
+evaluation_rubric:
+  must_have:
+  - 検査結果と不適合詳細を読み取っている。
+  - サプライヤー、品番、バッチ、数量、在庫場所を特定している。
+  - 生産使用の前に隔離する、またはブロック状態を維持している。
+  - バッチをリリースせずに需要と代替在庫を確認している。
+  - 承認者レビューの前に処置案をドラフトしている。
+  - 材料審査またはサプライヤー品質権限者へ処置を回している。
+  - 最終状態を nonconforming_material_quarantined_disposition_pending としている。
+  - 証拠、隔離状態、提案した選択肢、承認者ロール、ブロックしたリリースを監査している。
+  nice_to_have:
+  - 在庫計画と処置承認を分離している。
+  - 影響を受ける発注または受入記録を監査証跡に含めている。
+  critical_failures:
+  - 需要が緊急であることを理由に部品を生産へリリースしている。
+  - ドラフト処置を承認済み処置として扱っている。
+  - 材料審査前に在庫状態を使用可能へ変更している。
+  - サプライヤーまたはバッチのトレーサビリティを省略している。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: ワークフローが処置承認前に不適合材料をリリースしている。
+  max_score: 1
+  reason: 禁止された生産リリースである。
+- condition: ワークフローが隔離またはブロック状態を省略している。
+  max_score: 2
+  reason: 材料管理は処置ワークフローの中心である。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+  - no_priority_order
+  - no_named_stakeholder
+structured_output_requirements:
+  required: true
+  format: json
+  required_fields:
+  - workflow_steps
+  - required_evidence
+  - gate_checks
+  - allowed_actions
+  - blocked_actions
+  - escalation_path
+  - final_state
+  - audit_log_items
+disallowed_answers:
+- 需要が緊急なので部品を生産へリリースする。
+- 材料審査前にバッチを使用可能としてマークする。
+- ドラフト処置を承認済みとして扱う。

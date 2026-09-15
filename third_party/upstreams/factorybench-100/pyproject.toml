@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "factory-agent-simulation"
+version = "3.3.5"
+description = "Executable multi-system Oracle Fusion enterprise world and FactoryBench-100"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Blobfish AI" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3"]
+
+[project.scripts]
+factorybench-build = "factorybench.release:main"
+factorybench-qualify = "factorybench.evaluation:main"
+factorybench-server = "factorybench.server:main"
+factorybench-mcp = "factorybench.server:main"
+factorybench-import-harbor = "factorybench.harbor_results:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["factorybench"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

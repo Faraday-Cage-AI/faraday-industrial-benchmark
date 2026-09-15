@@ -1,0 +1,282 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-035' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-035-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-035-16",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-035-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-035"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-035-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-035"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-035-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-035-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-035-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-035-21",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-035-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-035-20",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-035-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-035-18",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-035\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-035",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-FINANCE",
+      "inclusive": true,
+      "limit": 100,
+      "oldest": "1768000000.000000"
+    },
+    "tool": "slack.conversations_history"
+  },
+  {
+    "arguments": {
+      "includeGridData": false,
+      "ranges": [
+        "Control!A1:I50"
+      ],
+      "spreadsheetId": "sheet-035"
+    },
+    "tool": "google_sheets.spreadsheets.get"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "OrderNumber='SO-47035'"
+    },
+    "tool": "oracle_fusion.sales_orders.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-035' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplierNumber='SUP-00035'"
+    },
+    "tool": "oracle_fusion.suppliers.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplyOrderReferenceNumber='SUPPLY-0035'"
+    },
+    "tool": "oracle_fusion.supply_requests.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "OrderNumber='PO-0035'"
+    },
+    "tool": "oracle_fusion.purchase_orders.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-035",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "SupplyOrderReferenceNumber": "SUPPLY-0035",
+        "SupplyRequestDate": "2026-01-16",
+        "SupplyRequestSystem": "EXT",
+        "supplyRequestLines": [
+          {
+            "DestinationOrganizationCode": "SEA",
+            "ItemNumber": "NS-COMP-035",
+            "NeedByDate": "2026-01-18",
+            "Quantity": 6.0,
+            "SupplyOrderSource": "EXT",
+            "SupplyType": "BUY"
+          }
+        ]
+      }
+    },
+    "tool": "oracle_fusion.supply_requests.create"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplyOrderReferenceNumber='SUPPLY-0035'"
+    },
+    "tool": "oracle_fusion.supply_requests.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-035",
+      "requestBody": {
+        "content": "CASE-035: create_bounded_emergency_supply recorded on Oracle record NS-000035; completion 2026-01-18; constraint sole-source exception, exact shortage, and emergency freight authority; reserved stock and supply arriving after the line-down point = 10 EA; uncovered or unsupported scope = 6.0 EA; approval AP-0035."
+      }
+    },
+    "tool": "google_drive.comments.create"
+  },
+  {
+    "arguments": {
+      "commentId": "comment-035",
+      "fields": "id,content,resolved,createdTime",
+      "fileId": "drive-035"
+    },
+    "tool": "google_drive.comments.get"
+  },
+  {
+    "arguments": {
+      "message": {
+        "raw": "RnJvbTogYnV5ZXJAbm9ydGhzdGFyLmV4YW1wbGUNClRvOiByZXF1ZXN0aW5nLnBsYW5uZXJAbm9ydGhzdGFyLmV4YW1wbGUNClN1YmplY3Q6IENBU0UtMDM1IOKAlCBEcmFmdCBvcGVyYXRpbmcgZGVjaXNpb24NCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD1VVEYtOA0KDQpEZWNpc2lvbjogY3JlYXRlX2JvdW5kZWRfZW1lcmdlbmN5X3N1cHBseS4gQ29tcGxldGlvbjogMjAyNi0wMS0xOC4NCkJpbmRpbmcgY29uc3RyYWludDogc29sZS1zb3VyY2UgZXhjZXB0aW9uLCBleGFjdCBzaG9ydGFnZSwgYW5kIGVtZXJnZW5jeSBmcmVpZ2h0IGF1dGhvcml0eTsgcmVzZXJ2ZWQgc3RvY2sgYW5kIHN1cHBseSBhcnJpdmluZyBhZnRlciB0aGUgbGluZS1kb3duIHBvaW50ID0gMTAgRUE7IHVuY292ZXJlZCBvciB1bnN1cHBvcnRlZCBzY29wZSA9IDYuMCBFQS4NCkFsdGVybmF0aXZlczogY3JlYXRlX2JvdW5kZWRfZW1lcmdlbmN5X3N1cHBseTogb3V0Y29tZSAyMDI2LTAxLTE4LCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIFNVUFBPUlRFRF9BTkRfQVBQUk9WRUQ7IG9yZGVyX2Z1bGxfZ3Jvc3NfZGVtYW5kOiBvdXRjb21lIDIwMjYtMDEtMTYsIGVjb25vbWljIGltcGFjdCBVU0QgOTQ1LCBGQUlMU19DVVJSRU5UX0NPTlRST0w7IHdhaXRfZm9yX3N0YW5kYXJkX3JlcGxlbmlzaG1lbnQ6IG91dGNvbWUgMjAyNi0wMS0xNSwgZWNvbm9taWMgaW1wYWN0IFVTRCAyMTg1LCBTRVBBUkFURV9BUFBST1ZBTF9PUl9QT0xJQ1lfRVhDRVBUSU9OX1JFUVVJUkVELg0KT3JhY2xlIHJlY29yZDogTlMtMDAwMDM1LiBBcHByb3ZhbDogQVAtMDAzNS4gQ2FzZTogQ0FTRS0wMzUuDQo",
+        "threadId": "thread-035"
+      },
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.create"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "draft-035",
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.get"
+  },
+  {
+    "arguments": {
+      "accelerated_completion": "2026-01-16",
+      "baseline_completion": "2026-01-18",
+      "business_need_date": "2026-01-19",
+      "coverage_item_or_resource": "NS-COMP-035",
+      "decision_timing_status": "ON_TIME",
+      "escalated_completion": "2026-01-15",
+      "escalation_approval_required": 1,
+      "expedited_external_readiness": "2026-01-13",
+      "external_recovery_quantity": 6,
+      "ineligible_coverage_quantity": 10,
+      "observed_coverage_quantity": 105,
+      "outcome_vs_control_days": -1,
+      "quantity_unit": "EA",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "create_bounded_emergency_supply",
+      "recommended_outcome_date": "2026-01-18",
+      "required_quantity": 101,
+      "shortage_quantity": 6,
+      "standard_external_readiness": "2026-01-15",
+      "usable_coverage_quantity": 95
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

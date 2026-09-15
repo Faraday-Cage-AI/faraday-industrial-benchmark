@@ -1,0 +1,1 @@
+A chemical lot appears to have expired while some quantity remains on hand. Determine the affected quantity and locations, whether any material was consumed before expiry, and how quarantine compares with a documented extension or replacement. Move only the expired stock out of available inventory.

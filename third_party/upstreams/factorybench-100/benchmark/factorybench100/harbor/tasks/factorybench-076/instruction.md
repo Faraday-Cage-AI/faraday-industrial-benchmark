@@ -1,0 +1,1 @@
+A project build needs relays that are available elsewhere, but ownership and reservations must survive the move. Determine the quantity carrying the right project, task, lot, and approval, what must stay put, and whether transfer meets the build date. Post only the eligible project movement.

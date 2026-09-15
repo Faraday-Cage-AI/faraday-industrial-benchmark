@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-024",
+  "approvedScope": "Approval AP-0024 permits one control-compliant action on NS-000024 up to 1 FILES, provided only the immutable matching report may be linked to the open order. It does not select an option in advance and does not authorize broader records or request_new_diagnostic.",
+  "businessNeedBy": "2026-01-15",
+  "case": "CASE-024",
+  "fileId": "drive-approval-024",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}

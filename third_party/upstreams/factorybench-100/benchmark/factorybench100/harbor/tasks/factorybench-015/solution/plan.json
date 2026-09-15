@@ -1,0 +1,267 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-FINANCE",
+      "limit": 100,
+      "ts": "1768000015.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "includeGridData": false,
+      "ranges": [
+        "Control!A1:I50"
+      ],
+      "spreadsheetId": "sheet-015"
+    },
+    "tool": "google_sheets.spreadsheets.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-015' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-015-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015-21",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-015"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-015-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-015-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015-14"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015-20",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015-22",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-015-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-015"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-015\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "id": "att-015",
+      "messageId": "msg-015-1",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.attachments.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100015,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_resources.list"
+  },
+  {
+    "arguments": {
+      "MaintenanceProgramId": 500015
+    },
+    "tool": "oracle_fusion.maintenance_programs.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100015
+    },
+    "tool": "oracle_fusion.work_orders.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100015,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_operations.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-015",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "ResourceTransactionDetail": [
+          {
+            "OrganizationCode": "SEA",
+            "ResourceCode": "RES-015",
+            "TransactionQuantity": 110,
+            "TransactionUnitOfMeasure": "HR",
+            "WoOperationSequenceNumber": 10,
+            "WorkOrderNumber": "WO-0015"
+          }
+        ],
+        "SourceSystemCode": "FUSION_MOBILE"
+      }
+    },
+    "tool": "oracle_fusion.resource_transactions.create"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100015,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_resources.list"
+  },
+  {
+    "arguments": {
+      "raw": "RnJvbTogc2hvcC5mbG9vci5jb250cm9sbGVyQG5vcnRoc3Rhci5leGFtcGxlDQpUbzogc2hpZnQuc3VwZXJ2aXNvckBub3J0aHN0YXIuZXhhbXBsZQ0KU3ViamVjdDogQ0FTRS0wMTUg4oCUIENvbXBsZXRlZCBvcGVyYXRpbmcgZGVjaXNpb24NCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD1VVEYtOA0KDQpEZWNpc2lvbjogcG9zdF9zdXBwb3J0ZWRfbGFib3IuIENvbXBsZXRpb246IDIwMjYtMDEtMTMuDQpCaW5kaW5nIGNvbnN0cmFpbnQ6IGVtcGxveWVlLCBvcGVyYXRpb24sIHJhdGUsIGFuZCBjYWxpYnJhdGlvbiBpbnRlcnZhbCBtdXN0IHJlY29uY2lsZTsgZHVwbGljYXRlLCBvdXQtb2Ytd2luZG93LCBvciB1bnNpZ25lZCBob3VycyA9IDEzIEhSOyB1bmNvdmVyZWQgb3IgdW5zdXBwb3J0ZWQgc2NvcGUgPSAyMC4wIEhSLg0KQWx0ZXJuYXRpdmVzOiBwb3N0X3N1cHBvcnRlZF9sYWJvcjogb3V0Y29tZSAyMDI2LTAxLTEzLCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIFNVUFBPUlRFRF9BTkRfQVBQUk9WRUQ7IGhvbGRfZm9yX3RpbWVjYXJkX2NvcnJlY3Rpb246IG91dGNvbWUgMjAyNi0wMS0xNCwgZWNvbm9taWMgaW1wYWN0IFVTRCAwLCBGRUFTSUJMRV9XSVRIX0lORkVSSU9SX1RSQURFT0ZGOyBwb3N0X3N1cGVydmlzb3JfZXN0aW1hdGU6IG91dGNvbWUgMjAyNi0wMS0xNSwgZWNvbm9taWMgaW1wYWN0IFVTRCAwLCBTRVBBUkFURV9BUFBST1ZBTF9PUl9QT0xJQ1lfRVhDRVBUSU9OX1JFUVVJUkVELg0KT3JhY2xlIHJlY29yZDogTlMtMDAwMDE1LiBBcHByb3ZhbDogQVAtMDAxNS4gQ2FzZTogQ0FTRS0wMTUuDQo",
+      "threadId": "thread-015",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.send"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "sent-015",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-015",
+      "requestBody": {
+        "content": "CASE-015: post_supported_labor recorded on Oracle record NS-000015; completion 2026-01-13; constraint employee, operation, rate, and calibration interval must reconcile; duplicate, out-of-window, or unsigned hours = 13 HR; uncovered or unsupported scope = 20.0 HR; approval AP-0015."
+      }
+    },
+    "tool": "google_drive.comments.create"
+  },
+  {
+    "arguments": {
+      "commentId": "comment-015",
+      "fields": "id,content,resolved,createdTime",
+      "fileId": "drive-015"
+    },
+    "tool": "google_drive.comments.get"
+  },
+  {
+    "arguments": {
+      "baseline_resolution_date": "2026-01-13",
+      "business_need_date": "2026-01-13",
+      "controlled_item_or_record": "NS-COMP-015",
+      "controlled_resolution_date": "2026-01-14",
+      "decision_timing_status": "ON_TIME",
+      "escalated_resolution_date": "2026-01-15",
+      "escalation_approval_required": 1,
+      "excluded_quantity": 13,
+      "observed_quantity": 123,
+      "outcome_vs_control_days": 0,
+      "quantity_unit": "HR",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "post_supported_labor",
+      "recommended_outcome_date": "2026-01-13",
+      "source_quantity": 130,
+      "supported_quantity": 110,
+      "transaction_quantity": 110
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

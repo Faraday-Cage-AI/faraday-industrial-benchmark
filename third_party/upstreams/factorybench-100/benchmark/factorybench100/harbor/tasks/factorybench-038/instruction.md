@@ -1,0 +1,1 @@
+The receipt interface appears to contain a transposed quantity that would overstate inventory. Establish the actual dock quantity, the amount of the error, and whether correcting now creates any PO or inspection exception. Fix the one receipt line and give receiving the resulting usable quantity.

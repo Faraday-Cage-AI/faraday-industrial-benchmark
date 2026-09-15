@@ -1,0 +1,1 @@
+A repair order needs a certificate of conformance before release, but several similar certificates are available. Determine which issuer, lot, item, asset, and validity period match the repair material, what the alternatives fail, and whether work can proceed. Attach only the immutable certificate that applies.

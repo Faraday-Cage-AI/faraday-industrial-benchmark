@@ -1,0 +1,1 @@
+A maintenance labor charge was omitted from the period, but the source hours and rate must be defensible. Determine what technician time belongs to the correct order and date, quantify any duplicate or unsupported amount, and decide whether the open period permits posting now. Record only the supported charge.

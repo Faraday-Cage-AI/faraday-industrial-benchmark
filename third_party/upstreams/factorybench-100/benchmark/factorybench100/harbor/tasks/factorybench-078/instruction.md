@@ -1,0 +1,1 @@
+Finance says an open manufacturing order was linked to the wrong project task. Determine the single correct attribution and its effective date, what similar task records must not be used, and the schedule or billing consequence of the correction. Update only the open order covered by the approval.

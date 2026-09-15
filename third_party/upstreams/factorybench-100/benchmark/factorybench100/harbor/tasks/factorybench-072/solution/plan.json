@@ -1,0 +1,292 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-PRODUCTION",
+      "inclusive": true,
+      "limit": 100,
+      "oldest": "1768000000.000000"
+    },
+    "tool": "slack.conversations_history"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-072\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "id": "att-072",
+      "messageId": "msg-072-1",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.attachments.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-072' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-072-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-072-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-072-15"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-072-18",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-072-19",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-072"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-072-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-072-22",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-072-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-072-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-072-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-072-27"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-072"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-072-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-072",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "includeGridData": false,
+      "ranges": [
+        "Control!A1:I50"
+      ],
+      "spreadsheetId": "sheet-072"
+    },
+    "tool": "google_sheets.spreadsheets.get"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-072' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100072
+    },
+    "tool": "oracle_fusion.work_orders.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100072,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_materials.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "DocumentNumber='RCV-0072'"
+    },
+    "tool": "oracle_fusion.quality_inspection_results.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-072",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "MaterialTransactionDetail": [
+          {
+            "InventoryItemNumber": "NS-COMP-072",
+            "LotNumber": "LOT-0072",
+            "OrganizationCode": "SEA",
+            "SubinventoryCode": "STORES",
+            "TransactionQuantity": 48.0,
+            "TransactionTypeCode": "MATERIAL_RETURN",
+            "TransactionUnitOfMeasure": "KG",
+            "WorkOrderNumber": "WO-0072"
+          }
+        ],
+        "SourceSystemCode": "FUSION_MOBILE",
+        "SourceSystemType": "EXTERNAL"
+      }
+    },
+    "tool": "oracle_fusion.material_transactions.create"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100072,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_materials.list"
+  },
+  {
+    "arguments": {
+      "channel": "C-PRODUCTION",
+      "name": "white_check_mark",
+      "timestamp": "1768000072.000100"
+    },
+    "tool": "slack.reactions_add"
+  },
+  {
+    "arguments": {
+      "channel": "C-PRODUCTION",
+      "limit": 100,
+      "ts": "1768000072.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "insertDataOption": "INSERT_ROWS",
+      "range": "Audit!A:G",
+      "requestBody": {
+        "majorDimension": "ROWS",
+        "values": [
+          [
+            "2026-01-12",
+            "CASE-072",
+            "manufacturing_cost_accountant",
+            "reverse_duplicate_issue",
+            "2026-01-14",
+            "NS-000072",
+            "AP-0072"
+          ]
+        ]
+      },
+      "spreadsheetId": "sheet-072",
+      "valueInputOption": "RAW"
+    },
+    "tool": "google_sheets.spreadsheets.values.append"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Audit!A:G",
+      "spreadsheetId": "sheet-072",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "approved_unit_rate_usd": 12.0,
+      "baseline_settlement_date": "2026-01-14",
+      "business_need_date": "2026-01-14",
+      "control_threshold_usd": 0.0,
+      "controlled_settlement_date": "2026-01-15",
+      "decision_timing_status": "ON_TIME",
+      "document_amount_usd": 1152.0,
+      "escalated_settlement_date": "2026-01-16",
+      "escalation_approval_required": 1,
+      "exception_amount_usd": 576.0,
+      "financial_control": "duplicate-issue residual variance",
+      "financial_document_or_record": "COST-0072",
+      "outcome_vs_control_days": 0,
+      "physical_transaction_quantity": 48.0,
+      "physical_transaction_unit": "KG",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "reverse_duplicate_issue",
+      "recommended_outcome_date": "2026-01-14",
+      "supported_amount_usd": 576.0
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

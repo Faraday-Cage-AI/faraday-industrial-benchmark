@@ -1,0 +1,57 @@
+schema_version: '1.1'
+id: IK-CC-004
+layer: industrial_knowledge
+category: change_control
+domain: electronics
+subdomain: quality_assurance
+difficulty: 3
+estimated_time_min: 30
+title: 変更リリース前のリスク評価
+scenario: |
+  既存の製造工程に対して、材料代替が提案されている。
+question: |
+  材料代替をリリースする前に、意図しない製造上または品質上の問題を避けるため、どのようなリスクメカニズムまたは故障モードを確認すべきか。
+expected_skills:
+- change_control
+- risk_assessment
+- quality_assurance
+- validation_planning
+primary_skill: risk_assessment
+secondary_skills:
+- change_control
+- quality_assurance
+- validation_planning
+reference_answer: |
+  リスク評価では、材料変更によって何が起こり得るかを特定する必要がある。例として、はめ合い、形状、機能、強度、汚染、耐久性、外観、加工性への影響がある。
+  故障モードが発生した場合の重大度または品質影響、既存の工程条件、設備、工具、ゲージ、検査方法との適合性、ならびに影響を受ける在庫、仕掛品、初期生産品に封じ込めが必要かを検討する。
+  また、試作、バリデーション、検査証拠、または能力確認の必要性を特定し、生産使用または出荷前に必要な承認を確認する。
+evaluation_rubric:
+  must_have:
+  - 材料変更によって起こり得る故障モードまたは不具合を特定している。
+  - 重大度または品質影響を扱っている。
+  - 工程条件、設備、工具、ゲージ、または検査方法との適合性を確認している。
+  - 影響を受ける在庫、仕掛品、または初期生産品の封じ込め要否を含めている。
+  - 試作、バリデーション、検査証拠、または能力確認を含めている。
+  - 生産使用または出荷前に承認が必要であると述べている。
+  nice_to_have:
+  - はめ合い、形状、機能、汚染、耐久性、外観、加工性などの具体例を挙げている。
+  - リスクメカニズムと影響範囲を区別している。
+  critical_failures:
+  - 承認または検証なしに代替材料を直ちに使用できるとしている。
+  - 起こり得る故障モードを特定せず、影響を受ける文書やロットだけを列挙している。
+  - 初期生産品が影響を受ける可能性があるのに封じ込めを無視している。
+reasoning_trace_required: false
+score_cap_rules:
+- condition: 回答が承認または検証前の生産使用を認めている。
+  max_score: 1
+  reason: 変更リリース管理に違反している。
+- condition: 回答が故障モードまたは品質リスクメカニズムを一切特定していない。
+  max_score: 2
+  reason: この項目はリスクメカニズムの知識を評価する。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+disallowed_answers:
+- 代替材料を直ちに使用する。
+- リスク評価では影響を受ける文書だけを列挙すればよい。

@@ -1,0 +1,1 @@
+The final physical count found fewer good units than the operation history reports. Determine the completed, rejected, missing, and scrapped quantities that make the order reconcile, explain the cost and output impact, and decide whether the loss belongs in this period. Post only the supported scrap transaction.

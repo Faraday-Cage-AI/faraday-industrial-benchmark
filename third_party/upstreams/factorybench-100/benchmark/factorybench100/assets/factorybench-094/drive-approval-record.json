@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-094",
+  "approvedScope": "Approval AP-0094 permits one control-compliant action on NS-000094 up to 34 HR, provided physical status, operation transactions, period cutoff, and revised dates. It does not select an option in advance and does not authorize broader records or leave_schedule_inside_closed_period.",
+  "businessNeedBy": "2026-01-20",
+  "case": "CASE-094",
+  "fileId": "drive-approval-094",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}

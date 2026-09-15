@@ -1,0 +1,1 @@
+The outside-processing PO may be ready to close after final acceptance. Verify that ordered, sent, returned, accepted, invoiced, and paid quantities leave no open schedule or value, explain any residual risk, and compare final close with leaving the document open. Apply the supported close action only.

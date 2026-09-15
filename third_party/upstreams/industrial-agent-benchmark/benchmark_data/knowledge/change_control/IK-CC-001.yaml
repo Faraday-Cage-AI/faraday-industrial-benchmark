@@ -1,0 +1,57 @@
+schema_version: '1.1'
+id: IK-CC-001
+layer: industrial_knowledge
+category: change_control
+domain: general_manufacturing
+subdomain: process_engineering
+difficulty: 2
+estimated_time_min: 20
+title: 変更申請に必要な記載項目
+scenario: |
+  生産技術者が、治具変更のために変更申請を提出しようとしている。
+  この変更により、1本の生産ラインで工程条件と検査方法も変わる可能性がある。
+question: |
+  レビュー開始前に、変更申請へ最低限含めるべき製造情報を挙げよ。
+expected_skills:
+- change_control
+- documentation_control
+- manufacturing_process_knowledge
+- approval_workflow_knowledge
+primary_skill: change_control
+secondary_skills:
+- documentation_control
+- manufacturing_process_knowledge
+- approval_workflow_knowledge
+reference_answer: |
+  申請では、影響を受ける製造上の範囲を特定する必要がある。例として、製品、品番、生産ライン、工程、治具、設備、検査方法などがある。
+  申請には、提案する治具変更、工程条件変更、または検査方法変更の内容、変更理由または発生契機、申請者または責任者、目標時期または予定適用日を記載する。さらに、図面、管理計画、作業標準、段取り表、検査チェックリスト、治具台帳など、初期時点で影響を受ける文書または記録を列挙する。
+evaluation_rubric:
+  must_have:
+  - 製品、部品、ライン、工程、治具、設備、検査方法など、影響を受ける製造上の範囲を特定している。
+  - 提案する治具変更、工程条件変更、または検査方法変更の内容を説明している。
+  - 変更理由または発生契機を示している。
+  - 申請者または責任者を特定している。
+  - 目標時期または予定適用日を含めている。
+  - 初期時点で影響を受ける文書または記録を特定している。
+  nice_to_have:
+  - 図面、管理計画、作業標準、段取り表、検査チェックリスト、治具台帳など、影響を受ける管理文書の例を挙げている。
+  - レビューおよび承認の前にこの情報が必要であることに言及している。
+  critical_failures:
+  - 必要な変更申請内容を説明せず、承認を取るべきとだけ述べている。
+  - 影響を受ける製造上の範囲を省略している。
+  - 治具変更または検査方法変更にすぎないとして、非公式な変更として扱っている。
+reasoning_trace_required: false
+score_cap_rules:
+- condition: 影響を受ける製造上の範囲を一切特定していない。
+  max_score: 2
+  reason: 影響を受ける製品、工程、設備、文書の範囲は、変更申請受付の中心要件である。
+- condition: 承認を取るべきとだけ述べ、申請内容を示していない。
+  max_score: 1
+  reason: 承認だけでは変更申請を定義する情報として不十分である。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+disallowed_answers:
+- 単純な治具変更なので正式な申請は不要である。
+- 必要な情報は承認だけである。

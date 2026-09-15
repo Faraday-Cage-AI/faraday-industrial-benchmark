@@ -1,0 +1,80 @@
+schema_version: '1.1'
+id: IR-NCP-009
+layer: industrial_reasoning
+category: numeric_capacity_planning
+domain: medical_device
+subdomain: quality_assurance
+difficulty: 5
+estimated_time_min: 45
+title: 歩留まり余裕と品質承認境界
+scenario: |
+  あるラインは適合品900台を生産しなければならない。上流工程は1,000台を投入できる。
+  期待歩留まりは91%である。工程を急がせて1,000台を超えて投入する場合、リリース前に品質承認が必要である。
+question: |
+  現在の計画で適合品要求を満たせるか判断せよ。
+  出力が不足する場合、またはチームが追加投入を急がせたい場合に必要な対応を述べよ。
+expected_skills:
+- yield_adjusted_capacity
+- feasibility_judgement
+- constraint_handling
+- escalation_design
+- evidence_traceability
+primary_skill: yield_adjusted_capacity
+secondary_skills:
+- feasibility_judgement
+- constraint_handling
+- escalation_design
+- evidence_traceability
+reference_answer: |
+  期待される適合品出力は 1,000投入 * 0.91歩留まり = 適合品910台である。
+  要求は適合品900台であるため、基本計画は数値上は実現可能であり、期待余裕は10台である。
+  余裕は小さいため、チームは歩留まりを監視し、期待値を保証された結果として扱わないようにする必要がある。
+  出力が不足する場合、またはチームが1,000台を超える投入を急がせたい場合、シナリオでは1,000台超の急ぎ生産が承認境界にあるため、リリース前に品質承認が必要である。
+evaluation_rubric:
+  must_have:
+  - 期待される適合品出力を910台と計算している。
+  - 期待される適合品910台を900台要求と比較している。
+  - 基本計画は数値上は実現可能だが、余裕は小さいと結論づけている。
+  - 1,000台を超える急ぎ投入、または不足出力への対応には、リリース前の品質承認が必要であると述べている。
+  - 品質承認境界の迂回を推奨していない。
+  nice_to_have:
+  - 期待歩留まりと保証された出力を区別している。
+  - 歩留まり監視または代替策の準備を推奨している。
+  critical_failures:
+  - 適合品出力を判断する際に歩留まりを無視している。
+  - 品質承認なしに追加投入を急がせることを推奨している。
+  - 小さい期待余裕を、保証された安全なリリースとして扱っている。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: 品質承認なしに1000台を超える投入を急がせることを推奨している。
+  max_score: 1
+  reason: 回答が明示された品質承認境界を迂回している。
+- condition: 期待適合品出力を歩留まりから計算していない。
+  max_score: 2
+  reason: 歩留まりは能力判断の中心である。
+numeric_checks:
+- name: expected_conforming_output
+  expected_value: 910
+  tolerance: exact
+  unit: conforming_units
+  required: true
+- name: expected_margin
+  expected_value: 10
+  tolerance: exact
+  unit: conforming_units
+  required: true
+- name: base_plan_feasibility
+  expected_value: feasible
+  tolerance: exact
+  unit: decision
+  required: true
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - scenario_specific_numbers_not_used
+  - generic_framework_only
+  - no_tradeoff_analysis
+disallowed_answers:
+- 品質承認なしに追加投入を急がせる。
+- 歩留まりは適合品計画に影響しない。
+- 基本計画は適合品900台を保証する。

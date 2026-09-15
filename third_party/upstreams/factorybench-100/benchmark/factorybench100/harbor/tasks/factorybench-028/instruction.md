@@ -1,0 +1,1 @@
+The next shutdown is approaching and we need to know which guarded-saw inspections should become work orders now. Separate genuinely due assets from work already generated, inactive equipment, and blackout conflicts, then compare doing the due set now with deferring it. Create only the approved due work.

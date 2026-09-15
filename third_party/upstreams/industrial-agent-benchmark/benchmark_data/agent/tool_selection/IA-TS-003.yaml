@@ -1,0 +1,43 @@
+id: IA-TS-003
+layer: industrial_agent
+category: tool_selection
+domain: general_manufacturing
+subdomain: assembly
+difficulty: 4
+estimated_time_min: 45
+title: 騒音のあるライン引継ぎ支援のためのツール選定
+scenario: |
+  最終組立ラインでは、騒音のある現場でシフト引継ぎ漏れが頻発している。
+  12名の作業者が3つのステーションをローテーションしており、2名のチームリードが各引継ぎ時に次の4時間の優先作業を確認している。
+  ラインはしばしば85 dBを超えるため、音声だけの指示は信頼性が低く、手書きメモは不完全なことがある。
+  約300件の作業標準が共有ドライブに保存されており、緊急通知は現在Teamsに投稿されている。
+question: |
+  シフト引継ぎを支援するエージェントに最も適したツール方針を選択せよ。
+  RAG、構造化引継ぎUI、通知、または生産記録への直接自律更新のどれを使うべきかを説明せよ。
+expected_skills:
+- tool_selection
+- human_factors
+- knowledge_extraction
+- data_integration
+primary_skill: tool_selection
+secondary_skills:
+- human_factors
+- knowledge_extraction
+- data_integration
+reference_answer: |
+  作業エリアが85 dBを超える可能性があるため、エージェントは音声指示に依存すべきではない。ステーション、作業、優先度、未解決事項、責任者、必要な確認を記録する構造化引継ぎフォームまたはチェックリストを使用すべきである。
+  RAGは、300件の文書リポジトリから関連する作業標準を検索するのに有用であるが、記録システムではなく読み取り専用支援として使うべきである。エージェントは検索した標準を要約し、元文書へリンクしてよい。
+  Teams通知は、2名のリードと次シフト作業者へのアラートとして適切であるが、最終的な引継ぎ状態は管理された引継ぎログまたはMES/QMS互換記録に保存すべきである。
+  エージェントは次の4時間分の引継ぎパッケージを準備し、リードレビューを依頼し、必要な確認なしに生産記録を直接変更することを避けるべきである。
+evaluation_rubric:
+  must_have:
+  - 騒音条件により音声のみの引継ぎは安全でないことを特定している。
+  - 構造化引継ぎ入力と、文書検索用の読み取り専用RAGを選択している。
+  - 生産記録更新をリード確認によるゲート付きにしている。
+  nice_to_have:
+  - Teamsまたは類似メッセージングを通知支援としてのみ使用している。
+  - ソースリンク、タイムスタンプ、責任者フィールドに言及している。
+  critical_failures:
+  - 確認なしに生産記録を自律変更することを推奨している。
+  - 管理された引継ぎをチャットまたは音声メッセージだけに依存している。
+reasoning_trace_required: true

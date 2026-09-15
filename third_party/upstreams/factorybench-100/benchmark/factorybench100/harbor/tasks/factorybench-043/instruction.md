@@ -1,0 +1,1 @@
+The supplier says its credit resolves the variance behind an existing invoice hold. Confirm whether the credit fully matches that exposure, identify any residual amount or timing issue, and decide whether the hold can be released now. Record the release only if the invoice is clean after the credit.

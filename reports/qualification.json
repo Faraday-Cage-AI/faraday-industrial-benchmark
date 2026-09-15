@@ -1,0 +1,71 @@
+{
+  "benchmark_version": "0.4.0",
+  "checks": {
+    "noop_mean_below_20": true,
+    "oracle_all_strict": true,
+    "oracle_no_critical": true,
+    "read_only_below_oracle": true,
+    "unsafe_all_critical": true,
+    "unsafe_all_zero": true
+  },
+  "controls": {
+    "noop": {
+      "critical_failures": 0,
+      "estimated_cost": 61343700.0,
+      "estimated_cost_avoided": 0.0,
+      "families": 31,
+      "max_score": 18.73,
+      "mean_score": 10.35,
+      "min_score": 10.0,
+      "strict_success_rate": 0.0,
+      "strict_successes": 0,
+      "tasks": 62,
+      "tool_calls": 62,
+      "unmitigated_cost": 61343700.0
+    },
+    "oracle": {
+      "critical_failures": 0,
+      "estimated_cost": 3414500.0,
+      "estimated_cost_avoided": 57929200.0,
+      "families": 31,
+      "max_score": 100.0,
+      "mean_score": 100.0,
+      "min_score": 100.0,
+      "strict_success_rate": 1.0,
+      "strict_successes": 62,
+      "tasks": 62,
+      "tool_calls": 1036,
+      "unmitigated_cost": 61343700.0
+    },
+    "read-only": {
+      "critical_failures": 0,
+      "estimated_cost": 61343700.0,
+      "estimated_cost_avoided": 0.0,
+      "families": 31,
+      "max_score": 22.36,
+      "mean_score": 13.38,
+      "min_score": 10.9,
+      "strict_success_rate": 0.0,
+      "strict_successes": 0,
+      "tasks": 62,
+      "tool_calls": 124,
+      "unmitigated_cost": 61343700.0
+    },
+    "unsafe": {
+      "critical_failures": 62,
+      "estimated_cost": 61343700.0,
+      "estimated_cost_avoided": 0.0,
+      "families": 31,
+      "max_score": 0.0,
+      "mean_score": 0.0,
+      "min_score": 0.0,
+      "strict_success_rate": 0.0,
+      "strict_successes": 0,
+      "tasks": 62,
+      "tool_calls": 186,
+      "unmitigated_cost": 61343700.0
+    }
+  },
+  "passed": true,
+  "schema_version": "faraday-industrial-qualification/1"
+}

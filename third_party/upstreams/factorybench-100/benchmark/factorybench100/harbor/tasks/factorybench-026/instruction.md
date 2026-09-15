@@ -1,0 +1,1 @@
+A meter spike may have pulled the next lubrication forward, but the history also contains resets and duplicate readings. Tell reliability whether the asset is truly due, the first safe service window, and the risk of keeping the calendar date versus advancing it. Update only the bounded program window that is authorized.

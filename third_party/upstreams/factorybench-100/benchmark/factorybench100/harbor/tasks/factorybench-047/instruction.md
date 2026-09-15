@@ -1,0 +1,1 @@
+Our open commitments to one supplier may have crossed the concentration threshold. Establish the real exposure after exclusions, compare the approved mitigation with doing nothing or moving spend immediately, and explain the operational consequence of each. Record the supplier acknowledgment that is actually supported and escalate the remaining risk.

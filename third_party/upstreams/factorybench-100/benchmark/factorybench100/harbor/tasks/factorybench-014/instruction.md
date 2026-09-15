@@ -1,0 +1,1 @@
+The final-operation quantity does not agree with the panel serial records. Tell the shift which serials are truly complete, which ones still have a test or traveler problem, and the operational effect of holding the exceptions instead of completing the header quantity. Post completion only for the defensible serial set.

@@ -1,0 +1,63 @@
+{
+  "case": "CASE-064",
+  "itemOrResource": "NS-COMP-064",
+  "lastUpdateDate": "2026-01-12T08:00:00-08:00",
+  "organizationCode": "SEA",
+  "providerSetupCrosswalk": {
+    "candidates": [
+      {
+        "candidateReference": "SETUP-0064-ARCHIVE",
+        "controlStatus": "SUPERSEDED",
+        "immutableRecord": "NS-000064",
+        "organizationCode": "SEA",
+        "sourceRevision": "R9",
+        "targetAndProviderValues": {
+          "WorkOrderId": 1500064,
+          "WorkOrderOperationMaterialId": 1700064,
+          "requestBody": {
+            "substituteItemNumber": "NS-SUB-CAND-064-2"
+          }
+        }
+      },
+      {
+        "candidateReference": "SETUP-0064-PDX",
+        "controlStatus": "OTHER_ORGANIZATION",
+        "immutableRecord": "NS-000065",
+        "organizationCode": "PDX",
+        "sourceRevision": "R2",
+        "targetAndProviderValues": {
+          "WorkOrderId": 2200064,
+          "WorkOrderOperationMaterialId": 2400064,
+          "requestBody": {
+            "substituteItemNumber": "NS-SUB-CAND-064-3"
+          }
+        }
+      },
+      {
+        "candidateReference": "SETUP-0064-CURRENT",
+        "controlStatus": "ACTIVE_APPLICABLE",
+        "immutableRecord": "NS-000064",
+        "organizationCode": "SEA",
+        "sourceRevision": "R2",
+        "targetAndProviderValues": {
+          "WorkOrderId": 100064,
+          "WorkOrderOperationMaterialId": 300064,
+          "requestBody": {
+            "substituteItemNumber": "NS-SUB-064"
+          }
+        }
+      }
+    ],
+    "instruction": "Correlate immutable record, effective revision, organization, and control status before using provider identifiers or controlled values. This setup export does not determine the business decision, and row order does not indicate applicability.",
+    "narrativeControl": "Free-text names, descriptions, notes, and reasons may use natural wording but must remain scoped to this case or immutable record.",
+    "providerOperation": "oracle_fusion.work_order_materials.replace_with_substitute",
+    "source": "Oracle setup and transaction-control export"
+  },
+  "recordId": "NS-000064",
+  "recordType": "oracle_fusion.work_order_materials",
+  "revision": "R2",
+  "source": "Oracle Fusion Cloud 26a-shaped synthetic export",
+  "sourceMeasure": 88,
+  "status": "Open",
+  "unit": "EA"
+}

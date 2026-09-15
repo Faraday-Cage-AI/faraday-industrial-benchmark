@@ -1,0 +1,80 @@
+schema_version: '1.1'
+id: IR-NCP-005
+layer: industrial_reasoning
+category: numeric_capacity_planning
+domain: automotive
+subdomain: assembly
+difficulty: 4
+estimated_time_min: 35
+title: 要員制約を考慮した能力
+scenario: |
+  ある生産セルは、1時間あたり120台で稼働するには訓練済み作業者が2名必要である。
+  訓練済み作業者が1名の場合、同じセルは1時間あたり70台に制限される。
+  本日は6時間の正味シフトに対して、訓練済み作業者が1名しか利用できない。本日の需要は600台である。
+question: |
+  本日の実現可能能力を計算し、追加の訓練済み要員なしにスケジュールを満たせるか判断せよ。
+  制約となっている要因と、必要なエスカレーションを特定せよ。
+expected_skills:
+- staffing_constraint_analysis
+- capacity_calculation
+- feasibility_judgement
+- escalation_design
+primary_skill: staffing_constraint_analysis
+secondary_skills:
+- capacity_calculation
+- feasibility_judgement
+- escalation_design
+reference_answer: |
+  利用できる訓練済み作業者は1名だけであるため、2名体制の能力は使用できない。
+  したがって、本日の実現可能な処理能力は1時間あたり70台である。
+  実現可能能力 = 70台/時間 * 6時間 = 420台である。
+  需要は600台であるため、計画は180台不足し、追加の訓練済み要員、承認済み残業、需要の再調整、またはその他の承認済み能力対策なしには達成できない。
+  制約となっている要因は訓練済み要員である。
+evaluation_rubric:
+  must_have:
+  - 1名体制の能力である1時間あたり70台を使用している。
+  - 実現可能能力を420台と計算している。
+  - 420台を需要600台と比較している。
+  - 追加対策なしにはスケジュールを満たせないと結論づけている。
+  - 訓練済み要員を制約要因として特定している。
+  nice_to_have:
+  - 180台の不足を計算している。
+  - 訓練済み要員、承認済み残業、または再スケジュールのエスカレーションに言及している。
+  critical_failures:
+  - 訓練済み作業者が1名しかいないのに、2名体制の能力を使用している。
+  - 追加の訓練済み要員または承認済み対策なしに計画は実現可能と主張している。
+  - 資格付けまたは承認なしに未訓練者を使って生産量を満たすことを提案している。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: 実現可能な処理能力として1時間あたり120台を使用している。
+  max_score: 1
+  reason: 回答が要員制約を無視している。
+- condition: 資格付けまたは承認なしに未訓練要員を推奨している。
+  max_score: 1
+  reason: 安全でない要員エスカレーションである。
+numeric_checks:
+- name: feasible_capacity
+  expected_value: 420
+  tolerance: exact
+  unit: units
+  required: true
+- name: shortfall
+  expected_value: 180
+  tolerance: exact
+  unit: units
+  required: true
+- name: feasibility
+  expected_value: infeasible
+  tolerance: exact
+  unit: decision
+  required: true
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - scenario_specific_numbers_not_used
+  - generic_framework_only
+  - no_named_stakeholder
+disallowed_answers:
+- 2名体制の1時間あたり120台を使用する。
+- 訓練済み作業者1名でスケジュールを満たせる。
+- 資格付けなしに未訓練者を追加して計画を満たす。

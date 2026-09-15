@@ -1,0 +1,287 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "ranges": [
+        "Control!A1:I50",
+        "Approvals!A1:G20"
+      ],
+      "spreadsheetId": "sheet-056",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.batchGet"
+  },
+  {
+    "arguments": {
+      "channel": "C-PRODUCTION",
+      "limit": 100,
+      "ts": "1768000056.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-056\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-056",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-056' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-056-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-056-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-056"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-056-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-056-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-056-22",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-056-20",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-056-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-056-14"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-056-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-056-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-056-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-056"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-056-21",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-056"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "DocumentNumber='RCV-0056'"
+    },
+    "tool": "oracle_fusion.quality_inspection_results.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-056' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplyOrderReferenceNumber='SUPPLY-0056'"
+    },
+    "tool": "oracle_fusion.supply_requests.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100056,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_materials.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-056",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "SourceSystemCode": "EXTERNAL",
+        "TransactionLines": [
+          {
+            "Item": "NS-COMP-056",
+            "LotNumber": "LOT-0056",
+            "OrganizationCode": "SEA",
+            "Subinventory": "STORES",
+            "TransactionQuantity": 73,
+            "TransactionType": "Subinventory Transfer",
+            "TransactionUnitOfMeasure": "EA",
+            "TransferSubinventory": "CONTROLLED"
+          }
+        ],
+        "TransactionMode": "ONLINE"
+      }
+    },
+    "tool": "oracle_fusion.inventory_transactions.create"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-056' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "includeValuesInResponse": true,
+      "range": "Control!H18",
+      "requestBody": {
+        "majorDimension": "ROWS",
+        "values": [
+          [
+            "CASE-056 | transfer_supported_quantity | 2026-01-15 | NS-000056 | lot, ownership, transit, and destination reservation must remain valid; quarantined, project-owned, or safety-stock quantity = 11 EA; uncovered or unsupported scope = 10.0 EA | AP-0056"
+          ]
+        ]
+      },
+      "spreadsheetId": "sheet-056",
+      "valueInputOption": "RAW"
+    },
+    "tool": "google_sheets.spreadsheets.values.update"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Control!H18",
+      "spreadsheetId": "sheet-056",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "message": {
+        "raw": "RnJvbTogaW52ZW50b3J5LmNvbnRyb2wubWFuYWdlckBub3J0aHN0YXIuZXhhbXBsZQ0KVG86IG1hdGVyaWFsLmNvbnRyb2xAbm9ydGhzdGFyLmV4YW1wbGUNClN1YmplY3Q6IENBU0UtMDU2IOKAlCBEcmFmdCBvcGVyYXRpbmcgZGVjaXNpb24NCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD1VVEYtOA0KDQpEZWNpc2lvbjogdHJhbnNmZXJfc3VwcG9ydGVkX3F1YW50aXR5LiBDb21wbGV0aW9uOiAyMDI2LTAxLTE1Lg0KQmluZGluZyBjb25zdHJhaW50OiBsb3QsIG93bmVyc2hpcCwgdHJhbnNpdCwgYW5kIGRlc3RpbmF0aW9uIHJlc2VydmF0aW9uIG11c3QgcmVtYWluIHZhbGlkOyBxdWFyYW50aW5lZCwgcHJvamVjdC1vd25lZCwgb3Igc2FmZXR5LXN0b2NrIHF1YW50aXR5ID0gMTEgRUE7IHVuY292ZXJlZCBvciB1bnN1cHBvcnRlZCBzY29wZSA9IDEwLjAgRUEuDQpBbHRlcm5hdGl2ZXM6IHRyYW5zZmVyX3N1cHBvcnRlZF9xdWFudGl0eTogb3V0Y29tZSAyMDI2LTAxLTE1LCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIFNVUFBPUlRFRF9BTkRfQVBQUk9WRUQ7IGRyYWluX3NvdXJjZV9zYWZldHlfc3RvY2s6IG91dGNvbWUgMjAyNi0wMS0xNiwgZWNvbm9taWMgaW1wYWN0IFVTRCAwLCBGRUFTSUJMRV9XSVRIX0lORkVSSU9SX1RSQURFT0ZGOyBidXlfbmV3X3N1cHBseTogb3V0Y29tZSAyMDI2LTAxLTE3LCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIFNFUEFSQVRFX0FQUFJPVkFMX09SX1BPTElDWV9FWENFUFRJT05fUkVRVUlSRUQuDQpPcmFjbGUgcmVjb3JkOiBOUy0wMDAwNTYuIEFwcHJvdmFsOiBBUC0wMDU2LiBDYXNlOiBDQVNFLTA1Ni4NCg",
+        "threadId": "thread-056"
+      },
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.create"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "draft-056",
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.get"
+  },
+  {
+    "arguments": {
+      "baseline_resolution_date": "2026-01-15",
+      "business_need_date": "2026-01-15",
+      "controlled_item_or_record": "NS-COMP-056",
+      "controlled_resolution_date": "2026-01-16",
+      "decision_timing_status": "ON_TIME",
+      "escalated_resolution_date": "2026-01-17",
+      "escalation_approval_required": 1,
+      "excluded_quantity": 11,
+      "observed_quantity": 84,
+      "outcome_vs_control_days": 0,
+      "quantity_unit": "EA",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "transfer_supported_quantity",
+      "recommended_outcome_date": "2026-01-15",
+      "source_quantity": 83,
+      "supported_quantity": 73,
+      "transaction_quantity": 73
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

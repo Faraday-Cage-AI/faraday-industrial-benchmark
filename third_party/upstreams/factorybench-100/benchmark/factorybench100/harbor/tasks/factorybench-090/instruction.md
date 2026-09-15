@@ -1,0 +1,1 @@
+A safety interlock was bypassed and production is asking when the asset can run again. Establish the actual equipment exposure and repair scope, compare qualified internal and external recovery options, and identify the earliest safe return-to-service. Open the corrective work without releasing the asset beyond the safety approval.

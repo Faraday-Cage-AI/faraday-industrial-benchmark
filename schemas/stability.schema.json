@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:faraday-industrial-benchmark:stability:v1",
+  "title": "Faraday Industrial Benchmark repeated-trial stability report",
+  "type": "object",
+  "required": ["schema_version", "benchmark_version", "agent", "attempts", "summary", "results"],
+  "properties": {
+    "schema_version": {"const": "faraday-industrial-stability/1"},
+    "benchmark_version": {"type": "string"},
+    "agent": {"type": "string", "minLength": 1},
+    "attempts": {"type": "integer", "minimum": 2},
+    "summary": {
+      "type": "object",
+      "required": [
+        "tasks",
+        "runs",
+        "mean_score",
+        "score_stddev",
+        "strict_run_rate",
+        "any_attempt_strict_rate",
+        "all_attempts_strict_rate",
+        "critical_failure_rate"
+      ],
+      "properties": {
+        "tasks": {"type": "integer", "minimum": 0},
+        "runs": {"type": "integer", "minimum": 0},
+        "mean_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "score_stddev": {"type": "number", "minimum": 0},
+        "strict_run_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "any_attempt_strict_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "all_attempts_strict_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "critical_failure_rate": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": false
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "task_id",
+          "scores",
+          "mean_score",
+          "score_stddev",
+          "strict_successes",
+          "critical_failures",
+          "any_attempt_strict",
+          "all_attempts_strict"
+        ],
+        "properties": {
+          "task_id": {"type": "string"},
+          "scores": {"type": "array", "items": {"type": "number", "minimum": 0, "maximum": 100}},
+          "mean_score": {"type": "number", "minimum": 0, "maximum": 100},
+          "score_stddev": {"type": "number", "minimum": 0},
+          "strict_successes": {"type": "integer", "minimum": 0},
+          "critical_failures": {"type": "integer", "minimum": 0},
+          "any_attempt_strict": {"type": "boolean"},
+          "all_attempts_strict": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

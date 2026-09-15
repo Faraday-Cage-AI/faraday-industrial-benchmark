@@ -1,0 +1,285 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-021' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-021-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-021"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-021-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-021-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-021-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-021-23"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-021-17",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-021-16",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-021-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-021-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-021-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-021-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-021-19",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-021"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-021"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "count": 50,
+      "query": "\"CASE-021\"",
+      "sort": "timestamp",
+      "sort_dir": "asc"
+    },
+    "tool": "slack.search_messages"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-021\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-021",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "includeGridData": false,
+      "ranges": [
+        "Control!A1:I50"
+      ],
+      "spreadsheetId": "sheet-021"
+    },
+    "tool": "google_sheets.spreadsheets.get"
+  },
+  {
+    "arguments": {
+      "MaintenanceProgramId": 500021
+    },
+    "tool": "oracle_fusion.maintenance_programs.get"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "WorkOrderNumber='MWO-0021'"
+    },
+    "tool": "oracle_fusion.maintenance_work_orders.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "DocumentNumber='RCV-0021'"
+    },
+    "tool": "oracle_fusion.quality_inspection_results.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-021' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100021,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.maintenance_documents.list"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "AssetNumber": "ASSET-021",
+        "OrganizationCode": "SEA",
+        "PlannedCompletionDate": "2026-01-18",
+        "PlannedStartDate": "2026-01-16",
+        "WorkOrderDescription": "Corrective work opened: open_internal_corrective_repair; completion 2026-01-18; constraint alarm history, diagnostic code, and service-manual procedure must agree; unavailable parts and conflicting shop load = 7 HR; uncovered or unsupported scope = 23.0 HR; approval AP-0021",
+        "WorkOrderNumber": "MWO-0021",
+        "WorkOrderStatusCode": "ORA_RELEASED",
+        "WorkOrderTypeCode": "CORRECTIVE"
+      }
+    },
+    "tool": "oracle_fusion.maintenance_work_orders.create"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "WorkOrderNumber='MWO-0021'"
+    },
+    "tool": "oracle_fusion.maintenance_work_orders.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-021",
+      "requestBody": {
+        "content": "CASE-021: open_internal_corrective_repair recorded on Oracle record NS-000021; completion 2026-01-18; constraint alarm history, diagnostic code, and service-manual procedure must agree; unavailable parts and conflicting shop load = 7 HR; uncovered or unsupported scope = 23.0 HR; approval AP-0021."
+      }
+    },
+    "tool": "google_drive.comments.create"
+  },
+  {
+    "arguments": {
+      "commentId": "comment-021",
+      "fields": "id,content,resolved,createdTime",
+      "fileId": "drive-021"
+    },
+    "tool": "google_drive.comments.get"
+  },
+  {
+    "arguments": {
+      "insertDataOption": "INSERT_ROWS",
+      "range": "Audit!A:G",
+      "requestBody": {
+        "majorDimension": "ROWS",
+        "values": [
+          [
+            "2026-01-12",
+            "CASE-021",
+            "maintenance_planner",
+            "open_internal_corrective_repair",
+            "2026-01-18",
+            "NS-000021",
+            "AP-0021"
+          ]
+        ]
+      },
+      "spreadsheetId": "sheet-021",
+      "valueInputOption": "RAW"
+    },
+    "tool": "google_sheets.spreadsheets.values.append"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Audit!A:G",
+      "spreadsheetId": "sheet-021",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "affected_resource_or_operation": "NS-000021",
+      "base_completion": "2026-01-18",
+      "business_need_date": "2026-01-17",
+      "candidate_capacity": 16,
+      "capacity_gap": 23,
+      "capacity_unit": "HR",
+      "decision_timing_status": "LATE",
+      "escalated_completion": "2026-01-15",
+      "escalation_approval_required": 1,
+      "net_usable_capacity": 9,
+      "outcome_vs_control_days": 1,
+      "qualified_alternative_completion": "2026-01-16",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "open_internal_corrective_repair",
+      "recommended_outcome_date": "2026-01-18",
+      "required_capacity": 32,
+      "selected_resource_or_control": "ASSET-021",
+      "unavailable_or_protected_capacity": 7
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

@@ -1,0 +1,278 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-023\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-023",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "file": "F-000023"
+    },
+    "tool": "slack.files_info"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-023' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-023-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-023-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-023-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-023-23"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-023-17",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-023-16",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-023-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-023-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-023-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-023-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-023-19",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-023"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-023-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-023"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "ranges": [
+        "Control!A1:I50",
+        "Approvals!A1:G20"
+      ],
+      "spreadsheetId": "sheet-023",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.batchGet"
+  },
+  {
+    "arguments": {
+      "WoOperationId": 200023,
+      "WorkOrderId": 100023,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.maintenance_resources.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100023,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.maintenance_documents.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100023
+    },
+    "tool": "oracle_fusion.maintenance_work_orders.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100023,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.maintenance_operations.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-023",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "count": 50,
+      "query": "\"CASE-023\"",
+      "sort": "timestamp",
+      "sort_dir": "asc"
+    },
+    "tool": "slack.search_messages"
+  },
+  {
+    "arguments": {
+      "WoOperationId": 200023,
+      "WorkOrderId": 100023,
+      "requestBody": {
+        "OperationName": "Corrective action CASE-023",
+        "PlannedStartDate": "2026-01-17",
+        "WorkCenterCode": "MAINT-3"
+      }
+    },
+    "tool": "oracle_fusion.maintenance_operations.update"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100023,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.maintenance_operations.list"
+  },
+  {
+    "arguments": {
+      "includeValuesInResponse": true,
+      "range": "Control!H25",
+      "requestBody": {
+        "majorDimension": "ROWS",
+        "values": [
+          [
+            "CASE-023 | move_to_qualified_electrical_shop | 2026-01-19 | NS-000023 | shop qualification, active status, tooling, and capacity must all pass; mechanical-only shops and protected electrical work = 9 HR; uncovered or unsupported scope = 27.0 HR | AP-0023"
+          ]
+        ]
+      },
+      "spreadsheetId": "sheet-023",
+      "valueInputOption": "RAW"
+    },
+    "tool": "google_sheets.spreadsheets.values.update"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Control!H25",
+      "spreadsheetId": "sheet-023",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-FINANCE",
+      "text": "CASE-023: Oracle record NS-000023 now reflects move_to_qualified_electrical_shop with completion 2026-01-19. Binding constraint: shop qualification, active status, tooling, and capacity must all pass; mechanical-only shops and protected electrical work = 9 HR; uncovered or unsupported scope = 27.0 HR. Alternatives: wait_in_current_shop: outcome 2026-01-22, economic impact USD 0, FEASIBLE_WITH_INFERIOR_TRADEOFF; move_to_qualified_electrical_shop: outcome 2026-01-19, economic impact USD 741, SUPPORTED_AND_APPROVED; send_to_unqualified_fast_shop: outcome 2026-01-18, economic impact USD 1813, SEPARATE_APPROVAL_OR_POLICY_EXCEPTION_REQUIRED. Approval AP-0023.",
+      "thread_ts": "1768000023.000100"
+    },
+    "tool": "slack.chat_postMessage"
+  },
+  {
+    "arguments": {
+      "channel": "C-FINANCE",
+      "limit": 100,
+      "ts": "1768000023.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "affected_resource_or_operation": "NS-000023",
+      "base_completion": "2026-01-22",
+      "business_need_date": "2026-01-19",
+      "candidate_capacity": 28,
+      "capacity_gap": 27,
+      "capacity_unit": "HR",
+      "decision_timing_status": "ON_TIME",
+      "escalated_completion": "2026-01-18",
+      "escalation_approval_required": 1,
+      "net_usable_capacity": 19,
+      "outcome_vs_control_days": 0,
+      "qualified_alternative_completion": "2026-01-19",
+      "recommended_incremental_cost_usd": 741,
+      "recommended_option": "move_to_qualified_electrical_shop",
+      "recommended_outcome_date": "2026-01-19",
+      "required_capacity": 46,
+      "selected_resource_or_control": "MAINT-3",
+      "unavailable_or_protected_capacity": 9
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

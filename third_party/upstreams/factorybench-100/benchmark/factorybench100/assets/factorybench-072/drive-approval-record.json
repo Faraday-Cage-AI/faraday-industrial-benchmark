@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-072",
+  "approvedScope": "Approval AP-0072 permits one control-compliant action on NS-000072 up to 48.0 KG, provided scanner identity, timestamp, lot, operation, and physical stock prove duplication. It does not select an option in advance and does not authorize broader records or leave_duplicate_cost.",
+  "businessNeedBy": "2026-01-14",
+  "case": "CASE-072",
+  "fileId": "drive-approval-072",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}

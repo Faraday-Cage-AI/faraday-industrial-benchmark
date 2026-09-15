@@ -1,0 +1,57 @@
+# NON-RUNNABLE Phase 2B model fixtures for fake-transport provider tests.
+# Env var names are test placeholders; no real endpoint or key material.
+non_runnable: true
+models:
+  - model_key: model_openai_test
+    public_model_id: test-openai-model
+    provider_kind: openai
+    api_kind: responses
+    decoding_profile_id: openai_answer_v1
+    snapshot: unknown
+    access_path: api
+    release_date: unknown
+    training_cutoff: unknown
+    api_key_env: TEST_OPENAI_API_KEY
+  - model_key: model_anthropic_opus_test
+    public_model_id: test-anthropic-opus
+    provider_kind: anthropic
+    api_kind: messages
+    decoding_profile_id: anthropic_opus_v1
+    snapshot: unknown
+    access_path: api
+    release_date: unknown
+    training_cutoff: unknown
+    api_key_env: TEST_ANTHROPIC_API_KEY
+  - model_key: model_anthropic_sonnet_test
+    public_model_id: test-anthropic-sonnet
+    provider_kind: anthropic
+    api_kind: messages
+    decoding_profile_id: anthropic_sonnet_v1
+    snapshot: unknown
+    access_path: api
+    release_date: unknown
+    training_cutoff: unknown
+    api_key_env: TEST_ANTHROPIC_API_KEY
+  - model_key: model_hosted_test
+    public_model_id: test-org/test-hosted-model
+    hosted_model_id: hosted/test-model-fp8
+    provider_kind: openai_compatible
+    api_kind: chat_completions
+    decoding_profile_id: compatible_hosted_v1
+    snapshot: unknown
+    access_path: hosted_api
+    release_date: unknown
+    training_cutoff: unknown
+    api_key_env: TEST_COMPAT_API_KEY
+    base_url_env: TEST_COMPAT_BASE_URL
+  - model_key: model_gemini_probe_test
+    public_model_id: test-gemini-compat
+    provider_kind: openai_compatible
+    api_kind: chat_completions
+    decoding_profile_id: compatible_gemini_baseline_v1
+    snapshot: unknown
+    access_path: openai_compatible_pending_go_no_go
+    release_date: unknown
+    training_cutoff: unknown
+    api_key_env: TEST_COMPAT_API_KEY
+    base_url_env: TEST_COMPAT_BASE_URL

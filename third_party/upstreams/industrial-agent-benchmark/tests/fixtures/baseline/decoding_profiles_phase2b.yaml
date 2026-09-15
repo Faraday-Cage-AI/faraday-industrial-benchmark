@@ -1,0 +1,82 @@
+# Phase 2B decoding profiles for fake-transport provider tests.
+# These are TEST FIXTURES: no real endpoint information, no frozen protocol
+# values. The frozen real profiles are created in Phase 2C.
+profiles:
+  openai_answer_v1:
+    provider_kind: openai
+    api_kind: responses
+    max_output_tokens: 8192
+    params_sent:
+      reasoning_effort: high
+    params_not_sent: [temperature, top_p, seed]
+    max_retries: 2
+    backoff_base_seconds: 0.0
+    retry_policy_summary: "max_retries=2, exponential backoff (base 0s in tests)"
+  openai_judge_v1:
+    provider_kind: openai
+    api_kind: responses
+    max_output_tokens: 4096
+    params_sent:
+      reasoning_effort: high
+    params_not_sent: [temperature, top_p, seed]
+    max_retries: 2
+    backoff_base_seconds: 0.0
+    retry_policy_summary: "max_retries=2, exponential backoff (base 0s in tests)"
+  anthropic_opus_v1:
+    provider_kind: anthropic
+    api_kind: messages
+    max_output_tokens: 8192
+    params_sent:
+      thinking: adaptive
+      effort: high
+    params_not_sent: [temperature, top_p, top_k]
+    max_retries: 2
+    backoff_base_seconds: 0.0
+    retry_policy_summary: "max_retries=2, exponential backoff (base 0s in tests)"
+  anthropic_sonnet_v1:
+    provider_kind: anthropic
+    api_kind: messages
+    max_output_tokens: 4096
+    params_sent:
+      effort: high
+    params_not_sent: [temperature, top_p, top_k, budget_tokens]
+    max_retries: 2
+    backoff_base_seconds: 0.0
+    retry_policy_summary: "max_retries=2, exponential backoff (base 0s in tests)"
+  compatible_hosted_v1:
+    provider_kind: openai_compatible
+    api_kind: chat_completions
+    max_output_tokens: 4096
+    params_sent:
+      temperature: 0
+      top_p: 1
+      seed: 20260705
+    params_not_sent: [top_k]
+    max_retries: 2
+    backoff_base_seconds: 0.0
+    retry_policy_summary: "max_retries=2, exponential backoff (base 0s in tests)"
+  # First-pilot Gemini profile: reasoning_effort ONLY (officially mapped to
+  # thinking levels); no sampling params, no google_thinking_config.
+  compatible_gemini_baseline_v1:
+    provider_kind: openai_compatible
+    api_kind: chat_completions
+    max_output_tokens: 4096
+    params_sent:
+      reasoning_effort: high
+    params_not_sent: [temperature, top_p, top_k, seed]
+    max_retries: 2
+    backoff_base_seconds: 0.0
+    retry_policy_summary: "max_retries=2, exponential backoff (base 0s in tests)"
+  # Future-facing Gemini profile: explicit google_thinking_config block,
+  # mapped on the wire to extra_body.google.thinking_config.
+  compatible_gemini_future_v1:
+    provider_kind: openai_compatible
+    api_kind: chat_completions
+    max_output_tokens: 4096
+    params_sent: {}
+    params_not_sent: [temperature, top_p, top_k, seed, reasoning_effort]
+    provider_extras:
+      google_thinking_config: { thinking_budget: 8192 }
+    max_retries: 2
+    backoff_base_seconds: 0.0
+    retry_policy_summary: "max_retries=2, exponential backoff (base 0s in tests)"

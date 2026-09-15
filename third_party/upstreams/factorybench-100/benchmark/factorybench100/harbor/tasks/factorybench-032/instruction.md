@@ -1,0 +1,1 @@
+The supplier says it can expedite our open order, but its acknowledgment may not cover every line or unit. Determine exactly what promise can be relied on, how it changes the downstream production date, and whether accepting it is better than keeping the current schedule. Record only the supplier-confirmed commitment.

@@ -1,0 +1,1 @@
+An order still has unfinished production at cutoff even though its dates sit inside the closing period. Determine the real remaining work and first next-period slot, the cost and customer impact of moving it, and whether any current-period activity must stay untouched. Defer only the incomplete scope.

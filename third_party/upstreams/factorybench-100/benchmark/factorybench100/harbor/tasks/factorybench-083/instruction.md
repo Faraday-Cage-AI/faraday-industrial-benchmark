@@ -1,0 +1,1 @@
+A customer asset has arrived at the depot and service needs a credible repair commitment. Verify the covered failure and entitlement, compare internal repair, exchange, and delayed repair using real bench and part availability, and give the customer the earliest defensible date. Open only the authorized repair scope.

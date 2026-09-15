@@ -1,0 +1,1 @@
+A new EDI release appears to duplicate demand we already accepted, and the supplier cancellation window is closing. Establish whether it is truly a duplicate, how much associated supply can still be stopped without hurting legitimate demand, and the consequence of leaving both releases open. Cancel only the unsupported commitment and brief the account team.

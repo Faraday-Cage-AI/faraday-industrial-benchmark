@@ -1,0 +1,1 @@
+Operations has weekend-overtime approval for part of the backlog, but not every open order belongs in that scope. Determine which work actually benefits, whether qualified inspection and work-center coverage are available, and how the approved weekend changes completion versus the weekday plan. Schedule only the authorized recovery.

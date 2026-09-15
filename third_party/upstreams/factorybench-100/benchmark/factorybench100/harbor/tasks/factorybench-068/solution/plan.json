@@ -1,0 +1,271 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-068\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-068",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "fields": "id,name,mimeType,modifiedTime,md5Checksum,description",
+      "fileId": "drive-068"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "ranges": [
+        "Control!A1:I50",
+        "Approvals!A1:G20"
+      ],
+      "spreadsheetId": "sheet-068",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.batchGet"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-068' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-068-16",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-068-17",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-068-23"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-068-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-068-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-068-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-068"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-068-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-068"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-068-19",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-068-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-068-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-068-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-068-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "channel": "C-PRODUCTION",
+      "inclusive": true,
+      "limit": 100,
+      "oldest": "1768000000.000000"
+    },
+    "tool": "slack.conversations_history"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100068,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_operations.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100068
+    },
+    "tool": "oracle_fusion.work_orders.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100068,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_resources.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplierNumber='SUP-00068'"
+    },
+    "tool": "oracle_fusion.suppliers.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-068",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100068,
+      "WorkOrderOperationId": 200068,
+      "requestBody": {
+        "AssignedUnits": 1,
+        "BasisType": "VARIABLE",
+        "ResourceCode": "RES-CERT-068",
+        "UsageRate": 1.0
+      }
+    },
+    "tool": "oracle_fusion.work_order_resources.create"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100068,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_resources.list"
+  },
+  {
+    "arguments": {
+      "message": {
+        "raw": "RnJvbTogbWFudWZhY3R1cmluZy5lbmdpbmVlckBub3J0aHN0YXIuZXhhbXBsZQ0KVG86IG1hbnVmYWN0dXJpbmcuZW5naW5lZXJpbmdAbm9ydGhzdGFyLmV4YW1wbGUNClN1YmplY3Q6IENBU0UtMDY4IOKAlCBEcmFmdCBvcGVyYXRpbmcgZGVjaXNpb24NCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD1VVEYtOA0KDQpEZWNpc2lvbjogYWRkX3F1YWxpZmllZF9maXh0dXJlX3Jlc291cmNlLiBDb21wbGV0aW9uOiAyMDI2LTAxLTE5Lg0KQmluZGluZyBjb25zdHJhaW50OiBmaXh0dXJlIHF1YWxpZmljYXRpb24sIGNhbGlicmF0aW9uLCByYXRlLCBhbmQgRUNPIGFwcHJvdmFsOyB1bmNhbGlicmF0ZWQgb3IgY29uZmxpY3RpbmcgZml4dHVyZS1ob3VycyA9IDkgSFI7IHVuY292ZXJlZCBvciB1bnN1cHBvcnRlZCBzY29wZSA9IDIwLjAgSFIuDQpBbHRlcm5hdGl2ZXM6IGFkZF9xdWFsaWZpZWRfZml4dHVyZV9yZXNvdXJjZTogb3V0Y29tZSAyMDI2LTAxLTE5LCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIFNVUFBPUlRFRF9BTkRfQVBQUk9WRUQ7IHVzZV91bmNhbGlicmF0ZWRfZml4dHVyZTogb3V0Y29tZSAyMDI2LTAxLTE4LCBlY29ub21pYyBpbXBhY3QgVVNEIDE1MDYsIEZFQVNJQkxFX1dJVEhfSU5GRVJJT1JfVFJBREVPRkY7IGRlZmVyX3Rlc3Rfb3BlcmF0aW9uOiBvdXRjb21lIDIwMjYtMDEtMTcsIGVjb25vbWljIGltcGFjdCBVU0QgMzIwOCwgU0VQQVJBVEVfQVBQUk9WQUxfT1JfUE9MSUNZX0VYQ0VQVElPTl9SRVFVSVJFRC4NCk9yYWNsZSByZWNvcmQ6IE5TLTAwMDA2OC4gQXBwcm92YWw6IEFQLTAwNjguIENhc2U6IENBU0UtMDY4Lg0K",
+        "threadId": "thread-068"
+      },
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.create"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "draft-068",
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-PRODUCTION",
+      "text": "CASE-068: Oracle record NS-000068 now reflects add_qualified_fixture_resource with completion 2026-01-19. Binding constraint: fixture qualification, calibration, rate, and ECO approval; uncalibrated or conflicting fixture-hours = 9 HR; uncovered or unsupported scope = 20.0 HR. Alternatives: add_qualified_fixture_resource: outcome 2026-01-19, economic impact USD 0, SUPPORTED_AND_APPROVED; use_uncalibrated_fixture: outcome 2026-01-18, economic impact USD 1506, FEASIBLE_WITH_INFERIOR_TRADEOFF; defer_test_operation: outcome 2026-01-17, economic impact USD 3208, SEPARATE_APPROVAL_OR_POLICY_EXCEPTION_REQUIRED. Approval AP-0068.",
+      "thread_ts": "1768000068.000100"
+    },
+    "tool": "slack.chat_postMessage"
+  },
+  {
+    "arguments": {
+      "channel": "C-PRODUCTION",
+      "limit": 100,
+      "ts": "1768000068.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "affected_resource_or_operation": "NS-000068",
+      "base_completion": "2026-01-19",
+      "business_need_date": "2026-01-19",
+      "candidate_capacity": 56,
+      "capacity_gap": 20,
+      "capacity_unit": "HR",
+      "decision_timing_status": "ON_TIME",
+      "escalated_completion": "2026-01-17",
+      "escalation_approval_required": 1,
+      "net_usable_capacity": 47,
+      "outcome_vs_control_days": 0,
+      "qualified_alternative_completion": "2026-01-18",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "add_qualified_fixture_resource",
+      "recommended_outcome_date": "2026-01-19",
+      "required_capacity": 67,
+      "selected_resource_or_control": "RES-CERT-068",
+      "unavailable_or_protected_capacity": 9
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

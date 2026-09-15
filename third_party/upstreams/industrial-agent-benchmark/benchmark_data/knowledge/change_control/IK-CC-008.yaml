@@ -1,0 +1,57 @@
+schema_version: '1.1'
+id: IK-CC-008
+layer: industrial_knowledge
+category: change_control
+domain: general_manufacturing
+subdomain: quality_assurance
+difficulty: 4
+estimated_time_min: 40
+title: 変更管理の監査証跡
+scenario: |
+  品質監査員が、完了した工程変更の監査証跡を求めている。
+question: |
+  その変更が管理されていたことを示すため、どの記録を提示できるべきか。
+expected_skills:
+- change_control
+- audit_trail_knowledge
+- documentation_control
+- traceability_analysis
+primary_skill: audit_trail_knowledge
+secondary_skills:
+- change_control
+- documentation_control
+- traceability_analysis
+reference_answer: |
+  監査証跡には、元の変更申請と理由、影響評価およびリスク評価の記録、承認者の識別と日付を含むレビューおよび承認記録、ならびに適用日またはロット境界を含む実施記録を含める必要がある。
+  また、更新された文書改訂履歴、実施後の検証またはバリデーション証拠、該当する場合は影響を受けた仕掛品、在庫、ロットの処置も含める必要がある。
+evaluation_rubric:
+  must_have:
+  - 元の変更申請と理由を含めている。
+  - 影響評価およびリスク評価の記録を含めている。
+  - 承認者の識別と日付を含むレビューおよび承認記録を含めている。
+  - 適用日またはロット境界を含む実施記録を含めている。
+  - 更新された文書改訂履歴を含めている。
+  - 実施後の検証またはバリデーション証拠を含めている。
+  - 該当する場合、影響を受けた仕掛品、在庫、またはロットの処置を含めている。
+  nice_to_have:
+  - 私有システム名は不要であると指摘している。
+  - 申請から承認、実施、検証までのトレーサビリティに言及している。
+  critical_failures:
+  - 最終承認済み文書だけを提示し、承認または評価の証跡がない。
+  - 完了した変更に対する検証またはバリデーション証拠を省略している。
+  - 誰がいつ変更を承認したかを省略している。
+reasoning_trace_required: false
+score_cap_rules:
+- condition: 回答が識別情報または日付を含む承認記録を省略している。
+  max_score: 3
+  reason: 承認のトレーサビリティは監査証跡の中心である。
+- condition: 回答がリリース済み文書だけを含み、変更申請、評価、または検証記録を含まない。
+  max_score: 1
+  reason: リリース済み文書だけでは、管理された変更の監査証跡にならない。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+disallowed_answers:
+- 最終リリース済み文書が完全な監査証跡である。
+- 承認後の検証記録は不要である。

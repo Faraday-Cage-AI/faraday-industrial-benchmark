@@ -1,0 +1,1 @@
+The controller configuration on an open customer order is obsolete, but several similar replacement records are circulating. Determine which open units are genuinely covered by the released change, explain what cannot be touched, and decide whether substitution, waiting for the old part, or asking the customer for a deviation is the safest path. Apply the authorized choice.

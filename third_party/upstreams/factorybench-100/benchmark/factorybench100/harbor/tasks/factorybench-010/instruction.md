@@ -1,0 +1,1 @@
+Wiring is short of labor for the current build and an agency has offered a contractor. Tell the cell lead whether that person is qualified and actually free for the needed hours, when the operation would finish with each credible staffing choice, and whether the rate is within authority. Add only the approved resource assignment.

@@ -1,0 +1,1 @@
+Metrology submitted an invoice without a purchase order and needs a payment decision before the close. Determine whether the service, coding, approval, supplier site, and amount support a legitimate non-PO entry, and identify the safest fallback if they do not. Enter only the approved invoice rather than inventing purchasing support.

@@ -1,0 +1,1 @@
+A supplier invoice includes freight that may not be allowed by the purchase terms. Determine the supported invoice value, the exact freight exposure, and whether it exceeds the applicable tolerance or has separate approval. Place the narrow hold needed to protect payment without blocking unrelated documents.

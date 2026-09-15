@@ -1,0 +1,279 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "file": "F-000012"
+    },
+    "tool": "slack.files_info"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-012\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-012",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Control!A1:I50",
+      "spreadsheetId": "sheet-012",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-012' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-012-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-012-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-012"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-012-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-012-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-012-21",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-012"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-012-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-012-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-012-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-012-14"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-012-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-012-20",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-012-22",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-012",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100012,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_materials.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-012' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100012
+    },
+    "tool": "oracle_fusion.work_orders.get"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "DocumentNumber='RCV-0012'"
+    },
+    "tool": "oracle_fusion.quality_inspection_results.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-012",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "MaterialTransactionDetail": [
+          {
+            "InventoryItemNumber": "NS-COMP-012",
+            "LotNumber": "LOT-0012",
+            "OrganizationCode": "SEA",
+            "SubinventoryCode": "STORES",
+            "TransactionQuantity": 80,
+            "TransactionTypeCode": "MATERIAL_RETURN",
+            "TransactionUnitOfMeasure": "KG",
+            "WorkOrderNumber": "WO-0012"
+          }
+        ],
+        "SourceSystemCode": "FUSION_MOBILE",
+        "SourceSystemType": "EXTERNAL"
+      }
+    },
+    "tool": "oracle_fusion.material_transactions.create"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100012,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_materials.list"
+  },
+  {
+    "arguments": {
+      "includeValuesInResponse": true,
+      "range": "Control!H14",
+      "requestBody": {
+        "majorDimension": "ROWS",
+        "values": [
+          [
+            "CASE-012 | return_verified_excess | 2026-01-13 | NS-000012 | return cannot exceed issued less consumed and must preserve project ownership; scrap, consumed, or unverified copper = 13 KG; uncovered or unsupported scope = 17.0 KG | AP-0012"
+          ]
+        ]
+      },
+      "spreadsheetId": "sheet-012",
+      "valueInputOption": "RAW"
+    },
+    "tool": "google_sheets.spreadsheets.values.update"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Control!H14",
+      "spreadsheetId": "sheet-012",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "raw": "RnJvbTogc2hvcC5mbG9vci5jb250cm9sbGVyQG5vcnRoc3Rhci5leGFtcGxlDQpUbzogc2hpZnQuc3VwZXJ2aXNvckBub3J0aHN0YXIuZXhhbXBsZQ0KU3ViamVjdDogQ0FTRS0wMTIg4oCUIENvbXBsZXRlZCBvcGVyYXRpbmcgZGVjaXNpb24NCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD1VVEYtOA0KDQpEZWNpc2lvbjogcmV0dXJuX3ZlcmlmaWVkX2V4Y2Vzcy4gQ29tcGxldGlvbjogMjAyNi0wMS0xMy4NCkJpbmRpbmcgY29uc3RyYWludDogcmV0dXJuIGNhbm5vdCBleGNlZWQgaXNzdWVkIGxlc3MgY29uc3VtZWQgYW5kIG11c3QgcHJlc2VydmUgcHJvamVjdCBvd25lcnNoaXA7IHNjcmFwLCBjb25zdW1lZCwgb3IgdW52ZXJpZmllZCBjb3BwZXIgPSAxMyBLRzsgdW5jb3ZlcmVkIG9yIHVuc3VwcG9ydGVkIHNjb3BlID0gMTcuMCBLRy4NCkFsdGVybmF0aXZlczogcmV0dXJuX3ZlcmlmaWVkX2V4Y2Vzczogb3V0Y29tZSAyMDI2LTAxLTEzLCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIFNVUFBPUlRFRF9BTkRfQVBQUk9WRUQ7IGxlYXZlX21hdGVyaWFsX2luX3dpcDogb3V0Y29tZSAyMDI2LTAxLTE0LCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIEZFQVNJQkxFX1dJVEhfSU5GRVJJT1JfVFJBREVPRkY7IGFkanVzdF9mdWxsX2lzc3VlZF9xdWFudGl0eTogb3V0Y29tZSAyMDI2LTAxLTE1LCBlY29ub21pYyBpbXBhY3QgVVNEIDAsIFNFUEFSQVRFX0FQUFJPVkFMX09SX1BPTElDWV9FWENFUFRJT05fUkVRVUlSRUQuDQpPcmFjbGUgcmVjb3JkOiBOUy0wMDAwMTIuIEFwcHJvdmFsOiBBUC0wMDEyLiBDYXNlOiBDQVNFLTAxMi4NCg",
+      "threadId": "thread-012",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.send"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "sent-012",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "baseline_resolution_date": "2026-01-13",
+      "business_need_date": "2026-01-13",
+      "controlled_item_or_record": "NS-COMP-012",
+      "controlled_resolution_date": "2026-01-14",
+      "decision_timing_status": "ON_TIME",
+      "escalated_resolution_date": "2026-01-15",
+      "escalation_approval_required": 1,
+      "excluded_quantity": 13,
+      "observed_quantity": 93,
+      "outcome_vs_control_days": 0,
+      "quantity_unit": "KG",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "return_verified_excess",
+      "recommended_outcome_date": "2026-01-13",
+      "source_quantity": 97,
+      "supported_quantity": 80,
+      "transaction_quantity": 80
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

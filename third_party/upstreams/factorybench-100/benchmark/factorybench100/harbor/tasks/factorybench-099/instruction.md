@@ -1,0 +1,1 @@
+The outside processor returned rejected parts and the order's yield no longer reconciles. Determine how sent quantity splits among accepted, rejected, and missing units, the production and cost impact, and whether any quantity still needs investigation. Record only the supported loss without counting it as good output.

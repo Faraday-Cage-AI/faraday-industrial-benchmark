@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faraday-industrial-benchmark"
+version = "0.4.0"
+description = "Dynamic, deterministic evaluations for AI agents operating across industrial ERP, SCM, MES, and back-office workflows."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [{name = "Faraday Industrial Benchmark contributors"}]
+keywords = ["ai", "agents", "evals", "manufacturing", "erp", "mes", "supply-chain", "distribution", "benchmark"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["jsonschema>=4.23", "pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+faraday-bench = "faraday_industrial_benchmark.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.data-files]
+"share/faraday-industrial-benchmark" = ["data/public/tasks.json"]
+"share/faraday-industrial-benchmark/upstreams" = ["third_party/manifest.json", "third_party/manifest.schema.json"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

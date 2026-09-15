@@ -1,0 +1,55 @@
+schema_version: '1.1'
+id: IK-CC-002
+layer: industrial_knowledge
+category: change_control
+domain: general_manufacturing
+subdomain: production_control
+difficulty: 2
+estimated_time_min: 20
+title: 実施前の変更承認
+scenario: |
+  監督者が、工具変更は単純な内容だとして、変更申請が承認される前にチームへ実施を求めている。
+question: |
+  変更管理上、正しい対応は何か。
+expected_skills:
+- change_control
+- approval_workflow_knowledge
+- human_approval_boundary
+- implementation_control
+primary_skill: approval_workflow_knowledge
+secondary_skills:
+- change_control
+- human_approval_boundary
+- implementation_control
+reference_answer: |
+  チームは、必要な承認を得る前に管理対象の工具変更を実施してはならない。
+  現在承認済みの工程または工具を継続して使用し、変更申請を定められたレビューおよび承認ワークフローに回す必要がある。
+  緊急の生産上の必要がある場合でも、変更管理を迂回するのではなく、その必要性を記録し、承認済みのエスカレーション経路で対応する。
+evaluation_rubric:
+  must_have:
+  - 管理対象の変更は、必要な承認前に実施してはならないと述べている。
+  - 現在承認済みの工程または工具を継続使用するとしている。
+  - 申請を定められたレビューおよび承認ワークフローに回している。
+  - 緊急時には承認済みのエスカレーション経路を使うとしている。
+  nice_to_have:
+  - 見かけ上単純であっても、変更管理要求はなくならないと説明している。
+  - 緊急の必要性または一時的状態を記録することに言及している。
+  critical_failures:
+  - 変更が単純に見えることを理由に、承認前の実施を認めている。
+  - 監督者の指示を、必要な変更承認の代替として扱っている。
+  - 記録されたエスカレーションなしに変更ワークフローを迂回している。
+reasoning_trace_required: false
+score_cap_rules:
+- condition: 必要な承認前の実施を認めている。
+  max_score: 1
+  reason: 承認境界に違反している。
+- condition: 承認ワークフローを省略している。
+  max_score: 3
+  reason: 承認ワークフローがこの知識項目の中核である。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+disallowed_answers:
+- 工具変更を今すぐ実施し、後で承認すればよい。
+- 単純な工具変更には承認は不要である。

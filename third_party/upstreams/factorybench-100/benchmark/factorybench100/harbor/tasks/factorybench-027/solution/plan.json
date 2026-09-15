@@ -1,0 +1,280 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-027",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "includeGridData": false,
+      "ranges": [
+        "Control!A1:I50"
+      ],
+      "spreadsheetId": "sheet-027"
+    },
+    "tool": "google_sheets.spreadsheets.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-FINANCE",
+      "inclusive": true,
+      "limit": 100,
+      "oldest": "1768000000.000000"
+    },
+    "tool": "slack.conversations_history"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-027\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "id": "att-027",
+      "messageId": "msg-027-1",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.attachments.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-027' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-027-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-027-23"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-027-17",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-027-16",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-027-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-027-21",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-027-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-027-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-027-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-027"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-027-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-027-28"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-027"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-027-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "WoOperationId": 200027,
+      "WorkOrderId": 100027,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.maintenance_resources.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-027' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "MaintenanceProgramId": 500027
+    },
+    "tool": "oracle_fusion.maintenance_programs.get"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "WorkOrderNumber='MWO-0027'"
+    },
+    "tool": "oracle_fusion.maintenance_work_orders.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-027",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "ForecastEndDate": "2026-04-12",
+        "ForecastStartDate": "2026-01-12",
+        "MaintenanceProgramCode": "PM-0027"
+      }
+    },
+    "tool": "oracle_fusion.maintenance_programs.generate_forecasts"
+  },
+  {
+    "arguments": {
+      "MaintenanceProgramId": 500027
+    },
+    "tool": "oracle_fusion.maintenance_programs.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-FINANCE",
+      "name": "white_check_mark",
+      "timestamp": "1768000027.000100"
+    },
+    "tool": "slack.reactions_add"
+  },
+  {
+    "arguments": {
+      "channel": "C-FINANCE",
+      "limit": 100,
+      "ts": "1768000027.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "insertDataOption": "INSERT_ROWS",
+      "range": "Audit!A:G",
+      "requestBody": {
+        "majorDimension": "ROWS",
+        "values": [
+          [
+            "2026-01-12",
+            "CASE-027",
+            "reliability_engineer",
+            "generate_bounded_forecast",
+            "2026-01-14",
+            "NS-000027",
+            "AP-0027"
+          ]
+        ]
+      },
+      "spreadsheetId": "sheet-027",
+      "valueInputOption": "RAW"
+    },
+    "tool": "google_sheets.spreadsheets.values.append"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Audit!A:G",
+      "spreadsheetId": "sheet-027",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "alternative_program_date": "2026-02-24",
+      "baseline_program_date": "2026-01-14",
+      "business_need_date": "2026-01-14",
+      "decision_timing_status": "ON_TIME",
+      "due_date": "2026-01-25",
+      "escalated_program_date": "2026-01-15",
+      "escalation_approval_required": 1,
+      "excluded_measure": 4,
+      "forecast_horizon_end": "2026-05-28",
+      "measure_unit": "ASSETS",
+      "outcome_vs_control_days": 0,
+      "program_or_asset_record": "PM-0027",
+      "qualifying_measure": 10,
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "generate_bounded_forecast",
+      "recommended_outcome_date": "2026-01-14",
+      "safe_window_start": "2026-01-28",
+      "source_measure": 14,
+      "trigger_threshold": 1
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

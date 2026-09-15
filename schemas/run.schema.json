@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:faraday-industrial-benchmark:run:v3",
+  "title": "Faraday Industrial Benchmark run",
+  "type": "object",
+  "required": ["schema_version", "benchmark_version", "agent", "summary", "family_summaries", "capability_summaries", "results"],
+  "properties": {
+    "schema_version": {"const": "faraday-industrial-run/3"},
+    "benchmark_version": {"type": "string"},
+    "agent": {"type": "string", "minLength": 1},
+    "summary": {
+      "type": "object",
+      "required": ["tasks", "families", "mean_score", "strict_successes", "critical_failures", "tool_calls"],
+      "properties": {
+        "tasks": {"type": "integer", "minimum": 0},
+        "families": {"type": "integer", "minimum": 0},
+        "mean_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "min_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "max_score": {"type": "number", "minimum": 0, "maximum": 100},
+        "strict_successes": {"type": "integer", "minimum": 0},
+        "strict_success_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "critical_failures": {"type": "integer", "minimum": 0},
+        "estimated_cost": {"type": "number", "minimum": 0},
+        "unmitigated_cost": {"type": "number", "minimum": 0},
+        "estimated_cost_avoided": {"type": "number"},
+        "tool_calls": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "family_summaries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["tasks", "mean_score", "strict_successes", "critical_failures", "tool_calls"],
+        "properties": {
+          "tasks": {"type": "integer", "minimum": 1},
+          "mean_score": {"type": "number", "minimum": 0, "maximum": 100},
+          "strict_successes": {"type": "integer", "minimum": 0},
+          "critical_failures": {"type": "integer", "minimum": 0},
+          "tool_calls": {"type": "integer", "minimum": 0}
+        },
+        "additionalProperties": false
+      }
+    },
+    "capability_summaries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["tasks", "mean_score", "mean_max_score", "attainment_rate"],
+        "properties": {
+          "tasks": {"type": "integer", "minimum": 1},
+          "mean_score": {"type": "number", "minimum": 0},
+          "mean_max_score": {"type": "number", "minimum": 0},
+          "attainment_rate": {"type": "number", "minimum": 0, "maximum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "task",
+          "agent",
+          "score",
+          "final_answer",
+          "trace",
+          "initial_state_hash",
+          "final_state_hash",
+          "applied_events"
+        ],
+        "properties": {
+          "task": {"type": "object"},
+          "agent": {"type": "string"},
+          "score": {"type": "object"},
+          "final_answer": {"type": "object"},
+          "trace": {"type": "array"},
+          "initial_state_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "final_state_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "applied_events": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

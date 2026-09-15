@@ -1,0 +1,289 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "file": "F-000061"
+    },
+    "tool": "slack.files_info"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-061' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-061-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-061-16",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-061-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-061"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-061-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-061"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-061-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-061-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-061-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-061-21",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-061-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-061-20",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-061-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-061-18",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "ranges": [
+        "Control!A1:I50",
+        "Approvals!A1:G20"
+      ],
+      "spreadsheetId": "sheet-061",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.batchGet"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-061\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-061",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-061' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplyOrderReferenceNumber='SUPPLY-0061'"
+    },
+    "tool": "oracle_fusion.supply_requests.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "OrderNumber='PO-0061'"
+    },
+    "tool": "oracle_fusion.purchase_orders.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "OrderNumber='SO-47061'"
+    },
+    "tool": "oracle_fusion.sales_orders.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-061",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "count": 50,
+      "query": "\"CASE-061\"",
+      "sort": "timestamp",
+      "sort_dir": "asc"
+    },
+    "tool": "slack.search_messages"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "SupplyOrderReferenceNumber": "SUPPLY-0061",
+        "SupplyRequestDate": "2026-01-17",
+        "SupplyRequestSystem": "EXT",
+        "supplyRequestLines": [
+          {
+            "DestinationOrganizationCode": "SEA",
+            "ItemNumber": "NS-COMP-061",
+            "NeedByDate": "2026-01-19",
+            "Quantity": 15.0,
+            "SupplyOrderSource": "EXT",
+            "SupplyType": "BUY"
+          }
+        ]
+      }
+    },
+    "tool": "oracle_fusion.supply_requests.create"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplyOrderReferenceNumber='SUPPLY-0061'"
+    },
+    "tool": "oracle_fusion.supply_requests.list"
+  },
+  {
+    "arguments": {
+      "includeValuesInResponse": true,
+      "range": "Control!H23",
+      "requestBody": {
+        "majorDimension": "ROWS",
+        "values": [
+          [
+            "CASE-061 | create_net_shortage_supply | 2026-01-19 | NS-000061 | net only the incremental demand and avoid double coverage; reserved, late, or unfirm coverage = 6 KG; uncovered or unsupported scope = 15.0 KG | AP-0061"
+          ]
+        ]
+      },
+      "spreadsheetId": "sheet-061",
+      "valueInputOption": "RAW"
+    },
+    "tool": "google_sheets.spreadsheets.values.update"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Control!H23",
+      "spreadsheetId": "sheet-061",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-PROCUREMENT",
+      "text": "CASE-061: Oracle record NS-000061 now reflects create_net_shortage_supply with completion 2026-01-19. Binding constraint: net only the incremental demand and avoid double coverage; reserved, late, or unfirm coverage = 6 KG; uncovered or unsupported scope = 15.0 KG. Alternatives: create_net_shortage_supply: outcome 2026-01-19, economic impact USD 0, SUPPORTED_AND_APPROVED; buy_gross_revised_demand: outcome 2026-01-17, economic impact USD 1387, FEASIBLE_WITH_INFERIOR_TRADEOFF; defer_unplanned_demand: outcome 2026-01-16, economic impact USD 2991, SEPARATE_APPROVAL_OR_POLICY_EXCEPTION_REQUIRED. Approval AP-0061.",
+      "thread_ts": "1768000061.000100"
+    },
+    "tool": "slack.chat_postMessage"
+  },
+  {
+    "arguments": {
+      "channel": "C-PROCUREMENT",
+      "limit": 100,
+      "ts": "1768000061.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "accelerated_completion": "2026-01-17",
+      "baseline_completion": "2026-01-19",
+      "business_need_date": "2026-01-20",
+      "coverage_item_or_resource": "NS-COMP-061",
+      "decision_timing_status": "ON_TIME",
+      "escalated_completion": "2026-01-16",
+      "escalation_approval_required": 1,
+      "expedited_external_readiness": "2026-01-14",
+      "external_recovery_quantity": 15,
+      "ineligible_coverage_quantity": 6,
+      "observed_coverage_quantity": 46,
+      "outcome_vs_control_days": -1,
+      "quantity_unit": "KG",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "create_net_shortage_supply",
+      "recommended_outcome_date": "2026-01-19",
+      "required_quantity": 55,
+      "shortage_quantity": 15,
+      "standard_external_readiness": "2026-01-16",
+      "usable_coverage_quantity": 40
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

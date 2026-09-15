@@ -1,0 +1,21 @@
+name: Question / 質問
+description: Ask a question about using the benchmark. / ベンチマークの利用に関する質問
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question / 質問内容
+    validations:
+      required: true
+  - type: checkboxes
+    id: checked-docs
+    attributes:
+      label: Documentation checked / 確認済みドキュメント
+      options:
+        - label: README.md / README_EN.md
+        - label: dataset_card.md
+        - label: docs/evaluation_architecture_v2.md
+        - label: docs/versioning_policy.md
+        - label: CONTRIBUTING.md

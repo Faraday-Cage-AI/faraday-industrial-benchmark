@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-042",
+  "approvedScope": "Approval AP-0042 permits one control-compliant action on NS-000042 up to 12932.89 USD, provided hold only the documented exception with the approved reason. It does not select an option in advance and does not authorize broader records or short_pay_without_hold.",
+  "businessNeedBy": "2026-01-16",
+  "case": "CASE-042",
+  "fileId": "drive-approval-042",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}

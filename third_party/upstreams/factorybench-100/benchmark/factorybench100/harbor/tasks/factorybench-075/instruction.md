@@ -1,0 +1,1 @@
+Period close is approaching and this order is physically unfinished despite an in-period completion date. Establish what work is actually complete, the first qualified next-period slot, and the customer and accounting effect of moving it. Revise the dates without falsely completing or reversing valid current-period activity.

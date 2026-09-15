@@ -1,0 +1,266 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-026' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-026-23"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-026-17",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-026-16",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-026-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-026-21",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-026-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-026-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-026-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-026"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-026-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-026-28"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-026"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-026-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-026-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Control!A1:I50",
+      "spreadsheetId": "sheet-026",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-026",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "count": 50,
+      "query": "\"CASE-026\"",
+      "sort": "timestamp",
+      "sort_dir": "asc"
+    },
+    "tool": "slack.search_messages"
+  },
+  {
+    "arguments": {
+      "channel": "C-QUALITY",
+      "limit": 100,
+      "ts": "1768000026.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "MaintenanceProgramId": 500026
+    },
+    "tool": "oracle_fusion.maintenance_programs.get"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "ItemNumber='NS-COMP-026' and OrganizationCode='SEA'"
+    },
+    "tool": "oracle_fusion.inventory_onhand_balances.list"
+  },
+  {
+    "arguments": {
+      "WoOperationId": 200026,
+      "WorkOrderId": 100026,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.maintenance_resources.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "WorkOrderNumber='MWO-0026'"
+    },
+    "tool": "oracle_fusion.maintenance_work_orders.list"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-026\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-026",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "MaintenanceProgramId": 500026,
+      "requestBody": {
+        "ForecastEndDate": "2026-04-15",
+        "ForecastStartDate": "2026-01-15",
+        "StatusCode": "ACTIVE"
+      }
+    },
+    "tool": "oracle_fusion.maintenance_programs.update"
+  },
+  {
+    "arguments": {
+      "MaintenanceProgramId": 500026
+    },
+    "tool": "oracle_fusion.maintenance_programs.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-QUALITY",
+      "text": "CASE-026: Oracle record NS-000026 now reflects advance_program_forecast with completion 2026-01-16. Binding constraint: effective meter threshold and blackout calendar determine the due date; invalid spikes and readings before the last service = 150 HOURS; uncovered or unsupported scope = 150.0 HOURS. Alternatives: advance_program_forecast: outcome 2026-01-16, economic impact USD 0, SUPPORTED_AND_APPROVED; keep_calendar_due_date: outcome 2026-02-23, economic impact USD 0, FEASIBLE_WITH_INFERIOR_TRADEOFF; generate_emergency_work: outcome 2026-01-17, economic impact USD 0, SEPARATE_APPROVAL_OR_POLICY_EXCEPTION_REQUIRED. Approval AP-0026.",
+      "thread_ts": "1768000026.000100"
+    },
+    "tool": "slack.chat_postMessage"
+  },
+  {
+    "arguments": {
+      "channel": "C-QUALITY",
+      "limit": 100,
+      "ts": "1768000026.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-026",
+      "requestBody": {
+        "content": "CASE-026: advance_program_forecast recorded on Oracle record NS-000026; completion 2026-01-16; constraint effective meter threshold and blackout calendar determine the due date; invalid spikes and readings before the last service = 150 HOURS; uncovered or unsupported scope = 150.0 HOURS; approval AP-0026."
+      }
+    },
+    "tool": "google_drive.comments.create"
+  },
+  {
+    "arguments": {
+      "commentId": "comment-026",
+      "fields": "id,content,resolved,createdTime",
+      "fileId": "drive-026"
+    },
+    "tool": "google_drive.comments.get"
+  },
+  {
+    "arguments": {
+      "alternative_program_date": "2026-02-23",
+      "baseline_program_date": "2026-01-16",
+      "business_need_date": "2026-01-16",
+      "decision_timing_status": "ON_TIME",
+      "due_date": "2026-01-24",
+      "escalated_program_date": "2026-01-17",
+      "escalation_approval_required": 1,
+      "excluded_measure": 150,
+      "forecast_horizon_end": "2026-05-11",
+      "measure_unit": "HOURS",
+      "outcome_vs_control_days": 0,
+      "program_or_asset_record": "PM-0026",
+      "qualifying_measure": 2000,
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "advance_program_forecast",
+      "recommended_outcome_date": "2026-01-16",
+      "safe_window_start": "2026-01-26",
+      "source_measure": 2150,
+      "trigger_threshold": 1800
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

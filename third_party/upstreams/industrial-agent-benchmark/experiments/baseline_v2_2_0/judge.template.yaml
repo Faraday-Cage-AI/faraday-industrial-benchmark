@@ -1,0 +1,43 @@
+# NON-RUNNABLE TEMPLATE — judge configuration skeleton.
+#
+# Documentation only; rejected at execution time (non_runnable: true).
+# The runnable judge config is created after the Phase 2C Go decision, with
+# frozen decoding profiles and a dated model snapshot.
+#
+# Protocol references:
+# - baseline_experiment_plan_v1.md Section 6 (judge protocol, anonymization)
+# - judge_validation_plan_v1.md (P0-2 second judge)
+# - Judge outputs (judge_summary / evidence_summary texts) are private
+#   artifacts (public_artifact_policy_v1.md Section 3.2); only the judge
+#   model ID, schema hash, and protocol version are publishable.
+non_runnable: true
+judges:
+  - judge_key: judge_primary
+    judge_model_id: gpt-5.4
+    provider_kind: openai
+    api_kind: responses
+    decoding_profile_id: to_be_frozen_in_phase_2c
+    structured_output:
+      mode: openai_structured_outputs_strict
+      schema_file: schemas/judgement_v1.schema.json
+    notes: >
+      Shares a provider with evaluated model gpt-5.5; this family overlap is
+      disclosed in the manifest (family_overlap_disclosure) and is the primary
+      target of the P0-2 self-preference check.
+  - judge_key: judge_secondary_p0_2
+    judge_model_id: claude-sonnet-5
+    provider_kind: anthropic
+    api_kind: messages
+    decoding_profile_id: to_be_frozen_in_phase_2c
+    structured_output:
+      mode: anthropic_tool_use_schema
+      schema_file: schemas/judgement_v1.schema.json
+      status: not_implemented_in_phase_2b
+    notes: >
+      Second judge for the stratified sensitivity analysis (P0-2). Sonnet 5
+      profiles pin effort high, keep adaptive thinking as the provider
+      default, and never send temperature / top_p / top_k / budget_tokens.
+anonymization: >
+  Judges receive only anonymized model keys (model_A ... model_F). The
+  key-to-model mapping is generated once, stored privately, and never appears
+  in judge inputs or public artifacts.

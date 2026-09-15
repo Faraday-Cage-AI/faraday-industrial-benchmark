@@ -1,0 +1,277 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "thread-073",
+      "userId": "me"
+    },
+    "tool": "gmail.threads.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-PROCUREMENT",
+      "inclusive": true,
+      "limit": 100,
+      "oldest": "1768000000.000000"
+    },
+    "tool": "slack.conversations_history"
+  },
+  {
+    "arguments": {
+      "includeGridData": false,
+      "ranges": [
+        "Control!A1:I50"
+      ],
+      "spreadsheetId": "sheet-073"
+    },
+    "tool": "google_sheets.spreadsheets.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-073' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-073-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-073-14"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-073-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-073-20",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-073-22",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-073-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-073-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-073"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-073-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-073-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-073-21",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-073"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-073-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-073-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-073\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100073,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_operations.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100073
+    },
+    "tool": "oracle_fusion.work_orders.get"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "DocumentNumber='RCV-0073'"
+    },
+    "tool": "oracle_fusion.quality_inspection_results.list"
+  },
+  {
+    "arguments": {
+      "HeaderInterfaceId": 700073,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.receiving_receipt_transactions.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-073",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "count": 50,
+      "query": "\"CASE-073\"",
+      "sort": "timestamp",
+      "sort_dir": "asc"
+    },
+    "tool": "slack.search_messages"
+  },
+  {
+    "arguments": {
+      "requestBody": {
+        "OperationTransactionDetail": [
+          {
+            "FromDispatchState": "READY",
+            "OrganizationCode": "SEA",
+            "ToDispatchState": "REJECT",
+            "TransactionQuantity": 13,
+            "TransactionUnitOfMeasure": "EA",
+            "WoOperationSequenceNumber": 10,
+            "WorkOrderNumber": "WO-0073"
+          }
+        ],
+        "SourceSystemCode": "FUSION_MOBILE",
+        "SourceSystemType": "EXTERNAL"
+      }
+    },
+    "tool": "oracle_fusion.operation_transactions.create"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100073,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_operations.list"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-073",
+      "requestBody": {
+        "content": "CASE-073: post_verified_scrap recorded on Oracle record NS-000073; completion 2026-01-14; constraint good plus scrap plus prior reject must reconcile to operation input; scrap units signed by the supervisor = 13 EA; uncovered or unsupported scope = 10.0 EA; approval AP-0073."
+      }
+    },
+    "tool": "google_drive.comments.create"
+  },
+  {
+    "arguments": {
+      "commentId": "comment-073",
+      "fields": "id,content,resolved,createdTime",
+      "fileId": "drive-073"
+    },
+    "tool": "google_drive.comments.get"
+  },
+  {
+    "arguments": {
+      "message": {
+        "raw": "RnJvbTogbWFudWZhY3R1cmluZy5jb3N0LmFjY291bnRhbnRAbm9ydGhzdGFyLmV4YW1wbGUNClRvOiBwbGFudC5jb250cm9sbGVyQG5vcnRoc3Rhci5leGFtcGxlDQpTdWJqZWN0OiBDQVNFLTA3MyDigJQgRHJhZnQgb3BlcmF0aW5nIGRlY2lzaW9uDQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9VVRGLTgNCg0KRGVjaXNpb246IHBvc3RfdmVyaWZpZWRfc2NyYXAuIENvbXBsZXRpb246IDIwMjYtMDEtMTQuDQpCaW5kaW5nIGNvbnN0cmFpbnQ6IGdvb2QgcGx1cyBzY3JhcCBwbHVzIHByaW9yIHJlamVjdCBtdXN0IHJlY29uY2lsZSB0byBvcGVyYXRpb24gaW5wdXQ7IHNjcmFwIHVuaXRzIHNpZ25lZCBieSB0aGUgc3VwZXJ2aXNvciA9IDEzIEVBOyB1bmNvdmVyZWQgb3IgdW5zdXBwb3J0ZWQgc2NvcGUgPSAxMC4wIEVBLg0KQWx0ZXJuYXRpdmVzOiBwb3N0X3ZlcmlmaWVkX3NjcmFwOiBvdXRjb21lIDIwMjYtMDEtMTQsIGVjb25vbWljIGltcGFjdCBVU0QgMCwgU1VQUE9SVEVEX0FORF9BUFBST1ZFRDsgY29tcGxldGVfb3JpZ2luYWxfcXVhbnRpdHk6IG91dGNvbWUgMjAyNi0wMS0xNSwgZWNvbm9taWMgaW1wYWN0IFVTRCAwLCBGRUFTSUJMRV9XSVRIX0lORkVSSU9SX1RSQURFT0ZGOyBzY3JhcF9lbnRpcmVfYmF0Y2g6IG91dGNvbWUgMjAyNi0wMS0xNiwgZWNvbm9taWMgaW1wYWN0IFVTRCAwLCBTRVBBUkFURV9BUFBST1ZBTF9PUl9QT0xJQ1lfRVhDRVBUSU9OX1JFUVVJUkVELg0KT3JhY2xlIHJlY29yZDogTlMtMDAwMDczLiBBcHByb3ZhbDogQVAtMDA3My4gQ2FzZTogQ0FTRS0wNzMuDQo",
+        "threadId": "thread-073"
+      },
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.create"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "draft-073",
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.get"
+  },
+  {
+    "arguments": {
+      "baseline_resolution_date": "2026-01-14",
+      "business_need_date": "2026-01-14",
+      "controlled_item_or_record": "NS-COMP-073",
+      "controlled_resolution_date": "2026-01-15",
+      "decision_timing_status": "ON_TIME",
+      "escalated_resolution_date": "2026-01-16",
+      "escalation_approval_required": 1,
+      "excluded_quantity": 13,
+      "observed_quantity": 107,
+      "outcome_vs_control_days": 0,
+      "quantity_unit": "EA",
+      "recommended_incremental_cost_usd": 0,
+      "recommended_option": "post_verified_scrap",
+      "recommended_outcome_date": "2026-01-14",
+      "source_quantity": 104,
+      "supported_quantity": 94,
+      "transaction_quantity": 13
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

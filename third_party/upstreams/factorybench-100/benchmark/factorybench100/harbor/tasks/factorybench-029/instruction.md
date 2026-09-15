@@ -1,0 +1,1 @@
+Quality has approved a new contamination-control standard, but it does not apply to every asset in the plant. Define the active food-contact equipment that really belongs in the program, the first workable cleaning windows, and the consequence of copying the generic program or including everything. Create the scoped program if coverage and approval are sufficient.

@@ -1,0 +1,23 @@
+# NON-RUNNABLE TEMPLATE — baseline models config skeleton.
+#
+# This file is a documentation template only. The baseline config loader
+# rejects it at execution time (non_runnable: true). A runnable real-model
+# config is created only after the Phase 2C Go/No-Go decisions
+# (provider terms of service, hosted-OSS adoption conditions, Gemini access
+# path, budget, API access) are confirmed by a human.
+#
+# Do NOT put credentials here. Credentials are referenced only via
+# environment-variable NAMES in *_env keys.
+non_runnable: true
+models:
+  - model_key: model_placeholder
+    public_model_id: to-be-decided-after-phase-2c
+    provider_kind: dummy        # real kinds (openai / anthropic / ...) arrive in Phase 2B
+    api_kind: dummy
+    decoding_profile_id: to_be_decided
+    snapshot: unknown
+    access_path: unknown
+    release_date: unknown
+    training_cutoff: unknown
+    # api_key_env: EXAMPLE_API_KEY_ENV_NAME
+    # base_url_env: EXAMPLE_BASE_URL_ENV_NAME

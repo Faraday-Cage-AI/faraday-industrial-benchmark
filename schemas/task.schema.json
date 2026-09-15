@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:faraday-industrial-benchmark:task:v1",
+  "title": "Faraday Industrial Benchmark task",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "family",
+    "title",
+    "prompt",
+    "seed",
+    "difficulty",
+    "systems",
+    "max_tool_calls",
+    "horizon_minutes"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^faraday-[a-z0-9-]+$"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "family": {
+      "type": "string",
+      "enum": [
+        "quality_drift",
+        "supplier_delay",
+        "machine_failure",
+        "rush_order",
+        "inventory_mismatch",
+        "engineering_change",
+        "invoice_exception",
+        "customer_credit",
+        "vendor_master_change",
+        "payroll_anomaly",
+        "period_close",
+        "capital_project",
+        "transportation_disruption",
+        "warehouse_wave",
+        "network_allocation",
+        "cold_chain_recall",
+        "trade_compliance",
+        "demand_supply_rebalance",
+        "drawing_review",
+        "assembly_bom_review",
+        "revision_review",
+        "standards_specification_review",
+        "manufacturing_document_drafting",
+        "pid_review",
+        "process_capability_review",
+        "construction_document_review",
+        "supplier_quality_recovery",
+        "recall_financial_response",
+        "engineering_production_release",
+        "order_to_cash_disruption",
+        "plant_fulfillment_recovery"
+      ]
+    },
+    "title": {"type": "string", "minLength": 8},
+    "prompt": {"type": "string", "minLength": 40},
+    "seed": {"type": "integer", "minimum": 1},
+    "difficulty": {"type": "string", "enum": ["medium", "hard", "expert"]},
+    "systems": {"type": "array", "minItems": 2, "items": {"type": "string"}, "uniqueItems": true},
+    "max_tool_calls": {"type": "integer", "minimum": 10},
+    "horizon_minutes": {"type": "integer", "minimum": 30},
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "controlled_plan_actions": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "workflow_stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "objective", "depends_on"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+          "objective": {"type": "string", "minLength": 8},
+          "depends_on": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

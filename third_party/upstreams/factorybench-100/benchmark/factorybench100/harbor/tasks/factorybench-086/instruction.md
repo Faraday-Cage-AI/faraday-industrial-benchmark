@@ -1,0 +1,1 @@
+A supplier recall names particular relay lots and production needs to know its real exposure. Trace what remains on hand, in work, or already consumed, separate stock outside the recall, and explain the coverage and schedule impact after containment. Move only the affected available quantity into quarantine.

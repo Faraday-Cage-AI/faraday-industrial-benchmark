@@ -1,0 +1,1 @@
+The current shop cannot finish the electrical portion of this repair, while another internal shop and a contractor both claim availability. Determine which destination is actually qualified and free, what each option does to return-to-service, and whether moving the work is within authority. Reroute the operation to the best approved shop.

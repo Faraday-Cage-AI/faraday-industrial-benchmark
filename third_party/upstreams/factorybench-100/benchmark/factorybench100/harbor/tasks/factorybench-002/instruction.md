@@ -1,0 +1,1 @@
+Trade compliance says part of the defense order may be clear to proceed while the export line is still on hold. Tell the account team what we can commit now, what must wait, and whether splitting the order is better than holding everything. Put only the cleared demand into motion.

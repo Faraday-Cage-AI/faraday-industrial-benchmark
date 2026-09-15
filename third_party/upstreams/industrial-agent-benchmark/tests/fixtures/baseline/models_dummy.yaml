@@ -1,0 +1,22 @@
+# Runnable Phase 2A test config: dummy provider only.
+# This is the ONLY runnable baseline config in the repository; real-model
+# configs are created after the Phase 2C Go decision.
+models:
+  - model_key: model_dummy_a
+    public_model_id: dummy-model-a
+    provider_kind: dummy
+    api_kind: dummy
+    decoding_profile_id: dummy_default_v1
+    snapshot: unknown
+    access_path: local_dummy
+    release_date: unknown
+    training_cutoff: unknown
+  - model_key: model_dummy_b
+    public_model_id: dummy-model-b
+    provider_kind: dummy
+    api_kind: dummy
+    decoding_profile_id: dummy_default_v1
+    snapshot: unknown
+    access_path: local_dummy
+    release_date: unknown
+    training_cutoff: unknown

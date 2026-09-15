@@ -1,0 +1,1 @@
+A safety bulletin names resin we still have on order, and the supplier cutoff is close. Establish which open quantity is actually affected and still cancelable, what has already been received or consumed, and whether replacement coverage makes cancellation safe. Stop only the covered purchase commitment.

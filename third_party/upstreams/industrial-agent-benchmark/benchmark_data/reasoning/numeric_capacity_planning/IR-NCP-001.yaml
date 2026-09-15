@@ -1,0 +1,75 @@
+schema_version: '1.1'
+id: IR-NCP-001
+layer: industrial_reasoning
+category: numeric_capacity_planning
+domain: general_manufacturing
+subdomain: production_control
+difficulty: 2
+estimated_time_min: 20
+title: タクトタイムの実現可能性確認
+scenario: |
+  最終組立ラインでは、休憩と日次ミーティングを除いた1直あたりの正味生産可能時間が420分である。
+  顧客要求は1直あたり良品840台である。あるステーションの実測サイクルタイムは現在1台あたり32秒である。
+question: |
+  良品1台あたりに必要なタクトタイムを秒単位で計算し、32秒のステーションが需要を満たせるか判断せよ。
+  計算、単位、実現可能性の判断を説明せよ。
+expected_skills:
+- capacity_calculation
+- unit_conversion
+- feasibility_judgement
+- numeric_result_explanation
+primary_skill: capacity_calculation
+secondary_skills:
+- unit_conversion
+- feasibility_judgement
+- numeric_result_explanation
+reference_answer: |
+  正味生産可能時間は 420分 * 60 = 25,200秒/直である。
+  必要タクトタイムは 25,200秒 / 良品840台 = 良品1台あたり30秒である。
+  ステーションのサイクルタイムは32秒であり、30秒のタクト要求より遅い。
+  したがって、サイクルタイム改善、並列能力の追加、需要調整、またはその他の承認済み能力対策がない限り、現在のサイクルタイムではこの計画は実現不可能である。
+evaluation_rubric:
+  must_have:
+  - 420分を25,200秒に換算している。
+  - タクトタイムを良品1台あたり30秒と計算している。
+  - 32秒のサイクルタイムを30秒のタクトタイムと比較している。
+  - 現在のステーションでは要求需要に対して実現不可能と結論づけている。
+  nice_to_have:
+  - サイクルタイムがタクトより遅いことが不足の原因であると述べている。
+  - 改善、能力追加、需要調整などの実務的な対策に言及している。
+  critical_failures:
+  - タクトより遅いにもかかわらず、32秒を実現可能と扱っている。
+  - 分と秒を不整合に扱い、判断が変わっている。
+  - 台数または時間を誤って使ってタクトを計算し、誤った実現可能性判断に至っている。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: 最終回答で、能力追加または改善なしに32秒のステーションが実現可能であるとしている。
+  max_score: 1
+  reason: 数値推論に基づく実現可能性判断が誤っている。
+- condition: タクト計算で420分を秒に換算して使用していない。
+  max_score: 3
+  reason: 単位換算がこの項目の中核である。
+numeric_checks:
+- name: available_time_seconds
+  expected_value: 25200
+  tolerance: exact
+  unit: seconds
+  required: true
+- name: takt_time
+  expected_value: 30
+  tolerance: exact
+  unit: seconds_per_unit
+  required: true
+- name: feasibility
+  expected_value: infeasible
+  tolerance: exact
+  unit: decision
+  required: true
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - scenario_specific_numbers_not_used
+  - generic_framework_only
+disallowed_answers:
+- 32秒のサイクルタイムで需要を満たせる。
+- 32秒はタクトに近いので、このステーションは実現可能である。

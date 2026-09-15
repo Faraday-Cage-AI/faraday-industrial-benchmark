@@ -1,0 +1,81 @@
+schema_version: '1.1'
+id: IA-WD-008
+layer: industrial_agent
+category: workflow_design
+domain: general_manufacturing
+subdomain: production_control
+difficulty: 4
+estimated_time_min: 45
+title: 生産復旧ワークフロー
+scenario: |
+  重要ラインが設備故障後に2時間停止した。エージェントは設備状態、保全メモ、仕掛品状態、需要バックログ、要員、シフト能力を読み取ることができる。復旧スケジュールを提案できるが、残業または顧客約束の変更を確定することはできない。
+question: |
+  安全な生産復旧ワークフローを設計せよ。必要な読み取り、能力およびゲート確認、承認済み行動と未承認行動、最終状態、監査証跡を含めること。
+expected_skills:
+- workflow_design
+- production_planning
+- maintenance_coordination
+- escalation_design
+- audit_log_design
+primary_skill: workflow_design
+secondary_skills:
+- production_planning
+- maintenance_coordination
+- escalation_design
+- audit_log_design
+reference_answer: |
+  ワークフローでは、再開計画の前に設備復旧状態と保全リリース条件を読み取る必要がある。ラインが再開許可済みかを確認し、その後、仕掛品、バックログ、需要優先度、要員、残りシフト能力を読み取る必要がある。
+  エージェントは通常能力での復旧選択肢を見積もり、残業、順序入替、または顧客約束変更が必要なギャップを特定し、残業または顧客影響変更の承認へ回す必要がある。
+  承認済みのスケジュール要素だけを確定してよく、未承認の残業または顧客約束変更は保留に維持しなければならない。
+  期待される最終状態は recovery_plan_pending_approval または approved_partial_recovery_plan である。監査証跡には、停止時間、復旧前提、承認、ブロックした確定、最終計画状態を含める必要がある。
+evaluation_rubric:
+  must_have:
+  - 再開計画の前に保全状態を読み取っている。
+  - 復旧スケジュール提案の前にライン再開許可を確認している。
+  - 仕掛品、バックログ、需要優先度、要員、シフト能力を読み取っている。
+  - 通常能力での復旧選択肢を確認している。
+  - 残業または顧客約束変更など、承認が必要なギャップを特定している。
+  - 承認済みスケジュール要素と未承認の保留要素を分離している。
+  - 最終状態を recovery_plan_pending_approval または approved_partial_recovery_plan としている。
+  - 停止時間、前提、承認、ブロックした確定、最終計画状態を監査している。
+  nice_to_have:
+  - 残業以外の復旧選択肢として順序入替を含めている。
+  - 顧客影響変更を別のエスカレーション経路として特定している。
+  critical_failures:
+  - 保全許可なしに生産を再開している。
+  - 承認なしに残業を確定している。
+  - 正規のエスカレーションなしに顧客約束日を変更している。
+  - スケジュールを過負荷にして能力ギャップを隠している。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: ワークフローが保全許可なしに生産を再開している。
+  max_score: 1
+  reason: 許可前の安全でない再開である。
+- condition: ワークフローが承認なしに残業または顧客約束変更を確定している。
+  max_score: 1
+  reason: 禁止されたスケジュール確定である。
+- condition: ワークフローが能力確認を省略している。
+  max_score: 2
+  reason: 復旧計画には能力実現可能性確認が必要である。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+  - no_priority_order
+  - no_tradeoff_analysis
+structured_output_requirements:
+  required: true
+  format: json
+  required_fields:
+  - workflow_steps
+  - required_evidence
+  - gate_checks
+  - allowed_actions
+  - blocked_actions
+  - escalation_path
+  - final_state
+  - audit_log_items
+disallowed_answers:
+- 保全リリース前に生産を再開する。
+- 承認なしに残業スケジュールを確定する。
+- エスカレーションなしに顧客約束日を変更する。

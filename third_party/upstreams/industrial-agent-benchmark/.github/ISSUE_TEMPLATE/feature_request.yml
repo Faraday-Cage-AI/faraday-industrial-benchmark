@@ -1,0 +1,41 @@
+name: Feature Request / 機能・タスク追加提案
+description: Propose new benchmark tasks, categories, evaluation features, or tooling. / 新しい問題・カテゴリ・評価機能・ツールの提案
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area / 対象領域
+      options:
+        - Benchmark tasks - Knowledge layer
+        - Benchmark tasks - Reasoning layer
+        - Benchmark tasks - Agent layer
+        - Evaluation pipeline / judges
+        - Dataset schema / export
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation / 動機
+      description: What problem does this solve? Who benefits? / 何を解決する提案か
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal / 提案内容
+      description: |
+        For new tasks: note that task content must be Japanese canonical and follow docs/benchmark_spec.md.
+        新規問題の場合、本文は日本語 canonical で docs/benchmark_spec.md に従う必要があります。
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered / 検討した代替案
+    validations:
+      required: false

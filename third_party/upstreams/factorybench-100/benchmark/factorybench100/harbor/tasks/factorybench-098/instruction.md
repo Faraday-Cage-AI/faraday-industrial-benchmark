@@ -1,0 +1,1 @@
+The supplier operation is ready to be reported complete, but the sent, returned, accepted, and rejected quantities do not all look alike. Establish the good quantity that can legitimately complete, what remains open, and how each choice affects the order. Post completion only for accepted returned output.

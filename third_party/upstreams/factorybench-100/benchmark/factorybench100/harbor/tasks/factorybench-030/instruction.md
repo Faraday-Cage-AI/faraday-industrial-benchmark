@@ -1,0 +1,1 @@
+A PM order is waiting for the correct lockout procedure and Drive contains drafts, superseded copies, and another asset's revision. Decide which released procedure applies on the work date, whether the job can start as planned, and what happens if no valid revision is available. Link only the procedure that passes that test.

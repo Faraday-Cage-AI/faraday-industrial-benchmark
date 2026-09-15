@@ -1,0 +1,1 @@
+A tooling PO is on the close exception list and appears financially settled. Determine whether every receipt, acceptance, invoice, payment, and remaining commitment truly nets to zero, explain any cutoff risk, and decide whether final close is appropriate. Close only this document if no exposure remains.

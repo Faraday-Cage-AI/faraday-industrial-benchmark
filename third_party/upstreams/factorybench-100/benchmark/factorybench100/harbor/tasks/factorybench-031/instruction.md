@@ -1,0 +1,1 @@
+We need to award the enclosure tooling package without mistaking the lowest sticker price for the best bid. Compare the technically acceptable offers on landed cost, lead time, capacity, and commercial exceptions, show whether the launch date and sourcing authority are protected, and identify the strongest fallback. Create the draft award only for the supported choice.

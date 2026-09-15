@@ -1,0 +1,1 @@
+Reconciliation found an invoice that may duplicate one already recorded. Determine whether supplier, normalized number, date, amount, PO, and attachment evidence establish a true duplicate, distinguish any legitimate tax or credit difference, and quantify the payable amount. Place a hold only on the confirmed duplicate.

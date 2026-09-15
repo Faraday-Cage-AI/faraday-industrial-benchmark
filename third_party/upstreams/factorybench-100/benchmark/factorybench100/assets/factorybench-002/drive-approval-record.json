@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-002",
+  "approvedScope": "Approval AP-0002 permits one control-compliant action on NS-000002 up to 52 EA, provided release only quantities whose destination and end-use are cleared. It does not select an option in advance and does not authorize broader records or cancel_restricted_line.",
+  "businessNeedBy": "2026-01-21",
+  "case": "CASE-002",
+  "fileId": "drive-approval-002",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}

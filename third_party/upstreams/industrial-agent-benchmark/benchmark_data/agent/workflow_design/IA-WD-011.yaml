@@ -1,0 +1,81 @@
+schema_version: '1.1'
+id: IA-WD-011
+layer: industrial_agent
+category: workflow_design
+domain: general_manufacturing
+subdomain: inspection
+difficulty: 4
+estimated_time_min: 45
+title: 検査計画更新ワークフロー
+scenario: |
+  工程変更後に新しい不良モードが現れた。エージェントは不良記録、現在の管理計画、検査チェックリスト、測定システム状態、影響ロット系譜を読み取ることができる。検査計画変更をドラフトできるが、リリースはできない。
+question: |
+  検査計画を安全に更新するためのワークフローを設計せよ。証拠読み取り、測定準備状態、封じ込め、レビュールーティング、ブロックされたリリース、最終状態、監査証跡を含めること。
+expected_skills:
+- workflow_design
+- inspection_planning
+- quality_assurance
+- documentation_control
+- audit_log_design
+primary_skill: workflow_design
+secondary_skills:
+- inspection_planning
+- quality_assurance
+- documentation_control
+- audit_log_design
+reference_answer: |
+  ワークフローでは、不良証拠と影響を受ける特性を読み取り、その後、現在の管理計画、検査チェックリスト、サンプリング頻度、ゲージまたは測定準備状態を確認する必要がある。
+  影響ロットを特定し、一時的な封じ込め検査が必要かを判断する必要がある。エージェントは、必要に応じて検査計画更新とバリデーションまたはMSA要求をドラフトし、その後、品質および工程技術レビューへ回してよい。
+  検査計画の最終リリースは、承認までブロックしなければならない。
+  期待される最終状態は inspection_plan_review_pending である。監査証跡には、証拠、影響特性、ドラフト変更、レビュー状態、封じ込め行動を含める必要がある。
+evaluation_rubric:
+  must_have:
+  - 変更をドラフトする前に、不良証拠と影響特性を読み取っている。
+  - 現在の管理計画、検査チェックリスト、サンプリング頻度、ゲージ準備状態を確認している。
+  - 影響ロットと一時的な封じ込め検査の要否を特定している。
+  - 必要に応じて検査計画更新とバリデーションまたはMSA要求をドラフトしている。
+  - 品質および工程技術レビューへ回している。
+  - 承認まで検査計画の最終リリースをブロックしている。
+  - 最終状態を inspection_plan_review_pending としている。
+  - 証拠、影響特性、ドラフト変更、レビュー状態、封じ込め行動を監査している。
+  nice_to_have:
+  - 一時的な封じ込め検査と恒久的な計画リリースを区別している。
+  - 展開前のゲートとして測定準備状態を含めている。
+  critical_failures:
+  - 承認なしに新しい検査計画をリリースしている。
+  - 証拠なしに検査頻度を変更している。
+  - 準備できていない測定方法を使って検査を展開している。
+  - 影響ロットの封じ込めを省略している。
+reasoning_trace_required: true
+score_cap_rules:
+- condition: ワークフローが承認なしに検査計画をリリースしている。
+  max_score: 1
+  reason: 禁止された文書または管理計画リリースである。
+- condition: ワークフローが測定準備状態の確認を省略している。
+  max_score: 2
+  reason: 検査展開には測定準備状態が必要である。
+- condition: ワークフローが影響ロットの封じ込めを省略している。
+  max_score: 3
+  reason: 影響ロットが存在する場合、封じ込めが必要である。
+generic_answer_penalty:
+  enabled: true
+  conditions:
+  - generic_framework_only
+  - no_priority_order
+  - no_named_stakeholder
+structured_output_requirements:
+  required: true
+  format: json
+  required_fields:
+  - workflow_steps
+  - required_evidence
+  - gate_checks
+  - allowed_actions
+  - blocked_actions
+  - escalation_path
+  - final_state
+  - audit_log_items
+disallowed_answers:
+- 検査計画を直ちにリリースする。
+- 不良証拠なしにサンプリング頻度を変更する。
+- ゲージ準備状態が確認される前に検査方法を展開する。

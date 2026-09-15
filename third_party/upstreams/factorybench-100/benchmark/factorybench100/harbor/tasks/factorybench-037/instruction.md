@@ -1,0 +1,1 @@
+Several enclosures arrived with visible water damage while the rest of the shipment may be usable. Determine the accepted and rejected quantities, how a partial receipt affects the build, and whether replacement timing changes the preferred disposition. Record the return for only the units that fail inspection.

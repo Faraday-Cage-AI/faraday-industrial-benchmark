@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-065",
+  "approvedScope": "Approval AP-0065 permits one control-compliant action on NS-000065 up to 19.0 EA, provided priority, entitlement, destination, quantity, and need-by must match. It does not select an option in advance and does not authorize broader records or create_unallocated_supply.",
+  "businessNeedBy": "2026-01-19",
+  "case": "CASE-065",
+  "fileId": "drive-approval-065",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}

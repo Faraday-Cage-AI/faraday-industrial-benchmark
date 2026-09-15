@@ -1,0 +1,1 @@
+The original relay will miss the install window and engineering says a substitute may be available. Work out how much remaining demand the substitute can legally cover, what stock or orders fall outside its effectivity, and whether using it beats waiting or reducing the build. Change only the supported material requirement.

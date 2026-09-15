@@ -1,0 +1,1 @@
+Final assembly is about to wait on burn-in, and moving the step may recover the build. Find the earliest sequence that respects work already completed and protected chamber time, compare it with waiting or using the contract chamber, and tell the cell lead what each choice does to completion. Put the approved sequence on the order.

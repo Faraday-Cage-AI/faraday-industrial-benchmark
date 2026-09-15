@@ -1,0 +1,1 @@
+An outside processor invoiced the order and the controller needs to know what is payable now. Tie the billed quantity and rate to accepted supplier output, quantify any rejected, missing, duplicate, or rate-variance exposure, and compare validation with a hold or correction. Validate only the supported invoice.

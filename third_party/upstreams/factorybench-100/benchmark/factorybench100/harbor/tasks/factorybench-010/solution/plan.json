@@ -1,0 +1,270 @@
+[
+  {
+    "arguments": {},
+    "tool": "factorybench.context.get"
+  },
+  {
+    "arguments": {
+      "fields": "id,name,mimeType,modifiedTime,md5Checksum,description",
+      "fileId": "drive-010"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "maxResults": 20,
+      "q": "\"CASE-010\"",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.list"
+  },
+  {
+    "arguments": {
+      "id": "att-010",
+      "messageId": "msg-010-1",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.attachments.get"
+  },
+  {
+    "arguments": {
+      "channel": "C-QUALITY",
+      "inclusive": true,
+      "limit": 100,
+      "oldest": "1768000000.000000"
+    },
+    "tool": "slack.conversations_history"
+  },
+  {
+    "arguments": {
+      "majorDimension": "ROWS",
+      "range": "Control!A1:I50",
+      "spreadsheetId": "sheet-010",
+      "valueRenderOption": "UNFORMATTED_VALUE"
+    },
+    "tool": "google_sheets.spreadsheets.values.get"
+  },
+  {
+    "arguments": {
+      "fields": "files(id,name,mimeType,modifiedTime,md5Checksum)",
+      "pageSize": 50,
+      "q": "name contains 'CASE-010' and trashed = false"
+    },
+    "tool": "google_drive.files.list"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-010"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-010-26"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-approval-010"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-010-19",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-010-09"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-010-10",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-010-04",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-010-11",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-010-16",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-010-17",
+      "mimeType": "text/plain"
+    },
+    "tool": "google_drive.files.export"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-010-23"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "fileId": "drive-010-13"
+    },
+    "tool": "google_drive.files.download"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-010-12"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "alt": "media",
+      "fileId": "drive-010-01"
+    },
+    "tool": "google_drive.files.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100010,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_resources.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "SupplierNumber='SUP-00010'"
+    },
+    "tool": "oracle_fusion.suppliers.list"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100010,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_operations.list"
+  },
+  {
+    "arguments": {
+      "limit": 50,
+      "onlyData": true,
+      "q": "WorkOrderNumber='WO-0010'"
+    },
+    "tool": "oracle_fusion.work_orders.list"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "msg-010",
+      "userId": "me"
+    },
+    "tool": "gmail.messages.get"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100010,
+      "WorkOrderOperationId": 200010,
+      "requestBody": {
+        "AssignedUnits": 1,
+        "BasisType": "VARIABLE",
+        "ResourceCode": "RES-CERT-010",
+        "UsageRate": 1.0
+      }
+    },
+    "tool": "oracle_fusion.work_order_resources.create"
+  },
+  {
+    "arguments": {
+      "WorkOrderId": 100010,
+      "limit": 50,
+      "onlyData": true
+    },
+    "tool": "oracle_fusion.work_order_resources.list"
+  },
+  {
+    "arguments": {
+      "channel": "C-QUALITY",
+      "name": "white_check_mark",
+      "timestamp": "1768000010.000100"
+    },
+    "tool": "slack.reactions_add"
+  },
+  {
+    "arguments": {
+      "channel": "C-QUALITY",
+      "limit": 100,
+      "ts": "1768000010.000100"
+    },
+    "tool": "slack.conversations_replies"
+  },
+  {
+    "arguments": {
+      "message": {
+        "raw": "RnJvbTogcHJvZHVjdGlvbi5wbGFubmVyQG5vcnRoc3Rhci5leGFtcGxlDQpUbzogY2VsbC5sZWFkQG5vcnRoc3Rhci5leGFtcGxlDQpTdWJqZWN0OiBDQVNFLTAxMCDigJQgRHJhZnQgb3BlcmF0aW5nIGRlY2lzaW9uDQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9VVRGLTgNCg0KRGVjaXNpb246IGFzc2lnbl9jZXJ0aWZpZWRfY29udHJhY3Rvci4gQ29tcGxldGlvbjogMjAyNi0wMS0xNi4NCkJpbmRpbmcgY29uc3RyYWludDogd29ya2VyIGNlcnRpZmljYXRpb24sIGFwcHJvdmVkIHJhdGUsIGFuZCByZW1haW5pbmcgYXNzaWdubWVudCBjYXBhY2l0eTsgaG91cnMgZnJvbSBleHBpcmVkIGNlcnRpZmljYXRpb25zIG9yIGNvbmZsaWN0aW5nIGFzc2lnbm1lbnRzID0gNSBIUjsgdW5jb3ZlcmVkIG9yIHVuc3VwcG9ydGVkIHNjb3BlID0gMjMuMCBIUi4NCkFsdGVybmF0aXZlczogd2FpdF9mb3JfaW50ZXJuYWxfbGFib3I6IG91dGNvbWUgMjAyNi0wMS0xOSwgZWNvbm9taWMgaW1wYWN0IFVTRCAwLCBGRUFTSUJMRV9XSVRIX0lORkVSSU9SX1RSQURFT0ZGOyBhc3NpZ25fY2VydGlmaWVkX2NvbnRyYWN0b3I6IG91dGNvbWUgMjAyNi0wMS0xNiwgZWNvbm9taWMgaW1wYWN0IFVTRCA1MjAsIFNVUFBPUlRFRF9BTkRfQVBQUk9WRUQ7IGF1dGhvcml6ZV9vdmVydGltZV9jcmV3OiBvdXRjb21lIDIwMjYtMDEtMTUsIGVjb25vbWljIGltcGFjdCBVU0QgMTQxMCwgU0VQQVJBVEVfQVBQUk9WQUxfT1JfUE9MSUNZX0VYQ0VQVElPTl9SRVFVSVJFRC4NCk9yYWNsZSByZWNvcmQ6IE5TLTAwMDAxMC4gQXBwcm92YWw6IEFQLTAwMTAuIENhc2U6IENBU0UtMDEwLg0K",
+        "threadId": "thread-010"
+      },
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.create"
+  },
+  {
+    "arguments": {
+      "format": "full",
+      "id": "draft-010",
+      "userId": "me"
+    },
+    "tool": "gmail.drafts.get"
+  },
+  {
+    "arguments": {
+      "affected_resource_or_operation": "NS-000010",
+      "base_completion": "2026-01-19",
+      "business_need_date": "2026-01-16",
+      "candidate_capacity": 35,
+      "capacity_gap": 23,
+      "capacity_unit": "HR",
+      "decision_timing_status": "ON_TIME",
+      "escalated_completion": "2026-01-15",
+      "escalation_approval_required": 1,
+      "net_usable_capacity": 30,
+      "outcome_vs_control_days": 0,
+      "qualified_alternative_completion": "2026-01-16",
+      "recommended_incremental_cost_usd": 520,
+      "recommended_option": "assign_certified_contractor",
+      "recommended_outcome_date": "2026-01-16",
+      "required_capacity": 53,
+      "selected_resource_or_control": "RES-CERT-010",
+      "unavailable_or_protected_capacity": 5
+    },
+    "tool": "factorybench.submit_answer"
+  }
+]

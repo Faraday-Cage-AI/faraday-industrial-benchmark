@@ -1,0 +1,69 @@
+{
+  "case": "CASE-019",
+  "itemOrResource": "NS-COMP-019",
+  "lastUpdateDate": "2026-01-12T08:00:00-08:00",
+  "organizationCode": "SEA",
+  "providerSetupCrosswalk": {
+    "candidates": [
+      {
+        "candidateReference": "SETUP-0019-ARCHIVE",
+        "controlStatus": "SUPERSEDED",
+        "immutableRecord": "NS-000019",
+        "organizationCode": "SEA",
+        "sourceRevision": "R9",
+        "targetAndProviderValues": {
+          "WorkOrderId": 1500019,
+          "WorkOrderOperationId": 1600019,
+          "requestBody": {
+            "PlannedCompletionDate": "2026-01-20",
+            "PlannedStartDate": "2026-01-18",
+            "WorkCenterCode": "WC-CAND-019-2"
+          }
+        }
+      },
+      {
+        "candidateReference": "SETUP-0019-PDX",
+        "controlStatus": "OTHER_ORGANIZATION",
+        "immutableRecord": "NS-000020",
+        "organizationCode": "PDX",
+        "sourceRevision": "R6",
+        "targetAndProviderValues": {
+          "WorkOrderId": 2200019,
+          "WorkOrderOperationId": 2300019,
+          "requestBody": {
+            "PlannedCompletionDate": "2026-01-20",
+            "PlannedStartDate": "2026-01-18",
+            "WorkCenterCode": "WC-CAND-019-3"
+          }
+        }
+      },
+      {
+        "candidateReference": "SETUP-0019-CURRENT",
+        "controlStatus": "ACTIVE_APPLICABLE",
+        "immutableRecord": "NS-000019",
+        "organizationCode": "SEA",
+        "sourceRevision": "R6",
+        "targetAndProviderValues": {
+          "WorkOrderId": 100019,
+          "WorkOrderOperationId": 200019,
+          "requestBody": {
+            "PlannedCompletionDate": "2026-01-20",
+            "PlannedStartDate": "2026-01-18",
+            "WorkCenterCode": "WC-ALT-2"
+          }
+        }
+      }
+    ],
+    "instruction": "Correlate immutable record, effective revision, organization, and control status before using provider identifiers or controlled values. This setup export does not determine the business decision, and row order does not indicate applicability.",
+    "narrativeControl": "Free-text names, descriptions, notes, and reasons may use natural wording but must remain scoped to this case or immutable record.",
+    "providerOperation": "oracle_fusion.work_order_operations.update",
+    "source": "Oracle setup and transaction-control export"
+  },
+  "recordId": "NS-000019",
+  "recordType": "oracle_fusion.work_orders",
+  "revision": "R6",
+  "source": "Oracle Fusion Cloud 26a-shaped synthetic export",
+  "sourceMeasure": 67,
+  "status": "Open",
+  "unit": "HR"
+}

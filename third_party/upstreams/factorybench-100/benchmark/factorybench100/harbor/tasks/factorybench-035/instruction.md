@@ -1,0 +1,1 @@
+The line is down for a component shortage and planners need to know what supply action actually restores it. Calculate the uncovered need and the first usable arrival, compare emergency buying with transfer or waiting for firm inbound, and show which option protects the next production window. Create supply only for the net gap.

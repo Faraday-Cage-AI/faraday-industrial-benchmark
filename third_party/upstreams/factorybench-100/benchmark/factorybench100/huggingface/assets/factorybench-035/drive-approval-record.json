@@ -1,0 +1,17 @@
+{
+  "approvalId": "approval-035",
+  "approvedScope": "Approval AP-0035 permits one control-compliant action on NS-000035 up to 6.0 EA, provided sole-source exception, exact shortage, and emergency freight authority. It does not select an option in advance and does not authorize broader records or wait_for_standard_replenishment.",
+  "businessNeedBy": "2026-01-19",
+  "case": "CASE-035",
+  "fileId": "drive-approval-035",
+  "requiredReviewers": [
+    "U-APPROVER"
+  ],
+  "reviewerResponses": [
+    {
+      "response": "APPROVED",
+      "reviewer": "U-APPROVER"
+    }
+  ],
+  "status": "IN_PROGRESS"
+}
