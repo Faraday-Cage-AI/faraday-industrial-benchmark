@@ -21,7 +21,7 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["jsonschema>=4.23", "pytest>=8.0", "ruff>=0.6"]
-openai = ["openai>=1.99"]
+openai = ["openai>=1.99", "python-dotenv>=1.0"]
 
 [project.scripts]
 faraday-bench = "faraday_industrial_benchmark.cli:main"

@@ -55,10 +55,11 @@ class CommandAgent:
     and receives matching `tool_result` objects until it emits `final`.
     """
 
-    def __init__(self, command: str, *, timeout_seconds: float = 120.0, name: str | None = None):
+    def __init__(self, command: str, *, timeout_seconds: float = 120.0, name: str | None = None, cancel_event=None):
         self.command = command
         self.timeout_seconds = timeout_seconds
         self.name = name or f"command:{command}"
+        self.cancel_event = cancel_event
 
     def run(self, task: IncidentTask, tools: ToolClientProtocol) -> Json:
         process = subprocess.Popen(
@@ -86,6 +87,8 @@ class CommandAgent:
         finished_by_tool = False
         try:
             while time.monotonic() < deadline:
+                if self.cancel_event is not None and self.cancel_event.is_set():
+                    raise InterruptedError("evaluation cancelled by operator")
                 ready = selector.select(timeout=min(0.5, max(0.0, deadline - time.monotonic())))
                 if not ready:
                     if process.poll() is not None:

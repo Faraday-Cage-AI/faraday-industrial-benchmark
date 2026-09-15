@@ -13,6 +13,11 @@ that merely sounds plausible.
 
 ## v0.6: decisions under uncertainty
 
+**New harder challenge:** [0.7.0-hard.1](docs/coupled-hard-suite.md) adds compound
+disruptions, customer service floors, paired installation kits, nonlinear credits,
+shared activation fees, and exact two-objective optimization. Run it explicitly
+with `--tasks data/challenge/tasks.json`. Model difficulty is not yet measured.
+
 Eight new contingent network-recovery episodes require one common capacity
 reservation before the disruption is known, four feasible recovery branches,
 and execution of the realized branch with a reconciled ledger. Ten whole orders

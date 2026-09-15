@@ -1,0 +1,80 @@
+{
+  "suite_version": "0.7.0-hard.1",
+  "kind": "algorithmic_control_not_model_result",
+  "cases": 8,
+  "relaxed_control_failures": 8,
+  "results": [
+    {
+      "task": "faraday-coupled-hard-001",
+      "exact_optimum_cents": 921700,
+      "relaxed_control_passed": false,
+      "relaxed_control": {
+        "feasible": false,
+        "error": "compound_port_quality: customer service floor or installation-kit coupling violated"
+      }
+    },
+    {
+      "task": "faraday-coupled-hard-002",
+      "exact_optimum_cents": 1452600,
+      "relaxed_control_passed": false,
+      "relaxed_control": {
+        "feasible": false,
+        "error": "normal: customer service floor or installation-kit coupling violated"
+      }
+    },
+    {
+      "task": "faraday-coupled-hard-003",
+      "exact_optimum_cents": 1727570,
+      "relaxed_control_passed": false,
+      "relaxed_control": {
+        "feasible": false,
+        "error": "normal: customer service floor or installation-kit coupling violated"
+      }
+    },
+    {
+      "task": "faraday-coupled-hard-004",
+      "exact_optimum_cents": 1407420,
+      "relaxed_control_passed": false,
+      "relaxed_control": {
+        "feasible": false,
+        "error": "normal: customer service floor or installation-kit coupling violated"
+      }
+    },
+    {
+      "task": "faraday-coupled-hard-005",
+      "exact_optimum_cents": 2187320,
+      "relaxed_control_passed": false,
+      "relaxed_control": {
+        "feasible": false,
+        "error": "normal: customer service floor or installation-kit coupling violated"
+      }
+    },
+    {
+      "task": "faraday-coupled-hard-006",
+      "exact_optimum_cents": 1223620,
+      "relaxed_control_passed": false,
+      "relaxed_control": {
+        "feasible": false,
+        "error": "normal: customer service floor or installation-kit coupling violated"
+      }
+    },
+    {
+      "task": "faraday-coupled-hard-007",
+      "exact_optimum_cents": 1372995,
+      "relaxed_control_passed": false,
+      "relaxed_control": {
+        "feasible": false,
+        "error": "normal: customer service floor or installation-kit coupling violated"
+      }
+    },
+    {
+      "task": "faraday-coupled-hard-008",
+      "exact_optimum_cents": 1970560,
+      "relaxed_control_passed": false,
+      "relaxed_control": {
+        "feasible": false,
+        "error": "normal: customer service floor or installation-kit coupling violated"
+      }
+    }
+  ]
+}

@@ -9,6 +9,8 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
+from pathlib import Path
 from typing import Any
 
 from openai import OpenAI
@@ -34,6 +36,8 @@ def main() -> int:
         default="xhigh",
     )
     parser.add_argument("--max-output-tokens", type=int, default=32768)
+    parser.add_argument("--usage-log", type=Path)
+    parser.add_argument("--max-total-output-tokens", type=int, default=100000)
     args = parser.parse_args()
 
     start = receive()
@@ -62,7 +66,8 @@ def main() -> int:
         "is not completion. You must call finish exactly once with a concise summary "
         "and concrete evidence IDs after the executable work is complete."
     )
-    client = OpenAI()
+    client = OpenAI(timeout=600, max_retries=1)
+    started = time.monotonic()
     response = client.responses.create(
         model=args.model,
         reasoning={"effort": args.reasoning_effort},
@@ -81,7 +86,27 @@ def main() -> int:
         store=True,
     )
     protocol_index = 0
+    total_output = 0
     while True:
+        usage = response.usage.model_dump() if response.usage else {}
+        total_output += usage.get("output_tokens", 0)
+        if args.usage_log:
+            args.usage_log.parent.mkdir(parents=True, exist_ok=True)
+            with args.usage_log.open("a") as stream:
+                stream.write(
+                    json.dumps(
+                        {
+                            "model": response.model,
+                            "status": response.status,
+                            "usage": usage,
+                            "elapsed_seconds": time.monotonic() - started,
+                            "total_output_tokens": total_output,
+                        }
+                    )
+                    + "\n"
+                )
+        if total_output >= args.max_total_output_tokens:
+            raise RuntimeError("cumulative output token budget exhausted")
         calls = [item for item in response.output if item.type == "function_call"]
         if not calls:
             send(
@@ -139,10 +164,17 @@ def main() -> int:
             input=outputs,
             tools=function_tools,
             parallel_tool_calls=False,
-            max_output_tokens=args.max_output_tokens,
+            max_output_tokens=min(
+                args.max_output_tokens, args.max_total_output_tokens - total_output
+            ),
             store=True,
         )
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except Exception as exc:  # noqa: BLE001 - sanitize provider errors at process boundary
+        # Never echo provider error bodies that could contain credential material.
+        print(f"Agent failed: {type(exc).__name__}", file=sys.stderr)
+        raise SystemExit(1)

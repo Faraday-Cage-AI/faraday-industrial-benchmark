@@ -1,0 +1,546 @@
+[
+  {
+    "id": "faraday-coupled-hard-001",
+    "version": "0.7.0-hard.1",
+    "family": "contingent_network_recovery",
+    "title": "Resolve coupled service contracts under compound network disruption",
+    "prompt": "Reconcile authoritative records and amendments, then commit one supplier reservation and a complete contingent recovery policy before the outcome is revealed. All six scenarios must satisfy customer service floors and installation-kit coupling, alongside inventory, capacity, deadlines, emissions, and cash limits. Minimize worst-case total cost exactly; among ties minimize aggregate scenario cost. Account for nonlinear customer service credits and once-per-mode activation fees as well as order costs and reservation fees. After revelation execute the exact committed branch, reconcile the ledger, notify owners, and finish with evidence. Read the complete GRC contract; plausible independent order decisions are insufficient.",
+    "seed": 20701,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 120,
+    "horizon_minutes": 220,
+    "tags": [
+      "coupled-frontier-v1",
+      "compound-disruptions",
+      "exact-optimization",
+      "customer-contracts"
+    ],
+    "workflow_stages": [
+      {
+        "id": "reconcile",
+        "objective": "Reconcile final source versions and actual exceptions",
+        "depends_on": []
+      },
+      {
+        "id": "couple",
+        "objective": "Model installation kits, service floors, and nonlinear costs",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Optimize all six branches with exact lexicographic objectives",
+        "depends_on": [
+          "couple"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and reserve before uncertainty is revealed",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "realize",
+        "objective": "Observe disruption and execute the committed branch",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Reconcile accounting and communicate record evidence",
+        "depends_on": [
+          "realize"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-coupled-hard-002",
+    "version": "0.7.0-hard.1",
+    "family": "contingent_network_recovery",
+    "title": "Resolve coupled service contracts under compound network disruption",
+    "prompt": "Reconcile authoritative records and amendments, then commit one supplier reservation and a complete contingent recovery policy before the outcome is revealed. All six scenarios must satisfy customer service floors and installation-kit coupling, alongside inventory, capacity, deadlines, emissions, and cash limits. Minimize worst-case total cost exactly; among ties minimize aggregate scenario cost. Account for nonlinear customer service credits and once-per-mode activation fees as well as order costs and reservation fees. After revelation execute the exact committed branch, reconcile the ledger, notify owners, and finish with evidence. Read the complete GRC contract; plausible independent order decisions are insufficient.",
+    "seed": 20702,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 120,
+    "horizon_minutes": 220,
+    "tags": [
+      "coupled-frontier-v1",
+      "compound-disruptions",
+      "exact-optimization",
+      "customer-contracts"
+    ],
+    "workflow_stages": [
+      {
+        "id": "reconcile",
+        "objective": "Reconcile final source versions and actual exceptions",
+        "depends_on": []
+      },
+      {
+        "id": "couple",
+        "objective": "Model installation kits, service floors, and nonlinear costs",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Optimize all six branches with exact lexicographic objectives",
+        "depends_on": [
+          "couple"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and reserve before uncertainty is revealed",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "realize",
+        "objective": "Observe disruption and execute the committed branch",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Reconcile accounting and communicate record evidence",
+        "depends_on": [
+          "realize"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-coupled-hard-003",
+    "version": "0.7.0-hard.1",
+    "family": "contingent_network_recovery",
+    "title": "Resolve coupled service contracts under compound network disruption",
+    "prompt": "Reconcile authoritative records and amendments, then commit one supplier reservation and a complete contingent recovery policy before the outcome is revealed. All six scenarios must satisfy customer service floors and installation-kit coupling, alongside inventory, capacity, deadlines, emissions, and cash limits. Minimize worst-case total cost exactly; among ties minimize aggregate scenario cost. Account for nonlinear customer service credits and once-per-mode activation fees as well as order costs and reservation fees. After revelation execute the exact committed branch, reconcile the ledger, notify owners, and finish with evidence. Read the complete GRC contract; plausible independent order decisions are insufficient.",
+    "seed": 20703,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 120,
+    "horizon_minutes": 220,
+    "tags": [
+      "coupled-frontier-v1",
+      "compound-disruptions",
+      "exact-optimization",
+      "customer-contracts"
+    ],
+    "workflow_stages": [
+      {
+        "id": "reconcile",
+        "objective": "Reconcile final source versions and actual exceptions",
+        "depends_on": []
+      },
+      {
+        "id": "couple",
+        "objective": "Model installation kits, service floors, and nonlinear costs",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Optimize all six branches with exact lexicographic objectives",
+        "depends_on": [
+          "couple"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and reserve before uncertainty is revealed",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "realize",
+        "objective": "Observe disruption and execute the committed branch",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Reconcile accounting and communicate record evidence",
+        "depends_on": [
+          "realize"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-coupled-hard-004",
+    "version": "0.7.0-hard.1",
+    "family": "contingent_network_recovery",
+    "title": "Resolve coupled service contracts under compound network disruption",
+    "prompt": "Reconcile authoritative records and amendments, then commit one supplier reservation and a complete contingent recovery policy before the outcome is revealed. All six scenarios must satisfy customer service floors and installation-kit coupling, alongside inventory, capacity, deadlines, emissions, and cash limits. Minimize worst-case total cost exactly; among ties minimize aggregate scenario cost. Account for nonlinear customer service credits and once-per-mode activation fees as well as order costs and reservation fees. After revelation execute the exact committed branch, reconcile the ledger, notify owners, and finish with evidence. Read the complete GRC contract; plausible independent order decisions are insufficient.",
+    "seed": 20704,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 120,
+    "horizon_minutes": 220,
+    "tags": [
+      "coupled-frontier-v1",
+      "compound-disruptions",
+      "exact-optimization",
+      "customer-contracts"
+    ],
+    "workflow_stages": [
+      {
+        "id": "reconcile",
+        "objective": "Reconcile final source versions and actual exceptions",
+        "depends_on": []
+      },
+      {
+        "id": "couple",
+        "objective": "Model installation kits, service floors, and nonlinear costs",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Optimize all six branches with exact lexicographic objectives",
+        "depends_on": [
+          "couple"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and reserve before uncertainty is revealed",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "realize",
+        "objective": "Observe disruption and execute the committed branch",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Reconcile accounting and communicate record evidence",
+        "depends_on": [
+          "realize"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-coupled-hard-005",
+    "version": "0.7.0-hard.1",
+    "family": "contingent_network_recovery",
+    "title": "Resolve coupled service contracts under compound network disruption",
+    "prompt": "Reconcile authoritative records and amendments, then commit one supplier reservation and a complete contingent recovery policy before the outcome is revealed. All six scenarios must satisfy customer service floors and installation-kit coupling, alongside inventory, capacity, deadlines, emissions, and cash limits. Minimize worst-case total cost exactly; among ties minimize aggregate scenario cost. Account for nonlinear customer service credits and once-per-mode activation fees as well as order costs and reservation fees. After revelation execute the exact committed branch, reconcile the ledger, notify owners, and finish with evidence. Read the complete GRC contract; plausible independent order decisions are insufficient.",
+    "seed": 20705,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 120,
+    "horizon_minutes": 220,
+    "tags": [
+      "coupled-frontier-v1",
+      "compound-disruptions",
+      "exact-optimization",
+      "customer-contracts"
+    ],
+    "workflow_stages": [
+      {
+        "id": "reconcile",
+        "objective": "Reconcile final source versions and actual exceptions",
+        "depends_on": []
+      },
+      {
+        "id": "couple",
+        "objective": "Model installation kits, service floors, and nonlinear costs",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Optimize all six branches with exact lexicographic objectives",
+        "depends_on": [
+          "couple"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and reserve before uncertainty is revealed",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "realize",
+        "objective": "Observe disruption and execute the committed branch",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Reconcile accounting and communicate record evidence",
+        "depends_on": [
+          "realize"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-coupled-hard-006",
+    "version": "0.7.0-hard.1",
+    "family": "contingent_network_recovery",
+    "title": "Resolve coupled service contracts under compound network disruption",
+    "prompt": "Reconcile authoritative records and amendments, then commit one supplier reservation and a complete contingent recovery policy before the outcome is revealed. All six scenarios must satisfy customer service floors and installation-kit coupling, alongside inventory, capacity, deadlines, emissions, and cash limits. Minimize worst-case total cost exactly; among ties minimize aggregate scenario cost. Account for nonlinear customer service credits and once-per-mode activation fees as well as order costs and reservation fees. After revelation execute the exact committed branch, reconcile the ledger, notify owners, and finish with evidence. Read the complete GRC contract; plausible independent order decisions are insufficient.",
+    "seed": 20706,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 120,
+    "horizon_minutes": 220,
+    "tags": [
+      "coupled-frontier-v1",
+      "compound-disruptions",
+      "exact-optimization",
+      "customer-contracts"
+    ],
+    "workflow_stages": [
+      {
+        "id": "reconcile",
+        "objective": "Reconcile final source versions and actual exceptions",
+        "depends_on": []
+      },
+      {
+        "id": "couple",
+        "objective": "Model installation kits, service floors, and nonlinear costs",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Optimize all six branches with exact lexicographic objectives",
+        "depends_on": [
+          "couple"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and reserve before uncertainty is revealed",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "realize",
+        "objective": "Observe disruption and execute the committed branch",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Reconcile accounting and communicate record evidence",
+        "depends_on": [
+          "realize"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-coupled-hard-007",
+    "version": "0.7.0-hard.1",
+    "family": "contingent_network_recovery",
+    "title": "Resolve coupled service contracts under compound network disruption",
+    "prompt": "Reconcile authoritative records and amendments, then commit one supplier reservation and a complete contingent recovery policy before the outcome is revealed. All six scenarios must satisfy customer service floors and installation-kit coupling, alongside inventory, capacity, deadlines, emissions, and cash limits. Minimize worst-case total cost exactly; among ties minimize aggregate scenario cost. Account for nonlinear customer service credits and once-per-mode activation fees as well as order costs and reservation fees. After revelation execute the exact committed branch, reconcile the ledger, notify owners, and finish with evidence. Read the complete GRC contract; plausible independent order decisions are insufficient.",
+    "seed": 20707,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 120,
+    "horizon_minutes": 220,
+    "tags": [
+      "coupled-frontier-v1",
+      "compound-disruptions",
+      "exact-optimization",
+      "customer-contracts"
+    ],
+    "workflow_stages": [
+      {
+        "id": "reconcile",
+        "objective": "Reconcile final source versions and actual exceptions",
+        "depends_on": []
+      },
+      {
+        "id": "couple",
+        "objective": "Model installation kits, service floors, and nonlinear costs",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Optimize all six branches with exact lexicographic objectives",
+        "depends_on": [
+          "couple"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and reserve before uncertainty is revealed",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "realize",
+        "objective": "Observe disruption and execute the committed branch",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Reconcile accounting and communicate record evidence",
+        "depends_on": [
+          "realize"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "faraday-coupled-hard-008",
+    "version": "0.7.0-hard.1",
+    "family": "contingent_network_recovery",
+    "title": "Resolve coupled service contracts under compound network disruption",
+    "prompt": "Reconcile authoritative records and amendments, then commit one supplier reservation and a complete contingent recovery policy before the outcome is revealed. All six scenarios must satisfy customer service floors and installation-kit coupling, alongside inventory, capacity, deadlines, emissions, and cash limits. Minimize worst-case total cost exactly; among ties minimize aggregate scenario cost. Account for nonlinear customer service credits and once-per-mode activation fees as well as order costs and reservation fees. After revelation execute the exact committed branch, reconcile the ledger, notify owners, and finish with evidence. Read the complete GRC contract; plausible independent order decisions are insufficient.",
+    "seed": 20708,
+    "difficulty": "frontier",
+    "systems": [
+      "ERP",
+      "SCM",
+      "WMS",
+      "QMS",
+      "TMS",
+      "CRM",
+      "GRC"
+    ],
+    "max_tool_calls": 120,
+    "horizon_minutes": 220,
+    "tags": [
+      "coupled-frontier-v1",
+      "compound-disruptions",
+      "exact-optimization",
+      "customer-contracts"
+    ],
+    "workflow_stages": [
+      {
+        "id": "reconcile",
+        "objective": "Reconcile final source versions and actual exceptions",
+        "depends_on": []
+      },
+      {
+        "id": "couple",
+        "objective": "Model installation kits, service floors, and nonlinear costs",
+        "depends_on": [
+          "reconcile"
+        ]
+      },
+      {
+        "id": "optimize",
+        "objective": "Optimize all six branches with exact lexicographic objectives",
+        "depends_on": [
+          "couple"
+        ]
+      },
+      {
+        "id": "commit",
+        "objective": "Approve and reserve before uncertainty is revealed",
+        "depends_on": [
+          "optimize"
+        ]
+      },
+      {
+        "id": "realize",
+        "objective": "Observe disruption and execute the committed branch",
+        "depends_on": [
+          "commit"
+        ]
+      },
+      {
+        "id": "close",
+        "objective": "Reconcile accounting and communicate record evidence",
+        "depends_on": [
+          "realize"
+        ]
+      }
+    ]
+  }
+]

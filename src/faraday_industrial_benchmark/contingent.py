@@ -54,6 +54,7 @@ def reconcile(files: dict) -> dict:
         "lanes": {r["mode"]: r for r in sections["TMS"]["lanes"] if r["status"] == "active"},
         "scenarios": sections["RISK"]["scenarios"],
         "finance": sections["ERP"]["controls"],
+        **({"coupling": sections["GRC"]["coupling"]} if "coupling" in sections["GRC"] else {}),
     }
 
 
@@ -141,6 +142,13 @@ def branch_cost(
     emissions = sum(a * b for a, b in zip(used, case["finance"]["emissions_per_pack"]))
     if emissions > case["finance"]["emissions_cap"]:
         return None, "portfolio emissions cap exceeded"
+    if case.get("coupling"):
+        from .coupled import surcharge
+
+        extra = surcharge(case, assignments)
+        if extra is None:
+            return None, "customer service floor or installation-kit coupling violated"
+        total += extra
     return total, "feasible"
 
 
@@ -177,6 +185,10 @@ def validate_policy(case: dict, policy: Any) -> dict:
 
 def solve_branch(case: dict, reservations: dict, scenario: dict) -> tuple[int, list] | None:
     """Exact DP, retaining cheapest prefix at every shared resource consumption."""
+    if case.get("coupling"):
+        from .coupled import solve_branch as solve_coupled
+
+        return solve_coupled(case, reservations, scenario)
     limits = capacities(case, reservations, scenario)
     frontier = {(0, 0, 0): (0, [])}
     for order in case["orders"]:
@@ -210,6 +222,7 @@ def solve_branch(case: dict, reservations: dict, scenario: dict) -> tuple[int, l
 def solve(case: dict) -> dict:
     """Reference computation from visible inputs, accepting all optimum ties."""
     best = None
+    best_objective = None
     for standard, express in product(range(3), repeat=2):
         reservations = {"standard": standard, "express": express}
         if reservation_fee(case, reservations) > case["finance"]["reservation_budget_cents"]:
@@ -218,7 +231,12 @@ def solve(case: dict) -> dict:
         if any(value is None for value in results.values()):
             continue
         worst = max(value[0] for value in results.values())
-        if best is None or worst < best[0]:
+        objective = (
+            worst,
+            sum(value[0] for value in results.values()) if case.get("coupling") else 0,
+        )
+        if best_objective is None or objective < best_objective:
+            best_objective = objective
             best = (
                 worst,
                 {
@@ -263,6 +281,12 @@ def assess(world) -> dict:
         report["feasible"] and report["worst_case_cost_cents"] * 100 <= optimum * 102
     )
     report["optimal"] = report["feasible"] and report["worst_case_cost_cents"] == optimum
+    if case.get("coupling"):
+        report["near_optimal"] = (
+            report["optimal"]
+            and sum(report["branch_costs_cents"].values())
+            == world.state["network_truth"]["optimal_aggregate_cost"]
+        )
     report["executed"] = world.state["incident"]["status"] == "recovered"
     return report
 
@@ -609,6 +633,10 @@ def build(task, rng):
         },
         "LIVE": {"outcome": {"status": "pending", "reveal_minute": 80}},
     }
+    if "coupled-frontier-v1" in task.tags:
+        from .coupled import harden
+
+        harden(contents, rng)
     files = {
         prefix + system: _case_file(prefix + system, system + " source extract", system, sections)
         for system, sections in contents.items()
@@ -625,6 +653,10 @@ def build(task, rng):
     realized = rng.choice(scenarios)["id"]
     state["case_files"] = files
     state["network_truth"] = {"case": case, "optimum": optimum}
+    if case.get("coupling"):
+        state["network_truth"]["optimal_aggregate_cost"] = sum(
+            solve(case)["branch_costs_cents"].values()
+        )
     state["network_artifact_types"] = list(ARTIFACT_TYPES)
     events = []
     for at, system in ((5, "CRM"), (10, "SCM")):
