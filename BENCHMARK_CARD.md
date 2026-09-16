@@ -33,6 +33,48 @@ episode ends at `finish`, at the tool budget, or at the time horizon.
   dispositions, four mutually consistent artifacts, exact version citations,
   artifact read-back, and controlled package publication
 
+### Optional development tracks
+
+These manifests are separate contracts, not extra cases silently pooled into the
+74-episode default score. Fixed-seed variants within a family are correlated.
+
+| Manifest | Episodes | Added requirements |
+|---|---:|---|
+| `data/challenge/tasks.json` | 8 | Coupled recourse, customer floors, paired kits and nonlinear costs |
+| `data/long-tail/tasks.json` | 24 | Qualification overrides, kit waivers, replacement credits and carrier constraints |
+| `data/workforce/tasks.json` | 16 | Certified labor and protected treasury liquidity across eight outcomes |
+| `data/professional/tasks.json` | 24 | Claims and AP reconciliation with mutually consistent operating-review artifacts |
+| `data/researched-v3/tasks.json` | 8 | Receipt-cost propagation, ownership, mixed valuation and quarantine availability |
+| `data/decision-challenge-v3/tasks.json` | 8 | Irrevocable early releases jointly optimized with supplier reservations and eight recourse branches; explicit scoring and artifact contracts |
+| `data/subcontracting-v2/tasks.json` | 8 | Distributed event-sourced subcontracting corrections and four lifecycle variants feeding production, commitments and reserve; not model-measured |
+| `data/close-chain-v2/tasks.json` | 8 | Subcontracting recost linked to partial intercompany receipts, entity journals, internal-profit elimination and reserve reclassification; public scoring contract; not model-measured |
+| `data/close-execution/tasks.json` | 8 | Stateful sender/receiver/consolidation execution; historical interrupted attempts, no validated completed-model result |
+| `data/close-execution-v2/tasks.json` | 8 | Corrected external-agent schema, order-independent exclusion reports and dimension-balanced diagnostics; no paid measurement yet |
+
+The decision challenge is a separate 0.11.0-decision.3 development tier, currently
+with completed matched measurement after [contract qualification](docs/decision-contract-audit.md)
+and 302 passing regression tests. All 16 attempts replay exactly; strict successes
+are 3/8 for GPT-5.4 and 6/8 for GPT-5.5. See [limitations and objective gaps](reports/decision-v3-results.md)
+before interpreting these as capability differences. Its
+constraints are disclosed, feasible policies may be executed even when suboptimal,
+and all exact objective ties are accepted. A first pilot hit a response-token
+limit; this is not evidence of an incorrect business decision. The completed
+decision-v3 comparison above is separate from those earlier pilots. Do not pool
+versions or inference budgets.
+The v1 background pilot found optimal plans for both models; its lower GPT-5.5
+score arose from report annotations, not incorrect planning. V2 addresses those
+formatting deductions without changing the business constraints or objectives.
+See [design, sources and measurement protocol](docs/decision-challenge.md).
+
+The researched v3 comparison uses GPT-5.4 and GPT-5.5 with matched inference
+settings, 300 tool calls, and a 600-minute simulated review horizon. It is a
+tool-only structured-deliverable track, not an evaluation of native spreadsheet
+authoring. Earlier manifests (`data/researched/tasks.json` and `data/researched-v2/tasks.json`)
+are retained for provenance but excluded from capability claims after contract-clarity
+and revision-lifecycle audits. V3 discloses complete nested schemas, accepts specified
+audit annotations, and supersedes corrected exception resolutions without deleting history.
+See [sources, qualification controls and protocol](docs/researched-workflows.md).
+
 ## Exclusions
 
 The v0.6 contingent-recovery track adds eight episodes with common pre-revelation
@@ -78,7 +120,7 @@ only the best attempt.
 
 - Economic amounts are synthetic and useful for relative scoring, not ROI claims.
 - The reference agent uses a family-specific playbook and is not a learned baseline.
-- Sixty-six public episodes are a development suite, not statistically sufficient for
+- Seventy-four public episodes are a development suite, not statistically sufficient for
   a high-stakes model ranking.
 - Procedural variants do not yet vary the dependency topology within a family.
 - Deterministic checks can miss semantically poor explanations that achieve correct state.

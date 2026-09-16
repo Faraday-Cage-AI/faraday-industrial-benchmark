@@ -6,10 +6,11 @@ independently authored for Faraday Industrial Benchmark.
 
 from __future__ import annotations
 
+import random
+from collections.abc import Callable
 from copy import deepcopy
 from dataclasses import dataclass
-import random
-from typing import Any, Callable
+from typing import Any
 
 from .models import PUBLIC_NOTIFICATION_ROLES, IncidentTask, Json, ScheduledEvent
 from .tool_specs import PROTECTED_ACTIONS
@@ -3220,6 +3221,27 @@ def _integrated_operating_review(
         "DC-WEST": rng.randint(22, 34),
         "PLANT-RECOVERY": rng.randint(34, 48),
     }
+    subcontract_contract = None
+    intercompany_contract = None
+    nominal_production_quantity = source_supply["PLANT-RECOVERY"]
+    if "subcontracting-close-v1" in task.tags:
+        from .subcontracting import generate_subcontracting, reconcile_subcontracting
+
+        subcontract_contract = generate_subcontracting(rng)
+        if "distributed-subcontracting-v2" in task.tags:
+            from .subcontracting import add_lifecycle_variant
+
+            variant = ("quality_release", "reversal_not_approved", "hold_release_retry", "reversal_after_correction")[task.seed % 4]
+            subcontract_contract = add_lifecycle_variant(subcontract_contract, variant)
+        subcontract_bridge = reconcile_subcontracting(subcontract_contract)
+        if "intercompany-close-v1" in task.tags:
+            from .intercompany import generate_intercompany, reconcile_intercompany
+
+            intercompany_contract = generate_intercompany(subcontract_contract, rng)
+            intercompany_bridge = reconcile_intercompany(intercompany_contract, subcontract_bridge)
+        source_supply["PLANT-RECOVERY"] = min(
+            nominal_production_quantity, subcontract_bridge["available_finished_quantity"]
+        )
     total_supply = sum(source_supply.values())
 
     customer_classes = [
@@ -3379,6 +3401,32 @@ def _integrated_operating_review(
     overtime_rate = float(rng.randrange(120, 220, 10))
     inspection_cost = float(rng.randrange(8_000, 18_000, 1_000))
     insurance_recovery = float(rng.randrange(12_000, 28_000, 1_000))
+    claims_contract = None
+    if "claims-reconciliation-v1" in task.tags:
+        from .claims import generate_claims, reconcile_claims
+
+        claims_contract = generate_claims(rng, period)
+        insurance_bridge = reconcile_claims(claims_contract)
+        insurance_recovery = insurance_bridge["receivable_cents"] / 100
+    finance_contract = None
+    expense_adjustment = 0
+    if subcontract_contract:
+        expense_adjustment += subcontract_bridge["cogs_cents"] / 100
+    if intercompany_contract:
+        expense_adjustment += intercompany_bridge["reserve_reclassification_cents"] / 100
+    if "finance-reconciliation-v1" in task.tags:
+        from .finance_tail import generate_finance, reconcile_finance
+
+        finance_contract = generate_finance(rng, period)
+        finance_bridge = reconcile_finance(finance_contract)
+        expense_adjustment += finance_bridge["expense_cents"] / 100
+    cost_contract = None
+    if "receipt-cost-propagation-v1" in task.tags:
+        from .cost_propagation import generate_costs, reconcile_costs
+
+        cost_contract = generate_costs(rng)
+        cost_bridge = reconcile_costs(cost_contract)
+        expense_adjustment += cost_bridge["expense_adjustment_cents"] / 100
     disposal_cost = float(held_quantity * disposal_rate)
     production_cost = float(production_quantity * overtime_rate)
     premium_freight = float(
@@ -3401,7 +3449,7 @@ def _integrated_operating_review(
         + expedite_cost
         + inspection_cost
         + penalty_exposure
-        - insurance_recovery,
+        - insurance_recovery + expense_adjustment,
         2,
     )
 
@@ -3438,6 +3486,10 @@ def _integrated_operating_review(
         "governance": ("required_actions", "approval_policy"),
         "legacy": ("superseded_plan", "warning"),
     }
+    if "distributed-subcontracting-v2" in task.tags:
+        section_ids["quality"] += ("subcontract_quality",)
+        section_ids["inventory"] += ("subcontract_stock",)
+        section_ids["supplier"] += ("subcontract_events",)
 
     action_rows = [
         {"action_id": "A01", "owner": "quality_leadership", "due_minute": 18, "depends_on": [], "control": "freeze affected genealogy", "evidence_file_ids": [file_ids["quality"], file_ids["genealogy"]]},
@@ -3668,6 +3720,26 @@ def _integrated_operating_review(
         },
     }
 
+    if claims_contract:
+        artifact_schemas["integrated_recovery_model"]["financial_impact"]["insurance_bridge"] = (
+            "object following ERP reserve_policy.claims_contract.rules; monetary values in integer cents"
+        )
+    if finance_contract:
+        artifact_schemas["integrated_recovery_model"]["financial_impact"]["finance_bridge"] = (
+            "object following ERP reserve_policy.finance_contract.rules; integer cents"
+        )
+    if cost_contract:
+        artifact_schemas["integrated_recovery_model"]["financial_impact"]["cost_bridge"] = (
+            "object following ERP reserve_policy.cost_contract.rules; integer cents"
+        )
+    if subcontract_contract:
+        artifact_schemas["integrated_recovery_model"]["financial_impact"]["subcontract_bridge"] = (
+            "object following ERP reserve_policy.subcontract_contract.rules; integer cents"
+        )
+    if intercompany_contract:
+        artifact_schemas["integrated_recovery_model"]["financial_impact"]["intercompany_bridge"] = (
+            "object following ERP reserve_policy.intercompany_contract.rules; signed integer cents"
+        )
     state = _base_state(
         task,
         {
@@ -3793,9 +3865,13 @@ def _integrated_operating_review(
             "ERP-GL",
             {
                 "reserve_policy": {
-                    "formula": "disposal + inspection + recovery production + supplier expedite + premium freight + customer penalty exposure - insurance recovery",
+                    "formula": "disposal + inspection + recovery production + supplier expedite + premium freight + customer penalty exposure - insurance recovery" + (" + finance_bridge.expense_cents / 100" if finance_contract else "") + (" + cost_bridge.expense_adjustment_cents / 100" if cost_contract else ""),
                     "inspection_cost": inspection_cost,
-                    "insurance_recovery": insurance_recovery,
+                    **({"claims_contract": claims_contract} if claims_contract else {"insurance_recovery": insurance_recovery}),
+                    **({"finance_contract": finance_contract} if finance_contract else {}),
+                    **({"cost_contract": cost_contract} if cost_contract else {}),
+                    **({"subcontract_contract": subcontract_contract} if subcontract_contract else {}),
+                    **({"intercompany_contract": intercompany_contract} if intercompany_contract else {}),
                     "debit_account": "531800-INCIDENT-RESPONSE",
                     "credit_account": "219850-OPERATING-REVIEW-RESERVE",
                 },
@@ -3823,6 +3899,22 @@ def _integrated_operating_review(
         ),
     }
 
+    if subcontract_contract:
+        capacity_sections = state["case_files"][file_ids["capacity"]]["sections"]
+        capacity_sections["line_options"][0]["confirmed_quantity"] = nominal_production_quantity
+        capacity_sections["production_constraints"]["subcontract_supply_rule"] = (
+            "Nominal qualified capacity is not finished supply. PLANT-RECOVERY quantity is "
+            "min(nominal qualified capacity, subcontract_bridge.available_finished_quantity). "
+            "Reconcile ERP subcontract_contract before customer allocation."
+        )
+        state["case_files"][file_ids["finance"]]["sections"]["reserve_policy"]["formula"] += (
+            " + subcontract_bridge.cogs_cents / 100"
+        )
+    if intercompany_contract:
+        state["case_files"][file_ids["finance"]]["sections"]["reserve_policy"]["formula"] += (
+            " + intercompany_bridge.reserve_reclassification_cents / 100"
+        )
+
     final_quality_sections = {
         "scope": {"affected_lot_ids": affected_lots, "lot_quantities": lot_quantities},
         "disposition": {"status": "dispose_all_affected_lots", "disposal_cost_per_unit": disposal_rate},
@@ -3831,6 +3923,29 @@ def _integrated_operating_review(
         "recovery_options": [{"po_id": supplier_po_id, "quantity": supplier_quantity, "arrival_minute": production_completion - 12, "expedite_cost": expedite_cost, "status": "confirmed"}],
         "supplier_controls": {"material_required_for_line": production_quantity, "certificate_status": "verified"},
     }
+    if "distributed-subcontracting-v2" in task.tags:
+        # Published extracts deliberately require a join; no extract carries the
+        # solved supply or financial bridge. SCM v1 is incomplete, v2 authoritative.
+        ledger_contract = state["case_files"][file_ids["finance"]]["sections"]["reserve_policy"]["subcontract_contract"]
+        ledger_contract = deepcopy(ledger_contract)
+        lots = ledger_contract.pop("opening_lots")
+        history = ledger_contract.pop("events")
+        ledger_contract["source_join"] = {
+            "opening_lots": "WMS.subcontract_stock joined by lot_id to QMS.subcontract_quality",
+            "events": "SCM.subcontract_events, authoritative version 2",
+            "valuation": "This ERP contract supplies FX, units, cutoff and rules. Historical sequence is not the live simulation clock.",
+        }
+        state["case_files"][file_ids["finance"]]["sections"]["reserve_policy"]["subcontract_contract"] = ledger_contract
+        state["case_files"][file_ids["inventory"]]["sections"]["subcontract_stock"] = [
+            {key: value for key, value in row.items() if key != "quality"} for row in lots
+        ]
+        quality = {row["lot_id"]: row["quality"] for row in lots}
+        state["case_files"][file_ids["quality"]]["sections"]["subcontract_quality"] = deepcopy(quality)
+        final_quality_sections["subcontract_quality"] = deepcopy(quality)
+        state["case_files"][file_ids["supplier"]]["sections"]["subcontract_events"] = [
+            deepcopy(row) for row in history if row["sequence"] < 17
+        ]
+        final_supplier_sections["subcontract_events"] = deepcopy(history)
     final_order_sections = {
         "commitments": final_orders,
         "commercial_rules": {"status": "legal-reviewed", "shortfall_treatment": "record every uncommitted unit as penalty exposure"},
@@ -3865,6 +3980,11 @@ def _integrated_operating_review(
             "premium_freight": premium_freight,
             "customer_penalty_exposure": penalty_exposure,
             "insurance_recovery": insurance_recovery,
+            **({"insurance_bridge": insurance_bridge} if claims_contract else {}),
+            **({"finance_bridge": finance_bridge} if finance_contract else {}),
+            **({"cost_bridge": cost_bridge} if cost_contract else {}),
+            **({"subcontract_bridge": subcontract_bridge} if subcontract_contract else {}),
+            **({"intercompany_bridge": intercompany_bridge} if intercompany_contract else {}),
             "reserve_amount": reserve_amount,
             "debit_account": "531800-INCIDENT-RESPONSE",
             "credit_account": "219850-OPERATING-REVIEW-RESERVE",
@@ -3947,6 +4067,58 @@ def _integrated_operating_review(
             for key, section in (("orders", "commitments"), ("transport", "route_quotes"), ("brief", "decision_policy"))
         ],
     }
+    if "distributed-subcontracting-v2" in task.tags:
+        artifact_citations["integrated_recovery_model"].extend(
+            {"file_id": file_ids[key], "section_id": section, "version": source_versions[file_ids[key]]}
+            for key, section in (("quality", "subcontract_quality"), ("inventory", "subcontract_stock"), ("supplier", "subcontract_events"))
+        )
+    if "explicit-review-contract-v2" in task.tags:
+        delivery = state["case_files"][file_ids["brief"]]["sections"]["delivery_contract"]
+        delivery["required_citations"] = artifact_citations
+        delivery["customer_schedule_rules"] = {
+            "order": "order_id ascending",
+            "status": "fully_committed when shortfall_quantity=0; executive_escalation otherwise",
+            "latest_arrival_minute": "maximum allocated arrival_minute; null when no allocation",
+        }
+        delivery["investigation_requirement"] = (
+            "Read every section of every listed file, including superseded_plan and warning "
+            "in the legacy file, to document its rejection. Do not use the legacy plan as decision evidence."
+        )
+        delivery["cash_exclusion_labels"] = (
+            "Use exact reason labels in precedence order: duplicate_payment, unsettled, "
+            "after_cash_cutoff, unrecognized_document."
+        )
+    if "revision-safe-review-v3" in task.tags:
+        from .artifact_contract import structural_schema
+
+        state["case_files"][file_ids["brief"]]["sections"]["decision_policy"]["source_order"] = list(source_ids)
+        delivery = state["case_files"][file_ids["brief"]]["sections"]["delivery_contract"]
+        delivery["structural_schemas"] = {
+            kind: structural_schema(content) for kind, content in artifact_contents.items()
+        }
+        delivery["annotation_policy"] = (
+            "Every field in structural_schemas is required; arrays have no fixed length in the schema. "
+            "Use the business and sorting rules to derive array contents. Only additional fields "
+            "id, created_minute, supersedes, notes, metadata are ignored for artifact comparison. "
+            "Other extra keys are rejected. Include case_id in EACH exception row, not only the register root."
+        )
+        delivery["exception_revision_policy"] = (
+            "Calling create_exception_resolution again for the same case_id and exception_id supersedes "
+            "the previous active resolution. Historical records remain in the audit trail but only the "
+            "latest resolved row is used for publication. Use one latest row per exception_id in the "
+            "artifact, sorted by exception_id. Refresh the artifact and package after any correction. "
+            "Creating or revising a resolution invalidates outstanding publication approvals for the case; "
+            "request fresh approval after corrections before executing publication."
+        )
+    if "semantic-close-v2" in task.tags:
+        from .artifact_contract import canonical_exclusions
+
+        artifact_contents = canonical_exclusions(artifact_contents)
+        delivery["unordered_exclusion_reports"] = (
+            "Output arrays named exclusions are compared as unordered collections of complete records, independent of presentation order. "
+            "Every record and exact reason is still required; duplicates are not removed. "
+            "This does not change chronological input event processing or any other ordered array."
+        )
     state["operating_review_truth"][case_id] = {
         "artifact_contents": artifact_contents,
         "artifact_citations": artifact_citations,
@@ -4050,6 +4222,35 @@ def _integrated_operating_review(
         ],
     )
     economics["target_minutes"] = 140
+    if "close-execution-saga-v1" in task.tags:
+        from .close_execution import PUBLIC_RULES, build_close_execution
+
+        policy = state["case_files"][file_ids["finance"]]["sections"]["reserve_policy"]
+        state["close_execution"] = build_close_execution(
+            policy["intercompany_contract"], artifact_contents["integrated_recovery_model"]["financial_impact"]["intercompany_bridge"]
+        )
+        state["case_files"][file_ids["brief"]]["sections"]["delivery_contract"]["close_execution_rules"] = PUBLIC_RULES
+        for action in ("post_close_stage", "release_close_hold", "reconcile_close_ledger"):
+            state["policies"]["protected_actions"].append(action)
+        state["policies"]["approval_requirements"]["publish_operating_review"]["executed_actions"] = [
+            {"action": "reconcile_close_ledger", "target": case_id}
+        ]
+        criteria.append(_criterion("close-ledger-reconciled", "orchestration", 20, "executed_action", action="reconcile_close_ledger", target=case_id))
+    if "public-close-contract-v2" in task.tags:
+        from .artifact_contract import public_review_scoring
+
+        if "semantic-close-v2" in task.tags:
+            dimension_budgets = {"investigation": 5, "adaptation": 5, "exception_handling": 15,
+                "artifact_accuracy": 30, "grounding": 5, "artifact_consistency": 10,
+                "governance": 15, "communication": 5, "orchestration": 10}
+            for dimension, budget in dimension_budgets.items():
+                members = [criterion for criterion in criteria if criterion["dimension"] == dimension]
+                total = sum(criterion["weight"] for criterion in members)
+                for criterion in members:
+                    criterion["weight"] = budget * criterion["weight"] / total
+        economics["target_minutes"] = 300
+        state["incident"]["finish_by_minute_for_full_credit"] = economics["target_minutes"]
+        state["case_files"][file_ids["brief"]]["sections"]["delivery_contract"]["evaluation_contract"] = public_review_scoring(task, criteria, economics)
     return ScenarioInstance(state, events, criteria, economics)
 
 

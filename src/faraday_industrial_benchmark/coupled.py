@@ -3,8 +3,11 @@
 from itertools import product
 
 
-def group_charge(group, modes):
+def group_charge(group, modes, scenario=None):
+    group = {**group, **group.get("scenario_overrides", {}).get((scenario or {}).get("id"), {})}
     shipped = [mode for mode in modes if mode != "defer"]
+    if any(mode in group.get("prohibited_modes", []) for mode in shipped):
+        return None
     if len(shipped) < group["minimum_orders"]:
         return None
     # A paired installation kit must arrive together, or both components defer.
@@ -14,28 +17,52 @@ def group_charge(group, modes):
     return group["service_credit_cents"][deferred]
 
 
-def surcharge(case, assignments):
+def terminal_charge(case, used, scenario=None):
+    """Carrier minimum dispatch lots and emergency tariffs apply to total mode use."""
+    from .contingent import MODES
+
+    contract = case["coupling"]
+    terms = contract.get("dispatch_overrides", {}).get((scenario or {}).get("id"), {})
+    minimums = terms.get("minimum_packs", {})
+    if any(0 < qty < minimums.get(mode, 0) for mode, qty in zip(MODES[:3], used)):
+        return None
+    fees = {**contract["activation_fees_cents"], **terms.get("activation_fees_cents", {})}
+    return sum(fees[mode] for mode, qty in zip(MODES[:3], used) if qty)
+
+
+def surcharge(case, assignments, scenario=None):
+    from .workforce import resource_limits, resource_usage
+
+    limits = resource_limits(case, scenario or {})
+    consumption = resource_usage(case, assignments)
+    if any(used > limit for used, limit in zip(consumption, limits)):
+        return None
     by_id = {row["order_id"]: row["mode"] for row in assignments}
     total = 0
     for group in case["coupling"]["customers"]:
-        charge = group_charge(group, [by_id[oid] for oid in group["orders"]])
+        charge = group_charge(group, [by_id[oid] for oid in group["orders"]], scenario)
         if charge is None:
             return None
         total += charge
-    used = set(by_id.values()) - {"defer"}
-    return total + sum(case["coupling"]["activation_fees_cents"][mode] for mode in used)
+    used = tuple(
+        sum(o["packs"] for o in case["orders"] if by_id[o["order_id"]] == mode)
+        for mode in ("stock", "standard", "express")
+    )
+    terminal = terminal_charge(case, used, scenario)
+    return None if terminal is None else total + terminal
 
 
 def solve_branch(case, reservations, scenario):
     from .contingent import MODES, capacities, choice, reservation_fee
+    from .workforce import resource_limits, resource_usage
 
-    limits = capacities(case, reservations, scenario)
+    limits = capacities(case, reservations, scenario) + resource_limits(case, scenario)
     orders = {row["order_id"]: row for row in case["orders"]}
-    states = {(0, 0, 0): (0, [])}
+    states = {(0,) * len(limits): (0, [])}
     for group in case["coupling"]["customers"]:
         options = {}
         for modes in product(MODES, repeat=len(group["orders"])):
-            credit = group_charge(group, modes)
+            credit = group_charge(group, modes, scenario)
             if credit is None:
                 continue
             choices = [
@@ -45,11 +72,15 @@ def solve_branch(case, reservations, scenario):
             if any(option is None for option in choices):
                 continue
             usage = tuple(sum(option[1][i] for option in choices) for i in range(3))
+            assignments = [
+                {"order_id": oid, "mode": mode} for oid, mode in zip(group["orders"], modes)
+            ]
+            usage += resource_usage(case, assignments)
             cost = credit + sum(option[0] for option in choices)
             if usage not in options or cost < options[usage][0]:
                 options[usage] = (
                     cost,
-                    [{"order_id": oid, "mode": mode} for oid, mode in zip(group["orders"], modes)],
+                    assignments,
                 )
         following = {}
         for used, (cost, rows) in states.items():
@@ -67,11 +98,13 @@ def solve_branch(case, reservations, scenario):
         states = following
     if not states:
         return None
-    fees = case["coupling"]["activation_fees_cents"]
     final = [
-        (cost + sum(fees[mode] for i, mode in enumerate(MODES[:3]) if used[i]), rows)
+        (cost + terminal, rows)
         for used, (cost, rows) in states.items()
+        if (terminal := terminal_charge(case, used, scenario)) is not None
     ]
+    if not final:
+        return None
     cost, rows = min(final, key=lambda item: item[0])
     return cost + reservation_fee(case, reservations), rows
 

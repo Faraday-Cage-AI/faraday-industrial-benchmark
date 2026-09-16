@@ -1,0 +1,11 @@
+{
+  "scope": "case 001 only, version 0.11.0-decision.1; not full-suite coverage",
+  "frozen_inputs_verified_before_v2_changes": true,
+  "source_archive": "runs/decision-v1-background-pilot-20260915/frozen-source.tar.gz",
+  "episodes_verified": 2,
+  "episodes": [
+    {"model": "gpt-5.4", "exact_replay": true, "score_verified": true, "score": 99.69, "strict_success": true},
+    {"model": "gpt-5.5", "exact_replay": true, "score_verified": true, "score": 90.4, "strict_success": false}
+  ],
+  "interpretation": "Both models found and executed the optimal plan. GPT-5.5 lost exception points solely for additional explanatory fields and evidence points for descriptions accompanying valid IDs. This is not evidence of worse operational reasoning. Original scores remain unchanged."
+}

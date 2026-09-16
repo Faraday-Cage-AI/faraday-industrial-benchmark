@@ -84,6 +84,9 @@ def choice(
     case: dict, scenario: dict, order: dict, mode: str
 ) -> tuple[int, tuple[int, int, int]] | None:
     """Return cost/resource use for one whole-order assignment; None is illegal."""
+    fixed = case.get("_firm_modes", {})
+    if order["order_id"] in fixed and fixed[order["order_id"]] != mode:
+        return None
     quantity = order["packs"]
     if mode == "defer":
         if order["must_serve"]:
@@ -145,9 +148,9 @@ def branch_cost(
     if case.get("coupling"):
         from .coupled import surcharge
 
-        extra = surcharge(case, assignments)
+        extra = surcharge(case, assignments, scenario)
         if extra is None:
-            return None, "customer service floor or installation-kit coupling violated"
+            return None, "customer, kit, carrier, labor, or treasury contract violated"
         total += extra
     return total, "feasible"
 
@@ -175,6 +178,17 @@ def validate_policy(case: dict, policy: Any) -> dict:
         if cost is None:
             return invalid(f"{scenario['id']}: {detail}")
         costs[scenario["id"]] = cost
+    firm = case.get("coupling", {}).get("firm_releases")
+    if firm:
+        releases = policy.get("firm_releases")
+        if not isinstance(releases, dict) or set(releases) != set(firm["order_ids"]):
+            return invalid("firm_releases must contain exactly the disclosed early-release orders")
+        if any(not isinstance(mode, str) or mode not in MODES for mode in releases.values()):
+            return invalid("unknown firm-release mode")
+        for rows in branches.values():
+            by_id = {row["order_id"]: row["mode"] for row in rows}
+            if any(by_id[oid] != mode for oid, mode in releases.items()):
+                return invalid("firm releases cannot change between scenario branches")
     return {
         "feasible": True,
         "branch_costs_cents": costs,
@@ -221,6 +235,10 @@ def solve_branch(case: dict, reservations: dict, scenario: dict) -> tuple[int, l
 
 def solve(case: dict) -> dict:
     """Reference computation from visible inputs, accepting all optimum ties."""
+    if case.get("coupling", {}).get("firm_releases") and "_firm_modes" not in case:
+        from .firm_release import solve_firm
+
+        return solve_firm(case)
     best = None
     best_objective = None
     for standard, express in product(range(3), repeat=2):
@@ -247,6 +265,8 @@ def solve(case: dict) -> dict:
     if best is None:
         raise ValueError("no feasible contingent policy")
     policy = best[1]
+    if "_firm_modes" in case:
+        policy["firm_releases"] = dict(case["_firm_modes"])
     assessment = validate_policy(case, policy)
     policy.update(
         inventory_packs=case["stock"],
@@ -273,6 +293,10 @@ def assess(world) -> dict:
         and all(isinstance(r, dict) and isinstance(r.get("record_id"), str) for r in rows)
         and sorted(rows, key=lambda r: r["record_id"]) == case["exceptions"]
     )
+    if "annotated-decision-v2" in world.task.tags:
+        from .decision_annotations import exception_values_match
+
+        report["exceptions"] = exception_values_match(rows, case["exceptions"])
     report["cost_reporting"] = policy.get("branch_costs_cents") == report.get(
         "branch_costs_cents"
     ) and policy.get("worst_case_cost_cents") == report.get("worst_case_cost_cents")
@@ -301,7 +325,7 @@ def apply_action(world, action: str, target: str, payload: dict) -> tuple[bool, 
     if action == "reserve_network_capacity":
         if world.state.get("network_commitment"):
             return False, "reservation_already_committed"
-        if world.minute > 60:
+        if world.minute > world.state["incident"].get("reservation_deadline", 60):
             return False, "reservation_window_closed"
         if artifact["artifact_type"] != ARTIFACT_TYPES[0]:
             return False, "policy_artifact_required"
@@ -355,7 +379,13 @@ def apply_action(world, action: str, target: str, payload: dict) -> tuple[bool, 
         isinstance(r, dict) and isinstance(r.get("order_id"), str) for r in content["allocations"]
     ):
         content["allocations"].sort(key=lambda r: r["order_id"])
-    if content != expected:
+    if "public-decision-contract-v3" in world.task.tags:
+        from .decision_contract import ledger_errors
+
+        errors = ledger_errors(content, expected, world.state["incident"]["id"], commitment["artifact_id"])
+        if errors:
+            return False, "ledger_validation_failed: " + "; ".join(errors)
+    elif content != expected:
         return False, "ledger_does_not_reconcile_with_committed_policy"
     if {"file_id": live["id"], "section_id": "outcome", "version": 2} not in artifact["citations"]:
         return False, "realized_outcome_citation_required"
@@ -369,6 +399,8 @@ def build(task, rng):
     from .scenarios import ScenarioInstance, _base_state, _case_file, _criterion, _event
 
     case_id = f"NETWORK-{rng.randrange(100000, 999999)}"
+    firm_track = "firm-release-v1" in task.tags
+    reservation_deadline, reveal_minute = (180, 200) if firm_track else (60, 80)
     prefix = f"{case_id}-"
     stock = rng.randint(10, 16)
     movements = [
@@ -554,8 +586,8 @@ def build(task, rng):
             "type": task.family,
             "status": "open",
             "summary": "Authorize a robust capacity reservation before uncertainty resolves; execute and reconcile the realized branch.",
-            "reservation_deadline": 60,
-            "outcome_reveal_minute": 80,
+            "reservation_deadline": reservation_deadline,
+            "outcome_reveal_minute": reveal_minute,
             "notification_roles": ["supply_planning", "plant_controller", "customer_operations"],
         },
     )
@@ -631,12 +663,46 @@ def build(task, rng):
             },
             "rules": "Identify actual exception rows from evidence. Use the first applicable WMS exclusion rule. Record id is the row id, or order_id for CRM. No fixed number of exceptions is promised.",
         },
-        "LIVE": {"outcome": {"status": "pending", "reveal_minute": 80}},
+        "LIVE": {"outcome": {"status": "pending", "reveal_minute": reveal_minute}},
     }
     if "coupled-frontier-v1" in task.tags:
         from .coupled import harden
 
         harden(contents, rng)
+        if "long-tail-contracts-v1" in task.tags:
+            from .long_tail import harden_long_tail
+
+            harden_long_tail(contents, rng)
+        if "cross-functional-v1" in task.tags:
+            from .workforce import harden_workforce
+
+            harden_workforce(contents, rng)
+        if firm_track:
+            from .firm_release import harden_firm_release
+
+            harden_firm_release(contents)
+            contents["GRC"]["mandate"]["timing"] = (
+                "Reserve and firm releases by minute 180, before the minute-200 outcome. "
+                "Execute that exact committed branch afterward. Orders and supplier terms are "
+                "revised at minutes 5 and 10; read final versions before reserving."
+            )
+    if "annotated-decision-v2" in task.tags:
+        contents["GRC"]["annotation_policy"] = {
+            "exception_rows": "record_id and reason_code are required and graded exactly. Optional reason and notes strings and metadata object are allowed; other keys are rejected. Row order is immaterial, duplicates are not allowed.",
+            "final_evidence": "Evidence entries may contain a bare record ID or explanatory text containing that exact existing ID as a separate token. Unique existing IDs count once; fragments and invented IDs never count.",
+        }
+    if "public-decision-contract-v3" in task.tags:
+        from .decision_contract import artifact_schemas
+
+        contents["GRC"]["structural_schemas"] = artifact_schemas()
+        contents["GRC"]["evaluation_contract"] = {}
+        contents["GRC"]["annotation_policy"]["ledger"] = (
+            "Optional reason/notes strings, metadata/reconciliation objects are explanatory and ungraded. "
+            "Optional case_id and policy_artifact_id or committed_policy_artifact_id must reference this "
+            "case and the committed policy artifact. Required business values are exact. Allocation row "
+            "order is immaterial; all committed orders, including deferred ones, must appear exactly once. "
+            "Other fields are rejected at creation with field paths. Read structural_schemas."
+        )
     files = {
         prefix + system: _case_file(prefix + system, system + " source extract", system, sections)
         for system, sections in contents.items()
@@ -675,7 +741,7 @@ def build(task, rng):
         )
     events.append(
         _event(
-            80,
+            reveal_minute,
             "case_file_update",
             prefix + "REALIZATION",
             file_id=prefix + "LIVE",
@@ -739,12 +805,17 @@ def build(task, rng):
         "unmitigated_cost": optimum / 100 + 100000,
         "best_known_cost": optimum / 100,
         "delay_cost_per_minute": 10,
-        "target_minutes": 120,
+        "target_minutes": 260 if firm_track else 120,
         "checks": [
             {"check": "network_assessment", "field": "near_optimal", "weight": 1},
             {"check": "network_assessment", "field": "executed", "weight": 1},
         ],
     }
+    if "public-decision-contract-v3" in task.tags:
+        from .decision_contract import public_scoring_contract
+
+        state["case_files"][prefix + "GRC"]["sections"]["evaluation_contract"] = public_scoring_contract(task, criteria, economics)
+        state["incident"]["finish_by_minute_for_full_credit"] = economics["target_minutes"]
     return ScenarioInstance(state, events, criteria, economics)
 
 

@@ -1,0 +1,105 @@
+{
+  "track": "public development; tool-only baseline",
+  "task_versions": [
+    "0.11.0-decision.2"
+  ],
+  "measurement_settings": {
+    "adapter_sha256": "734aeda668b116b237e2438fe1c06e179a0a7cf3b1d377d1d2b0e3e6e8be1b5b",
+    "per_response_output_limit": 65536,
+    "reasoning_effort": "xhigh",
+    "timeout_seconds": 3600,
+    "total_output_limit": 200000
+  },
+  "pricing_sources": [
+    "https://developers.openai.com/api/docs/models/gpt-5.4",
+    "https://developers.openai.com/api/docs/models/gpt-5.5"
+  ],
+  "cost_coverage": "Logged response usage only. Costs of unreturned requests or automatic retries may be missing; estimates are not a complete invoice.",
+  "interpretation": "Single attempts on the reported public development cases; not a held-out model ranking. API prices are estimates, not invoices. Infrastructure failures and token truncation must be examined separately.",
+  "models": {
+    "gpt-5.4": {
+      "completed_episodes": 1,
+      "strict_successes": 1,
+      "execution_status_counts": {
+        "completed_without_recorded_execution_limit": 1
+      },
+      "mean_score": 100.0,
+      "estimated_api_cost_usd": 2.7995
+    },
+    "gpt-5.5": {
+      "completed_episodes": 1,
+      "strict_successes": 0,
+      "execution_status_counts": {
+        "completed_without_recorded_execution_limit": 1
+      },
+      "mean_score": 98.49,
+      "estimated_api_cost_usd": 7.2599
+    }
+  },
+  "episodes": [
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-001",
+      "score": 100.0,
+      "strict_success": true,
+      "execution_status": "completed_without_recorded_execution_limit",
+      "diagnostics_not_alternative_scores": {
+        "review_published": null,
+        "all_artifact_value_checks_passed": null,
+        "all_functions_notified": null,
+        "structured_final_evidence_passed": null,
+        "network_policy_feasible": true,
+        "network_policy_objective_passed": true,
+        "network_recovery_executed": true,
+        "reservation_before_reveal": true,
+        "network_reconciliation_passed": true
+      },
+      "failed_criteria": [],
+      "failure_details": [],
+      "violations": [],
+      "tool_calls": 39,
+      "wall_seconds": 922.7759020419326,
+      "tokens": {
+        "input": 1405624,
+        "cached": 1236736,
+        "output": 137875
+      },
+      "estimated_api_cost_usd": 2.799529,
+      "api_responses": 39,
+      "incomplete_responses": 0,
+      "report": "runs/decision-v2-background-20260915/gpt-5.4-faraday-decision-001.json"
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-001",
+      "score": 98.49,
+      "strict_success": false,
+      "execution_status": "completed_without_recorded_execution_limit",
+      "diagnostics_not_alternative_scores": {
+        "review_published": null,
+        "all_artifact_value_checks_passed": null,
+        "all_functions_notified": null,
+        "structured_final_evidence_passed": null,
+        "network_policy_feasible": true,
+        "network_policy_objective_passed": true,
+        "network_recovery_executed": true,
+        "reservation_before_reveal": true,
+        "network_reconciliation_passed": true
+      },
+      "failed_criteria": [],
+      "failure_details": [],
+      "violations": [],
+      "tool_calls": 70,
+      "wall_seconds": 1228.05109587498,
+      "tokens": {
+        "input": 3269898,
+        "cached": 2746624,
+        "output": 109008
+      },
+      "estimated_api_cost_usd": 7.259922,
+      "api_responses": 70,
+      "incomplete_responses": 0,
+      "report": "runs/decision-v2-background-20260915/gpt-5.5-faraday-decision-001.json"
+    }
+  ]
+}

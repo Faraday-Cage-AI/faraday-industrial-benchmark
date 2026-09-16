@@ -1,0 +1,2564 @@
+{
+  "kind": "deterministic_deliverable_corruption_not_model_result",
+  "cases": 24,
+  "checks": 132,
+  "rejected": 132,
+  "results": [
+    {
+      "task": "faraday-professional-001",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-001",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-001",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-001",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-002",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-002",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-002",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-002",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-003",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-003",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-003",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-003",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-004",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-004",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-004",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-004",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-005",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-005",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-005",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-005",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-006",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-006",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-006",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-006",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-007",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-007",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-007",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-007",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-008",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-008",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-008",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-008",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-009",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-009",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-009",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-009",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-010",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-010",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-010",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-010",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-011",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-011",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-011",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-011",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-012",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-012",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-012",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-012",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-001",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-001",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-001",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-001",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-001",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-001",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-001",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-002",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-002",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-002",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-002",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-002",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-002",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-002",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-003",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-003",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-003",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-003",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-003",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-003",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-003",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-004",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-004",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-004",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-004",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-004",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-004",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-004",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-005",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-005",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-005",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-005",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-005",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-005",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-005",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-006",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-006",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-006",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-006",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-006",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-006",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-006",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-007",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-007",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-007",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-007",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-007",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-007",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-007",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-008",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-008",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-008",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-008",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-008",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-008",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-008",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-009",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-009",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-009",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-009",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-009",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-009",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-009",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-010",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-010",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-010",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-010",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-010",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-010",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-010",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-011",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-011",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-011",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-011",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-011",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-011",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-011",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-012",
+      "mistake": "omit_claims_bridge",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-after-deductible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-already-received-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-capped-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-eligible-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-participated-cents",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-receivable-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-012",
+      "mistake": "double_count_prior_receipt",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-012",
+      "mistake": "omit_exclusion_evidence",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-0-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-1-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-2-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-3-row-id",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-reason",
+        "artifact-integrated_recovery_model-financial-impact-insurance-bridge-exclusions-4-row-id",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-012",
+      "mistake": "inconsistent_brief",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-executive_decision_brief-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-012",
+      "mistake": "cash_reduces_expense",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-012",
+      "mistake": "ignore_credit_notes",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-professional-finance-012",
+      "mistake": "wrong_cash_cutoff",
+      "mutations": 1,
+      "strict_success": false,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-finance-bridge-settled-cash-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    }
+  ]
+}

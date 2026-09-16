@@ -1,0 +1,144 @@
+{
+  "version": "0.11.0-decision.1",
+  "kind": "algorithmic_ablation_not_model_result",
+  "cases": 8,
+  "hindsight_failures": 8,
+  "results": [
+    {
+      "task": "faraday-decision-001",
+      "seed": 71101,
+      "joint_objective_cents": [
+        1688325,
+        9532850
+      ],
+      "hindsight_objective_cents": [
+        1636100,
+        9348350
+      ],
+      "hindsight_policy_rejected": true,
+      "assessment": {
+        "feasible": false,
+        "error": "firm releases cannot change between scenario branches"
+      }
+    },
+    {
+      "task": "faraday-decision-002",
+      "seed": 71102,
+      "joint_objective_cents": [
+        2517780,
+        14034515
+      ],
+      "hindsight_objective_cents": [
+        2517780,
+        13858930
+      ],
+      "hindsight_policy_rejected": true,
+      "assessment": {
+        "feasible": false,
+        "error": "firm releases cannot change between scenario branches"
+      }
+    },
+    {
+      "task": "faraday-decision-003",
+      "seed": 71103,
+      "joint_objective_cents": [
+        1820825,
+        9695175
+      ],
+      "hindsight_objective_cents": [
+        1820825,
+        9695175
+      ],
+      "hindsight_policy_rejected": true,
+      "assessment": {
+        "feasible": false,
+        "error": "firm releases cannot change between scenario branches"
+      }
+    },
+    {
+      "task": "faraday-decision-004",
+      "seed": 71104,
+      "joint_objective_cents": [
+        2341910,
+        12792015
+      ],
+      "hindsight_objective_cents": [
+        2341910,
+        12043100
+      ],
+      "hindsight_policy_rejected": true,
+      "assessment": {
+        "feasible": false,
+        "error": "firm releases cannot change between scenario branches"
+      }
+    },
+    {
+      "task": "faraday-decision-005",
+      "seed": 71105,
+      "joint_objective_cents": [
+        2111560,
+        12516060
+      ],
+      "hindsight_objective_cents": [
+        2111560,
+        10813080
+      ],
+      "hindsight_policy_rejected": true,
+      "assessment": {
+        "feasible": false,
+        "error": "firm releases cannot change between scenario branches"
+      }
+    },
+    {
+      "task": "faraday-decision-006",
+      "seed": 71106,
+      "joint_objective_cents": [
+        2577540,
+        14053400
+      ],
+      "hindsight_objective_cents": [
+        2577540,
+        14053400
+      ],
+      "hindsight_policy_rejected": true,
+      "assessment": {
+        "feasible": false,
+        "error": "firm releases cannot change between scenario branches"
+      }
+    },
+    {
+      "task": "faraday-decision-007",
+      "seed": 71107,
+      "joint_objective_cents": [
+        2161320,
+        11299260
+      ],
+      "hindsight_objective_cents": [
+        1829600,
+        10957540
+      ],
+      "hindsight_policy_rejected": true,
+      "assessment": {
+        "feasible": false,
+        "error": "firm releases cannot change between scenario branches"
+      }
+    },
+    {
+      "task": "faraday-decision-008",
+      "seed": 71108,
+      "joint_objective_cents": [
+        1912495,
+        10804805
+      ],
+      "hindsight_objective_cents": [
+        1912495,
+        10768505
+      ],
+      "hindsight_policy_rejected": true,
+      "assessment": {
+        "feasible": false,
+        "error": "firm releases cannot change between scenario branches"
+      }
+    }
+  ]
+}

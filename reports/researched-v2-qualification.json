@@ -1,0 +1,664 @@
+{
+  "kind": "deterministic_negative_controls_not_model_results",
+  "positive_cases": 8,
+  "corruptions_rejected": 32,
+  "results": [
+    {
+      "task": "faraday-researched-001",
+      "mistake": "missing_cost_bridge",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-propagated",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-001",
+      "mistake": "inventory_as_expense",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-001",
+      "mistake": "quarantine_available",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-001",
+      "mistake": "liability_not_balanced",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-002",
+      "mistake": "missing_cost_bridge",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-propagated",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-002",
+      "mistake": "inventory_as_expense",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-002",
+      "mistake": "quarantine_available",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-002",
+      "mistake": "liability_not_balanced",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-003",
+      "mistake": "missing_cost_bridge",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-propagated",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-003",
+      "mistake": "inventory_as_expense",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-003",
+      "mistake": "quarantine_available",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-003",
+      "mistake": "liability_not_balanced",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-004",
+      "mistake": "missing_cost_bridge",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-propagated",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-004",
+      "mistake": "inventory_as_expense",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-004",
+      "mistake": "quarantine_available",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-004",
+      "mistake": "liability_not_balanced",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-005",
+      "mistake": "missing_cost_bridge",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-propagated",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-005",
+      "mistake": "inventory_as_expense",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-005",
+      "mistake": "quarantine_available",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-005",
+      "mistake": "liability_not_balanced",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-006",
+      "mistake": "missing_cost_bridge",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-propagated",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-006",
+      "mistake": "inventory_as_expense",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-006",
+      "mistake": "quarantine_available",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-006",
+      "mistake": "liability_not_balanced",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-007",
+      "mistake": "missing_cost_bridge",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-propagated",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-007",
+      "mistake": "inventory_as_expense",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-007",
+      "mistake": "quarantine_available",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-007",
+      "mistake": "liability_not_balanced",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-008",
+      "mistake": "missing_cost_bridge",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-0-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-reason",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-exclusions-1-receipt-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-0-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-2-propagated",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-available-quantity",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-expense-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-inventory-adjustment-cents",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-node-id",
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-3-propagated",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-008",
+      "mistake": "inventory_as_expense",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-reserve-amount",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-008",
+      "mistake": "quarantine_available",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-nodes-1-available-quantity",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    },
+    {
+      "task": "faraday-researched-008",
+      "mistake": "liability_not_balanced",
+      "rejected": true,
+      "failed_criteria": [
+        "artifact-integrated_recovery_model-financial-impact-cost-bridge-liability-adjustment-cents",
+        "cross-artifact-consistency",
+        "complete-review-package",
+        "publication-execution",
+        "notify-all-functions",
+        "finish-with-record-evidence",
+        "revision-before-publication"
+      ]
+    }
+  ],
+  "task_version": "0.10.0-researched.2"
+}

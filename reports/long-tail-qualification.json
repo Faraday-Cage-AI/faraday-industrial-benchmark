@@ -1,0 +1,1296 @@
+{
+  "version": "0.7.0-tail.1",
+  "kind": "algorithmic_ablation_not_model_result",
+  "cases": 24,
+  "failures": {
+    "customer_overrides": 22,
+    "carrier_overrides": 4,
+    "both": 22
+  },
+  "results": [
+    {
+      "task": "faraday-long-tail-001",
+      "seed": 30701,
+      "objective": [
+        1161550,
+        4576350
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 396320,
+              "port_delay": 574360,
+              "quality_expansion": 595920,
+              "carrier_strike": 595000,
+              "compound_port_quality": 864910,
+              "compound_carrier_quality": 1357400
+            },
+            "worst_case_cost_cents": 1357400,
+            "reservation_fee_cents": 260000
+          }
+        },
+        "carrier_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 396320,
+              "port_delay": 574360,
+              "quality_expansion": 595920,
+              "carrier_strike": 595000,
+              "compound_port_quality": 864910,
+              "compound_carrier_quality": 1182400
+            },
+            "worst_case_cost_cents": 1182400,
+            "reservation_fee_cents": 260000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 396320,
+              "port_delay": 574360,
+              "quality_expansion": 595920,
+              "carrier_strike": 595000,
+              "compound_port_quality": 864910,
+              "compound_carrier_quality": 1357400
+            },
+            "worst_case_cost_cents": 1357400,
+            "reservation_fee_cents": 260000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-002",
+      "seed": 30702,
+      "objective": [
+        2759880,
+        10479190
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 1069380,
+              "port_delay": 1492410,
+              "quality_expansion": 1086390,
+              "carrier_strike": 1335120,
+              "compound_port_quality": 2759880,
+              "compound_carrier_quality": 2736010
+            },
+            "worst_case_cost_cents": 2759880,
+            "reservation_fee_cents": 240000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-003",
+      "seed": 30703,
+      "objective": [
+        2381930,
+        9434650
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 858920,
+              "port_delay": 1221000,
+              "quality_expansion": 1048200,
+              "carrier_strike": 1622200,
+              "compound_port_quality": 2477410,
+              "compound_carrier_quality": 2496080
+            },
+            "worst_case_cost_cents": 2496080,
+            "reservation_fee_cents": 215000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 858920,
+              "port_delay": 1221000,
+              "quality_expansion": 1048200,
+              "carrier_strike": 1622200,
+              "compound_port_quality": 2381930,
+              "compound_carrier_quality": 2302400
+            },
+            "worst_case_cost_cents": 2381930,
+            "reservation_fee_cents": 215000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 858920,
+              "port_delay": 1221000,
+              "quality_expansion": 1048200,
+              "carrier_strike": 1622200,
+              "compound_port_quality": 2477410,
+              "compound_carrier_quality": 2496080
+            },
+            "worst_case_cost_cents": 2496080,
+            "reservation_fee_cents": 215000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-004",
+      "seed": 30704,
+      "objective": [
+        1332935,
+        5073750
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 558260,
+              "port_delay": 651525,
+              "quality_expansion": 632870,
+              "carrier_strike": 723950,
+              "compound_port_quality": 1174210,
+              "compound_carrier_quality": 1332935
+            },
+            "worst_case_cost_cents": 1332935,
+            "reservation_fee_cents": 215000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 558260,
+              "port_delay": 651525,
+              "quality_expansion": 632870,
+              "carrier_strike": 723950,
+              "compound_port_quality": 1174210,
+              "compound_carrier_quality": 1332935
+            },
+            "worst_case_cost_cents": 1332935,
+            "reservation_fee_cents": 215000
+          }
+        },
+        "both": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 558260,
+              "port_delay": 651525,
+              "quality_expansion": 632870,
+              "carrier_strike": 723950,
+              "compound_port_quality": 1174210,
+              "compound_carrier_quality": 1332935
+            },
+            "worst_case_cost_cents": 1332935,
+            "reservation_fee_cents": 215000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-005",
+      "seed": 30705,
+      "objective": [
+        1750790,
+        6747520
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 692520,
+              "port_delay": 892110,
+              "quality_expansion": 851820,
+              "carrier_strike": 958580,
+              "compound_port_quality": 1651700,
+              "compound_carrier_quality": 1750790
+            },
+            "worst_case_cost_cents": 1750790,
+            "reservation_fee_cents": 240000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 692520,
+              "port_delay": 892110,
+              "quality_expansion": 851820,
+              "carrier_strike": 958580,
+              "compound_port_quality": 1601700,
+              "compound_carrier_quality": 1750790
+            },
+            "worst_case_cost_cents": 1750790,
+            "reservation_fee_cents": 240000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 692520,
+              "port_delay": 892110,
+              "quality_expansion": 851820,
+              "carrier_strike": 958580,
+              "compound_port_quality": 1651700,
+              "compound_carrier_quality": 1750790
+            },
+            "worst_case_cost_cents": 1750790,
+            "reservation_fee_cents": 240000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-006",
+      "seed": 30706,
+      "objective": [
+        1093315,
+        4201980
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 530040,
+              "port_delay": 530040,
+              "quality_expansion": 681595,
+              "carrier_strike": 530040,
+              "compound_port_quality": 1256750,
+              "compound_carrier_quality": 965460
+            },
+            "worst_case_cost_cents": 1256750,
+            "reservation_fee_cents": 190000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 368680,
+              "port_delay": 585040,
+              "quality_expansion": 549445,
+              "carrier_strike": 585040,
+              "compound_port_quality": 1093315,
+              "compound_carrier_quality": 1020460
+            },
+            "worst_case_cost_cents": 1093315,
+            "reservation_fee_cents": 245000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 530040,
+              "port_delay": 530040,
+              "quality_expansion": 681595,
+              "carrier_strike": 530040,
+              "compound_port_quality": 1256750,
+              "compound_carrier_quality": 965460
+            },
+            "worst_case_cost_cents": 1256750,
+            "reservation_fee_cents": 190000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-007",
+      "seed": 30707,
+      "objective": [
+        2012620,
+        7362720
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 830680,
+              "port_delay": 920680,
+              "quality_expansion": 1115300,
+              "carrier_strike": 830680,
+              "compound_port_quality": 2012620,
+              "compound_carrier_quality": 1652760
+            },
+            "worst_case_cost_cents": 2012620,
+            "reservation_fee_cents": 205000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-008",
+      "seed": 30708,
+      "objective": [
+        1631650,
+        6647475
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 678940,
+              "port_delay": 728940,
+              "quality_expansion": 888905,
+              "carrier_strike": 1235800,
+              "compound_port_quality": 1631650,
+              "compound_carrier_quality": 1595595
+            },
+            "worst_case_cost_cents": 1631650,
+            "reservation_fee_cents": 210000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 678940,
+              "port_delay": 728940,
+              "quality_expansion": 888905,
+              "carrier_strike": 1235800,
+              "compound_port_quality": 1631650,
+              "compound_carrier_quality": 1483240
+            },
+            "worst_case_cost_cents": 1631650,
+            "reservation_fee_cents": 210000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 678940,
+              "port_delay": 728940,
+              "quality_expansion": 888905,
+              "carrier_strike": 1235800,
+              "compound_port_quality": 1631650,
+              "compound_carrier_quality": 1595595
+            },
+            "worst_case_cost_cents": 1631650,
+            "reservation_fee_cents": 210000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-009",
+      "seed": 30709,
+      "objective": [
+        2053700,
+        7700945
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 783360,
+              "port_delay": 1025030,
+              "quality_expansion": 861360,
+              "carrier_strike": 1255960,
+              "compound_port_quality": 1721535,
+              "compound_carrier_quality": 2053700
+            },
+            "worst_case_cost_cents": 2053700,
+            "reservation_fee_cents": 235000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-010",
+      "seed": 30710,
+      "objective": [
+        2237365,
+        9077030
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 943250,
+              "port_delay": 1228250,
+              "quality_expansion": 1229165,
+              "carrier_strike": 1228250,
+              "compound_port_quality": 2270750,
+              "compound_carrier_quality": 2347550
+            },
+            "worst_case_cost_cents": 2347550,
+            "reservation_fee_cents": 180000
+          }
+        },
+        "carrier_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 743650,
+              "port_delay": 1193880,
+              "quality_expansion": 874720,
+              "carrier_strike": 1258250,
+              "compound_port_quality": 2056565,
+              "compound_carrier_quality": 2267365
+            },
+            "worst_case_cost_cents": 2267365,
+            "reservation_fee_cents": 210000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-011",
+      "seed": 30711,
+      "objective": [
+        1277240,
+        4927580
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 553680,
+              "port_delay": 673860,
+              "quality_expansion": 697600,
+              "carrier_strike": 553680,
+              "compound_port_quality": 1277240,
+              "compound_carrier_quality": 1171520
+            },
+            "worst_case_cost_cents": 1277240,
+            "reservation_fee_cents": 245000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 553680,
+              "port_delay": 673860,
+              "quality_expansion": 697600,
+              "carrier_strike": 553680,
+              "compound_port_quality": 1277240,
+              "compound_carrier_quality": 1171520
+            },
+            "worst_case_cost_cents": 1277240,
+            "reservation_fee_cents": 245000
+          }
+        },
+        "both": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 553680,
+              "port_delay": 673860,
+              "quality_expansion": 697600,
+              "carrier_strike": 553680,
+              "compound_port_quality": 1277240,
+              "compound_carrier_quality": 1171520
+            },
+            "worst_case_cost_cents": 1277240,
+            "reservation_fee_cents": 245000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-012",
+      "seed": 30712,
+      "objective": [
+        1852590,
+        7314610
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 621070,
+              "port_delay": 1005350,
+              "quality_expansion": 792970,
+              "carrier_strike": 1234610,
+              "compound_port_quality": 1808020,
+              "compound_carrier_quality": 1852590
+            },
+            "worst_case_cost_cents": 1852590,
+            "reservation_fee_cents": 245000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-013",
+      "seed": 30713,
+      "objective": [
+        2908100,
+        10115695
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 901240,
+              "port_delay": 1203170,
+              "quality_expansion": 1123215,
+              "carrier_strike": 1488800,
+              "compound_port_quality": 2546170,
+              "compound_carrier_quality": 3167600
+            },
+            "worst_case_cost_cents": 3167600,
+            "reservation_fee_cents": 220000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 901240,
+              "port_delay": 1203170,
+              "quality_expansion": 1123215,
+              "carrier_strike": 1488800,
+              "compound_port_quality": 2491170,
+              "compound_carrier_quality": 2908100
+            },
+            "worst_case_cost_cents": 2908100,
+            "reservation_fee_cents": 220000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 901240,
+              "port_delay": 1203170,
+              "quality_expansion": 1123215,
+              "carrier_strike": 1488800,
+              "compound_port_quality": 2546170,
+              "compound_carrier_quality": 3167600
+            },
+            "worst_case_cost_cents": 3167600,
+            "reservation_fee_cents": 220000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-014",
+      "seed": 30714,
+      "objective": [
+        2011435,
+        7141395
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 717320,
+              "port_delay": 797320,
+              "quality_expansion": 1002550,
+              "carrier_strike": 797320,
+              "compound_port_quality": 2140450,
+              "compound_carrier_quality": 2026120
+            },
+            "worst_case_cost_cents": 2140450,
+            "reservation_fee_cents": 210000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 717320,
+              "port_delay": 797320,
+              "quality_expansion": 1002550,
+              "carrier_strike": 797320,
+              "compound_port_quality": 1815450,
+              "compound_carrier_quality": 2011435
+            },
+            "worst_case_cost_cents": 2011435,
+            "reservation_fee_cents": 210000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 653320,
+              "port_delay": 847320,
+              "quality_expansion": 754050,
+              "carrier_strike": 847320,
+              "compound_port_quality": 1689970,
+              "compound_carrier_quality": 2076120
+            },
+            "worst_case_cost_cents": 2076120,
+            "reservation_fee_cents": 260000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-015",
+      "seed": 30715,
+      "objective": [
+        2605100,
+        11395115
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "carrier_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 945285,
+              "port_delay": 1311255,
+              "quality_expansion": 1032340,
+              "carrier_strike": 1592700,
+              "compound_port_quality": 2625850,
+              "compound_carrier_quality": 2438105
+            },
+            "worst_case_cost_cents": 2625850,
+            "reservation_fee_cents": 235000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-016",
+      "seed": 30716,
+      "objective": [
+        1977695,
+        7470385
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 646215,
+              "port_delay": 871945,
+              "quality_expansion": 821390,
+              "carrier_strike": 1366440,
+              "compound_port_quality": 2123570,
+              "compound_carrier_quality": 1786700
+            },
+            "worst_case_cost_cents": 2123570,
+            "reservation_fee_cents": 240000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 646215,
+              "port_delay": 871945,
+              "quality_expansion": 821390,
+              "carrier_strike": 1366440,
+              "compound_port_quality": 1977695,
+              "compound_carrier_quality": 1786700
+            },
+            "worst_case_cost_cents": 1977695,
+            "reservation_fee_cents": 240000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 646215,
+              "port_delay": 871945,
+              "quality_expansion": 821390,
+              "carrier_strike": 1366440,
+              "compound_port_quality": 2123570,
+              "compound_carrier_quality": 1786700
+            },
+            "worst_case_cost_cents": 2123570,
+            "reservation_fee_cents": 240000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-017",
+      "seed": 30717,
+      "objective": [
+        2199320,
+        8249550
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 751280,
+              "port_delay": 1243380,
+              "quality_expansion": 984770,
+              "carrier_strike": 1080200,
+              "compound_port_quality": 1990600,
+              "compound_carrier_quality": 2359320
+            },
+            "worst_case_cost_cents": 2359320,
+            "reservation_fee_cents": 225000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 751280,
+              "port_delay": 1243380,
+              "quality_expansion": 984770,
+              "carrier_strike": 1080200,
+              "compound_port_quality": 1990600,
+              "compound_carrier_quality": 2199320
+            },
+            "worst_case_cost_cents": 2199320,
+            "reservation_fee_cents": 225000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 751280,
+              "port_delay": 1243380,
+              "quality_expansion": 984770,
+              "carrier_strike": 1080200,
+              "compound_port_quality": 1990600,
+              "compound_carrier_quality": 2359320
+            },
+            "worst_case_cost_cents": 2359320,
+            "reservation_fee_cents": 225000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-018",
+      "seed": 30718,
+      "objective": [
+        2077400,
+        7881190
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 771680,
+              "port_delay": 971690,
+              "quality_expansion": 808980,
+              "carrier_strike": 1176300,
+              "compound_port_quality": 2101090,
+              "compound_carrier_quality": 2077400
+            },
+            "worst_case_cost_cents": 2101090,
+            "reservation_fee_cents": 230000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 771680,
+              "port_delay": 971690,
+              "quality_expansion": 808980,
+              "carrier_strike": 1176300,
+              "compound_port_quality": 2075140,
+              "compound_carrier_quality": 2077400
+            },
+            "worst_case_cost_cents": 2077400,
+            "reservation_fee_cents": 230000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 771680,
+              "port_delay": 971690,
+              "quality_expansion": 808980,
+              "carrier_strike": 1176300,
+              "compound_port_quality": 2101090,
+              "compound_carrier_quality": 2077400
+            },
+            "worst_case_cost_cents": 2101090,
+            "reservation_fee_cents": 230000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-019",
+      "seed": 30719,
+      "objective": [
+        2019550,
+        7515500
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 707140,
+              "port_delay": 1052050,
+              "quality_expansion": 746980,
+              "carrier_strike": 1080240,
+              "compound_port_quality": 2019550,
+              "compound_carrier_quality": 1984540
+            },
+            "worst_case_cost_cents": 2019550,
+            "reservation_fee_cents": 220000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 707140,
+              "port_delay": 1052050,
+              "quality_expansion": 746980,
+              "carrier_strike": 1080240,
+              "compound_port_quality": 2019550,
+              "compound_carrier_quality": 1909540
+            },
+            "worst_case_cost_cents": 2019550,
+            "reservation_fee_cents": 220000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 707140,
+              "port_delay": 1052050,
+              "quality_expansion": 746980,
+              "carrier_strike": 1080240,
+              "compound_port_quality": 2019550,
+              "compound_carrier_quality": 1984540
+            },
+            "worst_case_cost_cents": 2019550,
+            "reservation_fee_cents": 220000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-020",
+      "seed": 30720,
+      "objective": [
+        1574800,
+        5674195
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 571310,
+              "port_delay": 612030,
+              "quality_expansion": 601060,
+              "carrier_strike": 951460,
+              "compound_port_quality": 1448655,
+              "compound_carrier_quality": 1829800
+            },
+            "worst_case_cost_cents": 1829800,
+            "reservation_fee_cents": 215000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 571310,
+              "port_delay": 612030,
+              "quality_expansion": 601060,
+              "carrier_strike": 951460,
+              "compound_port_quality": 1363535,
+              "compound_carrier_quality": 1574800
+            },
+            "worst_case_cost_cents": 1574800,
+            "reservation_fee_cents": 215000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 571310,
+              "port_delay": 612030,
+              "quality_expansion": 601060,
+              "carrier_strike": 951460,
+              "compound_port_quality": 1448655,
+              "compound_carrier_quality": 1829800
+            },
+            "worst_case_cost_cents": 1829800,
+            "reservation_fee_cents": 215000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-021",
+      "seed": 30721,
+      "objective": [
+        1562060,
+        6799590
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 851640,
+              "port_delay": 993550,
+              "quality_expansion": 1002240,
+              "carrier_strike": 993550,
+              "compound_port_quality": 1396550,
+              "compound_carrier_quality": 1707060
+            },
+            "worst_case_cost_cents": 1707060,
+            "reservation_fee_cents": 185000
+          }
+        },
+        "carrier_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 672400,
+              "port_delay": 872620,
+              "quality_expansion": 801445,
+              "carrier_strike": 1033550,
+              "compound_port_quality": 1253810,
+              "compound_carrier_quality": 1602060
+            },
+            "worst_case_cost_cents": 1602060,
+            "reservation_fee_cents": 225000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "compound_port_quality: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-022",
+      "seed": 30722,
+      "objective": [
+        2009565,
+        7599610
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 665090,
+              "port_delay": 846885,
+              "quality_expansion": 780690,
+              "carrier_strike": 1406410,
+              "compound_port_quality": 1995970,
+              "compound_carrier_quality": 2009565
+            },
+            "worst_case_cost_cents": 2009565,
+            "reservation_fee_cents": 240000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 665090,
+              "port_delay": 846885,
+              "quality_expansion": 780690,
+              "carrier_strike": 1406410,
+              "compound_port_quality": 1890970,
+              "compound_carrier_quality": 2009565
+            },
+            "worst_case_cost_cents": 2009565,
+            "reservation_fee_cents": 240000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 665090,
+              "port_delay": 846885,
+              "quality_expansion": 780690,
+              "carrier_strike": 1406410,
+              "compound_port_quality": 1995970,
+              "compound_carrier_quality": 2009565
+            },
+            "worst_case_cost_cents": 2009565,
+            "reservation_fee_cents": 240000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-023",
+      "seed": 30723,
+      "objective": [
+        1864475,
+        6751795
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 687900,
+              "port_delay": 810440,
+              "quality_expansion": 843640,
+              "carrier_strike": 859640,
+              "compound_port_quality": 1864475,
+              "compound_carrier_quality": 1845940
+            },
+            "worst_case_cost_cents": 1864475,
+            "reservation_fee_cents": 235000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 687900,
+              "port_delay": 810440,
+              "quality_expansion": 843640,
+              "carrier_strike": 859640,
+              "compound_port_quality": 1864475,
+              "compound_carrier_quality": 1685700
+            },
+            "worst_case_cost_cents": 1864475,
+            "reservation_fee_cents": 235000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 687900,
+              "port_delay": 810440,
+              "quality_expansion": 843640,
+              "carrier_strike": 859640,
+              "compound_port_quality": 1864475,
+              "compound_carrier_quality": 1845940
+            },
+            "worst_case_cost_cents": 1864475,
+            "reservation_fee_cents": 235000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-long-tail-024",
+      "seed": 30724,
+      "objective": [
+        1630065,
+        6035380
+      ],
+      "controls": {
+        "customer_overrides": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 607790,
+              "port_delay": 827470,
+              "quality_expansion": 750505,
+              "carrier_strike": 807700,
+              "compound_port_quality": 1722300,
+              "compound_carrier_quality": 1631865
+            },
+            "worst_case_cost_cents": 1722300,
+            "reservation_fee_cents": 260000
+          }
+        },
+        "carrier_overrides": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 607790,
+              "port_delay": 827470,
+              "quality_expansion": 750505,
+              "carrier_strike": 807700,
+              "compound_port_quality": 1411850,
+              "compound_carrier_quality": 1630065
+            },
+            "worst_case_cost_cents": 1630065,
+            "reservation_fee_cents": 260000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 607790,
+              "port_delay": 827470,
+              "quality_expansion": 750505,
+              "carrier_strike": 807700,
+              "compound_port_quality": 1722300,
+              "compound_carrier_quality": 1631865
+            },
+            "worst_case_cost_cents": 1722300,
+            "reservation_fee_cents": 260000
+          }
+        }
+      }
+    }
+  ]
+}

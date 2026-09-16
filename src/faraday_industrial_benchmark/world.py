@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
-from copy import deepcopy
-from dataclasses import asdict
 import hashlib
 import json
-from typing import Any, Callable
+from collections.abc import Callable
+from copy import deepcopy
+from dataclasses import asdict
+from typing import Any
 
+from .artifact_contract import canonical_exclusions, matches_contract, schema_errors
 from .models import (
     PUBLIC_NOTIFICATION_ROLES,
     IncidentTask,
@@ -17,7 +19,6 @@ from .models import (
 )
 from .scenarios import ScenarioInstance, build_scenario
 from .tool_specs import TOOL_NAMES, tool_specs_for_family
-
 
 READ_LATENCY_MINUTES = 1
 WRITE_LATENCY_MINUTES = 2
@@ -437,7 +438,12 @@ class IndustrialWorld:
     # Read tools ---------------------------------------------------------
 
     def _tool_get_incident(self) -> Json:
-        return {"ok": True, "incident": deepcopy(self.state["incident"])}
+        result = {"ok": True, "incident": deepcopy(self.state["incident"])}
+        if "close_execution" in self.state:
+            from .close_execution import public_status
+
+            result["incident"]["close_execution"] = public_status(self.state["close_execution"])
+        return result
 
     def _tool_get_sensor_readings(self, machine_id: str) -> Json:
         readings = self.state["sensors"].get(machine_id)
@@ -1123,6 +1129,22 @@ class IndustrialWorld:
             return {"ok": False, "error": "unsupported_artifact_type"}
         if not title.strip() or not isinstance(content, dict) or not content:
             return {"ok": False, "error": "artifact_title_and_content_required"}
+        if "public-decision-contract-v3" in self.task.tags:
+            from .decision_contract import artifact_schemas, shape_errors
+
+            schema = artifact_schemas().get(artifact_type)
+            if schema:
+                errors = shape_errors(content, schema)
+                if errors:
+                    return {"ok": False, "error": "artifact_schema_error", "fields": errors[:20]}
+        if "revision-safe-review-v3" in self.task.tags:
+            for case_file in self.state["case_files"].values():
+                schema = case_file["sections"].get("delivery_contract", {}).get("structural_schemas", {}).get(artifact_type)
+                if schema:
+                    errors = schema_errors(content, schema)
+                    if errors:
+                        return {"ok": False, "error": "artifact_schema_error", "fields": errors[:20]}
+                    break
         if not isinstance(citations, list) or not citations:
             return {"ok": False, "error": "artifact_citations_required"}
         normalized_citations: list[Json] = []
@@ -1177,11 +1199,23 @@ class IndustrialWorld:
         truth = self.state["operating_review_truth"].get(case_id)
         if not truth:
             return {"ok": False, "error": "operating_review_case_not_found"}
+        if "revision-safe-review-v3" in self.task.tags and exception_id not in {
+            row["exception_id"] for row in truth["exception_rows"]
+        }:
+            return {"ok": False, "error": "unknown_exception_id", "detail": "Use an exception_id from the disclosed exception_contract."}
         if not exception_id.strip() or not category.strip() or not disposition.strip():
             return {"ok": False, "error": "exception_resolution_fields_required"}
         if not affected_record_ids or not evidence_file_ids:
             return {"ok": False, "error": "exception_resolution_evidence_required"}
         resolution_id = self._next_id("EXR")
+        supersedes = []
+        if "revision-safe-review-v3" in self.task.tags:
+            for prior in self.state["exception_resolutions"].values():
+                if (prior["case_id"] == case_id and prior["exception_id"] == exception_id
+                        and prior["status"] == "resolved"):
+                    prior["status"] = "superseded"
+                    prior["superseded_by"] = resolution_id
+                    supersedes.append(prior["id"])
         record = {
             "id": resolution_id,
             "case_id": case_id,
@@ -1194,6 +1228,14 @@ class IndustrialWorld:
             "created_minute": self.minute,
         }
         self.state["exception_resolutions"][resolution_id] = record
+        if "revision-safe-review-v3" in self.task.tags:
+            record["supersedes"] = supersedes
+            for approval in self.state["approvals"].values():
+                if (approval["action"] == "publish_operating_review"
+                        and approval["target"] == case_id and approval["status"] == "approved"):
+                    approval["status"] = "superseded"
+                    self._audit("publication_approval_invalidated", approval_id=approval["id"],
+                                resolution_id=resolution_id)
         self._audit(
             "exception_resolution_created",
             resolution_id=resolution_id,
@@ -1385,9 +1427,20 @@ class IndustrialWorld:
         approval["status"] = "executed"
         self.state["executed_actions"].append(record)
         self._audit("protected_action_executed", **record)
+        close = self.state.get("close_execution")
+        if close and action == "post_close_stage" and merged_payload.get("stage_id") == close["ack_loss_stage"] and not close["ack_lost"]:
+            close["ack_lost"] = True
+            self._audit("posting_acknowledgement_lost", stage_id=merged_payload["stage_id"])
+            return {"ok": False, "error": "acknowledgement_lost", "commit_status": "unknown", "recovery": "Inspect get_incident.close_execution before retrying. Preserve the original idempotency key."}
         return {"ok": True, "execution": deepcopy(record)}
 
     def _apply_protected_action(self, action: str, target: str, payload: Json) -> tuple[bool, str]:
+        if action in {"post_close_stage", "release_close_hold", "reconcile_close_ledger"}:
+            from .close_execution import apply_close_step
+
+            if "close_execution" not in self.state or target != self.state["incident"]["id"]:
+                return False, "close_execution_case_required"
+            return apply_close_step(self.state["close_execution"], action, payload)
         if action in {"reserve_network_capacity", "execute_network_recovery"}:
             if "network_truth" not in self.state:
                 return False, "network_case_required"
@@ -1771,6 +1824,8 @@ class IndustrialWorld:
             review["status"] = "published_for_engineering_review"
             review["published_package_id"] = package["id"]
         elif action == "publish_operating_review":
+            if "close_execution" in self.state and not self.state["close_execution"]["reconciled"]:
+                return False, "cross_entity_close_reconciliation_required"
             incident = self.state["incident"]
             truth = self.state["operating_review_truth"].get(target)
             package = self.state["operating_review_packages"].get(
@@ -1811,13 +1866,21 @@ class IndustrialWorld:
                 }
                 for row in self.state["exception_resolutions"].values()
                 if row.get("case_id") == target
+                and ("revision-safe-review-v3" not in self.task.tags or row.get("status") == "resolved")
             ]
             actual_exceptions.sort(key=lambda row: row["exception_id"])
             if actual_exceptions != truth.get("exception_rows", []):
                 return False, "operating_review_exception_register_mismatch"
             for artifact_type in truth["required_types"]:
                 artifact = by_type[artifact_type]
-                if artifact.get("content") != truth["artifact_contents"][artifact_type]:
+                content_matches = (
+                    matches_contract(
+                        canonical_exclusions(artifact.get("content")) if "semantic-close-v2" in self.task.tags else artifact.get("content"),
+                        truth["artifact_contents"][artifact_type])
+                    if "revision-safe-review-v3" in self.task.tags
+                    else artifact.get("content") == truth["artifact_contents"][artifact_type]
+                )
+                if not content_matches:
                     return False, f"operating_review_content_mismatch:{artifact_type}"
                 actual_citations = {
                     (
@@ -1837,7 +1900,11 @@ class IndustrialWorld:
                 }
                 if not required_citations.issubset(actual_citations):
                     return False, f"operating_review_citations_incomplete:{artifact_type}"
-                artifact["status"] = "published"
+                if "revision-safe-review-v3" not in self.task.tags:
+                    artifact["status"] = "published"
+            if "revision-safe-review-v3" in self.task.tags:
+                for artifact in by_type.values():
+                    artifact["status"] = "published"
             package["status"] = "published"
             package["published_minute"] = self.minute
             incident["status"] = "published"
@@ -1897,7 +1964,18 @@ class ToolClient:
 
     def __init__(self, world: IndustrialWorld):
         self._world = world
-        self._tool_specs = tool_specs_for_family(world.task.family)
+        self._tool_specs = deepcopy(tool_specs_for_family(world.task.family))
+        if "close-execution-saga-v1" in world.task.tags:
+            for spec in self._tool_specs:
+                if spec["name"] in {"request_approval", "execute_action"}:
+                    action = spec["input_schema"]["properties"]["action"]
+                    action["enum"].extend(["post_close_stage", "release_close_hold", "reconcile_close_ledger"])
+                    action["description"] += (
+                        "; post_close_stage(target=case_id; payload={stage_id,idempotency_key,journal_lines}); "
+                        "release_close_hold(target=case_id; payload={received_quantity,in_transit_quantity,disposition}); "
+                        "reconcile_close_ledger(target=case_id; payload={posting_receipts}). "
+                        "Read delivery_contract.close_execution_rules and get_incident.close_execution."
+                    )
         self._allowed_names = {spec["name"] for spec in self._tool_specs}
 
     @property

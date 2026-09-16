@@ -1539,11 +1539,45 @@ class OracleAgent:
         supplier_rows = sections["SCM"]["recovery_options"]
         orders = sections["CRM-ERP"]["commitments"]
         routes = sections["TMS"]["route_quotes"]
-        reserve_policy = sections["ERP-GL"]["reserve_policy"]
+        reserve_policy = dict(sections["ERP-GL"]["reserve_policy"])
+        insurance_bridge = None
+        if "claims_contract" in reserve_policy:
+            from .claims import reconcile_claims
+
+            insurance_bridge = reconcile_claims(reserve_policy["claims_contract"])
+            reserve_policy["insurance_recovery"] = insurance_bridge["receivable_cents"] / 100
+        finance_bridge = None
+        if "finance_contract" in reserve_policy:
+            from .finance_tail import reconcile_finance
+
+            finance_bridge = reconcile_finance(reserve_policy["finance_contract"])
+        cost_bridge = None
+        if "cost_contract" in reserve_policy:
+            from .cost_propagation import reconcile_costs
+
+            cost_bridge = reconcile_costs(reserve_policy["cost_contract"])
+        subcontract_bridge = None
+        if "subcontract_contract" in reserve_policy:
+            from .subcontracting import contract_from_sections, reconcile_subcontracting
+
+            subcontract_bridge = reconcile_subcontracting(
+                contract_from_sections(sections)
+                if "source_join" in reserve_policy["subcontract_contract"]
+                else reserve_policy["subcontract_contract"]
+            )
+        intercompany_bridge = None
+        if "intercompany_contract" in reserve_policy:
+            from .intercompany import reconcile_intercompany
+
+            intercompany_bridge = reconcile_intercompany(reserve_policy["intercompany_contract"], subcontract_bridge)
         action_rows = sections["GRC"]["required_actions"]
         brief = sections["program-office"]
 
-        production = next(row for row in capacity_rows if row["status"] == "qualified")
+        production = dict(next(row for row in capacity_rows if row["status"] == "qualified"))
+        if subcontract_bridge:
+            production["confirmed_quantity"] = min(
+                production["confirmed_quantity"], subcontract_bridge["available_finished_quantity"]
+            )
         supplier = next(row for row in supplier_rows if row["status"] == "confirmed")
         source_supply = {
             row["source_id"]: row["available_quantity"] for row in inventory_rows
@@ -1650,7 +1684,11 @@ class OracleAgent:
             + supplier["expedite_cost"]
             + reserve_policy["inspection_cost"]
             + penalty_exposure
-            - reserve_policy["insurance_recovery"],
+            - reserve_policy["insurance_recovery"]
+            + (finance_bridge["expense_cents"] / 100 if finance_bridge else 0)
+            + (cost_bridge["expense_adjustment_cents"] / 100 if cost_bridge else 0)
+            + (subcontract_bridge["cogs_cents"] / 100 if subcontract_bridge else 0)
+            + (intercompany_bridge["reserve_reclassification_cents"] / 100 if intercompany_bridge else 0),
             2,
         )
         totals = {
@@ -1834,6 +1872,11 @@ class OracleAgent:
                 "premium_freight": premium_freight,
                 "customer_penalty_exposure": penalty_exposure,
                 "insurance_recovery": reserve_policy["insurance_recovery"],
+                **({"insurance_bridge": insurance_bridge} if insurance_bridge is not None else {}),
+                **({"finance_bridge": finance_bridge} if finance_bridge is not None else {}),
+                **({"cost_bridge": cost_bridge} if cost_bridge is not None else {}),
+                **({"subcontract_bridge": subcontract_bridge} if subcontract_bridge is not None else {}),
+                **({"intercompany_bridge": intercompany_bridge} if intercompany_bridge is not None else {}),
                 "reserve_amount": reserve_amount,
                 "debit_account": reserve_policy["debit_account"],
                 "credit_account": reserve_policy["credit_account"],
@@ -1944,6 +1987,12 @@ class OracleAgent:
                 ],
             ),
         }
+        if "source_join" in reserve_policy.get("subcontract_contract", {}):
+            artifact_specs["integrated_recovery_model"][1].extend([
+                citation("QMS", "subcontract_quality"),
+                citation("WMS", "subcontract_stock"),
+                citation("SCM", "subcontract_events"),
+            ])
         resolution_ids = []
         for exception in exception_rows:
             resolution = _call(
@@ -1976,6 +2025,10 @@ class OracleAgent:
             artifact_ids=artifact_ids,
             rationale="Bundle the four source-grounded and reconciled deliverables for controlled publication.",
         )["operating_review_package"]
+        if "close_execution" in incident:
+            from .close_execution import run_reference_close
+
+            run_reference_close(tools, case_id, recovery_model["financial_impact"]["intercompany_bridge"])
         approval = _call(
             tools,
             "request_approval",

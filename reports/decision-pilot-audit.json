@@ -1,0 +1,21 @@
+{
+  "frozen_inputs_verified": true,
+  "episodes_verified": 2,
+  "episodes": [
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-001",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-001",
+      "exact_replay": false,
+      "verification": "episode_timeout_marker_reconstructed",
+      "score_verified": true
+    }
+  ],
+  "scope": "one-case diagnostic pilot only; not full-suite coverage"
+}

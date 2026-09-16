@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Any
 
+from .artifact_contract import canonical_exclusions, matches_contract
 from .models import CriterionResult, EpisodeScore, Json
 from .world import IndustrialWorld
 
@@ -74,6 +75,8 @@ def _latest_packaged_artifacts_by_type(world: IndustrialWorld) -> dict[str, list
     for artifact_id in package.get("artifact_ids", []):
         artifact = world.state.get("structured_artifacts", {}).get(artifact_id)
         if artifact is not None:
+            if "semantic-close-v2" in world.task.tags:
+                artifact = {**artifact, "content": canonical_exclusions(artifact.get("content"))}
             grouped[str(artifact.get("artifact_type"))].append(artifact)
     return grouped
 
@@ -212,7 +215,11 @@ def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
             exact = [
                 artifact
                 for artifact in grouped.get(artifact_type, [])
-                if artifact.get("content") == truth["artifact_contents"][artifact_type]
+                if (
+                    matches_contract(artifact.get("content"), truth["artifact_contents"][artifact_type])
+                    if "revision-safe-review-v3" in world.task.tags
+                    else artifact.get("content") == truth["artifact_contents"][artifact_type]
+                )
             ]
             if not exact:
                 return False, f"no exact {artifact_type} artifact"
@@ -250,6 +257,10 @@ def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
         evidence = world.final_answer.get("evidence", [])
         known = _known_record_ids(world)
         valid = {item for item in evidence if isinstance(item, str) and item in known}
+        if "annotated-decision-v2" in world.task.tags or "public-close-contract-v2" in world.task.tags:
+            from .decision_annotations import cited_record_ids
+
+            valid = cited_record_ids(evidence, known)
         minimum = int(contract["minimum"])
         return len(valid) >= minimum, f"{len(valid)}/{minimum} valid record IDs"
     if check == "inventory_reconciled":
@@ -340,27 +351,34 @@ def _economic_score(world: IndustrialWorld) -> tuple[float, float]:
     return round(10.0 * saved_fraction, 4), round(estimated, 2)
 
 
-def _efficiency_score(world: IndustrialWorld) -> float:
-    calls = len(world.trace)
-    if world.task.difficulty == "frontier" and world.task.workflow_stages:
+def efficiency_target(task) -> int:
+    if "public-decision-contract-v3" in task.tags:
+        return min(task.max_tool_calls - 4, 50)
+    if task.difficulty == "frontier" and task.workflow_stages:
         # Frontier professional-work-sample tasks deliberately require broad
         # source review, explicit exception dispositions, artifact read-back,
         # and controlled publication. Scale the efficient trajectory to that
         # published workflow rather than penalizing mandatory evidence calls.
         target = min(
-            world.task.max_tool_calls - 4,
-            4 + 6 * len(world.task.workflow_stages),
+            task.max_tool_calls - 4,
+            4 + 6 * len(task.workflow_stages),
         )
-    elif world.task.workflow_stages:
+    elif task.workflow_stages:
         # Composite workflows legitimately require more evidence and protected
         # transitions. Scale the no-penalty target with the published DAG while
         # retaining a meaningful tail before the hard task budget.
         target = min(
-            world.task.max_tool_calls - 4,
-            12 + 3 * len(world.task.workflow_stages),
+            task.max_tool_calls - 4,
+            12 + 3 * len(task.workflow_stages),
         )
     else:
-        target = min(18, max(8, world.task.max_tool_calls - 8))
+        target = min(18, max(8, task.max_tool_calls - 8))
+    return target
+
+
+def _efficiency_score(world: IndustrialWorld) -> float:
+    calls = len(world.trace)
+    target = efficiency_target(world.task)
     if calls <= target:
         return 10.0
     span = max(1, world.task.max_tool_calls - target)

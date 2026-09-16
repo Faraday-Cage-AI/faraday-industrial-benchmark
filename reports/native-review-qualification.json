@@ -1,0 +1,79 @@
+{
+  "kind": "native_file_qualification_not_model_result",
+  "task": "faraday-professional-finance-012",
+  "positive_checks": 73,
+  "corruptions_rejected": 7,
+  "results": [
+    {
+      "mutation": "hardcoded_reserve",
+      "rejected": true,
+      "failed_checks": [
+        "reserve-formula",
+        "reserve-dependency-6",
+        "reserve-dependency-7",
+        "reserve-dependency-8",
+        "reserve-dependency-9",
+        "reserve-dependency-10",
+        "reserve-dependency-11",
+        "reserve-dependency-12",
+        "reserve-dependency-13"
+      ]
+    },
+    {
+      "mutation": "stale_reserve_cache",
+      "rejected": true,
+      "failed_checks": [
+        "reserve-cache"
+      ]
+    },
+    {
+      "mutation": "wrong_disposal",
+      "rejected": true,
+      "failed_checks": [
+        "reserve-input-6",
+        "reserve",
+        "reserve-cache"
+      ]
+    },
+    {
+      "mutation": "wrong_cash",
+      "rejected": true,
+      "failed_checks": [
+        "settled-cash",
+        "payable",
+        "payable-cache"
+      ]
+    },
+    {
+      "mutation": "constant_formula",
+      "rejected": true,
+      "failed_checks": [
+        "reserve-dependency-6",
+        "reserve-dependency-7",
+        "reserve-dependency-8",
+        "reserve-dependency-9",
+        "reserve-dependency-10",
+        "reserve-dependency-11",
+        "reserve-dependency-12",
+        "reserve-dependency-13"
+      ]
+    },
+    {
+      "mutation": "cash_netted_into_reserve",
+      "rejected": true,
+      "failed_checks": [
+        "reserve",
+        "reserve-cache"
+      ]
+    },
+    {
+      "mutation": "wrong_executive_report",
+      "rejected": true,
+      "failed_checks": [
+        "report-reserve",
+        "report-case",
+        "report-decision"
+      ]
+    }
+  ]
+}

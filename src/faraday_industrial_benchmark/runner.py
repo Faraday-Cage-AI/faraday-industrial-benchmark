@@ -16,7 +16,6 @@ from typing import Any, Iterable
 
 from .grader import grade_episode
 from .models import Agent, EpisodeResult, IncidentTask, Json, ToolClientProtocol
-from .tool_specs import tool_specs_for_family
 from .world import IndustrialWorld, ToolClient
 
 
@@ -78,7 +77,7 @@ class CommandAgent:
             "type": "start",
             "protocol": "faraday-industrial-jsonl/1",
             "task": task.public_dict(),
-            "tools": deepcopy(tool_specs_for_family(task.family)),
+            "tools": deepcopy(tools.tools),
         }
         process.stdin.write(json.dumps(start, separators=(",", ":")) + "\n")
         process.stdin.flush()
@@ -131,8 +130,13 @@ class CommandAgent:
                     return final
                 else:
                     raise RuntimeError(f"unsupported agent message type: {message_type!r}")
-            if process.poll() is None:
+            if time.monotonic() >= deadline:
                 raise TimeoutError(f"agent command exceeded {self.timeout_seconds:g}s")
+            if process.poll() is None:
+                try:
+                    process.wait(timeout=0.5)
+                except subprocess.TimeoutExpired:
+                    raise RuntimeError("agent closed protocol output before final response") from None
             raise RuntimeError(f"agent exited before final response (code={process.returncode})")
         finally:
             selector.close()

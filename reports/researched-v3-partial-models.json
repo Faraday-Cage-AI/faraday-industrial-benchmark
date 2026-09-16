@@ -1,0 +1,139 @@
+{
+  "track": "public development; tool-only baseline",
+  "task_versions": [
+    "0.10.0-researched.3"
+  ],
+  "pricing_sources": [
+    "https://developers.openai.com/api/docs/models/gpt-5.4",
+    "https://developers.openai.com/api/docs/models/gpt-5.5"
+  ],
+  "interpretation": "Single attempts on the reported public development cases; not a held-out model ranking. API prices are estimates, not invoices. Infrastructure failures and token truncation must be examined separately.",
+  "models": {
+    "gpt-5.4": {
+      "completed_episodes": 2,
+      "strict_successes": 1,
+      "execution_status_counts": {
+        "completed_without_recorded_execution_limit": 2
+      },
+      "mean_score": 99.85,
+      "estimated_api_cost_usd": 3.1197
+    },
+    "gpt-5.5": {
+      "completed_episodes": 2,
+      "strict_successes": 1,
+      "execution_status_counts": {
+        "completed_without_recorded_execution_limit": 2
+      },
+      "mean_score": 99.57,
+      "estimated_api_cost_usd": 5.2562
+    }
+  },
+  "episodes": [
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-researched-001",
+      "score": 100.0,
+      "strict_success": true,
+      "execution_status": "completed_without_recorded_execution_limit",
+      "diagnostics_not_alternative_scores": {
+        "review_published": true,
+        "all_artifact_value_checks_passed": true,
+        "all_functions_notified": true,
+        "structured_final_evidence_passed": true
+      },
+      "failed_criteria": [],
+      "violations": [],
+      "tool_calls": 91,
+      "wall_seconds": 370.98602308297995,
+      "tokens": {
+        "input": 2764627,
+        "cached": 2639104,
+        "output": 29798
+      },
+      "estimated_api_cost_usd": 1.420553,
+      "api_responses": 91,
+      "incomplete_responses": 0,
+      "report": "runs/researched-v3-20260915/gpt-5.4-faraday-researched-001.json"
+    },
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-researched-002",
+      "score": 99.71,
+      "strict_success": false,
+      "execution_status": "completed_without_recorded_execution_limit",
+      "diagnostics_not_alternative_scores": {
+        "review_published": true,
+        "all_artifact_value_checks_passed": true,
+        "all_functions_notified": true,
+        "structured_final_evidence_passed": true
+      },
+      "failed_criteria": [],
+      "violations": [],
+      "tool_calls": 99,
+      "wall_seconds": 471.33772724994924,
+      "tokens": {
+        "input": 3427818,
+        "cached": 3295488,
+        "output": 36296
+      },
+      "estimated_api_cost_usd": 1.699137,
+      "api_responses": 99,
+      "incomplete_responses": 0,
+      "report": "runs/researched-v3-20260915/gpt-5.4-faraday-researched-002.json"
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-researched-001",
+      "score": 99.29,
+      "strict_success": false,
+      "execution_status": "completed_without_recorded_execution_limit",
+      "diagnostics_not_alternative_scores": {
+        "review_published": true,
+        "all_artifact_value_checks_passed": true,
+        "all_functions_notified": true,
+        "structured_final_evidence_passed": false
+      },
+      "failed_criteria": [
+        "finish-with-record-evidence"
+      ],
+      "violations": [],
+      "tool_calls": 97,
+      "wall_seconds": 393.24455279204994,
+      "tokens": {
+        "input": 2788000,
+        "cached": 2673408,
+        "output": 23670
+      },
+      "estimated_api_cost_usd": 2.619764,
+      "api_responses": 97,
+      "incomplete_responses": 0,
+      "report": "runs/researched-v3-20260915/gpt-5.5-faraday-researched-001.json"
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-researched-002",
+      "score": 99.85,
+      "strict_success": true,
+      "execution_status": "completed_without_recorded_execution_limit",
+      "diagnostics_not_alternative_scores": {
+        "review_published": true,
+        "all_artifact_value_checks_passed": true,
+        "all_functions_notified": true,
+        "structured_final_evidence_passed": true
+      },
+      "failed_criteria": [],
+      "violations": [],
+      "tool_calls": 97,
+      "wall_seconds": 387.38121858390514,
+      "tokens": {
+        "input": 2815834,
+        "cached": 2691072,
+        "output": 22236
+      },
+      "estimated_api_cost_usd": 2.636426,
+      "api_responses": 97,
+      "incomplete_responses": 0,
+      "report": "runs/researched-v3-20260915/gpt-5.5-faraday-researched-002.json"
+    }
+  ]
+}

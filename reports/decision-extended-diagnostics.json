@@ -1,0 +1,213 @@
+{
+  "track": "public development; tool-only baseline",
+  "task_versions": [
+    "0.11.0-decision.1"
+  ],
+  "measurement_settings": {
+    "adapter_sha256": "e9d587eb8a24b1d86a6b55ddd98ae3978c2d9fd3b3d720a5575328e1ac28ef4e",
+    "per_response_output_limit": 65536,
+    "reasoning_effort": "xhigh",
+    "timeout_seconds": 3600,
+    "total_output_limit": 200000
+  },
+  "pricing_sources": [
+    "https://developers.openai.com/api/docs/models/gpt-5.4",
+    "https://developers.openai.com/api/docs/models/gpt-5.5"
+  ],
+  "cost_coverage": "Logged response usage only. Costs of unreturned requests or automatic retries may be missing; estimates are not a complete invoice.",
+  "interpretation": "Single attempts on the reported public development cases; not a held-out model ranking. API prices are estimates, not invoices. Infrastructure failures and token truncation must be examined separately.",
+  "models": {
+    "gpt-5.4": {
+      "completed_episodes": 1,
+      "strict_successes": 0,
+      "execution_status_counts": {
+        "agent_execution_error": 1
+      },
+      "mean_score": 22.56,
+      "estimated_api_cost_usd": 0.1185
+    },
+    "gpt-5.5": {
+      "completed_episodes": 1,
+      "strict_successes": 0,
+      "execution_status_counts": {
+        "agent_execution_error": 1
+      },
+      "mean_score": 22.56,
+      "estimated_api_cost_usd": 0.2388
+    }
+  },
+  "episodes": [
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-001",
+      "score": 22.56,
+      "strict_success": false,
+      "execution_status": "agent_execution_error",
+      "diagnostics_not_alternative_scores": {
+        "review_published": null,
+        "all_artifact_value_checks_passed": null,
+        "all_functions_notified": null,
+        "structured_final_evidence_passed": null,
+        "network_policy_feasible": false,
+        "network_policy_objective_passed": false,
+        "network_recovery_executed": false,
+        "reservation_before_reveal": false,
+        "network_reconciliation_passed": false
+      },
+      "failed_criteria": [
+        "feasible",
+        "near_optimal",
+        "reconciliation",
+        "exceptions",
+        "cost_reporting",
+        "executed",
+        "reserve-before-reveal",
+        "notify",
+        "evidence"
+      ],
+      "failure_details": [
+        {
+          "id": "feasible",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "near_optimal",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "reconciliation",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "exceptions",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "cost_reporting",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "executed",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "reserve-before-reveal",
+          "detail": "0 matching execution(s)"
+        },
+        {
+          "id": "notify",
+          "detail": "missing ['customer_operations', 'plant_controller', 'supply_planning']"
+        },
+        {
+          "id": "evidence",
+          "detail": "0/5 valid record IDs"
+        }
+      ],
+      "violations": [
+        {
+          "minute": 25,
+          "code": "agent_error",
+          "message": "RuntimeError: agent exited before final response (code=1)",
+          "severity": "warning"
+        }
+      ],
+      "tool_calls": 26,
+      "wall_seconds": 1850.3870029160753,
+      "tokens": {
+        "input": 173418,
+        "cached": 150272,
+        "output": 1536
+      },
+      "estimated_api_cost_usd": 0.118473,
+      "api_responses": 25,
+      "incomplete_responses": 0,
+      "report": "runs/decision-v1-extended-20260915/gpt-5.4-faraday-decision-001.json"
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-001",
+      "score": 22.56,
+      "strict_success": false,
+      "execution_status": "agent_execution_error",
+      "diagnostics_not_alternative_scores": {
+        "review_published": null,
+        "all_artifact_value_checks_passed": null,
+        "all_functions_notified": null,
+        "structured_final_evidence_passed": null,
+        "network_policy_feasible": false,
+        "network_policy_objective_passed": false,
+        "network_recovery_executed": false,
+        "reservation_before_reveal": false,
+        "network_reconciliation_passed": false
+      },
+      "failed_criteria": [
+        "feasible",
+        "near_optimal",
+        "reconciliation",
+        "exceptions",
+        "cost_reporting",
+        "executed",
+        "reserve-before-reveal",
+        "notify",
+        "evidence"
+      ],
+      "failure_details": [
+        {
+          "id": "feasible",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "near_optimal",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "reconciliation",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "exceptions",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "cost_reporting",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "executed",
+          "detail": "not satisfied"
+        },
+        {
+          "id": "reserve-before-reveal",
+          "detail": "0 matching execution(s)"
+        },
+        {
+          "id": "notify",
+          "detail": "missing ['customer_operations', 'plant_controller', 'supply_planning']"
+        },
+        {
+          "id": "evidence",
+          "detail": "0/5 valid record IDs"
+        }
+      ],
+      "violations": [
+        {
+          "minute": 25,
+          "code": "agent_error",
+          "message": "RuntimeError: agent exited before final response (code=1)",
+          "severity": "warning"
+        }
+      ],
+      "tool_calls": 26,
+      "wall_seconds": 1857.4334164579632,
+      "tokens": {
+        "input": 167411,
+        "cached": 141056,
+        "output": 1216
+      },
+      "estimated_api_cost_usd": 0.238783,
+      "api_responses": 25,
+      "incomplete_responses": 0,
+      "report": "runs/decision-v1-extended-20260915/gpt-5.5-faraday-decision-001.json"
+    }
+  ]
+}

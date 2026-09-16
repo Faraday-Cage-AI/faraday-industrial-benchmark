@@ -1,0 +1,119 @@
+{
+  "frozen_inputs_verified": true,
+  "full_suite_coverage_verified": true,
+  "episodes_verified": 16,
+  "episodes": [
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-001",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-002",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-003",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-004",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-005",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-006",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-007",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.4",
+      "task_id": "faraday-decision-008",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-001",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-002",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-003",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-004",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-005",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-006",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-007",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    },
+    {
+      "model": "gpt-5.5",
+      "task_id": "faraday-decision-008",
+      "exact_replay": true,
+      "verification": "exact_tool_replay",
+      "score_verified": true
+    }
+  ]
+}

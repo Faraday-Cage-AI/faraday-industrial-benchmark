@@ -13,6 +13,75 @@ that merely sounds plausible.
 
 ## v0.6: decisions under uncertainty
 
+**Corrected execution candidate:** `0.14.0-close-execution.2` at
+`data/close-execution-v2/tasks.json` fixes external-agent tool-schema parity,
+accepts unordered exclusion reports without accepting wrong records, and balances
+diagnostic weights by dimension. Strict end-to-end success remains primary.
+Previous interrupted execution runs are not validated model comparisons.
+The [four-model sample plan](docs/four-model-sample-plan.md) has a $100 total
+authorization; provider/budget integration is unfinished and no sample has launched.
+The reservation ledger is tested infrastructure, not a standalone spending guard.
+
+**Stateful execution extension (in development):** [0.14.0-close-execution.1](docs/close-execution-workflows.md)
+adds approval-bound sender, receiver and consolidation postings, partial-receipt
+holds, lost-acknowledgement recovery, idempotent retries and live-ledger reconciliation.
+Eight cases: `--tasks data/close-execution/tasks.json`. Historical interrupted
+attempts exist; no validated completed-model result is claimed for this tier.
+
+**Linked close-chain extension (in development):** [0.13.0-close-chain.2](docs/close-chain-workflows.md)
+connects subcontracting recost to intercompany margin, partial-receipt valuation,
+multi-entity journals, consolidation eliminations and the recovery reserve.
+Eight fixed cases use `--tasks data/close-chain-v2/tasks.json`. The scoring contract
+is public without solved business values. Model difficulty has
+not been measured; historical scores must not be attributed to this candidate.
+
+**Subcontracting workflow extension (in development):** [0.12.0-subcontracting.2](docs/subcontracting-workflows.md)
+adds event-sourced corrections, reversals, ownership and quality controls across
+four source systems. Corrected supply and valuation affect customer allocations,
+freight, production, penalties and all final deliverables. Eight fixed cases cover
+four distinct lifecycle sequences. Combined V1/V2 qualification passes 94 tests;
+frontier-model difficulty is not yet measured. Use
+`--tasks data/subcontracting-v2/tasks.json`.
+
+**Joint-decision challenge (in development):** [0.11.0-decision.3](docs/decision-challenge.md)
+adds irrevocable early releases coupled across eight disruption outcomes, on top
+of shared labor, liquidity, kit and customer constraints. All eight reference
+workflows pass; a hindsight-policy ablation is rejected on 8/8 cases. These are
+algorithmic checks, not model results. Use `--tasks data/decision-challenge-v3/tasks.json`.
+V3 publishes scoring deadlines and artifact schemas, validates shapes with field-level
+errors, and accepts documented ledger annotations without relaxing business values.
+The v1 pilot showed both models could find the optimal plan; its formatting-driven
+score difference is not evidence of a model capability gap. Historical v1 tasks
+and scores are preserved separately.
+Paid v2 measurement was stopped after an audit found an undisclosed timeliness
+target and ledger-shape feedback problems. V3 passed 302 regression tests and all
+16 measured attempts replay exactly. Strict successes: GPT-5.4 3/8, GPT-5.5 6/8.
+Resource limits and small objective gaps matter; this does not establish extreme
+workforce difficulty. See the [results](reports/decision-v3-results.md) and
+[contract audit](docs/decision-contract-audit.md).
+
+**Research-backed extension (in development):** [0.10.0-researched.3](docs/researched-workflows.md)
+adds eight operating-review cases with receipt-cost propagation, mixed valuation,
+supplier ownership and quarantine-state exceptions. Use `--tasks data/researched-v3/tasks.json`.
+All eight reference workflows pass; 32 deliberately corrupted submissions are rejected.
+These are grader checks, not model results. Earlier model attempts were excluded
+after contract and revision-lifecycle audits. V3 exposes complete field schemas,
+allows specified audit metadata, and supports correcting exception resolutions.
+No GPT-5.4/GPT-5.5 difficulty ranking is established yet.
+
+**Professional work samples (in development):** [claims-aware operating reviews](docs/professional-workflows.md)
+add 24 multi-artifact cases with raw-claims/AP reconciliation and cross-deliverable
+financial consistency. Run with `--tasks data/professional/tasks.json`.
+
+**Cross-functional extension:** [0.8.0-workforce.1](docs/workforce-suite.md) adds
+16 cases with eight disruption outcomes, shared certified-worker capacity and
+ring-fenced treasury liquidity. Use `--tasks data/workforce/tasks.json`.
+
+**Long-tail extension:** [0.7.0-tail.1](docs/long-tail-suite.md) adds 24 synthetic
+cases with scenario-specific qualification bans, kit-split waivers, replacement
+credits, carrier minimum loads and emergency tariffs. Use
+`--tasks data/long-tail/tasks.json`. Earlier stopped runs are not difficulty evidence.
+
 **New harder challenge:** [0.7.0-hard.1](docs/coupled-hard-suite.md) adds compound
 disruptions, customer service floors, paired installation kits, nonlinear credits,
 shared activation fees, and exact two-objective optimization. Run it explicitly

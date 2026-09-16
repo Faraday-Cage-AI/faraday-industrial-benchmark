@@ -1,0 +1,673 @@
+{
+  "version": "0.8.0-workforce.1",
+  "kind": "algorithmic_ablation_not_model_result",
+  "cases": 16,
+  "failures": {
+    "certified_release_labor": 4,
+    "treasury_prepayment": 14,
+    "both": 15
+  },
+  "results": [
+    {
+      "task": "faraday-workforce-001",
+      "seed": 40801,
+      "objective": [
+        1772620,
+        11633500
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 950460,
+              "port_delay": 1150460,
+              "quality_expansion": 1099040,
+              "carrier_strike": 1737100,
+              "compound_port_quality": 1575600,
+              "compound_carrier_quality": 1772620,
+              "port_quality_labor_absence": 1575600,
+              "carrier_quality_cash_freeze": 1772620
+            },
+            "worst_case_cost_cents": 1772620,
+            "reservation_fee_cents": 205000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 950460,
+              "port_delay": 1150460,
+              "quality_expansion": 1099040,
+              "carrier_strike": 1737100,
+              "compound_port_quality": 1575600,
+              "compound_carrier_quality": 1772620,
+              "port_quality_labor_absence": 1575600,
+              "carrier_quality_cash_freeze": 1772620
+            },
+            "worst_case_cost_cents": 1772620,
+            "reservation_fee_cents": 205000
+          }
+        },
+        "both": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 950460,
+              "port_delay": 1150460,
+              "quality_expansion": 1099040,
+              "carrier_strike": 1737100,
+              "compound_port_quality": 1575600,
+              "compound_carrier_quality": 1772620,
+              "port_quality_labor_absence": 1575600,
+              "carrier_quality_cash_freeze": 1772620
+            },
+            "worst_case_cost_cents": 1772620,
+            "reservation_fee_cents": 205000
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-002",
+      "seed": 40802,
+      "objective": [
+        2486040,
+        13177030
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 820295,
+              "port_delay": 1262395,
+              "quality_expansion": 1039595,
+              "carrier_strike": 1615300,
+              "compound_port_quality": 1901350,
+              "compound_carrier_quality": 2150705,
+              "port_quality_labor_absence": 1901350,
+              "carrier_quality_cash_freeze": 2486040
+            },
+            "worst_case_cost_cents": 2486040,
+            "reservation_fee_cents": 215000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-003",
+      "seed": 40803,
+      "objective": [
+        2388080,
+        12249910
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 825610,
+              "port_delay": 1005610,
+              "quality_expansion": 1173400,
+              "carrier_strike": 825610,
+              "compound_port_quality": 1975090,
+              "compound_carrier_quality": 2081420,
+              "port_quality_labor_absence": 1975090,
+              "carrier_quality_cash_freeze": 2388080
+            },
+            "worst_case_cost_cents": 2388080,
+            "reservation_fee_cents": 175000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-004",
+      "seed": 40804,
+      "objective": [
+        1801205,
+        9453590
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 673365,
+              "port_delay": 740945,
+              "quality_expansion": 714475,
+              "carrier_strike": 870160,
+              "compound_port_quality": 1456990,
+              "compound_carrier_quality": 1739460,
+              "port_quality_labor_absence": 1456990,
+              "carrier_quality_cash_freeze": 1801205
+            },
+            "worst_case_cost_cents": 1801205,
+            "reservation_fee_cents": 240000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-005",
+      "seed": 40805,
+      "objective": [
+        2242680,
+        12248400
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 879440,
+              "port_delay": 1119440,
+              "quality_expansion": 1102260,
+              "carrier_strike": 1119440,
+              "compound_port_quality": 1937020,
+              "compound_carrier_quality": 1911100,
+              "port_quality_labor_absence": 1937020,
+              "carrier_quality_cash_freeze": 2242680
+            },
+            "worst_case_cost_cents": 2242680,
+            "reservation_fee_cents": 200000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-006",
+      "seed": 40806,
+      "objective": [
+        2888020,
+        17245480
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 1141340,
+              "port_delay": 1481340,
+              "quality_expansion": 1568680,
+              "carrier_strike": 2018300,
+              "compound_port_quality": 2706080,
+              "compound_carrier_quality": 2735640,
+              "port_quality_labor_absence": 2706080,
+              "carrier_quality_cash_freeze": 2888020
+            },
+            "worst_case_cost_cents": 2888020,
+            "reservation_fee_cents": 210000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-007",
+      "seed": 40807,
+      "objective": [
+        2762565,
+        14818660
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 836980,
+              "port_delay": 1160530,
+              "quality_expansion": 1002195,
+              "carrier_strike": 1594560,
+              "compound_port_quality": 2472025,
+              "compound_carrier_quality": 2517780,
+              "port_quality_labor_absence": 2472025,
+              "carrier_quality_cash_freeze": 2762565
+            },
+            "worst_case_cost_cents": 2762565,
+            "reservation_fee_cents": 240000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-008",
+      "seed": 40808,
+      "objective": [
+        2372715,
+        13014440
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 779240,
+              "port_delay": 899240,
+              "quality_expansion": 1108250,
+              "carrier_strike": 2163800,
+              "compound_port_quality": 1935150,
+              "compound_carrier_quality": 1820895,
+              "port_quality_labor_absence": 1935150,
+              "carrier_quality_cash_freeze": 2372715
+            },
+            "worst_case_cost_cents": 2372715,
+            "reservation_fee_cents": 180000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "port_quality_labor_absence: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-009",
+      "seed": 40809,
+      "objective": [
+        1789220,
+        9719380
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 726990,
+              "port_delay": 766990,
+              "quality_expansion": 894700,
+              "carrier_strike": 766990,
+              "compound_port_quality": 1581600,
+              "compound_carrier_quality": 1611290,
+              "port_quality_labor_absence": 1581600,
+              "carrier_quality_cash_freeze": 1789220
+            },
+            "worst_case_cost_cents": 1789220,
+            "reservation_fee_cents": 205000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-010",
+      "seed": 40810,
+      "objective": [
+        1624480,
+        9117960
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 494700,
+              "port_delay": 747440,
+              "quality_expansion": 708360,
+              "carrier_strike": 960180,
+              "compound_port_quality": 1479160,
+              "compound_carrier_quality": 1624480,
+              "port_quality_labor_absence": 1479160,
+              "carrier_quality_cash_freeze": 1624480
+            },
+            "worst_case_cost_cents": 1624480,
+            "reservation_fee_cents": 130000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-011",
+      "seed": 40811,
+      "objective": [
+        1684500,
+        9086660
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 427560,
+              "port_delay": 647780,
+              "quality_expansion": 592160,
+              "carrier_strike": 700200,
+              "compound_port_quality": 1674980,
+              "compound_carrier_quality": 1684500,
+              "port_quality_labor_absence": 1674980,
+              "carrier_quality_cash_freeze": 1684500
+            },
+            "worst_case_cost_cents": 1684500,
+            "reservation_fee_cents": 145000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-012",
+      "seed": 40812,
+      "objective": [
+        1633070,
+        7534820
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "port_quality_labor_absence: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "port_quality_labor_absence: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-013",
+      "seed": 40813,
+      "objective": [
+        1750550,
+        8595635
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "port_quality_labor_absence: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "treasury_prepayment": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 567040,
+              "port_delay": 637520,
+              "quality_expansion": 652540,
+              "carrier_strike": 660340,
+              "compound_port_quality": 1354045,
+              "compound_carrier_quality": 1486800,
+              "port_quality_labor_absence": 1750550,
+              "carrier_quality_cash_freeze": 1486800
+            },
+            "worst_case_cost_cents": 1750550,
+            "reservation_fee_cents": 220000
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "port_quality_labor_absence: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-014",
+      "seed": 40814,
+      "objective": [
+        1554550,
+        8341000
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "port_quality_labor_absence: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "port_quality_labor_absence: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-015",
+      "seed": 40815,
+      "objective": [
+        1250660,
+        7067590
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "port_quality_labor_absence: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "port_quality_labor_absence: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    },
+    {
+      "task": "faraday-workforce-016",
+      "seed": 40816,
+      "objective": [
+        1812040,
+        10003300
+      ],
+      "controls": {
+        "certified_release_labor": {
+          "passed": true,
+          "assessment": {
+            "feasible": true,
+            "branch_costs_cents": {
+              "normal": 644060,
+              "port_delay": 824120,
+              "quality_expansion": 844800,
+              "carrier_strike": 1186440,
+              "compound_port_quality": 1491380,
+              "compound_carrier_quality": 1709080,
+              "port_quality_labor_absence": 1491380,
+              "carrier_quality_cash_freeze": 1812040
+            },
+            "worst_case_cost_cents": 1812040,
+            "reservation_fee_cents": 255000
+          }
+        },
+        "treasury_prepayment": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        },
+        "both": {
+          "passed": false,
+          "assessment": {
+            "feasible": false,
+            "error": "carrier_quality_cash_freeze: customer contract, installation-kit coupling, or carrier dispatch contract violated"
+          }
+        }
+      }
+    }
+  ]
+}
