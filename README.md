@@ -2,7 +2,7 @@
 
 [Benchmark website](https://www.faradaycompute.com/faraday-industrial-benchmark) · [Benchmark card](BENCHMARK_CARD.md) · [Agent protocol](docs/jsonl-protocol.md)
 
-**Built to be the most comprehensive benchmark for industrial AI agents.**
+**Built to be the most comprehensive benchmark for industrial operations.**
 
 Faraday evaluates how well AI agents complete industrial workflows across ERP,
 manufacturing, supply chain, logistics, engineering, and finance—from investigating
