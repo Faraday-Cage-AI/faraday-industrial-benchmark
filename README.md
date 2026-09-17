@@ -2,9 +2,11 @@
 
 [Benchmark website](https://www.faradaycompute.com/faraday-industrial-benchmark) · [Benchmark card](BENCHMARK_CARD.md) · [Agent protocol](docs/jsonl-protocol.md)
 
-Faraday Industrial Benchmark evaluates how well AI agents complete industrial
-workflows across ERP, manufacturing, supply chain, logistics, engineering, and
-finance.
+**Built to be the most comprehensive benchmark for industrial operations.**
+
+Faraday evaluates how well AI agents complete industrial workflows across ERP,
+manufacturing, supply chain, logistics, engineering, and finance—from investigating
+a problem to executing a verified resolution across connected systems.
 
 Agents work inside a simulated company. They investigate changing records,
 resolve exceptions, plan around operational constraints, obtain required
@@ -88,10 +90,6 @@ See the [protocol documentation](docs/jsonl-protocol.md) for implementation deta
 - [Agent protocol](docs/jsonl-protocol.md)
 - [Benchmark tracks](docs/benchmark-tracks.md)
 - [Third-party tracks and licenses](third_party/README.md)
-
-Faraday-native scenarios use synthetic companies, records, and transactions in
-isolated simulations. Upstream compatibility tracks retain their own evaluation
-rules and are reported separately.
 
 Faraday-native code is licensed under [Apache-2.0](LICENSE), and authored task
 content under [CC BY 4.0](DATA_LICENSE). Third-party material retains its original
