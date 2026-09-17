@@ -50,15 +50,8 @@ workflows pass; a hindsight-policy ablation is rejected on 8/8 cases. These are
 algorithmic checks, not model results. Use `--tasks data/decision-challenge-v3/tasks.json`.
 V3 publishes scoring deadlines and artifact schemas, validates shapes with field-level
 errors, and accepts documented ledger annotations without relaxing business values.
-The v1 pilot showed both models could find the optimal plan; its formatting-driven
-score difference is not evidence of a model capability gap. Historical v1 tasks
-and scores are preserved separately.
-Paid v2 measurement was stopped after an audit found an undisclosed timeliness
-target and ledger-shape feedback problems. V3 passed 302 regression tests and all
-16 measured attempts replay exactly. Strict successes: GPT-5.4 3/8, GPT-5.5 6/8.
-Resource limits and small objective gaps matter; this does not establish extreme
-workforce difficulty. See the [results](reports/decision-v3-results.md) and
-[contract audit](docs/decision-contract-audit.md).
+See the [contract audit](docs/decision-contract-audit.md) for the scoring-contract
+and validation methodology.
 
 **Research-backed extension (in development):** [0.10.0-researched.3](docs/researched-workflows.md)
 adds eight operating-review cases with receipt-cost propagation, mixed valuation,
@@ -232,12 +225,6 @@ public prompt, workflow stage, budget, role, action label, and tool-contract
 digest. Faraday-Platform imports it, runs its agent through the same JSONL protocol, converts benchmark evidence into
 capability and safety loss buckets, proposes a policy mutation, and requires a
 fresh exact replay before promotion.
-
-A replay-verified `gpt-4o` Faraday-Platform **v0.3** public-development run is
-stored at `runs/faraday-platform-gpt4o-optimized-full.json`: 90.78 mean, 29/52
-strict, zero critical failures, and 52/52 exact replay. It is a historical
-optimization baseline, not a held-out result and not a v0.5 score. The expanded
-v0.5 contract must be run separately.
 
 ## Score
 
