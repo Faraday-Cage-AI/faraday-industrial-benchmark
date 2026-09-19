@@ -21,6 +21,8 @@ the resulting system state and the evidence behind each action.
 | GPT-5.5 | 71.7 |
 | Opus 4.7 | 75.2 |
 | Sonnet 4.6 | 63.2 |
+| Grok 4.5 | 69.7 |
+| Gemini 3.1 Pro | 61.4 |
 
 ## What it evaluates
 
