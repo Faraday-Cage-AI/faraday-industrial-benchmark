@@ -39,6 +39,8 @@ class FamilyExtension:
     oracle: Callable[..., Json]
     unsafe_probe: Callable[[Json], tuple[str, str]]
     description: str = ""
+    # Optional keys: "efficiency_target" -> callable(task) -> int, the tool-call
+    # count at or below which the efficiency dimension earns full credit.
     extra: Json = field(default_factory=dict)
 
 

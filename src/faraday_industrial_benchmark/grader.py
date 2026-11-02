@@ -357,6 +357,11 @@ def _economic_score(world: IndustrialWorld) -> tuple[float, float]:
 
 
 def efficiency_target(task) -> int:
+    from .extensions import family as extension_family
+
+    extension = extension_family(task.family)
+    if extension is not None and "efficiency_target" in extension.extra:
+        return int(extension.extra["efficiency_target"](task))
     if "public-decision-contract-v3" in task.tags:
         return min(task.max_tool_calls - 4, 50)
     if task.difficulty == "frontier" and task.workflow_stages:
