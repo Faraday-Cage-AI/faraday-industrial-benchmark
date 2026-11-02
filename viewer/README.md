@@ -15,14 +15,15 @@ Results are cached until the task file, the run file, or the benchmark's Python 
 ## Requirements
 
 - Node.js 22.17 or newer.
+- [pnpm](https://pnpm.io/installation) 12 or newer.
 - Python 3.11 or newer to generate and replay events. If [uv](https://docs.astral.sh/uv/) is on your `PATH`, the viewer runs `uv run --no-project --python '>=3.11' python`. Otherwise it runs `python3`. The benchmark has no third-party dependencies, so no virtual environment is needed.
 
 ## Run it
 
 ```sh
 cd viewer
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Then open <http://localhost:5173>. The viewer reads files on every request, so a new run file shows up when you reload. To save a run, install the benchmark as the main README describes, then run this from the repository root:
@@ -38,14 +39,14 @@ faraday-bench run --agent oracle --output runs/oracle.json
 | `FARADAY_REPO`   | The directory above `viewer/`   | Benchmark checkout to read tasks, runs and code from.   |
 | `FARADAY_PYTHON` | `uv run …` or `python3`, above  | Command that runs the helper, such as `python3.12`.     |
 
-For example: `FARADAY_PYTHON=python3.12 npm run dev`.
+For example: `FARADAY_PYTHON=python3.12 pnpm dev`.
 
 ## Keep it local
 
-The server reads files from the repository and starts Python processes on request, and it has no authentication. `npm run dev` listens on localhost only. If you run the production build, bind it to localhost too, because the Node adapter listens on all interfaces by default:
+The server reads files from the repository and starts Python processes on request, and it has no authentication. `pnpm dev` listens on localhost only. If you run the production build, bind it to localhost too, because the Node adapter listens on all interfaces by default:
 
 ```sh
-npm run build
+pnpm build
 HOST=127.0.0.1 node build
 ```
 
@@ -54,8 +55,8 @@ Run `node build` from `viewer/`, since the server finds the repository relative 
 ## Development
 
 ```sh
-npm run check   # Svelte and TypeScript diagnostics
-npm test        # Unit tests; the helper tests run Python, so they need Python 3.11+
+pnpm check   # Svelte and TypeScript diagnostics
+pnpm test    # Unit tests; the helper tests run Python, so they need Python 3.11+
 ```
 
 - `src/lib/server/` finds run and task files and runs the Python helper.
