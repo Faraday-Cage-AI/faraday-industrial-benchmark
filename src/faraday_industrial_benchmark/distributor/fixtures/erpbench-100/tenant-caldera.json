@@ -1,0 +1,2010 @@
+{
+ "documents": [
+  {
+   "id": "CHAT-CUSTOMERS-CLD",
+   "sections": {
+    "thread": [
+     {
+      "author": "sales-inbox",
+      "message_id": "CHAT-CLD-CAPTURE-1",
+      "posted_at": "2026-02-09T06:30:00Z",
+      "text": "New buyer from Amazon Business: Pacific Ecom Partners, tax id TX-91-664120, orders via ap@pacificecom-sim.example. Needs a master record before invoicing.",
+      "thread_id": "THREAD-CLD-CAPTURE"
+     },
+     {
+      "author": "Alicia Romero",
+      "message_id": "CHAT-CLD-CAPTURE-2",
+      "posted_at": "2026-02-09T06:35:00Z",
+      "text": "Capture it in the customer master tab, not as a note; check the channel export for their first order.",
+      "thread_id": "THREAD-CLD-CAPTURE"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#customers-cld channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-HR-CLD",
+   "sections": {
+    "thread": [
+     {
+      "author": "Monica Ruiz",
+      "message_id": "CHAT-CLD-HR",
+      "posted_at": "2026-02-06T09:00:00Z",
+      "text": "Compliance audit next week; document alerts, failed checks and the hiring round all need closing this week.",
+      "thread_id": "THREAD-CLD-HR"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#hr-cld channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-OPS-CLD",
+   "sections": {
+    "thread": [
+     {
+      "author": "Alicia Romero",
+      "message_id": "CHAT-CLD-PRIOR-IMPORT",
+      "posted_at": "2026-02-03T10:20:00Z",
+      "text": "Partial import for SF-PO-51188 went in on 2026-02-03 as SO-CLD-40039; the rest of the lines are still pending.",
+      "thread_id": "THREAD-CLD-IMPORT"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#ops-cld channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-PLANNING-CLD",
+   "sections": {
+    "thread": [
+     {
+      "author": "Alicia Romero",
+      "message_id": "CHAT-CLD-PLANNING",
+      "posted_at": "2026-02-09T07:45:00Z",
+      "text": "Reorder run today: use policy R4 (open POs count as supply) and the 7-day need window; Cascade Paper Mills lead time is 8 days.",
+      "thread_id": "THREAD-CLD-PLAN"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#planning-cld channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-PRICING-CLD",
+   "sections": {
+    "thread": [
+     {
+      "author": "pricing",
+      "message_id": "CHAT-CLD-PRICING",
+      "posted_at": "2026-02-09T08:20:00Z",
+      "text": "Price batch PRICE-BATCH-CLD-2026Q2 is out; policy tab in the ops register applies.",
+      "thread_id": "THREAD-CLD-PRICE"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#pricing-cld channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-SHIFT-CLD",
+   "sections": {
+    "thread": [
+     {
+      "author": "Greg Halvorsen",
+      "message_id": "CHAT-CLD-SHIFT",
+      "posted_at": "2026-02-08T21:00:00Z",
+      "text": "Swing shift 2026-02-08: reports due by 23:15; overtime is measured from shift end.",
+      "thread_id": "THREAD-CLD-SHIFT"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#shift-cld channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-WAREHOUSE-CLD",
+   "sections": {
+    "thread": [
+     {
+      "author": "Greg Halvorsen",
+      "message_id": "CHAT-CLD-WAREHOUSE",
+      "posted_at": "2026-02-08T22:10:00Z",
+      "text": "SHP-CLD-9910 picked; the pick confirmation is uploaded, a couple of lines did not match the requested quantity.",
+      "thread_id": "THREAD-CLD-WH"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#warehouse-cld channel history",
+   "version": 1
+  },
+  {
+   "id": "FILE-CLD-AP-MATCH-POLICY",
+   "sections": {
+    "content": {
+     "file_name": "13-ap-match-policy.md",
+     "logical_name": "ap-match-policy",
+     "mime_type": "text/markdown",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "# Caldera Packaging three-way match policy\n\n- Price tolerance: 2.0% of the purchase-order unit price per line.\n- Invoiced quantity may never exceed the received quantity.\n- Lines outside tolerance are entered and placed on hold with the reason; matched lines are validated for payment.\n- Payment release is authorized by Ben Carter after the analyst's match note.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "13-ap-match-policy.md",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-AR-AGING-0209",
+   "sections": {
+    "content": {
+     "file_name": "07-ar-aging.xlsx",
+     "logical_name": "ar-aging",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Invoice,Amount,Due date,Days past due,Status\r\nINV-CLD-11220,52300.0,2026-01-04,36,open\r\nINV-CLD-11276,24800.0,2026-01-18,22,open\r\nINV-CLD-11330,17650.0,2026-02-01,8,open\r\nINV-CLD-11391,33100.0,2026-02-12,0,open\r\nINV-CLD-11447,21900.0,2026-02-23,0,open\r\nINV-CLD-11502,12400.0,2026-03-06,0,open\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "07-ar-aging.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-AUTHORITY-MEMO-0209",
+   "sections": {
+    "content": {
+     "file_name": "24-authority-memo.eml",
+     "logical_name": "authority-memo",
+     "mime_type": "message/rfc822",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "From: alicia.romero@caldera-sim.example\nTo: analyst@caldera-sim.example\nSubject: Caldera Packaging operating authority for February\n\nCurrent sources of truth: the 2026-02-09 order batch, the 2026-02-08 pick confirmation, the 2026-02-06 remittance advice, reorder policy R4, the 2026-02-06 delivery note, the 2026-02-09 compliance checklist, the 2026-02-08 roster, the 2026-02-09 channel export, the 2026 headcount approval and the Q2 price batch. Earlier versions are superseded. All outbound messages stay in review.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "24-authority-memo.eml",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-CANDIDATE-REGISTER",
+   "sections": {
+    "content": {
+     "file_name": "21-candidate-register.xlsx",
+     "logical_name": "candidate-register",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Candidate,Candidate id,Permit expiry,Background check,Grade\r\nMiguel Santos,CLD-C201,2029-05-24,passed,B\r\nRachel Kim,CLD-C202,2028-04-19,not passed,B\r\nAndre Bell,CLD-C203,2030-03-20,passed,B\r\nSonia Alvarez,CLD-C204,2028-09-16,passed,B\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "21-candidate-register.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-CHANNEL-EXPORT-0202",
+   "sections": {
+    "content": {
+     "file_name": "Amazon Business-export-2026-02-02.json",
+     "logical_name": "channel-export",
+     "mime_type": "application/json",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "{\n  \"channel\": \"Amazon Business\",\n  \"exported_at\": \"2026-02-02T06:00:00Z\",\n  \"orders\": [\n    {\n      \"buyer\": \"Reno Roasters\",\n      \"channel_order_id\": \"AB-88102\",\n      \"order_total\": 1330.5,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Truckee Provisions\",\n      \"channel_order_id\": \"AB-88104\",\n      \"order_total\": 890.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Summit Gear\",\n      \"channel_order_id\": \"AB-88106\",\n      \"order_total\": 2180.0,\n      \"status\": \"paid\"\n    }\n  ]\n}"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "Amazon Business-export-2026-02-02.json",
+   "version": 1
+  },
+  {
+   "id": "FILE-CLD-CHANNEL-EXPORT-0209",
+   "sections": {
+    "content": {
+     "file_name": "18-channel-export.json",
+     "logical_name": "channel-export",
+     "mime_type": "application/json",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "{\n  \"channel\": \"Amazon Business\",\n  \"exported_at\": \"2026-02-09T06:00:00Z\",\n  \"orders\": [\n    {\n      \"buyer\": \"Pacific Ecom Partners\",\n      \"channel_order_id\": \"AB-88101\",\n      \"currency\": \"USD\",\n      \"order_total\": 4120.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Reno Roasters\",\n      \"channel_order_id\": \"AB-88102\",\n      \"currency\": \"USD\",\n      \"order_total\": 1330.5,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Highline Apparel\",\n      \"channel_order_id\": \"AB-88103\",\n      \"currency\": \"USD\",\n      \"order_total\": 2760.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Truckee Provisions\",\n      \"channel_order_id\": \"AB-88104\",\n      \"currency\": \"USD\",\n      \"order_total\": 890.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Highline Apparel\",\n      \"channel_order_id\": \"AB-88103\",\n      \"currency\": \"USD\",\n      \"order_total\": 2760.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Desert Bloom Cosmetics\",\n      \"channel_order_id\": \"AB-88105\",\n      \"currency\": \"USD\",\n      \"order_total\": 3450.75,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Summit Gear\",\n      \"channel_order_id\": \"AB-88106\",\n      \"currency\": \"USD\",\n      \"order_total\": 2180.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Pacific Ecom Partners\",\n      \"channel_order_id\": \"AB-88101\",\n      \"currency\": \"USD\",\n      \"order_total\": 4120.0,\n      \"status\": \"paid\"\n    }\n  ]\n}"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "18-channel-export.json",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-COMPLIANCE-CHECKLIST-0126",
+   "sections": {
+    "content": {
+     "file_name": "compliance-checklist-2026-01-26.xlsx",
+     "logical_name": "compliance-checklist",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "Person,Person number,Document,Expires,Days remaining\nCarlos Mendoza,CLD-P1001,Forklift licence,2026-03-01,34\nAshley Nguyen,CLD-P1002,Safety induction,2026-03-11,44\nDerek Holt,CLD-P1003,Medical certificate,2026-02-18,23\nMaya Patel,CLD-P1004,Forklift licence,2026-04-05,69\nLuis Herrera,CLD-P1005,Work permit,2026-03-08,41\nKim Dawson,CLD-P1006,Safety induction,2026-02-23,28\nOmar Farouk,CLD-P1007,Medical certificate,2026-02-11,16\nTina Brooks,CLD-P1008,Forklift licence,2026-08-08,194\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "compliance-checklist-2026-01-26.xlsx",
+   "version": 1
+  },
+  {
+   "id": "FILE-CLD-COMPLIANCE-CHECKLIST-0209",
+   "sections": {
+    "content": {
+     "file_name": "14-compliance-checklist.xlsx",
+     "logical_name": "compliance-checklist",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Person,Person number,Document,Expires,Days remaining,Mandatory check,Check pending\r\nCarlos Mendoza,CLD-P1001,Forklift licence,2026-03-01,20,pass,no\r\nAshley Nguyen,CLD-P1002,Safety induction,2026-03-11,30,pass,no\r\nDerek Holt,CLD-P1003,Medical certificate,2026-02-18,9,pass,yes\r\nMaya Patel,CLD-P1004,Forklift licence,2026-04-05,55,pass,no\r\nLuis Herrera,CLD-P1005,Work permit,2026-03-08,27,fail,no\r\nKim Dawson,CLD-P1006,Safety induction,2026-02-23,14,pass,no\r\nOmar Farouk,CLD-P1007,Medical certificate,2026-02-11,2,pass,yes\r\nTina Brooks,CLD-P1008,Forklift licence,2026-08-08,180,pass,no\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "14-compliance-checklist.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-CREDIT-POLICY-R6",
+   "sections": {
+    "content": {
+     "file_name": "08-credit-policy.md",
+     "logical_name": "credit-policy",
+     "mime_type": "text/markdown",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "# Caldera Packaging credit policy (revision 6, effective 2026-01-15)\n\n- Credit limit for Sierra Fulfillment LLC: 200000.00 USD.\n- Recommend a credit hold when past-due receivables exceed 25% of the credit limit after all identified receipts are applied.\n- Credit holds are approved only by Ben Carter; analysts recommend, they do not apply holds.\n- Receipts are applied only to the invoices named on the customer's remittance advice.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "08-credit-policy.md",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-CUSTOMER-CAPTURE-0209",
+   "sections": {
+    "content": {
+     "file_name": "19-customer-capture-chat.json",
+     "logical_name": "customer-capture-chat",
+     "mime_type": "application/json",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "{\n  \"channel\": \"#customers-cld\",\n  \"messages\": [\n    {\n      \"author\": \"sales-inbox\",\n      \"text\": \"New buyer from Amazon Business: Pacific Ecom Partners, tax id TX-91-664120, orders via ap@pacificecom-sim.example. Needs a master record before invoicing.\"\n    },\n    {\n      \"author\": \"Alicia Romero\",\n      \"text\": \"Capture it in the customer master tab, not as a note; check the channel export for their first order.\"\n    }\n  ]\n}"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "19-customer-capture-chat.json",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-DELIVERY-NOTE-0206",
+   "sections": {
+    "content": {
+     "file_name": "12-delivery-note.pdf",
+     "logical_name": "delivery-note",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Cascade Paper Mills — delivery note DN-CLD-0206 for PO-CLD-40118\nDelivered to Reno plant on 2026-02-06, signed by receiving clerk.\nLine 1: BOX-RSC-12  ordered 20000  delivered 20000\nLine 2: MAIL-PAD-6  ordered 25000  delivered 25000\nLine 3: TAPE-PP-48  ordered 6000  delivered 5400\nLine 4: LBL-THERM-46  ordered 2000  delivered 2000\nQuantities below the ordered amount are back-ordered, not short-shipped.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "12-delivery-note.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-DEMAND-FORECAST-F06",
+   "sections": {
+    "content": {
+     "file_name": "10-demand-forecast.csv",
+     "logical_name": "demand-forecast",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "item,weekly_demand,need_window_days,forecast_revision\nBOX-RSC-12,3750,7,F-2026-06\nMAIL-PAD-6,6250,7,F-2026-06\nFILM-STR-18,200,7,F-2026-06\nTAPE-PP-48,1000,7,F-2026-06\nLBL-THERM-46,225,7,F-2026-06\nBOX-RSC-10-OLD,1,7,F-2026-06\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "10-demand-forecast.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-DOCUMENT-ALERT-LOG",
+   "sections": {
+    "content": {
+     "file_name": "15-document-alert-log.csv",
+     "logical_name": "document-alert-log",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "person_number,document,alerted_on,alerted_by\nCLD-P1002,Safety induction,2026-01-28,Monica Ruiz\nCLD-P1008,Forklift licence,2026-01-28,Monica Ruiz\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "15-document-alert-log.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-HEADCOUNT-APPROVAL-2025",
+   "sections": {
+    "content": {
+     "file_name": "headcount-approval-2025.pdf",
+     "logical_name": "headcount-approval",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "Caldera Packaging headcount approval 2025 (superseded)\nPosition: corrugator operator   Approved headcount: 7\nApproved monthly wage: 3741.20\nSuperseded by the 2026 approval.\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "headcount-approval-2025.pdf",
+   "version": 1
+  },
+  {
+   "id": "FILE-CLD-HEADCOUNT-APPROVAL-2026",
+   "sections": {
+    "content": {
+     "file_name": "20-headcount-approval.pdf",
+     "logical_name": "headcount-approval",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Caldera Packaging headcount approval 2026 (revision 2)\nPosition: corrugator operator   Approved headcount: 5   Standard contract: 12 months\nApproved monthly wage: 3980.00 USD\nApproved by Monica Ruiz on 2026-01-20. Supersedes the 2025 approval.\nOnly candidates with passed background checks and work permits valid beyond the contract end may be hired.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "20-headcount-approval.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-OPS-AUDIT-LOG",
+   "sections": {
+    "content": {
+     "file_name": "26-ops-audit.log",
+     "logical_name": "ops-audit",
+     "mime_type": "text/plain",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "2026-02-03T10:12:00Z CLD partial import created SO-CLD-40039 from an earlier copy of SF-PO-51188\n2026-02-06T15:40:00Z CLD delivery note DN-CLD-0206 received at Reno plant\n2026-02-08T22:05:00Z CLD pick confirmation posted for SHP-CLD-9910\n2026-02-09T06:00:00Z CLD Amazon Business export generated\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "26-ops-audit.log",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-ORDER-BATCH-0203",
+   "sections": {
+    "content": {
+     "file_name": "02-prior-partial-import.xlsx",
+     "logical_name": "prior-partial-import",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-03T10:00:00Z",
+     "text": "Line,Customer PO,Item,Quantity,Imported order,Imported on\r\n6,SF-PO-51188,BOX-RSC-12,2000,SO-CLD-40039,2026-02-03\r\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "02-prior-partial-import.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-ORDER-BATCH-0209",
+   "sections": {
+    "content": {
+     "file_name": "01-consolidated-order-batch.xlsx",
+     "logical_name": "consolidated-order-batch",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Line,Customer PO,Item,Description,Quantity,Unit price (customer sheet)\r\n1,SF-PO-51188,BOX-RSC-12,12 x 12 x 12 RSC carton,8000,0.98\r\n2,SF-PO-51188,MAIL-PAD-6,Padded mailer #6,12000,0.36\r\n3,SF-PO-51188,FILM-STR-18,Stretch film 18 in roll,400,12.41\r\n4,SF-PO-51188,TAPE-PP-48,PP tape 48 mm x 100 m,2400,1.98\r\n5,SF-PO-51188,LBL-THERM-46,Thermal label 4 x 6 roll,600,10.06\r\n6,SF-PO-51188,BOX-RSC-12,12 x 12 x 12 RSC carton,2000,0.98\r\n7,SF-PO-51188,BOX-RSC-10-OLD,10 x 10 x 10 RSC (retired),1500,0.83\r\n8,SF-PO-51188,MAIL-PAD-6,Padded mailer #6,3000,0.36\r\n9,SF-PO-51188,TAPE-PP-48,PP tape 48 mm x 100 m,800,1.98\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "01-consolidated-order-batch.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-PICK-CONFIRM-0205",
+   "sections": {
+    "content": {
+     "file_name": "SHP-CLD-9910-pick-confirmation-2026-02-05.csv",
+     "logical_name": "pick-confirmation",
+     "mime_type": "text/csv",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "shipment,line,item,requested,picked,picker,confirmed_at\nSHP-CLD-9910,1,BOX-RSC-12,6000,6000,WH-11,2026-02-05T20:11:00Z\nSHP-CLD-9910,2,MAIL-PAD-6,9000,9000,WH-12,2026-02-05T20:12:00Z\nSHP-CLD-9910,3,FILM-STR-18,300,300,WH-13,2026-02-05T20:13:00Z\nSHP-CLD-9910,4,TAPE-PP-48,2000,2000,WH-14,2026-02-05T20:14:00Z\nSHP-CLD-9910,5,LBL-THERM-46,500,500,WH-15,2026-02-05T20:15:00Z\nSHP-CLD-9910,6,MAIL-PAD-6,2000,2000,WH-16,2026-02-05T20:16:00Z\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "SHP-CLD-9910-pick-confirmation-2026-02-05.csv",
+   "version": 1
+  },
+  {
+   "id": "FILE-CLD-PICK-CONFIRM-0208",
+   "sections": {
+    "content": {
+     "file_name": "05-pick-confirmation.csv",
+     "logical_name": "pick-confirmation",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "shipment,line,item,requested,picked,picker,confirmed_at\nSHP-CLD-9910,1,BOX-RSC-12,6000,6000,WH-11,2026-02-08T21:11:00Z\nSHP-CLD-9910,2,MAIL-PAD-6,9000,8800,WH-12,2026-02-08T21:12:00Z\nSHP-CLD-9910,3,FILM-STR-18,300,300,WH-13,2026-02-08T21:13:00Z\nSHP-CLD-9910,4,TAPE-PP-48,2000,2000,WH-14,2026-02-08T21:14:00Z\nSHP-CLD-9910,5,LBL-THERM-46,500,520,WH-15,2026-02-08T21:15:00Z\nSHP-CLD-9910,6,MAIL-PAD-6,2000,2000,WH-16,2026-02-08T21:16:00Z\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "05-pick-confirmation.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-PRICE-BATCH-Q1",
+   "sections": {
+    "content": {
+     "file_name": "PRICE-BATCH-CLD-2026Q1.csv",
+     "logical_name": "price-batch",
+     "mime_type": "text/csv",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "batch,line,item,new_list_price,effective_date\nPRICE-BATCH-CLD-2026Q1,1,BOX-RSC-12,0.92,2026-01-01\nPRICE-BATCH-CLD-2026Q1,2,MAIL-PAD-6,0.34,2026-01-01\nPRICE-BATCH-CLD-2026Q1,3,FILM-STR-18,11.60,2026-01-01\nPRICE-BATCH-CLD-2026Q1,4,TAPE-PP-48,1.85,2026-01-01\nPRICE-BATCH-CLD-2026Q1,5,LBL-THERM-46,9.40,2026-01-01\nPRICE-BATCH-CLD-2026Q1,6,BOX-RSC-10-OLD,0.78,2026-01-01\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "PRICE-BATCH-CLD-2026Q1.csv",
+   "version": 1
+  },
+  {
+   "id": "FILE-CLD-PRICE-BATCH-Q2",
+   "sections": {
+    "content": {
+     "file_name": "23-price-batch.csv",
+     "logical_name": "price-batch",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "batch,line,item,new_list_price,effective_date\nPRICE-BATCH-CLD-2026Q2,1,BOX-RSC-12,0.98,2026-02-21\nPRICE-BATCH-CLD-2026Q2,2,MAIL-PAD-6,0.36,2026-02-21\nPRICE-BATCH-CLD-2026Q2,3,FILM-STR-18,13.60,2026-02-21\nPRICE-BATCH-CLD-2026Q2,4,TAPE-PP-48,1.95,2026-02-04\nPRICE-BATCH-CLD-2026Q2,5,LBL-THERM-46,9.90,2026-02-21\nPRICE-BATCH-CLD-2026Q2,6,BOX-RSC-12,1.02,2026-03-23\nPRICE-BATCH-CLD-2026Q2,7,BOX-RSC-14,1.15,2026-02-21\nPRICE-BATCH-CLD-2026Q2,8,BOX-RSC-10-OLD,0.80,2026-02-21\nPRICE-BATCH-CLD-2026Q2,9,TAPE-PP-48,2.00,2026-04-15\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "23-price-batch.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-PRICE-LIST-2025H2",
+   "sections": {
+    "content": {
+     "file_name": "04-superseded-price-list.csv",
+     "logical_name": "superseded-price-list",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-03T10:00:00Z",
+     "text": "item,description,list_price,status,effective_from,superseded\nBOX-RSC-12,12 x 12 x 12 RSC carton,0.87,Active,2025-07-01,true\nMAIL-PAD-6,Padded mailer #6,0.32,Active,2025-07-01,true\nFILM-STR-18,Stretch film 18 in roll,11.02,Active,2025-07-01,true\nTAPE-PP-48,PP tape 48 mm x 100 m,1.76,Active,2025-07-01,true\nLBL-THERM-46,Thermal label 4 x 6 roll,8.93,Active,2025-07-01,true\nBOX-RSC-10-OLD,10 x 10 x 10 RSC (retired),0.74,Active,2025-07-01,true\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "04-superseded-price-list.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-PRICE-LIST-CURRENT",
+   "sections": {
+    "content": {
+     "file_name": "03-current-price-list.csv",
+     "logical_name": "current-price-list",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "item,description,list_price,status,effective_from\nBOX-RSC-12,12 x 12 x 12 RSC carton,0.92,Active,2026-01-01\nMAIL-PAD-6,Padded mailer #6,0.34,Active,2026-01-01\nFILM-STR-18,Stretch film 18 in roll,11.60,Active,2026-01-01\nTAPE-PP-48,PP tape 48 mm x 100 m,1.85,Active,2026-01-01\nLBL-THERM-46,Thermal label 4 x 6 roll,9.40,Active,2026-01-01\nBOX-RSC-10-OLD,10 x 10 x 10 RSC (retired),0.78,Inactive,2026-01-01\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "03-current-price-list.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-REMIT-ADVICE-0206",
+   "sections": {
+    "content": {
+     "file_name": "06-remittance-advice.pdf",
+     "logical_name": "remittance-advice",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Sierra Fulfillment LLC — remittance advice\nPayee: Caldera Packaging\nPayment date: 2026-02-06   Method: ACH\nAmount paid: 77100.00 USD\nInvoices covered by this payment:\n  INV-CLD-11220  52300.00\n  INV-CLD-11276  24800.00\nInvoices not included in this remittance are disputed or scheduled separately.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "06-remittance-advice.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-REORDER-POLICY-R3",
+   "sections": {
+    "content": {
+     "file_name": "reorder-policy-R3.xlsx",
+     "logical_name": "reorder-policy",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "Item,Reorder point,Planned maximum,Count open POs as supply,Policy revision\nBOX-RSC-12,14800,40000,no,R3\nMAIL-PAD-6,24800,60000,no,R3\nFILM-STR-18,600,2000,no,R3\nTAPE-PP-48,3800,9000,no,R3\nLBL-THERM-46,700,2400,no,R3\nBOX-RSC-10-OLD,0,0,no,R3\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "reorder-policy-R3.xlsx",
+   "version": 1
+  },
+  {
+   "id": "FILE-CLD-REORDER-POLICY-R4",
+   "sections": {
+    "content": {
+     "file_name": "09-reorder-policy.xlsx",
+     "logical_name": "reorder-policy",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Item,Reorder point,Planned maximum,Count open POs as supply,Policy revision\r\nBOX-RSC-12,15000,40000,yes,R4\r\nMAIL-PAD-6,25000,60000,yes,R4\r\nFILM-STR-18,800,2000,yes,R4\r\nTAPE-PP-48,4000,9000,yes,R4\r\nLBL-THERM-46,900,2400,yes,R4\r\nBOX-RSC-10-OLD,0,0,yes,R4\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "09-reorder-policy.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-SHIFT-REPORTS-0208",
+   "sections": {
+    "content": {
+     "file_name": "17-shift-work-reports.csv",
+     "logical_name": "shift-work-reports",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "staff_code,shift_date,submitted_at,minutes_over_shift_end\nCL-701,2026-02-08,23:02,0\nCL-702,2026-02-08,23:09,0\nCL-703,2026-02-08,23:20,45\nCL-704,2026-02-08,23:05,0\nCL-705,2026-02-08,23:12,0\nCL-706,2026-02-08,23:30,0\nCL-707,2026-02-08,23:01,0\nCL-708,2026-02-08,23:08,30\nCL-709,2026-02-08,23:14,0\nCL-710,2026-02-08,23:03,0\nCL-711,2026-02-08,23:16,0\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "17-shift-work-reports.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-SHIFT-ROSTER-0208",
+   "sections": {
+    "content": {
+     "file_name": "16-shift-roster.xlsx",
+     "logical_name": "shift-roster",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Staff code,Shift,Date,Approved leave\r\nCL-701,Swing,2026-02-08,no\r\nCL-702,Swing,2026-02-08,no\r\nCL-703,Swing,2026-02-08,no\r\nCL-704,Swing,2026-02-08,no\r\nCL-705,Swing,2026-02-08,no\r\nCL-706,Swing,2026-02-08,no\r\nCL-707,Swing,2026-02-08,no\r\nCL-708,Swing,2026-02-08,no\r\nCL-709,Swing,2026-02-08,no\r\nCL-710,Swing,2026-02-08,no\r\nCL-711,Swing,2026-02-08,no\r\nCL-712,Swing,2026-02-08,yes\r\nCL-713,Swing,2026-02-08,no\r\nCL-714,Swing,2026-02-08,no\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "16-shift-roster.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-SOURCE-MAP",
+   "sections": {
+    "content": {
+     "file_name": "25-source-map.yaml",
+     "logical_name": "source-map",
+     "mime_type": "application/yaml",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "tenant: CALDERA\norder_batch: FILE-CLD-ORDER-BATCH-0209\npick_confirmation: FILE-CLD-PICK-CONFIRM-0208\nremittance_advice: FILE-CLD-REMIT-ADVICE-0206\nreorder_policy: FILE-CLD-REORDER-POLICY-R4\ndelivery_note: FILE-CLD-DELIVERY-NOTE-0206\ncompliance_checklist: FILE-CLD-COMPLIANCE-CHECKLIST-0209\nshift_roster: FILE-CLD-SHIFT-ROSTER-0208\nchannel_export: FILE-CLD-CHANNEL-EXPORT-0209\nheadcount_approval: FILE-CLD-HEADCOUNT-APPROVAL-2026\nprice_batch: FILE-CLD-PRICE-BATCH-Q2\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "25-source-map.yaml",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-SUPPLIER-INVOICE-0207",
+   "sections": {
+    "content": {
+     "file_name": "11-supplier-invoice.pdf",
+     "logical_name": "supplier-invoice",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Cascade Paper Mills — tax invoice CPM-INV-2026-0207\nBill to: Caldera Packaging (Caldera Converting)\nPurchase order: PO-CLD-40118   Invoice date: 2026-02-07\nLine 1: BOX-RSC-12  qty 20000  @ 0.57\nLine 2: MAIL-PAD-6  qty 25000  @ 0.19\nLine 3: TAPE-PP-48  qty 5400  @ 1.10\nLine 4: LBL-THERM-46  qty 2000  @ 5.90\nInvoice total: 33890.00 USD\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "11-supplier-invoice.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-CLD-WAGE-TABLE",
+   "sections": {
+    "content": {
+     "file_name": "22-wage-table.csv",
+     "logical_name": "wage-table",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "position,monthly_wage,contract_months,approved_from\ncorrugator operator,3980.00,12,2026-01-20\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "22-wage-table.csv",
+   "version": 2
+  },
+  {
+   "id": "MSG-CLD-AUDITOR-0205",
+   "sections": {
+    "message": {
+     "body": "The audit covers worker documents expiring within 30 days and any mandatory check that has failed or is still pending. Use the 2026-02-09 checklist (FILE-CLD-COMPLIANCE-CHECKLIST-0209); the January checklist is superseded.",
+     "from": "audit@caldera-sim.example",
+     "sent_at": "2026-02-05T14:00:00Z",
+     "subject": "Compliance audit scope",
+     "to": [
+      "hr@caldera-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Compliance audit scope",
+   "version": 1
+  },
+  {
+   "id": "MSG-CLD-AUTHORITY-0209",
+   "sections": {
+    "message": {
+     "body": "From: alicia.romero@caldera-sim.example\nTo: analyst@caldera-sim.example\nSubject: Caldera Packaging operating authority for February\n\nCurrent sources of truth: the 2026-02-09 order batch, the 2026-02-08 pick confirmation, the 2026-02-06 remittance advice, reorder policy R4, the 2026-02-06 delivery note, the 2026-02-09 compliance checklist, the 2026-02-08 roster, the 2026-02-09 channel export, the 2026 headcount approval and the Q2 price batch. Earlier versions are superseded. All outbound messages stay in review.\n",
+     "from": "alicia.romero@caldera-sim.example",
+     "sent_at": "2026-02-09T07:30:00Z",
+     "subject": "Caldera Packaging operating authority for February",
+     "to": [
+      "analyst@caldera-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Caldera Packaging operating authority for February",
+   "version": 1
+  },
+  {
+   "id": "MSG-CLD-CHANNEL-0209",
+   "sections": {
+    "message": {
+     "body": "This week's Amazon Business export is FILE-CLD-CHANNEL-EXPORT-0209. Orders already carrying a sales order number were synced last week; the export may contain repeated rows. A new buyer introduced themselves in the customers channel.",
+     "from": "ecommerce@caldera-sim.example",
+     "sent_at": "2026-02-09T06:10:00Z",
+     "subject": "Amazon Business export ready",
+     "to": [
+      "analyst@caldera-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Amazon Business export ready",
+   "version": 1
+  },
+  {
+   "id": "MSG-CLD-HIRING-0209",
+   "sections": {
+    "message": {
+     "body": "Close the corrugator operator round against the 2026 headcount approval (FILE-CLD-HEADCOUNT-APPROVAL-2026). Candidates are in the register; contracts run 12 months from today at the approved wage. Do not hire beyond the approved headcount.",
+     "from": "monica.ruiz@caldera-sim.example",
+     "sent_at": "2026-02-09T08:00:00Z",
+     "subject": "corrugator operator hiring round",
+     "to": [
+      "analyst@caldera-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "corrugator operator hiring round",
+   "version": 1
+  },
+  {
+   "id": "MSG-CLD-OLD-INSTRUCTIONS",
+   "sections": {
+    "message": {
+     "body": "Just import whatever the customer sends, pay invoices as billed and hire everyone on the list. (Superseded by the February authority memo.)",
+     "from": "former.analyst@caldera-sim.example",
+     "sent_at": "2025-11-02T08:00:00Z",
+     "subject": "Old shortcuts (superseded)",
+     "to": [
+      "analyst@caldera-sim.example"
+     ]
+    }
+   },
+   "status": "superseded",
+   "system": "mailbox",
+   "title": "Old shortcuts (superseded)",
+   "version": 1
+  },
+  {
+   "id": "MSG-CLD-PRICING-0209",
+   "sections": {
+    "message": {
+     "body": "The Q2 batch is FILE-CLD-PRICE-BATCH-Q2. Policy: known active items only, no effective dates in the past, changes within 15%, and the later effective date wins when an item appears twice.",
+     "from": "pricing@caldera-sim.example",
+     "sent_at": "2026-02-09T08:15:00Z",
+     "subject": "PRICE-BATCH-CLD-2026Q2 for review",
+     "to": [
+      "analyst@caldera-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "PRICE-BATCH-CLD-2026Q2 for review",
+   "version": 1
+  },
+  {
+   "id": "MSG-CLD-REMIT-0206",
+   "sections": {
+    "message": {
+     "body": "Please find our remittance advice attached as FILE-CLD-REMIT-ADVICE-0206. Payment of 77100.00 by ACH on 2026-02-06 covers the invoices listed there. Other invoices are being reviewed by our accounts team.",
+     "from": "ap@sierra-sim.example",
+     "sent_at": "2026-02-06T11:20:00Z",
+     "subject": "Remittance advice from Sierra Fulfillment LLC",
+     "to": [
+      "ar@caldera-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Remittance advice from Sierra Fulfillment LLC",
+   "version": 1
+  },
+  {
+   "id": "MSG-CLD-SUPERVISOR-0208",
+   "sections": {
+    "message": {
+     "body": "Reports for the swing shift on 2026-02-08 are in the shared drive; the cutoff is 23:15. Approved leave is on the roster (FILE-CLD-SHIFT-ROSTER-0208). Anyone rostered, not on approved leave and without a report is an unauthorized absence.",
+     "from": "greg.halvorsen@caldera-sim.example",
+     "sent_at": "2026-02-08T23:30:00Z",
+     "subject": "Swing shift 2026-02-08 reports",
+     "to": [
+      "analyst@caldera-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Swing shift 2026-02-08 reports",
+   "version": 1
+  },
+  {
+   "id": "MSG-CLD-SUPPLIER-INVOICE-0207",
+   "sections": {
+    "message": {
+     "body": "Attached is invoice CPM-INV-2026-0207 for purchase order PO-CLD-40118 (file FILE-CLD-SUPPLIER-INVOICE-0207). Delivery note DN-CLD-0206 was signed at Reno plant on 2026-02-06.",
+     "from": "billing@cascade-sim.example",
+     "sent_at": "2026-02-07T09:05:00Z",
+     "subject": "Invoice CPM-INV-2026-0207 for PO-CLD-40118",
+     "to": [
+      "ap@caldera-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Invoice CPM-INV-2026-0207 for PO-CLD-40118",
+   "version": 1
+  },
+  {
+   "id": "SHEET-CLD-OPS",
+   "sections": {
+    "Aging": {
+     "range": "Aging!A1:E12",
+     "rows": [
+      [
+       "Invoice",
+       "Amount",
+       "Due",
+       "Days past due",
+       "Status"
+      ],
+      [
+       "INV-CLD-11220",
+       52300.0,
+       "2026-01-04",
+       36,
+       "open"
+      ],
+      [
+       "INV-CLD-11276",
+       24800.0,
+       "2026-01-18",
+       22,
+       "open"
+      ],
+      [
+       "INV-CLD-11330",
+       17650.0,
+       "2026-02-01",
+       8,
+       "open"
+      ],
+      [
+       "INV-CLD-11391",
+       33100.0,
+       "2026-02-12",
+       0,
+       "open"
+      ],
+      [
+       "INV-CLD-11447",
+       21900.0,
+       "2026-02-23",
+       0,
+       "open"
+      ],
+      [
+       "INV-CLD-11502",
+       12400.0,
+       "2026-03-06",
+       0,
+       "open"
+      ]
+     ]
+    },
+    "Compliance": {
+     "range": "Compliance!A1:G14",
+     "rows": [
+      [
+       "Person",
+       "Person number",
+       "Document",
+       "Expires",
+       "Days",
+       "Check",
+       "Alerted"
+      ],
+      [
+       "Carlos Mendoza",
+       "CLD-P1001",
+       "Forklift licence",
+       "2026-03-01",
+       20,
+       "pass",
+       "no"
+      ],
+      [
+       "Ashley Nguyen",
+       "CLD-P1002",
+       "Safety induction",
+       "2026-03-11",
+       30,
+       "pass",
+       "yes"
+      ],
+      [
+       "Derek Holt",
+       "CLD-P1003",
+       "Medical certificate",
+       "2026-02-18",
+       9,
+       "pass",
+       "no"
+      ],
+      [
+       "Maya Patel",
+       "CLD-P1004",
+       "Forklift licence",
+       "2026-04-05",
+       55,
+       "pass",
+       "no"
+      ],
+      [
+       "Luis Herrera",
+       "CLD-P1005",
+       "Work permit",
+       "2026-03-08",
+       27,
+       "fail",
+       "no"
+      ],
+      [
+       "Kim Dawson",
+       "CLD-P1006",
+       "Safety induction",
+       "2026-02-23",
+       14,
+       "pass",
+       "no"
+      ],
+      [
+       "Omar Farouk",
+       "CLD-P1007",
+       "Medical certificate",
+       "2026-02-11",
+       2,
+       "pass",
+       "no"
+      ],
+      [
+       "Tina Brooks",
+       "CLD-P1008",
+       "Forklift licence",
+       "2026-08-08",
+       180,
+       "pass",
+       "yes"
+      ]
+     ]
+    },
+    "Customers": {
+     "range": "Customers!A1:E12",
+     "rows": [
+      [
+       "Customer",
+       "Number",
+       "Email",
+       "Tax id",
+       "Channel"
+      ],
+      [
+       "Sierra Fulfillment LLC",
+       "CUST-70510",
+       "ap@sierra-sim.example",
+       "TX-CLD-0001",
+       "direct"
+      ],
+      [
+       "Corrugated Outlet Co.",
+       "CUST-CLD-DECOY1",
+       "buyer@outlet-sim.example",
+       "TX-CLD-0002",
+       "direct"
+      ]
+     ]
+    },
+    "Headcount": {
+     "range": "Headcount!A1:E12",
+     "rows": [
+      [
+       "Position",
+       "Approved",
+       "Current",
+       "Open",
+       "Revision"
+      ],
+      [
+       "corrugator operator",
+       5,
+       3,
+       "",
+       "2026-R2"
+      ]
+     ]
+    },
+    "PriceList": {
+     "range": "PriceList!A1:E12",
+     "rows": [
+      [
+       "Item",
+       "Description",
+       "List price",
+       "Status",
+       "Effective"
+      ],
+      [
+       "BOX-RSC-12",
+       "12 x 12 x 12 RSC carton",
+       0.92,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "MAIL-PAD-6",
+       "Padded mailer #6",
+       0.34,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "FILM-STR-18",
+       "Stretch film 18 in roll",
+       11.6,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "TAPE-PP-48",
+       "PP tape 48 mm x 100 m",
+       1.85,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "LBL-THERM-46",
+       "Thermal label 4 x 6 roll",
+       9.4,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "BOX-RSC-10-OLD",
+       "10 x 10 x 10 RSC (retired)",
+       0.78,
+       "Inactive",
+       "2026-01-01"
+      ]
+     ]
+    },
+    "PricingPolicy": {
+     "range": "PricingPolicy!A1:C6",
+     "rows": [
+      [
+       "Rule",
+       "Value",
+       "Note"
+      ],
+      [
+       "Maximum change pct",
+       15.0,
+       "per line versus current list price"
+      ],
+      [
+       "Past effective dates",
+       "reject",
+       ""
+      ],
+      [
+       "Unknown or inactive items",
+       "reject",
+       ""
+      ],
+      [
+       "Same item twice",
+       "later effective date wins",
+       "earlier line superseded"
+      ]
+     ]
+    },
+    "Register": {
+     "range": "Register!A1:H40",
+     "rows": [
+      [
+       "Record",
+       "Option",
+       "Values",
+       "",
+       "",
+       "",
+       "",
+       "Source"
+      ],
+      [
+       "SO-CLD-DECOY",
+       "closed_manual_order",
+       1,
+       0,
+       1280.0,
+       0,
+       0,
+       "MANUAL-2026-01"
+      ]
+     ]
+    },
+    "Reorder": {
+     "range": "Reorder!A1:F12",
+     "rows": [
+      [
+       "Item",
+       "Reorder point",
+       "Planned maximum",
+       "Open POs count",
+       "Revision",
+       "Need window"
+      ],
+      [
+       "BOX-RSC-12",
+       15000,
+       40000,
+       "yes",
+       "R4",
+       7
+      ],
+      [
+       "MAIL-PAD-6",
+       25000,
+       60000,
+       "yes",
+       "R4",
+       7
+      ],
+      [
+       "FILM-STR-18",
+       800,
+       2000,
+       "yes",
+       "R4",
+       7
+      ],
+      [
+       "TAPE-PP-48",
+       4000,
+       9000,
+       "yes",
+       "R4",
+       7
+      ],
+      [
+       "LBL-THERM-46",
+       900,
+       2400,
+       "yes",
+       "R4",
+       7
+      ],
+      [
+       "BOX-RSC-10-OLD",
+       0,
+       0,
+       "yes",
+       "R4",
+       7
+      ]
+     ]
+    },
+    "Shifts": {
+     "range": "Shifts!A1:F30",
+     "rows": [
+      [
+       "Staff",
+       "Shift",
+       "Date",
+       "Approved leave",
+       "Reported",
+       "Late"
+      ],
+      [
+       "CL-701",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-702",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-703",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-704",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-705",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-706",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-707",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-708",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-709",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-710",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-711",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-712",
+       "Swing",
+       "2026-02-08",
+       "yes",
+       "",
+       ""
+      ],
+      [
+       "CL-713",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "CL-714",
+       "Swing",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ]
+     ]
+    },
+    "Shipping": {
+     "range": "Shipping!A1:F20",
+     "rows": [
+      [
+       "Shipment",
+       "Order",
+       "Status",
+       "Lines",
+       "Value",
+       "Verified"
+      ],
+      [
+       "SHP-CLD-DECOY",
+       "SO-CLD-DECOY",
+       "Shipped",
+       1,
+       36.800000000000004,
+       "yes"
+      ],
+      [
+       "SHP-CLD-9910",
+       "SO-CLD-82077",
+       "Staged",
+       6,
+       "",
+       "no"
+      ]
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "ops_register",
+   "title": "Caldera Packaging operations register",
+   "version": 1
+  }
+ ],
+ "erp": {
+  "ap_invoices": [],
+  "customers": [
+   {
+    "created_by": "sales_ops",
+    "credit_hold": false,
+    "credit_limit": 200000.0,
+    "customer_number": "CUST-70510",
+    "name": "Sierra Fulfillment LLC",
+    "payment_terms": "Net 30",
+    "source_message_id": "MSG-CLD-CUSTOMER-SETUP"
+   },
+   {
+    "created_by": "sales_ops",
+    "credit_hold": false,
+    "credit_limit": 40000.0,
+    "customer_number": "CUST-CLD-DECOY1",
+    "name": "Corrugated Outlet Co.",
+    "payment_terms": "Net 30",
+    "source_message_id": null
+   },
+   {
+    "created_by": "sales_ops",
+    "credit_hold": true,
+    "credit_limit": 55000.0,
+    "customer_number": "CUST-CLD-DECOY2",
+    "name": "Northern Regional Buyers",
+    "payment_terms": "Net 45",
+    "source_message_id": null
+   }
+  ],
+  "invoice_holds": [],
+  "items": [
+   {
+    "description": "12 x 12 x 12 RSC carton",
+    "item_id": 300003,
+    "item_number": "BOX-RSC-12",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 0.92,
+    "organization_code": "CLD1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 0.57
+   },
+   {
+    "description": "Padded mailer #6",
+    "item_id": 300010,
+    "item_number": "MAIL-PAD-6",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 0.34,
+    "organization_code": "CLD1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 0.19
+   },
+   {
+    "description": "Stretch film 18 in roll",
+    "item_id": 300017,
+    "item_number": "FILM-STR-18",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 11.6,
+    "organization_code": "CLD1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 7.4
+   },
+   {
+    "description": "PP tape 48 mm x 100 m",
+    "item_id": 300024,
+    "item_number": "TAPE-PP-48",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 1.85,
+    "organization_code": "CLD1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 1.1
+   },
+   {
+    "description": "Thermal label 4 x 6 roll",
+    "item_id": 300031,
+    "item_number": "LBL-THERM-46",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 9.4,
+    "organization_code": "CLD1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 5.9
+   },
+   {
+    "description": "10 x 10 x 10 RSC (retired)",
+    "item_id": 300038,
+    "item_number": "BOX-RSC-10-OLD",
+    "item_status": "Inactive",
+    "last_task_id": null,
+    "list_price": 0.78,
+    "organization_code": "CLD1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 0.5
+   }
+  ],
+  "onhand_balances": [
+   {
+    "balance_id": 100,
+    "item_number": "BOX-RSC-12",
+    "onhand_quantity": 24000,
+    "organization_code": "CLD1",
+    "reserved_quantity": 9000,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 101,
+    "item_number": "MAIL-PAD-6",
+    "onhand_quantity": 30000,
+    "organization_code": "CLD1",
+    "reserved_quantity": 4000,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 102,
+    "item_number": "FILM-STR-18",
+    "onhand_quantity": 900,
+    "organization_code": "CLD1",
+    "reserved_quantity": 300,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 103,
+    "item_number": "TAPE-PP-48",
+    "onhand_quantity": 5200,
+    "organization_code": "CLD1",
+    "reserved_quantity": 800,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 104,
+    "item_number": "LBL-THERM-46",
+    "onhand_quantity": 1100,
+    "organization_code": "CLD1",
+    "reserved_quantity": 400,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 105,
+    "item_number": "BOX-RSC-10-OLD",
+    "onhand_quantity": 200,
+    "organization_code": "CLD1",
+    "reserved_quantity": 0,
+    "subinventory": "MAIN"
+   }
+  ],
+  "purchase_order_lines": [
+   {
+    "item_number": "BOX-RSC-12",
+    "last_task_id": null,
+    "line_number": 1,
+    "po_line_id": 8800271,
+    "po_number": "PO-CLD-40118",
+    "promised_date": "2026-02-06",
+    "quantity": 20000,
+    "received_quantity": 0,
+    "unit_price": 0.57
+   },
+   {
+    "item_number": "MAIL-PAD-6",
+    "last_task_id": null,
+    "line_number": 2,
+    "po_line_id": 8800272,
+    "po_number": "PO-CLD-40118",
+    "promised_date": "2026-02-06",
+    "quantity": 25000,
+    "received_quantity": 0,
+    "unit_price": 0.19
+   },
+   {
+    "item_number": "TAPE-PP-48",
+    "last_task_id": null,
+    "line_number": 3,
+    "po_line_id": 8800273,
+    "po_number": "PO-CLD-40118",
+    "promised_date": "2026-02-06",
+    "quantity": 6000,
+    "received_quantity": 0,
+    "unit_price": 1.1
+   },
+   {
+    "item_number": "LBL-THERM-46",
+    "last_task_id": null,
+    "line_number": 4,
+    "po_line_id": 8800274,
+    "po_number": "PO-CLD-40118",
+    "promised_date": "2026-02-06",
+    "quantity": 2000,
+    "received_quantity": 0,
+    "unit_price": 5.9
+   },
+   {
+    "item_number": "MAIL-PAD-6",
+    "last_task_id": null,
+    "line_number": 1,
+    "po_line_id": 8800281,
+    "po_number": "PO-CLD-OPEN-SUPPLY",
+    "promised_date": "2026-02-14",
+    "quantity": 6000,
+    "received_quantity": 0,
+    "unit_price": 0.19
+   }
+  ],
+  "purchase_orders": [
+   {
+    "buyer": "buyer",
+    "order_date": "2026-01-26",
+    "po_id": 880027,
+    "po_number": "PO-CLD-40118",
+    "status": "Open",
+    "supplier": "Cascade Paper Mills",
+    "supplier_number": "SUP-8801",
+    "total_amount": 33890.0
+   },
+   {
+    "buyer": "buyer",
+    "order_date": "2025-12-10",
+    "po_id": 880029,
+    "po_number": "PO-CLD-CLOSED",
+    "status": "Closed",
+    "supplier": "Cascade Paper Mills",
+    "supplier_number": "SUP-8801",
+    "total_amount": 980.0
+   },
+   {
+    "buyer": "buyer",
+    "order_date": "2026-02-01",
+    "po_id": 880028,
+    "po_number": "PO-CLD-OPEN-SUPPLY",
+    "status": "Open",
+    "supplier": "Cascade Paper Mills",
+    "supplier_number": "SUP-8801",
+    "total_amount": 1140.0
+   }
+  ],
+  "purchase_requisitions": [],
+  "receivables_invoices": [
+   {
+    "balance_due": 52300.0,
+    "bill_to_customer_number": "CUST-70510",
+    "customer_transaction_id": 900003,
+    "due_date": "2026-01-04",
+    "entered_amount": 52300.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-CLD-11220"
+   },
+   {
+    "balance_due": 24800.0,
+    "bill_to_customer_number": "CUST-70510",
+    "customer_transaction_id": 900014,
+    "due_date": "2026-01-18",
+    "entered_amount": 24800.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-CLD-11276"
+   },
+   {
+    "balance_due": 17650.0,
+    "bill_to_customer_number": "CUST-70510",
+    "customer_transaction_id": 900025,
+    "due_date": "2026-02-01",
+    "entered_amount": 17650.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-CLD-11330"
+   },
+   {
+    "balance_due": 33100.0,
+    "bill_to_customer_number": "CUST-70510",
+    "customer_transaction_id": 900036,
+    "due_date": "2026-02-12",
+    "entered_amount": 33100.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-CLD-11391"
+   },
+   {
+    "balance_due": 21900.0,
+    "bill_to_customer_number": "CUST-70510",
+    "customer_transaction_id": 900047,
+    "due_date": "2026-02-23",
+    "entered_amount": 21900.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-CLD-11447"
+   },
+   {
+    "balance_due": 12400.0,
+    "bill_to_customer_number": "CUST-70510",
+    "customer_transaction_id": 900058,
+    "due_date": "2026-03-06",
+    "entered_amount": 12400.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-CLD-11502"
+   },
+   {
+    "balance_due": 3200.0,
+    "bill_to_customer_number": "CUST-CLD-DECOY1",
+    "customer_transaction_id": 999003,
+    "due_date": "2026-02-19",
+    "entered_amount": 3200.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-20",
+    "transaction_number": "INV-CLD-DECOY"
+   }
+  ],
+  "receiving_receipt_requests": [],
+  "sales_orders": [
+   {
+    "buying_party_name": "Sierra Fulfillment LLC",
+    "buying_party_number": "CUST-70510",
+    "created_at": "2026-02-03T10:12:00Z",
+    "created_by": "ops_lead",
+    "customer_po_number": "SF-PO-51188",
+    "last_task_id": null,
+    "lines": [
+     {
+      "item_number": "BOX-RSC-12",
+      "quantity": 2000,
+      "unit_price": 0.92,
+      "uom": "EA"
+     }
+    ],
+    "order_number": "SO-CLD-40039",
+    "order_total": 1840.0,
+    "organization_code": "CLD1",
+    "source_message_id": "MSG-CLD-ORDER-0203",
+    "source_transaction_number": "FILE-CLD-ORDER-BATCH-0203",
+    "source_transaction_system": "OPS",
+    "status": "Awaiting Shipping",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Reno Roasters",
+    "buying_party_number": null,
+    "created_at": "2026-02-02T08:00:00Z",
+    "created_by": "channel_sync",
+    "customer_po_number": "AB-88102",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-CLD-45006",
+    "order_total": 1330.5,
+    "organization_code": "CLD1",
+    "source_message_id": null,
+    "source_transaction_number": "AB-88102",
+    "source_transaction_system": "Amazon Business",
+    "status": "Booked",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Truckee Provisions",
+    "buying_party_number": null,
+    "created_at": "2026-02-02T08:00:00Z",
+    "created_by": "channel_sync",
+    "customer_po_number": "AB-88104",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-CLD-45012",
+    "order_total": 890.0,
+    "organization_code": "CLD1",
+    "source_message_id": null,
+    "source_transaction_number": "AB-88104",
+    "source_transaction_system": "Amazon Business",
+    "status": "Booked",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Summit Gear",
+    "buying_party_number": null,
+    "created_at": "2026-02-02T08:00:00Z",
+    "created_by": "channel_sync",
+    "customer_po_number": "AB-88106",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-CLD-45021",
+    "order_total": 2180.0,
+    "organization_code": "CLD1",
+    "source_message_id": null,
+    "source_transaction_number": "AB-88106",
+    "source_transaction_system": "Amazon Business",
+    "status": "Booked",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Sierra Fulfillment LLC",
+    "buying_party_number": "CUST-70510",
+    "created_at": "2026-01-30T09:00:00Z",
+    "created_by": "ops_lead",
+    "customer_po_number": "SF-PO-51188-B",
+    "last_task_id": null,
+    "lines": [
+     {
+      "item_number": "BOX-RSC-12",
+      "quantity": 6000,
+      "unit_price": 0.92,
+      "uom": "EA"
+     },
+     {
+      "item_number": "MAIL-PAD-6",
+      "quantity": 9000,
+      "unit_price": 0.34,
+      "uom": "EA"
+     },
+     {
+      "item_number": "FILM-STR-18",
+      "quantity": 300,
+      "unit_price": 11.6,
+      "uom": "EA"
+     },
+     {
+      "item_number": "TAPE-PP-48",
+      "quantity": 2000,
+      "unit_price": 1.85,
+      "uom": "EA"
+     },
+     {
+      "item_number": "LBL-THERM-46",
+      "quantity": 500,
+      "unit_price": 9.4,
+      "uom": "EA"
+     },
+     {
+      "item_number": "MAIL-PAD-6",
+      "quantity": 2000,
+      "unit_price": 0.34,
+      "uom": "EA"
+     }
+    ],
+    "order_number": "SO-CLD-82077",
+    "order_total": 16372.0,
+    "organization_code": "CLD1",
+    "source_message_id": "MSG-CLD-ORDER-0130",
+    "source_transaction_number": "MSG-CLD-ORDER-0130",
+    "source_transaction_system": "OPS",
+    "status": "Awaiting Shipping",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Corrugated Outlet Co.",
+    "buying_party_number": "CUST-CLD-DECOY1",
+    "created_at": "2026-01-12T09:00:00Z",
+    "created_by": "ops_lead",
+    "customer_po_number": "OUTLET-118",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-CLD-DECOY",
+    "order_total": 1280.0,
+    "organization_code": "CLD1",
+    "source_message_id": null,
+    "source_transaction_number": "MANUAL-2026-01",
+    "source_transaction_system": "OPS",
+    "status": "Closed",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   }
+  ],
+  "shipment_lines": [
+   {
+    "comments": null,
+    "item_number": "BOX-RSC-12",
+    "last_task_id": null,
+    "line_number": 1,
+    "line_status": "Shipped",
+    "requested_quantity": 40,
+    "shipment": "SHP-CLD-DECOY",
+    "shipment_line_id": 700003,
+    "shipped_quantity": 40,
+    "unit_price": 0.92
+   },
+   {
+    "comments": null,
+    "item_number": "BOX-RSC-12",
+    "last_task_id": null,
+    "line_number": 1,
+    "line_status": "Staged",
+    "requested_quantity": 6000,
+    "shipment": "SHP-CLD-9910",
+    "shipment_line_id": 700006,
+    "shipped_quantity": 6000,
+    "unit_price": 0.92
+   },
+   {
+    "comments": null,
+    "item_number": "MAIL-PAD-6",
+    "last_task_id": null,
+    "line_number": 2,
+    "line_status": "Staged",
+    "requested_quantity": 9000,
+    "shipment": "SHP-CLD-9910",
+    "shipment_line_id": 700009,
+    "shipped_quantity": 9000,
+    "unit_price": 0.34
+   },
+   {
+    "comments": null,
+    "item_number": "FILM-STR-18",
+    "last_task_id": null,
+    "line_number": 3,
+    "line_status": "Staged",
+    "requested_quantity": 300,
+    "shipment": "SHP-CLD-9910",
+    "shipment_line_id": 700012,
+    "shipped_quantity": 300,
+    "unit_price": 11.6
+   },
+   {
+    "comments": null,
+    "item_number": "TAPE-PP-48",
+    "last_task_id": null,
+    "line_number": 4,
+    "line_status": "Staged",
+    "requested_quantity": 2000,
+    "shipment": "SHP-CLD-9910",
+    "shipment_line_id": 700015,
+    "shipped_quantity": 2000,
+    "unit_price": 1.85
+   },
+   {
+    "comments": null,
+    "item_number": "LBL-THERM-46",
+    "last_task_id": null,
+    "line_number": 5,
+    "line_status": "Staged",
+    "requested_quantity": 500,
+    "shipment": "SHP-CLD-9910",
+    "shipment_line_id": 700018,
+    "shipped_quantity": 500,
+    "unit_price": 9.4
+   },
+   {
+    "comments": null,
+    "item_number": "MAIL-PAD-6",
+    "last_task_id": null,
+    "line_number": 6,
+    "line_status": "Staged",
+    "requested_quantity": 2000,
+    "shipment": "SHP-CLD-9910",
+    "shipment_line_id": 700021,
+    "shipped_quantity": 2000,
+    "unit_price": 0.34
+   }
+  ],
+  "shipments": [
+   {
+    "order_number": "SO-CLD-82077",
+    "organization_code": "CLD1",
+    "planned_ship_date": "2026-02-09",
+    "ship_to_customer": "Sierra Fulfillment LLC",
+    "shipment": "SHP-CLD-9910",
+    "shipment_status": "Staged"
+   },
+   {
+    "order_number": "SO-CLD-DECOY",
+    "organization_code": "CLD1",
+    "planned_ship_date": "2026-01-14",
+    "ship_to_customer": "Corrugated Outlet Co.",
+    "shipment": "SHP-CLD-DECOY",
+    "shipment_status": "Shipped"
+   }
+  ],
+  "standard_receipts": [
+   {
+    "applications": [
+     {
+      "amount": 4400.0,
+      "invoice_number": "INV-CLD-PRIOR"
+     }
+    ],
+    "business_unit": "Caldera Converting",
+    "created_by": "ar_clerk",
+    "currency": "USD",
+    "customer_account_number": "CUST-70510",
+    "last_task_id": null,
+    "receipt_amount": 4400.0,
+    "receipt_date": "2026-01-22",
+    "receipt_method": "Wire",
+    "receipt_number": "RCPT-CLD-PRIOR",
+    "receipt_status": "Applied",
+    "standard_receipt_id": 930003
+   }
+  ],
+  "suppliers": [
+   {
+    "expedite_premium_pct": 0.0,
+    "lead_time_days": 8,
+    "name": "Cascade Paper Mills",
+    "supplier_number": "SUP-8801",
+    "supplier_status": "Active"
+   },
+   {
+    "expedite_premium_pct": 11.0,
+    "lead_time_days": 3,
+    "name": "Nevada Linerboard Express",
+    "supplier_number": "SUP-8830",
+    "supplier_status": "Active"
+   },
+   {
+    "expedite_premium_pct": 0.0,
+    "lead_time_days": 30,
+    "name": "Legacy Components Ltd.",
+    "supplier_number": "SUP-CLD-DECOY",
+    "supplier_status": "Inactive"
+   }
+  ]
+ },
+ "numbering": {
+  "channel_order_base": 52000,
+  "channel_order_step": 7,
+  "hold_id": 550006,
+  "invoice_id": 660015,
+  "order_import_order": "SO-CLD-50011",
+  "receipt_id": 950051,
+  "receiving_header_id": 770009,
+  "requisition_id": 610021,
+  "requisition_number": "REQ-CLD-61015"
+ },
+ "profile": {
+  "bu": "Caldera Converting",
+  "channel": "Amazon Business",
+  "code": "CALDERA",
+  "company": "Caldera Packaging",
+  "country": "US",
+  "currency": "USD",
+  "customer": {
+   "credit_hold": false,
+   "credit_limit": 200000.0,
+   "name": "Sierra Fulfillment LLC",
+   "number": "CUST-70510",
+   "po": "SF-PO-51188"
+  },
+  "domain": "caldera-sim.example",
+  "expedite_supplier": {
+   "lead_time_days": 3,
+   "name": "Nevada Linerboard Express",
+   "number": "SUP-8830",
+   "premium_pct": 11.0
+  },
+  "industry": "Corrugated and flexible packaging",
+  "org": "CLD1",
+  "people": {
+   "finance_lead": "Ben Carter",
+   "hr_lead": "Monica Ruiz",
+   "ops_lead": "Alicia Romero",
+   "requester": "Jordan Blake",
+   "supervisor": "Greg Halvorsen"
+  },
+  "profile": "packaging converter",
+  "quarter": "Q2",
+  "short": "CLD",
+  "site": "Reno plant",
+  "supplier": {
+   "lead_time_days": 8,
+   "name": "Cascade Paper Mills",
+   "number": "SUP-8801"
+  }
+ },
+ "schema": "faraday-erpbench100-tenant/1"
+}

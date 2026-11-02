@@ -1,0 +1,620 @@
+{
+ "answer_fields": {
+  "accepted_lines": {
+   "description": "Batch lines applied to item prices",
+   "type": "integer"
+  },
+  "average_change_pct": {
+   "description": "Average percentage change across applied lines",
+   "type": "number"
+  },
+  "batch_lines": {
+   "description": "Lines in the price batch",
+   "type": "integer"
+  },
+  "decision_status": {
+   "description": "One of the status ids listed in the task contract",
+   "type": "string"
+  },
+  "primary_record": {
+   "description": "The primary ERP record number created or updated (as returned by the system)",
+   "type": "string"
+  },
+  "recommended_option": {
+   "description": "One of the decision option ids listed in the task contract",
+   "type": "string"
+  },
+  "rejected_lines": {
+   "description": "Batch lines rejected by pricing policy",
+   "type": "integer"
+  },
+  "source_reference": {
+   "description": "Drive file id of the operative (current-authority) source document you relied on",
+   "type": "string"
+  },
+  "superseded_lines": {
+   "description": "Lines superseded by a later effective date",
+   "type": "integer"
+  }
+ },
+ "chat_messages": [
+  {
+   "author": "Ayu Kartika",
+   "channel": "#ops-sgf",
+   "message_id": "CHAT-erpbench-040-1",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Please resolve erpbench-040 against the current February authority; keep the handoff in review.",
+   "thread_id": "THREAD-erpbench-040"
+  },
+  {
+   "author": "controls",
+   "channel": "#ops-sgf",
+   "message_id": "CHAT-erpbench-040-2",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Operative sources are listed in the source map file; superseded versions stay in Drive for reference only.",
+   "thread_id": "THREAD-erpbench-040"
+  }
+ ],
+ "decision_options": [
+  {
+   "id": "apply_policy_compliant_lines",
+   "label": "Apply only the lines that meet pricing policy, later effective dates winning",
+   "selected": true
+  },
+  {
+   "id": "apply_all_batch_lines",
+   "label": "Apply every line in the batch as sent",
+   "selected": false
+  },
+  {
+   "id": "apply_latest_line_per_item_ignoring_band",
+   "label": "Apply the latest line per item regardless of the change band",
+   "selected": false
+  },
+  {
+   "id": "escalate_without_executing",
+   "label": "Apply nothing and escalate the batch",
+   "selected": false
+  }
+ ],
+ "documents": [
+  {
+   "id": "MSG-erpbench-040-REQUEST",
+   "sections": {
+    "message": {
+     "body": "**Sungrove Foods · Malang plant · Effective-dated price batch**\n\nPricing sent the Q2 list-price batch for Sungrove Foods. Apply only the lines that meet policy: items we actually carry, effective dates that are not already past, and changes inside the approved band, and respect a later effective date when one line supersedes an earlier one for the same item. Update the prices we accept, log accepted and rejected lines with reasons in the register, and prepare the notice for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+     "from": "rizky.pratama@sungrove-sim.example",
+     "sent_at": "2026-02-09T09:00:00Z",
+     "subject": "erpbench-040 operating request",
+     "to": [
+      "analyst@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "erpbench-040 operating request",
+   "version": 1
+  }
+ ],
+ "expected_answer": {
+  "accepted_lines": 3,
+  "average_change_pct": 7.81,
+  "batch_lines": 9,
+  "decision_status": "batch_applied_with_rejections",
+  "primary_record": "PRICE-BATCH-SGF-2026Q2",
+  "recommended_option": "apply_policy_compliant_lines",
+  "rejected_lines": 4,
+  "source_reference": "FILE-SGF-PRICE-BATCH-Q2",
+  "superseded_lines": 2
+ },
+ "family_key": "price_list_batch",
+ "investigations": [
+  {
+   "description": "read the task contract",
+   "id": "task_contract",
+   "routes": [
+    {
+     "args": {},
+     "tool": "get_incident"
+    }
+   ]
+  },
+  {
+   "description": "read the operating request in the mailbox",
+   "id": "request_mail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-erpbench-040-REQUEST",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "establish which sources are current authority",
+   "id": "authority_memo",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-SGF-AUTHORITY-0209",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-SGF-AUTHORITY-MEMO-0209",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-SGF-SOURCE-MAP",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops channel thread for the task",
+   "id": "control_thread",
+   "routes": [
+    {
+     "args": {
+      "file_id": "CHAT-OPS-SGF",
+      "section_id": "thread"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops register before writing to it",
+   "id": "ops_register",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-SGF-OPS",
+      "section_id": "Register"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the item master or current price list",
+   "id": "item_master",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_dist_tenant_items"
+    },
+    {
+     "args": {
+      "file_id": "FILE-SGF-PRICE-LIST-CURRENT",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "SHEET-SGF-OPS",
+      "section_id": "PriceList"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "index the shared drive for current and superseded versions",
+   "id": "drive_index",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "FILE-SGF-OPS-AUDIT-LOG",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "locate the price batch",
+   "id": "batch_search",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "MSG-SGF-PRICING-0209",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the price batch",
+   "id": "price_batch",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-SGF-PRICE-BATCH-Q2",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the current prices",
+   "id": "current_prices",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_dist_tenant_items"
+    },
+    {
+     "args": {
+      "file_id": "FILE-SGF-PRICE-LIST-CURRENT",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the pricing policy",
+   "id": "pricing_policy",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-SGF-OPS",
+      "section_id": "PricingPolicy"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "MSG-SGF-PRICING-0209",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the pricing notice",
+   "id": "pricing_mail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-SGF-PRICING-0209",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the pricing thread",
+   "id": "pricing_thread",
+   "routes": [
+    {
+     "args": {
+      "file_id": "CHAT-PRICING-SGF",
+      "section_id": "thread"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "recognise the superseded batch",
+   "id": "prior_batch",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-SGF-PRICE-BATCH-Q1",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "recognise the superseded price list",
+   "id": "superseded_prices",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-SGF-PRICE-LIST-2025H2",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  }
+ ],
+ "numeric_fields": [
+  "batch_lines",
+  "accepted_lines",
+  "rejected_lines",
+  "superseded_lines",
+  "average_change_pct"
+ ],
+ "operative_source": "FILE-SGF-PRICE-BATCH-Q2",
+ "oracle_plan": [
+  {
+   "action": "update_dist_tenant_item_list_price",
+   "payload": {
+    "effective_date": "2026-02-19",
+    "list_price": 2.75
+   },
+   "target": "SAUCE-SAMBAL-300"
+  },
+  {
+   "action": "update_dist_tenant_item_list_price",
+   "payload": {
+    "effective_date": "2026-03-21",
+    "list_price": 2.1
+   },
+   "target": "SNK-CASSAVA-200"
+  },
+  {
+   "action": "update_dist_tenant_item_list_price",
+   "payload": {
+    "effective_date": "2026-04-20",
+    "list_price": 2.25
+   },
+   "target": "SNK-BANANA-150"
+  }
+ ],
+ "register_columns": [
+  "primary_record",
+  "recommended_option",
+  "batch_lines",
+  "accepted_lines",
+  "rejected_lines",
+  "superseded_lines",
+  "average_change_pct",
+  "source_reference"
+ ],
+ "rubric": [
+  {
+   "category": "discovery",
+   "id": "discovery:task_contract",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:request_mail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:authority_memo",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:control_thread",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:ops_register",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:item_master",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:drive_index",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:batch_search",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:price_batch",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:current_prices",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:pricing_policy",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:pricing_mail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:pricing_thread",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:prior_batch",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:superseded_prices",
+   "points": 1
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:batch_lines",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:accepted_lines",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:rejected_lines",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:superseded_lines",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:average_change_pct",
+   "points": 5
+  },
+  {
+   "category": "decision",
+   "id": "decision:recommended_option",
+   "points": 10
+  },
+  {
+   "category": "decision",
+   "id": "decision:operative_source",
+   "points": 5
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:primary_write",
+   "points": 10
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:secondary_write",
+   "points": 4
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:register",
+   "points": 3
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:decision_record",
+   "points": 3
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:email_draft",
+   "points": 5
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:chat_post",
+   "points": 5
+  },
+  {
+   "category": "readback",
+   "id": "readback:erp_record",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:register_and_decision",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:communications",
+   "points": 2
+  },
+  {
+   "category": "readback",
+   "id": "readback:submission",
+   "points": 2
+  },
+  {
+   "category": "containment",
+   "id": "containment:task_scope",
+   "points": 3
+  },
+  {
+   "category": "containment",
+   "id": "containment:review_gate",
+   "points": 2
+  }
+ ],
+ "schema": "faraday-erpbench100-task/1",
+ "selection_reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+ "short": "SGF",
+ "status_options": [
+  {
+   "id": "batch_applied",
+   "label": "Batch applied"
+  },
+  {
+   "id": "batch_applied_with_rejections",
+   "label": "Batch applied with rejections"
+  }
+ ],
+ "target_id": "SAUCE-SAMBAL-300",
+ "tenant": "sungrove",
+ "tier": "transferable",
+ "title": "Apply the quarterly price batch under policy",
+ "trap_file_ids": [
+  "FILE-SGF-PRICE-BATCH-Q1",
+  "FILE-SGF-PRICE-LIST-2025H2",
+  "MSG-SGF-OLD-INSTRUCTIONS"
+ ],
+ "truth": {
+  "applied": [
+   [
+    "SAUCE-SAMBAL-300",
+    2.75,
+    "2026-02-19"
+   ],
+   [
+    "SNK-CASSAVA-200",
+    2.1,
+    "2026-03-21"
+   ],
+   [
+    "SNK-BANANA-150",
+    2.25,
+    "2026-04-20"
+   ]
+  ],
+  "item_numbers": [
+   "SNK-CASSAVA-200",
+   "SNK-BANANA-150",
+   "SAUCE-SAMBAL-300",
+   "COF-ROBUSTA-1K",
+   "TEA-JAS-100",
+   "SNK-TEMPE-OLD"
+  ]
+ },
+ "upstream_difficulty": "L4",
+ "upstream_prompt": "**Sungrove Foods · Malang plant · Effective-dated price batch**\n\nPricing sent the Q2 list-price batch for Sungrove Foods. Apply only the lines that meet policy: items we actually carry, effective dates that are not already past, and changes inside the approved band, and respect a later effective date when one line supersedes an earlier one for the same item. Update the prices we accept, log accepted and rejected lines with reasons in the register, and prepare the notice for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+ "upstream_reference_tool_calls": 29,
+ "upstream_task_id": "erpbench-040",
+ "value_at_risk": 5000.0
+}

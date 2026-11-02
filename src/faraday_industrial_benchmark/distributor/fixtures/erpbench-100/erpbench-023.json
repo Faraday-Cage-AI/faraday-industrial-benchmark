@@ -1,0 +1,600 @@
+{
+ "answer_fields": {
+  "decision_status": {
+   "description": "One of the status ids listed in the task contract",
+   "type": "string"
+  },
+  "oldest_days_past_due": {
+   "description": "Days past due of the oldest remaining past-due invoice",
+   "type": "integer"
+  },
+  "open_invoices_before": {
+   "description": "Open invoices for the customer before the receipt",
+   "type": "integer"
+  },
+  "past_due_pct_of_limit": {
+   "description": "Remaining past-due balance as a percentage of the credit limit",
+   "type": "number"
+  },
+  "primary_record": {
+   "description": "The primary ERP record number created or updated (as returned by the system)",
+   "type": "string"
+  },
+  "receipt_amount": {
+   "description": "Amount of the receipt entered",
+   "type": "number"
+  },
+  "recommended_option": {
+   "description": "One of the decision option ids listed in the task contract",
+   "type": "string"
+  },
+  "remaining_past_due": {
+   "description": "Past-due balance remaining after application",
+   "type": "number"
+  },
+  "source_reference": {
+   "description": "Drive file id of the operative (current-authority) source document you relied on",
+   "type": "string"
+  }
+ },
+ "chat_messages": [
+  {
+   "author": "Kao Li-Wen",
+   "channel": "#ops-mss",
+   "message_id": "CHAT-erpbench-023-1",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Please resolve erpbench-023 against the current February authority; keep the handoff in review.",
+   "thread_id": "THREAD-erpbench-023"
+  },
+  {
+   "author": "controls",
+   "channel": "#ops-mss",
+   "message_id": "CHAT-erpbench-023-2",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Operative sources are listed in the source map file; superseded versions stay in Drive for reference only.",
+   "thread_id": "THREAD-erpbench-023"
+  }
+ ],
+ "decision_options": [
+  {
+   "id": "apply_receipt_and_continue_collections",
+   "label": "Apply the remittance to the invoices it names and continue normal collections",
+   "selected": false
+  },
+  {
+   "id": "apply_receipt_and_escalate_credit_hold",
+   "label": "Apply the remittance and recommend a credit hold for finance approval",
+   "selected": true
+  },
+  {
+   "id": "process_everything_as_received",
+   "label": "Apply the payment across every open invoice",
+   "selected": false
+  },
+  {
+   "id": "escalate_without_executing",
+   "label": "Do not enter the receipt; escalate the account",
+   "selected": false
+  }
+ ],
+ "documents": [
+  {
+   "id": "MSG-erpbench-023-REQUEST",
+   "sections": {
+    "message": {
+     "body": "**Meridian Staffing Services · Taipei head office · Receipt application and collections**\n\nEverfield Electronics says they paid us this week and their remittance advice is in the mailbox. Match it to the open invoices, enter the receipt against exactly what it covers, and work out what is still past due afterwards and whether that puts them over our credit policy. Update the receivables register and prepare the collections note for Cheng Yi-Ru to review; do not change the customer's credit status on your own authority.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+     "from": "hsu.chia-hao@meridian-sim.example",
+     "sent_at": "2026-02-09T09:00:00Z",
+     "subject": "erpbench-023 operating request",
+     "to": [
+      "analyst@meridian-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "erpbench-023 operating request",
+   "version": 1
+  }
+ ],
+ "expected_answer": {
+  "decision_status": "credit_review_required",
+  "oldest_days_past_due": 52,
+  "open_invoices_before": 5,
+  "past_due_pct_of_limit": 45.83,
+  "primary_record": "RCPT-MSS-5502",
+  "receipt_amount": 24000.0,
+  "recommended_option": "apply_receipt_and_escalate_credit_hold",
+  "remaining_past_due": 55000.0,
+  "source_reference": "FILE-MSS-REMIT-ADVICE-0206"
+ },
+ "family_key": "receivables_collection",
+ "investigations": [
+  {
+   "description": "read the task contract",
+   "id": "task_contract",
+   "routes": [
+    {
+     "args": {},
+     "tool": "get_incident"
+    }
+   ]
+  },
+  {
+   "description": "read the operating request in the mailbox",
+   "id": "request_mail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-erpbench-023-REQUEST",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "establish which sources are current authority",
+   "id": "authority_memo",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-MSS-AUTHORITY-0209",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-MSS-AUTHORITY-MEMO-0209",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-MSS-SOURCE-MAP",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops channel thread for the task",
+   "id": "control_thread",
+   "routes": [
+    {
+     "args": {
+      "file_id": "CHAT-OPS-MSS",
+      "section_id": "thread"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops register before writing to it",
+   "id": "ops_register",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-MSS-OPS",
+      "section_id": "Register"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the item master or current price list",
+   "id": "item_master",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_dist_tenant_items"
+    },
+    {
+     "args": {
+      "file_id": "FILE-MSS-PRICE-LIST-CURRENT",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "SHEET-MSS-OPS",
+      "section_id": "PriceList"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "index the shared drive for current and superseded versions",
+   "id": "drive_index",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "FILE-MSS-OPS-AUDIT-LOG",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the customer's open invoices",
+   "id": "open_invoices",
+   "routes": [
+    {
+     "any_args": true,
+     "args": {
+      "customer_number": "CUST-30155"
+     },
+     "tool": "list_dist_tenant_receivable_invoices"
+    }
+   ]
+  },
+  {
+   "description": "read the customer account activity and credit limit",
+   "id": "customer_account",
+   "routes": [
+    {
+     "args": {
+      "customer_number": "CUST-30155"
+     },
+     "tool": "get_dist_tenant_customer_account"
+    }
+   ]
+  },
+  {
+   "description": "check receipts already entered",
+   "id": "existing_receipts",
+   "routes": [
+    {
+     "any_args": true,
+     "args": {
+      "customer_number": "CUST-30155"
+     },
+     "tool": "list_dist_tenant_customer_receipts"
+    }
+   ]
+  },
+  {
+   "description": "read the remittance email",
+   "id": "remittance_mail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-MSS-REMIT-0206",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the remittance advice",
+   "id": "remittance_advice",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-MSS-REMIT-ADVICE-0206",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the credit policy",
+   "id": "credit_policy",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-MSS-CREDIT-POLICY-R6",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the receivables aging",
+   "id": "ar_aging",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-MSS-OPS",
+      "section_id": "Aging"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-MSS-AR-AGING-0209",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read an invoice in detail",
+   "id": "invoice_detail",
+   "routes": [
+    {
+     "any_args": true,
+     "args": {
+      "transaction_number": "INV-MSS-40211"
+     },
+     "tool": "get_dist_tenant_receivable_invoice"
+    }
+   ]
+  }
+ ],
+ "numeric_fields": [
+  "open_invoices_before",
+  "receipt_amount",
+  "remaining_past_due",
+  "oldest_days_past_due",
+  "past_due_pct_of_limit"
+ ],
+ "operative_source": "FILE-MSS-REMIT-ADVICE-0206",
+ "oracle_plan": [
+  {
+   "action": "apply_dist_tenant_customer_receipt",
+   "payload": {
+    "amount": 24000.0,
+    "applications": [
+     {
+      "amount": 14200.0,
+      "invoice_number": "INV-MSS-40260"
+     },
+     {
+      "amount": 9800.0,
+      "invoice_number": "INV-MSS-40307"
+     }
+    ],
+    "customer_number": "CUST-30155",
+    "method": "Cheque",
+    "receipt_date": "2026-02-07"
+   },
+   "target": "RCPT-MSS-5502"
+  }
+ ],
+ "register_columns": [
+  "primary_record",
+  "recommended_option",
+  "open_invoices_before",
+  "receipt_amount",
+  "remaining_past_due",
+  "oldest_days_past_due",
+  "past_due_pct_of_limit",
+  "source_reference"
+ ],
+ "rubric": [
+  {
+   "category": "discovery",
+   "id": "discovery:task_contract",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:request_mail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:authority_memo",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:control_thread",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:ops_register",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:item_master",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:drive_index",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:open_invoices",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:customer_account",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:existing_receipts",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:remittance_mail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:remittance_advice",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:credit_policy",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:ar_aging",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:invoice_detail",
+   "points": 1
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:open_invoices_before",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:receipt_amount",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:remaining_past_due",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:oldest_days_past_due",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:past_due_pct_of_limit",
+   "points": 5
+  },
+  {
+   "category": "decision",
+   "id": "decision:recommended_option",
+   "points": 10
+  },
+  {
+   "category": "decision",
+   "id": "decision:operative_source",
+   "points": 5
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:primary_write",
+   "points": 10
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:secondary_write",
+   "points": 4
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:register",
+   "points": 3
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:decision_record",
+   "points": 3
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:email_draft",
+   "points": 5
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:chat_post",
+   "points": 5
+  },
+  {
+   "category": "readback",
+   "id": "readback:erp_record",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:register_and_decision",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:communications",
+   "points": 2
+  },
+  {
+   "category": "readback",
+   "id": "readback:submission",
+   "points": 2
+  },
+  {
+   "category": "containment",
+   "id": "containment:task_scope",
+   "points": 3
+  },
+  {
+   "category": "containment",
+   "id": "containment:review_gate",
+   "points": 2
+  }
+ ],
+ "schema": "faraday-erpbench100-task/1",
+ "selection_reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+ "short": "MSS",
+ "status_options": [
+  {
+   "id": "collections_in_progress",
+   "label": "Collections in progress"
+  },
+  {
+   "id": "credit_review_required",
+   "label": "Credit review required"
+  }
+ ],
+ "target_id": "RCPT-MSS-5502",
+ "tenant": "meridian",
+ "tier": "transferable",
+ "title": "Apply the customer's remittance and size the exposure",
+ "trap_file_ids": [
+  "MSG-MSS-OLD-INSTRUCTIONS"
+ ],
+ "truth": {
+  "applications": [
+   [
+    "INV-MSS-40260",
+    14200.0
+   ],
+   [
+    "INV-MSS-40307",
+    9800.0
+   ]
+  ],
+  "customer_number": "CUST-30155",
+  "decoy_invoice": "INV-MSS-DECOY",
+  "receipt_amount": 24000.0,
+  "receipt_date": "2026-02-07",
+  "receipt_number": "RCPT-MSS-5502",
+  "uncovered": [
+   "INV-MSS-40211",
+   "INV-MSS-40352",
+   "INV-MSS-40398"
+  ]
+ },
+ "upstream_difficulty": "L4",
+ "upstream_prompt": "**Meridian Staffing Services · Taipei head office · Receipt application and collections**\n\nEverfield Electronics says they paid us this week and their remittance advice is in the mailbox. Match it to the open invoices, enter the receipt against exactly what it covers, and work out what is still past due afterwards and whether that puts them over our credit policy. Update the receivables register and prepare the collections note for Cheng Yi-Ru to review; do not change the customer's credit status on your own authority.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+ "upstream_reference_tool_calls": 27,
+ "upstream_task_id": "erpbench-023",
+ "value_at_risk": 24000.0
+}

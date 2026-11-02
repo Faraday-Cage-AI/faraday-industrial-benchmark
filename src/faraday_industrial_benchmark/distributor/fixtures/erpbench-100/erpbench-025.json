@@ -1,0 +1,652 @@
+{
+ "answer_fields": {
+  "decision_status": {
+   "description": "One of the status ids listed in the task contract",
+   "type": "string"
+  },
+  "held_lines": {
+   "description": "Invoice lines placed on hold",
+   "type": "integer"
+  },
+  "lines_matched": {
+   "description": "Invoice lines inside quantity and price tolerance",
+   "type": "integer"
+  },
+  "matched_amount": {
+   "description": "Matched value at purchase-order prices",
+   "type": "number"
+  },
+  "payable_amount": {
+   "description": "Amount cleared for payment",
+   "type": "number"
+  },
+  "primary_record": {
+   "description": "The primary ERP record number created or updated (as returned by the system)",
+   "type": "string"
+  },
+  "recommended_option": {
+   "description": "One of the decision option ids listed in the task contract",
+   "type": "string"
+  },
+  "source_reference": {
+   "description": "Drive file id of the operative (current-authority) source document you relied on",
+   "type": "string"
+  },
+  "variance_amount": {
+   "description": "Value of price variance on held lines",
+   "type": "number"
+  }
+ },
+ "chat_messages": [
+  {
+   "author": "Kao Li-Wen",
+   "channel": "#ops-mss",
+   "message_id": "CHAT-erpbench-025-1",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Please resolve erpbench-025 against the current February authority; keep the handoff in review.",
+   "thread_id": "THREAD-erpbench-025"
+  },
+  {
+   "author": "controls",
+   "channel": "#ops-mss",
+   "message_id": "CHAT-erpbench-025-2",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Operative sources are listed in the source map file; superseded versions stay in Drive for reference only.",
+   "thread_id": "THREAD-erpbench-025"
+  }
+ ],
+ "decision_options": [
+  {
+   "id": "receive_and_validate_invoice",
+   "label": "Receive the delivery, enter the invoice and validate it for payment",
+   "selected": false
+  },
+  {
+   "id": "receive_and_hold_variance_lines",
+   "label": "Receive the delivery, enter the invoice and hold the lines outside tolerance",
+   "selected": true
+  },
+  {
+   "id": "process_everything_as_received",
+   "label": "Receive and pay the invoice exactly as billed",
+   "selected": false
+  },
+  {
+   "id": "escalate_without_executing",
+   "label": "Reject the invoice and escalate to the supplier",
+   "selected": false
+  }
+ ],
+ "documents": [
+  {
+   "id": "MSG-erpbench-025-REQUEST",
+   "sections": {
+    "message": {
+     "body": "**Meridian Staffing Services · Taipei head office · Receiving and three-way match**\n\nNusantara Sending Agency's invoice for PO-MSS-30455 landed in accounts payable. Receive what the delivery note proves was delivered, match the invoice to the order and the receipt line by line, and settle only what passes our tolerance; anything else has to be held with a reason rather than paid. Log the match in the payables register and get the note to Cheng Yi-Ru ready for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+     "from": "hsu.chia-hao@meridian-sim.example",
+     "sent_at": "2026-02-09T09:00:00Z",
+     "subject": "erpbench-025 operating request",
+     "to": [
+      "analyst@meridian-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "erpbench-025 operating request",
+   "version": 1
+  }
+ ],
+ "expected_answer": {
+  "decision_status": "invoice_on_hold",
+  "held_lines": 1,
+  "lines_matched": 2,
+  "matched_amount": 12125.0,
+  "payable_amount": 12125.0,
+  "primary_record": "NSA-INV-0931",
+  "recommended_option": "receive_and_hold_variance_lines",
+  "source_reference": "FILE-MSS-DELIVERY-NOTE-0206",
+  "variance_amount": 240.0
+ },
+ "family_key": "receiving_ap_match",
+ "investigations": [
+  {
+   "description": "read the task contract",
+   "id": "task_contract",
+   "routes": [
+    {
+     "args": {},
+     "tool": "get_incident"
+    }
+   ]
+  },
+  {
+   "description": "read the operating request in the mailbox",
+   "id": "request_mail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-erpbench-025-REQUEST",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "establish which sources are current authority",
+   "id": "authority_memo",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-MSS-AUTHORITY-0209",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-MSS-AUTHORITY-MEMO-0209",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-MSS-SOURCE-MAP",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops channel thread for the task",
+   "id": "control_thread",
+   "routes": [
+    {
+     "args": {
+      "file_id": "CHAT-OPS-MSS",
+      "section_id": "thread"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops register before writing to it",
+   "id": "ops_register",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-MSS-OPS",
+      "section_id": "Register"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the item master or current price list",
+   "id": "item_master",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_dist_tenant_items"
+    },
+    {
+     "args": {
+      "file_id": "FILE-MSS-PRICE-LIST-CURRENT",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "SHEET-MSS-OPS",
+      "section_id": "PriceList"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "index the shared drive for current and superseded versions",
+   "id": "drive_index",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "FILE-MSS-OPS-AUDIT-LOG",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the purchase order",
+   "id": "purchase_order",
+   "routes": [
+    {
+     "args": {
+      "po_number": "PO-MSS-30455"
+     },
+     "tool": "get_dist_tenant_purchase_order"
+    },
+    {
+     "any_args": true,
+     "args": {},
+     "tool": "list_dist_tenant_purchase_orders"
+    }
+   ]
+  },
+  {
+   "description": "read the purchase-order lines",
+   "id": "purchase_order_lines",
+   "routes": [
+    {
+     "args": {
+      "po_number": "PO-MSS-30455"
+     },
+     "tool": "list_dist_tenant_purchase_order_lines"
+    }
+   ]
+  },
+  {
+   "description": "read the signed delivery note",
+   "id": "delivery_note",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-MSS-DELIVERY-NOTE-0206",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the supplier invoice",
+   "id": "supplier_invoice",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-MSS-SUPPLIER-INVOICE-0207",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the supplier's invoice email",
+   "id": "invoice_mail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-MSS-SUPPLIER-INVOICE-0207",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the three-way match policy",
+   "id": "ap_policy",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-MSS-AP-MATCH-POLICY",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "check invoices already entered for the supplier",
+   "id": "existing_ap_invoices",
+   "routes": [
+    {
+     "any_args": true,
+     "args": {},
+     "tool": "list_dist_tenant_ap_invoices"
+    }
+   ]
+  },
+  {
+   "description": "read the supplier master",
+   "id": "supplier_master",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_dist_tenant_suppliers"
+    }
+   ]
+  }
+ ],
+ "numeric_fields": [
+  "lines_matched",
+  "matched_amount",
+  "variance_amount",
+  "held_lines",
+  "payable_amount"
+ ],
+ "operative_source": "FILE-MSS-DELIVERY-NOTE-0206",
+ "oracle_plan": [
+  {
+   "action": "receive_dist_tenant_po_delivery",
+   "payload": {
+    "lines": [
+     {
+      "line": 1,
+      "quantity": 10
+     },
+     {
+      "line": 2,
+      "quantity": 4
+     },
+     {
+      "line": 3,
+      "quantity": 5
+     }
+    ]
+   },
+   "target": "PO-MSS-30455"
+  },
+  {
+   "action": "enter_dist_tenant_supplier_invoice",
+   "payload": {
+    "invoice_amount": 16285.0,
+    "invoice_date": "2026-02-07",
+    "lines": [
+     {
+      "line": 1,
+      "quantity": 10,
+      "unit_price": 790.0
+     },
+     {
+      "line": 2,
+      "quantity": 4,
+      "unit_price": 1040.0
+     },
+     {
+      "line": 3,
+      "quantity": 5,
+      "unit_price": 845.0
+     }
+    ],
+    "po_number": "PO-MSS-30455",
+    "supplier_number": "SUP-4402"
+   },
+   "target": "NSA-INV-0931"
+  },
+  {
+   "action": "hold_dist_tenant_supplier_invoice",
+   "payload": {
+    "hold_name": "Price",
+    "lines": [
+     2
+    ],
+    "reason": "line 2: price variance exceeds tolerance"
+   },
+   "target": "NSA-INV-0931"
+  }
+ ],
+ "register_columns": [
+  "primary_record",
+  "recommended_option",
+  "lines_matched",
+  "matched_amount",
+  "variance_amount",
+  "held_lines",
+  "payable_amount",
+  "source_reference"
+ ],
+ "rubric": [
+  {
+   "category": "discovery",
+   "id": "discovery:task_contract",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:request_mail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:authority_memo",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:control_thread",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:ops_register",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:item_master",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:drive_index",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:purchase_order",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:purchase_order_lines",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:delivery_note",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:supplier_invoice",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:invoice_mail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:ap_policy",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:existing_ap_invoices",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:supplier_master",
+   "points": 1
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:lines_matched",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:matched_amount",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:variance_amount",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:held_lines",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:payable_amount",
+   "points": 5
+  },
+  {
+   "category": "decision",
+   "id": "decision:recommended_option",
+   "points": 10
+  },
+  {
+   "category": "decision",
+   "id": "decision:operative_source",
+   "points": 5
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:primary_write",
+   "points": 10
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:secondary_write",
+   "points": 4
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:register",
+   "points": 3
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:decision_record",
+   "points": 3
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:email_draft",
+   "points": 5
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:chat_post",
+   "points": 5
+  },
+  {
+   "category": "readback",
+   "id": "readback:erp_record",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:register_and_decision",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:communications",
+   "points": 2
+  },
+  {
+   "category": "readback",
+   "id": "readback:submission",
+   "points": 2
+  },
+  {
+   "category": "containment",
+   "id": "containment:task_scope",
+   "points": 3
+  },
+  {
+   "category": "containment",
+   "id": "containment:review_gate",
+   "points": 2
+  }
+ ],
+ "schema": "faraday-erpbench100-task/1",
+ "selection_reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+ "short": "MSS",
+ "status_options": [
+  {
+   "id": "invoice_validated",
+   "label": "Invoice validated"
+  },
+  {
+   "id": "invoice_on_hold",
+   "label": "Invoice on hold"
+  }
+ ],
+ "target_id": "PO-MSS-30455",
+ "tenant": "meridian",
+ "tier": "transferable",
+ "title": "Receive the delivery and match the supplier invoice",
+ "trap_file_ids": [
+  "MSG-MSS-OLD-INSTRUCTIONS"
+ ],
+ "truth": {
+  "closed_po": "PO-MSS-CLOSED",
+  "expected_received": [
+   [
+    "PO-MSS-30455",
+    1,
+    10
+   ],
+   [
+    "PO-MSS-30455",
+    2,
+    4
+   ],
+   [
+    "PO-MSS-30455",
+    3,
+    5
+   ]
+  ],
+  "held_lines": [
+   2
+  ],
+  "invoice_lines": [
+   [
+    1,
+    10,
+    790.0
+   ],
+   [
+    2,
+    4,
+    1040.0
+   ],
+   [
+    3,
+    5,
+    845.0
+   ]
+  ],
+  "invoice_number": "NSA-INV-0931",
+  "invoice_total": 16285.0,
+  "po": "PO-MSS-30455",
+  "supplier_number": "SUP-4402"
+ },
+ "upstream_difficulty": "L4",
+ "upstream_prompt": "**Meridian Staffing Services · Taipei head office · Receiving and three-way match**\n\nNusantara Sending Agency's invoice for PO-MSS-30455 landed in accounts payable. Receive what the delivery note proves was delivered, match the invoice to the order and the receipt line by line, and settle only what passes our tolerance; anything else has to be held with a reason rather than paid. Log the match in the payables register and get the note to Cheng Yi-Ru ready for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+ "upstream_reference_tool_calls": 29,
+ "upstream_task_id": "erpbench-025",
+ "value_at_risk": 16285.0
+}
