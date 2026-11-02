@@ -325,6 +325,11 @@ def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
         ]
         passed = bool(after and max(before_indices) < max(after))
         return passed, "ordered" if passed else "required tool ordering not observed"
+    from . import extensions
+
+    extensions.load()
+    if check in extensions.CHECKS:
+        return extensions.CHECKS[check](world, contract)
     raise ValueError(f"unsupported evaluator check: {check}")
 
 

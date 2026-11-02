@@ -7,8 +7,10 @@ import json
 from collections.abc import Callable
 from copy import deepcopy
 from dataclasses import asdict
+from functools import partial
 from typing import Any
 
+from . import extensions
 from .artifact_contract import canonical_exclusions, matches_contract, schema_errors
 from .models import (
     PUBLIC_NOTIFICATION_ROLES,
@@ -388,6 +390,8 @@ class IndustrialWorld:
                     "body": payload["message"],
                 }
             )
+        elif kind in extensions.EVENTS:
+            extensions.EVENTS[kind](self, event, payload)
         else:
             raise ValueError(f"unsupported event kind: {kind}")
         self.applied_events.append(event.id)
@@ -397,12 +401,17 @@ class IndustrialWorld:
     def call_tool(self, name: str, arguments: Json) -> Json:
         if self.finished and name != "finish":
             return {"ok": False, "error": "episode_finished", "clock_minute": self.minute}
-        if name not in TOOL_NAMES:
+        extension_tools = extensions.tool_names()
+        if name not in TOOL_NAMES and name not in extension_tools:
             self._violation("unknown_tool", f"unknown tool: {name}", critical=False)
             result = {"ok": False, "error": "unknown_tool"}
             return self._record(name, arguments, result)
 
-        handler: Callable[..., Json] = getattr(self, f"_tool_{name}")
+        handler: Callable[..., Json]
+        if name in extension_tools and name not in TOOL_NAMES:
+            handler = partial(extensions.TOOLS[name].handler, self)
+        else:
+            handler = getattr(self, f"_tool_{name}")
         try:
             result = handler(**deepcopy(arguments))
         except TypeError as exc:
@@ -1435,6 +1444,8 @@ class IndustrialWorld:
         return {"ok": True, "execution": deepcopy(record)}
 
     def _apply_protected_action(self, action: str, target: str, payload: Json) -> tuple[bool, str]:
+        if action in extensions.ACTIONS:
+            return extensions.ACTIONS[action].apply(self, target, payload)
         if action in {"post_close_stage", "release_close_hold", "reconcile_close_ledger"}:
             from .close_execution import apply_close_step
 

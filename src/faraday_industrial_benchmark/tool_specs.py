@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from typing import Any
 
 
@@ -715,5 +716,33 @@ def tool_specs_for_family(family: str) -> list[dict[str, Any]]:
 
     allowed = FAMILY_TOOL_NAMES.get(family)
     if allowed is None:
+        from . import extensions
+
+        extension = extensions.family(family)
+        if extension is not None:
+            return _extension_tool_specs(extension)
         return list(TOOL_SPECS)
     return [spec for spec in TOOL_SPECS if spec["name"] in allowed]
+
+
+def _extension_tool_specs(extension) -> list[dict[str, Any]]:
+    from . import extensions
+
+    core = {spec["name"]: spec for spec in TOOL_SPECS}
+    specs: list[dict[str, Any]] = []
+    for name in extension.tools:
+        if name in extensions.TOOLS:
+            spec = deepcopy(extensions.TOOLS[name].spec)
+        elif name in core:
+            spec = deepcopy(core[name])
+        else:
+            raise ValueError(f"{extension.family} declares unknown tool {name!r}")
+        if name in {"request_approval", "execute_action"} and extension.protected_actions:
+            action = spec["input_schema"]["properties"]["action"]
+            action["enum"] = list(extension.protected_actions)
+            action["description"] = (
+                "Protected action contracts: "
+                + extensions.action_guide(extension.protected_actions)
+            )
+        specs.append(spec)
+    return specs

@@ -196,6 +196,9 @@ class IncidentTask:
         )
 
     def public_dict(self) -> Json:
+        from .extensions import load
+
+        load()
         value = asdict(self)
         value.pop("seed", None)
         value.pop("workflow_stages", None)

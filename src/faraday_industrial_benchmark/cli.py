@@ -15,7 +15,7 @@ from .models import IncidentTask, load_tasks
 from .platform_harness import build_platform_harness_contract, save_platform_harness_contract
 from .report import render_html
 from .runner import BenchmarkRunner, CommandAgent, save_run
-from .scenarios import BUILDERS, build_scenario
+from .scenarios import build_scenario, known_family
 from .upstreams import DEFAULT_MANIFEST, load_upstream_manifest, verify_upstream_snapshots
 from .world import IndustrialWorld
 
@@ -44,7 +44,7 @@ def _validate(tasks: list[IncidentTask]) -> list[str]:
         if task.id in seen:
             errors.append(f"{task.id}: duplicate task ID")
         seen.add(task.id)
-        if task.family not in BUILDERS:
+        if not known_family(task.family):
             errors.append(f"{task.id}: unknown family {task.family!r}")
             continue
         if task.max_tool_calls < 10:

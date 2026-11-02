@@ -4299,11 +4299,21 @@ BUILDERS: dict[str, ScenarioBuilder] = {
 def build_scenario(task: IncidentTask) -> ScenarioInstance:
     """Generate an exact scenario instance from a task seed."""
 
-    try:
-        builder = BUILDERS[task.family]
-    except KeyError as exc:
-        raise ValueError(f"unknown scenario family: {task.family}") from exc
+    builder = BUILDERS.get(task.family)
+    if builder is None:
+        from .extensions import family
+
+        extension = family(task.family)
+        if extension is None:
+            raise ValueError(f"unknown scenario family: {task.family}")
+        builder = extension.builder
     return builder(task, random.Random(task.seed))
+
+
+def known_family(name: str) -> bool:
+    from .extensions import family
+
+    return name in BUILDERS or family(name) is not None
 
 
 def clone_instance(instance: ScenarioInstance) -> ScenarioInstance:
