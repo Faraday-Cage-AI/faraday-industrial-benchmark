@@ -8,12 +8,21 @@ mirrored verbatim as clearly labeled compatibility tracks. They never become
 Faraday-native content or contribute to the headline score. Hidden, private,
 restricted, or license-incompatible artifacts are never copied.
 
-| Public work | Pattern worth adopting | Faraday v0.5 status | Next implementation |
+Since v0.7.0 the headline suite also includes 13 Distributor Operations
+families that are an explicit exception to clean-room authoring. They are native
+Faraday rebuilds (world builders, tools, sealed criteria, and oracles) whose
+fixtures are derived from pinned snapshots of ERP-Bench (CC0), ERPBench-100 by
+Blobfish AI (data CC BY 4.0), and GDPval (no license declared). Each source keeps
+per-file SHA-256 provenance in `data/distributor-sources/<source>/provenance.json`,
+and its terms are recorded in `NOTICE` and `THIRD_PARTY_NOTICES.md`. CRMArena-Pro
+was excluded because of its noncommercial license.
+
+| Public work | Pattern worth adopting | Faraday v0.7 status | Next implementation |
 |---|---|---|---|
 | [FactoryBench-100](https://github.com/blobfishai/factory-agent-simulation) | Executable multi-system worlds, sealed deterministic verifiers, source artifacts, readback checks, many negative controls, portable release bundles | Native patterns independently implemented; exact upstream snapshot vendored at a pinned commit | SQLite episode snapshots, MCP and Harbor packaging, additional omission/wrong-value controls |
 | [Industrial Agent Benchmark](https://github.com/masahirosakae/industrial-agent-benchmark) | Separate knowledge, reasoning, and agent capability views; canonical versioning and artifact policy | Native capability summaries plus an exact, pinned upstream compatibility snapshot | Add a native diagnostic knowledge/reasoning track without diluting the executable-agent score |
 | [SupChain-Bench](https://aclanthology.org/2026.findings-acl.371/) | Long-horizon supply-chain orchestration and SOP-grounded versus SOP-free evaluation | Six focused supply/distribution families, six composite enterprise DAG families, and an exact pinned upstream snapshot | Add paired guided/unguided policy ablations and cross-company counterparty simulation |
-| [SPAS-Bench](https://github.com/ADT-GenAI/SPAS-Bench) | Hierarchical capability taxonomy and broad model baseline reporting | Thirty-two domain families and machine-readable family/capability slices, including orchestration | Publish measured open and hosted v0.5 model baselines with uncertainty and cost |
+| [SPAS-Bench](https://github.com/ADT-GenAI/SPAS-Bench) | Hierarchical capability taxonomy and broad model baseline reporting | Forty-six domain families and machine-readable family/capability slices, including orchestration | Publish measured open and hosted v0.7 model baselines with uncertainty and cost |
 | [AssetOpsBench](https://github.com/IBM/AssetOpsBench) | MCP tool servers, specialist agents, time-series models, multi-agent orchestration, competition infrastructure | Native typed tools plus an exact, pinned upstream public snapshot | MCP transport, specialist-agent track, richer native time-series payloads, competition adapter |
 | [CFAgentBench](https://arxiv.org/abs/2606.22000) | Executable finance software, state-diff grading, forbidden side effects, money-movement guards, private splits, repeated-trial reliability | Exact finance records, protected money actions, hidden-seed generation, `stability` repeated-trial reports | Private remote scoring split and forbidden-side-effect contracts across every finance family |
 | [PHMForge](https://arxiv.org/abs/2604.01532) | Multi-asset reasoning, tool-sequence analysis, held-out equipment generalization | Sequence checks, machine scenarios, procedural seeds | Structural multi-asset episodes and explicit equipment-class holdout splits |
@@ -24,7 +33,9 @@ restricted, or license-incompatible artifacts are never copied.
 ## Adoption rules
 
 1. Link and cite the source pattern in design documentation.
-2. Keep Faraday-native implementations clean-room and synthetic.
+2. Keep Faraday-native implementations clean-room and synthetic, except for
+   source-derived families whose provenance and upstream terms are recorded, such
+   as Distributor Operations.
 3. Mirror upstream code or data only when redistribution terms are explicit and
    compatible; preserve its namespace, task identity, license, notices, and citation.
 4. Pin every mirrored snapshot to a commit and deterministic content hash.

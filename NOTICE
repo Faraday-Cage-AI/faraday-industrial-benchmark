@@ -12,5 +12,20 @@ Agent Benchmark project, the SupChain-Bench project, and IBM's AssetOpsBench
 contributors. Their original license and notice files are preserved in each
 snapshot. See THIRD_PARTY_NOTICES.md and third_party/manifest.json.
 
+The distributor operations families (data/distributor-*, data/distributor-sources,
+and src/faraday_industrial_benchmark/distributor) are native Faraday rebuilds of
+tasks selected from three public benchmarks. Their fixtures are derived from
+pinned upstream snapshots, and each source keeps a provenance record with
+SHA-256 hashes under data/distributor-sources/<source>/provenance.json:
+
+- ERP-Bench by Agentic Labs (CC0-1.0).
+- ERPBench-100 by Blobfish AI (code Apache-2.0, data CC BY 4.0). Changes were
+  made: tasks were converted into Faraday scenarios, tools, and criteria.
+- GDPval by OpenAI. The dataset card declares no license. Its expected
+  deliverables and rubrics are included only as grader-only reference material
+  for the GDPval-derived tasks. They are not relicensed by Faraday, are not
+  covered by DATA_LICENSE, and remain subject to OpenAI's terms. They will be
+  removed on request from the rights holder.
+
 No customer data, proprietary vendor UI, private benchmark split, or restricted
 question bank is included.

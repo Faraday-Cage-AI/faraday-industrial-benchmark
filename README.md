@@ -13,7 +13,10 @@ resolve exceptions, plan around operational constraints, obtain required
 approvals, and carry out actions across connected systems. The benchmark checks
 the resulting system state and the evidence behind each action.
 
-## Verified RESULTS
+## Verified results: v0.6.0 (74-task suite)
+
+These scores were measured on v0.6.0, which had 74 tasks in 33 families. They
+have not been re-run on v0.7.0 and are not comparable with v0.7.0 scores.
 
 | Model | Result |
 |---|---:|
@@ -23,6 +26,15 @@ the resulting system state and the evidence behind each action.
 | Sonnet 4.6 | 63.2 |
 | Grok 4.5 | 69.7 |
 | Gemini 3.1 Pro | 61.4 |
+
+## Suite
+
+Version 0.7.0 ships 249 public tasks in 46 workflow families, with 108 typed
+tools in the platform harness contract (67 core and 41 distributor). The
+headline score is a plain mean over all 249 tasks, so the 175 Distributor
+Operations tasks account for about 70% of it. The reference oracle scores
+100.00 with 249/249 strict successes; no-op, read-only, and unauthorized-write
+controls score 10.76, 11.75, and 0.00.
 
 ## What it evaluates
 
@@ -34,6 +46,29 @@ the resulting system state and the evidence behind each action.
 | Engineering | Reconcile drawings, bills of materials, specifications, and revision histories; prepare traceable corrections. |
 | Finance and back office | Resolve invoice exceptions, verify vendor changes, manage customer credit, correct payroll, and reconcile period-close postings. |
 | Cross-functional operations | Coordinate recovery across purchasing, production, delivery, and finance while keeping records and commitments consistent. |
+| Distributor operations | Screen and fulfill customer orders, buy within supplier constraints, invoice per policy, collect receivables, match receipts to AP, sync channel orders, and produce priced quotes, plans, and analyses. |
+
+## Distributor Operations
+
+Thirteen families (175 tasks) cover wholesale-distributor work. They are native
+Faraday rebuilds of tasks selected from three public benchmarks: each has its own
+world builder, typed tools, sealed deterministic criteria, and reference oracle.
+They are part of the headline suite, not a separate compatibility track.
+
+| Source | Tasks | Families |
+|---|---:|---|
+| [ERP-Bench](https://github.com/agentic-labs/erp-bench) (CC0) | 82 | `distributor_buy_to_fulfill` |
+| [ERPBench-100](https://github.com/blobfishai/erp-agent-simulation) by Blobfish AI (data CC BY 4.0) | 70 | order import, shipment verification, receivables collection, price-list batch, inventory reorder, receiving/AP match, channel order sync |
+| [GDPval](https://huggingface.co/datasets/openai/gdpval) (no license declared) | 23 | sales analytics, pricing and quotation, inventory planning, warehouse shipping, policy documents |
+
+Fixtures come from pinned upstream snapshots through
+`examples/import_distributor_sources.py`, with per-file SHA-256 provenance in
+`data/distributor-sources/<source>/provenance.json`. Distributor fixtures are
+fixed per task, so held-out generation for these families reuses the template
+scenario with a new seed. GDPval rubric items that need subjective judgment
+(presentation, file format, narrative) are recorded but not scored. See
+[benchmark tracks](docs/benchmark-tracks.md) and
+[third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## How it works
 
@@ -94,5 +129,6 @@ See the [protocol documentation](docs/jsonl-protocol.md) for implementation deta
 - [Third-party tracks and licenses](third_party/README.md)
 
 Faraday-native code is licensed under [Apache-2.0](LICENSE), and authored task
-content under [CC BY 4.0](DATA_LICENSE). Third-party material retains its original
-terms; see [third-party notices](THIRD_PARTY_NOTICES.md).
+content under [CC BY 4.0](DATA_LICENSE). Third-party material, including the
+source-derived distributor material, retains its original terms; see
+[NOTICE](NOTICE) and [third-party notices](THIRD_PARTY_NOTICES.md).

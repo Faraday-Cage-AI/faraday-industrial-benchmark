@@ -2,7 +2,7 @@
 
 ## Intended use
 
-Faraday Industrial Benchmark v0.6 evaluates tool-using AI systems on synthetic
+Faraday Industrial Benchmark v0.7 evaluates tool-using AI systems on synthetic
 industrial-enterprise workflows. It supports development comparisons, regression
 testing, agent design, cost/quality experiments, and post-training reward signals.
 
@@ -15,7 +15,10 @@ episode ends at `finish`, at the tool budget, or at the time horizon.
 
 ## Coverage
 
-- Thirty-three scenario families and 74 public development episodes
+- Forty-six scenario families and 249 public development episodes; the headline
+  score is a plain mean over all 249, so the 175 Distributor Operations episodes
+  carry about 70% of it
+- 108 typed tools in the platform harness contract: 67 core and 41 distributor
 - Transportation, carrier routing, warehouse waves, multi-DC allocation, cold-chain recall, global trade, and integrated demand–supply planning
 - ERP AP, AR, GL, vendor master, payroll, project accounting, and fixed assets
 - MES, QMS, WMS, APS, PLM, CMMS, historian, procurement, supplier, and customer-service concepts
@@ -32,11 +35,19 @@ episode ends at `finish`, at the tool budget, or at the time horizon.
   four independently authored source revisions, 15 evidence-backed exception
   dispositions, four mutually consistent artifacts, exact version citations,
   artifact read-back, and controlled package publication
+- Thirteen Distributor Operations families (175 episodes): buy-to-fulfill with
+  supplier min/max, price tiers, lead times, invoicing policies, and
+  supplier-cancellation repair; order import, shipment verification,
+  receivables collection, price-list batches, inventory reorder, receiving/AP
+  match, and channel order sync over versioned evidence case files with
+  superseded and trap versions; and structured work products for sales
+  analytics, pricing and quotation, inventory planning, warehouse shipping, and
+  policy documents
 
 ### Optional development tracks
 
 These manifests are separate contracts, not extra cases silently pooled into the
-74-episode default score. Fixed-seed variants within a family are correlated.
+249-episode default score. Fixed-seed variants within a family are correlated.
 
 | Manifest | Episodes | Added requirements |
 |---|---:|---|
@@ -94,11 +105,32 @@ vendor implementation, labor practice, or regulatory regime.
 
 ## Data and provenance
 
-All `faraday-native` data is generated from independently authored scenario
-code. There are no customer records, copied ERP screens, vendor payloads,
-proprietary manuals, or real people. Public task seeds are included for exact
-reproduction. Hosted test operators should keep held-out seeds private and
-publish a pre-run commitment.
+All `faraday-native` data outside the Distributor Operations families is
+generated from independently authored scenario code. There are no customer
+records, copied ERP screens, vendor payloads, proprietary manuals, or real
+people. Public task seeds are included for exact reproduction. Hosted test
+operators should keep held-out seeds private and publish a pre-run commitment.
+
+The Distributor Operations families are native Faraday rebuilds of tasks
+selected from three public benchmarks, with Faraday world builders, tools,
+sealed deterministic criteria, and reference oracles. Their fixtures are produced
+by `examples/import_distributor_sources.py` from pinned upstream snapshots, and
+each source records per-file SHA-256 provenance in
+`data/distributor-sources/<source>/provenance.json`:
+
+| Source | Pinned revision | License | Tasks |
+|---|---|---|---:|
+| ERP-Bench (agentic-labs/erp-bench) | `ceba3880af555129b5278e056a0c20f2fb5a0ba9` | CC0-1.0 | 82 |
+| ERPBench-100 by Blobfish AI (blobfishai/erp-agent-simulation) | `5bdf458165fee71f6a7965ea30ca33dfbbce1332` | Code Apache-2.0, data CC BY 4.0; changes made | 70 |
+| GDPval (openai/gdpval) | `11e7900cdcac61bc4daf59e65feb238acda98fbf` | None declared | 23 |
+
+GDPval expected deliverables and rubrics are committed as grader-only reference
+material. They are not covered by `DATA_LICENSE`; see `NOTICE` and
+`THIRD_PARTY_NOTICES.md`. CRMArena-Pro was considered and excluded because of
+its noncommercial license. The per-source manifests in
+`data/distributor-erp-bench/`, `data/distributor-erpbench100/`, and
+`data/distributor-gdpval/` are subsets of `data/public/tasks.json`, not
+additional episodes.
 
 The repository also contains separately namespaced upstream compatibility
 snapshots. Those artifacts retain their original benchmark identity, license,
@@ -120,8 +152,19 @@ only the best attempt.
 
 - Economic amounts are synthetic and useful for relative scoring, not ROI claims.
 - The reference agent uses a family-specific playbook and is not a learned baseline.
-- Seventy-four public episodes are a development suite, not statistically sufficient for
-  a high-stakes model ranking.
+- 249 public episodes are a development suite, not statistically sufficient for
+  a high-stakes model ranking. The 175 distributor episodes dominate the plain
+  mean, and the 82 ERP-Bench episodes alone are a third of it.
+- Distributor fixtures are fixed per task. Held-out generation for those
+  families reuses the template scenario with a new seed; it does not create new
+  distributor instances.
+- Of 1,189 GDPval rubric items, 1,032 are scored mechanically. The other 157
+  (presentation, file format, narrative quality, and similar) are recorded but
+  not scored. Upstream prompt/reference inconsistencies in GDPval tasks 017,
+  019, 022, and 023 were corrected and recorded in grader notes.
+- ERP-Bench checks that apply only to manufacturing are not ported.
+- Published model results were measured on v0.6.0 (74 tasks) and have not been
+  re-run on v0.7.0.
 - Procedural variants do not yet vary the dependency topology within a family.
 - Deterministic checks can miss semantically poor explanations that achieve correct state.
 - Simulation cannot establish safety in a real plant.

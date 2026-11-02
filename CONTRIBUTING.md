@@ -30,6 +30,11 @@ pass `faraday-bench upstreams --verify`. Restricted, private, noncommercial, or
 ambiguous material remains reference-only. Compatibility-track scores are never
 pooled into the Faraday-native aggregate.
 
+One owner-approved exception exists: the GDPval-derived distributor tasks commit
+reference data, expected deliverables, and rubrics as grader-only material even
+though GDPval declares no license (see NOTICE and THIRD_PARTY_NOTICES.md). Do not
+extend that exception to other sources without the same explicit decision.
+
 ## Development
 
 ```bash

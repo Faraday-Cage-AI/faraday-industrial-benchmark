@@ -11,6 +11,12 @@ SPDX identifier: CC-BY-4.0
 
 The Python implementation is separately licensed under Apache-2.0 in LICENSE.
 
+Distributor operations material derived from public benchmarks keeps its
+upstream terms: ERP-Bench material is CC0-1.0, ERPBench-100 material is CC BY
+4.0 (attribution: "ERPBench-100 by Blobfish AI"), and GDPval-derived reference
+material, expected deliverables, and rubrics are not licensed by Faraday at all.
+See NOTICE and THIRD_PARTY_NOTICES.md.
+
 This license does not apply to third_party/upstreams. Each upstream snapshot
 retains its original software and dataset terms. See THIRD_PARTY_NOTICES.md,
 third_party/manifest.json, and the license files preserved inside each snapshot.
