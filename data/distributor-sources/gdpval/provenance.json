@@ -1,8 +1,8 @@
 {
   "files": {
     "data/distributor-gdpval/tasks.json": {
-      "bytes": 29128,
-      "sha256": "5604cb556b4067a57040f534a340d633a0a2988cbf56f274cbb157036b2f36c5"
+      "bytes": 29174,
+      "sha256": "f2ffa7feaa7cc8aecb87d05aaef33164e36a457980220809cae169344be5cf8f"
     },
     "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-001.json": {
       "bytes": 25840,

@@ -13,7 +13,7 @@ from faraday_industrial_benchmark.world import IndustrialWorld, canonical_hash
 
 def test_public_suite_shape():
     tasks = load_tasks(DEFAULT_TASKS)
-    assert len(tasks) == 74
+    assert len(tasks) == 249
     assert {task.family for task in tasks} == {
         "contingent_network_recovery",
         "capital_project",
@@ -48,6 +48,19 @@ def test_public_suite_shape():
         "order_to_cash_disruption",
         "plant_fulfillment_recovery",
         "integrated_operating_review",
+        "distributor_buy_to_fulfill",
+        "distributor_order_import",
+        "distributor_shipment_verification",
+        "distributor_receivables_collection",
+        "distributor_inventory_reorder",
+        "distributor_receiving_ap_match",
+        "distributor_channel_order_sync",
+        "distributor_price_list_batch",
+        "distributor_sales_analytics",
+        "distributor_pricing_quotation",
+        "distributor_inventory_planning",
+        "distributor_warehouse_shipping",
+        "distributor_policy_documents",
     }
     assert len({task.id for task in tasks}) == len(tasks)
 
@@ -82,9 +95,9 @@ def test_heldout_generation_is_reproducible_and_unique():
     first = generate_tasks(templates, per_family=5, root_seed=8675309)
     second = generate_tasks(templates, per_family=5, root_seed=8675309)
     assert first == second
-    assert len(first) == 165
-    assert len({task.id for task in first}) == 165
-    assert len({task.seed for task in first}) == 165
+    assert len(first) == 230
+    assert len({task.id for task in first}) == 230
+    assert len({task.seed for task in first}) == 230
     assert generation_commitment(first) == generation_commitment(second)
 
 
@@ -99,7 +112,7 @@ def test_public_task_manifest_matches_published_json_schema():
 
 def test_workflow_stage_graphs_are_topological_and_withheld_from_agents():
     composite = [task for task in load_tasks(DEFAULT_TASKS) if task.workflow_stages]
-    assert len(composite) == 22
+    assert len(composite) == 174
     stage_count = 0
     for task in load_tasks(DEFAULT_TASKS):
         assert "workflow_stages" not in task.public_dict()
@@ -110,8 +123,8 @@ def test_workflow_stage_graphs_are_topological_and_withheld_from_agents():
         for stage in stages:
             assert set(stage["depends_on"]) <= seen
             seen.add(stage["id"])
-    assert sum(len(task.workflow_stages) for task in composite) == 218
-    assert stage_count == 478
+    assert sum(len(task.workflow_stages) for task in composite) == 1233
+    assert stage_count == 1608
 
 
 def test_frontier_operating_reviews_have_professional_work_sample_depth():
@@ -136,10 +149,10 @@ def test_difficulty_profile_is_deterministic_and_frontier_gated():
     second = build_difficulty_profile(tasks)
     assert first == second
     assert first["summary"] == {
-        "tasks": 74,
-        "families": 33,
+        "tasks": 249,
+        "families": 46,
         "frontier_tasks": 12,
-        "total_criteria": 2864,
+        "total_criteria": 8155,
         "max_criteria_per_task": 419,
         "max_workflow_stages": 15,
         "max_oracle_tool_calls": 93,

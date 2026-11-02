@@ -42,7 +42,7 @@ def main():
             }
         )
     report = {
-        "benchmark_version": "0.6.0",
+        "benchmark_version": "0.7.0",
         "kind": "deterministic_algorithm_ablation",
         "interpretation": "Not GPT-5.4 or GPT-5.5 results. Development seeds, not a private test set.",
         "cases": len(rows),

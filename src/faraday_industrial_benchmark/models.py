@@ -181,7 +181,7 @@ class IncidentTask:
             seen_stage_ids.add(stage_id)
         return cls(
             id=value["id"],
-            version=value.get("version", "0.6.0"),
+            version=value.get("version", "0.7.0"),
             family=value["family"],
             title=value["title"],
             prompt=value["prompt"],

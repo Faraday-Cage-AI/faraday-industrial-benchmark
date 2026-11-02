@@ -5,7 +5,12 @@ import pytest
 from faraday_industrial_benchmark import extensions
 from faraday_industrial_benchmark.grader import grade_episode
 from faraday_industrial_benchmark.models import PUBLIC_NOTIFICATION_ROLES, IncidentTask
-from faraday_industrial_benchmark.scenarios import _base_state, _criterion, _economics, ScenarioInstance
+from faraday_industrial_benchmark.scenarios import (
+    ScenarioInstance,
+    _base_state,
+    _criterion,
+    _economics,
+)
 from faraday_industrial_benchmark.tool_specs import PROTECTED_ACTIONS, tool_specs_for_family
 from faraday_industrial_benchmark.world import IndustrialWorld, ToolClient
 

@@ -217,7 +217,7 @@ class BenchmarkRunner:
             }
         return {
             "schema_version": "faraday-industrial-run/3",
-            "benchmark_version": "0.6.0",
+            "benchmark_version": "0.7.0",
             "agent": agent.name,
             "summary": {
                 "tasks": len(results),
@@ -273,7 +273,7 @@ class BenchmarkRunner:
         runs = len(all_scores)
         return {
             "schema_version": "faraday-industrial-stability/1",
-            "benchmark_version": "0.6.0",
+            "benchmark_version": "0.7.0",
             "agent": agent.name,
             "attempts": attempts,
             "summary": {

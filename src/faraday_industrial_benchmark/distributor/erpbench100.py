@@ -109,7 +109,10 @@ def _incident(fixture: Json, tenant: Json, spec: Json) -> Json:
     }
 
 
-def _criteria(fixture: Json) -> list[Json]:
+HANDOFF_ROLE_INDEX = {"handoff:email_draft": 0, "handoff:chat_post": 1}
+
+
+def _criteria(fixture: Json, roles: tuple[str, ...]) -> list[Json]:
     investigations = {row["id"]: row for row in fixture["investigations"]}
     rows = []
     for item in fixture["rubric"]:
@@ -124,6 +127,10 @@ def _criteria(fixture: Json) -> list[Json]:
             extra["routes"] = investigations[name]["routes"]
         elif category == "calculation":
             extra.update(field=name, expected=fixture["expected_answer"][name])
+        elif rubric_id in HANDOFF_ROLE_INDEX:
+            # Declared so the published notification-role contract can be
+            # derived from the graded criteria.
+            extra["roles"] = [roles[HANDOFF_ROLE_INDEX[rubric_id]]]
         rows.append(_criterion(rubric_id, dimension, item["points"], check, **extra))
     if sum(row["weight"] for row in rows) != 100:
         raise ValueError(f"{fixture['upstream_task_id']}: ERPScore weights do not total 100")
@@ -194,7 +201,7 @@ def build(task: IncidentTask, rng: random.Random) -> ScenarioInstance:
         ],
     )
     economics["target_minutes"] = TARGET_MINUTES
-    return ScenarioInstance(state, [], _criteria(fixture), economics)
+    return ScenarioInstance(state, [], _criteria(fixture, tuple(spec["roles"])), economics)
 
 
 # ---------------------------------------------------------------------------

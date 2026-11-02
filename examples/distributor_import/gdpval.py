@@ -4440,7 +4440,7 @@ def assemble(index: int, src: SourceTask, spec: Json) -> tuple[Json, Json, Json]
         "family": spec["family"],
         "title": spec["title"],
         "prompt": _prompt(spec, ids),
-        "seed": 7300 + index,
+        "seed": 300000 + index,
         "difficulty": spec["difficulty"],
         "systems": list(spec.get("systems", family["systems"])),
         "max_tool_calls": 40,

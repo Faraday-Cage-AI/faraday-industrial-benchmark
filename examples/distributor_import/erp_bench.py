@@ -601,7 +601,9 @@ def _fixture(row: dict[str, Any], task_dir: Path) -> tuple[dict[str, Any], dict[
             )
         invoices.append({"customer_id": item["customer_id"], "kind": "regular"})
 
-    roles = ["purchasing", "sales"] + (["accounts_receivable"] if invoicing_required else [])
+    # The harness publishes one notification-role contract per family, so every
+    # task notifies all three owners, including receivables when no invoice is due.
+    roles = ["purchasing", "sales", "accounts_receivable"]
     background = scenario.get("background_and_policy") or ""
     policy_lines = []
     for line in background.splitlines():
@@ -698,7 +700,7 @@ def _fixture(row: dict[str, Any], task_dir: Path) -> tuple[dict[str, Any], dict[
         "prompt": _rewrite_prompt(row["prompt"], roles, invoicing_required),
         "seed": int(scenario["scenario_number"]),
         "difficulty": _difficulty(pattern),
-        "systems": ["ERP"],
+        "systems": ["ERP", "SCM", "billing"],
         "tags": [
             "source:erp-bench",
             f"upstream:{task_dir.name}",

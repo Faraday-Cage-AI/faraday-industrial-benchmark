@@ -182,7 +182,7 @@ def cmd_qualify(args: argparse.Namespace) -> int:
     passed = all(qualifications.values())
     report = {
         "schema_version": "faraday-industrial-qualification/1",
-        "benchmark_version": "0.6.0",
+        "benchmark_version": "0.7.0",
         "passed": passed,
         "checks": qualifications,
         "controls": {name: run["summary"] for name, run in runs.items()},
@@ -357,7 +357,7 @@ def build_parser() -> argparse.ArgumentParser:
     generate_parser.add_argument("--per-family", type=int, default=20)
     generate_parser.add_argument("--root-seed", type=int, required=True)
     generate_parser.add_argument("--split", default="heldout")
-    generate_parser.add_argument("--version", default="0.6.0")
+    generate_parser.add_argument("--version", default="0.7.0")
     generate_parser.add_argument("--output", default="data/generated/tasks.json")
     generate_parser.set_defaults(func=cmd_generate)
 
