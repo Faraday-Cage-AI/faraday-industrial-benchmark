@@ -123,8 +123,11 @@ def cmd_replay(args: argparse.Namespace) -> int:
         if task_id not in tasks:
             raise ValueError(f"task {task_id!r} is not present in {args.tasks}")
         report = runner.replay(tasks[task_id], result["trace"])
+        saved_task = dict(result.get("task") or {})
+        # Runs recorded before stages were withheld from agents still carry them.
+        saved_task.pop("workflow_stages", None)
         comparisons = {
-            "task_contract_matches": result.get("task") == tasks[task_id].public_dict(),
+            "task_contract_matches": saved_task == tasks[task_id].public_dict(),
             "score_matches": result.get("score") == report["score"],
             "initial_state_hash_matches": (
                 result.get("initial_state_hash") == report["initial_state_hash"]

@@ -30,6 +30,7 @@ def build_platform_harness_contract(tasks: list[IncidentTask]) -> Json:
     if not tasks:
         raise ValueError("at least one benchmark task is required")
     public_tasks = [task.public_dict() for task in tasks]
+    stages_by_id = {task.id: task.workflow_stage_dicts() for task in tasks}
     task_ids = [task["id"] for task in public_tasks]
     if len(task_ids) != len(set(task_ids)):
         raise ValueError("benchmark task IDs must be unique")
@@ -81,7 +82,7 @@ def build_platform_harness_contract(tasks: list[IncidentTask]) -> Json:
                     "systems": task["systems"],
                     "tags": task["tags"],
                     "controlled_plan_actions": task["controlled_plan_actions"],
-                    "workflow_stages": task["workflow_stages"],
+                    "workflow_stages": stages_by_id[task["id"]],
                     "required_notification_roles": task["required_notification_roles"],
                     "available_tools": [
                         spec["name"] for spec in tool_specs_for_family(task["family"])

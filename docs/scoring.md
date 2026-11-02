@@ -45,7 +45,7 @@ Reported dollar values are synthetic estimates and not benchmark points.
 ### Efficiency: 10 points
 
 An agent receives full efficiency credit within the scenario's target call count.
-For composite tasks the target scales with the number of public workflow stages;
+For composite tasks the target scales with the number of workflow stages;
 focused tasks retain the fixed short-workflow curve.
 Credit then declines linearly to zero at the hard tool budget. This discourages
 blind enumeration without penalizing necessary investigation.

@@ -59,7 +59,9 @@ wrong package is rejected without mutating the review state.
 | `plant_fulfillment_recovery` | Historian, QMS, CMMS, MES, APS, WMS, TMS, CRM, close | Converge quality and maintenance → reschedule before output deadline → release wave → reroute → post reserve |
 | `integrated_operating_review` | QMS, MES, SCM, WMS, CRM/ERP, TMS, GL, GRC, program office | Refresh four changing sources → resolve 15 exceptions → allocate shared constrained supply → reconcile reserve → build/read/package/publish four artifacts |
 
-Every task publishes a topological `workflow_stages` contract. The 52 focused
+Every task has a topological `workflow_stages` graph. The graph is
+evaluator-side metadata used for difficulty and efficiency targets; it is not
+sent to the agent, which has to plan the work itself. The 52 focused
 episodes use a common five-stage lifecycle, while each composite task replaces
 that lifecycle with a workflow-specific graph of up to 15 stages. The plant
 recovery graph has two independent diagnostic roots, an explicit convergence

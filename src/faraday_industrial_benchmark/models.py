@@ -136,10 +136,24 @@ class IncidentTask:
     workflow_stages: tuple[Json, ...] = ()
 
     @property
-    def public_workflow_stages(self) -> tuple[Json, ...]:
-        """Return the explicit DAG or the common focused-workflow lifecycle."""
+    def effective_workflow_stages(self) -> tuple[Json, ...]:
+        """Return the explicit DAG or the common focused-workflow lifecycle.
+
+        Stages are evaluator-side metadata. They are withheld from the agent so
+        it has to plan the work itself rather than follow the grader's outline.
+        """
 
         return self.workflow_stages or FOCUSED_WORKFLOW_STAGES
+
+    def workflow_stage_dicts(self) -> list[Json]:
+        return [
+            {
+                "id": stage["id"],
+                "objective": stage["objective"],
+                "depends_on": list(stage["depends_on"]),
+            }
+            for stage in self.effective_workflow_stages
+        ]
 
     @classmethod
     def from_dict(cls, value: Json) -> "IncidentTask":
@@ -184,17 +198,10 @@ class IncidentTask:
     def public_dict(self) -> Json:
         value = asdict(self)
         value.pop("seed", None)
+        value.pop("workflow_stages", None)
         value["systems"] = list(self.systems)
         value["tags"] = list(self.tags)
         value["controlled_plan_actions"] = list(self.controlled_plan_actions)
-        value["workflow_stages"] = [
-            {
-                "id": stage["id"],
-                "objective": stage["objective"],
-                "depends_on": list(stage["depends_on"]),
-            }
-            for stage in self.public_workflow_stages
-        ]
         value["required_notification_roles"] = list(
             PUBLIC_NOTIFICATION_ROLES.get(self.family, ())
         )

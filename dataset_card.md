@@ -40,8 +40,9 @@ and grading execute in the open-source Python environment.
 - `max_tool_calls`, `horizon_minutes`: episode budgets
 - `tags`: retrieval and analysis metadata
 - `controlled_plan_actions`: exact public vocabulary for graded free-text plans
-- `workflow_stages`: public dependency DAG; focused tasks use the shared lifecycle
-  and composite tasks provide workflow-specific graphs
+- `workflow_stages`: evaluator-side dependency DAG, withheld from the agent;
+  focused tasks use the shared lifecycle and composite tasks provide
+  workflow-specific graphs
 
 ## Use
 

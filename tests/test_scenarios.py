@@ -97,20 +97,21 @@ def test_public_task_manifest_matches_published_json_schema():
         validate(record, schema)
 
 
-def test_composite_workflow_stage_graphs_are_public_and_topological():
+def test_workflow_stage_graphs_are_topological_and_withheld_from_agents():
     composite = [task for task in load_tasks(DEFAULT_TASKS) if task.workflow_stages]
     assert len(composite) == 22
-    public_stage_count = 0
+    stage_count = 0
     for task in load_tasks(DEFAULT_TASKS):
-        public_stages = task.public_dict()["workflow_stages"]
-        assert public_stages
-        public_stage_count += len(public_stages)
+        assert "workflow_stages" not in task.public_dict()
+        stages = task.workflow_stage_dicts()
+        assert stages
+        stage_count += len(stages)
         seen = set()
-        for stage in public_stages:
+        for stage in stages:
             assert set(stage["depends_on"]) <= seen
             seen.add(stage["id"])
     assert sum(len(task.workflow_stages) for task in composite) == 218
-    assert public_stage_count == 478
+    assert stage_count == 478
 
 
 def test_frontier_operating_reviews_have_professional_work_sample_depth():

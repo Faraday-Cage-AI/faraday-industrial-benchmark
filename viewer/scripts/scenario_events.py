@@ -55,7 +55,10 @@ def find_trace(run_file: Path, task: IncidentTask) -> list[Json]:
 
 def scheduled(task: IncidentTask) -> Json:
     events = sorted(build_scenario(task).events, key=lambda event: (event.at_minute, event.id))
-    return {"task": task.public_dict(), "events": [asdict(event) for event in events]}
+    return {
+        "task": {**task.public_dict(), "workflow_stages": task.workflow_stage_dicts()},
+        "events": [asdict(event) for event in events],
+    }
 
 
 def replay(task: IncidentTask, trace: list[Json]) -> Json:
