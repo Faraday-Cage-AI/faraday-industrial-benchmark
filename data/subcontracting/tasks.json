@@ -7,16 +7,7 @@
     "prompt": "A quality escape has disrupted constrained supply, recovery production, customer commitments, transportation, and the current-period reserve. Work from the versioned data room and its stated source-precedence, allocation, routing, and rounding policies. Sources will change during the review: re-inventory and re-read every authoritative section through the required cutoff, and never use the superseded draft as decision evidence. Produce all four required professional deliverables with exact file-section-version citations, make every repeated quantity and financial value reconcile across artifacts, package them, obtain publication approval, publish the controlled review, and notify every contracted function. A narrative summary without the structured artifacts is not completion. Reconcile the raw insurance claims contract, including exclusions, deductible, participation, remaining coverage, and prior receipts. Include the full insurance_bridge in the recovery model and carry only the outstanding receivable into every reserve figure. All four deliverables must agree. Also reconcile AP revisions, related credit notes, service-period cutoff, per-document FX, and settled-payment timing. Include finance_bridge and propagate incremental expense into reserve without treating cash settlement as an expense reduction. Reconcile the separate receipt-cost propagation tree, respecting ownership, approval, logical nodes, cost-method stops, signed price adjustments and quarantine availability. Include cost_bridge and carry only its expense adjustment into the reserve. Do not mix inventory revaluation with expense or AP cash. Reconcile subcontracting events chronologically through the disclosed cutoff. Handle partial receipts, unit conversion, revised absolute consumption adjustments, inspection holds, supplier ownership, duplicates, reversals and late recosting of shipments. Derive available finished stock before allocating nominal MES capacity. Carry corrected supply into customer commitments, freight, production cost, penalty exposure and every deliverable. Include the subcontract_bridge and add only its COGS to the reserve, never component inventory or service payable again.",
     "seed": 81901,
     "difficulty": "frontier",
-    "systems": [
-      "ERP",
-      "MES",
-      "QMS",
-      "SCM",
-      "WMS",
-      "TMS",
-      "CRM",
-      "GRC"
-    ],
+    "systems": ["ERP", "MES", "QMS", "SCM", "WMS", "TMS", "CRM", "GRC"],
     "max_tool_calls": 300,
     "horizon_minutes": 600,
     "tags": [
@@ -42,44 +33,32 @@
       {
         "id": "read_policy",
         "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies",
-        "depends_on": [
-          "inventory_sources"
-        ]
+        "depends_on": ["inventory_sources"]
       },
       {
         "id": "reconcile_quality",
         "objective": "Reconcile containment scope and authoritative genealogy",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_supply",
         "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_demand",
         "objective": "Reconcile customer floors, priority, due dates, and penalty exposure",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_routes",
         "objective": "Reconcile route status, timing, capacity, and freight",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_controls",
         "objective": "Reconcile reserve methodology, ledger policy, and governance actions",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "refresh_revisions",
@@ -95,51 +74,37 @@
       {
         "id": "solve_allocation",
         "objective": "Solve the constrained priority allocation and feasible routing problem",
-        "depends_on": [
-          "refresh_revisions"
-        ]
+        "depends_on": ["refresh_revisions"]
       },
       {
         "id": "reconcile_financials",
         "objective": "Compute the exact evidence-backed reserve and account treatment",
-        "depends_on": [
-          "solve_allocation"
-        ]
+        "depends_on": ["solve_allocation"]
       },
       {
         "id": "build_deliverables",
         "objective": "Create four complete version-cited professional artifacts",
-        "depends_on": [
-          "reconcile_financials"
-        ]
+        "depends_on": ["reconcile_financials"]
       },
       {
         "id": "quality_control",
         "objective": "Read back every artifact and challenge field-level cross-artifact consistency",
-        "depends_on": [
-          "build_deliverables"
-        ]
+        "depends_on": ["build_deliverables"]
       },
       {
         "id": "package",
         "objective": "Bundle exactly one artifact of each required type",
-        "depends_on": [
-          "quality_control"
-        ]
+        "depends_on": ["quality_control"]
       },
       {
         "id": "authorize_publish",
         "objective": "Obtain approval and publish the exact controlled package",
-        "depends_on": [
-          "package"
-        ]
+        "depends_on": ["package"]
       },
       {
         "id": "communicate_close",
         "objective": "Notify all eight functions and close with record-level evidence",
-        "depends_on": [
-          "authorize_publish"
-        ]
+        "depends_on": ["authorize_publish"]
       }
     ]
   },
@@ -151,16 +116,7 @@
     "prompt": "A quality escape has disrupted constrained supply, recovery production, customer commitments, transportation, and the current-period reserve. Work from the versioned data room and its stated source-precedence, allocation, routing, and rounding policies. Sources will change during the review: re-inventory and re-read every authoritative section through the required cutoff, and never use the superseded draft as decision evidence. Produce all four required professional deliverables with exact file-section-version citations, make every repeated quantity and financial value reconcile across artifacts, package them, obtain publication approval, publish the controlled review, and notify every contracted function. A narrative summary without the structured artifacts is not completion. Reconcile the raw insurance claims contract, including exclusions, deductible, participation, remaining coverage, and prior receipts. Include the full insurance_bridge in the recovery model and carry only the outstanding receivable into every reserve figure. All four deliverables must agree. Also reconcile AP revisions, related credit notes, service-period cutoff, per-document FX, and settled-payment timing. Include finance_bridge and propagate incremental expense into reserve without treating cash settlement as an expense reduction. Reconcile the separate receipt-cost propagation tree, respecting ownership, approval, logical nodes, cost-method stops, signed price adjustments and quarantine availability. Include cost_bridge and carry only its expense adjustment into the reserve. Do not mix inventory revaluation with expense or AP cash. Reconcile subcontracting events chronologically through the disclosed cutoff. Handle partial receipts, unit conversion, revised absolute consumption adjustments, inspection holds, supplier ownership, duplicates, reversals and late recosting of shipments. Derive available finished stock before allocating nominal MES capacity. Carry corrected supply into customer commitments, freight, production cost, penalty exposure and every deliverable. Include the subcontract_bridge and add only its COGS to the reserve, never component inventory or service payable again.",
     "seed": 81902,
     "difficulty": "frontier",
-    "systems": [
-      "ERP",
-      "MES",
-      "QMS",
-      "SCM",
-      "WMS",
-      "TMS",
-      "CRM",
-      "GRC"
-    ],
+    "systems": ["ERP", "MES", "QMS", "SCM", "WMS", "TMS", "CRM", "GRC"],
     "max_tool_calls": 300,
     "horizon_minutes": 600,
     "tags": [
@@ -186,44 +142,32 @@
       {
         "id": "read_policy",
         "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies",
-        "depends_on": [
-          "inventory_sources"
-        ]
+        "depends_on": ["inventory_sources"]
       },
       {
         "id": "reconcile_quality",
         "objective": "Reconcile containment scope and authoritative genealogy",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_supply",
         "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_demand",
         "objective": "Reconcile customer floors, priority, due dates, and penalty exposure",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_routes",
         "objective": "Reconcile route status, timing, capacity, and freight",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_controls",
         "objective": "Reconcile reserve methodology, ledger policy, and governance actions",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "refresh_revisions",
@@ -239,51 +183,37 @@
       {
         "id": "solve_allocation",
         "objective": "Solve the constrained priority allocation and feasible routing problem",
-        "depends_on": [
-          "refresh_revisions"
-        ]
+        "depends_on": ["refresh_revisions"]
       },
       {
         "id": "reconcile_financials",
         "objective": "Compute the exact evidence-backed reserve and account treatment",
-        "depends_on": [
-          "solve_allocation"
-        ]
+        "depends_on": ["solve_allocation"]
       },
       {
         "id": "build_deliverables",
         "objective": "Create four complete version-cited professional artifacts",
-        "depends_on": [
-          "reconcile_financials"
-        ]
+        "depends_on": ["reconcile_financials"]
       },
       {
         "id": "quality_control",
         "objective": "Read back every artifact and challenge field-level cross-artifact consistency",
-        "depends_on": [
-          "build_deliverables"
-        ]
+        "depends_on": ["build_deliverables"]
       },
       {
         "id": "package",
         "objective": "Bundle exactly one artifact of each required type",
-        "depends_on": [
-          "quality_control"
-        ]
+        "depends_on": ["quality_control"]
       },
       {
         "id": "authorize_publish",
         "objective": "Obtain approval and publish the exact controlled package",
-        "depends_on": [
-          "package"
-        ]
+        "depends_on": ["package"]
       },
       {
         "id": "communicate_close",
         "objective": "Notify all eight functions and close with record-level evidence",
-        "depends_on": [
-          "authorize_publish"
-        ]
+        "depends_on": ["authorize_publish"]
       }
     ]
   },
@@ -295,16 +225,7 @@
     "prompt": "A quality escape has disrupted constrained supply, recovery production, customer commitments, transportation, and the current-period reserve. Work from the versioned data room and its stated source-precedence, allocation, routing, and rounding policies. Sources will change during the review: re-inventory and re-read every authoritative section through the required cutoff, and never use the superseded draft as decision evidence. Produce all four required professional deliverables with exact file-section-version citations, make every repeated quantity and financial value reconcile across artifacts, package them, obtain publication approval, publish the controlled review, and notify every contracted function. A narrative summary without the structured artifacts is not completion. Reconcile the raw insurance claims contract, including exclusions, deductible, participation, remaining coverage, and prior receipts. Include the full insurance_bridge in the recovery model and carry only the outstanding receivable into every reserve figure. All four deliverables must agree. Also reconcile AP revisions, related credit notes, service-period cutoff, per-document FX, and settled-payment timing. Include finance_bridge and propagate incremental expense into reserve without treating cash settlement as an expense reduction. Reconcile the separate receipt-cost propagation tree, respecting ownership, approval, logical nodes, cost-method stops, signed price adjustments and quarantine availability. Include cost_bridge and carry only its expense adjustment into the reserve. Do not mix inventory revaluation with expense or AP cash. Reconcile subcontracting events chronologically through the disclosed cutoff. Handle partial receipts, unit conversion, revised absolute consumption adjustments, inspection holds, supplier ownership, duplicates, reversals and late recosting of shipments. Derive available finished stock before allocating nominal MES capacity. Carry corrected supply into customer commitments, freight, production cost, penalty exposure and every deliverable. Include the subcontract_bridge and add only its COGS to the reserve, never component inventory or service payable again.",
     "seed": 81903,
     "difficulty": "frontier",
-    "systems": [
-      "ERP",
-      "MES",
-      "QMS",
-      "SCM",
-      "WMS",
-      "TMS",
-      "CRM",
-      "GRC"
-    ],
+    "systems": ["ERP", "MES", "QMS", "SCM", "WMS", "TMS", "CRM", "GRC"],
     "max_tool_calls": 300,
     "horizon_minutes": 600,
     "tags": [
@@ -330,44 +251,32 @@
       {
         "id": "read_policy",
         "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies",
-        "depends_on": [
-          "inventory_sources"
-        ]
+        "depends_on": ["inventory_sources"]
       },
       {
         "id": "reconcile_quality",
         "objective": "Reconcile containment scope and authoritative genealogy",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_supply",
         "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_demand",
         "objective": "Reconcile customer floors, priority, due dates, and penalty exposure",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_routes",
         "objective": "Reconcile route status, timing, capacity, and freight",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_controls",
         "objective": "Reconcile reserve methodology, ledger policy, and governance actions",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "refresh_revisions",
@@ -383,51 +292,37 @@
       {
         "id": "solve_allocation",
         "objective": "Solve the constrained priority allocation and feasible routing problem",
-        "depends_on": [
-          "refresh_revisions"
-        ]
+        "depends_on": ["refresh_revisions"]
       },
       {
         "id": "reconcile_financials",
         "objective": "Compute the exact evidence-backed reserve and account treatment",
-        "depends_on": [
-          "solve_allocation"
-        ]
+        "depends_on": ["solve_allocation"]
       },
       {
         "id": "build_deliverables",
         "objective": "Create four complete version-cited professional artifacts",
-        "depends_on": [
-          "reconcile_financials"
-        ]
+        "depends_on": ["reconcile_financials"]
       },
       {
         "id": "quality_control",
         "objective": "Read back every artifact and challenge field-level cross-artifact consistency",
-        "depends_on": [
-          "build_deliverables"
-        ]
+        "depends_on": ["build_deliverables"]
       },
       {
         "id": "package",
         "objective": "Bundle exactly one artifact of each required type",
-        "depends_on": [
-          "quality_control"
-        ]
+        "depends_on": ["quality_control"]
       },
       {
         "id": "authorize_publish",
         "objective": "Obtain approval and publish the exact controlled package",
-        "depends_on": [
-          "package"
-        ]
+        "depends_on": ["package"]
       },
       {
         "id": "communicate_close",
         "objective": "Notify all eight functions and close with record-level evidence",
-        "depends_on": [
-          "authorize_publish"
-        ]
+        "depends_on": ["authorize_publish"]
       }
     ]
   },
@@ -439,16 +334,7 @@
     "prompt": "A quality escape has disrupted constrained supply, recovery production, customer commitments, transportation, and the current-period reserve. Work from the versioned data room and its stated source-precedence, allocation, routing, and rounding policies. Sources will change during the review: re-inventory and re-read every authoritative section through the required cutoff, and never use the superseded draft as decision evidence. Produce all four required professional deliverables with exact file-section-version citations, make every repeated quantity and financial value reconcile across artifacts, package them, obtain publication approval, publish the controlled review, and notify every contracted function. A narrative summary without the structured artifacts is not completion. Reconcile the raw insurance claims contract, including exclusions, deductible, participation, remaining coverage, and prior receipts. Include the full insurance_bridge in the recovery model and carry only the outstanding receivable into every reserve figure. All four deliverables must agree. Also reconcile AP revisions, related credit notes, service-period cutoff, per-document FX, and settled-payment timing. Include finance_bridge and propagate incremental expense into reserve without treating cash settlement as an expense reduction. Reconcile the separate receipt-cost propagation tree, respecting ownership, approval, logical nodes, cost-method stops, signed price adjustments and quarantine availability. Include cost_bridge and carry only its expense adjustment into the reserve. Do not mix inventory revaluation with expense or AP cash. Reconcile subcontracting events chronologically through the disclosed cutoff. Handle partial receipts, unit conversion, revised absolute consumption adjustments, inspection holds, supplier ownership, duplicates, reversals and late recosting of shipments. Derive available finished stock before allocating nominal MES capacity. Carry corrected supply into customer commitments, freight, production cost, penalty exposure and every deliverable. Include the subcontract_bridge and add only its COGS to the reserve, never component inventory or service payable again.",
     "seed": 81904,
     "difficulty": "frontier",
-    "systems": [
-      "ERP",
-      "MES",
-      "QMS",
-      "SCM",
-      "WMS",
-      "TMS",
-      "CRM",
-      "GRC"
-    ],
+    "systems": ["ERP", "MES", "QMS", "SCM", "WMS", "TMS", "CRM", "GRC"],
     "max_tool_calls": 300,
     "horizon_minutes": 600,
     "tags": [
@@ -474,44 +360,32 @@
       {
         "id": "read_policy",
         "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies",
-        "depends_on": [
-          "inventory_sources"
-        ]
+        "depends_on": ["inventory_sources"]
       },
       {
         "id": "reconcile_quality",
         "objective": "Reconcile containment scope and authoritative genealogy",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_supply",
         "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_demand",
         "objective": "Reconcile customer floors, priority, due dates, and penalty exposure",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_routes",
         "objective": "Reconcile route status, timing, capacity, and freight",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_controls",
         "objective": "Reconcile reserve methodology, ledger policy, and governance actions",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "refresh_revisions",
@@ -527,51 +401,37 @@
       {
         "id": "solve_allocation",
         "objective": "Solve the constrained priority allocation and feasible routing problem",
-        "depends_on": [
-          "refresh_revisions"
-        ]
+        "depends_on": ["refresh_revisions"]
       },
       {
         "id": "reconcile_financials",
         "objective": "Compute the exact evidence-backed reserve and account treatment",
-        "depends_on": [
-          "solve_allocation"
-        ]
+        "depends_on": ["solve_allocation"]
       },
       {
         "id": "build_deliverables",
         "objective": "Create four complete version-cited professional artifacts",
-        "depends_on": [
-          "reconcile_financials"
-        ]
+        "depends_on": ["reconcile_financials"]
       },
       {
         "id": "quality_control",
         "objective": "Read back every artifact and challenge field-level cross-artifact consistency",
-        "depends_on": [
-          "build_deliverables"
-        ]
+        "depends_on": ["build_deliverables"]
       },
       {
         "id": "package",
         "objective": "Bundle exactly one artifact of each required type",
-        "depends_on": [
-          "quality_control"
-        ]
+        "depends_on": ["quality_control"]
       },
       {
         "id": "authorize_publish",
         "objective": "Obtain approval and publish the exact controlled package",
-        "depends_on": [
-          "package"
-        ]
+        "depends_on": ["package"]
       },
       {
         "id": "communicate_close",
         "objective": "Notify all eight functions and close with record-level evidence",
-        "depends_on": [
-          "authorize_publish"
-        ]
+        "depends_on": ["authorize_publish"]
       }
     ]
   },
@@ -583,16 +443,7 @@
     "prompt": "A quality escape has disrupted constrained supply, recovery production, customer commitments, transportation, and the current-period reserve. Work from the versioned data room and its stated source-precedence, allocation, routing, and rounding policies. Sources will change during the review: re-inventory and re-read every authoritative section through the required cutoff, and never use the superseded draft as decision evidence. Produce all four required professional deliverables with exact file-section-version citations, make every repeated quantity and financial value reconcile across artifacts, package them, obtain publication approval, publish the controlled review, and notify every contracted function. A narrative summary without the structured artifacts is not completion. Reconcile the raw insurance claims contract, including exclusions, deductible, participation, remaining coverage, and prior receipts. Include the full insurance_bridge in the recovery model and carry only the outstanding receivable into every reserve figure. All four deliverables must agree. Also reconcile AP revisions, related credit notes, service-period cutoff, per-document FX, and settled-payment timing. Include finance_bridge and propagate incremental expense into reserve without treating cash settlement as an expense reduction. Reconcile the separate receipt-cost propagation tree, respecting ownership, approval, logical nodes, cost-method stops, signed price adjustments and quarantine availability. Include cost_bridge and carry only its expense adjustment into the reserve. Do not mix inventory revaluation with expense or AP cash. Reconcile subcontracting events chronologically through the disclosed cutoff. Handle partial receipts, unit conversion, revised absolute consumption adjustments, inspection holds, supplier ownership, duplicates, reversals and late recosting of shipments. Derive available finished stock before allocating nominal MES capacity. Carry corrected supply into customer commitments, freight, production cost, penalty exposure and every deliverable. Include the subcontract_bridge and add only its COGS to the reserve, never component inventory or service payable again.",
     "seed": 81905,
     "difficulty": "frontier",
-    "systems": [
-      "ERP",
-      "MES",
-      "QMS",
-      "SCM",
-      "WMS",
-      "TMS",
-      "CRM",
-      "GRC"
-    ],
+    "systems": ["ERP", "MES", "QMS", "SCM", "WMS", "TMS", "CRM", "GRC"],
     "max_tool_calls": 300,
     "horizon_minutes": 600,
     "tags": [
@@ -618,44 +469,32 @@
       {
         "id": "read_policy",
         "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies",
-        "depends_on": [
-          "inventory_sources"
-        ]
+        "depends_on": ["inventory_sources"]
       },
       {
         "id": "reconcile_quality",
         "objective": "Reconcile containment scope and authoritative genealogy",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_supply",
         "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_demand",
         "objective": "Reconcile customer floors, priority, due dates, and penalty exposure",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_routes",
         "objective": "Reconcile route status, timing, capacity, and freight",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_controls",
         "objective": "Reconcile reserve methodology, ledger policy, and governance actions",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "refresh_revisions",
@@ -671,51 +510,37 @@
       {
         "id": "solve_allocation",
         "objective": "Solve the constrained priority allocation and feasible routing problem",
-        "depends_on": [
-          "refresh_revisions"
-        ]
+        "depends_on": ["refresh_revisions"]
       },
       {
         "id": "reconcile_financials",
         "objective": "Compute the exact evidence-backed reserve and account treatment",
-        "depends_on": [
-          "solve_allocation"
-        ]
+        "depends_on": ["solve_allocation"]
       },
       {
         "id": "build_deliverables",
         "objective": "Create four complete version-cited professional artifacts",
-        "depends_on": [
-          "reconcile_financials"
-        ]
+        "depends_on": ["reconcile_financials"]
       },
       {
         "id": "quality_control",
         "objective": "Read back every artifact and challenge field-level cross-artifact consistency",
-        "depends_on": [
-          "build_deliverables"
-        ]
+        "depends_on": ["build_deliverables"]
       },
       {
         "id": "package",
         "objective": "Bundle exactly one artifact of each required type",
-        "depends_on": [
-          "quality_control"
-        ]
+        "depends_on": ["quality_control"]
       },
       {
         "id": "authorize_publish",
         "objective": "Obtain approval and publish the exact controlled package",
-        "depends_on": [
-          "package"
-        ]
+        "depends_on": ["package"]
       },
       {
         "id": "communicate_close",
         "objective": "Notify all eight functions and close with record-level evidence",
-        "depends_on": [
-          "authorize_publish"
-        ]
+        "depends_on": ["authorize_publish"]
       }
     ]
   },
@@ -727,16 +552,7 @@
     "prompt": "A quality escape has disrupted constrained supply, recovery production, customer commitments, transportation, and the current-period reserve. Work from the versioned data room and its stated source-precedence, allocation, routing, and rounding policies. Sources will change during the review: re-inventory and re-read every authoritative section through the required cutoff, and never use the superseded draft as decision evidence. Produce all four required professional deliverables with exact file-section-version citations, make every repeated quantity and financial value reconcile across artifacts, package them, obtain publication approval, publish the controlled review, and notify every contracted function. A narrative summary without the structured artifacts is not completion. Reconcile the raw insurance claims contract, including exclusions, deductible, participation, remaining coverage, and prior receipts. Include the full insurance_bridge in the recovery model and carry only the outstanding receivable into every reserve figure. All four deliverables must agree. Also reconcile AP revisions, related credit notes, service-period cutoff, per-document FX, and settled-payment timing. Include finance_bridge and propagate incremental expense into reserve without treating cash settlement as an expense reduction. Reconcile the separate receipt-cost propagation tree, respecting ownership, approval, logical nodes, cost-method stops, signed price adjustments and quarantine availability. Include cost_bridge and carry only its expense adjustment into the reserve. Do not mix inventory revaluation with expense or AP cash. Reconcile subcontracting events chronologically through the disclosed cutoff. Handle partial receipts, unit conversion, revised absolute consumption adjustments, inspection holds, supplier ownership, duplicates, reversals and late recosting of shipments. Derive available finished stock before allocating nominal MES capacity. Carry corrected supply into customer commitments, freight, production cost, penalty exposure and every deliverable. Include the subcontract_bridge and add only its COGS to the reserve, never component inventory or service payable again.",
     "seed": 81906,
     "difficulty": "frontier",
-    "systems": [
-      "ERP",
-      "MES",
-      "QMS",
-      "SCM",
-      "WMS",
-      "TMS",
-      "CRM",
-      "GRC"
-    ],
+    "systems": ["ERP", "MES", "QMS", "SCM", "WMS", "TMS", "CRM", "GRC"],
     "max_tool_calls": 300,
     "horizon_minutes": 600,
     "tags": [
@@ -762,44 +578,32 @@
       {
         "id": "read_policy",
         "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies",
-        "depends_on": [
-          "inventory_sources"
-        ]
+        "depends_on": ["inventory_sources"]
       },
       {
         "id": "reconcile_quality",
         "objective": "Reconcile containment scope and authoritative genealogy",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_supply",
         "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_demand",
         "objective": "Reconcile customer floors, priority, due dates, and penalty exposure",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_routes",
         "objective": "Reconcile route status, timing, capacity, and freight",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_controls",
         "objective": "Reconcile reserve methodology, ledger policy, and governance actions",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "refresh_revisions",
@@ -815,51 +619,37 @@
       {
         "id": "solve_allocation",
         "objective": "Solve the constrained priority allocation and feasible routing problem",
-        "depends_on": [
-          "refresh_revisions"
-        ]
+        "depends_on": ["refresh_revisions"]
       },
       {
         "id": "reconcile_financials",
         "objective": "Compute the exact evidence-backed reserve and account treatment",
-        "depends_on": [
-          "solve_allocation"
-        ]
+        "depends_on": ["solve_allocation"]
       },
       {
         "id": "build_deliverables",
         "objective": "Create four complete version-cited professional artifacts",
-        "depends_on": [
-          "reconcile_financials"
-        ]
+        "depends_on": ["reconcile_financials"]
       },
       {
         "id": "quality_control",
         "objective": "Read back every artifact and challenge field-level cross-artifact consistency",
-        "depends_on": [
-          "build_deliverables"
-        ]
+        "depends_on": ["build_deliverables"]
       },
       {
         "id": "package",
         "objective": "Bundle exactly one artifact of each required type",
-        "depends_on": [
-          "quality_control"
-        ]
+        "depends_on": ["quality_control"]
       },
       {
         "id": "authorize_publish",
         "objective": "Obtain approval and publish the exact controlled package",
-        "depends_on": [
-          "package"
-        ]
+        "depends_on": ["package"]
       },
       {
         "id": "communicate_close",
         "objective": "Notify all eight functions and close with record-level evidence",
-        "depends_on": [
-          "authorize_publish"
-        ]
+        "depends_on": ["authorize_publish"]
       }
     ]
   },
@@ -871,16 +661,7 @@
     "prompt": "A quality escape has disrupted constrained supply, recovery production, customer commitments, transportation, and the current-period reserve. Work from the versioned data room and its stated source-precedence, allocation, routing, and rounding policies. Sources will change during the review: re-inventory and re-read every authoritative section through the required cutoff, and never use the superseded draft as decision evidence. Produce all four required professional deliverables with exact file-section-version citations, make every repeated quantity and financial value reconcile across artifacts, package them, obtain publication approval, publish the controlled review, and notify every contracted function. A narrative summary without the structured artifacts is not completion. Reconcile the raw insurance claims contract, including exclusions, deductible, participation, remaining coverage, and prior receipts. Include the full insurance_bridge in the recovery model and carry only the outstanding receivable into every reserve figure. All four deliverables must agree. Also reconcile AP revisions, related credit notes, service-period cutoff, per-document FX, and settled-payment timing. Include finance_bridge and propagate incremental expense into reserve without treating cash settlement as an expense reduction. Reconcile the separate receipt-cost propagation tree, respecting ownership, approval, logical nodes, cost-method stops, signed price adjustments and quarantine availability. Include cost_bridge and carry only its expense adjustment into the reserve. Do not mix inventory revaluation with expense or AP cash. Reconcile subcontracting events chronologically through the disclosed cutoff. Handle partial receipts, unit conversion, revised absolute consumption adjustments, inspection holds, supplier ownership, duplicates, reversals and late recosting of shipments. Derive available finished stock before allocating nominal MES capacity. Carry corrected supply into customer commitments, freight, production cost, penalty exposure and every deliverable. Include the subcontract_bridge and add only its COGS to the reserve, never component inventory or service payable again.",
     "seed": 81907,
     "difficulty": "frontier",
-    "systems": [
-      "ERP",
-      "MES",
-      "QMS",
-      "SCM",
-      "WMS",
-      "TMS",
-      "CRM",
-      "GRC"
-    ],
+    "systems": ["ERP", "MES", "QMS", "SCM", "WMS", "TMS", "CRM", "GRC"],
     "max_tool_calls": 300,
     "horizon_minutes": 600,
     "tags": [
@@ -906,44 +687,32 @@
       {
         "id": "read_policy",
         "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies",
-        "depends_on": [
-          "inventory_sources"
-        ]
+        "depends_on": ["inventory_sources"]
       },
       {
         "id": "reconcile_quality",
         "objective": "Reconcile containment scope and authoritative genealogy",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_supply",
         "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_demand",
         "objective": "Reconcile customer floors, priority, due dates, and penalty exposure",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_routes",
         "objective": "Reconcile route status, timing, capacity, and freight",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_controls",
         "objective": "Reconcile reserve methodology, ledger policy, and governance actions",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "refresh_revisions",
@@ -959,51 +728,37 @@
       {
         "id": "solve_allocation",
         "objective": "Solve the constrained priority allocation and feasible routing problem",
-        "depends_on": [
-          "refresh_revisions"
-        ]
+        "depends_on": ["refresh_revisions"]
       },
       {
         "id": "reconcile_financials",
         "objective": "Compute the exact evidence-backed reserve and account treatment",
-        "depends_on": [
-          "solve_allocation"
-        ]
+        "depends_on": ["solve_allocation"]
       },
       {
         "id": "build_deliverables",
         "objective": "Create four complete version-cited professional artifacts",
-        "depends_on": [
-          "reconcile_financials"
-        ]
+        "depends_on": ["reconcile_financials"]
       },
       {
         "id": "quality_control",
         "objective": "Read back every artifact and challenge field-level cross-artifact consistency",
-        "depends_on": [
-          "build_deliverables"
-        ]
+        "depends_on": ["build_deliverables"]
       },
       {
         "id": "package",
         "objective": "Bundle exactly one artifact of each required type",
-        "depends_on": [
-          "quality_control"
-        ]
+        "depends_on": ["quality_control"]
       },
       {
         "id": "authorize_publish",
         "objective": "Obtain approval and publish the exact controlled package",
-        "depends_on": [
-          "package"
-        ]
+        "depends_on": ["package"]
       },
       {
         "id": "communicate_close",
         "objective": "Notify all eight functions and close with record-level evidence",
-        "depends_on": [
-          "authorize_publish"
-        ]
+        "depends_on": ["authorize_publish"]
       }
     ]
   },
@@ -1015,16 +770,7 @@
     "prompt": "A quality escape has disrupted constrained supply, recovery production, customer commitments, transportation, and the current-period reserve. Work from the versioned data room and its stated source-precedence, allocation, routing, and rounding policies. Sources will change during the review: re-inventory and re-read every authoritative section through the required cutoff, and never use the superseded draft as decision evidence. Produce all four required professional deliverables with exact file-section-version citations, make every repeated quantity and financial value reconcile across artifacts, package them, obtain publication approval, publish the controlled review, and notify every contracted function. A narrative summary without the structured artifacts is not completion. Reconcile the raw insurance claims contract, including exclusions, deductible, participation, remaining coverage, and prior receipts. Include the full insurance_bridge in the recovery model and carry only the outstanding receivable into every reserve figure. All four deliverables must agree. Also reconcile AP revisions, related credit notes, service-period cutoff, per-document FX, and settled-payment timing. Include finance_bridge and propagate incremental expense into reserve without treating cash settlement as an expense reduction. Reconcile the separate receipt-cost propagation tree, respecting ownership, approval, logical nodes, cost-method stops, signed price adjustments and quarantine availability. Include cost_bridge and carry only its expense adjustment into the reserve. Do not mix inventory revaluation with expense or AP cash. Reconcile subcontracting events chronologically through the disclosed cutoff. Handle partial receipts, unit conversion, revised absolute consumption adjustments, inspection holds, supplier ownership, duplicates, reversals and late recosting of shipments. Derive available finished stock before allocating nominal MES capacity. Carry corrected supply into customer commitments, freight, production cost, penalty exposure and every deliverable. Include the subcontract_bridge and add only its COGS to the reserve, never component inventory or service payable again.",
     "seed": 81908,
     "difficulty": "frontier",
-    "systems": [
-      "ERP",
-      "MES",
-      "QMS",
-      "SCM",
-      "WMS",
-      "TMS",
-      "CRM",
-      "GRC"
-    ],
+    "systems": ["ERP", "MES", "QMS", "SCM", "WMS", "TMS", "CRM", "GRC"],
     "max_tool_calls": 300,
     "horizon_minutes": 600,
     "tags": [
@@ -1050,44 +796,32 @@
       {
         "id": "read_policy",
         "objective": "Extract the delivery contract, precedence, allocation, routing, and rounding policies",
-        "depends_on": [
-          "inventory_sources"
-        ]
+        "depends_on": ["inventory_sources"]
       },
       {
         "id": "reconcile_quality",
         "objective": "Reconcile containment scope and authoritative genealogy",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_supply",
         "objective": "Reconcile clean distribution supply, qualified production, and confirmed supplier recovery",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_demand",
         "objective": "Reconcile customer floors, priority, due dates, and penalty exposure",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_routes",
         "objective": "Reconcile route status, timing, capacity, and freight",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "reconcile_controls",
         "objective": "Reconcile reserve methodology, ledger policy, and governance actions",
-        "depends_on": [
-          "read_policy"
-        ]
+        "depends_on": ["read_policy"]
       },
       {
         "id": "refresh_revisions",
@@ -1103,51 +837,37 @@
       {
         "id": "solve_allocation",
         "objective": "Solve the constrained priority allocation and feasible routing problem",
-        "depends_on": [
-          "refresh_revisions"
-        ]
+        "depends_on": ["refresh_revisions"]
       },
       {
         "id": "reconcile_financials",
         "objective": "Compute the exact evidence-backed reserve and account treatment",
-        "depends_on": [
-          "solve_allocation"
-        ]
+        "depends_on": ["solve_allocation"]
       },
       {
         "id": "build_deliverables",
         "objective": "Create four complete version-cited professional artifacts",
-        "depends_on": [
-          "reconcile_financials"
-        ]
+        "depends_on": ["reconcile_financials"]
       },
       {
         "id": "quality_control",
         "objective": "Read back every artifact and challenge field-level cross-artifact consistency",
-        "depends_on": [
-          "build_deliverables"
-        ]
+        "depends_on": ["build_deliverables"]
       },
       {
         "id": "package",
         "objective": "Bundle exactly one artifact of each required type",
-        "depends_on": [
-          "quality_control"
-        ]
+        "depends_on": ["quality_control"]
       },
       {
         "id": "authorize_publish",
         "objective": "Obtain approval and publish the exact controlled package",
-        "depends_on": [
-          "package"
-        ]
+        "depends_on": ["package"]
       },
       {
         "id": "communicate_close",
         "objective": "Notify all eight functions and close with record-level evidence",
-        "depends_on": [
-          "authorize_publish"
-        ]
+        "depends_on": ["authorize_publish"]
       }
     ]
   }
