@@ -56,7 +56,7 @@ def test_names_follow_the_distributor_conventions():
         assert set(contract.READ_TOOLS) <= set(specs)
         assert specs["execute_action"]["input_schema"]["properties"]["action"]["enum"] == list(spec["actions"])
     checks = {criterion["check"] for task in ONE_PER_FAMILY for criterion in IndustrialWorld(task).criteria}
-    assert checks and all(name.startswith("dist_") for name in checks)
+    assert checks and all(name.startswith("dist_") or name == "finish_record_evidence" for name in checks)
 
 
 @pytest.mark.parametrize("task", TASKS, ids=lambda task: task.id)

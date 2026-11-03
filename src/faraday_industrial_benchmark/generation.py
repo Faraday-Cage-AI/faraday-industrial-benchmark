@@ -18,7 +18,7 @@ def generate_tasks(
     per_family: int,
     root_seed: int,
     split: str = "heldout",
-    version: str = "0.7.0",
+    version: str = "0.8.0",
 ) -> list[IncidentTask]:
     """Generate reproducible task descriptors without exposing seeds to agents."""
 

@@ -92,6 +92,10 @@ def _known_record_ids(world: IndustrialWorld) -> set[str]:
             if isinstance(record_id, str) and record_id:
                 identifiers.add(record_id)
             for key, child in value.items():
+                # Agent-authored document bodies and audit payloads are not
+                # authoritative registries of business records.
+                if key in {"content", "payload", "details", "citations", "audit_log"}:
+                    continue
                 if isinstance(child, (dict, list)):
                     if isinstance(child, dict):
                         identifiers.update(
@@ -107,6 +111,10 @@ def _known_record_ids(world: IndustrialWorld) -> set[str]:
                 visit(child)
 
     visit(world.state)
+    identifiers.update(
+        str(period) for period, record in world.state.get("close_status", {}).items()
+        if isinstance(record, dict)
+    )
     return identifiers
 
 
@@ -131,6 +139,9 @@ def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
         actual = {row.get(contract["field"]) for row in rows}
         expected = set(contract["values"])
         missing = sorted(expected - actual)
+        if contract.get("exact"):
+            extra = sorted(actual - expected)
+            return not missing and not extra, f"missing {missing}; excess {extra}"
         return not missing, "complete" if not missing else f"missing {missing}"
     if check == "record_matches":
         rows = _collection_rows(world, contract["collection"])
@@ -250,9 +261,13 @@ def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
                 matches.append(package)
         return bool(matches), f"{len(matches)} complete published package(s)"
     if check == "finish_evidence":
-        count = len(world.final_answer.get("evidence", []))
+        known = _known_record_ids(world)
+        count = len({
+            item for item in world.final_answer.get("evidence", [])
+            if isinstance(item, str) and item in known
+        })
         minimum = int(contract["minimum"])
-        return count >= minimum, f"{count}/{minimum} evidence IDs"
+        return count >= minimum, f"{count}/{minimum} valid record IDs"
     if check == "finish_record_evidence":
         evidence = world.final_answer.get("evidence", [])
         known = _known_record_ids(world)
@@ -430,6 +445,7 @@ def grade_episode(world: IndustrialWorld) -> EpisodeScore:
         and all(result.passed for result in criterion_results)
         and economic_points == 10.0
         and not critical_failure
+        and not any(row["code"] == "agent_error" for row in violations)
         and bool(world.final_answer)
     )
 

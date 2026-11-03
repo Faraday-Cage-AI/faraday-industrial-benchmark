@@ -5,6 +5,7 @@
   "type": "object",
   "required": ["schema_version", "benchmark_version", "agent", "attempts", "summary", "results"],
   "properties": {
+    "provenance": {"type": "object"},
     "schema_version": {"const": "faraday-industrial-stability/1"},
     "benchmark_version": {"type": "string"},
     "agent": {"type": "string", "minLength": 1},

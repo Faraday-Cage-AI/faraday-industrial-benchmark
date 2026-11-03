@@ -1,8 +1,8 @@
 # Benchmark tracks
 
-Faraday v0.7 defines one official full-suite score and seven diagnostic tracks.
+Faraday v0.8 defines one official full-suite score and seven diagnostic tracks.
 Track scores are useful for analysis, but only the 249-task full-suite result is
-eligible to be described as a complete Faraday v0.7 result. The full-suite score
+eligible to be described as a complete Faraday v0.8 result. The full-suite score
 is a plain mean over tasks, so Distributor Operations (175 of 249 tasks)
 carries about 70% of it.
 

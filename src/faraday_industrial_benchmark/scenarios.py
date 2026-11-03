@@ -248,6 +248,7 @@ def _quality_drift(task: IncidentTask, rng: random.Random) -> ScenarioInstance:
             collection="quality_holds",
             field="lot_id",
             values=affected,
+            exact=True,
         ),
         _criterion(
             "open-maintenance",
@@ -275,7 +276,7 @@ def _quality_drift(task: IncidentTask, rng: random.Random) -> ScenarioInstance:
         42_000,
         1_400,
         [
-            {"weight": 0.65, "check": "records_cover", "collection": "quality_holds", "field": "lot_id", "values": affected},
+            {"weight": 0.65, "check": "records_cover", "collection": "quality_holds", "field": "lot_id", "values": affected, "exact": True},
             {"weight": 0.15, "check": "records_cover", "collection": "maintenance_orders", "field": "machine_id", "values": [machine_id]},
             {"weight": 0.20, "check": "proposal_actions", "actions": ["reschedule shipment"]},
         ],
@@ -4307,7 +4308,13 @@ def build_scenario(task: IncidentTask) -> ScenarioInstance:
         if extension is None:
             raise ValueError(f"unknown scenario family: {task.family}")
         builder = extension.builder
-    return builder(task, random.Random(task.seed))
+    instance = builder(task, random.Random(task.seed))
+    if not any(row["check"] in {"finish_evidence", "finish_record_evidence"} for row in instance.criteria):
+        instance.criteria.append(_criterion(
+            "finish-record-evidence", "communication", 2,
+            "finish_record_evidence", minimum=1,
+        ))
+    return instance
 
 
 def known_family(name: str) -> bool:

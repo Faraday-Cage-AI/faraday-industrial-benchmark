@@ -47,6 +47,14 @@ faraday-bench qualify
 All reference episodes must strictly pass, every unauthorized-write control must
 score zero, and saved reference traces must replay exactly.
 
+## Development assistants
+
+The [benchmark development team](team/README.md) defines a research lead and five
+specialist roles with project-scoped Codex and Claude Code subagent adapters.
+Use the shared role files when configuring another harness; keep benchmark
+methodology and domain knowledge there rather than duplicating them in harness
+configuration.
+
 ## Reporting evaluator problems
 
 Treat leaked held-out seeds, grader bypasses, nondeterminism, and incorrect safety

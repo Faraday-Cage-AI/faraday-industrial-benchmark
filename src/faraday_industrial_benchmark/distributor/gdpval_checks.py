@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import re
 from collections.abc import Callable
+from datetime import date, timedelta
 from typing import Any
 
 Json = dict[str, Any]
@@ -156,6 +157,25 @@ def _scenario_numbers(row: Json, key: str, quarters: list[str]) -> list[float | 
     return [to_number(_field(row, key, quarter)) for quarter in quarters]
 
 
+def terms_cash_receipts(
+    wholesale: dict[str, float], invoice_dates: dict[str, str], payment_days: int, base_year: int
+) -> dict[str, float]:
+    """Aggregate invoice-date plus calendar-day receipts into numbered quarters.
+
+    Q1 is January--March of ``base_year``; Q5 is the next year's first
+    quarter. The dates are an explicitly authored case assumption, not inferred
+    from the number of payment days or from the quarter's shipment total.
+    """
+
+    receipts: dict[str, float] = {}
+    for quarter, amount in wholesale.items():
+        receipt_date = date.fromisoformat(invoice_dates[quarter]) + timedelta(days=payment_days)
+        receipt_quarter = 4 * (receipt_date.year - base_year) + (receipt_date.month - 1) // 3 + 1
+        key = f"Q{receipt_quarter}"
+        receipts[key] = receipts.get(key, 0.0) + amount
+    return receipts
+
+
 @custom_rule("terms_scenarios")
 def _terms_scenarios(content: Any, check: Json) -> tuple[bool, str]:
     """Validate the agent's own three-scenario terms model against its stated inputs."""
@@ -213,14 +233,16 @@ def _terms_scenarios(content: Any, check: Json) -> tuple[bool, str]:
             expected = [w - a for w, a in zip(expected_w, expected_a)]
             annual_key = "annual_net_wholesale_revenue"
         elif aspect == "cash":
-            lag = 1 if term == 30.0 else 2
+            if term not in (30.0, 60.0):
+                failures.append(f"{label}: payment terms must be 30 or 60 days")
+                continue
             receipts = _field(row, "cash_receipts")
             if not isinstance(receipts, dict):
                 failures.append(f"{label}: cash_receipts missing")
                 continue
-            expected_cash: dict[str, float] = {}
-            for index, quarter in enumerate(quarters):
-                expected_cash[f"Q{index + 1 + lag}"] = expected_w[index]
+            expected_cash = terms_cash_receipts(
+                dict(zip(quarters, expected_w)), check["invoice_dates"], int(term), check["base_year"]
+            )
             actual = {norm_key(key): to_number(value) for key, value in receipts.items()}
             for quarter, amount in expected_cash.items():
                 value = actual.get(norm_key(quarter))

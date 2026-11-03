@@ -29,7 +29,7 @@ UPSTREAM = {
     "revision": "ceba3880af555129b5278e056a0c20f2fb5a0ba9",
     "license": "CC0-1.0",
 }
-VERSION = "0.7.0"
+VERSION = "0.8.0"
 FIXTURE_DIR = Path("src/faraday_industrial_benchmark/distributor/fixtures") / SOURCE
 MANIFEST = Path("data/distributor-erp-bench/tasks.json")
 RAW_DIR = Path("data/distributor-sources") / SOURCE

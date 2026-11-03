@@ -5,6 +5,7 @@
   "type": "object",
   "required": ["schema_version", "benchmark_version", "agent", "summary", "family_summaries", "capability_summaries", "results"],
   "properties": {
+    "provenance": {"type": "object"},
     "schema_version": {"const": "faraday-industrial-run/3"},
     "benchmark_version": {"type": "string"},
     "agent": {"type": "string", "minLength": 1},

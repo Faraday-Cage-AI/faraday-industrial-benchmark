@@ -9,8 +9,10 @@ from pathlib import Path
 import pytest
 
 from faraday_industrial_benchmark.agents import OracleAgent
+from faraday_industrial_benchmark.grader import grade_episode
 from faraday_industrial_benchmark.models import load_tasks
-from faraday_industrial_benchmark.runner import BenchmarkRunner
+from faraday_industrial_benchmark.runner import BenchmarkRunner, BudgetedToolClient
+from faraday_industrial_benchmark.world import IndustrialWorld
 
 ROOT = Path(__file__).parents[1]
 SPEC = importlib.util.spec_from_file_location("frontier_audit", ROOT / "examples/audit_frontier.py")
@@ -169,3 +171,24 @@ def test_timeout_reconstruction_requires_elapsed_evidence(elapsed):
         result = MODULE.replay_timeout_exit(task, episode, measurement)
         assert result["score"] == episode["score"]
         assert result["final_state_hash"] == episode["final_state_hash"]
+
+
+def test_legacy_off_trace_terminal_marker_retains_evidence_gated_reconstruction(tmp_path):
+    task = load_tasks(ROOT / "data/researched-v2/tasks.json")[0]
+    world = IndustrialWorld(task)
+    client = BudgetedToolClient(world)
+    client.call("get_incident")
+    message = "RuntimeError: agent exited before final response (code=1)"
+    world._violation("agent_error", message, critical=False)
+    client.call("finish", summary="Agent execution failed.", evidence=[])
+    from dataclasses import asdict
+
+    episode = {
+        "score": grade_episode(world).to_dict(),
+        "trace": [asdict(entry) for entry in world.trace],
+    }
+    usage = tmp_path / "usage.jsonl"
+    usage.write_text(json.dumps({"usage": {"output_tokens": 100000}}) + "\n")
+    replay = MODULE.replay_budget_exit(task, episode, usage, {"total_output_limit": 100000})
+    assert replay["score"] == episode["score"]
+    assert replay["final_state_hash"] == world.state_hash

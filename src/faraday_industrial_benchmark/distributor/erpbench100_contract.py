@@ -10,7 +10,7 @@ from __future__ import annotations
 from typing import Any
 
 SOURCE = "erpbench-100"
-TASK_VERSION = "0.7.0"
+TASK_VERSION = "0.8.0"
 AS_OF = "2026-02-09T09:00:00Z"
 
 UPSTREAM = {

@@ -13,10 +13,12 @@ resolve exceptions, plan around operational constraints, obtain required
 approvals, and carry out actions across connected systems. The benchmark checks
 the resulting system state and the evidence behind each action.
 
-## Verified results: v0.6.0 (74-task suite)
+## Historical reported results: v0.6.0 (74-task suite)
 
 These scores were measured on v0.6.0, which had 74 tasks in 33 families. They
-have not been re-run on v0.7.0 and are not comparable with v0.7.0 scores.
+have not been re-run on v0.8.0 and are not comparable with v0.8.0 scores. Raw
+episode artifacts for this table are unavailable in this checkout, so these
+numbers cannot be independently replayed here.
 
 | Model | Result |
 |---|---:|
@@ -29,12 +31,12 @@ have not been re-run on v0.7.0 and are not comparable with v0.7.0 scores.
 
 ## Suite
 
-Version 0.7.0 ships 249 public tasks in 46 workflow families, with 108 typed
+Version 0.8.0 ships 249 public tasks in 46 workflow families, with 108 typed
 tools in the platform harness contract (67 core and 41 distributor). The
 headline score is a plain mean over all 249 tasks, so the 175 Distributor
-Operations tasks account for about 70% of it. The reference oracle scores
-100.00 with 249/249 strict successes; no-op, read-only, and unauthorized-write
-controls score 10.76, 11.75, and 0.00.
+Operations tasks account for about 70% of it. Current qualification and saved runs are linked in
+[the completion report](reports/completion-v0.8.0.md). Reference/control results
+are algorithmic qualification, not learned-agent measurements.
 
 ## What it evaluates
 
@@ -52,7 +54,9 @@ controls score 10.76, 11.75, and 0.00.
 
 Thirteen families (175 tasks) cover wholesale-distributor work. They are native
 Faraday rebuilds of tasks selected from three public benchmarks: each has its own
-world builder, typed tools, sealed deterministic criteria, and reference oracle.
+world builder, typed tools, sealed deterministic criteria, and reference oracle. Distributor reference trajectories use evaluator-side
+fixture answers and plans; perfect reference results verify execution consistency
+rather than independent derivation from the public evidence.
 They are part of the headline suite, not a separate compatibility track.
 
 | Source | Tasks | Families |
@@ -81,8 +85,8 @@ scenario with a new seed. GDPval rubric items that need subjective judgment
    auditable record.
 
 Each tool call advances simulated time. Deterministic checks evaluate completed
-work, record consistency, authorization, and operational outcomes. Saved runs can
-be replayed to reproduce the evaluation. Agents connect through a
+work, record consistency, authorization, and operational outcomes. Saved runs include source, task, and tool-schema fingerprints. Replay checks
+episodes and aggregate totals, and reports exact task coverage. Agents connect through a
 [newline-delimited JSON protocol](docs/jsonl-protocol.md).
 
 ## Quick start
@@ -132,3 +136,13 @@ Faraday-native code is licensed under [Apache-2.0](LICENSE), and authored task
 content under [CC BY 4.0](DATA_LICENSE). Third-party material, including the
 source-derived distributor material, retains its original terms; see
 [NOTICE](NOTICE) and [third-party notices](THIRD_PARTY_NOTICES.md).
+
+To create a fresh evidence bundle (tests, archived sources, controls, replay and
+optional-track references) without model API calls:
+
+```bash
+python examples/release_evidence.py --output reports/my-release --include-development-tracks
+```
+
+The output directory must be new. See [reproduction instructions](docs/reproducibility.md)
+and the [remaining model-measurement gate](docs/model-measurement-plan.md).

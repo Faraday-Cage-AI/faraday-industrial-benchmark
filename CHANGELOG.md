@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.8.0 — 2026-11-03
+
+- Corrected fabricated final citation credit and required record evidence in every
+  workflow; published scoring time/call thresholds via `get_incident`.
+- Bound replay to aggregate totals, exact coverage and frozen source/task/tool
+  inputs; preserved protocol rejections, failures and full trace metadata.
+- Fixed partial-line timeout/cancellation hangs, malformed payload mutation and
+  repeated inventory allocation; added independent adversarial review.
+- Corrected Net 30/60 cash timing to explicit calendar invoice dates and rejected
+  excess/duplicate AP holds and unnecessary quality containment.
+- Added a source-archived, fail-closed evidence-bundle command. Historical results
+  remain intact and are not comparable with the corrected contract.
+- Documented sealed-answer distributor references and missing historical raw model
+  artifacts; no current learned-model ranking is claimed.
+
 ## 0.7.0 — 2026-11-02
 
 - Added 175 Distributor Operations tasks in 13 families to the headline public

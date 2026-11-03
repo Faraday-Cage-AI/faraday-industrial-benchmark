@@ -1,7 +1,7 @@
 [
   {
     "id": "faraday-gdpval-001",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_policy_documents",
     "title": "Publish the Gravon retailer exchange program and authorization form",
     "prompt": "As Gravon Shoes' sales manager, define the retailer exchange program and its Exchange Authorization form. Work incident GDP-INC-001: review the brief case file CF-GDP-001-BRIEF. Record the deliverable as one gdp_exchange_program structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_procedure on DLV-GDP-001 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and warehouse_operations with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -22,7 +22,7 @@
   },
   {
     "id": "faraday-gdpval-002",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_pricing_quotation",
     "title": "Model CosmoGenics wholesale terms scenarios",
     "prompt": "As senior sales director, model three CosmoGenics terms scenarios (margin, payment terms, marketing allowance) and recommend one. Work incident GDP-INC-002: review the brief case file CF-GDP-002-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_terms_scenarios structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_quotation on DLV-GDP-002 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and controller with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -43,7 +43,7 @@
   },
   {
     "id": "faraday-gdpval-003",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_sales_analytics",
     "title": "Recap June shipped PO value and orders slipped to July",
     "prompt": "As wholesale sales analyst, recap PO value shipped in the June fiscal month by account and quantify June-window orders that slipped to July. Work incident GDP-INC-003: review the brief case file CF-GDP-003-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_po_ship_recap structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for publish_gdp_analysis on DLV-GDP-003 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and demand_planning with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -64,7 +64,7 @@
   },
   {
     "id": "faraday-gdpval-004",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_sales_analytics",
     "title": "Summarize weeks of supply and store out-of-stock rates for top UPCs",
     "prompt": "As wholesale sales analyst, compute weeks of supply and store-level out-of-stock rates for the five top-selling UPCs at a national drugstore account. Work incident GDP-INC-004: review the brief case file CF-GDP-004-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_wos_summary structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for publish_gdp_analysis on DLV-GDP-004 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and demand_planning with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -85,7 +85,7 @@
   },
   {
     "id": "faraday-gdpval-005",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_sales_analytics",
     "title": "Audit wholesale PO lines for price and case-pack entry errors",
     "prompt": "As wholesale sales analyst, audit recent PO lines for price mismatches and case-pack violations and summarize errors by SKU. Work incident GDP-INC-005: review the brief case file CF-GDP-005-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_po_entry_audit structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for publish_gdp_analysis on DLV-GDP-005 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and demand_planning with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -106,7 +106,7 @@
   },
   {
     "id": "faraday-gdpval-006",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_inventory_planning",
     "title": "Revise the holiday floorstand budget for the final store matrix",
     "prompt": "As order analyst, reconcile the original and final holiday floorstand store lists and restate unit and program cost after the shelf-strip increase. Work incident GDP-INC-006: review the brief case file CF-GDP-006-BRIEF, the supporting case files, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_floorstand_budget structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for release_gdp_inventory_plan on DLV-GDP-006 with payload artifact_id set to your artifact, execute it once approved, notify inventory_control and supply_planning with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -127,7 +127,7 @@
   },
   {
     "id": "faraday-gdpval-007",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_policy_documents",
     "title": "Draft the brand data-gathering questionnaire for new brand partners",
     "prompt": "As distribution sales manager, draft the Brand Data Gathering questionnaire that new brand partners complete during onboarding. Work incident GDP-INC-007: review the brief case file CF-GDP-007-BRIEF. Record the deliverable as one gdp_brand_questionnaire structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_procedure on DLV-GDP-007 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and warehouse_operations with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -148,7 +148,7 @@
   },
   {
     "id": "faraday-gdpval-008",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_sales_analytics",
     "title": "Recap top-selling denim fits by region and gender",
     "prompt": "As U.S. sales manager, rank men's and women's fits by region from wholesale sell-in data and summarize totals for merchandising. Work incident GDP-INC-008: review the brief case file CF-GDP-008-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_territory_fit_recap structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for publish_gdp_analysis on DLV-GDP-008 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and demand_planning with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -169,7 +169,7 @@
   },
   {
     "id": "faraday-gdpval-009",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_policy_documents",
     "title": "Propose new ERP order types for key-account reporting",
     "prompt": "As key-account sales manager, propose ERP order types (beyond Pre-Order, Re-Order, Bulk) that make the order book readable without interpretation. Work incident GDP-INC-009: review the brief case file CF-GDP-009-BRIEF, the supporting case files. Record the deliverable as one gdp_order_type_proposal structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_procedure on DLV-GDP-009 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and warehouse_operations with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -190,7 +190,7 @@
   },
   {
     "id": "faraday-gdpval-010",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_policy_documents",
     "title": "Standardize the key-account return authorization process and guidelines",
     "prompt": "As key-account sales manager, define the internal RA process (what, when, who) and the external account return guidelines. Work incident GDP-INC-010: review the brief case file CF-GDP-010-BRIEF, the supporting case files. Record the deliverable as one gdp_return_authorization_policy structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_procedure on DLV-GDP-010 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and warehouse_operations with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -211,7 +211,7 @@
   },
   {
     "id": "faraday-gdpval-011",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_policy_documents",
     "title": "Standardize dealer parts receiving for stock and critical orders",
     "prompt": "As district parts manager, publish a dealer check-in procedure for stock and critical parts orders from truck arrival to DMS confirmation. Work incident GDP-INC-011: review the brief case file CF-GDP-011-BRIEF. Record the deliverable as one gdp_receiving_procedure structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_procedure on DLV-GDP-011 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and warehouse_operations with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -232,7 +232,7 @@
   },
   {
     "id": "faraday-gdpval-012",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_sales_analytics",
     "title": "Assess Beutist set inventory coverage against expected sales",
     "prompt": "As national-accounts planning manager, recap Beutist set sales by axis and brand and test whether OH+OO and expected shipments cover expected sales. Work incident GDP-INC-012: review the brief case file CF-GDP-012-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_set_coverage_recap structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for publish_gdp_analysis on DLV-GDP-012 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and demand_planning with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -253,7 +253,7 @@
   },
   {
     "id": "faraday-gdpval-013",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_sales_analytics",
     "title": "Recap XR retailer 2023 makeup sales, discontinued risk, and function drivers",
     "prompt": "As national account director, recap XR retailer 2023 makeup sales, discontinued-SKU exposure, and the top, rising, and declining functions. Work incident GDP-INC-013: review the brief case file CF-GDP-013-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_category_recap structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for publish_gdp_analysis on DLV-GDP-013 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and demand_planning with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -274,7 +274,7 @@
   },
   {
     "id": "faraday-gdpval-014",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_inventory_planning",
     "title": "Plan additional July shipments to prevent distributor stockouts",
     "prompt": "As beverage sales representative, compute days on hand, stockout dates, and the additional pallets and delivery dates the distributor needs through July 31. Work incident GDP-INC-014: review the brief case file CF-GDP-014-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_stockout_plan structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for release_gdp_inventory_plan on DLV-GDP-014 with payload artifact_id set to your artifact, execute it once approved, notify inventory_control and supply_planning with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -295,7 +295,7 @@
   },
   {
     "id": "faraday-gdpval-015",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_pricing_quotation",
     "title": "Reprice the men's fragrance line against the competitive set",
     "prompt": "As director of sales, benchmark men's fragrance MSRPs per ounce against the frozen competitive set and recommend new MSRPs. Work incident GDP-INC-015: review the brief case file CF-GDP-015-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_msrp_model structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_quotation on DLV-GDP-015 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and controller with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -316,7 +316,7 @@
   },
   {
     "id": "faraday-gdpval-016",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_pricing_quotation",
     "title": "Project year-one marketplace revenue and margin with tiered cost",
     "prompt": "As enterprise sales director, project year-one marketplace margin for the duct and ceiling UV devices and consumables under tiered cost. Work incident GDP-INC-016: review the brief case file CF-GDP-016-BRIEF, the supporting case files, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_pro_forma structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_quotation on DLV-GDP-016 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and controller with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -337,7 +337,7 @@
   },
   {
     "id": "faraday-gdpval-017",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_pricing_quotation",
     "title": "Quote IEHK 2017 modules EXW to a new NGO client",
     "prompt": "As account manager, issue an EXW indicative quotation for IEHK 2017 modules to new NGO client Inter-Aid from the internal price, lead-time, and shelf-life sheet. Work incident GDP-INC-017: review the brief case file CF-GDP-017-BRIEF, the supporting case files, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_quotation structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_quotation on DLV-GDP-017 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and controller with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -358,7 +358,7 @@
   },
   {
     "id": "faraday-gdpval-018",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_pricing_quotation",
     "title": "Revise a sterilization kit quotation with volume price and freight options",
     "prompt": "As account manager, revise quotation Q9749821 for 400 sterilization kits with the volume price tier and three freight options with grand totals. Work incident GDP-INC-018: review the brief case file CF-GDP-018-BRIEF, the supporting case files, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_revised_quotation structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_quotation on DLV-GDP-018 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and controller with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -379,7 +379,7 @@
   },
   {
     "id": "faraday-gdpval-019",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_warehouse_shipping",
     "title": "Select the lowest-cost flat-rate carrier per package size for 2026",
     "prompt": "As outbound shipping manager, project 2026 flat-rate shipping cost by carrier and package size and recommend a carrier per size. Work incident GDP-INC-019: review the brief case file CF-GDP-019-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_carrier_selection structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for post_gdp_warehouse_record on DLV-GDP-019 with payload artifact_id set to your artifact, execute it once approved, notify warehouse_operations and transportation with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -400,7 +400,7 @@
   },
   {
     "id": "faraday-gdpval-020",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_policy_documents",
     "title": "Issue an ESD-sensitive component handling and storage SOP",
     "prompt": "As warehouse manager, issue a standard operating procedure for handling and storing ESD-sensitive components that training can adopt. Work incident GDP-INC-020: review the brief case file CF-GDP-020-BRIEF. Record the deliverable as one gdp_esd_sop structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for issue_gdp_procedure on DLV-GDP-020 with payload artifact_id set to your artifact, execute it once approved, notify sales_operations and warehouse_operations with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -421,7 +421,7 @@
   },
   {
     "id": "faraday-gdpval-021",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_inventory_planning",
     "title": "Analyze 2025 RMA and work-order incidents by supplier",
     "prompt": "As inventory analyst, summarize 2025 inventory incidents by supplier, cost, and resolution time and recommend actions to supplier and warehouse management. Work incident GDP-INC-021: review the brief case file CF-GDP-021-BRIEF, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_incident_analysis structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for release_gdp_inventory_plan on DLV-GDP-021 with payload artifact_id set to your artifact, execute it once approved, notify inventory_control and supply_planning with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -442,7 +442,7 @@
   },
   {
     "id": "faraday-gdpval-022",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_warehouse_shipping",
     "title": "Post the daily receiving location report",
     "prompt": "As inventory clerk, post the location report for today's receipts by cross-referencing the receiving log against assigned line locations. Work incident GDP-INC-022: review the brief case file CF-GDP-022-BRIEF, the supporting case files, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_location_report structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for post_gdp_warehouse_record on DLV-GDP-022 with payload artifact_id set to your artifact, execute it once approved, notify warehouse_operations and transportation with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",
@@ -463,7 +463,7 @@
   },
   {
     "id": "faraday-gdpval-023",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "family": "distributor_warehouse_shipping",
     "title": "Build the daily shipment manifest with weight-based carrier selection",
     "prompt": "As shipping clerk, build the 06/25/25 shipment manifest choosing the carrier by weight and recording actual versus industry-average cost savings. Work incident GDP-INC-023: review the brief case file CF-GDP-023-BRIEF, the supporting case files, and the reference tables (list_gdp_tables, query_gdp_table). Record the deliverable as one gdp_shipment_manifest structured artifact whose content follows the brief's submission_contract and cites the case-file sections you relied on. Then request approval for post_gdp_warehouse_record on DLV-GDP-023 with payload artifact_id set to your artifact, execute it once approved, notify warehouse_operations and transportation with the headline result using those canonical role identifiers, and finish citing the artifact and deliverable IDs.",

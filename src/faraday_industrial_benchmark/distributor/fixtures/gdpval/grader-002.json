@@ -121,7 +121,14 @@
   },
   {
    "aspect": "labels",
+   "base_year": 2026,
    "id": "scenario-labels",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -135,7 +142,14 @@
   },
   {
    "aspect": "margin_range",
+   "base_year": 2026,
    "id": "scenario-margin-range",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -149,7 +163,14 @@
   },
   {
    "aspect": "margin_varied",
+   "base_year": 2026,
    "id": "scenario-margin-varied",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -163,7 +184,14 @@
   },
   {
    "aspect": "allowance_range",
+   "base_year": 2026,
    "id": "scenario-allowance-range",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -177,7 +205,14 @@
   },
   {
    "aspect": "allowance_varied",
+   "base_year": 2026,
    "id": "scenario-allowance-varied",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -191,7 +226,14 @@
   },
   {
    "aspect": "terms_valid",
+   "base_year": 2026,
    "id": "scenario-terms-valid",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -205,7 +247,14 @@
   },
   {
    "aspect": "terms_both",
+   "base_year": 2026,
    "id": "scenario-terms-both",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -219,7 +268,14 @@
   },
   {
    "aspect": "distinct",
+   "base_year": 2026,
    "id": "scenario-distinct",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -233,7 +289,14 @@
   },
   {
    "aspect": "selected",
+   "base_year": 2026,
    "id": "scenario-selected",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -247,7 +310,14 @@
   },
   {
    "aspect": "wholesale",
+   "base_year": 2026,
    "id": "scenario-wholesale",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -261,7 +331,14 @@
   },
   {
    "aspect": "allowance",
+   "base_year": 2026,
    "id": "scenario-allowance",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -275,7 +352,14 @@
   },
   {
    "aspect": "net",
+   "base_year": 2026,
    "id": "scenario-net",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -289,7 +373,14 @@
   },
   {
    "aspect": "cash",
+   "base_year": 2026,
    "id": "scenario-cash",
+   "invoice_dates": {
+    "Q1": "2026-03-31",
+    "Q2": "2026-06-30",
+    "Q3": "2026-09-30",
+    "Q4": "2026-12-31"
+   },
    "kind": "custom",
    "rule": "terms_scenarios",
    "shipments": {
@@ -309,7 +400,9 @@
  ],
  "notes": [
   "Upstream prompt and one rubric item state shipments total $225,000, but the reference quarters sum to $255,000 (70k+80k+80k+25k); the expert deliverable uses $255,000. The request no longer states the wrong total, the $225,000 rubric item is unscored (upstream_conflict), and the data total is scored.",
-  "Scenario choice is open: scenario checks validate the agent's own inputs against the rubric bounds and formulas."
+  "Scenario choice is open: scenario checks validate the agent's own inputs against the rubric bounds and formulas.",
+  "Synthetic cash-timing convention: Year 1 is calendar year 2026. Each quarter's entire shipment value is invoiced at that quarter end: Q1=2026-03-31, Q2=2026-06-30, Q3=2026-09-30, Q4=2026-12-31. Gross wholesale cash is received exactly payment_terms_days calendar days after the invoice date. Aggregate those receipt dates into calendar quarters, with Q1-Q4 in 2026 and Q5-Q6 in 2027; marketing allowance is reported separately. Under these dates, Net 30 and Net 60 receipts both fall in the following quarter. Their different dates and liquidity effects within that quarter are not measured by this quarterly cash_receipts field.",
+  "Corrected the earlier implementation that treated Net 60 as two whole quarters; payment days are now added to published invoice dates."
  ],
  "required_reads": [
   [
@@ -771,10 +864,10 @@
     "annual_net_wholesale_revenue": 142800.0,
     "annual_wholesale_revenue": 153000.0,
     "cash_receipts": {
-     "Q3": 42000.0,
+     "Q2": 42000.0,
+     "Q3": 48000.0,
      "Q4": 48000.0,
-     "Q5": 48000.0,
-     "Q6": 15000.0
+     "Q5": 15000.0
     },
     "marketing_allowance": {
      "Q1": 2800.0,

@@ -1,5 +1,7 @@
 .PHONY: validate upstreams test difficulty qualify oracle replay export-platform release-check
 
+EVIDENCE_OUTPUT ?= reports/release-$(shell date -u +%Y%m%dT%H%M%SZ)
+
 validate:
 	python3 -m faraday_industrial_benchmark validate
 
@@ -24,4 +26,5 @@ replay:
 export-platform:
 	python3 -m faraday_industrial_benchmark export-harness --output runs/faraday-platform-harness.json
 
-release-check: validate upstreams test difficulty qualify oracle replay export-platform
+release-check:
+	python3 examples/release_evidence.py --output $(EVIDENCE_OUTPUT) --include-development-tracks

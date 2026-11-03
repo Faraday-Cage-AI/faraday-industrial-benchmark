@@ -23,7 +23,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Northbridge Fastener Works",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -105,7 +105,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Northbridge Fastener Works",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -187,7 +187,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Northbridge Fastener Works",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -269,7 +269,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Northbridge Fastener Works",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -351,7 +351,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Northbridge Fastener Works",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -433,7 +433,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Northbridge Fastener Works",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -515,7 +515,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Northbridge Fastener Works",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -597,7 +597,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Harborline Trading Co.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -679,7 +679,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Harborline Trading Co.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -761,7 +761,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Harborline Trading Co.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -843,7 +843,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Harborline Trading Co.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -925,7 +925,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Harborline Trading Co.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1007,7 +1007,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Harborline Trading Co.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1089,7 +1089,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Harborline Trading Co.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1171,7 +1171,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Meridian Staffing Services",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1253,7 +1253,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Meridian Staffing Services",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1335,7 +1335,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Meridian Staffing Services",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1417,7 +1417,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Meridian Staffing Services",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1499,7 +1499,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Meridian Staffing Services",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1581,7 +1581,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Meridian Staffing Services",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1663,7 +1663,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Meridian Staffing Services",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1745,7 +1745,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Sungrove Foods",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1827,7 +1827,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Sungrove Foods",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1909,7 +1909,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Sungrove Foods",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -1991,7 +1991,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Sungrove Foods",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2073,7 +2073,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Sungrove Foods",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2155,7 +2155,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Sungrove Foods",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2237,7 +2237,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Sungrove Foods",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2319,7 +2319,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Kestrel Electronics Assembly",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2401,7 +2401,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Kestrel Electronics Assembly",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2483,7 +2483,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Kestrel Electronics Assembly",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2565,7 +2565,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Kestrel Electronics Assembly",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2647,7 +2647,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Kestrel Electronics Assembly",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2729,7 +2729,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Kestrel Electronics Assembly",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2811,7 +2811,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Kestrel Electronics Assembly",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2893,7 +2893,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Alderwood Furniture",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -2975,7 +2975,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Alderwood Furniture",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3057,7 +3057,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Alderwood Furniture",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3139,7 +3139,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Alderwood Furniture",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3221,7 +3221,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Alderwood Furniture",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3303,7 +3303,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Alderwood Furniture",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3385,7 +3385,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Alderwood Furniture",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3467,7 +3467,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Caldera Packaging",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3549,7 +3549,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Caldera Packaging",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3631,7 +3631,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Caldera Packaging",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3713,7 +3713,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Caldera Packaging",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3795,7 +3795,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Caldera Packaging",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3877,7 +3877,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Caldera Packaging",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -3959,7 +3959,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Caldera Packaging",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4041,7 +4041,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Riverstone Medical Supply",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4123,7 +4123,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Riverstone Medical Supply",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4205,7 +4205,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Riverstone Medical Supply",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4287,7 +4287,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Riverstone Medical Supply",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4369,7 +4369,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Riverstone Medical Supply",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4451,7 +4451,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Riverstone Medical Supply",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4533,7 +4533,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Riverstone Medical Supply",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4615,7 +4615,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Bluefin Marine Parts",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4697,7 +4697,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Bluefin Marine Parts",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4779,7 +4779,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Bluefin Marine Parts",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4861,7 +4861,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Bluefin Marine Parts",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -4943,7 +4943,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Bluefin Marine Parts",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -5025,7 +5025,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Bluefin Marine Parts",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -5107,7 +5107,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Bluefin Marine Parts",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -5189,7 +5189,7 @@
    "workflow:order_import"
   ],
   "title": "Import the customer's consolidated order — Terravane Solar Components",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -5271,7 +5271,7 @@
    "workflow:shipment_verification"
   ],
   "title": "Reconcile the staged shipment before confirmation — Terravane Solar Components",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -5353,7 +5353,7 @@
    "workflow:receivables_collection"
   ],
   "title": "Apply the customer's remittance and size the exposure — Terravane Solar Components",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -5435,7 +5435,7 @@
    "workflow:inventory_reorder"
   ],
   "title": "Run the reorder review and raise the requisition — Terravane Solar Components",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -5517,7 +5517,7 @@
    "workflow:receiving_ap_match"
   ],
   "title": "Receive the delivery and match the supplier invoice — Terravane Solar Components",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -5599,7 +5599,7 @@
    "workflow:channel_order_sync"
   ],
   "title": "Sync the channel orders without duplicates — Terravane Solar Components",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],
@@ -5681,7 +5681,7 @@
    "workflow:price_list_batch"
   ],
   "title": "Apply the quarterly price batch under policy — Terravane Solar Components",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "workflow_stages": [
    {
     "depends_on": [],

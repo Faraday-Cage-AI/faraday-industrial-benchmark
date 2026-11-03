@@ -6,6 +6,37 @@ from copy import deepcopy
 from typing import Any
 
 
+def argument_type_errors(value: Any, schema: dict[str, Any], path: str = "arguments") -> list[str]:
+    """Reject malformed JSON types before a handler can partially mutate state.
+
+    Business constraints and authorization remain authoritative handler checks.
+    This validates only disclosed types, including typed array members.
+    """
+    kind = schema.get("type")
+    if kind:
+        kinds = kind if isinstance(kind, list) else [kind]
+        checks = {
+            "object": isinstance(value, dict),
+            "array": isinstance(value, list),
+            "string": isinstance(value, str),
+            "integer": isinstance(value, int) and not isinstance(value, bool),
+            "number": isinstance(value, (int, float)) and not isinstance(value, bool),
+            "boolean": isinstance(value, bool),
+            "null": value is None,
+        }
+        if not any(checks.get(item, False) for item in kinds):
+            return [f"{path}: expected {' or '.join(kinds)}"]
+    errors = []
+    if isinstance(value, dict):
+        for key, child in schema.get("properties", {}).items():
+            if key in value:
+                errors.extend(argument_type_errors(value[key], child, f"{path}.{key}"))
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            errors.extend(argument_type_errors(child, schema.get("items", {}), f"{path}[{index}]"))
+    return errors
+
+
 PROTECTED_ACTIONS = (
     "accept_rush_order",
     "apply_engineering_change",

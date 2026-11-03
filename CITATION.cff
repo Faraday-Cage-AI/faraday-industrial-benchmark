@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use Faraday Industrial Benchmark, cite this software and the exact benchmark version."
 title: "Faraday Industrial Benchmark: Dynamic evaluation for industrial-enterprise agents"
 type: software
-version: 0.7.0
-date-released: 2026-11-02
+version: 0.8.0
+date-released: 2026-11-03
 license: Apache-2.0
 authors:
   - name: "Faraday Industrial Benchmark contributors"

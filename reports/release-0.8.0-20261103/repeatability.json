@@ -1,0 +1,7 @@
+{
+  "attempts": 2,
+  "first_run_sha256": "fe8806b33d30096dae9c97fd5e27c81ac90f9fce0d4373d23b1db8f5e1574bb4",
+  "identical_full_runs": true,
+  "note": "Full traces identical; oracle.json preserves the common bytes. This measures deterministic reference execution, not model stability.",
+  "second_run_sha256": "fe8806b33d30096dae9c97fd5e27c81ac90f9fce0d4373d23b1db8f5e1574bb4"
+}

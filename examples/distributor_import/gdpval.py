@@ -34,13 +34,13 @@ import docx
 import openpyxl
 from pypdf import PdfReader
 
-from faraday_industrial_benchmark.distributor.gdpval_checks import evaluate
+from faraday_industrial_benchmark.distributor.gdpval_checks import evaluate, terms_cash_receipts
 from faraday_industrial_benchmark.distributor.provenance import write_provenance
 
 Json = dict[str, Any]
 
 SOURCE = "gdpval"
-VERSION = "0.7.0"
+VERSION = "0.8.0"
 UPSTREAM = {
     "repository": "openai/gdpval",
     "revision": "11e7900cdcac61bc4daf59e65feb238acda98fbf",
@@ -544,13 +544,24 @@ def t02_terms_scenarios(src: SourceTask) -> Json:
         "Projected Shipments at Retail Value: shipments by quarter are in the reference table.",
     )
     require(request != src.prompt, "task 02 prompt patch failed")
+    base_year = 2026
+    invoice_dates = {"Q1": "2026-03-31", "Q2": "2026-06-30", "Q3": "2026-09-30", "Q4": "2026-12-31"}
+    cash_convention = (
+        "Synthetic cash-timing convention: Year 1 is calendar year 2026. Each quarter's entire shipment "
+        "value is invoiced at that quarter end: Q1=2026-03-31, Q2=2026-06-30, Q3=2026-09-30, "
+        "Q4=2026-12-31. Gross wholesale cash is received exactly payment_terms_days calendar days "
+        "after the invoice date. Aggregate those receipt dates into calendar quarters, with Q1-Q4 in 2026 "
+        "and Q5-Q6 in 2027; marketing allowance is reported separately. Under these dates, Net 30 and "
+        "Net 60 receipts both fall in the following quarter. Their different dates and liquidity effects "
+        "within that quarter are not measured by this quarterly cash_receipts field."
+    )
+    request += "\n\n" + cash_convention
 
     def scenario(name: str, margin: float, allowance: float, terms: int) -> Json:
         wholesale = {q: r2(shipments[q] * (1 - margin)) for q in quarters}
         allowance_rows = {q: r2(shipments[q] * allowance) for q in quarters}
         net = {q: r2(wholesale[q] - allowance_rows[q]) for q in quarters}
-        lag = 1 if terms == 30 else 2
-        receipts = {f"Q{index + 1 + lag}": wholesale[q] for index, q in enumerate(quarters)}
+        receipts = terms_cash_receipts(wholesale, invoice_dates, terms, base_year)
         return {
             "name": name,
             "retailer_margin": margin,
@@ -585,7 +596,7 @@ def t02_terms_scenarios(src: SourceTask) -> Json:
               "annual_marketing_allowance, annual_net_wholesale_revenue."),
         field("selected_scenario", "string", "Name of the recommended scenario (must match one scenario name)."),
     ]
-    terms = {"shipments": shipments}
+    terms = {"shipments": shipments, "invoice_dates": invoice_dates, "base_year": base_year}
     checks = [
         check(f"retail-{q.lower()}", "number", ["quarterly_projection", "retail_sales", q], retail[q], tolerance=0.5) for q in quarters
     ] + [
@@ -641,6 +652,13 @@ def t02_terms_scenarios(src: SourceTask) -> Json:
         "goal": "As senior sales director, model three CosmoGenics terms scenarios (margin, payment terms, marketing allowance) and recommend one.",
         "request": request,
         "artifact_type": "gdp_terms_scenarios",
+        "cash_timing": {
+            "base_year": base_year,
+            "invoice_dates": invoice_dates,
+            "receipt_date_rule": "invoice_date + payment_terms_days calendar days",
+            "receipt_amount": "gross wholesale revenue; marketing allowance is reported separately",
+            "resolution": "calendar quarters; within-quarter receipt dates and liquidity differences are not measured",
+        },
         "fields": fields,
         "codes": {},
         "tables": [
@@ -662,6 +680,8 @@ def t02_terms_scenarios(src: SourceTask) -> Json:
             "(70k+80k+80k+25k); the expert deliverable uses $255,000. The request no longer states the wrong total, the "
             "$225,000 rubric item is unscored (upstream_conflict), and the data total is scored."),
             "Scenario choice is open: scenario checks validate the agent's own inputs against the rubric bounds and formulas.",
+            cash_convention,
+            "Corrected the earlier implementation that treated Net 60 as two whole quarters; payment days are now added to published invoice dates.",
         ],
     }
 
@@ -4364,6 +4384,8 @@ def assemble(index: int, src: SourceTask, spec: Json) -> tuple[Json, Json, Json]
         "fields": spec["fields"],
         "conventions": GENERAL_CONVENTIONS,
     }
+    if "cash_timing" in spec:
+        contract["cash_timing"] = spec["cash_timing"]
     brief_sections: Json = {
         "request": {"role_request": spec["request"], "delivery_note": DELIVERY_NOTE},
         "submission_contract": contract,

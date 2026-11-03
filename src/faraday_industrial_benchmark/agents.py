@@ -15,10 +15,12 @@ def _call(tools: ToolClientProtocol, name: str, **arguments: Any) -> Json:
 
 
 class OracleAgent:
-    """A transparent reference trajectory proving every task is solvable.
+    """Reference trajectories checking the fixture and evaluator execution contract.
 
     This agent is qualification evidence, not a leaderboard submission. It uses
-    only agent-visible tool results, but has a family-specific operating playbook.
+    a family-specific operating playbook. Distributor references additionally
+    use evaluator-side fixture answers and plans; their success does not prove
+    independent derivation from agent-visible evidence.
     """
 
     name = "reference-oracle"

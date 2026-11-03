@@ -43,7 +43,7 @@ def test_manifest_covers_23_tasks_in_five_families():
     assert set(Counter(task.family for task in TASKS)) == set(gdpval_work.FAMILY_SPECS)
     upstream = set()
     for task in TASKS:
-        assert task.version == "0.7.0"
+        assert task.version == "0.8.0"
         assert "source:gdpval" in task.tags
         assert any(tag.startswith("occupation:") for tag in task.tags)
         upstream |= {tag for tag in task.tags if tag.startswith("upstream:")}

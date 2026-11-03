@@ -152,7 +152,7 @@ def test_difficulty_profile_is_deterministic_and_frontier_gated():
         "tasks": 249,
         "families": 46,
         "frontier_tasks": 12,
-        "total_criteria": 8155,
+        "total_criteria": 8259,
         "max_criteria_per_task": 419,
         "max_workflow_stages": 15,
         "max_oracle_tool_calls": 93,

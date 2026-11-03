@@ -36,6 +36,12 @@ def replay_terminal_marker(task, episode, expected_error):
     trace = episode["trace"]
     assert trace[-1]["tool"] == "finish"
     assert trace[-1]["arguments"] == {"summary": "Agent execution failed.", "evidence": []}
+    if any(entry["tool"] == "_agent_error" for entry in trace):
+        replay = BenchmarkRunner().replay(task, trace)
+        assert replay["exact_match"], "Recorded terminal marker does not replay exactly"
+        return {"score": replay["score"], "final_state_hash": replay["final_state_hash"]}
+    # Historical traces predate evaluator-only terminal records. Preserve their
+    # evidence-gated reconstruction without injecting a second marker into new runs.
     world = IndustrialWorld(task)
     client = BudgetedToolClient(world)
     for index, entry in enumerate(trace):

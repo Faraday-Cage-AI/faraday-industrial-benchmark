@@ -189,11 +189,19 @@ def _receiving_ap_match(world, truth: Json) -> Json:
         and actual_lines == expected_lines
         and invoice["supplier_number"] == truth["supplier_number"]
     )
-    holds = [row for row in erp(world)["invoice_holds"].values() if invoice and row.get("invoice_number") == invoice["invoice_number"]]
+    holds = [
+        row for row in erp(world)["invoice_holds"].values()
+        if invoice and row.get("invoice_number") == invoice["invoice_number"]
+        and row.get("hold_status") == "Open"
+    ]
     if truth["held_lines"]:
-        held = {line for hold in holds for line in hold.get("hold_lines", [])}
-        secondary = bool(invoice and invoice["validation_status"] == "On hold" and holds and set(truth["held_lines"]) <= held)
-        forbidden = bool(invoice and invoice["validation_status"].startswith("Validated"))
+        held_lines = [line for hold in holds for line in hold.get("hold_lines", [])]
+        held = set(held_lines)
+        exact_holds = held == set(truth["held_lines"]) and len(held_lines) == len(held)
+        secondary = bool(invoice and invoice["validation_status"] == "On hold" and holds and exact_holds)
+        forbidden = bool(
+            invoice and invoice["validation_status"].startswith("Validated")
+        ) or bool(held - set(truth["held_lines"])) or len(held_lines) != len(held)
     else:
         secondary = bool(invoice and invoice["validation_status"] == "Validated" and not holds)
         forbidden = bool(holds)

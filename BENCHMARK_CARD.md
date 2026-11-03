@@ -2,7 +2,7 @@
 
 ## Intended use
 
-Faraday Industrial Benchmark v0.7 evaluates tool-using AI systems on synthetic
+Faraday Industrial Benchmark v0.8 evaluates tool-using AI systems on synthetic
 industrial-enterprise workflows. It supports development comparisons, regression
 testing, agent design, cost/quality experiments, and post-training reward signals.
 
@@ -152,6 +152,8 @@ only the best attempt.
 
 - Economic amounts are synthetic and useful for relative scoring, not ROI claims.
 - The reference agent uses a family-specific playbook and is not a learned baseline.
+  Distributor reference paths additionally use evaluator-side fixture answers and
+  plans: their success establishes execution consistency, not independent derivation.
 - 249 public episodes are a development suite, not statistically sufficient for
   a high-stakes model ranking. The 175 distributor episodes dominate the plain
   mean, and the 82 ERP-Bench episodes alone are a third of it.
@@ -163,10 +165,14 @@ only the best attempt.
   not scored. Upstream prompt/reference inconsistencies in GDPval tasks 017,
   019, 022, and 023 were corrected and recorded in grader notes.
 - ERP-Bench checks that apply only to manufacturing are not ported.
-- Published model results were measured on v0.6.0 (74 tasks) and have not been
-  re-run on v0.7.0.
+- The historical six-model table reports v0.6.0 (74 tasks); its raw episodes are
+  unavailable in this checkout. Some optional-track historical reports likewise
+  lack their referenced raw runs. No current full-suite learned-model comparison
+  has been performed; do not present historical summaries as reproducible new results.
 - Procedural variants do not yet vary the dependency topology within a family.
-- Deterministic checks can miss semantically poor explanations that achieve correct state.
+- Final citations are checked for distinct existing record identifiers, not semantic
+  relevance or completeness of the explanation. Deterministic checks can miss
+  semantically poor explanations that achieve correct state.
 - Simulation cannot establish safety in a real plant.
 - No "most complex" or "best" claim is established without a dated comparative
   audit using the published dimensions in `docs/workflow-coverage.md`.
@@ -181,3 +187,14 @@ score, strict-success rate, critical-failure rate, cost, latency, and exceptions
 Do not compare partial-suite runs with full-suite runs as if they were equivalent.
 Do not report an upstream compatibility-track result as a Faraday-native result,
 and do not pool scores across benchmark contracts.
+
+## Completion audit
+
+Version 0.8.0 corrects scored citation validity, hidden time/call thresholds,
+replay aggregate checks, protocol failure accounting, inventory conservation,
+calendar-day cash timing, and excess AP/quality containment. These contract
+changes make earlier scores incomparable. See [current evidence](reports/completion-v0.8.0.md),
+[measurement audit](docs/completion-measurement-audit.md), and
+[reproduction guide](docs/reproducibility.md). Hosted untrusted-agent isolation,
+independently derived distributor reference solutions, practitioner validation,
+and current full-suite learned-model results remain outside completed evidence.

@@ -1,6 +1,6 @@
 # Workflow coverage and complexity claim
 
-Faraday v0.7 is designed to test unusually broad and difficult industrial-agent
+Faraday v0.8 is designed to test unusually broad and difficult industrial-agent
 work, but the project does not claim that it is the world's most complex
 industrial benchmark. A superlative is a comparative research result, not a
 feature description. It should be used only after a dated audit of current
@@ -130,9 +130,9 @@ map the ERPScore rubric to discovery, calculation, decision, committed-state,
 register/handoff, readback, and containment criteria. GDPval tasks submit
 structured artifacts that cite case files; 1,032 of 1,189 rubric items are
 scored mechanically and 157 subjective items are recorded but not scored.
-## Measured v0.7 surface
+## Measured v0.8 surface
 
-| Measure | Public v0.7 value |
+| Measure | Public v0.8 value |
 |---|---:|
 | Executable episodes | 249 |
 | Workflow families | 46 |
@@ -144,7 +144,7 @@ scored mechanically and 157 subjective items are recorded but not scored.
 | Tasks with explicit workflow-stage graphs | 174 |
 | Explicit workflow-stage nodes | 1,233 |
 | Effective workflow-stage nodes over all tasks | 1,608 |
-| Deterministic task criteria | 8,155 |
+| Deterministic task criteria | 8,259 |
 | Maximum criteria in one episode | 419 |
 | Maximum workflow stages in one episode | 15 |
 | Maximum oracle tool calls in one episode | 93 |
@@ -155,16 +155,11 @@ scored mechanically and 157 subjective items are recorded but not scored.
 | Source systems represented in an engineering-document episode | 3 controlled documents plus requirements and history |
 | Exact discrepancy contracts per engineering-document episode | 3 findings plus 1 correction draft and 1 package |
 
-Qualification on all 249 tasks: the reference oracle scores 100.00 with 249/249
-strict successes and no critical failures, and its run replays exactly. No-op
-scores 10.76, read-only 11.75, and unauthorized-write 0.00 with 249 critical
-failures. Distributor counts measure upstream-derived fixtures; their held-out
-generation reuses the template scenario with a new seed.
-Counts describe breadth, not validity. Difficulty also comes from interacting
-constraints: partial observability, changing state, time cost, stale sources,
-cross-document dependencies, exact structured outputs, reversible containment,
-authorization boundaries, post-approval payload validation, economic loss, and
-tamper-evident replay.
+Current qualification is recorded in [the completion report](../reports/completion-v0.8.0.md).
+Distributor reference trajectories use evaluator-side answers/plans, so their
+success verifies executable consistency rather than independent evidence-based
+problem solving. The suite does not establish exhaustive industrial coverage or
+practitioner-validated realism.
 
 ## Comparative claim protocol
 

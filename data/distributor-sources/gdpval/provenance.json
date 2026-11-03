@@ -2,15 +2,15 @@
   "files": {
     "data/distributor-gdpval/tasks.json": {
       "bytes": 29174,
-      "sha256": "f2ffa7feaa7cc8aecb87d05aaef33164e36a457980220809cae169344be5cf8f"
+      "sha256": "82e20a1b8378a979f48f051cea767464c390169f25ad7ebd7608b4d4fb84ce31"
     },
     "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-001.json": {
       "bytes": 25840,
       "sha256": "e1ed0034b973b26c6551abd2d0818c5066beed3e48947638b839cd2a5e14dc6a"
     },
     "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-002.json": {
-      "bytes": 21938,
-      "sha256": "787527f2f7a961b9ee6a7d0e805b9b3b532075cfd946cdcdee85bfc2e37db6e3"
+      "bytes": 24598,
+      "sha256": "9d50ebed99d17642cc88b40e987823d9023337f1ca2ca341a05c825d5f8684cc"
     },
     "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-003.json": {
       "bytes": 55495,
@@ -101,8 +101,8 @@
       "sha256": "34cc303bad538da9076ef9d8ac869ba9199a63cb452d623124813b3fbdece78c"
     },
     "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-002.json": {
-      "bytes": 5452,
-      "sha256": "ccbe00331de851d37eeca58ae006e4a7ba9c3eda67c163eeb552f5a1969d0391"
+      "bytes": 6471,
+      "sha256": "f83813da0fcfaee09a779c9f6963c839f34028cf8afb99b67faf1180fc98b3b5"
     },
     "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-003.json": {
       "bytes": 12033,

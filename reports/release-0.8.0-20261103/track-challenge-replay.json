@@ -1,0 +1,2329 @@
+{
+  "checks": {
+    "capability_summaries_matches": true,
+    "engine_version_matches": true,
+    "family_summaries_matches": true,
+    "nonempty_unique_coverage": true,
+    "provenance_agent_matches": true,
+    "provenance_engine_matches": true,
+    "provenance_inputs_match": true,
+    "summary_matches": true
+  },
+  "covers_supplied_manifest": true,
+  "episodes": [
+    {
+      "agent_matches": true,
+      "applied_events": [
+        "NETWORK-511653-CRM-REV",
+        "NETWORK-511653-SCM-REV",
+        "EVT-APR-001-DECISION",
+        "NETWORK-511653-REALIZATION",
+        "EVT-APR-002-DECISION"
+      ],
+      "applied_events_match": true,
+      "calls_replayed": 35,
+      "exact_match": true,
+      "final_answer": {
+        "evidence": [
+          "NETWORK-511653",
+          "ART-001",
+          "ART-002",
+          "NETWORK-RESERVATION",
+          "NETWORK-LEDGER",
+          "APR-002"
+        ],
+        "summary": "Committed common capacity before disclosure and executed its reconciled contingent outcome."
+      },
+      "final_answer_matches": true,
+      "final_state_hash": "0174bc521c33e9021db1926afd8f71bf58bb00ec12c49e16a75575f5f186a5db",
+      "final_state_hash_matches": true,
+      "initial_state_hash": "c68955926bd4a962027785da754c144f6f168ee1d8d9d8e9cc172682d8953630",
+      "initial_state_hash_matches": true,
+      "mismatches": [],
+      "score": {
+        "best_known_cost": 9217.0,
+        "criteria": [
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-0",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-1",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-2",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-3",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-4",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-5",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-6",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-7",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-8",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-9",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-10",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-11",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-12",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-13",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-14",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-15",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-16",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-17",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-18",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "planning",
+            "id": "feasible",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "optimization",
+            "id": "near_optimal",
+            "passed": true,
+            "weight": 24.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "accuracy",
+            "id": "reconciliation",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "exception_handling",
+            "id": "exceptions",
+            "passed": true,
+            "weight": 10.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "artifact_consistency",
+            "id": "cost_reporting",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "containment",
+            "id": "executed",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "1 matching execution(s)",
+            "dimension": "governance",
+            "id": "reserve-before-reveal",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "complete",
+            "dimension": "communication",
+            "id": "notify",
+            "passed": true,
+            "weight": 4.0
+          },
+          {
+            "detail": "6/5 valid record IDs",
+            "dimension": "communication",
+            "id": "evidence",
+            "passed": true,
+            "weight": 4.0
+          }
+        ],
+        "critical_failure": false,
+        "dimensions": {
+          "accuracy": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "artifact_consistency": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "communication": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "containment": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          },
+          "economics": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "efficiency": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "exception_handling": {
+            "max_score": 6.6116,
+            "score": 6.6116
+          },
+          "governance": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "grounding": {
+            "max_score": 12.562,
+            "score": 12.562
+          },
+          "optimization": {
+            "max_score": 15.8678,
+            "score": 15.8678
+          },
+          "planning": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          }
+        },
+        "elapsed_minutes": 93,
+        "estimated_cost": 9217.0,
+        "score": 100.0,
+        "strict_success": true,
+        "task_id": "faraday-coupled-hard-001",
+        "tool_calls": 35,
+        "unmitigated_cost": 109217.0,
+        "violations": []
+      },
+      "score_matches": true,
+      "task_contract_matches": true,
+      "task_id": "faraday-coupled-hard-001"
+    },
+    {
+      "agent_matches": true,
+      "applied_events": [
+        "NETWORK-681477-CRM-REV",
+        "NETWORK-681477-SCM-REV",
+        "EVT-APR-001-DECISION",
+        "NETWORK-681477-REALIZATION",
+        "EVT-APR-002-DECISION"
+      ],
+      "applied_events_match": true,
+      "calls_replayed": 35,
+      "exact_match": true,
+      "final_answer": {
+        "evidence": [
+          "NETWORK-681477",
+          "ART-001",
+          "ART-002",
+          "NETWORK-RESERVATION",
+          "NETWORK-LEDGER",
+          "APR-002"
+        ],
+        "summary": "Committed common capacity before disclosure and executed its reconciled contingent outcome."
+      },
+      "final_answer_matches": true,
+      "final_state_hash": "dcc390f1e2054fafce798c4bf298fe81c671f544aa5e72a9aca3c5f2b981adbc",
+      "final_state_hash_matches": true,
+      "initial_state_hash": "cad50c8045754ebc69e302f972cd5e9bacb0a8a66ef8e75e98dd0e90d3a6bc1c",
+      "initial_state_hash_matches": true,
+      "mismatches": [],
+      "score": {
+        "best_known_cost": 14526.0,
+        "criteria": [
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-0",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-1",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-2",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-3",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-4",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-5",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-6",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-7",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-8",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-9",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-10",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-11",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-12",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-13",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-14",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-15",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-16",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-17",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-18",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "planning",
+            "id": "feasible",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "optimization",
+            "id": "near_optimal",
+            "passed": true,
+            "weight": 24.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "accuracy",
+            "id": "reconciliation",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "exception_handling",
+            "id": "exceptions",
+            "passed": true,
+            "weight": 10.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "artifact_consistency",
+            "id": "cost_reporting",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "containment",
+            "id": "executed",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "1 matching execution(s)",
+            "dimension": "governance",
+            "id": "reserve-before-reveal",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "complete",
+            "dimension": "communication",
+            "id": "notify",
+            "passed": true,
+            "weight": 4.0
+          },
+          {
+            "detail": "6/5 valid record IDs",
+            "dimension": "communication",
+            "id": "evidence",
+            "passed": true,
+            "weight": 4.0
+          }
+        ],
+        "critical_failure": false,
+        "dimensions": {
+          "accuracy": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "artifact_consistency": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "communication": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "containment": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          },
+          "economics": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "efficiency": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "exception_handling": {
+            "max_score": 6.6116,
+            "score": 6.6116
+          },
+          "governance": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "grounding": {
+            "max_score": 12.562,
+            "score": 12.562
+          },
+          "optimization": {
+            "max_score": 15.8678,
+            "score": 15.8678
+          },
+          "planning": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          }
+        },
+        "elapsed_minutes": 93,
+        "estimated_cost": 14526.0,
+        "score": 100.0,
+        "strict_success": true,
+        "task_id": "faraday-coupled-hard-002",
+        "tool_calls": 35,
+        "unmitigated_cost": 114526.0,
+        "violations": []
+      },
+      "score_matches": true,
+      "task_contract_matches": true,
+      "task_id": "faraday-coupled-hard-002"
+    },
+    {
+      "agent_matches": true,
+      "applied_events": [
+        "NETWORK-856285-CRM-REV",
+        "NETWORK-856285-SCM-REV",
+        "EVT-APR-001-DECISION",
+        "NETWORK-856285-REALIZATION",
+        "EVT-APR-002-DECISION"
+      ],
+      "applied_events_match": true,
+      "calls_replayed": 35,
+      "exact_match": true,
+      "final_answer": {
+        "evidence": [
+          "NETWORK-856285",
+          "ART-001",
+          "ART-002",
+          "NETWORK-RESERVATION",
+          "NETWORK-LEDGER",
+          "APR-002"
+        ],
+        "summary": "Committed common capacity before disclosure and executed its reconciled contingent outcome."
+      },
+      "final_answer_matches": true,
+      "final_state_hash": "d2de0df0c207ccd6164cfd19e4a3aeb85eea32d15367209efdb47175cc34cb48",
+      "final_state_hash_matches": true,
+      "initial_state_hash": "7cf781f128aef98d1c586decd583831f5a3a31114724a80131aab22998856e53",
+      "initial_state_hash_matches": true,
+      "mismatches": [],
+      "score": {
+        "best_known_cost": 17275.7,
+        "criteria": [
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-0",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-1",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-2",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-3",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-4",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-5",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-6",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-7",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-8",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-9",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-10",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-11",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-12",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-13",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-14",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-15",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-16",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-17",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-18",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "planning",
+            "id": "feasible",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "optimization",
+            "id": "near_optimal",
+            "passed": true,
+            "weight": 24.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "accuracy",
+            "id": "reconciliation",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "exception_handling",
+            "id": "exceptions",
+            "passed": true,
+            "weight": 10.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "artifact_consistency",
+            "id": "cost_reporting",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "containment",
+            "id": "executed",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "1 matching execution(s)",
+            "dimension": "governance",
+            "id": "reserve-before-reveal",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "complete",
+            "dimension": "communication",
+            "id": "notify",
+            "passed": true,
+            "weight": 4.0
+          },
+          {
+            "detail": "6/5 valid record IDs",
+            "dimension": "communication",
+            "id": "evidence",
+            "passed": true,
+            "weight": 4.0
+          }
+        ],
+        "critical_failure": false,
+        "dimensions": {
+          "accuracy": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "artifact_consistency": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "communication": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "containment": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          },
+          "economics": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "efficiency": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "exception_handling": {
+            "max_score": 6.6116,
+            "score": 6.6116
+          },
+          "governance": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "grounding": {
+            "max_score": 12.562,
+            "score": 12.562
+          },
+          "optimization": {
+            "max_score": 15.8678,
+            "score": 15.8678
+          },
+          "planning": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          }
+        },
+        "elapsed_minutes": 93,
+        "estimated_cost": 17275.7,
+        "score": 100.0,
+        "strict_success": true,
+        "task_id": "faraday-coupled-hard-003",
+        "tool_calls": 35,
+        "unmitigated_cost": 117275.7,
+        "violations": []
+      },
+      "score_matches": true,
+      "task_contract_matches": true,
+      "task_id": "faraday-coupled-hard-003"
+    },
+    {
+      "agent_matches": true,
+      "applied_events": [
+        "NETWORK-273523-CRM-REV",
+        "NETWORK-273523-SCM-REV",
+        "EVT-APR-001-DECISION",
+        "NETWORK-273523-REALIZATION",
+        "EVT-APR-002-DECISION"
+      ],
+      "applied_events_match": true,
+      "calls_replayed": 35,
+      "exact_match": true,
+      "final_answer": {
+        "evidence": [
+          "NETWORK-273523",
+          "ART-001",
+          "ART-002",
+          "NETWORK-RESERVATION",
+          "NETWORK-LEDGER",
+          "APR-002"
+        ],
+        "summary": "Committed common capacity before disclosure and executed its reconciled contingent outcome."
+      },
+      "final_answer_matches": true,
+      "final_state_hash": "a3c6aad389414bb5881ef3681dd66c23ae8bd13c28094a8ec1ce9e6a1456c540",
+      "final_state_hash_matches": true,
+      "initial_state_hash": "501c2169efb19f767eb68e257e003b7871c192ca38c61edb9a75c5de2d5c4dff",
+      "initial_state_hash_matches": true,
+      "mismatches": [],
+      "score": {
+        "best_known_cost": 14074.2,
+        "criteria": [
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-0",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-1",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-2",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-3",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-4",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-5",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-6",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-7",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-8",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-9",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-10",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-11",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-12",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-13",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-14",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-15",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-16",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-17",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-18",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "planning",
+            "id": "feasible",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "optimization",
+            "id": "near_optimal",
+            "passed": true,
+            "weight": 24.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "accuracy",
+            "id": "reconciliation",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "exception_handling",
+            "id": "exceptions",
+            "passed": true,
+            "weight": 10.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "artifact_consistency",
+            "id": "cost_reporting",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "containment",
+            "id": "executed",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "1 matching execution(s)",
+            "dimension": "governance",
+            "id": "reserve-before-reveal",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "complete",
+            "dimension": "communication",
+            "id": "notify",
+            "passed": true,
+            "weight": 4.0
+          },
+          {
+            "detail": "6/5 valid record IDs",
+            "dimension": "communication",
+            "id": "evidence",
+            "passed": true,
+            "weight": 4.0
+          }
+        ],
+        "critical_failure": false,
+        "dimensions": {
+          "accuracy": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "artifact_consistency": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "communication": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "containment": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          },
+          "economics": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "efficiency": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "exception_handling": {
+            "max_score": 6.6116,
+            "score": 6.6116
+          },
+          "governance": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "grounding": {
+            "max_score": 12.562,
+            "score": 12.562
+          },
+          "optimization": {
+            "max_score": 15.8678,
+            "score": 15.8678
+          },
+          "planning": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          }
+        },
+        "elapsed_minutes": 93,
+        "estimated_cost": 14074.2,
+        "score": 100.0,
+        "strict_success": true,
+        "task_id": "faraday-coupled-hard-004",
+        "tool_calls": 35,
+        "unmitigated_cost": 114074.2,
+        "violations": []
+      },
+      "score_matches": true,
+      "task_contract_matches": true,
+      "task_id": "faraday-coupled-hard-004"
+    },
+    {
+      "agent_matches": true,
+      "applied_events": [
+        "NETWORK-570870-CRM-REV",
+        "NETWORK-570870-SCM-REV",
+        "EVT-APR-001-DECISION",
+        "NETWORK-570870-REALIZATION",
+        "EVT-APR-002-DECISION"
+      ],
+      "applied_events_match": true,
+      "calls_replayed": 35,
+      "exact_match": true,
+      "final_answer": {
+        "evidence": [
+          "NETWORK-570870",
+          "ART-001",
+          "ART-002",
+          "NETWORK-RESERVATION",
+          "NETWORK-LEDGER",
+          "APR-002"
+        ],
+        "summary": "Committed common capacity before disclosure and executed its reconciled contingent outcome."
+      },
+      "final_answer_matches": true,
+      "final_state_hash": "f0af4175328adefe92ffb86780889c9d2aa6db181ef6a1765e9476d52a7e38db",
+      "final_state_hash_matches": true,
+      "initial_state_hash": "5999ab2f4a6335211c2a69c1a959fe987eb241170734f274172aec8fd9a9e097",
+      "initial_state_hash_matches": true,
+      "mismatches": [],
+      "score": {
+        "best_known_cost": 21873.2,
+        "criteria": [
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-0",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-1",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-2",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-3",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-4",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-5",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-6",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-7",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-8",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-9",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-10",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-11",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-12",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-13",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-14",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-15",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-16",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-17",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-18",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "planning",
+            "id": "feasible",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "optimization",
+            "id": "near_optimal",
+            "passed": true,
+            "weight": 24.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "accuracy",
+            "id": "reconciliation",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "exception_handling",
+            "id": "exceptions",
+            "passed": true,
+            "weight": 10.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "artifact_consistency",
+            "id": "cost_reporting",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "containment",
+            "id": "executed",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "1 matching execution(s)",
+            "dimension": "governance",
+            "id": "reserve-before-reveal",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "complete",
+            "dimension": "communication",
+            "id": "notify",
+            "passed": true,
+            "weight": 4.0
+          },
+          {
+            "detail": "6/5 valid record IDs",
+            "dimension": "communication",
+            "id": "evidence",
+            "passed": true,
+            "weight": 4.0
+          }
+        ],
+        "critical_failure": false,
+        "dimensions": {
+          "accuracy": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "artifact_consistency": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "communication": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "containment": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          },
+          "economics": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "efficiency": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "exception_handling": {
+            "max_score": 6.6116,
+            "score": 6.6116
+          },
+          "governance": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "grounding": {
+            "max_score": 12.562,
+            "score": 12.562
+          },
+          "optimization": {
+            "max_score": 15.8678,
+            "score": 15.8678
+          },
+          "planning": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          }
+        },
+        "elapsed_minutes": 93,
+        "estimated_cost": 21873.2,
+        "score": 100.0,
+        "strict_success": true,
+        "task_id": "faraday-coupled-hard-005",
+        "tool_calls": 35,
+        "unmitigated_cost": 121873.2,
+        "violations": []
+      },
+      "score_matches": true,
+      "task_contract_matches": true,
+      "task_id": "faraday-coupled-hard-005"
+    },
+    {
+      "agent_matches": true,
+      "applied_events": [
+        "NETWORK-631714-CRM-REV",
+        "NETWORK-631714-SCM-REV",
+        "EVT-APR-001-DECISION",
+        "NETWORK-631714-REALIZATION",
+        "EVT-APR-002-DECISION"
+      ],
+      "applied_events_match": true,
+      "calls_replayed": 35,
+      "exact_match": true,
+      "final_answer": {
+        "evidence": [
+          "NETWORK-631714",
+          "ART-001",
+          "ART-002",
+          "NETWORK-RESERVATION",
+          "NETWORK-LEDGER",
+          "APR-002"
+        ],
+        "summary": "Committed common capacity before disclosure and executed its reconciled contingent outcome."
+      },
+      "final_answer_matches": true,
+      "final_state_hash": "5349595585258e5b96ae484f1525837b2a0c06e9f7602ab65e1c5bb583615221",
+      "final_state_hash_matches": true,
+      "initial_state_hash": "1a0a0937609ec2ae1aadfec39a5f3948d7bc4bf4b3cab46fc41d899f064e92da",
+      "initial_state_hash_matches": true,
+      "mismatches": [],
+      "score": {
+        "best_known_cost": 12236.2,
+        "criteria": [
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-0",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-1",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-2",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-3",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-4",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-5",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-6",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-7",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-8",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-9",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-10",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-11",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-12",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-13",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-14",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-15",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-16",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-17",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-18",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "planning",
+            "id": "feasible",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "optimization",
+            "id": "near_optimal",
+            "passed": true,
+            "weight": 24.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "accuracy",
+            "id": "reconciliation",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "exception_handling",
+            "id": "exceptions",
+            "passed": true,
+            "weight": 10.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "artifact_consistency",
+            "id": "cost_reporting",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "containment",
+            "id": "executed",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "1 matching execution(s)",
+            "dimension": "governance",
+            "id": "reserve-before-reveal",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "complete",
+            "dimension": "communication",
+            "id": "notify",
+            "passed": true,
+            "weight": 4.0
+          },
+          {
+            "detail": "6/5 valid record IDs",
+            "dimension": "communication",
+            "id": "evidence",
+            "passed": true,
+            "weight": 4.0
+          }
+        ],
+        "critical_failure": false,
+        "dimensions": {
+          "accuracy": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "artifact_consistency": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "communication": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "containment": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          },
+          "economics": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "efficiency": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "exception_handling": {
+            "max_score": 6.6116,
+            "score": 6.6116
+          },
+          "governance": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "grounding": {
+            "max_score": 12.562,
+            "score": 12.562
+          },
+          "optimization": {
+            "max_score": 15.8678,
+            "score": 15.8678
+          },
+          "planning": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          }
+        },
+        "elapsed_minutes": 93,
+        "estimated_cost": 12236.2,
+        "score": 100.0,
+        "strict_success": true,
+        "task_id": "faraday-coupled-hard-006",
+        "tool_calls": 35,
+        "unmitigated_cost": 112236.2,
+        "violations": []
+      },
+      "score_matches": true,
+      "task_contract_matches": true,
+      "task_id": "faraday-coupled-hard-006"
+    },
+    {
+      "agent_matches": true,
+      "applied_events": [
+        "NETWORK-430956-CRM-REV",
+        "NETWORK-430956-SCM-REV",
+        "EVT-APR-001-DECISION",
+        "NETWORK-430956-REALIZATION",
+        "EVT-APR-002-DECISION"
+      ],
+      "applied_events_match": true,
+      "calls_replayed": 35,
+      "exact_match": true,
+      "final_answer": {
+        "evidence": [
+          "NETWORK-430956",
+          "ART-001",
+          "ART-002",
+          "NETWORK-RESERVATION",
+          "NETWORK-LEDGER",
+          "APR-002"
+        ],
+        "summary": "Committed common capacity before disclosure and executed its reconciled contingent outcome."
+      },
+      "final_answer_matches": true,
+      "final_state_hash": "ab869316e7eef69490229f49a51a7ba970215dc7c4c71592c91437a2959672e8",
+      "final_state_hash_matches": true,
+      "initial_state_hash": "7378750ce8e6ac01bbab08b9e1f63125a4c8f9765f60d9323410573c09063e78",
+      "initial_state_hash_matches": true,
+      "mismatches": [],
+      "score": {
+        "best_known_cost": 13729.95,
+        "criteria": [
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-0",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-1",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-2",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-3",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-4",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-5",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-6",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-7",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-8",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-9",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-10",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-11",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-12",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-13",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-14",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-15",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-16",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-17",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-18",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "planning",
+            "id": "feasible",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "optimization",
+            "id": "near_optimal",
+            "passed": true,
+            "weight": 24.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "accuracy",
+            "id": "reconciliation",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "exception_handling",
+            "id": "exceptions",
+            "passed": true,
+            "weight": 10.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "artifact_consistency",
+            "id": "cost_reporting",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "containment",
+            "id": "executed",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "1 matching execution(s)",
+            "dimension": "governance",
+            "id": "reserve-before-reveal",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "complete",
+            "dimension": "communication",
+            "id": "notify",
+            "passed": true,
+            "weight": 4.0
+          },
+          {
+            "detail": "6/5 valid record IDs",
+            "dimension": "communication",
+            "id": "evidence",
+            "passed": true,
+            "weight": 4.0
+          }
+        ],
+        "critical_failure": false,
+        "dimensions": {
+          "accuracy": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "artifact_consistency": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "communication": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "containment": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          },
+          "economics": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "efficiency": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "exception_handling": {
+            "max_score": 6.6116,
+            "score": 6.6116
+          },
+          "governance": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "grounding": {
+            "max_score": 12.562,
+            "score": 12.562
+          },
+          "optimization": {
+            "max_score": 15.8678,
+            "score": 15.8678
+          },
+          "planning": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          }
+        },
+        "elapsed_minutes": 93,
+        "estimated_cost": 13729.95,
+        "score": 100.0,
+        "strict_success": true,
+        "task_id": "faraday-coupled-hard-007",
+        "tool_calls": 35,
+        "unmitigated_cost": 113729.95,
+        "violations": []
+      },
+      "score_matches": true,
+      "task_contract_matches": true,
+      "task_id": "faraday-coupled-hard-007"
+    },
+    {
+      "agent_matches": true,
+      "applied_events": [
+        "NETWORK-316384-CRM-REV",
+        "NETWORK-316384-SCM-REV",
+        "EVT-APR-001-DECISION",
+        "NETWORK-316384-REALIZATION",
+        "EVT-APR-002-DECISION"
+      ],
+      "applied_events_match": true,
+      "calls_replayed": 35,
+      "exact_match": true,
+      "final_answer": {
+        "evidence": [
+          "NETWORK-316384",
+          "ART-001",
+          "ART-002",
+          "NETWORK-RESERVATION",
+          "NETWORK-LEDGER",
+          "APR-002"
+        ],
+        "summary": "Committed common capacity before disclosure and executed its reconciled contingent outcome."
+      },
+      "final_answer_matches": true,
+      "final_state_hash": "096057442ece57d44262ddc5b9bd10170bf7c0a070eb3c1132b316c70f7badaa",
+      "final_state_hash_matches": true,
+      "initial_state_hash": "c9df4257e5c8e6062fd4ce1fab88fd45ef7e43be27a289899c2cb2d8ebffe51c",
+      "initial_state_hash_matches": true,
+      "mismatches": [],
+      "score": {
+        "best_known_cost": 19705.6,
+        "criteria": [
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-0",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-1",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-2",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-3",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-4",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-5",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-6",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-7",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-8",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-9",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-10",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-11",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-12",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-13",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-14",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-15",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-16",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-17",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "1 matching versioned section read(s)",
+            "dimension": "grounding",
+            "id": "source-18",
+            "passed": true,
+            "weight": 1.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "planning",
+            "id": "feasible",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "optimization",
+            "id": "near_optimal",
+            "passed": true,
+            "weight": 24.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "accuracy",
+            "id": "reconciliation",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "exception_handling",
+            "id": "exceptions",
+            "passed": true,
+            "weight": 10.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "artifact_consistency",
+            "id": "cost_reporting",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "satisfied",
+            "dimension": "containment",
+            "id": "executed",
+            "passed": true,
+            "weight": 18.0
+          },
+          {
+            "detail": "1 matching execution(s)",
+            "dimension": "governance",
+            "id": "reserve-before-reveal",
+            "passed": true,
+            "weight": 8.0
+          },
+          {
+            "detail": "complete",
+            "dimension": "communication",
+            "id": "notify",
+            "passed": true,
+            "weight": 4.0
+          },
+          {
+            "detail": "6/5 valid record IDs",
+            "dimension": "communication",
+            "id": "evidence",
+            "passed": true,
+            "weight": 4.0
+          }
+        ],
+        "critical_failure": false,
+        "dimensions": {
+          "accuracy": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "artifact_consistency": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "communication": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "containment": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          },
+          "economics": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "efficiency": {
+            "max_score": 10.0,
+            "score": 10.0
+          },
+          "exception_handling": {
+            "max_score": 6.6116,
+            "score": 6.6116
+          },
+          "governance": {
+            "max_score": 5.2893,
+            "score": 5.2893
+          },
+          "grounding": {
+            "max_score": 12.562,
+            "score": 12.562
+          },
+          "optimization": {
+            "max_score": 15.8678,
+            "score": 15.8678
+          },
+          "planning": {
+            "max_score": 11.9008,
+            "score": 11.9008
+          }
+        },
+        "elapsed_minutes": 93,
+        "estimated_cost": 19705.6,
+        "score": 100.0,
+        "strict_success": true,
+        "task_id": "faraday-coupled-hard-008",
+        "tool_calls": 35,
+        "unmitigated_cost": 119705.6,
+        "violations": []
+      },
+      "score_matches": true,
+      "task_contract_matches": true,
+      "task_id": "faraday-coupled-hard-008"
+    }
+  ],
+  "exact_match": true,
+  "verification_scope": "all saved episodes"
+}
