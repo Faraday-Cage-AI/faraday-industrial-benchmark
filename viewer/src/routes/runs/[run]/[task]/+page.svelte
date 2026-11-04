@@ -237,10 +237,13 @@
 				{@render timelineList(callsOnly)}
 			{:else}
 				{@const eventsDiffer = !sameIds(replay.applied_events, result.applied_events)}
-				{#if replay.first_result_mismatch !== null || eventsDiffer}
+				{@const recordMismatch = replay.first_record_mismatch ?? null}
+				{#if replay.first_result_mismatch !== null || recordMismatch !== null || eventsDiffer}
 					<Notice tone="warning" title="The current benchmark code doesn't reproduce this run exactly">
 						{#if replay.first_result_mismatch !== null}
 							<p>Call #{replay.first_result_mismatch + 1} returns a different result when replayed.</p>
+						{:else if recordMismatch !== null}
+							<p>Call #{recordMismatch + 1} has different trace metadata or state when replayed.</p>
 						{/if}
 						{#if eventsDiffer}
 							<p>

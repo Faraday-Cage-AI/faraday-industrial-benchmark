@@ -1,5 +1,10 @@
 # Completion assessment — 0.8.0
 
+PR #11 follow-up: [review corrections](pr11-review-corrections.md) close four
+additional defects and record validation of the final implementation. The saved
+qualification bundle below predates those corrections; replay it with its archived
+source. Its original input hashes and artifacts remain unchanged.
+
 Status as of November 3, 2026: corrected implementation and public-suite
 algorithmic qualification are complete. Further benchmark evaluations are
 deferred at the user's request. This is not a completed learned-model comparison

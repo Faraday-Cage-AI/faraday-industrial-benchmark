@@ -1,6 +1,7 @@
 import { execFile } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { constants } from 'node:fs';
-import { access, readdir, stat } from 'node:fs/promises';
+import { access, readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
 import type { ReplayResult, ScenarioResult, ScheduledEvent, Task } from '#lib/types.js';
@@ -51,7 +52,7 @@ export function replayEpisode(
 	);
 }
 
-/** Results are cached until one of `files`, the helper, or the benchmark's Python source changes. */
+/** Cache against inputs, the helper, and all benchmark Python source and JSON fixtures. */
 async function runHelper<Result>(
 	args: string[],
 	files: string[],
@@ -60,7 +61,7 @@ async function runHelper<Result>(
 ): Promise<Result | Failure> {
 	let key: string;
 	try {
-		key = [...args, await sourceStamp(files, root)].join('|');
+		key = JSON.stringify([root, args, await sourceStamp(files, root)]);
 	} catch (error) {
 		return { ok: false, message: describe(error) };
 	}
@@ -77,15 +78,29 @@ async function runHelper<Result>(
 	return pending;
 }
 
-async function sourceStamp(files: string[], root: string): Promise<number> {
+async function sourceStamp(files: string[], root: string): Promise<string> {
 	const sourceDirectory = path.join(root, 'src', 'faraday_industrial_benchmark');
-	const sources = (await readdir(sourceDirectory))
-		.filter((name) => name.endsWith('.py'))
-		.map((name) => path.join(sourceDirectory, name));
-	const times = await Promise.all(
-		[...files, HELPER, ...sources].map(async (file) => (await stat(file)).mtimeMs)
-	);
-	return Math.max(...times);
+	async function sourcesIn(directory: string): Promise<string[]> {
+		const entries = await readdir(directory, { withFileTypes: true });
+		const sources = await Promise.all(
+			entries.map(async (entry) => {
+				const file = path.join(directory, entry.name);
+				if (entry.isDirectory()) return sourcesIn(file);
+				return /\.(py|json)$/.test(entry.name) ? [file] : [];
+			})
+		);
+		return sources.flat();
+	}
+	const sources = [...new Set([...files, HELPER, ...(await sourcesIn(sourceDirectory))])].sort();
+	const contents = await Promise.all(sources.map((file) => readFile(file)));
+	const hash = createHash('sha256');
+	for (let index = 0; index < sources.length; index += 1) {
+		// Lengths delimit both paths and bytes; additions, removals, and same-size
+		// edits with preserved timestamps all produce a different fingerprint.
+		hash.update(JSON.stringify([sources[index], contents[index].length]));
+		hash.update(contents[index]);
+	}
+	return hash.digest('hex');
 }
 
 async function execHelper(args: string[], root: string): Promise<unknown> {

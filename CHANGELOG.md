@@ -2,6 +2,11 @@
 
 ## 0.8.0 — 2026-11-03
 
+- Closed PR review findings: restrict citations to explicit record registries,
+  validate draft orders atomically, share authoritative failure replay with the
+  viewer, and invalidate viewer caches for recursive source/fixture edits.
+- Added viewer check/test/build CI and patched the website's production
+  dependencies to pass its existing vulnerability audit.
 - Corrected fabricated final citation credit and required record evidence in every
   workflow; published scoring time/call thresholds via `get_incident`.
 - Bound replay to aggregate totals, exact coverage and frozen source/task/tool

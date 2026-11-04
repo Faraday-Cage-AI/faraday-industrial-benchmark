@@ -59,6 +59,21 @@ class BudgetedToolClient:
         return self.client.call_raw(name, arguments)
 
 
+def replay_call(client: BudgetedToolClient, expected: Json) -> Json:
+    """Replay one saved call, including runner-only failure evidence.
+
+    Raw arguments preserve rejected protocol payloads. The evaluator marker is
+    reconstructed only for recorded failures; agent attempts to call that name
+    still go through the public tool boundary.
+    """
+    if (
+        expected["tool"] == "_agent_error"
+        and expected.get("result") == {"ok": False, "error": "agent_error"}
+    ):
+        return _record_agent_error(client.world, expected["arguments"]["message"])
+    return client.call_raw(expected["tool"], expected.get("arguments", {}))
+
+
 class CommandAgent:
     """Run any agent through the newline-delimited JSON protocol.
 
@@ -358,13 +373,7 @@ class BenchmarkRunner:
         client = BudgetedToolClient(world)
         mismatches: list[Json] = []
         for index, expected in enumerate(trace):
-            if (
-                expected["tool"] == "_agent_error"
-                and expected.get("result") == {"ok": False, "error": "agent_error"}
-            ):
-                actual_result = _record_agent_error(world, expected["arguments"]["message"])
-            else:
-                actual_result = client.call_raw(expected["tool"], expected.get("arguments", {}))
+            actual_result = replay_call(client, expected)
             actual_hash = world.trace[-1].state_hash
             actual_record = asdict(world.trace[-1])
             record_matches = actual_record == expected

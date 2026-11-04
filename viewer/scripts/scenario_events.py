@@ -25,7 +25,7 @@ REPO = Path(os.environ.get("FARADAY_REPO") or Path(__file__).resolve().parents[2
 sys.path.insert(0, str(REPO / "src"))
 
 from faraday_industrial_benchmark.models import IncidentTask, Json, ScheduledEvent, load_tasks  # noqa: E402
-from faraday_industrial_benchmark.runner import BudgetedToolClient  # noqa: E402
+from faraday_industrial_benchmark.runner import BudgetedToolClient, replay_call  # noqa: E402
 from faraday_industrial_benchmark.scenarios import build_scenario  # noqa: E402
 from faraday_industrial_benchmark.world import IndustrialWorld  # noqa: E402
 
@@ -81,12 +81,16 @@ def replay(task: IncidentTask, trace: list[Json]) -> Json:
 
     fired: list[tuple[str, int]] = []
     first_result_mismatch = None
+    first_record_mismatch = None
     for position, call in enumerate(trace):
         before = len(world.applied_events)
-        result = client.call(call["tool"], **call.get("arguments", {}))
+        result = replay_call(client, call)
         # Run files hold JSON, so compare the JSON form.
         if first_result_mismatch is None and json.loads(json.dumps(result)) != call.get("result"):
             first_result_mismatch = position
+        record = json.loads(json.dumps(asdict(world.trace[-1])))
+        if first_record_mismatch is None and record != call:
+            first_record_mismatch = position
         fired.extend((event_id, position) for event_id in world.applied_events[before:])
 
     def entry(event_id: str, fired_during: int | None) -> Json:
@@ -101,6 +105,7 @@ def replay(task: IncidentTask, trace: list[Json]) -> Json:
         + [entry(event.id, None) for event in world.pending_events],
         "applied_events": list(world.applied_events),
         "first_result_mismatch": first_result_mismatch,
+        "first_record_mismatch": first_record_mismatch,
     }
 
 

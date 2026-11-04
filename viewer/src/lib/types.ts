@@ -171,5 +171,6 @@ export type ReplayResult =
 			applied_events: string[];
 			/** Trace position of the first call whose replayed result differs from the run's. */
 			first_result_mismatch: number | null;
+			first_record_mismatch: number | null;
 	  }
 	| { ok: false; message: string };

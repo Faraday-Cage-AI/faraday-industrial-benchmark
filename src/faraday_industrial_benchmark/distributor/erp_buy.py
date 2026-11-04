@@ -359,6 +359,9 @@ def _create_sales_order(
         return {"ok": False, "error": "customer_request_not_found"}
     qty = _as_int(quantity, "quantity", minimum=1)
     price = _money(product["list_price"] if unit_price is None else unit_price)
+    total = _money(qty * price)
+    day = _as_int(commitment_day, "commitment_day")
+    term = _payment_term(payment_term)
     order_id = _next(erp, "SO")
     record = {
         "id": order_id,
@@ -367,9 +370,9 @@ def _create_sales_order(
         "request_id": request_id,
         "quantity": qty,
         "unit_price": price,
-        "amount_untaxed": _money(qty * price),
-        "commitment_day": _as_int(commitment_day, "commitment_day"),
-        "payment_term": _payment_term(payment_term),
+        "amount_untaxed": total,
+        "commitment_day": day,
+        "payment_term": term,
         "status": "draft",
         "source": "created",
         "note": note or "",
@@ -392,15 +395,17 @@ def _update_sales_order(
         return {"ok": False, "error": "sales_order_not_found"}
     if record["status"] != "draft":
         return {"ok": False, "error": "sales_order_not_draft"}
+    updated = deepcopy(record)
     if quantity is not None:
-        record["quantity"] = _as_int(quantity, "quantity", minimum=1)
+        updated["quantity"] = _as_int(quantity, "quantity", minimum=1)
     if unit_price is not None:
-        record["unit_price"] = _money(unit_price)
+        updated["unit_price"] = _money(unit_price)
     if commitment_day is not None:
-        record["commitment_day"] = _as_int(commitment_day, "commitment_day")
+        updated["commitment_day"] = _as_int(commitment_day, "commitment_day")
     if payment_term is not None:
-        record["payment_term"] = _payment_term(payment_term)
-    record["amount_untaxed"] = _money(record["quantity"] * record["unit_price"])
+        updated["payment_term"] = _payment_term(payment_term)
+    updated["amount_untaxed"] = _money(updated["quantity"] * updated["unit_price"])
+    record.update(updated)
     world._audit("erp_buy_sales_order_updated", sales_order_id=sales_order_id)
     return {"ok": True, "sales_order": deepcopy(record)}
 
@@ -439,6 +444,9 @@ def _create_purchase_order(
     if offer is None:
         return {"ok": False, "error": "supplier_offer_not_found"}
     qty = _as_int(quantity, "quantity", minimum=1)
+    total = _money(qty * offer["unit_price"])
+    arrival_day = _as_int(planned_arrival_day, "planned_arrival_day")
+    origins = _origin_ids(erp, origin_sales_order_ids)
     order_id = _next(erp, "PO")
     record = {
         "id": order_id,
@@ -447,9 +455,9 @@ def _create_purchase_order(
         "product_id": offer["product_id"],
         "quantity": qty,
         "unit_price": offer["unit_price"],
-        "amount_untaxed": _money(qty * offer["unit_price"]),
-        "planned_arrival_day": _as_int(planned_arrival_day, "planned_arrival_day"),
-        "origin_sales_order_ids": _origin_ids(erp, origin_sales_order_ids),
+        "amount_untaxed": total,
+        "planned_arrival_day": arrival_day,
+        "origin_sales_order_ids": origins,
         "status": "draft",
         "source": "created",
         "note": note or "",
@@ -472,13 +480,15 @@ def _update_purchase_order(
         return {"ok": False, "error": "purchase_order_not_found"}
     if record["status"] != "draft":
         return {"ok": False, "error": "purchase_order_not_draft"}
+    updated = deepcopy(record)
     if quantity is not None:
-        record["quantity"] = _as_int(quantity, "quantity", minimum=1)
+        updated["quantity"] = _as_int(quantity, "quantity", minimum=1)
     if planned_arrival_day is not None:
-        record["planned_arrival_day"] = _as_int(planned_arrival_day, "planned_arrival_day")
+        updated["planned_arrival_day"] = _as_int(planned_arrival_day, "planned_arrival_day")
     if origin_sales_order_ids is not None:
-        record["origin_sales_order_ids"] = _origin_ids(erp, origin_sales_order_ids)
-    record["amount_untaxed"] = _money(record["quantity"] * record["unit_price"])
+        updated["origin_sales_order_ids"] = _origin_ids(erp, origin_sales_order_ids)
+    updated["amount_untaxed"] = _money(updated["quantity"] * updated["unit_price"])
+    record.update(updated)
     world._audit("erp_buy_purchase_order_updated", purchase_order_id=purchase_order_id)
     return {"ok": True, "purchase_order": deepcopy(record)}
 

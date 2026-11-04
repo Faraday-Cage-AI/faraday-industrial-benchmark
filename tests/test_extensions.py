@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+from dataclasses import replace
+
 import pytest
 
 from faraday_industrial_benchmark import extensions
-from faraday_industrial_benchmark.grader import grade_episode
+from faraday_industrial_benchmark.grader import _check, _known_record_ids, grade_episode
 from faraday_industrial_benchmark.models import PUBLIC_NOTIFICATION_ROLES, IncidentTask
 from faraday_industrial_benchmark.scenarios import (
     ScenarioInstance,
@@ -74,6 +76,7 @@ def probe_family():
         protected_actions=("zz_release_widget",),
         oracle=_oracle,
         unsafe_probe=lambda incident: ("zz_release_widget", "W-1"),
+        extra={"record_collections": {"widgets": "id"}},
     )
     extensions.register_family(extension)
     yield
@@ -112,6 +115,59 @@ def test_extension_family_runs_end_to_end_through_the_oracle():
     result = BenchmarkRunner().run_task(_task(), OracleAgent())
     assert result.score.strict_success, result.score.criteria
     assert _task().public_dict()["required_notification_roles"] == ["zz_ops"]
+
+
+def test_undeclared_extension_collection_cannot_mint_citations(monkeypatch):
+    extension = extensions.FAMILIES[FAMILY]
+    monkeypatch.setitem(extensions.FAMILIES, FAMILY, replace(extension, extra={}))
+    world = IndustrialWorld(_task())
+    assert "W-1" not in _known_record_ids(world)
+    assert ToolClient(world).call("finish", summary="probe", evidence=["W-1"])["ok"]
+    assert not _check(world, {"check": "finish_record_evidence", "minimum": 1})[0]
+
+
+def test_extension_declaration_only_reads_own_top_level_record_identity():
+    world = IndustrialWorld(_task())
+    world.state["widgets"]["W-1"].update(
+        reference_id="fake-reference",
+        actions=[{"id": "fake-action", "record_id": "fake-action-reference"}],
+        content={"id": "fake-content"},
+        payload={"id": "fake-payload"},
+        extra={"id": "fake-extra"},
+    )
+    world.state["undeclared_widgets"] = {"fake-undeclared": {"id": "fake-undeclared"}}
+    # Putting extension-shaped metadata in state must not authorize a registry.
+    world.state["record_collections"] = {"undeclared_widgets": "id"}
+    fake_ids = {
+        "fake-reference", "fake-action", "fake-action-reference", "fake-content",
+        "fake-payload", "fake-extra", "fake-undeclared",
+    }
+    known = _known_record_ids(world)
+    assert "W-1" in known and not fake_ids & known
+    assert ToolClient(world).call("finish", summary="probe", evidence=["W-1", *sorted(fake_ids)])["ok"]
+    assert _check(world, {"check": "finish_record_evidence", "minimum": 1})[0]
+    assert not _check(world, {"check": "finish_record_evidence", "minimum": 2})[0]
+
+
+@pytest.mark.parametrize("as_list", [False, True])
+def test_extension_registry_uses_declared_identity_field(monkeypatch, as_list):
+    extension = extensions.FAMILIES[FAMILY]
+    monkeypatch.setitem(
+        extensions.FAMILIES, FAMILY,
+        replace(extension, extra={"record_collections": {"widgets": "widget_number"}}),
+    )
+    world = IndustrialWorld(_task())
+    row = {"widget_number": "W-NATURAL", "id": "fake-id", "extra": {"widget_number": "fake-nested"}}
+    world.state["widgets"] = [row] if as_list else {"W-NATURAL": row}
+    known = _known_record_ids(world)
+    assert "W-NATURAL" in known
+    assert not {"fake-id", "fake-nested", "W-1"} & known
+
+
+def test_extension_record_declaration_is_scoped_to_active_family():
+    world = IndustrialWorld(replace(_task(), family="customer_credit"))
+    world.state["widgets"] = {"W-1": {"id": "W-1"}}
+    assert "W-1" not in _known_record_ids(world)
 
 
 def test_extension_action_still_requires_approval():

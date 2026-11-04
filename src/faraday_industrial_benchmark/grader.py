@@ -82,39 +82,88 @@ def _latest_packaged_artifacts_by_type(world: IndustrialWorld) -> dict[str, list
 
 
 def _known_record_ids(world: IndustrialWorld) -> set[str]:
-    """Collect identifiers for records that actually exist in the final state."""
+    """Read record identities from authoritative registries, never record bodies.
+
+    A foreign key or an ``id`` inside authored actions/content is not evidence
+    that another record exists. New record containers must be registered here
+    explicitly rather than discovered by recursively scanning arbitrary values.
+    """
 
     identifiers: set[str] = set()
 
-    def visit(value: Any) -> None:
-        if isinstance(value, dict):
-            record_id = value.get("id")
+    def add_record(record: Any, field: str = "id") -> None:
+        if isinstance(record, dict):
+            record_id = record.get(field)
             if isinstance(record_id, str) and record_id:
                 identifiers.add(record_id)
-            for key, child in value.items():
-                # Agent-authored document bodies and audit payloads are not
-                # authoritative registries of business records.
-                if key in {"content", "payload", "details", "citations", "audit_log"}:
-                    continue
-                if isinstance(child, (dict, list)):
-                    if isinstance(child, dict):
-                        identifiers.update(
-                            str(item)
-                            for item, record in child.items()
-                            if isinstance(record, dict) and record.get("id") == item
-                        )
-                    visit(child)
-                elif key.endswith("_id") and isinstance(child, str) and child:
-                    identifiers.add(child)
-        elif isinstance(value, list):
-            for child in value:
-                visit(child)
 
-    visit(world.state)
+    def add_collection(collection: Any, field: str = "id") -> None:
+        if isinstance(collection, (dict, list)):
+            rows = collection.values() if isinstance(collection, dict) else collection
+            for row in rows:
+                add_record(row, field)
+
+    for name in ("incident", "network_commitment", "network_ledger"):
+        add_record(world.state.get(name))
+
+    for name in (
+        "machines", "sensors", "lots", "orders", "purchase_orders", "suppliers",
+        "invoices", "receipts", "invoice_holds", "payments", "customers",
+        "credit_reviews", "vendors", "vendor_change_requests", "payment_holds",
+        "employees", "payroll_corrections", "subledger_entries", "journal_proposals",
+        "journal_entries", "projects", "assets", "shipments", "route_options",
+        "warehouses", "distribution_orders", "distribution_centers", "shipment_holds",
+        "distribution_plans", "recall_cases", "compliance_cases", "trade_documents",
+        "demand_signals", "intercompany_transfers", "work_orders", "engineering_documents",
+        "engineering_review_cases", "engineering_findings", "engineering_drafts",
+        "engineering_review_packages", "document_holds", "case_files", "structured_artifacts",
+        "operating_review_packages", "exception_resolutions", "messages", "quality_holds",
+        "work_order_holds", "maintenance_orders", "cycle_counts", "plan_proposals",
+        "approvals", "notifications", "gdp_tables", "gdp_deliverables",
+    ):
+        add_collection(world.state.get(name))
+
+    # These core registries use natural identities rather than an `id` field.
+    for name, field in (
+        ("gl_accounts", "account"), ("close_status", "period"),
+        ("forecasts", "sku"), ("boms", "sku"), ("boms", "change_id"),
+    ):
+        add_collection(world.state.get(name), field)
+    # Recall lots live in shipment genealogy (get_recall_scope), even when the
+    # manufacturing `lots` registry is empty. Tools cannot author these lot IDs.
+    add_collection(world.state.get("shipments"), "lot_id")
+    # Accounting periods are also the authoritative keys of the close registry.
     identifiers.update(
-        str(period) for period, record in world.state.get("close_status", {}).items()
-        if isinstance(record, dict)
+        period for period, record in world.state.get("close_status", {}).items()
+        if isinstance(period, str) and period and isinstance(record, dict)
     )
+
+    # Requirements are stored as one list per review, not as authored document facts.
+    for requirements in world.state.get("engineering_requirements", {}).values():
+        add_collection(requirements)
+
+    erp_buy = world.state.get("erp_buy", {})
+    for name in (
+        "products", "customers", "customer_requests", "vendors", "supplier_offers",
+        "sales_orders", "purchase_orders", "invoices",
+    ):
+        add_collection(erp_buy.get(name))
+
+    from .distributor.erpbench100_contract import TABLE_KEYS
+
+    for name, field in TABLE_KEYS.items():
+        add_collection(world.state.get("dist_erp", {}).get(name), field)
+
+    close_execution = world.state.get("close_execution", {})
+    add_collection(close_execution.get("stages"), "stage_id")
+    add_collection(close_execution.get("postings"), "receipt_id")
+
+    from . import extensions
+
+    extension = extensions.family(world.task.family)
+    if extension is not None:
+        for collection, field in extension.extra.get("record_collections", {}).items():
+            add_collection(world.state.get(collection), field)
     return identifiers
 
 

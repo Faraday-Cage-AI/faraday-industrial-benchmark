@@ -26,6 +26,33 @@ jobs:
       - name: Run tests
         run: python -m pytest -q
 
+  viewer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: viewer
+    env:
+      FARADAY_PYTHON: python3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install pinned package manager
+        run: npm install --global pnpm@12.5.1 --ignore-scripts
+      - name: Install exact dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Check Svelte and TypeScript
+        run: pnpm check
+      - name: Test viewer and Python helper integration
+        run: pnpm test
+      - name: Build viewer
+        run: pnpm build
+
   website:
     runs-on: ubuntu-latest
     timeout-minutes: 15

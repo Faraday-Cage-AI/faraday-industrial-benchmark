@@ -29,7 +29,15 @@ EXTENSION_PACKAGES = ("faraday_industrial_benchmark.distributor",)
 
 @dataclass(frozen=True)
 class FamilyExtension:
-    """Everything the core needs to run one extension family."""
+    """Everything the core needs to run one extension family.
+
+    ``extra["record_collections"]`` may declare authoritative record registries as
+    ``{top_level_state_collection: identity_field}``, for example
+    ``{"widgets": "id"}``. Each collection is a dict of records or a list of
+    records. The grader reads only each record's own identity field, without
+    traversing its contents. Declarations apply only to this family's episodes
+    and come from trusted extension registration, never agent-authored state.
+    """
 
     family: str
     builder: Callable[..., Any]

@@ -41,13 +41,15 @@ describe('replayEpisode', () => {
 		return result;
 	}
 
-	it('finds the call during which each scenario event fired', async () => {
+	it('finds event timing and reports drift in the archived run', async () => {
 		const result = await oracleEpisode('faraday-quality-001');
 		const replay = await replayEpisode('reports/oracle-run.json', 'data/public/tasks.json', result.task);
 
 		expect(replay.ok).toBe(true);
 		if (!replay.ok) return;
-		expect(replay.first_result_mismatch).toBeNull();
+		// This historical run predates get_incident's public scoring_contract.
+		expect(replay.first_result_mismatch).toBe(0);
+		expect(replay.first_record_mismatch).toBe(0);
 		expect(replay.applied_events).toEqual(result.applied_events);
 		expect(
 			replay.events.map((item) => [item.event.id, item.fired_during, item.scheduled_by])
