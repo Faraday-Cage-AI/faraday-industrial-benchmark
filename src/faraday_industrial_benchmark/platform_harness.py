@@ -11,12 +11,12 @@ import hashlib
 import json
 from pathlib import Path
 
+from . import extensions
 from .models import IncidentTask, Json
 from .tool_specs import FAMILY_TOOL_NAMES, TOOL_SPECS, tool_specs_for_family
 
-
 SCHEMA_VERSION = "faraday-platform-harness/1"
-BENCHMARK_VERSION = "0.6.0"
+BENCHMARK_VERSION = "0.8.0"
 
 
 def _canonical_hash(value: object) -> str:
@@ -30,18 +30,25 @@ def build_platform_harness_contract(tasks: list[IncidentTask]) -> Json:
     if not tasks:
         raise ValueError("at least one benchmark task is required")
     public_tasks = [task.public_dict() for task in tasks]
+    stages_by_id = {task.id: task.workflow_stage_dicts() for task in tasks}
     task_ids = [task["id"] for task in public_tasks]
     if len(task_ids) != len(set(task_ids)):
         raise ValueError("benchmark task IDs must be unique")
     families = sorted({task["family"] for task in public_tasks})
-    tool_contract_sha256 = _canonical_hash(
-        {
-            "tool_specs": TOOL_SPECS,
-            "family_tool_names": {
-                family: sorted(names) for family, names in sorted(FAMILY_TOOL_NAMES.items())
-            },
+    extensions.load()
+    tool_contract = {
+        "tool_specs": TOOL_SPECS,
+        "family_tool_names": {
+            family: sorted(names) for family, names in sorted(FAMILY_TOOL_NAMES.items())
+        },
+    }
+    if extensions.FAMILIES:
+        # Extension families scope the approval enum per family, so commit to
+        # each family's full served tool list, not just the shared specs.
+        tool_contract["extension_family_tool_specs"] = {
+            family: tool_specs_for_family(family) for family in sorted(extensions.FAMILIES)
         }
-    )
+    tool_contract_sha256 = _canonical_hash(tool_contract)
     suite_digest = _canonical_hash(
         {"public_tasks": public_tasks, "tool_contract_sha256": tool_contract_sha256}
     )
@@ -59,7 +66,7 @@ def build_platform_harness_contract(tasks: list[IncidentTask]) -> Json:
             "family_count": len(families),
             "families": families,
             "task_ids": task_ids,
-            "tool_count": len(TOOL_SPECS),
+            "tool_count": len(TOOL_SPECS) + len(extensions.TOOLS),
             "public_tool_contract_sha256": tool_contract_sha256,
             "public_contract_sha256": suite_digest,
         },
@@ -81,7 +88,7 @@ def build_platform_harness_contract(tasks: list[IncidentTask]) -> Json:
                     "systems": task["systems"],
                     "tags": task["tags"],
                     "controlled_plan_actions": task["controlled_plan_actions"],
-                    "workflow_stages": task["workflow_stages"],
+                    "workflow_stages": stages_by_id[task["id"]],
                     "required_notification_roles": task["required_notification_roles"],
                     "available_tools": [
                         spec["name"] for spec in tool_specs_for_family(task["family"])

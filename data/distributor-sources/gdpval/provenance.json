@@ -1,0 +1,200 @@
+{
+  "files": {
+    "data/distributor-gdpval/tasks.json": {
+      "bytes": 29174,
+      "sha256": "82e20a1b8378a979f48f051cea767464c390169f25ad7ebd7608b4d4fb84ce31"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-001.json": {
+      "bytes": 25840,
+      "sha256": "e1ed0034b973b26c6551abd2d0818c5066beed3e48947638b839cd2a5e14dc6a"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-002.json": {
+      "bytes": 24598,
+      "sha256": "9d50ebed99d17642cc88b40e987823d9023337f1ca2ca341a05c825d5f8684cc"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-003.json": {
+      "bytes": 55495,
+      "sha256": "70750ea8b476cadd79b7bf283504d4ed6ca6656fd6acc17c26d9eb929ee3deb2"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-004.json": {
+      "bytes": 26161,
+      "sha256": "88f8c8b423890a854dee3cdbfbab9c466d0533ab21c18dadb85f409c7b4f1c87"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-005.json": {
+      "bytes": 40835,
+      "sha256": "4174fb350b2ff3b4a57fbddc18fc2329c68f17fc93f2fbce04cea766f39e3019"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-006.json": {
+      "bytes": 21918,
+      "sha256": "7abbcb532eec22025277c30e7a47d5c5bd4840718a95fb39aa5814d5fe2794df"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-007.json": {
+      "bytes": 10275,
+      "sha256": "86ac5c1588261e1f761e30a9884cf08d20bf4a8c98982408e1fa960280b9866a"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-008.json": {
+      "bytes": 51272,
+      "sha256": "04fb526a6dec25403d95bd3f57c9f68a9fb02af64fd2a1ad79886a9c90e5cf8b"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-009.json": {
+      "bytes": 21586,
+      "sha256": "be8c02327279eb8d1dcb9fcd36362b208a5506c13574cb9f3b5747585d8feb6a"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-010.json": {
+      "bytes": 25808,
+      "sha256": "53358a1a7e394c669a5c2118bba9e1dfbb80226192dbf124156a8bf8d24f29f5"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-011.json": {
+      "bytes": 19660,
+      "sha256": "d92fa0c0b680de44aae19b8fe27551a2597a79cd8c686e370c6ff80910c35125"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-012.json": {
+      "bytes": 44325,
+      "sha256": "ae25c3236e0fd0e883f43c47cf85822f5bc12bc45d61c150c347f4cbb7caf8ea"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-013.json": {
+      "bytes": 55534,
+      "sha256": "c7625cb4bebd690903e6cdf3e81849867be558a454047a487c8230f291358f24"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-014.json": {
+      "bytes": 38345,
+      "sha256": "d7110fb393a71b004425d9233afb477b5678cbcacb80388e258bf7f1668e6a5d"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-015.json": {
+      "bytes": 44254,
+      "sha256": "ff3bac090e7a3dbe6205cfed9c115df1aef0eaa37606b1ffb9e2e897f647f7f5"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-016.json": {
+      "bytes": 33361,
+      "sha256": "a46be7f8874a6617a5b786c9666aad1440f3a625664e2b86557c943d5411188e"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-017.json": {
+      "bytes": 26251,
+      "sha256": "ac38ca736d318a590ed4bb1fdd9776904e80b0e3f329c812cda75d8e2b853e18"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-018.json": {
+      "bytes": 20044,
+      "sha256": "00792f4ac3f1e435cf78338296cc6f292b764cedb644a44bacaedb00be814cd8"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-019.json": {
+      "bytes": 58144,
+      "sha256": "7cc31c0f0099f45b82b63d9ca6dd69e456a3976dd83f669c1c3041c148033f06"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-020.json": {
+      "bytes": 30268,
+      "sha256": "aca41a3b4d7a94e71449cbfdb93129984cbe5f3c9e3d7d81cdb3af043fce5292"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-021.json": {
+      "bytes": 33345,
+      "sha256": "b740b494a5eba8a440f949f8c6769400e9394f72bf9a7f63b7be44527c52bfb6"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-022.json": {
+      "bytes": 16366,
+      "sha256": "fb036b5d94b9da560b61608c653ecbbe3b86ecdde3d9f212ef7ec515d218a2c8"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/grader-023.json": {
+      "bytes": 29933,
+      "sha256": "06230bb07b0f8e005fc6267f50d635ae332a8ffba837e86361c74da258e804b4"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-001.json": {
+      "bytes": 11854,
+      "sha256": "34cc303bad538da9076ef9d8ac869ba9199a63cb452d623124813b3fbdece78c"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-002.json": {
+      "bytes": 6471,
+      "sha256": "f83813da0fcfaee09a779c9f6963c839f34028cf8afb99b67faf1180fc98b3b5"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-003.json": {
+      "bytes": 12033,
+      "sha256": "4e45e4e688071d43fe969e3133ea9286cf468dd6f4dc6bf8c6e0a768ce7d1936"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-004.json": {
+      "bytes": 212571,
+      "sha256": "52e992d9250ad8da5ab56086a1152aedf176b0e92c948036c5ee993d6c99cb50"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-005.json": {
+      "bytes": 8682,
+      "sha256": "24c7e139510bdf522deb6dfdaa8cf6197789ed8cd91da49fd1f5084ea1e376c0"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-006.json": {
+      "bytes": 36865,
+      "sha256": "fc8e84ebf131efcdf004a6e28f4371375cf038df3c3983085cdd6fd96d681f87"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-007.json": {
+      "bytes": 4767,
+      "sha256": "b9f07b160da375a77d8ce1ca1f45ceebaa02ab740f69b6a5301e1950543766f6"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-008.json": {
+      "bytes": 26077,
+      "sha256": "267bec3e2c3a6f66b198127a181a00cac71a49e743a982bcc5157068db1178fd"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-009.json": {
+      "bytes": 13228,
+      "sha256": "8b1ac6060a54b72ff8f148a938299ecde671a100b1384275ba9ca5ec76dd2c2f"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-010.json": {
+      "bytes": 14230,
+      "sha256": "e4b2b45b023a81d134216c51bc6c899a972642d1397e3fab60943f8ae8b26c6f"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-011.json": {
+      "bytes": 9351,
+      "sha256": "404ba3c70ceba00cbbf0120ab6b038e1d24b85c85b87cda23d396fc1541992ea"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-012.json": {
+      "bytes": 7879,
+      "sha256": "f62a35f105475b60a08d356f2bdedd19f0e2e99d1d1d9f9964034d77b9814250"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-013.json": {
+      "bytes": 89258,
+      "sha256": "4c71fd2b0bb333c48992b51d672fdcd3fbd72f5625168736e725b50d75aa93f1"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-014.json": {
+      "bytes": 5566,
+      "sha256": "02d5d15a5651e928457e0d459432f02a3254c6962c0650da27fa2f2c6f38f78f"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-015.json": {
+      "bytes": 10833,
+      "sha256": "e92b67ed8ac8c1ed1833da196b1427302e1b2de414e67a20e6123bcc212c97f2"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-016.json": {
+      "bytes": 7085,
+      "sha256": "66095d28c0eef4a424a07db979029f5cfa94ee16643cd965f9ce11394b29bb99"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-017.json": {
+      "bytes": 8567,
+      "sha256": "275be00326926132c99a08e581168d62791cd5d45d55c6f194dae97737ed1f57"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-018.json": {
+      "bytes": 9263,
+      "sha256": "020f8d2075a20733704df609eadc0e75b38edfce70301f7ad1338917bc17c3b3"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-019.json": {
+      "bytes": 6196,
+      "sha256": "ce0367d0476036f8151cbb5c028f199b4728e99a465e45a5668a87f4533da543"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-020.json": {
+      "bytes": 12041,
+      "sha256": "24c5e643b044e53cf5b14c5c2fa3bdcf17db41b7af1152e53ed6c0a90aa988f9"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-021.json": {
+      "bytes": 20158,
+      "sha256": "83307e93b43aa8ac673a88b6e0c7926232c8e9bed8c1b95a452ab9db802a02a7"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-022.json": {
+      "bytes": 13149,
+      "sha256": "35522531f6783b29c3e234e4663af8290797c3ddfad339aabe6d9183681efaf5"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/gdpval/task-023.json": {
+      "bytes": 5123,
+      "sha256": "69cc7e9263cacedf57cce5c0663b9cfbf7033e0c6affc95c126a846b03feda84"
+    }
+  },
+  "schema_version": "faraday-distributor-provenance/1",
+  "source": "gdpval",
+  "upstream": {
+    "license": "none declared",
+    "note": "deliverables and rubrics committed as grader-only material by owner decision",
+    "repository": "openai/gdpval",
+    "revision": "11e7900cdcac61bc4daf59e65feb238acda98fbf"
+  }
+}

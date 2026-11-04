@@ -1,0 +1,8 @@
+VERIFIED 	factorybench-100	vendored
+VERIFIED 	industrial-agent-benchmark	vendored
+VERIFIED 	supchain-bench	vendored
+VERIFIED 	assetopsbench	vendored
+REFERENCE	spas-bench-full	reference-only
+REFERENCE	factorybench-machine-understanding	reference-only
+REFERENCE	phmforge	reference-only
+REFERENCE	cfagentbench	reference-only

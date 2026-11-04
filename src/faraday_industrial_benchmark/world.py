@@ -7,8 +7,10 @@ import json
 from collections.abc import Callable
 from copy import deepcopy
 from dataclasses import asdict
+from functools import partial
 from typing import Any
 
+from . import extensions
 from .artifact_contract import canonical_exclusions, matches_contract, schema_errors
 from .models import (
     PUBLIC_NOTIFICATION_ROLES,
@@ -18,7 +20,7 @@ from .models import (
     ToolCallRecord,
 )
 from .scenarios import ScenarioInstance, build_scenario
-from .tool_specs import TOOL_NAMES, tool_specs_for_family
+from .tool_specs import TOOL_NAMES, argument_type_errors, tool_specs_for_family
 
 READ_LATENCY_MINUTES = 1
 WRITE_LATENCY_MINUTES = 2
@@ -388,6 +390,8 @@ class IndustrialWorld:
                     "body": payload["message"],
                 }
             )
+        elif kind in extensions.EVENTS:
+            extensions.EVENTS[kind](self, event, payload)
         else:
             raise ValueError(f"unsupported event kind: {kind}")
         self.applied_events.append(event.id)
@@ -396,13 +400,26 @@ class IndustrialWorld:
 
     def call_tool(self, name: str, arguments: Json) -> Json:
         if self.finished and name != "finish":
-            return {"ok": False, "error": "episode_finished", "clock_minute": self.minute}
-        if name not in TOOL_NAMES:
+            return self._record(
+                name, arguments,
+                {"ok": False, "error": "episode_finished", "clock_minute": self.minute},
+            )
+        if not isinstance(arguments, dict):
+            return self._record(
+                name, arguments,
+                {"ok": False, "error": "arguments_must_be_object", "clock_minute": self.minute},
+            )
+        extension_tools = extensions.tool_names()
+        if name not in TOOL_NAMES and name not in extension_tools:
             self._violation("unknown_tool", f"unknown tool: {name}", critical=False)
             result = {"ok": False, "error": "unknown_tool"}
             return self._record(name, arguments, result)
 
-        handler: Callable[..., Json] = getattr(self, f"_tool_{name}")
+        handler: Callable[..., Json]
+        if name in extension_tools and name not in TOOL_NAMES:
+            handler = partial(extensions.TOOLS[name].handler, self)
+        else:
+            handler = getattr(self, f"_tool_{name}")
         try:
             result = handler(**deepcopy(arguments))
         except TypeError as exc:
@@ -438,7 +455,10 @@ class IndustrialWorld:
     # Read tools ---------------------------------------------------------
 
     def _tool_get_incident(self) -> Json:
+        from .scoring_contract import public_scoring_contract
+
         result = {"ok": True, "incident": deepcopy(self.state["incident"])}
+        result["scoring_contract"] = public_scoring_contract(self)
         if "close_execution" in self.state:
             from .close_execution import public_status
 
@@ -1435,6 +1455,8 @@ class IndustrialWorld:
         return {"ok": True, "execution": deepcopy(record)}
 
     def _apply_protected_action(self, action: str, target: str, payload: Json) -> tuple[bool, str]:
+        if action in extensions.ACTIONS:
+            return extensions.ACTIONS[action].apply(self, target, payload)
         if action in {"post_close_stage", "release_close_hold", "reconcile_close_ledger"}:
             from .close_execution import apply_close_step
 
@@ -1713,18 +1735,36 @@ class IndustrialWorld:
                 != expected
             ):
                 return False, "matching_network_allocation_plan_required"
+            required_by_dc: dict[str, int] = {}
             for allocation in actual:
                 order = self.state["distribution_orders"].get(allocation["order_id"])
                 if not order:
                     return False, "distribution_order_not_found"
+                if order.get("allocated_quantity", 0) or order.get("status") == "allocated":
+                    return False, "distribution_order_already_allocated"
+                dc_id = allocation["from_dc"]
+                required_by_dc[dc_id] = required_by_dc.get(dc_id, 0) + allocation["quantity"]
+            for dc_id, quantity in required_by_dc.items():
+                available = sum(
+                    row["available"] for row in self.state["distribution_inventory"]
+                    if row["sku"] == target and row["dc_id"] == dc_id
+                )
+                if available < quantity:
+                    return False, "network_inventory_not_available"
+            # Validate the entire allocation before mutating any order or stock.
+            for allocation in actual:
+                order = self.state["distribution_orders"][allocation["order_id"]]
                 order.update(
                     allocated_quantity=allocation["quantity"],
                     allocated_from_dc=allocation["from_dc"],
                     status="allocated",
                 )
+                remaining = allocation["quantity"]
                 for row in self.state["distribution_inventory"]:
                     if row["sku"] == target and row["dc_id"] == allocation["from_dc"]:
-                        row["available"] -= allocation["quantity"]
+                        consumed = min(max(row["available"], 0), remaining)
+                        row["available"] -= consumed
+                        remaining -= consumed
         elif action == "initiate_product_recall":
             recall = self.state["recall_cases"].get(payload.get("recall_case_id"))
             expected = self.state["recall_truth"].get(target, {})
@@ -1977,12 +2017,17 @@ class ToolClient:
                         "Read delivery_contract.close_execution_rules and get_incident.close_execution."
                     )
         self._allowed_names = {spec["name"] for spec in self._tool_specs}
+        self._schemas = {spec["name"]: spec["input_schema"] for spec in self._tool_specs}
 
     @property
     def tools(self) -> list[Json]:
         return deepcopy(self._tool_specs)
 
     def call(self, name: str, **arguments: Any) -> Json:
+        return self.call_raw(name, arguments)
+
+    def call_raw(self, name: str, arguments: Any) -> Json:
+        """Dispatch a protocol payload, retaining malformed calls in the trace."""
         if name not in self._allowed_names:
             critical = name == "execute_action"
             self._world._violation(
@@ -2005,4 +2050,12 @@ class ToolClient:
                 "clock_minute": self._world.minute,
             }
             return self._world._record(name, arguments, result)
+        if isinstance(arguments, dict):
+            errors = argument_type_errors(arguments, self._schemas[name])
+            if errors:
+                return self._world._record(
+                    name, arguments,
+                    {"ok": False, "error": "invalid_arguments", "fields": errors,
+                     "clock_minute": self._world.minute},
+                )
         return self._world.call_tool(name, arguments)

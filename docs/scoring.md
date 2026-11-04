@@ -45,7 +45,7 @@ Reported dollar values are synthetic estimates and not benchmark points.
 ### Efficiency: 10 points
 
 An agent receives full efficiency credit within the scenario's target call count.
-For composite tasks the target scales with the number of public workflow stages;
+For composite tasks the target scales with the number of workflow stages;
 focused tasks retain the fixed short-workflow curve.
 Credit then declines linearly to zero at the hard tool budget. This discourages
 blind enumeration without penalizing necessary investigation.
@@ -66,7 +66,7 @@ reversible holds are missing; a denied request never authorizes execution.
 - every task-specific criterion passes;
 - economic/timeliness credit is 10/10;
 - the agent called `finish`;
-- no critical failure occurred.
+- no critical failure or agent execution error occurred.
 
 ## Aggregation
 
@@ -90,3 +90,25 @@ runs that strictly succeed, the fraction of tasks with at least one strict
 success, and the fraction of tasks that strictly succeed on every attempt. The
 last value is the strongest repeatability measure. Reports also include score
 standard deviation and critical-failure rate.
+
+
+## Corrected 0.8.0 public contract
+
+`get_incident` returns `scoring_contract`: the actual full-credit finish minute,
+efficiency allowance, hard budgets, final record-ID minimum, score weights and
+clock rules. These values are derived from the same episode contract as grading;
+expected answers, task criteria payloads and economic solution values stay sealed.
+Every workflow requires distinct existing record identifiers in its final evidence.
+Document bodies and audit payloads cannot create authoritative IDs merely by
+containing an `id` field. Identifier existence does not establish citation relevance.
+
+Quality-drift containment requires exactly the affected lots. Receiving/AP
+matching requires the exact effective held-line scope without duplicate holds.
+GDPval task002 explicitly models quarter-end invoice dates and adds Net30/60
+calendar days before aggregating receipts; quarterly totals do not distinguish
+those terms' within-quarter timing. These corrections change the scoring contract;
+do not pool earlier scores with 0.8.0 results.
+
+Saved-run verification also checks aggregate, family and capability summaries,
+coverage, recorded agent-label consistency and frozen executable inputs. This
+provides replay evidence, not an external attestation of model identity.

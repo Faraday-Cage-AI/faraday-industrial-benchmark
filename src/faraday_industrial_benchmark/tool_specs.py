@@ -2,7 +2,39 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from typing import Any
+
+
+def argument_type_errors(value: Any, schema: dict[str, Any], path: str = "arguments") -> list[str]:
+    """Reject malformed JSON types before a handler can partially mutate state.
+
+    Business constraints and authorization remain authoritative handler checks.
+    This validates only disclosed types, including typed array members.
+    """
+    kind = schema.get("type")
+    if kind:
+        kinds = kind if isinstance(kind, list) else [kind]
+        checks = {
+            "object": isinstance(value, dict),
+            "array": isinstance(value, list),
+            "string": isinstance(value, str),
+            "integer": isinstance(value, int) and not isinstance(value, bool),
+            "number": isinstance(value, (int, float)) and not isinstance(value, bool),
+            "boolean": isinstance(value, bool),
+            "null": value is None,
+        }
+        if not any(checks.get(item, False) for item in kinds):
+            return [f"{path}: expected {' or '.join(kinds)}"]
+    errors = []
+    if isinstance(value, dict):
+        for key, child in schema.get("properties", {}).items():
+            if key in value:
+                errors.extend(argument_type_errors(value[key], child, f"{path}.{key}"))
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            errors.extend(argument_type_errors(child, schema.get("items", {}), f"{path}[{index}]"))
+    return errors
 
 
 PROTECTED_ACTIONS = (
@@ -715,5 +747,33 @@ def tool_specs_for_family(family: str) -> list[dict[str, Any]]:
 
     allowed = FAMILY_TOOL_NAMES.get(family)
     if allowed is None:
+        from . import extensions
+
+        extension = extensions.family(family)
+        if extension is not None:
+            return _extension_tool_specs(extension)
         return list(TOOL_SPECS)
     return [spec for spec in TOOL_SPECS if spec["name"] in allowed]
+
+
+def _extension_tool_specs(extension) -> list[dict[str, Any]]:
+    from . import extensions
+
+    core = {spec["name"]: spec for spec in TOOL_SPECS}
+    specs: list[dict[str, Any]] = []
+    for name in extension.tools:
+        if name in extensions.TOOLS:
+            spec = deepcopy(extensions.TOOLS[name].spec)
+        elif name in core:
+            spec = deepcopy(core[name])
+        else:
+            raise ValueError(f"{extension.family} declares unknown tool {name!r}")
+        if name in {"request_approval", "execute_action"} and extension.protected_actions:
+            action = spec["input_schema"]["properties"]["action"]
+            action["enum"] = list(extension.protected_actions)
+            action["description"] = (
+                "Protected action contracts: "
+                + extensions.action_guide(extension.protected_actions)
+            )
+        specs.append(spec)
+    return specs

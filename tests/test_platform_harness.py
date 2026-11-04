@@ -2,6 +2,7 @@ import json
 
 from jsonschema import validate
 
+from faraday_industrial_benchmark import extensions
 from faraday_industrial_benchmark.agents import OracleAgent
 from faraday_industrial_benchmark.cli import DEFAULT_TASKS
 from faraday_industrial_benchmark.models import PUBLIC_NOTIFICATION_ROLES, load_tasks
@@ -42,7 +43,8 @@ def test_notification_role_vocabulary_is_public_and_matches_the_grader():
     for task in load_tasks(DEFAULT_TASKS):
         roles = []
         for criterion in build_scenario(task).criteria:
-            if criterion.get("check") == "notification_roles":
+            check = criterion.get("check")
+            if check == "notification_roles" or (check in extensions.CHECKS and "roles" in criterion):
                 roles.extend(criterion["roles"])
         assert tuple(roles) == PUBLIC_NOTIFICATION_ROLES[task.family]
         assert task.public_dict()["required_notification_roles"] == roles
@@ -63,10 +65,10 @@ def test_platform_contract_is_complete_but_seed_and_grader_free(tmp_path):
     serialized = json.dumps(contract, sort_keys=True)
 
     assert contract["schema_version"] == "faraday-platform-harness/1"
-    assert contract["suite"]["task_count"] == 74
-    assert contract["suite"]["family_count"] == 33
-    assert contract["suite"]["tool_count"] == 67
-    assert len(contract["cases"]) == 74
+    assert contract["suite"]["task_count"] == 249
+    assert contract["suite"]["family_count"] == 46
+    assert contract["suite"]["tool_count"] == 108
+    assert len(contract["cases"]) == 249
     assert len(contract["suite"]["public_contract_sha256"]) == 64
     assert len(contract["suite"]["public_tool_contract_sha256"]) == 64
     assert '"seed"' not in serialized

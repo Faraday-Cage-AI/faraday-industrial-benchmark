@@ -1,5 +1,65 @@
 # Changelog
 
+## 0.8.0 — 2026-11-03
+
+- Closed PR review findings: restrict citations to explicit record registries,
+  validate draft orders atomically, share authoritative failure replay with the
+  viewer, and invalidate viewer caches for recursive source/fixture edits.
+- Added viewer check/test/build CI and patched the website's production
+  dependencies to pass its existing vulnerability audit.
+- Corrected fabricated final citation credit and required record evidence in every
+  workflow; published scoring time/call thresholds via `get_incident`.
+- Bound replay to aggregate totals, exact coverage and frozen source/task/tool
+  inputs; preserved protocol rejections, failures and full trace metadata.
+- Fixed partial-line timeout/cancellation hangs, malformed payload mutation and
+  repeated inventory allocation; added independent adversarial review.
+- Corrected Net 30/60 cash timing to explicit calendar invoice dates and rejected
+  excess/duplicate AP holds and unnecessary quality containment.
+- Added a source-archived, fail-closed evidence-bundle command. Historical results
+  remain intact and are not comparable with the corrected contract.
+- Documented sealed-answer distributor references and missing historical raw model
+  artifacts; no current learned-model ranking is claimed.
+
+## 0.7.0 — 2026-11-02
+
+- Added 175 Distributor Operations tasks in 13 families to the headline public
+  suite, which now contains 249 tasks in 46 families. The headline score remains
+  a plain mean over tasks, so distributor tasks carry about 70% of it.
+- Added native Faraday rebuilds of tasks from three pinned public benchmarks:
+  82 ERP-Bench buy-to-fulfill and supplier-cancellation repair tasks (CC0), 70
+  ERPBench-100 tasks across seven families (data CC BY 4.0, "ERPBench-100 by
+  Blobfish AI", changes made), and 23 GDPval work-product tasks across five
+  families. CRMArena-Pro was excluded because of its noncommercial license.
+- Added `examples/import_distributor_sources.py`, which builds fixtures from
+  pinned upstream snapshots, writes the per-source manifests, and syncs the
+  distributor tail of `data/public/tasks.json`. Each source records per-file
+  SHA-256 provenance in `data/distributor-sources/<source>/provenance.json`.
+- Added an extension registry (`extensions.py`) so families outside
+  `scenarios.py` can register builders, tools, protected actions, evaluator
+  checks, event kinds, reference trajectories, and negative-control probes
+  without editing the core world, grader, tool catalog, or agents. Extension
+  protected actions are scoped to the families that declare them.
+- Added an optional `efficiency_target` hook for extension families.
+- The platform harness contract now commits to each extension family's full
+  served tool specs and counts extension tools: 108 tools (67 core and 41
+  distributor).
+- Added the 13 distributor families to the task schema `family` enum and bumped
+  the benchmark, harness, qualification, and generation defaults to 0.7.0.
+- Updated `NOTICE`, `DATA_LICENSE`, and `THIRD_PARTY_NOTICES.md` for the
+  distributor sources. GDPval expected deliverables and rubrics are grader-only
+  reference material and are not covered by `DATA_LICENSE`.
+- Qualified v0.7.0 on all 249 tasks at oracle 100.00/249 strict with no critical
+  failures, no-op 10.76, read-only 11.75, and unauthorized-write 0.00 with 249
+  critical failures; the oracle run replays exactly over 6,782 tool calls. The
+  structural profile reports 8,155 criteria (from 2,864) and 174 tasks with
+  explicit workflow-stage graphs (from 22).
+- Known limitations: distributor held-out generation reuses the template
+  scenario with a new seed, 157 of 1,189 GDPval rubric items are recorded but not
+  scored, and published model results were measured on v0.6.0 and have not been
+  re-run.
+- Regenerated the release reports (difficulty profile, qualification, oracle run
+  and replay) and the platform harness export for v0.7.0.
+
 ## Unreleased
 
 - Added the v0.5 frontier operating-review track: four 15-stage professional

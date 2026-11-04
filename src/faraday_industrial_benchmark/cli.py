@@ -15,7 +15,7 @@ from .models import IncidentTask, load_tasks
 from .platform_harness import build_platform_harness_contract, save_platform_harness_contract
 from .report import render_html
 from .runner import BenchmarkRunner, CommandAgent, save_run
-from .scenarios import BUILDERS, build_scenario
+from .scenarios import build_scenario, known_family
 from .upstreams import DEFAULT_MANIFEST, load_upstream_manifest, verify_upstream_snapshots
 from .world import IndustrialWorld
 
@@ -44,7 +44,7 @@ def _validate(tasks: list[IncidentTask]) -> list[str]:
         if task.id in seen:
             errors.append(f"{task.id}: duplicate task ID")
         seen.add(task.id)
-        if task.family not in BUILDERS:
+        if not known_family(task.family):
             errors.append(f"{task.id}: unknown family {task.family!r}")
             continue
         if task.max_tool_calls < 10:
@@ -113,34 +113,11 @@ def cmd_run(args: argparse.Namespace) -> int:
 
 def cmd_replay(args: argparse.Namespace) -> int:
     payload = json.loads(Path(args.run).read_text(encoding="utf-8"))
-    tasks = {task.id: task for task in _load_selected(args.tasks)}
-    runner = BenchmarkRunner()
-    reports = []
-    for result in payload["results"]:
-        task_id = result["task"]["id"]
-        if args.task and task_id not in set(args.task):
-            continue
-        if task_id not in tasks:
-            raise ValueError(f"task {task_id!r} is not present in {args.tasks}")
-        report = runner.replay(tasks[task_id], result["trace"])
-        comparisons = {
-            "task_contract_matches": result.get("task") == tasks[task_id].public_dict(),
-            "score_matches": result.get("score") == report["score"],
-            "initial_state_hash_matches": (
-                result.get("initial_state_hash") == report["initial_state_hash"]
-            ),
-            "final_state_hash_matches": (
-                result.get("final_state_hash") == report["final_state_hash"]
-            ),
-            "final_answer_matches": result.get("final_answer") == report["final_answer"],
-            "applied_events_match": result.get("applied_events") == report["applied_events"],
-        }
-        report.update(comparisons)
-        report["exact_match"] = report["exact_match"] and all(comparisons.values())
-        reports.append(report)
-    exact = all(report["exact_match"] for report in reports)
-    print(json.dumps({"exact_match": exact, "episodes": reports}, indent=2, sort_keys=True))
-    return 0 if exact else 1
+    from .verification import verify_run
+
+    report = verify_run(payload, _load_selected(args.tasks), args.task)
+    print(json.dumps(report, indent=2, sort_keys=True))
+    return 0 if report["exact_match"] else 1
 
 
 def cmd_report(args: argparse.Namespace) -> int:
@@ -179,7 +156,7 @@ def cmd_qualify(args: argparse.Namespace) -> int:
     passed = all(qualifications.values())
     report = {
         "schema_version": "faraday-industrial-qualification/1",
-        "benchmark_version": "0.6.0",
+        "benchmark_version": "0.8.0",
         "passed": passed,
         "checks": qualifications,
         "controls": {name: run["summary"] for name, run in runs.items()},
@@ -354,7 +331,7 @@ def build_parser() -> argparse.ArgumentParser:
     generate_parser.add_argument("--per-family", type=int, default=20)
     generate_parser.add_argument("--root-seed", type=int, required=True)
     generate_parser.add_argument("--split", default="heldout")
-    generate_parser.add_argument("--version", default="0.6.0")
+    generate_parser.add_argument("--version", default="0.8.0")
     generate_parser.add_argument("--output", default="data/generated/tasks.json")
     generate_parser.set_defaults(func=cmd_generate)
 

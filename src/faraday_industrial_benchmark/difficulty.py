@@ -17,7 +17,7 @@ from .tool_specs import tool_specs_for_family
 
 def _workflow_depth(task: IncidentTask) -> int:
     depths: dict[str, int] = {}
-    for stage in task.public_workflow_stages:
+    for stage in task.effective_workflow_stages:
         dependencies = stage["depends_on"]
         depths[stage["id"]] = 1 + max(
             (depths[dependency] for dependency in dependencies), default=0
@@ -63,7 +63,7 @@ def build_difficulty_profile(tasks: Iterable[IncidentTask]) -> Json:
                 "difficulty": task.difficulty,
                 "systems": len(task.systems),
                 "available_tools": len(tool_specs_for_family(task.family)),
-                "workflow_stages": len(task.public_workflow_stages),
+                "workflow_stages": len(task.effective_workflow_stages),
                 "workflow_depth": _workflow_depth(task),
                 "max_tool_calls": task.max_tool_calls,
                 "horizon_minutes": task.horizon_minutes,

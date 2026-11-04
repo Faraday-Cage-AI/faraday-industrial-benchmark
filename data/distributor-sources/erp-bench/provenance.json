@@ -1,0 +1,347 @@
+{
+  "files": {
+    "data/distributor-erp-bench/tasks.json": {
+      "bytes": 482509,
+      "sha256": "28beb4470fc54a706d85f3cf322b526044f2cb1240efb81c5b54862d3f4d4f5c"
+    },
+    "data/distributor-sources/erp-bench/LICENSE": {
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2000_easy_01_buy_only_baseline.json": {
+      "bytes": 15225,
+      "sha256": "e7bf98895ac8aa0cc0592d9d2bf313d9ed5363e3f01b7cf2dfacf115ab0b04d8"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2001_easy_01_buy_only_baseline.json": {
+      "bytes": 15348,
+      "sha256": "406802c70bc55083bd9f710a6e2a9d48cc444029be8fe7683fc85da90b8fb136"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2002_easy_01_buy_only_baseline.json": {
+      "bytes": 15330,
+      "sha256": "bd06f5d5bd16e1304437baa6f1efbdeb8171d47398051bfe5cb2985cbba94ddf"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2003_easy_01_buy_only_baseline.json": {
+      "bytes": 15296,
+      "sha256": "bdb988a392eefb202bbc92539c4287314e4f1d6c430a357e8efd120a2257cc2f"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2004_easy_01_buy_only_baseline.json": {
+      "bytes": 15338,
+      "sha256": "0e40c95de2e3c1e262e6a7ab0e4c7e244efb40aa5c4a4e8aaae6ef391da3186d"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2005_easy_01_buy_only_baseline.json": {
+      "bytes": 15240,
+      "sha256": "c568238db9de0aff6a04ff7013ef1ee26171755a1b5505b643efc02253dd5c6e"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2006_easy_01_buy_only_baseline.json": {
+      "bytes": 15305,
+      "sha256": "c4ba69d943b549187c82dd68b98ae9e697dc8f6065c95384ab4e24c133a8b2b0"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2007_easy_01_buy_only_baseline.json": {
+      "bytes": 15302,
+      "sha256": "554663be704aff8a2c552884485dd9402c2cd5d83202b31f5573626f33c094f2"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2008_easy_02_buy_only_immediate_invoicing.json": {
+      "bytes": 16339,
+      "sha256": "738a5c84e5f11f19e76e8cfd235c60636102fd6165e2ba936d5b03294ae3b597"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2009_easy_02_buy_only_immediate_invoicing.json": {
+      "bytes": 16422,
+      "sha256": "4224e517ba7849a5c4dad46821bdbc5c3c83bb5f4fcf1c406f15f71610f27a67"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2010_easy_02_buy_only_immediate_invoicing.json": {
+      "bytes": 16468,
+      "sha256": "73574660f985fc4841791e2bd7b94e4b317621577c80a2eaa24f82acbaa8192b"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2011_easy_02_buy_only_immediate_invoicing.json": {
+      "bytes": 16157,
+      "sha256": "5d90e3c7c246923f99f5c0722d4a9d65d9ee056750783b80f6634d56c4985888"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2012_easy_02_buy_only_immediate_invoicing.json": {
+      "bytes": 16489,
+      "sha256": "5668ad8a1ddaea9f3711e33c252440349ccb3e646310a36f8712fbe20137f939"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2013_easy_02_buy_only_immediate_invoicing.json": {
+      "bytes": 16234,
+      "sha256": "d05ece15d88ed453007e910a80d78ed4aa912df989c25566d52a9442790013e4"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2014_easy_02_buy_only_immediate_invoicing.json": {
+      "bytes": 16565,
+      "sha256": "579fed7f14abe7a97b80d7c3f37962506c65d9d0c095c1bd27224200802452c2"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2015_easy_02_buy_only_immediate_invoicing.json": {
+      "bytes": 16171,
+      "sha256": "9a98bfbd3d9f351e27483f6fab887287800edfdd310012c82b0a379a72ac4d3e"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2016_easy_03_buy_only_fixed_downpayment.json": {
+      "bytes": 16665,
+      "sha256": "e639855d2edfcb7cabf3539548c1c24b5075fed0c6a0bd9b589e2b72fce897aa"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2017_easy_03_buy_only_fixed_downpayment.json": {
+      "bytes": 17037,
+      "sha256": "c0d74f9b06c21844eeff1505256c41be6c016a5e85645f715d1b6ee97b083a38"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2018_easy_03_buy_only_fixed_downpayment.json": {
+      "bytes": 16961,
+      "sha256": "ae906354fb0e2385e01b633dfd6da556a97413665858430cc77833b677afb537"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2019_easy_03_buy_only_fixed_downpayment.json": {
+      "bytes": 16635,
+      "sha256": "11499030833466ee9e5bd27e6d17b1fdc20c883d83528a35b7a195a4b165a709"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2020_easy_03_buy_only_fixed_downpayment.json": {
+      "bytes": 16568,
+      "sha256": "b096485562a94db2da92ad602e5f1982b8c5121ff6426d3bac93167e2e8d6c1c"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2021_easy_03_buy_only_fixed_downpayment.json": {
+      "bytes": 16629,
+      "sha256": "01b7a828e27378518281789a543cf49a840a27b141f1187374c07fcdc593ea34"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2022_easy_03_buy_only_fixed_downpayment.json": {
+      "bytes": 16723,
+      "sha256": "8ae3585619ab5c98826719a6a639f3221b185dfcbe72de59e42ea0e505244ecc"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2023_easy_03_buy_only_fixed_downpayment.json": {
+      "bytes": 16491,
+      "sha256": "a04cb854a97dad5dc2692c27b3c0e67f83a71973a8d6a44f029a723a22fdd36c"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2024_easy_04_buy_only_percentage_downpayment.json": {
+      "bytes": 16615,
+      "sha256": "88812134e0c747996189165168d78f3f9e8dbaeb1749b66617e07f8788781d62"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2025_easy_04_buy_only_percentage_downpayment.json": {
+      "bytes": 16887,
+      "sha256": "3cebae626401706d2a82f6a92b225fd1d3f8cf24e664bcd8cc086161fa62b8f0"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2026_easy_04_buy_only_percentage_downpayment.json": {
+      "bytes": 16872,
+      "sha256": "7eb391693f8cfa2b34148560bdb5df6bc7712d66c63730a61e58a1d20995227b"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2027_easy_04_buy_only_percentage_downpayment.json": {
+      "bytes": 16588,
+      "sha256": "b81316b69652970573f09489ffe141ec98b3e07ef830b071047aa811f96a4f1a"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2028_easy_04_buy_only_percentage_downpayment.json": {
+      "bytes": 16463,
+      "sha256": "2c35c46271d9ddbde3a89d1ae432373ba34c45734f60173c9f2720faa611a6e0"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2029_easy_04_buy_only_percentage_downpayment.json": {
+      "bytes": 16886,
+      "sha256": "0ab4cc5d68f5ab99be31aba8c8423bfccc1c4e28715380c8b2ee905b18d3c3ad"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2030_easy_04_buy_only_percentage_downpayment.json": {
+      "bytes": 16591,
+      "sha256": "409f38e8137de772abf5d3cd5ae1b5a7027ccdd9b07767758b0a5c531538151e"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2031_easy_04_buy_only_percentage_downpayment.json": {
+      "bytes": 16897,
+      "sha256": "98435bd3d58b813be870412391d3af5d938d40aeab87041012d4a32d748e339b"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2032_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 20134,
+      "sha256": "9aceafbdf5c6fe70b459c4a33242d8042def1ac7c87b886f239ba2e66640ab7c"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2033_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 20769,
+      "sha256": "f551b19a9c5f71e157b513cf2f8a53088bb804b321d1a46074659015a2c21af5"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2034_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 20458,
+      "sha256": "dd61bfc3176793d87425d8ef21a166159fb48e05ae38c2026ccfe657d8d657a7"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2035_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 21537,
+      "sha256": "a351a2d2e39ae9d38131fdafbdfb238480620b732e883ad07344bd47b86f64c8"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2036_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 20396,
+      "sha256": "9e13f3fc16a5711ed9de964c436433916b137413e7e1b26262ae08a13db27c26"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2037_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 20904,
+      "sha256": "dd408cfa25ed46bae8f65540b7972533785ebce8e8c6089716e4c9bd817c7844"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2038_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 19774,
+      "sha256": "8196387ab44403d2ad14b34e67597a29844c33e50642f2db7f4e574a28a379b0"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2039_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 21575,
+      "sha256": "9cd650553f6dc55c9fe90307b6a21f7789260e9196b42b914995ac39cd969679"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2040_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 21325,
+      "sha256": "edfafc796d857147f772322b96e5a1c3b4170093c03cecc4106b0f26995a08bc"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2041_medium_05_screened_buy_only_all_seeded.json": {
+      "bytes": 21317,
+      "sha256": "ed1fa5e14576fe6ea0923fa40264eb02e850f7f0e6237390243aa8c15b2c5895"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2042_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 19774,
+      "sha256": "3428d5f73a5ca2cb224afcd5f5f877ffa0d62afec117cbe337f6ae2330358b25"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2043_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 18924,
+      "sha256": "9e28437e14eec3c1f8ad7106b6f24e57751aa1b83b786fa730bc0cf5ac9b942f"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2044_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 19047,
+      "sha256": "9aa819390e8ba4e60cd7d30225217cfc1c8cfa283809bddee6d8d183dc844028"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2045_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 19077,
+      "sha256": "332176a15a1be2bf2e364941f831825c3d9b713ddcc5bbe81939ac40f10004dd"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2046_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 19017,
+      "sha256": "f646627425f200ab21b72556fa19c784ec9e9d998f66921ae468a4d7d432c2cd"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2047_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 19449,
+      "sha256": "99b9808e7b46dc8202400fdbc1333694c25cb82873a8c62f3a9e97da0c39af12"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2048_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 18628,
+      "sha256": "255512738308f741c91b676da39dc5e3b152aa13102c6b858966597cb60c1637"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2049_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 20484,
+      "sha256": "8bec31766e84d20b04c966dd2ecf4009a4984f31ad7797f8e637000bad98b483"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2050_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 18659,
+      "sha256": "e60261c598cd6c6264abad9ea62069dd6be4213ddb018a61e3ce52619aea41a1"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2051_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 18987,
+      "sha256": "8a6722dc9da4ae36e35137b46aa9ba582ea1ba9df3c14ffcf86ad0b68052c418"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2052_medium_06_screened_buy_only_mixed_seeded.json": {
+      "bytes": 19011,
+      "sha256": "9c8fe253fca0b695863579446a25ed12ccb8892602c0e2c8d7ad546a8dc40569"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2053_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 19802,
+      "sha256": "73de8a467a2c9cd9213875889ee8d14d5294a74e825d47dd802cd0145390b746"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2054_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 19188,
+      "sha256": "f4d105be7e4bfea3198496a07dcff83ec8c2738ccc8cb4ffe88260f950528595"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2055_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 19933,
+      "sha256": "310453d038c5d2a1c2bf56145a4ad7902bed63af917b1922cb841e518d758a72"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2056_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 19557,
+      "sha256": "aafb4da7d7ead42b64b29ca2b8d3495869481f20dd5f79ac6b2043ddf27548e6"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2057_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 20301,
+      "sha256": "3492362d7018bdebd2538f70a60e2d842b00897d9d0bb94b688449fe56251509"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2058_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 20836,
+      "sha256": "0222ed3275e0f16929dc887f0fc5540168db978cc3816810a8daebb215727f8c"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2059_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 21117,
+      "sha256": "fc97148da889c717345ae834913727a34c15dc856582a1a1d00b40d278e38dbb"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2060_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 20047,
+      "sha256": "3d51daac8bbac26b9314a0a628abd2941d00835bc49aeb6679aa8e529a1a6121"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2061_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 20896,
+      "sha256": "9642f43e82b6388b429822465a5797770728912f327819ef8561e4912184067f"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2062_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 20204,
+      "sha256": "47990506428d40844dbdf032be82e52acc01dc3e9b064969a352a14f0f4c954a"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2063_medium_07_screened_buy_only_mixed_seeded_invoicing.json": {
+      "bytes": 19155,
+      "sha256": "7207884d1ee196ae64933da8d900d8be8e19be0d1d463d666068e61e39c4972c"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2262_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 8154,
+      "sha256": "d273d83c53cc3640c3437c19a75466f7e326c8cc09e4fda4bcaadde68ec7f033"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2263_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 7887,
+      "sha256": "08553da5dd99d0bbbaab654fe49b1b7b0cb044ba0a1058ac4b2e3bc033c74841"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2264_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 8140,
+      "sha256": "6779f848d4e28f28480ae8199073944a2ad8e338e291248e9837a93443c5c975"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2265_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 7904,
+      "sha256": "7d45edea49615d9d376e7b556e7d4a506e8038931e52c8310ea01b5147053759"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2266_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 8162,
+      "sha256": "2e109a745fe69d17713884063f4ae274d48e26950cb011d39810933709c80397"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2267_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 7890,
+      "sha256": "eb8f6ab36f23eb01aa6c6eed9ca87a53cde2210bb1625f9f0d50c10651110a9c"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2268_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 8151,
+      "sha256": "389f151985fb724e2bd1bba18e30f4651f4105fbe1b0a4a474d64fc3fdd6dd40"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2269_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 8145,
+      "sha256": "d02682f8bb572dabbc356a33935c8a72a811b0c1044e822372c1a584909596e8"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2270_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 8187,
+      "sha256": "3758e3a4eadf9da164eeeebb67ae016743391998fec3c183a731df5207c786e3"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2271_easy_26_buy_only_net_30_no_adjacent_data.json": {
+      "bytes": 8130,
+      "sha256": "edf8df7bfaea9d7a68e46518768c5cdb44ca4a18f7946b10bc346a497dd1deaf"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2272_easy_repair_plan_easy.json": {
+      "bytes": 18275,
+      "sha256": "257f1f07b496aafc9a0e690693227142dbf0de047e6aa4c4350a16b3f9b1d8f7"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2273_easy_repair_plan_easy.json": {
+      "bytes": 17855,
+      "sha256": "7d9abf4a7bb31400ed27328007a33eacd28d81098092178b5c8d36b34f480b6f"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2274_easy_repair_plan_easy.json": {
+      "bytes": 17736,
+      "sha256": "1d4e1c230d659a1eaaa9d10557fa4a7334de39c8e78b75a750a86bb288c8693d"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2275_easy_repair_plan_easy.json": {
+      "bytes": 17595,
+      "sha256": "cf4cc739cca72f8f42532d7d9725cf71a7ffc1099a206d44b76dbde52b3574fb"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2276_easy_repair_plan_easy.json": {
+      "bytes": 17626,
+      "sha256": "998545b613603eea7ee507dd02f6a577e51c137f4e8b98517d3d221fa866477c"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2277_easy_repair_plan_easy.json": {
+      "bytes": 17889,
+      "sha256": "8eb3c317887136a9380ddd92013ba64cf87c97e90ae8d02e4d8e0ca8c61b7933"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2278_easy_repair_plan_easy.json": {
+      "bytes": 17925,
+      "sha256": "92740e648d9bffb4cca8cca6322ee8c68e0b870a43a26fad405f9481395cd95e"
+    },
+    "src/faraday_industrial_benchmark/distributor/fixtures/erp-bench/2279_easy_repair_plan_easy.json": {
+      "bytes": 18038,
+      "sha256": "13c81c59cc91e7cf2077ecfa4661484acc47b4ef9b0a1cee3adaff08798b7e2c"
+    }
+  },
+  "schema_version": "faraday-distributor-provenance/1",
+  "source": "erp-bench",
+  "upstream": {
+    "license": "CC0-1.0",
+    "repository": "https://github.com/agentic-labs/erp-bench.git",
+    "revision": "ceba3880af555129b5278e056a0c20f2fb5a0ba9"
+  }
+}

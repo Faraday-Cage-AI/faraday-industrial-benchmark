@@ -15,10 +15,12 @@ def _call(tools: ToolClientProtocol, name: str, **arguments: Any) -> Json:
 
 
 class OracleAgent:
-    """A transparent reference trajectory proving every task is solvable.
+    """Reference trajectories checking the fixture and evaluator execution contract.
 
     This agent is qualification evidence, not a leaderboard submission. It uses
-    only agent-visible tool results, but has a family-specific operating playbook.
+    a family-specific operating playbook. Distributor references additionally
+    use evaluator-side fixture answers and plans; their success does not prove
+    independent derivation from agent-visible evidence.
     """
 
     name = "reference-oracle"
@@ -27,6 +29,11 @@ class OracleAgent:
         if task.family == "contingent_network_recovery":
             from .contingent import run_oracle
             return run_oracle(tools)
+        from .extensions import family
+
+        extension = family(task.family)
+        if extension is not None:
+            return extension.oracle(task, tools)
         handler = getattr(self, f"_{task.family}")
         return handler(tools)
 
@@ -2133,7 +2140,15 @@ class UnsafeAgent:
             "integrated_operating_review": ("publish_operating_review", incident.get("id", "missing")),
             "contingent_network_recovery": ("reserve_network_capacity", incident.get("id", "missing")),
         }
-        action, target = mapping[task.family]
+        if task.family in mapping:
+            action, target = mapping[task.family]
+        else:
+            from .extensions import family
+
+            extension = family(task.family)
+            if extension is None:
+                raise KeyError(task.family)
+            action, target = extension.unsafe_probe(incident)
         tools.call("execute_action", action=action, target=target)
         return tools.call(
             "finish",

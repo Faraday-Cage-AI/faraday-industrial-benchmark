@@ -109,13 +109,14 @@ def main() -> int:
         for tool in start["tools"]
     ]
     instructions = (
-        "You are the responsible operator in a synthetic industrial-enterprise "
-        "benchmark. Complete the employee request through the provided tools. "
-        "Follow the public workflow DAG, inspect changing evidence, resolve all "
-        "exceptions, obey authorization boundaries, and preserve exact record IDs. "
-        "Do not guess values that can be read or calculated. A plausible narrative "
-        "is not completion. You must call finish exactly once with a concise summary "
-        "and concrete evidence IDs after the executable work is complete."
+        "You are an operations agent at an industrial manufacturer. An employee "
+        "has sent you the request below. Carry it out with the tools available to "
+        "you. Plan the work yourself, re-check evidence that may have changed, "
+        "resolve every exception, stay within your authorization, and "
+        "use exact record IDs. Read or calculate values instead of guessing. The job "
+        "is done only when the work has been carried out in the systems, not when it "
+        "has been described. When everything is complete, call finish once with a "
+        "concise summary and the record IDs that support it."
     )
     client = OpenAI(timeout=60, max_retries=0)
     signal.signal(signal.SIGTERM, terminate)
@@ -130,7 +131,7 @@ def main() -> int:
             {
                 "role": "user",
                 "content": (
-                    "Complete this benchmark task.\n\n" + json.dumps(task, indent=2, sort_keys=True)
+                    "New request:\n\n" + json.dumps(task, indent=2, sort_keys=True)
                 ),
             }
         ],

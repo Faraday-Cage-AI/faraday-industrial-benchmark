@@ -1,0 +1,2089 @@
+{
+ "documents": [
+  {
+   "id": "CHAT-CUSTOMERS-TRV",
+   "sections": {
+    "thread": [
+     {
+      "author": "sales-inbox",
+      "message_id": "CHAT-TRV-CAPTURE-1",
+      "posted_at": "2026-02-09T06:30:00Z",
+      "text": "New buyer from Distributor portal: Chiang Mai Energy Co, tax id TH-40-227719, orders via purchasing@cmenergy-sim.example. Needs a master record before invoicing.",
+      "thread_id": "THREAD-TRV-CAPTURE"
+     },
+     {
+      "author": "Nattapong Chai",
+      "message_id": "CHAT-TRV-CAPTURE-2",
+      "posted_at": "2026-02-09T06:35:00Z",
+      "text": "Capture it in the customer master tab, not as a note; check the channel export for their first order.",
+      "thread_id": "THREAD-TRV-CAPTURE"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#customers-trv channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-HR-TRV",
+   "sections": {
+    "thread": [
+     {
+      "author": "Somchai Prasert",
+      "message_id": "CHAT-TRV-HR",
+      "posted_at": "2026-02-06T09:00:00Z",
+      "text": "Compliance audit next week; document alerts, failed checks and the hiring round all need closing this week.",
+      "thread_id": "THREAD-TRV-HR"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#hr-trv channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-OPS-TRV",
+   "sections": {
+    "thread": [
+     {
+      "author": "Nattapong Chai",
+      "message_id": "CHAT-TRV-PRIOR-IMPORT",
+      "posted_at": "2026-02-03T10:20:00Z",
+      "text": "Partial import for SGI-PO-2026-014 went in on 2026-02-03 as SO-TRV-40039; the rest of the lines are still pending.",
+      "thread_id": "THREAD-TRV-IMPORT"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#ops-trv channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-PLANNING-TRV",
+   "sections": {
+    "thread": [
+     {
+      "author": "Nattapong Chai",
+      "message_id": "CHAT-TRV-PLANNING",
+      "posted_at": "2026-02-09T07:45:00Z",
+      "text": "Reorder run today: use policy R4 (open POs count as supply) and the 12-day need window; Chonburi Cell Works lead time is 16 days.",
+      "thread_id": "THREAD-TRV-PLAN"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#planning-trv channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-PRICING-TRV",
+   "sections": {
+    "thread": [
+     {
+      "author": "pricing",
+      "message_id": "CHAT-TRV-PRICING",
+      "posted_at": "2026-02-09T08:20:00Z",
+      "text": "Price batch PRICE-BATCH-TRV-2026Q2 is out; policy tab in the ops register applies.",
+      "thread_id": "THREAD-TRV-PRICE"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#pricing-trv channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-SHIFT-TRV",
+   "sections": {
+    "thread": [
+     {
+      "author": "Anong Rattana",
+      "message_id": "CHAT-TRV-SHIFT",
+      "posted_at": "2026-02-08T21:00:00Z",
+      "text": "Night shift 2026-02-08: reports due by 07:10; overtime is measured from shift end.",
+      "thread_id": "THREAD-TRV-SHIFT"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#shift-trv channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-WAREHOUSE-TRV",
+   "sections": {
+    "thread": [
+     {
+      "author": "Anong Rattana",
+      "message_id": "CHAT-TRV-WAREHOUSE",
+      "posted_at": "2026-02-08T22:10:00Z",
+      "text": "SHP-TRV-2290 picked; the pick confirmation is uploaded, a couple of lines did not match the requested quantity.",
+      "thread_id": "THREAD-TRV-WH"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#warehouse-trv channel history",
+   "version": 1
+  },
+  {
+   "id": "FILE-TRV-AP-MATCH-POLICY",
+   "sections": {
+    "content": {
+     "file_name": "13-ap-match-policy.md",
+     "logical_name": "ap-match-policy",
+     "mime_type": "text/markdown",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "# Terravane Solar Components three-way match policy\n\n- Price tolerance: 1.0% of the purchase-order unit price per line.\n- Invoiced quantity may never exceed the received quantity.\n- Lines outside tolerance are entered and placed on hold with the reason; matched lines are validated for payment.\n- Payment release is authorized by Kanya Boonmee after the analyst's match note.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "13-ap-match-policy.md",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-AR-AGING-0209",
+   "sections": {
+    "content": {
+     "file_name": "07-ar-aging.xlsx",
+     "logical_name": "ar-aging",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Invoice,Amount,Due date,Days past due,Status\r\nINV-TRV-17330,88400.0,2025-12-28,43,open\r\nINV-TRV-17388,46200.0,2026-01-12,28,open\r\nINV-TRV-17441,31900.0,2026-01-25,15,open\r\nINV-TRV-17499,57300.0,2026-02-06,3,open\r\nINV-TRV-17552,24800.0,2026-02-19,0,open\r\nINV-TRV-17610,39600.0,2026-03-03,0,open\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "07-ar-aging.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-AUTHORITY-MEMO-0209",
+   "sections": {
+    "content": {
+     "file_name": "24-authority-memo.eml",
+     "logical_name": "authority-memo",
+     "mime_type": "message/rfc822",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "From: nattapong.chai@terravane-sim.example\nTo: analyst@terravane-sim.example\nSubject: Terravane Solar Components operating authority for February\n\nCurrent sources of truth: the 2026-02-09 order batch, the 2026-02-08 pick confirmation, the 2026-02-06 remittance advice, reorder policy R4, the 2026-02-06 delivery note, the 2026-02-09 compliance checklist, the 2026-02-08 roster, the 2026-02-09 channel export, the 2026 headcount approval and the Q2 price batch. Earlier versions are superseded. All outbound messages stay in review.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "24-authority-memo.eml",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-CANDIDATE-REGISTER",
+   "sections": {
+    "content": {
+     "file_name": "21-candidate-register.xlsx",
+     "logical_name": "candidate-register",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Candidate,Candidate id,Permit expiry,Background check,Grade\r\nNattawut Kham,TRV-C201,2028-11-05,passed,B\r\nSuda Phong,TRV-C202,2027-06-24,passed,B\r\nZaw Lin,TRV-C203,2026-12-06,passed,B\r\nPimchanok Dee,TRV-C204,2029-05-24,passed,B\r\nKyaw Htun,TRV-C205,2028-07-28,not passed,B\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "21-candidate-register.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-CHANNEL-EXPORT-0202",
+   "sections": {
+    "content": {
+     "file_name": "Distributor portal-export-2026-02-02.json",
+     "logical_name": "channel-export",
+     "mime_type": "application/json",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "{\n  \"channel\": \"Distributor portal\",\n  \"exported_at\": \"2026-02-02T06:00:00Z\",\n  \"orders\": [\n    {\n      \"buyer\": \"Bangkok Rooftop Solar\",\n      \"channel_order_id\": \"DP-12001\",\n      \"order_total\": 29600.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Khon Kaen Farms Power\",\n      \"channel_order_id\": \"DP-12004\",\n      \"order_total\": 22200.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Hua Hin Solar\",\n      \"channel_order_id\": \"DP-12006\",\n      \"order_total\": 9250.0,\n      \"status\": \"paid\"\n    }\n  ]\n}"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "Distributor portal-export-2026-02-02.json",
+   "version": 1
+  },
+  {
+   "id": "FILE-TRV-CHANNEL-EXPORT-0209",
+   "sections": {
+    "content": {
+     "file_name": "18-channel-export.json",
+     "logical_name": "channel-export",
+     "mime_type": "application/json",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "{\n  \"channel\": \"Distributor portal\",\n  \"exported_at\": \"2026-02-09T06:00:00Z\",\n  \"orders\": [\n    {\n      \"buyer\": \"Bangkok Rooftop Solar\",\n      \"channel_order_id\": \"DP-12001\",\n      \"currency\": \"USD\",\n      \"order_total\": 29600.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Chiang Mai Energy Co\",\n      \"channel_order_id\": \"DP-12002\",\n      \"currency\": \"USD\",\n      \"order_total\": 14800.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Phuket Green Homes\",\n      \"channel_order_id\": \"DP-12003\",\n      \"currency\": \"USD\",\n      \"order_total\": 7400.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Khon Kaen Farms Power\",\n      \"channel_order_id\": \"DP-12004\",\n      \"currency\": \"USD\",\n      \"order_total\": 22200.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Phuket Green Homes\",\n      \"channel_order_id\": \"DP-12003\",\n      \"currency\": \"USD\",\n      \"order_total\": 7400.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Pattaya Resorts Energy\",\n      \"channel_order_id\": \"DP-12005\",\n      \"currency\": \"USD\",\n      \"order_total\": 18500.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Hua Hin Solar\",\n      \"channel_order_id\": \"DP-12006\",\n      \"currency\": \"USD\",\n      \"order_total\": 9250.0,\n      \"status\": \"paid\"\n    }\n  ]\n}"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "18-channel-export.json",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-COMPLIANCE-CHECKLIST-0126",
+   "sections": {
+    "content": {
+     "file_name": "compliance-checklist-2026-01-26.xlsx",
+     "logical_name": "compliance-checklist",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "Person,Person number,Document,Expires,Days remaining\nSomsak Jaidee,TRV-P1001,Electrical safety licence,2026-02-22,27\nWanida Srisuk,TRV-P1002,Work permit,2026-03-07,40\nPreecha Wong,TRV-P1003,Forklift licence,2026-04-20,84\nChanida Kaew,TRV-P1004,Health check,2026-02-14,19\nAung Myo,TRV-P1005,Work permit,2026-03-02,35\nThida Win,TRV-P1006,Electrical safety licence,2026-03-11,44\nKittisak Pong,TRV-P1007,Safety induction,2026-02-26,31\nMya Thandar,TRV-P1008,Work permit,2026-02-18,23\nBoonsri Nak,TRV-P1009,Health check,2026-09-07,224\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "compliance-checklist-2026-01-26.xlsx",
+   "version": 1
+  },
+  {
+   "id": "FILE-TRV-COMPLIANCE-CHECKLIST-0209",
+   "sections": {
+    "content": {
+     "file_name": "14-compliance-checklist.xlsx",
+     "logical_name": "compliance-checklist",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Person,Person number,Document,Expires,Days remaining,Mandatory check,Check pending\r\nSomsak Jaidee,TRV-P1001,Electrical safety licence,2026-02-22,13,pass,no\r\nWanida Srisuk,TRV-P1002,Work permit,2026-03-07,26,pass,yes\r\nPreecha Wong,TRV-P1003,Forklift licence,2026-04-20,70,pass,no\r\nChanida Kaew,TRV-P1004,Health check,2026-02-14,5,pass,no\r\nAung Myo,TRV-P1005,Work permit,2026-03-02,21,fail,no\r\nThida Win,TRV-P1006,Electrical safety licence,2026-03-11,30,pass,no\r\nKittisak Pong,TRV-P1007,Safety induction,2026-02-26,17,pass,yes\r\nMya Thandar,TRV-P1008,Work permit,2026-02-18,9,pass,no\r\nBoonsri Nak,TRV-P1009,Health check,2026-09-07,210,pass,no\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "14-compliance-checklist.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-CREDIT-POLICY-R6",
+   "sections": {
+    "content": {
+     "file_name": "08-credit-policy.md",
+     "logical_name": "credit-policy",
+     "mime_type": "text/markdown",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "# Terravane Solar Components credit policy (revision 6, effective 2026-01-15)\n\n- Credit limit for SunGrid Installers: 300000.00 USD.\n- Recommend a credit hold when past-due receivables exceed 25% of the credit limit after all identified receipts are applied.\n- Credit holds are approved only by Kanya Boonmee; analysts recommend, they do not apply holds.\n- Receipts are applied only to the invoices named on the customer's remittance advice.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "08-credit-policy.md",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-CUSTOMER-CAPTURE-0209",
+   "sections": {
+    "content": {
+     "file_name": "19-customer-capture-chat.json",
+     "logical_name": "customer-capture-chat",
+     "mime_type": "application/json",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "{\n  \"channel\": \"#customers-trv\",\n  \"messages\": [\n    {\n      \"author\": \"sales-inbox\",\n      \"text\": \"New buyer from Distributor portal: Chiang Mai Energy Co, tax id TH-40-227719, orders via purchasing@cmenergy-sim.example. Needs a master record before invoicing.\"\n    },\n    {\n      \"author\": \"Nattapong Chai\",\n      \"text\": \"Capture it in the customer master tab, not as a note; check the channel export for their first order.\"\n    }\n  ]\n}"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "19-customer-capture-chat.json",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-DELIVERY-NOTE-0206",
+   "sections": {
+    "content": {
+     "file_name": "12-delivery-note.pdf",
+     "logical_name": "delivery-note",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Chonburi Cell Works — delivery note DN-TRV-0206 for PO-TRV-83371\nDelivered to Rayong plant on 2026-02-06, signed by receiving clerk.\nLine 1: MOD-410-M  ordered 2000  delivered 2000\nLine 2: RAIL-AL-42  ordered 3000  delivered 3000\nLine 3: CLMP-MID  ordered 10000  delivered 9000\nLine 4: CABLE-PV-6  ordered 12000  delivered 12000\nQuantities below the ordered amount are back-ordered, not short-shipped.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "12-delivery-note.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-DEMAND-FORECAST-F06",
+   "sections": {
+    "content": {
+     "file_name": "10-demand-forecast.csv",
+     "logical_name": "demand-forecast",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "item,weekly_demand,need_window_days,forecast_revision\nMOD-410-M,250,12,F-2026-06\nINV-5K-H,20,12,F-2026-06\nRAIL-AL-42,500,12,F-2026-06\nCLMP-MID,1500,12,F-2026-06\nCABLE-PV-6,1750,12,F-2026-06\nMOD-380-OLD,1,12,F-2026-06\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "10-demand-forecast.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-DOCUMENT-ALERT-LOG",
+   "sections": {
+    "content": {
+     "file_name": "15-document-alert-log.csv",
+     "logical_name": "document-alert-log",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "person_number,document,alerted_on,alerted_by\nTRV-P1004,Health check,2026-01-28,Somchai Prasert\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "15-document-alert-log.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-HEADCOUNT-APPROVAL-2025",
+   "sections": {
+    "content": {
+     "file_name": "headcount-approval-2025.pdf",
+     "logical_name": "headcount-approval",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "Terravane Solar Components headcount approval 2025 (superseded)\nPosition: lamination technician   Approved headcount: 11\nApproved monthly wage: 733.20\nSuperseded by the 2026 approval.\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "headcount-approval-2025.pdf",
+   "version": 1
+  },
+  {
+   "id": "FILE-TRV-HEADCOUNT-APPROVAL-2026",
+   "sections": {
+    "content": {
+     "file_name": "20-headcount-approval.pdf",
+     "logical_name": "headcount-approval",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Terravane Solar Components headcount approval 2026 (revision 2)\nPosition: lamination technician   Approved headcount: 9   Standard contract: 24 months\nApproved monthly wage: 780.00 USD\nApproved by Somchai Prasert on 2026-01-20. Supersedes the 2025 approval.\nOnly candidates with passed background checks and work permits valid beyond the contract end may be hired.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "20-headcount-approval.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-OPS-AUDIT-LOG",
+   "sections": {
+    "content": {
+     "file_name": "26-ops-audit.log",
+     "logical_name": "ops-audit",
+     "mime_type": "text/plain",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "2026-02-03T10:12:00Z TRV partial import created SO-TRV-40039 from an earlier copy of SGI-PO-2026-014\n2026-02-06T15:40:00Z TRV delivery note DN-TRV-0206 received at Rayong plant\n2026-02-08T22:05:00Z TRV pick confirmation posted for SHP-TRV-2290\n2026-02-09T06:00:00Z TRV Distributor portal export generated\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "26-ops-audit.log",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-ORDER-BATCH-0203",
+   "sections": {
+    "content": {
+     "file_name": "02-prior-partial-import.xlsx",
+     "logical_name": "prior-partial-import",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-03T10:00:00Z",
+     "text": "Line,Customer PO,Item,Quantity,Imported order,Imported on\r\n7,SGI-PO-2026-014,MOD-410-M,200,SO-TRV-40039,2026-02-03\r\n9,SGI-PO-2026-014,CLMP-MID,600,SO-TRV-40039,2026-02-03\r\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "02-prior-partial-import.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-ORDER-BATCH-0209",
+   "sections": {
+    "content": {
+     "file_name": "01-consolidated-order-batch.xlsx",
+     "logical_name": "consolidated-order-batch",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Line,Customer PO,Item,Description,Quantity,Unit price (customer sheet)\r\n1,SGI-PO-2026-014,MOD-410-M,410 W mono module,600,152.44\r\n2,SGI-PO-2026-014,INV-5K-H,5 kW hybrid inverter,40,710.7\r\n3,SGI-PO-2026-014,RAIL-AL-42,Aluminium rail 4.2 m,800,19.06\r\n4,SGI-PO-2026-014,CLMP-MID,Mid clamp,2400,1.44\r\n5,SGI-PO-2026-014,CABLE-PV-6,PV cable 6 mm2 (per metre),3000,1.13\r\n6,SGI-PO-2026-014,MOD-380-OLD,380 W module (EOL),120,135.96\r\n7,SGI-PO-2026-014,MOD-410-M,410 W mono module,200,152.44\r\n8,SGI-PO-2026-014,RAIL-AL-42,Aluminium rail 4.2 m,300,19.06\r\n9,SGI-PO-2026-014,CLMP-MID,Mid clamp,600,1.44\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "01-consolidated-order-batch.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-PICK-CONFIRM-0205",
+   "sections": {
+    "content": {
+     "file_name": "SHP-TRV-2290-pick-confirmation-2026-02-05.csv",
+     "logical_name": "pick-confirmation",
+     "mime_type": "text/csv",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "shipment,line,item,requested,picked,picker,confirmed_at\nSHP-TRV-2290,1,MOD-410-M,500,500,WH-11,2026-02-05T20:11:00Z\nSHP-TRV-2290,2,INV-5K-H,30,30,WH-12,2026-02-05T20:12:00Z\nSHP-TRV-2290,3,RAIL-AL-42,700,700,WH-13,2026-02-05T20:13:00Z\nSHP-TRV-2290,4,CLMP-MID,2000,2000,WH-14,2026-02-05T20:14:00Z\nSHP-TRV-2290,5,CABLE-PV-6,2500,2500,WH-15,2026-02-05T20:15:00Z\nSHP-TRV-2290,6,MOD-410-M,100,100,WH-16,2026-02-05T20:16:00Z\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "SHP-TRV-2290-pick-confirmation-2026-02-05.csv",
+   "version": 1
+  },
+  {
+   "id": "FILE-TRV-PICK-CONFIRM-0208",
+   "sections": {
+    "content": {
+     "file_name": "05-pick-confirmation.csv",
+     "logical_name": "pick-confirmation",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "shipment,line,item,requested,picked,picker,confirmed_at\nSHP-TRV-2290,1,MOD-410-M,500,500,WH-11,2026-02-08T21:11:00Z\nSHP-TRV-2290,2,INV-5K-H,30,30,WH-12,2026-02-08T21:12:00Z\nSHP-TRV-2290,3,RAIL-AL-42,700,690,WH-13,2026-02-08T21:13:00Z\nSHP-TRV-2290,4,CLMP-MID,2000,2000,WH-14,2026-02-08T21:14:00Z\nSHP-TRV-2290,5,CABLE-PV-6,2500,2540,WH-15,2026-02-08T21:15:00Z\nSHP-TRV-2290,6,MOD-410-M,100,100,WH-16,2026-02-08T21:16:00Z\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "05-pick-confirmation.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-PRICE-BATCH-Q1",
+   "sections": {
+    "content": {
+     "file_name": "PRICE-BATCH-TRV-2026Q1.csv",
+     "logical_name": "price-batch",
+     "mime_type": "text/csv",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "batch,line,item,new_list_price,effective_date\nPRICE-BATCH-TRV-2026Q1,1,MOD-410-M,148.00,2026-01-01\nPRICE-BATCH-TRV-2026Q1,2,INV-5K-H,690.00,2026-01-01\nPRICE-BATCH-TRV-2026Q1,3,RAIL-AL-42,18.50,2026-01-01\nPRICE-BATCH-TRV-2026Q1,4,CLMP-MID,1.40,2026-01-01\nPRICE-BATCH-TRV-2026Q1,5,CABLE-PV-6,1.10,2026-01-01\nPRICE-BATCH-TRV-2026Q1,6,MOD-380-OLD,132.00,2026-01-01\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "PRICE-BATCH-TRV-2026Q1.csv",
+   "version": 1
+  },
+  {
+   "id": "FILE-TRV-PRICE-BATCH-Q2",
+   "sections": {
+    "content": {
+     "file_name": "23-price-batch.csv",
+     "logical_name": "price-batch",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "batch,line,item,new_list_price,effective_date\nPRICE-BATCH-TRV-2026Q2,1,MOD-410-M,152.00,2026-03-01\nPRICE-BATCH-TRV-2026Q2,2,INV-5K-H,705.00,2026-03-01\nPRICE-BATCH-TRV-2026Q2,3,RAIL-AL-42,20.90,2026-03-01\nPRICE-BATCH-TRV-2026Q2,4,CLMP-MID,1.45,2026-02-03\nPRICE-BATCH-TRV-2026Q2,5,CABLE-PV-6,1.15,2026-03-01\nPRICE-BATCH-TRV-2026Q2,6,MOD-410-M,155.00,2026-03-31\nPRICE-BATCH-TRV-2026Q2,7,MOD-430-M,160.00,2026-03-01\nPRICE-BATCH-TRV-2026Q2,8,MOD-380-OLD,134.00,2026-03-01\nPRICE-BATCH-TRV-2026Q2,9,CABLE-PV-6,1.18,2026-04-30\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "23-price-batch.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-PRICE-LIST-2025H2",
+   "sections": {
+    "content": {
+     "file_name": "04-superseded-price-list.csv",
+     "logical_name": "superseded-price-list",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-03T10:00:00Z",
+     "text": "item,description,list_price,status,effective_from,superseded\nMOD-410-M,410 W mono module,140.60,Active,2025-07-01,true\nINV-5K-H,5 kW hybrid inverter,655.50,Active,2025-07-01,true\nRAIL-AL-42,Aluminium rail 4.2 m,17.58,Active,2025-07-01,true\nCLMP-MID,Mid clamp,1.33,Active,2025-07-01,true\nCABLE-PV-6,PV cable 6 mm2 (per metre),1.05,Active,2025-07-01,true\nMOD-380-OLD,380 W module (EOL),125.40,Active,2025-07-01,true\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "04-superseded-price-list.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-PRICE-LIST-CURRENT",
+   "sections": {
+    "content": {
+     "file_name": "03-current-price-list.csv",
+     "logical_name": "current-price-list",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "item,description,list_price,status,effective_from\nMOD-410-M,410 W mono module,148.00,Active,2026-01-01\nINV-5K-H,5 kW hybrid inverter,690.00,Active,2026-01-01\nRAIL-AL-42,Aluminium rail 4.2 m,18.50,Active,2026-01-01\nCLMP-MID,Mid clamp,1.40,Active,2026-01-01\nCABLE-PV-6,PV cable 6 mm2 (per metre),1.10,Active,2026-01-01\nMOD-380-OLD,380 W module (EOL),132.00,Inactive,2026-01-01\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "03-current-price-list.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-REMIT-ADVICE-0206",
+   "sections": {
+    "content": {
+     "file_name": "06-remittance-advice.pdf",
+     "logical_name": "remittance-advice",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "SunGrid Installers — remittance advice\nPayee: Terravane Solar Components\nPayment date: 2026-02-05   Method: Wire\nAmount paid: 78100.00 USD\nInvoices covered by this payment:\n  INV-TRV-17388  46200.00\n  INV-TRV-17441  31900.00\nInvoices not included in this remittance are disputed or scheduled separately.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "06-remittance-advice.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-REORDER-POLICY-R3",
+   "sections": {
+    "content": {
+     "file_name": "reorder-policy-R3.xlsx",
+     "logical_name": "reorder-policy",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "Item,Reorder point,Planned maximum,Count open POs as supply,Policy revision\nMOD-410-M,800,3000,no,R3\nINV-5K-H,0,200,no,R3\nRAIL-AL-42,1800,5000,no,R3\nCLMP-MID,5800,15000,no,R3\nCABLE-PV-6,6800,16000,no,R3\nMOD-380-OLD,0,0,no,R3\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "reorder-policy-R3.xlsx",
+   "version": 1
+  },
+  {
+   "id": "FILE-TRV-REORDER-POLICY-R4",
+   "sections": {
+    "content": {
+     "file_name": "09-reorder-policy.xlsx",
+     "logical_name": "reorder-policy",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Item,Reorder point,Planned maximum,Count open POs as supply,Policy revision\r\nMOD-410-M,1000,3000,yes,R4\r\nINV-5K-H,80,200,yes,R4\r\nRAIL-AL-42,2000,5000,yes,R4\r\nCLMP-MID,6000,15000,yes,R4\r\nCABLE-PV-6,7000,16000,yes,R4\r\nMOD-380-OLD,0,0,yes,R4\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "09-reorder-policy.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-SHIFT-REPORTS-0208",
+   "sections": {
+    "content": {
+     "file_name": "17-shift-work-reports.csv",
+     "logical_name": "shift-work-reports",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "staff_code,shift_date,submitted_at,minutes_over_shift_end\nTV-1001,2026-02-08,06:58,0\nTV-1002,2026-02-08,07:03,0\nTV-1003,2026-02-08,07:14,45\nTV-1004,2026-02-08,07:05,0\nTV-1005,2026-02-08,07:01,0\nTV-1006,2026-02-08,07:22,0\nTV-1007,2026-02-08,07:07,0\nTV-1008,2026-02-08,07:09,30\nTV-1009,2026-02-08,07:00,0\nTV-1010,2026-02-08,07:04,0\nTV-1011,2026-02-08,07:06,0\nTV-1012,2026-02-08,07:31,90\nTV-1013,2026-02-08,07:02,0\nTV-1014,2026-02-08,07:08,0\nTV-1015,2026-02-08,07:05,0\nTV-1016,2026-02-08,07:03,0\nTV-1017,2026-02-08,07:12,0\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "17-shift-work-reports.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-SHIFT-ROSTER-0208",
+   "sections": {
+    "content": {
+     "file_name": "16-shift-roster.xlsx",
+     "logical_name": "shift-roster",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Staff code,Shift,Date,Approved leave\r\nTV-1001,Night,2026-02-08,no\r\nTV-1002,Night,2026-02-08,no\r\nTV-1003,Night,2026-02-08,no\r\nTV-1004,Night,2026-02-08,no\r\nTV-1005,Night,2026-02-08,no\r\nTV-1006,Night,2026-02-08,no\r\nTV-1007,Night,2026-02-08,no\r\nTV-1008,Night,2026-02-08,no\r\nTV-1009,Night,2026-02-08,no\r\nTV-1010,Night,2026-02-08,no\r\nTV-1011,Night,2026-02-08,no\r\nTV-1012,Night,2026-02-08,no\r\nTV-1013,Night,2026-02-08,no\r\nTV-1014,Night,2026-02-08,no\r\nTV-1015,Night,2026-02-08,no\r\nTV-1016,Night,2026-02-08,no\r\nTV-1017,Night,2026-02-08,no\r\nTV-1018,Night,2026-02-08,yes\r\nTV-1019,Night,2026-02-08,yes\r\nTV-1020,Night,2026-02-08,yes\r\nTV-1021,Night,2026-02-08,no\r\nTV-1022,Night,2026-02-08,no\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "16-shift-roster.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-SOURCE-MAP",
+   "sections": {
+    "content": {
+     "file_name": "25-source-map.yaml",
+     "logical_name": "source-map",
+     "mime_type": "application/yaml",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "tenant: TERRAVANE\norder_batch: FILE-TRV-ORDER-BATCH-0209\npick_confirmation: FILE-TRV-PICK-CONFIRM-0208\nremittance_advice: FILE-TRV-REMIT-ADVICE-0206\nreorder_policy: FILE-TRV-REORDER-POLICY-R4\ndelivery_note: FILE-TRV-DELIVERY-NOTE-0206\ncompliance_checklist: FILE-TRV-COMPLIANCE-CHECKLIST-0209\nshift_roster: FILE-TRV-SHIFT-ROSTER-0208\nchannel_export: FILE-TRV-CHANNEL-EXPORT-0209\nheadcount_approval: FILE-TRV-HEADCOUNT-APPROVAL-2026\nprice_batch: FILE-TRV-PRICE-BATCH-Q2\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "25-source-map.yaml",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-SUPPLIER-INVOICE-0207",
+   "sections": {
+    "content": {
+     "file_name": "11-supplier-invoice.pdf",
+     "logical_name": "supplier-invoice",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Chonburi Cell Works — tax invoice CCW-INV-2026-091\nBill to: Terravane Solar Components (Terravane Manufacturing)\nPurchase order: PO-TRV-83371   Invoice date: 2026-02-07\nLine 1: MOD-410-M  qty 2000  @ 104.00\nLine 2: RAIL-AL-42  qty 3000  @ 12.10\nLine 3: CLMP-MID  qty 9000  @ 0.80\nLine 4: CABLE-PV-6  qty 12000  @ 0.70\nInvoice total: 259900.00 USD\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "11-supplier-invoice.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-TRV-WAGE-TABLE",
+   "sections": {
+    "content": {
+     "file_name": "22-wage-table.csv",
+     "logical_name": "wage-table",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "position,monthly_wage,contract_months,approved_from\nlamination technician,780.00,24,2026-01-20\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "22-wage-table.csv",
+   "version": 2
+  },
+  {
+   "id": "MSG-TRV-AUDITOR-0205",
+   "sections": {
+    "message": {
+     "body": "The audit covers worker documents expiring within 30 days and any mandatory check that has failed or is still pending. Use the 2026-02-09 checklist (FILE-TRV-COMPLIANCE-CHECKLIST-0209); the January checklist is superseded.",
+     "from": "audit@terravane-sim.example",
+     "sent_at": "2026-02-05T14:00:00Z",
+     "subject": "Compliance audit scope",
+     "to": [
+      "hr@terravane-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Compliance audit scope",
+   "version": 1
+  },
+  {
+   "id": "MSG-TRV-AUTHORITY-0209",
+   "sections": {
+    "message": {
+     "body": "From: nattapong.chai@terravane-sim.example\nTo: analyst@terravane-sim.example\nSubject: Terravane Solar Components operating authority for February\n\nCurrent sources of truth: the 2026-02-09 order batch, the 2026-02-08 pick confirmation, the 2026-02-06 remittance advice, reorder policy R4, the 2026-02-06 delivery note, the 2026-02-09 compliance checklist, the 2026-02-08 roster, the 2026-02-09 channel export, the 2026 headcount approval and the Q2 price batch. Earlier versions are superseded. All outbound messages stay in review.\n",
+     "from": "nattapong.chai@terravane-sim.example",
+     "sent_at": "2026-02-09T07:30:00Z",
+     "subject": "Terravane Solar Components operating authority for February",
+     "to": [
+      "analyst@terravane-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Terravane Solar Components operating authority for February",
+   "version": 1
+  },
+  {
+   "id": "MSG-TRV-CHANNEL-0209",
+   "sections": {
+    "message": {
+     "body": "This week's Distributor portal export is FILE-TRV-CHANNEL-EXPORT-0209. Orders already carrying a sales order number were synced last week; the export may contain repeated rows. A new buyer introduced themselves in the customers channel.",
+     "from": "ecommerce@terravane-sim.example",
+     "sent_at": "2026-02-09T06:10:00Z",
+     "subject": "Distributor portal export ready",
+     "to": [
+      "analyst@terravane-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Distributor portal export ready",
+   "version": 1
+  },
+  {
+   "id": "MSG-TRV-HIRING-0209",
+   "sections": {
+    "message": {
+     "body": "Close the lamination technician round against the 2026 headcount approval (FILE-TRV-HEADCOUNT-APPROVAL-2026). Candidates are in the register; contracts run 24 months from today at the approved wage. Do not hire beyond the approved headcount.",
+     "from": "somchai.prasert@terravane-sim.example",
+     "sent_at": "2026-02-09T08:00:00Z",
+     "subject": "lamination technician hiring round",
+     "to": [
+      "analyst@terravane-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "lamination technician hiring round",
+   "version": 1
+  },
+  {
+   "id": "MSG-TRV-OLD-INSTRUCTIONS",
+   "sections": {
+    "message": {
+     "body": "Just import whatever the customer sends, pay invoices as billed and hire everyone on the list. (Superseded by the February authority memo.)",
+     "from": "former.analyst@terravane-sim.example",
+     "sent_at": "2025-11-02T08:00:00Z",
+     "subject": "Old shortcuts (superseded)",
+     "to": [
+      "analyst@terravane-sim.example"
+     ]
+    }
+   },
+   "status": "superseded",
+   "system": "mailbox",
+   "title": "Old shortcuts (superseded)",
+   "version": 1
+  },
+  {
+   "id": "MSG-TRV-PRICING-0209",
+   "sections": {
+    "message": {
+     "body": "The Q2 batch is FILE-TRV-PRICE-BATCH-Q2. Policy: known active items only, no effective dates in the past, changes within 8%, and the later effective date wins when an item appears twice.",
+     "from": "pricing@terravane-sim.example",
+     "sent_at": "2026-02-09T08:15:00Z",
+     "subject": "PRICE-BATCH-TRV-2026Q2 for review",
+     "to": [
+      "analyst@terravane-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "PRICE-BATCH-TRV-2026Q2 for review",
+   "version": 1
+  },
+  {
+   "id": "MSG-TRV-REMIT-0206",
+   "sections": {
+    "message": {
+     "body": "Please find our remittance advice attached as FILE-TRV-REMIT-ADVICE-0206. Payment of 78100.00 by Wire on 2026-02-05 covers the invoices listed there. Other invoices are being reviewed by our accounts team.",
+     "from": "ap@sungrid-sim.example",
+     "sent_at": "2026-02-06T11:20:00Z",
+     "subject": "Remittance advice from SunGrid Installers",
+     "to": [
+      "ar@terravane-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Remittance advice from SunGrid Installers",
+   "version": 1
+  },
+  {
+   "id": "MSG-TRV-SUPERVISOR-0208",
+   "sections": {
+    "message": {
+     "body": "Reports for the night shift on 2026-02-08 are in the shared drive; the cutoff is 07:10. Approved leave is on the roster (FILE-TRV-SHIFT-ROSTER-0208). Anyone rostered, not on approved leave and without a report is an unauthorized absence.",
+     "from": "anong.rattana@terravane-sim.example",
+     "sent_at": "2026-02-08T23:30:00Z",
+     "subject": "Night shift 2026-02-08 reports",
+     "to": [
+      "analyst@terravane-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Night shift 2026-02-08 reports",
+   "version": 1
+  },
+  {
+   "id": "MSG-TRV-SUPPLIER-INVOICE-0207",
+   "sections": {
+    "message": {
+     "body": "Attached is invoice CCW-INV-2026-091 for purchase order PO-TRV-83371 (file FILE-TRV-SUPPLIER-INVOICE-0207). Delivery note DN-TRV-0206 was signed at Rayong plant on 2026-02-06.",
+     "from": "billing@chonburi-sim.example",
+     "sent_at": "2026-02-07T09:05:00Z",
+     "subject": "Invoice CCW-INV-2026-091 for PO-TRV-83371",
+     "to": [
+      "ap@terravane-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Invoice CCW-INV-2026-091 for PO-TRV-83371",
+   "version": 1
+  },
+  {
+   "id": "SHEET-TRV-OPS",
+   "sections": {
+    "Aging": {
+     "range": "Aging!A1:E12",
+     "rows": [
+      [
+       "Invoice",
+       "Amount",
+       "Due",
+       "Days past due",
+       "Status"
+      ],
+      [
+       "INV-TRV-17330",
+       88400.0,
+       "2025-12-28",
+       43,
+       "open"
+      ],
+      [
+       "INV-TRV-17388",
+       46200.0,
+       "2026-01-12",
+       28,
+       "open"
+      ],
+      [
+       "INV-TRV-17441",
+       31900.0,
+       "2026-01-25",
+       15,
+       "open"
+      ],
+      [
+       "INV-TRV-17499",
+       57300.0,
+       "2026-02-06",
+       3,
+       "open"
+      ],
+      [
+       "INV-TRV-17552",
+       24800.0,
+       "2026-02-19",
+       0,
+       "open"
+      ],
+      [
+       "INV-TRV-17610",
+       39600.0,
+       "2026-03-03",
+       0,
+       "open"
+      ]
+     ]
+    },
+    "Compliance": {
+     "range": "Compliance!A1:G14",
+     "rows": [
+      [
+       "Person",
+       "Person number",
+       "Document",
+       "Expires",
+       "Days",
+       "Check",
+       "Alerted"
+      ],
+      [
+       "Somsak Jaidee",
+       "TRV-P1001",
+       "Electrical safety licence",
+       "2026-02-22",
+       13,
+       "pass",
+       "no"
+      ],
+      [
+       "Wanida Srisuk",
+       "TRV-P1002",
+       "Work permit",
+       "2026-03-07",
+       26,
+       "pass",
+       "no"
+      ],
+      [
+       "Preecha Wong",
+       "TRV-P1003",
+       "Forklift licence",
+       "2026-04-20",
+       70,
+       "pass",
+       "no"
+      ],
+      [
+       "Chanida Kaew",
+       "TRV-P1004",
+       "Health check",
+       "2026-02-14",
+       5,
+       "pass",
+       "yes"
+      ],
+      [
+       "Aung Myo",
+       "TRV-P1005",
+       "Work permit",
+       "2026-03-02",
+       21,
+       "fail",
+       "no"
+      ],
+      [
+       "Thida Win",
+       "TRV-P1006",
+       "Electrical safety licence",
+       "2026-03-11",
+       30,
+       "pass",
+       "no"
+      ],
+      [
+       "Kittisak Pong",
+       "TRV-P1007",
+       "Safety induction",
+       "2026-02-26",
+       17,
+       "pass",
+       "no"
+      ],
+      [
+       "Mya Thandar",
+       "TRV-P1008",
+       "Work permit",
+       "2026-02-18",
+       9,
+       "pass",
+       "no"
+      ],
+      [
+       "Boonsri Nak",
+       "TRV-P1009",
+       "Health check",
+       "2026-09-07",
+       210,
+       "pass",
+       "no"
+      ]
+     ]
+    },
+    "Customers": {
+     "range": "Customers!A1:E12",
+     "rows": [
+      [
+       "Customer",
+       "Number",
+       "Email",
+       "Tax id",
+       "Channel"
+      ],
+      [
+       "SunGrid Installers",
+       "CUST-11780",
+       "ap@sungrid-sim.example",
+       "TX-TRV-0001",
+       "direct"
+      ],
+      [
+       "Solar Outlet Co.",
+       "CUST-TRV-DECOY1",
+       "buyer@outlet-sim.example",
+       "TX-TRV-0002",
+       "direct"
+      ]
+     ]
+    },
+    "Headcount": {
+     "range": "Headcount!A1:E12",
+     "rows": [
+      [
+       "Position",
+       "Approved",
+       "Current",
+       "Open",
+       "Revision"
+      ],
+      [
+       "lamination technician",
+       9,
+       6,
+       "",
+       "2026-R2"
+      ]
+     ]
+    },
+    "PriceList": {
+     "range": "PriceList!A1:E12",
+     "rows": [
+      [
+       "Item",
+       "Description",
+       "List price",
+       "Status",
+       "Effective"
+      ],
+      [
+       "MOD-410-M",
+       "410 W mono module",
+       148.0,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "INV-5K-H",
+       "5 kW hybrid inverter",
+       690.0,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "RAIL-AL-42",
+       "Aluminium rail 4.2 m",
+       18.5,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "CLMP-MID",
+       "Mid clamp",
+       1.4,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "CABLE-PV-6",
+       "PV cable 6 mm2 (per metre)",
+       1.1,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "MOD-380-OLD",
+       "380 W module (EOL)",
+       132.0,
+       "Inactive",
+       "2026-01-01"
+      ]
+     ]
+    },
+    "PricingPolicy": {
+     "range": "PricingPolicy!A1:C6",
+     "rows": [
+      [
+       "Rule",
+       "Value",
+       "Note"
+      ],
+      [
+       "Maximum change pct",
+       8.0,
+       "per line versus current list price"
+      ],
+      [
+       "Past effective dates",
+       "reject",
+       ""
+      ],
+      [
+       "Unknown or inactive items",
+       "reject",
+       ""
+      ],
+      [
+       "Same item twice",
+       "later effective date wins",
+       "earlier line superseded"
+      ]
+     ]
+    },
+    "Register": {
+     "range": "Register!A1:H40",
+     "rows": [
+      [
+       "Record",
+       "Option",
+       "Values",
+       "",
+       "",
+       "",
+       "",
+       "Source"
+      ],
+      [
+       "SO-TRV-DECOY",
+       "closed_manual_order",
+       1,
+       0,
+       1280.0,
+       0,
+       0,
+       "MANUAL-2026-01"
+      ]
+     ]
+    },
+    "Reorder": {
+     "range": "Reorder!A1:F12",
+     "rows": [
+      [
+       "Item",
+       "Reorder point",
+       "Planned maximum",
+       "Open POs count",
+       "Revision",
+       "Need window"
+      ],
+      [
+       "MOD-410-M",
+       1000,
+       3000,
+       "yes",
+       "R4",
+       12
+      ],
+      [
+       "INV-5K-H",
+       80,
+       200,
+       "yes",
+       "R4",
+       12
+      ],
+      [
+       "RAIL-AL-42",
+       2000,
+       5000,
+       "yes",
+       "R4",
+       12
+      ],
+      [
+       "CLMP-MID",
+       6000,
+       15000,
+       "yes",
+       "R4",
+       12
+      ],
+      [
+       "CABLE-PV-6",
+       7000,
+       16000,
+       "yes",
+       "R4",
+       12
+      ],
+      [
+       "MOD-380-OLD",
+       0,
+       0,
+       "yes",
+       "R4",
+       12
+      ]
+     ]
+    },
+    "Shifts": {
+     "range": "Shifts!A1:F30",
+     "rows": [
+      [
+       "Staff",
+       "Shift",
+       "Date",
+       "Approved leave",
+       "Reported",
+       "Late"
+      ],
+      [
+       "TV-1001",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1002",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1003",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1004",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1005",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1006",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1007",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1008",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1009",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1010",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1011",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1012",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1013",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1014",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1015",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1016",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1017",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1018",
+       "Night",
+       "2026-02-08",
+       "yes",
+       "",
+       ""
+      ],
+      [
+       "TV-1019",
+       "Night",
+       "2026-02-08",
+       "yes",
+       "",
+       ""
+      ],
+      [
+       "TV-1020",
+       "Night",
+       "2026-02-08",
+       "yes",
+       "",
+       ""
+      ],
+      [
+       "TV-1021",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "TV-1022",
+       "Night",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ]
+     ]
+    },
+    "Shipping": {
+     "range": "Shipping!A1:F20",
+     "rows": [
+      [
+       "Shipment",
+       "Order",
+       "Status",
+       "Lines",
+       "Value",
+       "Verified"
+      ],
+      [
+       "SHP-TRV-DECOY",
+       "SO-TRV-DECOY",
+       "Shipped",
+       1,
+       5920.0,
+       "yes"
+      ],
+      [
+       "SHP-TRV-2290",
+       "SO-TRV-14420",
+       "Staged",
+       6,
+       "",
+       "no"
+      ]
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "ops_register",
+   "title": "Terravane Solar Components operations register",
+   "version": 1
+  }
+ ],
+ "erp": {
+  "ap_invoices": [],
+  "customers": [
+   {
+    "created_by": "sales_ops",
+    "credit_hold": false,
+    "credit_limit": 300000.0,
+    "customer_number": "CUST-11780",
+    "name": "SunGrid Installers",
+    "payment_terms": "Net 30",
+    "source_message_id": "MSG-TRV-CUSTOMER-SETUP"
+   },
+   {
+    "created_by": "sales_ops",
+    "credit_hold": false,
+    "credit_limit": 40000.0,
+    "customer_number": "CUST-TRV-DECOY1",
+    "name": "Solar Outlet Co.",
+    "payment_terms": "Net 30",
+    "source_message_id": null
+   },
+   {
+    "created_by": "sales_ops",
+    "credit_hold": true,
+    "credit_limit": 55000.0,
+    "customer_number": "CUST-TRV-DECOY2",
+    "name": "Northern Regional Buyers",
+    "payment_terms": "Net 45",
+    "source_message_id": null
+   }
+  ],
+  "invoice_holds": [],
+  "items": [
+   {
+    "description": "410 W mono module",
+    "item_id": 300003,
+    "item_number": "MOD-410-M",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 148.0,
+    "organization_code": "TRV1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 104.0
+   },
+   {
+    "description": "5 kW hybrid inverter",
+    "item_id": 300010,
+    "item_number": "INV-5K-H",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 690.0,
+    "organization_code": "TRV1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 470.0
+   },
+   {
+    "description": "Aluminium rail 4.2 m",
+    "item_id": 300017,
+    "item_number": "RAIL-AL-42",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 18.5,
+    "organization_code": "TRV1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 11.8
+   },
+   {
+    "description": "Mid clamp",
+    "item_id": 300024,
+    "item_number": "CLMP-MID",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 1.4,
+    "organization_code": "TRV1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 0.8
+   },
+   {
+    "description": "PV cable 6 mm2 (per metre)",
+    "item_id": 300031,
+    "item_number": "CABLE-PV-6",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 1.1,
+    "organization_code": "TRV1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 0.7
+   },
+   {
+    "description": "380 W module (EOL)",
+    "item_id": 300038,
+    "item_number": "MOD-380-OLD",
+    "item_status": "Inactive",
+    "last_task_id": null,
+    "list_price": 132.0,
+    "organization_code": "TRV1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 95.0
+   }
+  ],
+  "onhand_balances": [
+   {
+    "balance_id": 100,
+    "item_number": "MOD-410-M",
+    "onhand_quantity": 1400,
+    "organization_code": "TRV1",
+    "reserved_quantity": 600,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 101,
+    "item_number": "INV-5K-H",
+    "onhand_quantity": 90,
+    "organization_code": "TRV1",
+    "reserved_quantity": 30,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 102,
+    "item_number": "RAIL-AL-42",
+    "onhand_quantity": 2200,
+    "organization_code": "TRV1",
+    "reserved_quantity": 500,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 103,
+    "item_number": "CLMP-MID",
+    "onhand_quantity": 8000,
+    "organization_code": "TRV1",
+    "reserved_quantity": 2500,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 104,
+    "item_number": "CABLE-PV-6",
+    "onhand_quantity": 9000,
+    "organization_code": "TRV1",
+    "reserved_quantity": 1000,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 105,
+    "item_number": "MOD-380-OLD",
+    "onhand_quantity": 150,
+    "organization_code": "TRV1",
+    "reserved_quantity": 0,
+    "subinventory": "MAIN"
+   }
+  ],
+  "purchase_order_lines": [
+   {
+    "item_number": "MOD-410-M",
+    "last_task_id": null,
+    "line_number": 1,
+    "po_line_id": 8800271,
+    "po_number": "PO-TRV-83371",
+    "promised_date": "2026-02-06",
+    "quantity": 2000,
+    "received_quantity": 0,
+    "unit_price": 104.0
+   },
+   {
+    "item_number": "RAIL-AL-42",
+    "last_task_id": null,
+    "line_number": 2,
+    "po_line_id": 8800272,
+    "po_number": "PO-TRV-83371",
+    "promised_date": "2026-02-06",
+    "quantity": 3000,
+    "received_quantity": 0,
+    "unit_price": 11.8
+   },
+   {
+    "item_number": "CLMP-MID",
+    "last_task_id": null,
+    "line_number": 3,
+    "po_line_id": 8800273,
+    "po_number": "PO-TRV-83371",
+    "promised_date": "2026-02-06",
+    "quantity": 10000,
+    "received_quantity": 0,
+    "unit_price": 0.8
+   },
+   {
+    "item_number": "CABLE-PV-6",
+    "last_task_id": null,
+    "line_number": 4,
+    "po_line_id": 8800274,
+    "po_number": "PO-TRV-83371",
+    "promised_date": "2026-02-06",
+    "quantity": 12000,
+    "received_quantity": 0,
+    "unit_price": 0.7
+   },
+   {
+    "item_number": "INV-5K-H",
+    "last_task_id": null,
+    "line_number": 1,
+    "po_line_id": 8800281,
+    "po_number": "PO-TRV-OPEN-SUPPLY",
+    "promised_date": "2026-02-14",
+    "quantity": 40,
+    "received_quantity": 0,
+    "unit_price": 470.0
+   }
+  ],
+  "purchase_orders": [
+   {
+    "buyer": "buyer",
+    "order_date": "2026-01-26",
+    "po_id": 880027,
+    "po_number": "PO-TRV-83371",
+    "status": "Open",
+    "supplier": "Chonburi Cell Works",
+    "supplier_number": "SUP-1250",
+    "total_amount": 259900.0
+   },
+   {
+    "buyer": "buyer",
+    "order_date": "2025-12-10",
+    "po_id": 880029,
+    "po_number": "PO-TRV-CLOSED",
+    "status": "Closed",
+    "supplier": "Chonburi Cell Works",
+    "supplier_number": "SUP-1250",
+    "total_amount": 980.0
+   },
+   {
+    "buyer": "buyer",
+    "order_date": "2026-02-01",
+    "po_id": 880028,
+    "po_number": "PO-TRV-OPEN-SUPPLY",
+    "status": "Open",
+    "supplier": "Chonburi Cell Works",
+    "supplier_number": "SUP-1250",
+    "total_amount": 18800.0
+   }
+  ],
+  "purchase_requisitions": [],
+  "receivables_invoices": [
+   {
+    "balance_due": 88400.0,
+    "bill_to_customer_number": "CUST-11780",
+    "customer_transaction_id": 900003,
+    "due_date": "2025-12-28",
+    "entered_amount": 88400.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-TRV-17330"
+   },
+   {
+    "balance_due": 46200.0,
+    "bill_to_customer_number": "CUST-11780",
+    "customer_transaction_id": 900014,
+    "due_date": "2026-01-12",
+    "entered_amount": 46200.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-TRV-17388"
+   },
+   {
+    "balance_due": 31900.0,
+    "bill_to_customer_number": "CUST-11780",
+    "customer_transaction_id": 900025,
+    "due_date": "2026-01-25",
+    "entered_amount": 31900.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-TRV-17441"
+   },
+   {
+    "balance_due": 57300.0,
+    "bill_to_customer_number": "CUST-11780",
+    "customer_transaction_id": 900036,
+    "due_date": "2026-02-06",
+    "entered_amount": 57300.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-TRV-17499"
+   },
+   {
+    "balance_due": 24800.0,
+    "bill_to_customer_number": "CUST-11780",
+    "customer_transaction_id": 900047,
+    "due_date": "2026-02-19",
+    "entered_amount": 24800.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-TRV-17552"
+   },
+   {
+    "balance_due": 39600.0,
+    "bill_to_customer_number": "CUST-11780",
+    "customer_transaction_id": 900058,
+    "due_date": "2026-03-03",
+    "entered_amount": 39600.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-TRV-17610"
+   },
+   {
+    "balance_due": 3200.0,
+    "bill_to_customer_number": "CUST-TRV-DECOY1",
+    "customer_transaction_id": 999003,
+    "due_date": "2026-02-19",
+    "entered_amount": 3200.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-20",
+    "transaction_number": "INV-TRV-DECOY"
+   }
+  ],
+  "receiving_receipt_requests": [],
+  "sales_orders": [
+   {
+    "buying_party_name": "SunGrid Installers",
+    "buying_party_number": "CUST-11780",
+    "created_at": "2026-01-30T09:00:00Z",
+    "created_by": "ops_lead",
+    "customer_po_number": "SGI-PO-2026-014-B",
+    "last_task_id": null,
+    "lines": [
+     {
+      "item_number": "MOD-410-M",
+      "quantity": 500,
+      "unit_price": 148.0,
+      "uom": "EA"
+     },
+     {
+      "item_number": "INV-5K-H",
+      "quantity": 30,
+      "unit_price": 690.0,
+      "uom": "EA"
+     },
+     {
+      "item_number": "RAIL-AL-42",
+      "quantity": 700,
+      "unit_price": 18.5,
+      "uom": "EA"
+     },
+     {
+      "item_number": "CLMP-MID",
+      "quantity": 2000,
+      "unit_price": 1.4,
+      "uom": "EA"
+     },
+     {
+      "item_number": "CABLE-PV-6",
+      "quantity": 2500,
+      "unit_price": 1.1,
+      "uom": "EA"
+     },
+     {
+      "item_number": "MOD-410-M",
+      "quantity": 100,
+      "unit_price": 148.0,
+      "uom": "EA"
+     }
+    ],
+    "order_number": "SO-TRV-14420",
+    "order_total": 125065.0,
+    "organization_code": "TRV1",
+    "source_message_id": "MSG-TRV-ORDER-0130",
+    "source_transaction_number": "MSG-TRV-ORDER-0130",
+    "source_transaction_system": "OPS",
+    "status": "Awaiting Shipping",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "SunGrid Installers",
+    "buying_party_number": "CUST-11780",
+    "created_at": "2026-02-03T10:12:00Z",
+    "created_by": "ops_lead",
+    "customer_po_number": "SGI-PO-2026-014",
+    "last_task_id": null,
+    "lines": [
+     {
+      "item_number": "MOD-410-M",
+      "quantity": 200,
+      "unit_price": 148.0,
+      "uom": "EA"
+     },
+     {
+      "item_number": "CLMP-MID",
+      "quantity": 600,
+      "unit_price": 1.4,
+      "uom": "EA"
+     }
+    ],
+    "order_number": "SO-TRV-40039",
+    "order_total": 30440.0,
+    "organization_code": "TRV1",
+    "source_message_id": "MSG-TRV-ORDER-0203",
+    "source_transaction_number": "FILE-TRV-ORDER-BATCH-0203",
+    "source_transaction_system": "OPS",
+    "status": "Awaiting Shipping",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Bangkok Rooftop Solar",
+    "buying_party_number": null,
+    "created_at": "2026-02-02T08:00:00Z",
+    "created_by": "channel_sync",
+    "customer_po_number": "DP-12001",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-TRV-45003",
+    "order_total": 29600.0,
+    "organization_code": "TRV1",
+    "source_message_id": null,
+    "source_transaction_number": "DP-12001",
+    "source_transaction_system": "Distributor portal",
+    "status": "Booked",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Khon Kaen Farms Power",
+    "buying_party_number": null,
+    "created_at": "2026-02-02T08:00:00Z",
+    "created_by": "channel_sync",
+    "customer_po_number": "DP-12004",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-TRV-45012",
+    "order_total": 22200.0,
+    "organization_code": "TRV1",
+    "source_message_id": null,
+    "source_transaction_number": "DP-12004",
+    "source_transaction_system": "Distributor portal",
+    "status": "Booked",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Hua Hin Solar",
+    "buying_party_number": null,
+    "created_at": "2026-02-02T08:00:00Z",
+    "created_by": "channel_sync",
+    "customer_po_number": "DP-12006",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-TRV-45021",
+    "order_total": 9250.0,
+    "organization_code": "TRV1",
+    "source_message_id": null,
+    "source_transaction_number": "DP-12006",
+    "source_transaction_system": "Distributor portal",
+    "status": "Booked",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Solar Outlet Co.",
+    "buying_party_number": "CUST-TRV-DECOY1",
+    "created_at": "2026-01-12T09:00:00Z",
+    "created_by": "ops_lead",
+    "customer_po_number": "OUTLET-118",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-TRV-DECOY",
+    "order_total": 1280.0,
+    "organization_code": "TRV1",
+    "source_message_id": null,
+    "source_transaction_number": "MANUAL-2026-01",
+    "source_transaction_system": "OPS",
+    "status": "Closed",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   }
+  ],
+  "shipment_lines": [
+   {
+    "comments": null,
+    "item_number": "MOD-410-M",
+    "last_task_id": null,
+    "line_number": 1,
+    "line_status": "Shipped",
+    "requested_quantity": 40,
+    "shipment": "SHP-TRV-DECOY",
+    "shipment_line_id": 700003,
+    "shipped_quantity": 40,
+    "unit_price": 148.0
+   },
+   {
+    "comments": null,
+    "item_number": "MOD-410-M",
+    "last_task_id": null,
+    "line_number": 1,
+    "line_status": "Staged",
+    "requested_quantity": 500,
+    "shipment": "SHP-TRV-2290",
+    "shipment_line_id": 700006,
+    "shipped_quantity": 500,
+    "unit_price": 148.0
+   },
+   {
+    "comments": null,
+    "item_number": "INV-5K-H",
+    "last_task_id": null,
+    "line_number": 2,
+    "line_status": "Staged",
+    "requested_quantity": 30,
+    "shipment": "SHP-TRV-2290",
+    "shipment_line_id": 700009,
+    "shipped_quantity": 30,
+    "unit_price": 690.0
+   },
+   {
+    "comments": null,
+    "item_number": "RAIL-AL-42",
+    "last_task_id": null,
+    "line_number": 3,
+    "line_status": "Staged",
+    "requested_quantity": 700,
+    "shipment": "SHP-TRV-2290",
+    "shipment_line_id": 700012,
+    "shipped_quantity": 700,
+    "unit_price": 18.5
+   },
+   {
+    "comments": null,
+    "item_number": "CLMP-MID",
+    "last_task_id": null,
+    "line_number": 4,
+    "line_status": "Staged",
+    "requested_quantity": 2000,
+    "shipment": "SHP-TRV-2290",
+    "shipment_line_id": 700015,
+    "shipped_quantity": 2000,
+    "unit_price": 1.4
+   },
+   {
+    "comments": null,
+    "item_number": "CABLE-PV-6",
+    "last_task_id": null,
+    "line_number": 5,
+    "line_status": "Staged",
+    "requested_quantity": 2500,
+    "shipment": "SHP-TRV-2290",
+    "shipment_line_id": 700018,
+    "shipped_quantity": 2500,
+    "unit_price": 1.1
+   },
+   {
+    "comments": null,
+    "item_number": "MOD-410-M",
+    "last_task_id": null,
+    "line_number": 6,
+    "line_status": "Staged",
+    "requested_quantity": 100,
+    "shipment": "SHP-TRV-2290",
+    "shipment_line_id": 700021,
+    "shipped_quantity": 100,
+    "unit_price": 148.0
+   }
+  ],
+  "shipments": [
+   {
+    "order_number": "SO-TRV-14420",
+    "organization_code": "TRV1",
+    "planned_ship_date": "2026-02-09",
+    "ship_to_customer": "SunGrid Installers",
+    "shipment": "SHP-TRV-2290",
+    "shipment_status": "Staged"
+   },
+   {
+    "order_number": "SO-TRV-DECOY",
+    "organization_code": "TRV1",
+    "planned_ship_date": "2026-01-14",
+    "ship_to_customer": "Solar Outlet Co.",
+    "shipment": "SHP-TRV-DECOY",
+    "shipment_status": "Shipped"
+   }
+  ],
+  "standard_receipts": [
+   {
+    "applications": [
+     {
+      "amount": 4400.0,
+      "invoice_number": "INV-TRV-PRIOR"
+     }
+    ],
+    "business_unit": "Terravane Manufacturing",
+    "created_by": "ar_clerk",
+    "currency": "USD",
+    "customer_account_number": "CUST-11780",
+    "last_task_id": null,
+    "receipt_amount": 4400.0,
+    "receipt_date": "2026-01-22",
+    "receipt_method": "Wire",
+    "receipt_number": "RCPT-TRV-PRIOR",
+    "receipt_status": "Applied",
+    "standard_receipt_id": 930003
+   }
+  ],
+  "suppliers": [
+   {
+    "expedite_premium_pct": 0.0,
+    "lead_time_days": 16,
+    "name": "Chonburi Cell Works",
+    "supplier_number": "SUP-1250",
+    "supplier_status": "Active"
+   },
+   {
+    "expedite_premium_pct": 20.0,
+    "lead_time_days": 5,
+    "name": "Laem Chabang Air Cargo",
+    "supplier_number": "SUP-1288",
+    "supplier_status": "Active"
+   },
+   {
+    "expedite_premium_pct": 0.0,
+    "lead_time_days": 30,
+    "name": "Legacy Components Ltd.",
+    "supplier_number": "SUP-TRV-DECOY",
+    "supplier_status": "Inactive"
+   }
+  ]
+ },
+ "numbering": {
+  "channel_order_base": 52000,
+  "channel_order_step": 7,
+  "hold_id": 550006,
+  "invoice_id": 660015,
+  "order_import_order": "SO-TRV-50015",
+  "receipt_id": 950051,
+  "receiving_header_id": 770009,
+  "requisition_id": 610021,
+  "requisition_number": "REQ-TRV-61015"
+ },
+ "profile": {
+  "bu": "Terravane Manufacturing",
+  "channel": "Distributor portal",
+  "code": "TERRAVANE",
+  "company": "Terravane Solar Components",
+  "country": "TH",
+  "currency": "USD",
+  "customer": {
+   "credit_hold": false,
+   "credit_limit": 300000.0,
+   "name": "SunGrid Installers",
+   "number": "CUST-11780",
+   "po": "SGI-PO-2026-014"
+  },
+  "domain": "terravane-sim.example",
+  "expedite_supplier": {
+   "lead_time_days": 5,
+   "name": "Laem Chabang Air Cargo",
+   "number": "SUP-1288",
+   "premium_pct": 20.0
+  },
+  "industry": "Solar module manufacturing",
+  "org": "TRV1",
+  "people": {
+   "finance_lead": "Kanya Boonmee",
+   "hr_lead": "Somchai Prasert",
+   "ops_lead": "Nattapong Chai",
+   "requester": "Ploy Suwannarat",
+   "supervisor": "Anong Rattana"
+  },
+  "profile": "solar component maker",
+  "quarter": "Q2",
+  "short": "TRV",
+  "site": "Rayong plant",
+  "supplier": {
+   "lead_time_days": 16,
+   "name": "Chonburi Cell Works",
+   "number": "SUP-1250"
+  }
+ },
+ "schema": "faraday-erpbench100-tenant/1"
+}

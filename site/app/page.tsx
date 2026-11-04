@@ -1,8 +1,8 @@
 const metrics = [
-  ["66", "executable episodes"],
-  ["32", "workflow families"],
-  ["67", "typed tools"],
-  ["2,648", "deterministic criteria"],
+  ["249", "public episodes"],
+  ["46", "workflow families"],
+  ["108", "typed tools"],
+  ["8,259", "deterministic criteria"],
 ];
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="status-dot" /> Public development suite · v0.5</p>
+          <p className="eyebrow"><span className="status-dot" /> Public development suite · v0.8.0</p>
           <h1>Can your agent run the industrial enterprise?</h1>
           <p className="hero-lede">
             A dynamic, executable benchmark for the work between the factory floor and the back office—across ERP, MES, QMS, SCM, WMS, TMS, PLM, CMMS, and finance.
@@ -37,7 +37,7 @@ export default function Home() {
 
         <div className="workflow-card" aria-label="Example benchmark workflow">
           <div className="terminal-bar">
-            <span>PLANT RECOVERY / LIVE EPISODE</span>
+            <span>PLANT RECOVERY / ILLUSTRATION</span>
             <span className="terminal-clock">T+46 MIN</span>
           </div>
           <div className="workflow-grid">
@@ -70,58 +70,57 @@ export default function Home() {
         {metrics.map(([value, label]) => (
           <div className="metric" key={label}><strong>{value}</strong><span>{label}</span></div>
         ))}
-        <div className="metric metric-wide"><strong>23</strong><span>protected actions where bypass = zero</span></div>
+        <div className="metric metric-wide"><strong>175</strong><span>fixed distributor episodes · about 70% of the mean</span></div>
       </section>
 
       <section className="section verdict-section" id="benchmark">
-        <div className="section-kicker">01 / DIFFICULTY</div>
+        <div className="section-kicker">01 / EVALUATION SCOPE</div>
         <div className="section-heading">
-          <h2>A different kind of hard.</h2>
-          <p>Faraday is built to punish plausible-looking answers that fail in the actual workflow.</p>
+          <h2>Industrial workflows with observable outcomes.</h2>
+          <p>Faraday checks what an agent reads, changes, and verifies in a synthetic enterprise.</p>
         </div>
         <div className="verdict-layout">
           <div className="verdict-statement">
-            <span className="verdict-label">Our evidence-backed verdict</span>
-            <h3>Frontier-tier for governed, cross-enterprise execution. Not yet the largest benchmark—and we do not claim “world’s hardest.”</h3>
+            <span className="verdict-label">What the evidence supports</span>
+            <h3>A broad executable development suite. Current full-suite model results remain unmeasured.</h3>
             <p>
-              Compared with static knowledge and reasoning sets, Faraday is materially more demanding at the interaction level: the agent must change a living enterprise state without crossing authorization boundaries. FactoryBench-100 is larger and more artifact-rich. AssetOpsBench is deeper in industrial time-series and multi-agent maintenance. Faraday’s distinctive challenge is the breadth and sequencing of governed workflows from plant incident to customer and ledger.
+              Agents investigate records, follow modeled approval policies, and execute changes across connected systems. Distributor reference trajectories use sealed fixture plans or answers; their success establishes execution consistency, not independent derivation from public evidence. No learned agent has a validated full-suite result on v0.8.0. Historical model measurements use earlier versions and cannot be presented as current scores.
             </p>
           </div>
-          <div className="difficulty-stack" aria-label="Faraday difficulty dimensions">
+          <div className="difficulty-stack" aria-label="Current benchmark composition">
             {[
-              ["Cross-system breadth", "32 families", "96%"],
-              ["State + time pressure", "108 events", "91%"],
-              ["Governance pressure", "23 protected actions", "94%"],
-              ["Frontier work sample", "419 criteria / task", "98%"],
-            ].map(([label, value, width]) => (
+              ["Workflow coverage", "46 families"],
+              ["Tool contract", "108 typed tools"],
+              ["Core episodes", "74 public tasks"],
+              ["Distributor episodes", "175 fixed tasks"],
+            ].map(([label, value]) => (
               <div className="difficulty-row" key={label}>
                 <div><span>{label}</span><strong>{value}</strong></div>
-                <div className="difficulty-track"><i style={{ width }} /></div>
               </div>
             ))}
-            <p className="chart-note">Visual profile, not a normalized cross-benchmark score.</p>
+            <p className="chart-note">Counts describe suite composition. They are not measured difficulty scores or a cross-benchmark ranking.</p>
           </div>
         </div>
       </section>
 
       <section className="section comparison-section" id="compare">
-        <div className="section-kicker">02 / LANDSCAPE AUDIT</div>
+        <div className="section-kicker">02 / HISTORICAL LANDSCAPE</div>
         <div className="section-heading comparison-heading">
-          <h2>Complexity, without the chest-beating.</h2>
-          <p>Published surface comparison · audited September 14, 2026</p>
+          <h2>A dated view of the field.</h2>
+          <p>Historical September 14, 2026 snapshot · Faraday v0.5 · not a present-day ranking</p>
         </div>
-        <div className="comparison-table" role="table" aria-label="Industrial benchmark comparison">
+        <div className="comparison-table" role="table" aria-label="Historical September 14, 2026 benchmark comparison">
           <div className="comparison-row comparison-header" role="row">
             <span role="columnheader">Benchmark</span><span role="columnheader">Public scale</span><span role="columnheader">Executable state</span><span role="columnheader">Governed writes</span><span role="columnheader">Distinctive strength</span>
           </div>
           <div className="comparison-row faraday-row" role="row">
-            <span role="cell"><b>Faraday v0.5</b><em>this project</em></span><span role="cell">66 episodes<br/>32 families · 67 tools</span><span role="cell"><i className="yes">YES</i> dynamic events + time</span><span role="cell"><i className="yes">YES</i> approval + payload gates</span><span role="cell">Plant-to-ledger recovery plus a 15-exception, four-artifact frontier operating review</span>
+            <span role="cell"><b>Faraday v0.5</b><em>historical version</em></span><span role="cell">66 episodes<br/>32 families · 67 tools</span><span role="cell"><i className="yes">YES</i> dynamic events + time</span><span role="cell"><i className="yes">YES</i> approval + payload gates</span><span role="cell">Plant-to-ledger recovery plus a 15-exception, four-artifact frontier operating review</span>
           </div>
           <div className="comparison-row" role="row">
             <span role="cell"><a href="https://arxiv.org/abs/2604.11304" target="_blank" rel="noreferrer"><b>BankerToolBench ↗</b></a><em>2026</em></span><span role="cell">100 work samples<br/>~150 rubric criteria / task</span><span role="cell"><i className="partial">FILES</i> office-document workspace</span><span role="cell"><i className="partial">RUBRIC</i> expert client-readiness</span><span role="cell">Long-form banking deliverables across spreadsheets, slides, documents, and PDFs</span>
           </div>
           <div className="comparison-row" role="row">
-            <span role="cell"><a href="https://github.com/blobfishai/factory-agent-simulation" target="_blank" rel="noreferrer"><b>FactoryBench-100 ↗</b></a><em>v3.3.5</em></span><span role="cell">100 workflows<br/>20 families · 94 tools</span><span role="cell"><i className="yes">YES</i> isolated SQLite worlds</span><span role="cell"><i className="yes">YES</i> mutation + readback</span><span role="cell">Largest artifact-grounded ERP surface here: 2,800 files and 100 unique graphs</span>
+            <span role="cell"><a href="https://github.com/blobfishai/factory-agent-simulation" target="_blank" rel="noreferrer"><b>FactoryBench-100 ↗</b></a><em>v3.3.5</em></span><span role="cell">100 workflows<br/>20 families · 94 tools</span><span role="cell"><i className="yes">YES</i> isolated SQLite worlds</span><span role="cell"><i className="yes">YES</i> mutation + readback</span><span role="cell">Artifact-grounded ERP workflows: 2,800 files and 100 unique graphs in the audited release</span>
           </div>
           <div className="comparison-row" role="row">
             <span role="cell"><a href="https://github.com/masahirosakae/industrial-agent-benchmark" target="_blank" rel="noreferrer"><b>Industrial Agent ↗</b></a><em>v2.2.0</em></span><span role="cell">180 tasks<br/>3 evaluation layers</span><span role="cell"><i className="no">NO</i> response dataset</span><span role="cell"><i className="no">NO</i> planned judge</span><span role="cell">Broad Japanese manufacturing knowledge, reasoning, and agent-design coverage</span>
@@ -133,32 +132,32 @@ export default function Home() {
             <span role="cell"><a href="https://github.com/IBM/AssetOpsBench" target="_blank" rel="noreferrer"><b>AssetOpsBench ↗</b></a><em>KDD 2026</em></span><span role="cell">141+ scenarios<br/>5 domain agents</span><span role="cell"><i className="partial">MIXED</i> live industrial data</span><span role="cell"><i className="partial">MIXED</i> work-order writes</span><span role="cell">Time-series models, vibration, MCP specialists, and multi-agent orchestration</span>
           </div>
         </div>
-        <p className="audit-note">Counts and capabilities come from each project’s public release documentation. This is a structural audit—not a claim that scores transfer across benchmarks.</p>
+        <p className="audit-note">This archived comparison reflects the cited releases as reviewed on September 14, 2026. Faraday v0.5 counts are preserved for that snapshot; current v0.8.0 has 249 episodes, 46 families, and 108 tools. Other projects may have changed. These structural descriptions do not establish comparative model performance.</p>
       </section>
 
       <section className="section systems-section">
         <div className="section-kicker">03 / COVERAGE</div>
         <div className="section-heading">
-          <h2>One company. Every consequential handoff.</h2>
-          <p>The benchmark connects the operational systems that industrial agents are usually tested on in isolation.</p>
+          <h2>Connected systems and selected industrial workflows.</h2>
+          <p>The suite models handoffs across operational systems. Its 46 families do not establish exhaustive industrial coverage.</p>
         </div>
         <div className="systems-grid">
           {[
-            ["ERP · FINANCE", "AP, AR, GL, close, vendor master, payroll, project and asset accounting", "7 families"],
-            ["MES · APS", "Production work, constrained rescheduling, effectivity, capacity and promises", "5 families"],
-            ["QMS · PLM", "Genealogy, containment, CAPA-shaped evidence, drawings, BOMs and revisions", "11 families"],
-            ["SCM · PROCUREMENT", "Supplier delays, supply buckets, expedites, allocations and trade controls", "6 families"],
-            ["WMS · DISTRIBUTION", "Verified stock, wave feasibility, cold chain, recall scope and network allocation", "6 families"],
-            ["TMS · CRM", "Carrier capacity, route economics, customer commitments and controlled notifications", "5 families"],
-            ["CMMS · HISTORIAN", "Equipment evidence, failure isolation, maintenance orders and recovery gates", "3 families"],
-            ["ENGINEERING DOCS", "Structured drawing, P&ID, construction, requirements and controlled review", "8 families"],
-          ].map(([name, desc, count], index) => (
+            ["ERP · FINANCE", "AP, AR, GL, close, vendor master, payroll, project and asset accounting"],
+            ["MES · APS", "Production work, constrained rescheduling, effectivity, capacity and promises"],
+            ["QMS · PLM", "Genealogy, containment, CAPA-shaped evidence, drawings, BOMs and revisions"],
+            ["SCM · PROCUREMENT", "Supplier delays, supply buckets, expedites, allocations and trade controls"],
+            ["WMS · DISTRIBUTION", "Verified stock, wave feasibility, cold chain, recall scope and network allocation"],
+            ["TMS · CRM", "Carrier capacity, route economics, customer commitments and controlled notifications"],
+            ["CMMS · HISTORIAN", "Equipment evidence, failure isolation, maintenance orders and recovery gates"],
+            ["ENGINEERING DOCS", "Structured drawing, P&ID, construction, requirements and controlled review"],
+          ].map(([name, desc], index) => (
             <article className="system-card" key={name}>
-              <span className="system-index">0{index + 1}</span><h3>{name}</h3><p>{desc}</p><em>{count}</em>
+              <span className="system-index">0{index + 1}</span><h3>{name}</h3><p>{desc}</p>
             </article>
           ))}
         </div>
-        <p className="coverage-note">Families overlap systems; counts are not additive.</p>
+        <p className="coverage-note">Coverage labels overlap. Engineering tasks use structured synthetic facts; native PDF perception, CAD geometry, and BIM coordination are outside the measured scope.</p>
       </section>
 
       <section className="section workflow-section">
@@ -190,11 +189,11 @@ export default function Home() {
         </div>
         <div className="principle-grid">
           <article><span>STATE</span><h3>The world must actually change.</h3><p>Tools read and mutate a synthetic industrial company. The grader checks the resulting records, not just the final paragraph.</p></article>
-          <article><span>GOVERNANCE</span><h3>Approval is necessary, not sufficient.</h3><p>Evidence must be fresh, the requested payload exact, and every upstream gate complete. A bypass zeros the episode.</p></article>
+          <article><span>GOVERNANCE</span><h3>Approval is necessary, not sufficient.</h3><p>Protected writes require matching approval. Scenario-specific checks evaluate evidence, payloads, and prerequisites. An authorization bypass zeros the episode.</p></article>
           <article><span>REPLAY</span><h3>The trace has to survive reconstruction.</h3><p>Every result commits a state hash. Replay rebuilds the world and compares tasks, events, answers, scores, and final state.</p></article>
           <article><span>TIME</span><h3>Every investigation has a cost.</h3><p>Calls advance logical time. Supplier replies arrive, trucks close, routes fail, and production windows expire while the agent works.</p></article>
-          <article><span>OUTCOMES</span><h3>Business feasibility is executable.</h3><p>Overallocated stock, incomplete recalls, infeasible waves, wrong journals, and expensive-but-avoidable routes are rejected.</p></article>
-          <article><span>VARIATION</span><h3>Public examples are not the test.</h3><p>Procedural seeds vary records and outcomes. Private manifests can be committed before a leaderboard round and revealed later.</p></article>
+          <article><span>OUTCOMES</span><h3>Business feasibility is executable.</h3><p>Scenario checks evaluate stock allocation, recall scope, wave feasibility, financial records, and route choices against explicit modeled constraints.</p></article>
+          <article><span>VARIATION</span><h3>Variation depends on the family.</h3><p>Core families support procedural variants. The 175 distributor episodes reuse fixed fixtures under new seeds; those seeds do not create independent business instances. Distributor tasks contribute about 70% of the plain task mean.</p></article>
         </div>
       </section>
 
@@ -202,10 +201,11 @@ export default function Home() {
         <div className="section-kicker">06 / QUALIFICATION</div>
         <div className="section-heading">
           <h2>The grader separates safe completion from shortcuts.</h2>
-          <p>Checked-in deterministic controls prove solvability and evaluator range across all 66 public episodes.</p>
+          <p>Reference and negative controls test fixture execution, authorization boundaries, and grader behavior. Their results do not establish model difficulty, generalization, or real-world safety.</p>
         </div>
         <div className="control-layout">
           <div className="control-chart">
+            <p className="chart-note">Historical v0.5 controls · 66 episodes. These scores are not current v0.8.0 results.</p>
             {[["Reference oracle","100.00","100%","66 / 66 strict"],["Read-only shortcut","13.19","13.19%","0 / 66 strict"],["No-op","10.33","10.33%","0 / 66 strict"],["Unauthorized write","0.00","0%","66 critical failures"]].map(([label,score,width,note]) => (
               <div className="control-row" key={label}>
                 <div><b>{label}</b><em>{note}</em></div><div className="control-bar"><i style={{ width }} /></div><strong>{score}</strong>
@@ -228,16 +228,16 @@ export default function Home() {
         </div>
         <div className="code-window" aria-label="Quickstart commands">
           <div className="code-title"><span>QUICKSTART.SH</span><span>PYTHON 3.11+</span></div>
-          <pre><code><span className="code-dim"># install the public benchmark</span>{`\n`}python3 -m venv .venv{`\n`}source .venv/bin/activate{`\n`}pip install -e <b>&apos;.[dev]&apos;</b>{`\n\n`}<span className="code-dim"># validate, qualify, and run</span>{`\n`}faraday-bench validate{`\n`}faraday-bench qualify{`\n`}faraday-bench run --agent <b>oracle</b>{`\n\n`}<span className="code-dim"># reconstruct and verify the trace</span>{`\n`}faraday-bench replay runs/oracle.json</code></pre>
+          <pre><code><span className="code-dim"># install the public benchmark</span>{`\n`}python3 -m venv .venv{`\n`}source .venv/bin/activate{`\n`}pip install -e <b>&apos;.[dev]&apos;</b>{`\n\n`}<span className="code-dim"># validate, qualify, and run</span>{`\n`}faraday-bench validate{`\n`}faraday-bench qualify{`\n`}faraday-bench run --agent <b>oracle</b> --output runs/oracle.json{`\n\n`}<span className="code-dim"># reconstruct and verify the trace</span>{`\n`}faraday-bench replay runs/oracle.json</code></pre>
         </div>
       </section>
 
       <section className="section lineage-section">
         <div className="section-kicker">08 / OPEN BY CONSTRUCTION</div>
         <div className="lineage-layout">
-          <h2>Study the field.<br/>Preserve the lineage.<br/>Build clean-room.</h2>
+          <h2>Study the field.<br/>Preserve the lineage.<br/>Document the sources.</h2>
           <div className="lineage-copy">
-            <p>Faraday-native tasks, systems, values, graders, and trajectories are independently authored and synthetic. License-compatible snapshots of four upstream projects ship as separate compatibility tracks; their scores never enter Faraday’s headline result.</p>
+            <p>The suite combines independently authored synthetic workflows with 175 distributor rebuilds derived from pinned ERP-Bench, ERPBench-100, and GDPval sources. GDPval has no declared license and is included under a documented owner-approved exception; source terms remain in force. Four other upstream snapshots ship as separate compatibility tracks whose scores are excluded from the headline result.</p>
             <div className="license-row"><span>CODE</span><b>Apache-2.0</b><span>NATIVE DATA</span><b>CC BY 4.0</b><span>UPSTREAMS</span><b>Original terms retained</b></div>
             <p className="source-note">The engineering-document taxonomy is informed by the public workflow categories published by <a href="https://www.manufacturingintelligence.org/use-cases/" target="_blank" rel="noreferrer">Manufacturing Intelligence ↗</a>. It is not a copied dataset.</p>
           </div>
@@ -246,13 +246,13 @@ export default function Home() {
 
       <section className="final-cta">
         <p>THE FACTORY FLOOR IS ONLY HALF THE TEST.</p>
-        <h2>Benchmark the whole industrial enterprise.</h2>
+        <h2>Evaluate agents across industrial workflows.</h2>
         <a className="button button-large" href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark">Run Faraday <span>↗</span></a>
       </section>
 
       <footer>
         <a className="wordmark footer-wordmark" href="#top"><span className="mark">F</span><span>FARADAY</span></a>
-        <p>Industrial Benchmark · v0.5 public development suite</p>
+        <p>Industrial Benchmark · v0.8.0 public development suite</p>
         <div><a href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark">GitHub ↗</a><a href="https://github.com/Faraday-Cage-AI/faraday-industrial-benchmark/blob/main/BENCHMARK_CARD.md">Benchmark card ↗</a></div>
       </footer>
     </main>

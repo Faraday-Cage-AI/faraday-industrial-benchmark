@@ -15,10 +15,9 @@ Runner to agent:
 
 The task excludes its procedural seed. Its public fields include the workflow
 family, available tool names, required notification roles, and any exact
-controlled-plan action labels. Every task includes `workflow_stages`, a
-topologically ordered dependency graph of stage IDs and objectives. Focused
-tasks use a common five-stage lifecycle; composite tasks publish richer
-workflow-specific graphs. The accompanying `tools` array contains only the
+controlled-plan action labels. It does not include `workflow_stages`: the
+stage graph is evaluator-side metadata, and the agent is expected to plan the
+work itself. The accompanying `tools` array contains only the
 family-scoped JSON Schema-shaped input contracts. The complete catalog and
 scopes are committed by the exported platform-harness contract.
 

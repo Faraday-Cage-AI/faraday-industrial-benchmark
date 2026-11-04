@@ -1,0 +1,632 @@
+[
+ {
+  "company": "Northbridge Fastener Works",
+  "family": "order_import",
+  "industry": "Industrial fasteners",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-001",
+  "tenant": "NORTHBRIDGE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Northbridge Fastener Works",
+  "family": "shipment_verification",
+  "industry": "Industrial fasteners",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-002",
+  "tenant": "NORTHBRIDGE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Northbridge Fastener Works",
+  "family": "receivables_collection",
+  "industry": "Industrial fasteners",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-003",
+  "tenant": "NORTHBRIDGE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Northbridge Fastener Works",
+  "family": "inventory_reorder",
+  "industry": "Industrial fasteners",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-004",
+  "tenant": "NORTHBRIDGE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Northbridge Fastener Works",
+  "family": "receiving_ap_match",
+  "industry": "Industrial fasteners",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-005",
+  "tenant": "NORTHBRIDGE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Northbridge Fastener Works",
+  "family": "channel_order_sync",
+  "industry": "Industrial fasteners",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-008",
+  "tenant": "NORTHBRIDGE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Northbridge Fastener Works",
+  "family": "price_list_batch",
+  "industry": "Industrial fasteners",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-010",
+  "tenant": "NORTHBRIDGE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Harborline Trading Co.",
+  "family": "order_import",
+  "industry": "Food import and export",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-011",
+  "tenant": "HARBORLINE",
+  "tier": "direct"
+ },
+ {
+  "company": "Harborline Trading Co.",
+  "family": "shipment_verification",
+  "industry": "Food import and export",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-012",
+  "tenant": "HARBORLINE",
+  "tier": "direct"
+ },
+ {
+  "company": "Harborline Trading Co.",
+  "family": "receivables_collection",
+  "industry": "Food import and export",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-013",
+  "tenant": "HARBORLINE",
+  "tier": "direct"
+ },
+ {
+  "company": "Harborline Trading Co.",
+  "family": "inventory_reorder",
+  "industry": "Food import and export",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-014",
+  "tenant": "HARBORLINE",
+  "tier": "direct"
+ },
+ {
+  "company": "Harborline Trading Co.",
+  "family": "receiving_ap_match",
+  "industry": "Food import and export",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-015",
+  "tenant": "HARBORLINE",
+  "tier": "direct"
+ },
+ {
+  "company": "Harborline Trading Co.",
+  "family": "channel_order_sync",
+  "industry": "Food import and export",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-018",
+  "tenant": "HARBORLINE",
+  "tier": "direct"
+ },
+ {
+  "company": "Harborline Trading Co.",
+  "family": "price_list_batch",
+  "industry": "Food import and export",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-020",
+  "tenant": "HARBORLINE",
+  "tier": "direct"
+ },
+ {
+  "company": "Meridian Staffing Services",
+  "family": "order_import",
+  "industry": "Workforce placement",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-021",
+  "tenant": "MERIDIAN",
+  "tier": "transferable"
+ },
+ {
+  "company": "Meridian Staffing Services",
+  "family": "shipment_verification",
+  "industry": "Workforce placement",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-022",
+  "tenant": "MERIDIAN",
+  "tier": "transferable"
+ },
+ {
+  "company": "Meridian Staffing Services",
+  "family": "receivables_collection",
+  "industry": "Workforce placement",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-023",
+  "tenant": "MERIDIAN",
+  "tier": "transferable"
+ },
+ {
+  "company": "Meridian Staffing Services",
+  "family": "inventory_reorder",
+  "industry": "Workforce placement",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-024",
+  "tenant": "MERIDIAN",
+  "tier": "transferable"
+ },
+ {
+  "company": "Meridian Staffing Services",
+  "family": "receiving_ap_match",
+  "industry": "Workforce placement",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-025",
+  "tenant": "MERIDIAN",
+  "tier": "transferable"
+ },
+ {
+  "company": "Meridian Staffing Services",
+  "family": "channel_order_sync",
+  "industry": "Workforce placement",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-028",
+  "tenant": "MERIDIAN",
+  "tier": "transferable"
+ },
+ {
+  "company": "Meridian Staffing Services",
+  "family": "price_list_batch",
+  "industry": "Workforce placement",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-030",
+  "tenant": "MERIDIAN",
+  "tier": "transferable"
+ },
+ {
+  "company": "Sungrove Foods",
+  "family": "order_import",
+  "industry": "Snack and beverage processing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-031",
+  "tenant": "SUNGROVE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Sungrove Foods",
+  "family": "shipment_verification",
+  "industry": "Snack and beverage processing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-032",
+  "tenant": "SUNGROVE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Sungrove Foods",
+  "family": "receivables_collection",
+  "industry": "Snack and beverage processing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-033",
+  "tenant": "SUNGROVE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Sungrove Foods",
+  "family": "inventory_reorder",
+  "industry": "Snack and beverage processing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-034",
+  "tenant": "SUNGROVE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Sungrove Foods",
+  "family": "receiving_ap_match",
+  "industry": "Snack and beverage processing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-035",
+  "tenant": "SUNGROVE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Sungrove Foods",
+  "family": "channel_order_sync",
+  "industry": "Snack and beverage processing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-038",
+  "tenant": "SUNGROVE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Sungrove Foods",
+  "family": "price_list_batch",
+  "industry": "Snack and beverage processing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-040",
+  "tenant": "SUNGROVE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Kestrel Electronics Assembly",
+  "family": "order_import",
+  "industry": "Electronics manufacturing services",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-041",
+  "tenant": "KESTREL",
+  "tier": "transferable"
+ },
+ {
+  "company": "Kestrel Electronics Assembly",
+  "family": "shipment_verification",
+  "industry": "Electronics manufacturing services",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-042",
+  "tenant": "KESTREL",
+  "tier": "transferable"
+ },
+ {
+  "company": "Kestrel Electronics Assembly",
+  "family": "receivables_collection",
+  "industry": "Electronics manufacturing services",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-043",
+  "tenant": "KESTREL",
+  "tier": "transferable"
+ },
+ {
+  "company": "Kestrel Electronics Assembly",
+  "family": "inventory_reorder",
+  "industry": "Electronics manufacturing services",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-044",
+  "tenant": "KESTREL",
+  "tier": "transferable"
+ },
+ {
+  "company": "Kestrel Electronics Assembly",
+  "family": "receiving_ap_match",
+  "industry": "Electronics manufacturing services",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-045",
+  "tenant": "KESTREL",
+  "tier": "transferable"
+ },
+ {
+  "company": "Kestrel Electronics Assembly",
+  "family": "channel_order_sync",
+  "industry": "Electronics manufacturing services",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-048",
+  "tenant": "KESTREL",
+  "tier": "transferable"
+ },
+ {
+  "company": "Kestrel Electronics Assembly",
+  "family": "price_list_batch",
+  "industry": "Electronics manufacturing services",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-050",
+  "tenant": "KESTREL",
+  "tier": "transferable"
+ },
+ {
+  "company": "Alderwood Furniture",
+  "family": "order_import",
+  "industry": "Wood furniture manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-051",
+  "tenant": "ALDERWOOD",
+  "tier": "transferable"
+ },
+ {
+  "company": "Alderwood Furniture",
+  "family": "shipment_verification",
+  "industry": "Wood furniture manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-052",
+  "tenant": "ALDERWOOD",
+  "tier": "transferable"
+ },
+ {
+  "company": "Alderwood Furniture",
+  "family": "receivables_collection",
+  "industry": "Wood furniture manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-053",
+  "tenant": "ALDERWOOD",
+  "tier": "transferable"
+ },
+ {
+  "company": "Alderwood Furniture",
+  "family": "inventory_reorder",
+  "industry": "Wood furniture manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-054",
+  "tenant": "ALDERWOOD",
+  "tier": "transferable"
+ },
+ {
+  "company": "Alderwood Furniture",
+  "family": "receiving_ap_match",
+  "industry": "Wood furniture manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-055",
+  "tenant": "ALDERWOOD",
+  "tier": "transferable"
+ },
+ {
+  "company": "Alderwood Furniture",
+  "family": "channel_order_sync",
+  "industry": "Wood furniture manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-058",
+  "tenant": "ALDERWOOD",
+  "tier": "transferable"
+ },
+ {
+  "company": "Alderwood Furniture",
+  "family": "price_list_batch",
+  "industry": "Wood furniture manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-060",
+  "tenant": "ALDERWOOD",
+  "tier": "transferable"
+ },
+ {
+  "company": "Caldera Packaging",
+  "family": "order_import",
+  "industry": "Corrugated and flexible packaging",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-061",
+  "tenant": "CALDERA",
+  "tier": "transferable"
+ },
+ {
+  "company": "Caldera Packaging",
+  "family": "shipment_verification",
+  "industry": "Corrugated and flexible packaging",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-062",
+  "tenant": "CALDERA",
+  "tier": "transferable"
+ },
+ {
+  "company": "Caldera Packaging",
+  "family": "receivables_collection",
+  "industry": "Corrugated and flexible packaging",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-063",
+  "tenant": "CALDERA",
+  "tier": "transferable"
+ },
+ {
+  "company": "Caldera Packaging",
+  "family": "inventory_reorder",
+  "industry": "Corrugated and flexible packaging",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-064",
+  "tenant": "CALDERA",
+  "tier": "transferable"
+ },
+ {
+  "company": "Caldera Packaging",
+  "family": "receiving_ap_match",
+  "industry": "Corrugated and flexible packaging",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-065",
+  "tenant": "CALDERA",
+  "tier": "transferable"
+ },
+ {
+  "company": "Caldera Packaging",
+  "family": "channel_order_sync",
+  "industry": "Corrugated and flexible packaging",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-068",
+  "tenant": "CALDERA",
+  "tier": "transferable"
+ },
+ {
+  "company": "Caldera Packaging",
+  "family": "price_list_batch",
+  "industry": "Corrugated and flexible packaging",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-070",
+  "tenant": "CALDERA",
+  "tier": "transferable"
+ },
+ {
+  "company": "Riverstone Medical Supply",
+  "family": "order_import",
+  "industry": "Medical consumables distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-071",
+  "tenant": "RIVERSTONE",
+  "tier": "direct"
+ },
+ {
+  "company": "Riverstone Medical Supply",
+  "family": "shipment_verification",
+  "industry": "Medical consumables distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-072",
+  "tenant": "RIVERSTONE",
+  "tier": "direct"
+ },
+ {
+  "company": "Riverstone Medical Supply",
+  "family": "receivables_collection",
+  "industry": "Medical consumables distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-073",
+  "tenant": "RIVERSTONE",
+  "tier": "direct"
+ },
+ {
+  "company": "Riverstone Medical Supply",
+  "family": "inventory_reorder",
+  "industry": "Medical consumables distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-074",
+  "tenant": "RIVERSTONE",
+  "tier": "direct"
+ },
+ {
+  "company": "Riverstone Medical Supply",
+  "family": "receiving_ap_match",
+  "industry": "Medical consumables distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-075",
+  "tenant": "RIVERSTONE",
+  "tier": "direct"
+ },
+ {
+  "company": "Riverstone Medical Supply",
+  "family": "channel_order_sync",
+  "industry": "Medical consumables distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-078",
+  "tenant": "RIVERSTONE",
+  "tier": "direct"
+ },
+ {
+  "company": "Riverstone Medical Supply",
+  "family": "price_list_batch",
+  "industry": "Medical consumables distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-080",
+  "tenant": "RIVERSTONE",
+  "tier": "direct"
+ },
+ {
+  "company": "Bluefin Marine Parts",
+  "family": "order_import",
+  "industry": "Marine spare parts distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-081",
+  "tenant": "BLUEFIN",
+  "tier": "direct"
+ },
+ {
+  "company": "Bluefin Marine Parts",
+  "family": "shipment_verification",
+  "industry": "Marine spare parts distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-082",
+  "tenant": "BLUEFIN",
+  "tier": "direct"
+ },
+ {
+  "company": "Bluefin Marine Parts",
+  "family": "receivables_collection",
+  "industry": "Marine spare parts distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-083",
+  "tenant": "BLUEFIN",
+  "tier": "direct"
+ },
+ {
+  "company": "Bluefin Marine Parts",
+  "family": "inventory_reorder",
+  "industry": "Marine spare parts distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-084",
+  "tenant": "BLUEFIN",
+  "tier": "direct"
+ },
+ {
+  "company": "Bluefin Marine Parts",
+  "family": "receiving_ap_match",
+  "industry": "Marine spare parts distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-085",
+  "tenant": "BLUEFIN",
+  "tier": "direct"
+ },
+ {
+  "company": "Bluefin Marine Parts",
+  "family": "channel_order_sync",
+  "industry": "Marine spare parts distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-088",
+  "tenant": "BLUEFIN",
+  "tier": "direct"
+ },
+ {
+  "company": "Bluefin Marine Parts",
+  "family": "price_list_batch",
+  "industry": "Marine spare parts distribution",
+  "reason": "Distributor/trading tenant and a core commercial operating workflow.",
+  "task_id": "erpbench-090",
+  "tenant": "BLUEFIN",
+  "tier": "direct"
+ },
+ {
+  "company": "Terravane Solar Components",
+  "family": "order_import",
+  "industry": "Solar module manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-091",
+  "tenant": "TERRAVANE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Terravane Solar Components",
+  "family": "shipment_verification",
+  "industry": "Solar module manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-092",
+  "tenant": "TERRAVANE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Terravane Solar Components",
+  "family": "receivables_collection",
+  "industry": "Solar module manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-093",
+  "tenant": "TERRAVANE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Terravane Solar Components",
+  "family": "inventory_reorder",
+  "industry": "Solar module manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-094",
+  "tenant": "TERRAVANE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Terravane Solar Components",
+  "family": "receiving_ap_match",
+  "industry": "Solar module manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-095",
+  "tenant": "TERRAVANE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Terravane Solar Components",
+  "family": "channel_order_sync",
+  "industry": "Solar module manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-098",
+  "tenant": "TERRAVANE",
+  "tier": "transferable"
+ },
+ {
+  "company": "Terravane Solar Components",
+  "family": "price_list_batch",
+  "industry": "Solar module manufacturing",
+  "reason": "Core commercial workflow in another industry tenant; useful transferable test, not a distributor-specific setting.",
+  "task_id": "erpbench-100",
+  "tenant": "TERRAVANE",
+  "tier": "transferable"
+ }
+]

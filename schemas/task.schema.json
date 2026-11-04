@@ -53,7 +53,20 @@
         "order_to_cash_disruption",
         "plant_fulfillment_recovery",
         "integrated_operating_review",
-        "contingent_network_recovery"
+        "contingent_network_recovery",
+        "distributor_buy_to_fulfill",
+        "distributor_order_import",
+        "distributor_shipment_verification",
+        "distributor_receivables_collection",
+        "distributor_inventory_reorder",
+        "distributor_receiving_ap_match",
+        "distributor_channel_order_sync",
+        "distributor_price_list_batch",
+        "distributor_sales_analytics",
+        "distributor_pricing_quotation",
+        "distributor_inventory_planning",
+        "distributor_warehouse_shipping",
+        "distributor_policy_documents"
       ]
     },
     "title": {"type": "string", "minLength": 8},

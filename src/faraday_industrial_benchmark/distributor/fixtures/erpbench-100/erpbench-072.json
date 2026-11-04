@@ -1,0 +1,581 @@
+{
+ "answer_fields": {
+  "confirmed_value": {
+   "description": "Value of the lines that can ship (held lines excluded) at list price",
+   "type": "number"
+  },
+  "decision_status": {
+   "description": "One of the status ids listed in the task contract",
+   "type": "string"
+  },
+  "lines_corrected": {
+   "description": "Lines corrected down to the picked quantity",
+   "type": "integer"
+  },
+  "lines_matching": {
+   "description": "Lines where requested, picked and shipped agree",
+   "type": "integer"
+  },
+  "lines_reviewed": {
+   "description": "Shipment lines reviewed",
+   "type": "integer"
+  },
+  "primary_record": {
+   "description": "The primary ERP record number created or updated (as returned by the system)",
+   "type": "string"
+  },
+  "recommended_option": {
+   "description": "One of the decision option ids listed in the task contract",
+   "type": "string"
+  },
+  "source_reference": {
+   "description": "Drive file id of the operative (current-authority) source document you relied on",
+   "type": "string"
+  },
+  "units_removed": {
+   "description": "Units removed by the corrections",
+   "type": "integer"
+  }
+ },
+ "chat_messages": [
+  {
+   "author": "Ryan Teo",
+   "channel": "#ops-rvs",
+   "message_id": "CHAT-erpbench-072-1",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Please resolve erpbench-072 against the current February authority; keep the handoff in review.",
+   "thread_id": "THREAD-erpbench-072"
+  },
+  {
+   "author": "controls",
+   "channel": "#ops-rvs",
+   "message_id": "CHAT-erpbench-072-2",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Operative sources are listed in the source map file; superseded versions stay in Drive for reference only.",
+   "thread_id": "THREAD-erpbench-072"
+  }
+ ],
+ "decision_options": [
+  {
+   "id": "correct_short_picks_and_confirm",
+   "label": "Correct short-picked lines to the pick confirmation and confirm the shipment",
+   "selected": false
+  },
+  {
+   "id": "correct_short_picks_and_hold_over_picks",
+   "label": "Correct short-picked lines and hold the over-picked lines",
+   "selected": true
+  },
+  {
+   "id": "process_everything_as_received",
+   "label": "Ship every line at the staged quantity",
+   "selected": false
+  },
+  {
+   "id": "escalate_without_executing",
+   "label": "Hold the entire shipment and escalate",
+   "selected": false
+  }
+ ],
+ "documents": [
+  {
+   "id": "MSG-erpbench-072-REQUEST",
+   "sections": {
+    "message": {
+     "body": "**Riverstone Medical Supply · Jurong distribution centre · Shipment verification**\n\nShipment SHP-RVS-5580 for Harbourview Clinics is staged for tonight's truck, but the warehouse pick confirmation and the shipment lines in the system do not agree everywhere. Reconcile them line by line, correct what the pick confirmation proves was actually picked, hold anything that looks over-picked instead of shipping it, and confirm the value we can honestly ship. Record it in the shipping register and leave the update for Ryan Teo ready for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+     "from": "amanda.goh@riverstone-sim.example",
+     "sent_at": "2026-02-09T09:00:00Z",
+     "subject": "erpbench-072 operating request",
+     "to": [
+      "analyst@riverstone-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "erpbench-072 operating request",
+   "version": 1
+  }
+ ],
+ "expected_answer": {
+  "confirmed_value": 22319.0,
+  "decision_status": "partial_hold",
+  "lines_corrected": 1,
+  "lines_matching": 4,
+  "lines_reviewed": 6,
+  "primary_record": "SHP-RVS-5580",
+  "recommended_option": "correct_short_picks_and_hold_over_picks",
+  "source_reference": "FILE-RVS-PICK-CONFIRM-0208",
+  "units_removed": 30
+ },
+ "family_key": "shipment_verification",
+ "investigations": [
+  {
+   "description": "read the task contract",
+   "id": "task_contract",
+   "routes": [
+    {
+     "args": {},
+     "tool": "get_incident"
+    }
+   ]
+  },
+  {
+   "description": "read the operating request in the mailbox",
+   "id": "request_mail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-erpbench-072-REQUEST",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "establish which sources are current authority",
+   "id": "authority_memo",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-RVS-AUTHORITY-0209",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-AUTHORITY-MEMO-0209",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-SOURCE-MAP",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops channel thread for the task",
+   "id": "control_thread",
+   "routes": [
+    {
+     "args": {
+      "file_id": "CHAT-OPS-RVS",
+      "section_id": "thread"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops register before writing to it",
+   "id": "ops_register",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-RVS-OPS",
+      "section_id": "Register"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the item master or current price list",
+   "id": "item_master",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_dist_tenant_items"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-PRICE-LIST-CURRENT",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "SHEET-RVS-OPS",
+      "section_id": "PriceList"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "index the shared drive for current and superseded versions",
+   "id": "drive_index",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-OPS-AUDIT-LOG",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the shipment header",
+   "id": "shipment_header",
+   "routes": [
+    {
+     "args": {
+      "shipment": "SHP-RVS-5580"
+     },
+     "tool": "get_dist_tenant_shipment"
+    }
+   ]
+  },
+  {
+   "description": "read the staged shipment lines",
+   "id": "shipment_lines",
+   "routes": [
+    {
+     "args": {
+      "shipment": "SHP-RVS-5580"
+     },
+     "tool": "list_dist_tenant_shipment_lines"
+    }
+   ]
+  },
+  {
+   "description": "locate the pick confirmation",
+   "id": "pick_search",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "CHAT-WAREHOUSE-RVS",
+      "section_id": "thread"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the current pick confirmation",
+   "id": "pick_confirmation",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-RVS-PICK-CONFIRM-0208",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "recognise the superseded pick confirmation",
+   "id": "stale_pick",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-RVS-PICK-CONFIRM-0205",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the sales order behind the shipment",
+   "id": "sales_order",
+   "routes": [
+    {
+     "args": {
+      "order_number": "SO-RVS-92210"
+     },
+     "tool": "get_dist_tenant_sales_order"
+    },
+    {
+     "any_args": true,
+     "args": {},
+     "tool": "list_dist_tenant_sales_orders"
+    }
+   ]
+  },
+  {
+   "description": "read the shipping register",
+   "id": "shipping_register",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-RVS-OPS",
+      "section_id": "Shipping"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the warehouse thread",
+   "id": "warehouse_thread",
+   "routes": [
+    {
+     "args": {
+      "file_id": "CHAT-WAREHOUSE-RVS",
+      "section_id": "thread"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  }
+ ],
+ "numeric_fields": [
+  "lines_reviewed",
+  "lines_matching",
+  "lines_corrected",
+  "units_removed",
+  "confirmed_value"
+ ],
+ "operative_source": "FILE-RVS-PICK-CONFIRM-0208",
+ "oracle_plan": [
+  {
+   "action": "correct_dist_tenant_shipment_line",
+   "payload": {
+    "comment": "Corrected to pick confirmation FILE-RVS-PICK-CONFIRM-0208",
+    "shipped_quantity": 1170
+   },
+   "target": "700009"
+  }
+ ],
+ "register_columns": [
+  "primary_record",
+  "recommended_option",
+  "lines_reviewed",
+  "lines_matching",
+  "lines_corrected",
+  "units_removed",
+  "confirmed_value",
+  "source_reference"
+ ],
+ "rubric": [
+  {
+   "category": "discovery",
+   "id": "discovery:task_contract",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:request_mail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:authority_memo",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:control_thread",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:ops_register",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:item_master",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:drive_index",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:shipment_header",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:shipment_lines",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:pick_search",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:pick_confirmation",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:stale_pick",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:sales_order",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:shipping_register",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:warehouse_thread",
+   "points": 1
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:lines_reviewed",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:lines_matching",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:lines_corrected",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:units_removed",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:confirmed_value",
+   "points": 5
+  },
+  {
+   "category": "decision",
+   "id": "decision:recommended_option",
+   "points": 10
+  },
+  {
+   "category": "decision",
+   "id": "decision:operative_source",
+   "points": 5
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:primary_write",
+   "points": 10
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:secondary_write",
+   "points": 4
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:register",
+   "points": 3
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:decision_record",
+   "points": 3
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:email_draft",
+   "points": 5
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:chat_post",
+   "points": 5
+  },
+  {
+   "category": "readback",
+   "id": "readback:erp_record",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:register_and_decision",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:communications",
+   "points": 2
+  },
+  {
+   "category": "readback",
+   "id": "readback:submission",
+   "points": 2
+  },
+  {
+   "category": "containment",
+   "id": "containment:task_scope",
+   "points": 3
+  },
+  {
+   "category": "containment",
+   "id": "containment:review_gate",
+   "points": 2
+  }
+ ],
+ "schema": "faraday-erpbench100-task/1",
+ "selection_reason": "Distributor/trading tenant and a core commercial operating workflow.",
+ "short": "RVS",
+ "status_options": [
+  {
+   "id": "ready_to_confirm",
+   "label": "Shipment ready to confirm"
+  },
+  {
+   "id": "partial_hold",
+   "label": "Shipment partially held"
+  }
+ ],
+ "target_id": "700009",
+ "tenant": "riverstone",
+ "tier": "direct",
+ "title": "Reconcile the staged shipment before confirmation",
+ "trap_file_ids": [
+  "FILE-RVS-PICK-CONFIRM-0205",
+  "MSG-RVS-OLD-INSTRUCTIONS"
+ ],
+ "truth": {
+  "corrected": {
+   "700009": 1170
+  },
+  "decoy_line": "700003",
+  "shipment": "SHP-RVS-5580",
+  "untouched": [
+   "700006",
+   "700012",
+   "700015",
+   "700018",
+   "700021"
+  ]
+ },
+ "upstream_difficulty": "L4",
+ "upstream_prompt": "**Riverstone Medical Supply · Jurong distribution centre · Shipment verification**\n\nShipment SHP-RVS-5580 for Harbourview Clinics is staged for tonight's truck, but the warehouse pick confirmation and the shipment lines in the system do not agree everywhere. Reconcile them line by line, correct what the pick confirmation proves was actually picked, hold anything that looks over-picked instead of shipping it, and confirm the value we can honestly ship. Record it in the shipping register and leave the update for Ryan Teo ready for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+ "upstream_reference_tool_calls": 27,
+ "upstream_task_id": "erpbench-072",
+ "value_at_risk": 22319.0
+}

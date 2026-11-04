@@ -1,0 +1,666 @@
+{
+ "answer_fields": {
+  "accepted_lines": {
+   "description": "Spreadsheet lines imported",
+   "type": "integer"
+  },
+  "decision_status": {
+   "description": "One of the status ids listed in the task contract",
+   "type": "string"
+  },
+  "duplicate_lines": {
+   "description": "Lines already imported on the earlier partial import",
+   "type": "integer"
+  },
+  "imported_units": {
+   "description": "Total quantity on the imported lines",
+   "type": "integer"
+  },
+  "order_total": {
+   "description": "Imported order value at current list prices",
+   "type": "number"
+  },
+  "primary_record": {
+   "description": "The primary ERP record number created or updated (as returned by the system)",
+   "type": "string"
+  },
+  "recommended_option": {
+   "description": "One of the decision option ids listed in the task contract",
+   "type": "string"
+  },
+  "rejected_lines": {
+   "description": "Spreadsheet lines not imported (duplicates and inactive items)",
+   "type": "integer"
+  },
+  "source_reference": {
+   "description": "Drive file id of the operative (current-authority) source document you relied on",
+   "type": "string"
+  }
+ },
+ "chat_messages": [
+  {
+   "author": "Callum Reid",
+   "channel": "#ops-blf",
+   "message_id": "CHAT-erpbench-081-1",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Please resolve erpbench-081 against the current February authority; keep the handoff in review.",
+   "thread_id": "THREAD-erpbench-081"
+  },
+  {
+   "author": "controls",
+   "channel": "#ops-blf",
+   "message_id": "CHAT-erpbench-081-2",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Operative sources are listed in the source map file; superseded versions stay in Drive for reference only.",
+   "thread_id": "THREAD-erpbench-081"
+  }
+ ],
+ "decision_options": [
+  {
+   "id": "import_accepted_lines_and_submit",
+   "label": "Import the accepted lines at current list prices and submit the order",
+   "selected": true
+  },
+  {
+   "id": "import_accepted_lines_and_hold_submission",
+   "label": "Import the accepted lines but hold submission for credit release",
+   "selected": false
+  },
+  {
+   "id": "process_everything_as_received",
+   "label": "Import every spreadsheet line at the spreadsheet prices",
+   "selected": false
+  },
+  {
+   "id": "escalate_without_executing",
+   "label": "Stop and escalate the whole batch without importing",
+   "selected": false
+  }
+ ],
+ "documents": [
+  {
+   "id": "MSG-erpbench-081-REQUEST",
+   "sections": {
+    "message": {
+     "body": "**Bluefin Marine Parts · Fremantle depot · Customer order import**\n\nSouthern Cross Boatworks sent their consolidated SCB-PO-3391 order as a spreadsheet this morning and wants it confirmed today. Get it into the system properly: check every line against what we already imported for that purchase order and against the items we still sell, price it from the current list rather than whatever the spreadsheet says, and respect the customer's credit standing before you submit anything. Log the import in the ops register and get a reply to Hannah Dwyer ready for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+     "from": "hannah.dwyer@bluefin-sim.example",
+     "sent_at": "2026-02-09T09:00:00Z",
+     "subject": "erpbench-081 operating request",
+     "to": [
+      "analyst@bluefin-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "erpbench-081 operating request",
+   "version": 1
+  }
+ ],
+ "expected_answer": {
+  "accepted_lines": 5,
+  "decision_status": "submitted",
+  "duplicate_lines": 2,
+  "imported_units": 912,
+  "order_total": 14644.0,
+  "primary_record": "SO-BLF-50011",
+  "recommended_option": "import_accepted_lines_and_submit",
+  "rejected_lines": 3,
+  "source_reference": "FILE-BLF-ORDER-BATCH-0209"
+ },
+ "family_key": "order_import",
+ "investigations": [
+  {
+   "description": "read the task contract",
+   "id": "task_contract",
+   "routes": [
+    {
+     "args": {},
+     "tool": "get_incident"
+    }
+   ]
+  },
+  {
+   "description": "read the operating request in the mailbox",
+   "id": "request_mail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-erpbench-081-REQUEST",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "establish which sources are current authority",
+   "id": "authority_memo",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-BLF-AUTHORITY-0209",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-BLF-AUTHORITY-MEMO-0209",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-BLF-SOURCE-MAP",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops channel thread for the task",
+   "id": "control_thread",
+   "routes": [
+    {
+     "args": {
+      "file_id": "CHAT-OPS-BLF",
+      "section_id": "thread"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops register before writing to it",
+   "id": "ops_register",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-BLF-OPS",
+      "section_id": "Register"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the item master or current price list",
+   "id": "item_master",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_dist_tenant_items"
+    },
+    {
+     "args": {
+      "file_id": "FILE-BLF-PRICE-LIST-CURRENT",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "SHEET-BLF-OPS",
+      "section_id": "PriceList"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "index the shared drive for current and superseded versions",
+   "id": "drive_index",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "FILE-BLF-OPS-AUDIT-LOG",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "locate the consolidated order batch",
+   "id": "batch_search",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "FILE-BLF-SOURCE-MAP",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the consolidated order batch",
+   "id": "batch_file",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-BLF-ORDER-BATCH-0209",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the earlier partial import",
+   "id": "prior_partial_import",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-BLF-ORDER-BATCH-0203",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "order_number": "SO-BLF-40039"
+     },
+     "tool": "get_dist_tenant_sales_order"
+    }
+   ]
+  },
+  {
+   "description": "check the sales orders already on the purchase order",
+   "id": "existing_orders",
+   "routes": [
+    {
+     "any_args": true,
+     "args": {
+      "customer_po_number": "SCB-PO-3391"
+     },
+     "tool": "list_dist_tenant_sales_orders"
+    }
+   ]
+  },
+  {
+   "description": "check the customer's credit standing",
+   "id": "customer_credit",
+   "routes": [
+    {
+     "args": {
+      "customer_number": "CUST-90418"
+     },
+     "tool": "get_dist_tenant_customer_account"
+    },
+    {
+     "args": {
+      "file_id": "FILE-BLF-CREDIT-POLICY-R6",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "SHEET-BLF-OPS",
+      "section_id": "Aging"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "recognise the superseded price list",
+   "id": "superseded_prices",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-BLF-PRICE-LIST-2025H2",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the audit trail for the purchase order",
+   "id": "audit_trail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-BLF-OPS-AUDIT-LOG",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "confirm the customer master record",
+   "id": "customer_master",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-BLF-OPS",
+      "section_id": "Customers"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "customer_number": "CUST-90418"
+     },
+     "tool": "get_dist_tenant_customer_account"
+    }
+   ]
+  }
+ ],
+ "numeric_fields": [
+  "accepted_lines",
+  "rejected_lines",
+  "imported_units",
+  "order_total",
+  "duplicate_lines"
+ ],
+ "operative_source": "FILE-BLF-ORDER-BATCH-0209",
+ "oracle_plan": [
+  {
+   "action": "commit_dist_tenant_order_import",
+   "payload": {
+    "customer_number": "CUST-90418",
+    "lines": [
+     {
+      "item_number": "IMP-WP-40",
+      "quantity": 120,
+      "unit_price": 28.0
+     },
+     {
+      "item_number": "ANODE-ZN-2",
+      "quantity": 200,
+      "unit_price": 19.5
+     },
+     {
+      "item_number": "FILT-FUEL-10",
+      "quantity": 180,
+      "unit_price": 16.8
+     },
+     {
+      "item_number": "PROP-AL-13",
+      "quantity": 12,
+      "unit_price": 210.0
+     },
+     {
+      "item_number": "HOSE-BILGE-25",
+      "quantity": 400,
+      "unit_price": 4.6
+     }
+    ],
+    "source_file_id": "FILE-BLF-ORDER-BATCH-0209",
+    "submit": true
+   },
+   "target": "SCB-PO-3391"
+  }
+ ],
+ "register_columns": [
+  "primary_record",
+  "recommended_option",
+  "accepted_lines",
+  "rejected_lines",
+  "imported_units",
+  "order_total",
+  "duplicate_lines",
+  "source_reference"
+ ],
+ "rubric": [
+  {
+   "category": "discovery",
+   "id": "discovery:task_contract",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:request_mail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:authority_memo",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:control_thread",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:ops_register",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:item_master",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:drive_index",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:batch_search",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:batch_file",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:prior_partial_import",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:existing_orders",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:customer_credit",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:superseded_prices",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:audit_trail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:customer_master",
+   "points": 1
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:accepted_lines",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:rejected_lines",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:imported_units",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:order_total",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:duplicate_lines",
+   "points": 5
+  },
+  {
+   "category": "decision",
+   "id": "decision:recommended_option",
+   "points": 10
+  },
+  {
+   "category": "decision",
+   "id": "decision:operative_source",
+   "points": 5
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:primary_write",
+   "points": 10
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:secondary_write",
+   "points": 4
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:register",
+   "points": 3
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:decision_record",
+   "points": 3
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:email_draft",
+   "points": 5
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:chat_post",
+   "points": 5
+  },
+  {
+   "category": "readback",
+   "id": "readback:erp_record",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:register_and_decision",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:communications",
+   "points": 2
+  },
+  {
+   "category": "readback",
+   "id": "readback:submission",
+   "points": 2
+  },
+  {
+   "category": "containment",
+   "id": "containment:task_scope",
+   "points": 3
+  },
+  {
+   "category": "containment",
+   "id": "containment:review_gate",
+   "points": 2
+  }
+ ],
+ "schema": "faraday-erpbench100-task/1",
+ "selection_reason": "Distributor/trading tenant and a core commercial operating workflow.",
+ "short": "BLF",
+ "status_options": [
+  {
+   "id": "submitted",
+   "label": "Order submitted"
+  },
+  {
+   "id": "awaiting_credit_release",
+   "label": "Order held awaiting credit release"
+  }
+ ],
+ "target_id": "SCB-PO-3391",
+ "tenant": "bluefin",
+ "tier": "direct",
+ "title": "Import the customer's consolidated order",
+ "trap_file_ids": [
+  "FILE-BLF-PRICE-LIST-2025H2",
+  "MSG-BLF-OLD-INSTRUCTIONS"
+ ],
+ "truth": {
+  "batch_file_id": "FILE-BLF-ORDER-BATCH-0209",
+  "credit_hold": false,
+  "customer_number": "CUST-90418",
+  "customer_po": "SCB-PO-3391",
+  "expected_lines": [
+   [
+    "IMP-WP-40",
+    120,
+    28.0
+   ],
+   [
+    "ANODE-ZN-2",
+    200,
+    19.5
+   ],
+   [
+    "FILT-FUEL-10",
+    180,
+    16.8
+   ],
+   [
+    "PROP-AL-13",
+    12,
+    210.0
+   ],
+   [
+    "HOSE-BILGE-25",
+    400,
+    4.6
+   ]
+  ],
+  "order_total": 14644.0,
+  "prior_items": [
+   [
+    "IMP-WP-40",
+    60
+   ],
+   [
+    "FILT-FUEL-10",
+    90
+   ]
+  ],
+  "unrelated_orders": [
+   "SO-BLF-40039",
+   "SO-BLF-DECOY"
+  ]
+ },
+ "upstream_difficulty": "L4",
+ "upstream_prompt": "**Bluefin Marine Parts · Fremantle depot · Customer order import**\n\nSouthern Cross Boatworks sent their consolidated SCB-PO-3391 order as a spreadsheet this morning and wants it confirmed today. Get it into the system properly: check every line against what we already imported for that purchase order and against the items we still sell, price it from the current list rather than whatever the spreadsheet says, and respect the customer's credit standing before you submit anything. Log the import in the ops register and get a reply to Hannah Dwyer ready for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+ "upstream_reference_tool_calls": 27,
+ "upstream_task_id": "erpbench-081",
+ "value_at_risk": 14644.0
+}

@@ -30,6 +30,11 @@ pass `faraday-bench upstreams --verify`. Restricted, private, noncommercial, or
 ambiguous material remains reference-only. Compatibility-track scores are never
 pooled into the Faraday-native aggregate.
 
+One owner-approved exception exists: the GDPval-derived distributor tasks commit
+reference data, expected deliverables, and rubrics as grader-only material even
+though GDPval declares no license (see NOTICE and THIRD_PARTY_NOTICES.md). Do not
+extend that exception to other sources without the same explicit decision.
+
 ## Development
 
 ```bash
@@ -41,6 +46,14 @@ faraday-bench qualify
 
 All reference episodes must strictly pass, every unauthorized-write control must
 score zero, and saved reference traces must replay exactly.
+
+## Development assistants
+
+The [benchmark development team](team/README.md) defines a research lead and five
+specialist roles with project-scoped Codex and Claude Code subagent adapters.
+Use the shared role files when configuring another harness; keep benchmark
+methodology and domain knowledge there rather than duplicating them in harness
+configuration.
 
 ## Reporting evaluator problems
 

@@ -1,0 +1,2023 @@
+{
+ "documents": [
+  {
+   "id": "CHAT-CUSTOMERS-SGF",
+   "sections": {
+    "thread": [
+     {
+      "author": "sales-inbox",
+      "message_id": "CHAT-SGF-CAPTURE-1",
+      "posted_at": "2026-02-09T06:30:00Z",
+      "text": "New buyer from Tokopedia: Toko Maju Jaya, tax id ID-09-330187, orders via order@majujaya-sim.example. Needs a master record before invoicing.",
+      "thread_id": "THREAD-SGF-CAPTURE"
+     },
+     {
+      "author": "Ayu Kartika",
+      "message_id": "CHAT-SGF-CAPTURE-2",
+      "posted_at": "2026-02-09T06:35:00Z",
+      "text": "Capture it in the customer master tab, not as a note; check the channel export for their first order.",
+      "thread_id": "THREAD-SGF-CAPTURE"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#customers-sgf channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-HR-SGF",
+   "sections": {
+    "thread": [
+     {
+      "author": "Sari Dewanti",
+      "message_id": "CHAT-SGF-HR",
+      "posted_at": "2026-02-06T09:00:00Z",
+      "text": "Compliance audit next week; document alerts, failed checks and the hiring round all need closing this week.",
+      "thread_id": "THREAD-SGF-HR"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#hr-sgf channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-OPS-SGF",
+   "sections": {
+    "thread": [
+     {
+      "author": "Ayu Kartika",
+      "message_id": "CHAT-SGF-PRIOR-IMPORT",
+      "posted_at": "2026-02-03T10:20:00Z",
+      "text": "Partial import for NRG-0209-88 went in on 2026-02-03 as SO-SGF-40039; the rest of the lines are still pending.",
+      "thread_id": "THREAD-SGF-IMPORT"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#ops-sgf channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-PLANNING-SGF",
+   "sections": {
+    "thread": [
+     {
+      "author": "Ayu Kartika",
+      "message_id": "CHAT-SGF-PLANNING",
+      "posted_at": "2026-02-09T07:45:00Z",
+      "text": "Reorder run today: use policy R4 (open POs count as supply) and the 10-day need window; Java Agro Cooperative lead time is 7 days.",
+      "thread_id": "THREAD-SGF-PLAN"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#planning-sgf channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-PRICING-SGF",
+   "sections": {
+    "thread": [
+     {
+      "author": "pricing",
+      "message_id": "CHAT-SGF-PRICING",
+      "posted_at": "2026-02-09T08:20:00Z",
+      "text": "Price batch PRICE-BATCH-SGF-2026Q2 is out; policy tab in the ops register applies.",
+      "thread_id": "THREAD-SGF-PRICE"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#pricing-sgf channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-SHIFT-SGF",
+   "sections": {
+    "thread": [
+     {
+      "author": "Eko Susanto",
+      "message_id": "CHAT-SGF-SHIFT",
+      "posted_at": "2026-02-08T21:00:00Z",
+      "text": "Morning shift 2026-02-08: reports due by 15:10; overtime is measured from shift end.",
+      "thread_id": "THREAD-SGF-SHIFT"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#shift-sgf channel history",
+   "version": 1
+  },
+  {
+   "id": "CHAT-WAREHOUSE-SGF",
+   "sections": {
+    "thread": [
+     {
+      "author": "Eko Susanto",
+      "message_id": "CHAT-SGF-WAREHOUSE",
+      "posted_at": "2026-02-08T22:10:00Z",
+      "text": "SHP-SGF-6630 picked; the pick confirmation is uploaded, a couple of lines did not match the requested quantity.",
+      "thread_id": "THREAD-SGF-WH"
+     }
+    ]
+   },
+   "status": "authoritative",
+   "system": "chat",
+   "title": "#warehouse-sgf channel history",
+   "version": 1
+  },
+  {
+   "id": "FILE-SGF-AP-MATCH-POLICY",
+   "sections": {
+    "content": {
+     "file_name": "13-ap-match-policy.md",
+     "logical_name": "ap-match-policy",
+     "mime_type": "text/markdown",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "# Sungrove Foods three-way match policy\n\n- Price tolerance: 2.5% of the purchase-order unit price per line.\n- Invoiced quantity may never exceed the received quantity.\n- Lines outside tolerance are entered and placed on hold with the reason; matched lines are validated for payment.\n- Payment release is authorized by Bambang Wijaya after the analyst's match note.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "13-ap-match-policy.md",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-AR-AGING-0209",
+   "sections": {
+    "content": {
+     "file_name": "07-ar-aging.xlsx",
+     "logical_name": "ar-aging",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Invoice,Amount,Due date,Days past due,Status\r\nINV-SGF-61050,9200.0,2026-01-02,38,open\r\nINV-SGF-61102,4750.0,2026-01-15,25,open\r\nINV-SGF-61149,6100.0,2026-01-30,10,open\r\nINV-SGF-61203,3900.0,2026-02-14,0,open\r\nINV-SGF-61240,5150.0,2026-02-26,0,open\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "07-ar-aging.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-AUTHORITY-MEMO-0209",
+   "sections": {
+    "content": {
+     "file_name": "24-authority-memo.eml",
+     "logical_name": "authority-memo",
+     "mime_type": "message/rfc822",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "From: ayu.kartika@sungrove-sim.example\nTo: analyst@sungrove-sim.example\nSubject: Sungrove Foods operating authority for February\n\nCurrent sources of truth: the 2026-02-09 order batch, the 2026-02-08 pick confirmation, the 2026-02-06 remittance advice, reorder policy R4, the 2026-02-06 delivery note, the 2026-02-09 compliance checklist, the 2026-02-08 roster, the 2026-02-09 channel export, the 2026 headcount approval and the Q2 price batch. Earlier versions are superseded. All outbound messages stay in review.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "24-authority-memo.eml",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-CANDIDATE-REGISTER",
+   "sections": {
+    "content": {
+     "file_name": "21-candidate-register.xlsx",
+     "logical_name": "candidate-register",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Candidate,Candidate id,Permit expiry,Background check,Grade\r\nWahyu Nugraha,SGF-C201,2027-06-24,passed,B\r\nLilis Suryani,SGF-C202,2026-08-28,passed,B\r\nTaufik Hidayat,SGF-C203,2028-07-28,passed,B\r\nMega Utami,SGF-C204,2028-01-10,not passed,B\r\nAndi Saputra,SGF-C205,2029-05-24,passed,B\r\nFitri Handayani,SGF-C206,2026-04-10,passed,B\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "21-candidate-register.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-CHANNEL-EXPORT-0202",
+   "sections": {
+    "content": {
+     "file_name": "Tokopedia-export-2026-02-02.json",
+     "logical_name": "channel-export",
+     "mime_type": "application/json",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "{\n  \"channel\": \"Tokopedia\",\n  \"exported_at\": \"2026-02-02T06:00:00Z\",\n  \"orders\": [\n    {\n      \"buyer\": \"Warung Sejahtera\",\n      \"channel_order_id\": \"TK-31001\",\n      \"order_total\": 410.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Kios Berkah\",\n      \"channel_order_id\": \"TK-31004\",\n      \"order_total\": 275.25,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Toko Subur\",\n      \"channel_order_id\": \"TK-31006\",\n      \"order_total\": 330.0,\n      \"status\": \"paid\"\n    }\n  ]\n}"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "Tokopedia-export-2026-02-02.json",
+   "version": 1
+  },
+  {
+   "id": "FILE-SGF-CHANNEL-EXPORT-0209",
+   "sections": {
+    "content": {
+     "file_name": "18-channel-export.json",
+     "logical_name": "channel-export",
+     "mime_type": "application/json",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "{\n  \"channel\": \"Tokopedia\",\n  \"exported_at\": \"2026-02-09T06:00:00Z\",\n  \"orders\": [\n    {\n      \"buyer\": \"Warung Sejahtera\",\n      \"channel_order_id\": \"TK-31001\",\n      \"currency\": \"USD\",\n      \"order_total\": 410.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Toko Maju Jaya\",\n      \"channel_order_id\": \"TK-31002\",\n      \"currency\": \"USD\",\n      \"order_total\": 985.5,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Minimart Bahagia\",\n      \"channel_order_id\": \"TK-31003\",\n      \"currency\": \"USD\",\n      \"order_total\": 620.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Kios Berkah\",\n      \"channel_order_id\": \"TK-31004\",\n      \"currency\": \"USD\",\n      \"order_total\": 275.25,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Grosir Makmur\",\n      \"channel_order_id\": \"TK-31005\",\n      \"currency\": \"USD\",\n      \"order_total\": 1540.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Grosir Makmur\",\n      \"channel_order_id\": \"TK-31005\",\n      \"currency\": \"USD\",\n      \"order_total\": 1540.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Toko Subur\",\n      \"channel_order_id\": \"TK-31006\",\n      \"currency\": \"USD\",\n      \"order_total\": 330.0,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Warung Ceria\",\n      \"channel_order_id\": \"TK-31007\",\n      \"currency\": \"USD\",\n      \"order_total\": 710.8,\n      \"status\": \"paid\"\n    },\n    {\n      \"buyer\": \"Warung Ceria\",\n      \"channel_order_id\": \"TK-31007\",\n      \"currency\": \"USD\",\n      \"order_total\": 710.8,\n      \"status\": \"paid\"\n    }\n  ]\n}"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "18-channel-export.json",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-COMPLIANCE-CHECKLIST-0126",
+   "sections": {
+    "content": {
+     "file_name": "compliance-checklist-2026-01-26.xlsx",
+     "logical_name": "compliance-checklist",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "Person,Person number,Document,Expires,Days remaining\nDwi Handayani,SGF-P1001,Food handler certificate,2026-02-23,28\nSlamet Riyadi,SGF-P1002,Health check,2026-03-02,35\nYuni Astuti,SGF-P1003,Food handler certificate,2026-04-10,74\nAgung Setiawan,SGF-P1004,Forklift licence,2026-02-15,20\nRatna Sari,SGF-P1005,Health check,2026-03-09,42\nHendra Gunawan,SGF-P1006,Food handler certificate,2026-02-26,31\nNur Aini,SGF-P1007,Safety induction,2026-10-07,254\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "compliance-checklist-2026-01-26.xlsx",
+   "version": 1
+  },
+  {
+   "id": "FILE-SGF-COMPLIANCE-CHECKLIST-0209",
+   "sections": {
+    "content": {
+     "file_name": "14-compliance-checklist.xlsx",
+     "logical_name": "compliance-checklist",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Person,Person number,Document,Expires,Days remaining,Mandatory check,Check pending\r\nDwi Handayani,SGF-P1001,Food handler certificate,2026-02-23,14,pass,no\r\nSlamet Riyadi,SGF-P1002,Health check,2026-03-02,21,pass,no\r\nYuni Astuti,SGF-P1003,Food handler certificate,2026-04-10,60,pass,no\r\nAgung Setiawan,SGF-P1004,Forklift licence,2026-02-15,6,pass,no\r\nRatna Sari,SGF-P1005,Health check,2026-03-09,28,pass,yes\r\nHendra Gunawan,SGF-P1006,Food handler certificate,2026-02-26,17,pass,yes\r\nNur Aini,SGF-P1007,Safety induction,2026-10-07,240,pass,no\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "14-compliance-checklist.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-CREDIT-POLICY-R6",
+   "sections": {
+    "content": {
+     "file_name": "08-credit-policy.md",
+     "logical_name": "credit-policy",
+     "mime_type": "text/markdown",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "# Sungrove Foods credit policy (revision 6, effective 2026-01-15)\n\n- Credit limit for Nusa Retail Group: 60000.00 USD.\n- Recommend a credit hold when past-due receivables exceed 25% of the credit limit after all identified receipts are applied.\n- Credit holds are approved only by Bambang Wijaya; analysts recommend, they do not apply holds.\n- Receipts are applied only to the invoices named on the customer's remittance advice.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "08-credit-policy.md",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-CUSTOMER-CAPTURE-0209",
+   "sections": {
+    "content": {
+     "file_name": "19-customer-capture-chat.json",
+     "logical_name": "customer-capture-chat",
+     "mime_type": "application/json",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "{\n  \"channel\": \"#customers-sgf\",\n  \"messages\": [\n    {\n      \"author\": \"sales-inbox\",\n      \"text\": \"New buyer from Tokopedia: Toko Maju Jaya, tax id ID-09-330187, orders via order@majujaya-sim.example. Needs a master record before invoicing.\"\n    },\n    {\n      \"author\": \"Ayu Kartika\",\n      \"text\": \"Capture it in the customer master tab, not as a note; check the channel export for their first order.\"\n    }\n  ]\n}"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "19-customer-capture-chat.json",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-DELIVERY-NOTE-0206",
+   "sections": {
+    "content": {
+     "file_name": "12-delivery-note.pdf",
+     "logical_name": "delivery-note",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Java Agro Cooperative — delivery note DN-SGF-0206 for PO-SGF-71203\nDelivered to Malang plant on 2026-02-06, signed by receiving clerk.\nLine 1: SNK-CASSAVA-200  ordered 6000  delivered 6000\nLine 2: SNK-BANANA-150  ordered 4000  delivered 4000\nLine 3: SAUCE-SAMBAL-300  ordered 2000  delivered 2000\nLine 4: COF-ROBUSTA-1K  ordered 800  delivered 700\nQuantities below the ordered amount are back-ordered, not short-shipped.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "12-delivery-note.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-DEMAND-FORECAST-F06",
+   "sections": {
+    "content": {
+     "file_name": "10-demand-forecast.csv",
+     "logical_name": "demand-forecast",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "item,weekly_demand,need_window_days,forecast_revision\nSNK-CASSAVA-200,1000,10,F-2026-06\nSNK-BANANA-150,750,10,F-2026-06\nSAUCE-SAMBAL-300,300,10,F-2026-06\nCOF-ROBUSTA-1K,100,10,F-2026-06\nTEA-JAS-100,175,10,F-2026-06\nSNK-TEMPE-OLD,1,10,F-2026-06\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "10-demand-forecast.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-DOCUMENT-ALERT-LOG",
+   "sections": {
+    "content": {
+     "file_name": "15-document-alert-log.csv",
+     "logical_name": "document-alert-log",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "person_number,document,alerted_on,alerted_by\nSGF-P1004,Forklift licence,2026-01-28,Sari Dewanti\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "15-document-alert-log.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-HEADCOUNT-APPROVAL-2025",
+   "sections": {
+    "content": {
+     "file_name": "headcount-approval-2025.pdf",
+     "logical_name": "headcount-approval",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "Sungrove Foods headcount approval 2025 (superseded)\nPosition: line packer   Approved headcount: 12\nApproved monthly wage: 601.60\nSuperseded by the 2026 approval.\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "headcount-approval-2025.pdf",
+   "version": 1
+  },
+  {
+   "id": "FILE-SGF-HEADCOUNT-APPROVAL-2026",
+   "sections": {
+    "content": {
+     "file_name": "20-headcount-approval.pdf",
+     "logical_name": "headcount-approval",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Sungrove Foods headcount approval 2026 (revision 2)\nPosition: line packer   Approved headcount: 10   Standard contract: 12 months\nApproved monthly wage: 640.00 USD\nApproved by Sari Dewanti on 2026-01-20. Supersedes the 2025 approval.\nOnly candidates with passed background checks and work permits valid beyond the contract end may be hired.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "20-headcount-approval.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-OPS-AUDIT-LOG",
+   "sections": {
+    "content": {
+     "file_name": "26-ops-audit.log",
+     "logical_name": "ops-audit",
+     "mime_type": "text/plain",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "2026-02-03T10:12:00Z SGF partial import created SO-SGF-40039 from an earlier copy of NRG-0209-88\n2026-02-06T15:40:00Z SGF delivery note DN-SGF-0206 received at Malang plant\n2026-02-08T22:05:00Z SGF pick confirmation posted for SHP-SGF-6630\n2026-02-09T06:00:00Z SGF Tokopedia export generated\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "26-ops-audit.log",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-ORDER-BATCH-0203",
+   "sections": {
+    "content": {
+     "file_name": "02-prior-partial-import.xlsx",
+     "logical_name": "prior-partial-import",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-03T10:00:00Z",
+     "text": "Line,Customer PO,Item,Quantity,Imported order,Imported on\r\n6,NRG-0209-88,SNK-CASSAVA-200,1200,SO-SGF-40039,2026-02-03\r\n9,NRG-0209-88,SAUCE-SAMBAL-300,350,SO-SGF-40039,2026-02-03\r\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "02-prior-partial-import.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-ORDER-BATCH-0209",
+   "sections": {
+    "content": {
+     "file_name": "01-consolidated-order-batch.xlsx",
+     "logical_name": "consolidated-order-batch",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Line,Customer PO,Item,Description,Quantity,Unit price (customer sheet)\r\n1,NRG-0209-88,SNK-CASSAVA-200,Cassava chips 200 g,2400,2.05\r\n2,NRG-0209-88,SNK-BANANA-150,Banana chips 150 g,1800,2.27\r\n3,NRG-0209-88,SAUCE-SAMBAL-300,Sambal 300 ml,900,2.81\r\n4,NRG-0209-88,COF-ROBUSTA-1K,Robusta beans 1 kg,300,10.58\r\n5,NRG-0209-88,TEA-JAS-100,Jasmine tea 100 bags,600,4.54\r\n6,NRG-0209-88,SNK-CASSAVA-200,Cassava chips 200 g,1200,2.05\r\n7,NRG-0209-88,SNK-TEMPE-OLD,Tempeh crisps (retired),400,1.84\r\n8,NRG-0209-88,SNK-BANANA-150,Banana chips 150 g,700,2.27\r\n9,NRG-0209-88,SAUCE-SAMBAL-300,Sambal 300 ml,350,2.81\r\n10,NRG-0209-88,COF-ROBUSTA-1K,Robusta beans 1 kg,150,10.58\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "01-consolidated-order-batch.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-PICK-CONFIRM-0205",
+   "sections": {
+    "content": {
+     "file_name": "SHP-SGF-6630-pick-confirmation-2026-02-05.csv",
+     "logical_name": "pick-confirmation",
+     "mime_type": "text/csv",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "shipment,line,item,requested,picked,picker,confirmed_at\nSHP-SGF-6630,1,SNK-CASSAVA-200,2000,2000,WH-11,2026-02-05T20:11:00Z\nSHP-SGF-6630,2,SNK-BANANA-150,1500,1500,WH-12,2026-02-05T20:12:00Z\nSHP-SGF-6630,3,SAUCE-SAMBAL-300,800,800,WH-13,2026-02-05T20:13:00Z\nSHP-SGF-6630,4,COF-ROBUSTA-1K,250,250,WH-14,2026-02-05T20:14:00Z\nSHP-SGF-6630,5,TEA-JAS-100,500,500,WH-15,2026-02-05T20:15:00Z\nSHP-SGF-6630,6,SNK-CASSAVA-200,900,900,WH-16,2026-02-05T20:16:00Z\nSHP-SGF-6630,7,SNK-BANANA-150,400,400,WH-17,2026-02-05T20:17:00Z\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "SHP-SGF-6630-pick-confirmation-2026-02-05.csv",
+   "version": 1
+  },
+  {
+   "id": "FILE-SGF-PICK-CONFIRM-0208",
+   "sections": {
+    "content": {
+     "file_name": "05-pick-confirmation.csv",
+     "logical_name": "pick-confirmation",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "shipment,line,item,requested,picked,picker,confirmed_at\nSHP-SGF-6630,1,SNK-CASSAVA-200,2000,2000,WH-11,2026-02-08T21:11:00Z\nSHP-SGF-6630,2,SNK-BANANA-150,1500,1500,WH-12,2026-02-08T21:12:00Z\nSHP-SGF-6630,3,SAUCE-SAMBAL-300,800,776,WH-13,2026-02-08T21:13:00Z\nSHP-SGF-6630,4,COF-ROBUSTA-1K,250,250,WH-14,2026-02-08T21:14:00Z\nSHP-SGF-6630,5,TEA-JAS-100,500,500,WH-15,2026-02-08T21:15:00Z\nSHP-SGF-6630,6,SNK-CASSAVA-200,900,924,WH-16,2026-02-08T21:16:00Z\nSHP-SGF-6630,7,SNK-BANANA-150,400,400,WH-17,2026-02-08T21:17:00Z\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "05-pick-confirmation.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-PRICE-BATCH-Q1",
+   "sections": {
+    "content": {
+     "file_name": "PRICE-BATCH-SGF-2026Q1.csv",
+     "logical_name": "price-batch",
+     "mime_type": "text/csv",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "batch,line,item,new_list_price,effective_date\nPRICE-BATCH-SGF-2026Q1,1,SNK-CASSAVA-200,1.90,2026-01-01\nPRICE-BATCH-SGF-2026Q1,2,SNK-BANANA-150,2.10,2026-01-01\nPRICE-BATCH-SGF-2026Q1,3,SAUCE-SAMBAL-300,2.60,2026-01-01\nPRICE-BATCH-SGF-2026Q1,4,COF-ROBUSTA-1K,9.80,2026-01-01\nPRICE-BATCH-SGF-2026Q1,5,TEA-JAS-100,4.20,2026-01-01\nPRICE-BATCH-SGF-2026Q1,6,SNK-TEMPE-OLD,1.70,2026-01-01\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "PRICE-BATCH-SGF-2026Q1.csv",
+   "version": 1
+  },
+  {
+   "id": "FILE-SGF-PRICE-BATCH-Q2",
+   "sections": {
+    "content": {
+     "file_name": "23-price-batch.csv",
+     "logical_name": "price-batch",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "batch,line,item,new_list_price,effective_date\nPRICE-BATCH-SGF-2026Q2,1,SNK-CASSAVA-200,2.05,2026-02-19\nPRICE-BATCH-SGF-2026Q2,2,SNK-BANANA-150,2.20,2026-02-19\nPRICE-BATCH-SGF-2026Q2,3,SAUCE-SAMBAL-300,2.75,2026-02-19\nPRICE-BATCH-SGF-2026Q2,4,COF-ROBUSTA-1K,11.60,2026-02-19\nPRICE-BATCH-SGF-2026Q2,5,TEA-JAS-100,4.40,2026-02-08\nPRICE-BATCH-SGF-2026Q2,6,SNK-CASSAVA-200,2.10,2026-03-21\nPRICE-BATCH-SGF-2026Q2,7,SNK-COCONUT-120,2.30,2026-02-19\nPRICE-BATCH-SGF-2026Q2,8,SNK-TEMPE-OLD,1.80,2026-02-19\nPRICE-BATCH-SGF-2026Q2,9,SNK-BANANA-150,2.25,2026-04-20\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "23-price-batch.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-PRICE-LIST-2025H2",
+   "sections": {
+    "content": {
+     "file_name": "04-superseded-price-list.csv",
+     "logical_name": "superseded-price-list",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-03T10:00:00Z",
+     "text": "item,description,list_price,status,effective_from,superseded\nSNK-CASSAVA-200,Cassava chips 200 g,1.81,Active,2025-07-01,true\nSNK-BANANA-150,Banana chips 150 g,2.00,Active,2025-07-01,true\nSAUCE-SAMBAL-300,Sambal 300 ml,2.47,Active,2025-07-01,true\nCOF-ROBUSTA-1K,Robusta beans 1 kg,9.31,Active,2025-07-01,true\nTEA-JAS-100,Jasmine tea 100 bags,3.99,Active,2025-07-01,true\nSNK-TEMPE-OLD,Tempeh crisps (retired),1.62,Active,2025-07-01,true\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "04-superseded-price-list.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-PRICE-LIST-CURRENT",
+   "sections": {
+    "content": {
+     "file_name": "03-current-price-list.csv",
+     "logical_name": "current-price-list",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "item,description,list_price,status,effective_from\nSNK-CASSAVA-200,Cassava chips 200 g,1.90,Active,2026-01-01\nSNK-BANANA-150,Banana chips 150 g,2.10,Active,2026-01-01\nSAUCE-SAMBAL-300,Sambal 300 ml,2.60,Active,2026-01-01\nCOF-ROBUSTA-1K,Robusta beans 1 kg,9.80,Active,2026-01-01\nTEA-JAS-100,Jasmine tea 100 bags,4.20,Active,2026-01-01\nSNK-TEMPE-OLD,Tempeh crisps (retired),1.70,Inactive,2026-01-01\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "03-current-price-list.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-REMIT-ADVICE-0206",
+   "sections": {
+    "content": {
+     "file_name": "06-remittance-advice.pdf",
+     "logical_name": "remittance-advice",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Nusa Retail Group — remittance advice\nPayee: Sungrove Foods\nPayment date: 2026-02-04   Method: Bank transfer\nAmount paid: 4750.00 USD\nInvoices covered by this payment:\n  INV-SGF-61102  4750.00\nInvoices not included in this remittance are disputed or scheduled separately.\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "06-remittance-advice.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-REORDER-POLICY-R3",
+   "sections": {
+    "content": {
+     "file_name": "reorder-policy-R3.xlsx",
+     "logical_name": "reorder-policy",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-01-26T09:00:00Z",
+     "text": "Item,Reorder point,Planned maximum,Count open POs as supply,Policy revision\nSNK-CASSAVA-200,3800,9000,no,R3\nSNK-BANANA-150,2800,7000,no,R3\nSAUCE-SAMBAL-300,1000,3000,no,R3\nCOF-ROBUSTA-1K,200,1200,no,R3\nTEA-JAS-100,500,1600,no,R3\nSNK-TEMPE-OLD,0,0,no,R3\n"
+    }
+   },
+   "status": "superseded",
+   "system": "shared_drive",
+   "title": "reorder-policy-R3.xlsx",
+   "version": 1
+  },
+  {
+   "id": "FILE-SGF-REORDER-POLICY-R4",
+   "sections": {
+    "content": {
+     "file_name": "09-reorder-policy.xlsx",
+     "logical_name": "reorder-policy",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Item,Reorder point,Planned maximum,Count open POs as supply,Policy revision\r\nSNK-CASSAVA-200,4000,9000,yes,R4\r\nSNK-BANANA-150,3000,7000,yes,R4\r\nSAUCE-SAMBAL-300,1200,3000,yes,R4\r\nCOF-ROBUSTA-1K,400,1200,yes,R4\r\nTEA-JAS-100,700,1600,yes,R4\r\nSNK-TEMPE-OLD,0,0,yes,R4\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "09-reorder-policy.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-SHIFT-REPORTS-0208",
+   "sections": {
+    "content": {
+     "file_name": "17-shift-work-reports.csv",
+     "logical_name": "shift-work-reports",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "staff_code,shift_date,submitted_at,minutes_over_shift_end\nSG-401,2026-02-08,15:00,0\nSG-402,2026-02-08,15:04,0\nSG-403,2026-02-08,15:22,35\nSG-404,2026-02-08,15:07,0\nSG-405,2026-02-08,15:09,0\nSG-406,2026-02-08,15:15,20\nSG-407,2026-02-08,15:03,0\nSG-408,2026-02-08,15:08,0\nSG-409,2026-02-08,15:01,0\nSG-410,2026-02-08,15:40,55\nSG-411,2026-02-08,15:05,0\nSG-412,2026-02-08,15:06,0\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "17-shift-work-reports.csv",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-SHIFT-ROSTER-0208",
+   "sections": {
+    "content": {
+     "file_name": "16-shift-roster.xlsx",
+     "logical_name": "shift-roster",
+     "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Staff code,Shift,Date,Approved leave\r\nSG-401,Morning,2026-02-08,no\r\nSG-402,Morning,2026-02-08,no\r\nSG-403,Morning,2026-02-08,no\r\nSG-404,Morning,2026-02-08,no\r\nSG-405,Morning,2026-02-08,no\r\nSG-406,Morning,2026-02-08,no\r\nSG-407,Morning,2026-02-08,no\r\nSG-408,Morning,2026-02-08,no\r\nSG-409,Morning,2026-02-08,no\r\nSG-410,Morning,2026-02-08,no\r\nSG-411,Morning,2026-02-08,no\r\nSG-412,Morning,2026-02-08,no\r\nSG-413,Morning,2026-02-08,yes\r\nSG-414,Morning,2026-02-08,yes\r\nSG-415,Morning,2026-02-08,yes\r\nSG-416,Morning,2026-02-08,no\r\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "16-shift-roster.xlsx",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-SOURCE-MAP",
+   "sections": {
+    "content": {
+     "file_name": "25-source-map.yaml",
+     "logical_name": "source-map",
+     "mime_type": "application/yaml",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "tenant: SUNGROVE\norder_batch: FILE-SGF-ORDER-BATCH-0209\npick_confirmation: FILE-SGF-PICK-CONFIRM-0208\nremittance_advice: FILE-SGF-REMIT-ADVICE-0206\nreorder_policy: FILE-SGF-REORDER-POLICY-R4\ndelivery_note: FILE-SGF-DELIVERY-NOTE-0206\ncompliance_checklist: FILE-SGF-COMPLIANCE-CHECKLIST-0209\nshift_roster: FILE-SGF-SHIFT-ROSTER-0208\nchannel_export: FILE-SGF-CHANNEL-EXPORT-0209\nheadcount_approval: FILE-SGF-HEADCOUNT-APPROVAL-2026\nprice_batch: FILE-SGF-PRICE-BATCH-Q2\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "25-source-map.yaml",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-SUPPLIER-INVOICE-0207",
+   "sections": {
+    "content": {
+     "file_name": "11-supplier-invoice.pdf",
+     "logical_name": "supplier-invoice",
+     "mime_type": "application/pdf",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "Java Agro Cooperative — tax invoice JAC-INV-4471\nBill to: Sungrove Foods (Sungrove Manufacturing)\nPurchase order: PO-SGF-71203   Invoice date: 2026-02-07\nLine 1: SNK-CASSAVA-200  qty 6000  @ 1.10\nLine 2: SNK-BANANA-150  qty 4000  @ 1.25\nLine 3: SAUCE-SAMBAL-300  qty 2000  @ 1.50\nLine 4: COF-ROBUSTA-1K  qty 700  @ 6.40\nInvoice total: 19080.00 USD\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "11-supplier-invoice.pdf",
+   "version": 2
+  },
+  {
+   "id": "FILE-SGF-WAGE-TABLE",
+   "sections": {
+    "content": {
+     "file_name": "22-wage-table.csv",
+     "logical_name": "wage-table",
+     "mime_type": "text/csv",
+     "modified_time": "2026-02-09T06:00:00Z",
+     "text": "position,monthly_wage,contract_months,approved_from\nline packer,640.00,12,2026-01-20\n"
+    }
+   },
+   "status": "authoritative",
+   "system": "shared_drive",
+   "title": "22-wage-table.csv",
+   "version": 2
+  },
+  {
+   "id": "MSG-SGF-AUDITOR-0205",
+   "sections": {
+    "message": {
+     "body": "The audit covers worker documents expiring within 30 days and any mandatory check that has failed or is still pending. Use the 2026-02-09 checklist (FILE-SGF-COMPLIANCE-CHECKLIST-0209); the January checklist is superseded.",
+     "from": "audit@sungrove-sim.example",
+     "sent_at": "2026-02-05T14:00:00Z",
+     "subject": "Compliance audit scope",
+     "to": [
+      "hr@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Compliance audit scope",
+   "version": 1
+  },
+  {
+   "id": "MSG-SGF-AUTHORITY-0209",
+   "sections": {
+    "message": {
+     "body": "From: ayu.kartika@sungrove-sim.example\nTo: analyst@sungrove-sim.example\nSubject: Sungrove Foods operating authority for February\n\nCurrent sources of truth: the 2026-02-09 order batch, the 2026-02-08 pick confirmation, the 2026-02-06 remittance advice, reorder policy R4, the 2026-02-06 delivery note, the 2026-02-09 compliance checklist, the 2026-02-08 roster, the 2026-02-09 channel export, the 2026 headcount approval and the Q2 price batch. Earlier versions are superseded. All outbound messages stay in review.\n",
+     "from": "ayu.kartika@sungrove-sim.example",
+     "sent_at": "2026-02-09T07:30:00Z",
+     "subject": "Sungrove Foods operating authority for February",
+     "to": [
+      "analyst@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Sungrove Foods operating authority for February",
+   "version": 1
+  },
+  {
+   "id": "MSG-SGF-CHANNEL-0209",
+   "sections": {
+    "message": {
+     "body": "This week's Tokopedia export is FILE-SGF-CHANNEL-EXPORT-0209. Orders already carrying a sales order number were synced last week; the export may contain repeated rows. A new buyer introduced themselves in the customers channel.",
+     "from": "ecommerce@sungrove-sim.example",
+     "sent_at": "2026-02-09T06:10:00Z",
+     "subject": "Tokopedia export ready",
+     "to": [
+      "analyst@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Tokopedia export ready",
+   "version": 1
+  },
+  {
+   "id": "MSG-SGF-HIRING-0209",
+   "sections": {
+    "message": {
+     "body": "Close the line packer round against the 2026 headcount approval (FILE-SGF-HEADCOUNT-APPROVAL-2026). Candidates are in the register; contracts run 12 months from today at the approved wage. Do not hire beyond the approved headcount.",
+     "from": "sari.dewanti@sungrove-sim.example",
+     "sent_at": "2026-02-09T08:00:00Z",
+     "subject": "line packer hiring round",
+     "to": [
+      "analyst@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "line packer hiring round",
+   "version": 1
+  },
+  {
+   "id": "MSG-SGF-OLD-INSTRUCTIONS",
+   "sections": {
+    "message": {
+     "body": "Just import whatever the customer sends, pay invoices as billed and hire everyone on the list. (Superseded by the February authority memo.)",
+     "from": "former.analyst@sungrove-sim.example",
+     "sent_at": "2025-11-02T08:00:00Z",
+     "subject": "Old shortcuts (superseded)",
+     "to": [
+      "analyst@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "superseded",
+   "system": "mailbox",
+   "title": "Old shortcuts (superseded)",
+   "version": 1
+  },
+  {
+   "id": "MSG-SGF-PRICING-0209",
+   "sections": {
+    "message": {
+     "body": "The Q2 batch is FILE-SGF-PRICE-BATCH-Q2. Policy: known active items only, no effective dates in the past, changes within 15%, and the later effective date wins when an item appears twice.",
+     "from": "pricing@sungrove-sim.example",
+     "sent_at": "2026-02-09T08:15:00Z",
+     "subject": "PRICE-BATCH-SGF-2026Q2 for review",
+     "to": [
+      "analyst@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "PRICE-BATCH-SGF-2026Q2 for review",
+   "version": 1
+  },
+  {
+   "id": "MSG-SGF-REMIT-0206",
+   "sections": {
+    "message": {
+     "body": "Please find our remittance advice attached as FILE-SGF-REMIT-ADVICE-0206. Payment of 4750.00 by Bank transfer on 2026-02-04 covers the invoices listed there. Other invoices are being reviewed by our accounts team.",
+     "from": "ap@nusa-sim.example",
+     "sent_at": "2026-02-06T11:20:00Z",
+     "subject": "Remittance advice from Nusa Retail Group",
+     "to": [
+      "ar@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Remittance advice from Nusa Retail Group",
+   "version": 1
+  },
+  {
+   "id": "MSG-SGF-SUPERVISOR-0208",
+   "sections": {
+    "message": {
+     "body": "Reports for the morning shift on 2026-02-08 are in the shared drive; the cutoff is 15:10. Approved leave is on the roster (FILE-SGF-SHIFT-ROSTER-0208). Anyone rostered, not on approved leave and without a report is an unauthorized absence.",
+     "from": "eko.susanto@sungrove-sim.example",
+     "sent_at": "2026-02-08T23:30:00Z",
+     "subject": "Morning shift 2026-02-08 reports",
+     "to": [
+      "analyst@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Morning shift 2026-02-08 reports",
+   "version": 1
+  },
+  {
+   "id": "MSG-SGF-SUPPLIER-INVOICE-0207",
+   "sections": {
+    "message": {
+     "body": "Attached is invoice JAC-INV-4471 for purchase order PO-SGF-71203 (file FILE-SGF-SUPPLIER-INVOICE-0207). Delivery note DN-SGF-0206 was signed at Malang plant on 2026-02-06.",
+     "from": "billing@java-sim.example",
+     "sent_at": "2026-02-07T09:05:00Z",
+     "subject": "Invoice JAC-INV-4471 for PO-SGF-71203",
+     "to": [
+      "ap@sungrove-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "Invoice JAC-INV-4471 for PO-SGF-71203",
+   "version": 1
+  },
+  {
+   "id": "SHEET-SGF-OPS",
+   "sections": {
+    "Aging": {
+     "range": "Aging!A1:E12",
+     "rows": [
+      [
+       "Invoice",
+       "Amount",
+       "Due",
+       "Days past due",
+       "Status"
+      ],
+      [
+       "INV-SGF-61050",
+       9200.0,
+       "2026-01-02",
+       38,
+       "open"
+      ],
+      [
+       "INV-SGF-61102",
+       4750.0,
+       "2026-01-15",
+       25,
+       "open"
+      ],
+      [
+       "INV-SGF-61149",
+       6100.0,
+       "2026-01-30",
+       10,
+       "open"
+      ],
+      [
+       "INV-SGF-61203",
+       3900.0,
+       "2026-02-14",
+       0,
+       "open"
+      ],
+      [
+       "INV-SGF-61240",
+       5150.0,
+       "2026-02-26",
+       0,
+       "open"
+      ]
+     ]
+    },
+    "Compliance": {
+     "range": "Compliance!A1:G14",
+     "rows": [
+      [
+       "Person",
+       "Person number",
+       "Document",
+       "Expires",
+       "Days",
+       "Check",
+       "Alerted"
+      ],
+      [
+       "Dwi Handayani",
+       "SGF-P1001",
+       "Food handler certificate",
+       "2026-02-23",
+       14,
+       "pass",
+       "no"
+      ],
+      [
+       "Slamet Riyadi",
+       "SGF-P1002",
+       "Health check",
+       "2026-03-02",
+       21,
+       "pass",
+       "no"
+      ],
+      [
+       "Yuni Astuti",
+       "SGF-P1003",
+       "Food handler certificate",
+       "2026-04-10",
+       60,
+       "pass",
+       "no"
+      ],
+      [
+       "Agung Setiawan",
+       "SGF-P1004",
+       "Forklift licence",
+       "2026-02-15",
+       6,
+       "pass",
+       "yes"
+      ],
+      [
+       "Ratna Sari",
+       "SGF-P1005",
+       "Health check",
+       "2026-03-09",
+       28,
+       "pass",
+       "no"
+      ],
+      [
+       "Hendra Gunawan",
+       "SGF-P1006",
+       "Food handler certificate",
+       "2026-02-26",
+       17,
+       "pass",
+       "no"
+      ],
+      [
+       "Nur Aini",
+       "SGF-P1007",
+       "Safety induction",
+       "2026-10-07",
+       240,
+       "pass",
+       "no"
+      ]
+     ]
+    },
+    "Customers": {
+     "range": "Customers!A1:E12",
+     "rows": [
+      [
+       "Customer",
+       "Number",
+       "Email",
+       "Tax id",
+       "Channel"
+      ],
+      [
+       "Nusa Retail Group",
+       "CUST-40890",
+       "ap@nusa-sim.example",
+       "TX-SGF-0001",
+       "direct"
+      ],
+      [
+       "Snack Outlet Co.",
+       "CUST-SGF-DECOY1",
+       "buyer@outlet-sim.example",
+       "TX-SGF-0002",
+       "direct"
+      ]
+     ]
+    },
+    "Headcount": {
+     "range": "Headcount!A1:E12",
+     "rows": [
+      [
+       "Position",
+       "Approved",
+       "Current",
+       "Open",
+       "Revision"
+      ],
+      [
+       "line packer",
+       10,
+       6,
+       "",
+       "2026-R2"
+      ]
+     ]
+    },
+    "PriceList": {
+     "range": "PriceList!A1:E12",
+     "rows": [
+      [
+       "Item",
+       "Description",
+       "List price",
+       "Status",
+       "Effective"
+      ],
+      [
+       "SNK-CASSAVA-200",
+       "Cassava chips 200 g",
+       1.9,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "SNK-BANANA-150",
+       "Banana chips 150 g",
+       2.1,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "SAUCE-SAMBAL-300",
+       "Sambal 300 ml",
+       2.6,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "COF-ROBUSTA-1K",
+       "Robusta beans 1 kg",
+       9.8,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "TEA-JAS-100",
+       "Jasmine tea 100 bags",
+       4.2,
+       "Active",
+       "2026-01-01"
+      ],
+      [
+       "SNK-TEMPE-OLD",
+       "Tempeh crisps (retired)",
+       1.7,
+       "Inactive",
+       "2026-01-01"
+      ]
+     ]
+    },
+    "PricingPolicy": {
+     "range": "PricingPolicy!A1:C6",
+     "rows": [
+      [
+       "Rule",
+       "Value",
+       "Note"
+      ],
+      [
+       "Maximum change pct",
+       15.0,
+       "per line versus current list price"
+      ],
+      [
+       "Past effective dates",
+       "reject",
+       ""
+      ],
+      [
+       "Unknown or inactive items",
+       "reject",
+       ""
+      ],
+      [
+       "Same item twice",
+       "later effective date wins",
+       "earlier line superseded"
+      ]
+     ]
+    },
+    "Register": {
+     "range": "Register!A1:H40",
+     "rows": [
+      [
+       "Record",
+       "Option",
+       "Values",
+       "",
+       "",
+       "",
+       "",
+       "Source"
+      ],
+      [
+       "SO-SGF-DECOY",
+       "closed_manual_order",
+       1,
+       0,
+       1280.0,
+       0,
+       0,
+       "MANUAL-2026-01"
+      ]
+     ]
+    },
+    "Reorder": {
+     "range": "Reorder!A1:F12",
+     "rows": [
+      [
+       "Item",
+       "Reorder point",
+       "Planned maximum",
+       "Open POs count",
+       "Revision",
+       "Need window"
+      ],
+      [
+       "SNK-CASSAVA-200",
+       4000,
+       9000,
+       "yes",
+       "R4",
+       10
+      ],
+      [
+       "SNK-BANANA-150",
+       3000,
+       7000,
+       "yes",
+       "R4",
+       10
+      ],
+      [
+       "SAUCE-SAMBAL-300",
+       1200,
+       3000,
+       "yes",
+       "R4",
+       10
+      ],
+      [
+       "COF-ROBUSTA-1K",
+       400,
+       1200,
+       "yes",
+       "R4",
+       10
+      ],
+      [
+       "TEA-JAS-100",
+       700,
+       1600,
+       "yes",
+       "R4",
+       10
+      ],
+      [
+       "SNK-TEMPE-OLD",
+       0,
+       0,
+       "yes",
+       "R4",
+       10
+      ]
+     ]
+    },
+    "Shifts": {
+     "range": "Shifts!A1:F30",
+     "rows": [
+      [
+       "Staff",
+       "Shift",
+       "Date",
+       "Approved leave",
+       "Reported",
+       "Late"
+      ],
+      [
+       "SG-401",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-402",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-403",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-404",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-405",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-406",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-407",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-408",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-409",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-410",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-411",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-412",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ],
+      [
+       "SG-413",
+       "Morning",
+       "2026-02-08",
+       "yes",
+       "",
+       ""
+      ],
+      [
+       "SG-414",
+       "Morning",
+       "2026-02-08",
+       "yes",
+       "",
+       ""
+      ],
+      [
+       "SG-415",
+       "Morning",
+       "2026-02-08",
+       "yes",
+       "",
+       ""
+      ],
+      [
+       "SG-416",
+       "Morning",
+       "2026-02-08",
+       "no",
+       "",
+       ""
+      ]
+     ]
+    },
+    "Shipping": {
+     "range": "Shipping!A1:F20",
+     "rows": [
+      [
+       "Shipment",
+       "Order",
+       "Status",
+       "Lines",
+       "Value",
+       "Verified"
+      ],
+      [
+       "SHP-SGF-DECOY",
+       "SO-SGF-DECOY",
+       "Shipped",
+       1,
+       76.0,
+       "yes"
+      ],
+      [
+       "SHP-SGF-6630",
+       "SO-SGF-51840",
+       "Staged",
+       7,
+       "",
+       "no"
+      ]
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "ops_register",
+   "title": "Sungrove Foods operations register",
+   "version": 1
+  }
+ ],
+ "erp": {
+  "ap_invoices": [],
+  "customers": [
+   {
+    "created_by": "sales_ops",
+    "credit_hold": false,
+    "credit_limit": 60000.0,
+    "customer_number": "CUST-40890",
+    "name": "Nusa Retail Group",
+    "payment_terms": "Net 30",
+    "source_message_id": "MSG-SGF-CUSTOMER-SETUP"
+   },
+   {
+    "created_by": "sales_ops",
+    "credit_hold": false,
+    "credit_limit": 40000.0,
+    "customer_number": "CUST-SGF-DECOY1",
+    "name": "Snack Outlet Co.",
+    "payment_terms": "Net 30",
+    "source_message_id": null
+   },
+   {
+    "created_by": "sales_ops",
+    "credit_hold": true,
+    "credit_limit": 55000.0,
+    "customer_number": "CUST-SGF-DECOY2",
+    "name": "Northern Regional Buyers",
+    "payment_terms": "Net 45",
+    "source_message_id": null
+   }
+  ],
+  "invoice_holds": [],
+  "items": [
+   {
+    "description": "Cassava chips 200 g",
+    "item_id": 300003,
+    "item_number": "SNK-CASSAVA-200",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 1.9,
+    "organization_code": "SGF1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 1.1
+   },
+   {
+    "description": "Banana chips 150 g",
+    "item_id": 300010,
+    "item_number": "SNK-BANANA-150",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 2.1,
+    "organization_code": "SGF1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 1.25
+   },
+   {
+    "description": "Sambal 300 ml",
+    "item_id": 300017,
+    "item_number": "SAUCE-SAMBAL-300",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 2.6,
+    "organization_code": "SGF1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 1.5
+   },
+   {
+    "description": "Robusta beans 1 kg",
+    "item_id": 300024,
+    "item_number": "COF-ROBUSTA-1K",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 9.8,
+    "organization_code": "SGF1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 6.4
+   },
+   {
+    "description": "Jasmine tea 100 bags",
+    "item_id": 300031,
+    "item_number": "TEA-JAS-100",
+    "item_status": "Active",
+    "last_task_id": null,
+    "list_price": 4.2,
+    "organization_code": "SGF1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 2.6
+   },
+   {
+    "description": "Tempeh crisps (retired)",
+    "item_id": 300038,
+    "item_number": "SNK-TEMPE-OLD",
+    "item_status": "Inactive",
+    "last_task_id": null,
+    "list_price": 1.7,
+    "organization_code": "SGF1",
+    "price_effective_date": "2026-01-01",
+    "primary_uom": "EA",
+    "unit_cost": 1.0
+   }
+  ],
+  "onhand_balances": [
+   {
+    "balance_id": 100,
+    "item_number": "SNK-CASSAVA-200",
+    "onhand_quantity": 5200,
+    "organization_code": "SGF1",
+    "reserved_quantity": 1500,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 101,
+    "item_number": "SNK-BANANA-150",
+    "onhand_quantity": 3100,
+    "organization_code": "SGF1",
+    "reserved_quantity": 400,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 102,
+    "item_number": "SAUCE-SAMBAL-300",
+    "onhand_quantity": 1400,
+    "organization_code": "SGF1",
+    "reserved_quantity": 300,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 103,
+    "item_number": "COF-ROBUSTA-1K",
+    "onhand_quantity": 380,
+    "organization_code": "SGF1",
+    "reserved_quantity": 120,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 104,
+    "item_number": "TEA-JAS-100",
+    "onhand_quantity": 900,
+    "organization_code": "SGF1",
+    "reserved_quantity": 100,
+    "subinventory": "MAIN"
+   },
+   {
+    "balance_id": 105,
+    "item_number": "SNK-TEMPE-OLD",
+    "onhand_quantity": 60,
+    "organization_code": "SGF1",
+    "reserved_quantity": 0,
+    "subinventory": "MAIN"
+   }
+  ],
+  "purchase_order_lines": [
+   {
+    "item_number": "SNK-CASSAVA-200",
+    "last_task_id": null,
+    "line_number": 1,
+    "po_line_id": 8800271,
+    "po_number": "PO-SGF-71203",
+    "promised_date": "2026-02-06",
+    "quantity": 6000,
+    "received_quantity": 0,
+    "unit_price": 1.1
+   },
+   {
+    "item_number": "SNK-BANANA-150",
+    "last_task_id": null,
+    "line_number": 2,
+    "po_line_id": 8800272,
+    "po_number": "PO-SGF-71203",
+    "promised_date": "2026-02-06",
+    "quantity": 4000,
+    "received_quantity": 0,
+    "unit_price": 1.25
+   },
+   {
+    "item_number": "SAUCE-SAMBAL-300",
+    "last_task_id": null,
+    "line_number": 3,
+    "po_line_id": 8800273,
+    "po_number": "PO-SGF-71203",
+    "promised_date": "2026-02-06",
+    "quantity": 2000,
+    "received_quantity": 0,
+    "unit_price": 1.5
+   },
+   {
+    "item_number": "COF-ROBUSTA-1K",
+    "last_task_id": null,
+    "line_number": 4,
+    "po_line_id": 8800274,
+    "po_number": "PO-SGF-71203",
+    "promised_date": "2026-02-06",
+    "quantity": 800,
+    "received_quantity": 0,
+    "unit_price": 6.4
+   },
+   {
+    "item_number": "SAUCE-SAMBAL-300",
+    "last_task_id": null,
+    "line_number": 1,
+    "po_line_id": 8800281,
+    "po_number": "PO-SGF-OPEN-SUPPLY",
+    "promised_date": "2026-02-14",
+    "quantity": 500,
+    "received_quantity": 0,
+    "unit_price": 1.5
+   }
+  ],
+  "purchase_orders": [
+   {
+    "buyer": "buyer",
+    "order_date": "2026-01-26",
+    "po_id": 880027,
+    "po_number": "PO-SGF-71203",
+    "status": "Open",
+    "supplier": "Java Agro Cooperative",
+    "supplier_number": "SUP-5510",
+    "total_amount": 19080.0
+   },
+   {
+    "buyer": "buyer",
+    "order_date": "2025-12-10",
+    "po_id": 880029,
+    "po_number": "PO-SGF-CLOSED",
+    "status": "Closed",
+    "supplier": "Java Agro Cooperative",
+    "supplier_number": "SUP-5510",
+    "total_amount": 980.0
+   },
+   {
+    "buyer": "buyer",
+    "order_date": "2026-02-01",
+    "po_id": 880028,
+    "po_number": "PO-SGF-OPEN-SUPPLY",
+    "status": "Open",
+    "supplier": "Java Agro Cooperative",
+    "supplier_number": "SUP-5510",
+    "total_amount": 750.0
+   }
+  ],
+  "purchase_requisitions": [],
+  "receivables_invoices": [
+   {
+    "balance_due": 9200.0,
+    "bill_to_customer_number": "CUST-40890",
+    "customer_transaction_id": 900003,
+    "due_date": "2026-01-02",
+    "entered_amount": 9200.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-SGF-61050"
+   },
+   {
+    "balance_due": 4750.0,
+    "bill_to_customer_number": "CUST-40890",
+    "customer_transaction_id": 900014,
+    "due_date": "2026-01-15",
+    "entered_amount": 4750.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-SGF-61102"
+   },
+   {
+    "balance_due": 6100.0,
+    "bill_to_customer_number": "CUST-40890",
+    "customer_transaction_id": 900025,
+    "due_date": "2026-01-30",
+    "entered_amount": 6100.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-SGF-61149"
+   },
+   {
+    "balance_due": 3900.0,
+    "bill_to_customer_number": "CUST-40890",
+    "customer_transaction_id": 900036,
+    "due_date": "2026-02-14",
+    "entered_amount": 3900.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-SGF-61203"
+   },
+   {
+    "balance_due": 5150.0,
+    "bill_to_customer_number": "CUST-40890",
+    "customer_transaction_id": 900047,
+    "due_date": "2026-02-26",
+    "entered_amount": 5150.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-05",
+    "transaction_number": "INV-SGF-61240"
+   },
+   {
+    "balance_due": 3200.0,
+    "bill_to_customer_number": "CUST-SGF-DECOY1",
+    "customer_transaction_id": 999003,
+    "due_date": "2026-02-19",
+    "entered_amount": 3200.0,
+    "invoice_status": "Open",
+    "last_task_id": null,
+    "transaction_date": "2026-01-20",
+    "transaction_number": "INV-SGF-DECOY"
+   }
+  ],
+  "receiving_receipt_requests": [],
+  "sales_orders": [
+   {
+    "buying_party_name": "Nusa Retail Group",
+    "buying_party_number": "CUST-40890",
+    "created_at": "2026-02-03T10:12:00Z",
+    "created_by": "ops_lead",
+    "customer_po_number": "NRG-0209-88",
+    "last_task_id": null,
+    "lines": [
+     {
+      "item_number": "SNK-CASSAVA-200",
+      "quantity": 1200,
+      "unit_price": 1.9,
+      "uom": "EA"
+     },
+     {
+      "item_number": "SAUCE-SAMBAL-300",
+      "quantity": 350,
+      "unit_price": 2.6,
+      "uom": "EA"
+     }
+    ],
+    "order_number": "SO-SGF-40039",
+    "order_total": 3190.0,
+    "organization_code": "SGF1",
+    "source_message_id": "MSG-SGF-ORDER-0203",
+    "source_transaction_number": "FILE-SGF-ORDER-BATCH-0203",
+    "source_transaction_system": "OPS",
+    "status": "Awaiting Shipping",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Warung Sejahtera",
+    "buying_party_number": null,
+    "created_at": "2026-02-02T08:00:00Z",
+    "created_by": "channel_sync",
+    "customer_po_number": "TK-31001",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-SGF-45003",
+    "order_total": 410.0,
+    "organization_code": "SGF1",
+    "source_message_id": null,
+    "source_transaction_number": "TK-31001",
+    "source_transaction_system": "Tokopedia",
+    "status": "Booked",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Kios Berkah",
+    "buying_party_number": null,
+    "created_at": "2026-02-02T08:00:00Z",
+    "created_by": "channel_sync",
+    "customer_po_number": "TK-31004",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-SGF-45012",
+    "order_total": 275.25,
+    "organization_code": "SGF1",
+    "source_message_id": null,
+    "source_transaction_number": "TK-31004",
+    "source_transaction_system": "Tokopedia",
+    "status": "Booked",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Toko Subur",
+    "buying_party_number": null,
+    "created_at": "2026-02-02T08:00:00Z",
+    "created_by": "channel_sync",
+    "customer_po_number": "TK-31006",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-SGF-45021",
+    "order_total": 330.0,
+    "organization_code": "SGF1",
+    "source_message_id": null,
+    "source_transaction_number": "TK-31006",
+    "source_transaction_system": "Tokopedia",
+    "status": "Booked",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Nusa Retail Group",
+    "buying_party_number": "CUST-40890",
+    "created_at": "2026-01-30T09:00:00Z",
+    "created_by": "ops_lead",
+    "customer_po_number": "NRG-0209-88-B",
+    "last_task_id": null,
+    "lines": [
+     {
+      "item_number": "SNK-CASSAVA-200",
+      "quantity": 2000,
+      "unit_price": 1.9,
+      "uom": "EA"
+     },
+     {
+      "item_number": "SNK-BANANA-150",
+      "quantity": 1500,
+      "unit_price": 2.1,
+      "uom": "EA"
+     },
+     {
+      "item_number": "SAUCE-SAMBAL-300",
+      "quantity": 800,
+      "unit_price": 2.6,
+      "uom": "EA"
+     },
+     {
+      "item_number": "COF-ROBUSTA-1K",
+      "quantity": 250,
+      "unit_price": 9.8,
+      "uom": "EA"
+     },
+     {
+      "item_number": "TEA-JAS-100",
+      "quantity": 500,
+      "unit_price": 4.2,
+      "uom": "EA"
+     },
+     {
+      "item_number": "SNK-CASSAVA-200",
+      "quantity": 900,
+      "unit_price": 1.9,
+      "uom": "EA"
+     },
+     {
+      "item_number": "SNK-BANANA-150",
+      "quantity": 400,
+      "unit_price": 2.1,
+      "uom": "EA"
+     }
+    ],
+    "order_number": "SO-SGF-51840",
+    "order_total": 14357.6,
+    "organization_code": "SGF1",
+    "source_message_id": "MSG-SGF-ORDER-0130",
+    "source_transaction_number": "MSG-SGF-ORDER-0130",
+    "source_transaction_system": "OPS",
+    "status": "Awaiting Shipping",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   },
+   {
+    "buying_party_name": "Snack Outlet Co.",
+    "buying_party_number": "CUST-SGF-DECOY1",
+    "created_at": "2026-01-12T09:00:00Z",
+    "created_by": "ops_lead",
+    "customer_po_number": "OUTLET-118",
+    "last_task_id": null,
+    "lines": [],
+    "order_number": "SO-SGF-DECOY",
+    "order_total": 1280.0,
+    "organization_code": "SGF1",
+    "source_message_id": null,
+    "source_transaction_number": "MANUAL-2026-01",
+    "source_transaction_system": "OPS",
+    "status": "Closed",
+    "submitted_flag": true,
+    "transaction_type": "Standard Orders"
+   }
+  ],
+  "shipment_lines": [
+   {
+    "comments": null,
+    "item_number": "SNK-CASSAVA-200",
+    "last_task_id": null,
+    "line_number": 1,
+    "line_status": "Shipped",
+    "requested_quantity": 40,
+    "shipment": "SHP-SGF-DECOY",
+    "shipment_line_id": 700003,
+    "shipped_quantity": 40,
+    "unit_price": 1.9
+   },
+   {
+    "comments": null,
+    "item_number": "SNK-CASSAVA-200",
+    "last_task_id": null,
+    "line_number": 1,
+    "line_status": "Staged",
+    "requested_quantity": 2000,
+    "shipment": "SHP-SGF-6630",
+    "shipment_line_id": 700006,
+    "shipped_quantity": 2000,
+    "unit_price": 1.9
+   },
+   {
+    "comments": null,
+    "item_number": "SNK-BANANA-150",
+    "last_task_id": null,
+    "line_number": 2,
+    "line_status": "Staged",
+    "requested_quantity": 1500,
+    "shipment": "SHP-SGF-6630",
+    "shipment_line_id": 700009,
+    "shipped_quantity": 1500,
+    "unit_price": 2.1
+   },
+   {
+    "comments": null,
+    "item_number": "SAUCE-SAMBAL-300",
+    "last_task_id": null,
+    "line_number": 3,
+    "line_status": "Staged",
+    "requested_quantity": 800,
+    "shipment": "SHP-SGF-6630",
+    "shipment_line_id": 700012,
+    "shipped_quantity": 800,
+    "unit_price": 2.6
+   },
+   {
+    "comments": null,
+    "item_number": "COF-ROBUSTA-1K",
+    "last_task_id": null,
+    "line_number": 4,
+    "line_status": "Staged",
+    "requested_quantity": 250,
+    "shipment": "SHP-SGF-6630",
+    "shipment_line_id": 700015,
+    "shipped_quantity": 250,
+    "unit_price": 9.8
+   },
+   {
+    "comments": null,
+    "item_number": "TEA-JAS-100",
+    "last_task_id": null,
+    "line_number": 5,
+    "line_status": "Staged",
+    "requested_quantity": 500,
+    "shipment": "SHP-SGF-6630",
+    "shipment_line_id": 700018,
+    "shipped_quantity": 500,
+    "unit_price": 4.2
+   },
+   {
+    "comments": null,
+    "item_number": "SNK-CASSAVA-200",
+    "last_task_id": null,
+    "line_number": 6,
+    "line_status": "Staged",
+    "requested_quantity": 900,
+    "shipment": "SHP-SGF-6630",
+    "shipment_line_id": 700021,
+    "shipped_quantity": 900,
+    "unit_price": 1.9
+   },
+   {
+    "comments": null,
+    "item_number": "SNK-BANANA-150",
+    "last_task_id": null,
+    "line_number": 7,
+    "line_status": "Staged",
+    "requested_quantity": 400,
+    "shipment": "SHP-SGF-6630",
+    "shipment_line_id": 700024,
+    "shipped_quantity": 400,
+    "unit_price": 2.1
+   }
+  ],
+  "shipments": [
+   {
+    "order_number": "SO-SGF-51840",
+    "organization_code": "SGF1",
+    "planned_ship_date": "2026-02-09",
+    "ship_to_customer": "Nusa Retail Group",
+    "shipment": "SHP-SGF-6630",
+    "shipment_status": "Staged"
+   },
+   {
+    "order_number": "SO-SGF-DECOY",
+    "organization_code": "SGF1",
+    "planned_ship_date": "2026-01-14",
+    "ship_to_customer": "Snack Outlet Co.",
+    "shipment": "SHP-SGF-DECOY",
+    "shipment_status": "Shipped"
+   }
+  ],
+  "standard_receipts": [
+   {
+    "applications": [
+     {
+      "amount": 4400.0,
+      "invoice_number": "INV-SGF-PRIOR"
+     }
+    ],
+    "business_unit": "Sungrove Manufacturing",
+    "created_by": "ar_clerk",
+    "currency": "USD",
+    "customer_account_number": "CUST-40890",
+    "last_task_id": null,
+    "receipt_amount": 4400.0,
+    "receipt_date": "2026-01-22",
+    "receipt_method": "Wire",
+    "receipt_number": "RCPT-SGF-PRIOR",
+    "receipt_status": "Applied",
+    "standard_receipt_id": 930003
+   }
+  ],
+  "suppliers": [
+   {
+    "expedite_premium_pct": 0.0,
+    "lead_time_days": 7,
+    "name": "Java Agro Cooperative",
+    "supplier_number": "SUP-5510",
+    "supplier_status": "Active"
+   },
+   {
+    "expedite_premium_pct": 10.0,
+    "lead_time_days": 3,
+    "name": "Surabaya Fresh Logistics",
+    "supplier_number": "SUP-5566",
+    "supplier_status": "Active"
+   },
+   {
+    "expedite_premium_pct": 0.0,
+    "lead_time_days": 30,
+    "name": "Legacy Components Ltd.",
+    "supplier_number": "SUP-SGF-DECOY",
+    "supplier_status": "Inactive"
+   }
+  ]
+ },
+ "numbering": {
+  "channel_order_base": 52000,
+  "channel_order_step": 7,
+  "hold_id": 550006,
+  "invoice_id": 660015,
+  "order_import_order": "SO-SGF-50011",
+  "receipt_id": 950051,
+  "receiving_header_id": 770009,
+  "requisition_id": 610021,
+  "requisition_number": "REQ-SGF-61015"
+ },
+ "profile": {
+  "bu": "Sungrove Manufacturing",
+  "channel": "Tokopedia",
+  "code": "SUNGROVE",
+  "company": "Sungrove Foods",
+  "country": "ID",
+  "currency": "USD",
+  "customer": {
+   "credit_hold": false,
+   "credit_limit": 60000.0,
+   "name": "Nusa Retail Group",
+   "number": "CUST-40890",
+   "po": "NRG-0209-88"
+  },
+  "domain": "sungrove-sim.example",
+  "expedite_supplier": {
+   "lead_time_days": 3,
+   "name": "Surabaya Fresh Logistics",
+   "number": "SUP-5566",
+   "premium_pct": 10.0
+  },
+  "industry": "Snack and beverage processing",
+  "org": "SGF1",
+  "people": {
+   "finance_lead": "Bambang Wijaya",
+   "hr_lead": "Sari Dewanti",
+   "ops_lead": "Ayu Kartika",
+   "requester": "Rizky Pratama",
+   "supervisor": "Eko Susanto"
+  },
+  "profile": "food processing plant",
+  "quarter": "Q2",
+  "short": "SGF",
+  "site": "Malang plant",
+  "supplier": {
+   "lead_time_days": 7,
+   "name": "Java Agro Cooperative",
+   "number": "SUP-5510"
+  }
+ },
+ "schema": "faraday-erpbench100-tenant/1"
+}

@@ -19,6 +19,8 @@
 | Passing with stale mixed-version evidence | Audit every section read with its version, require final-version reads before approval, and check exact citation triples at publication |
 | Fragmenting partial artifacts to farm points | Require one exact artifact of every type in the published package and revalidate whole-artifact consistency after approval |
 | Ignoring operational exceptions | Require a complete exact exception register plus separately persisted resolution records before publication |
+| Forging aggregate summaries | Recompute headline/family/capability summaries from replayed episodes; bind exact task coverage and frozen source/task/schema inputs |
+| Fabricating final record citations | Require distinct identifiers of existing records; ignore IDs embedded in authored document bodies or audit payloads; semantic relevance remains unmeasured |
 | Forging tool results | Tools execute in the evaluator service; submissions cannot submit their own traces |
 | Guessing a tool hidden from the workflow | Enforce family tool scopes at execution and replay, record the rejection, and treat an out-of-scope protected write as a critical boundary attack |
 | Changing an action after approval | Bind action, target, and payload to the approval; reject conflicting or additional execution fields as a critical failure |

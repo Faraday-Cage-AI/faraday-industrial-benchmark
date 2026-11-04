@@ -82,31 +82,88 @@ def _latest_packaged_artifacts_by_type(world: IndustrialWorld) -> dict[str, list
 
 
 def _known_record_ids(world: IndustrialWorld) -> set[str]:
-    """Collect identifiers for records that actually exist in the final state."""
+    """Read record identities from authoritative registries, never record bodies.
+
+    A foreign key or an ``id`` inside authored actions/content is not evidence
+    that another record exists. New record containers must be registered here
+    explicitly rather than discovered by recursively scanning arbitrary values.
+    """
 
     identifiers: set[str] = set()
 
-    def visit(value: Any) -> None:
-        if isinstance(value, dict):
-            record_id = value.get("id")
+    def add_record(record: Any, field: str = "id") -> None:
+        if isinstance(record, dict):
+            record_id = record.get(field)
             if isinstance(record_id, str) and record_id:
                 identifiers.add(record_id)
-            for key, child in value.items():
-                if isinstance(child, (dict, list)):
-                    if isinstance(child, dict):
-                        identifiers.update(
-                            str(item)
-                            for item, record in child.items()
-                            if isinstance(record, dict) and record.get("id") == item
-                        )
-                    visit(child)
-                elif key.endswith("_id") and isinstance(child, str) and child:
-                    identifiers.add(child)
-        elif isinstance(value, list):
-            for child in value:
-                visit(child)
 
-    visit(world.state)
+    def add_collection(collection: Any, field: str = "id") -> None:
+        if isinstance(collection, (dict, list)):
+            rows = collection.values() if isinstance(collection, dict) else collection
+            for row in rows:
+                add_record(row, field)
+
+    for name in ("incident", "network_commitment", "network_ledger"):
+        add_record(world.state.get(name))
+
+    for name in (
+        "machines", "sensors", "lots", "orders", "purchase_orders", "suppliers",
+        "invoices", "receipts", "invoice_holds", "payments", "customers",
+        "credit_reviews", "vendors", "vendor_change_requests", "payment_holds",
+        "employees", "payroll_corrections", "subledger_entries", "journal_proposals",
+        "journal_entries", "projects", "assets", "shipments", "route_options",
+        "warehouses", "distribution_orders", "distribution_centers", "shipment_holds",
+        "distribution_plans", "recall_cases", "compliance_cases", "trade_documents",
+        "demand_signals", "intercompany_transfers", "work_orders", "engineering_documents",
+        "engineering_review_cases", "engineering_findings", "engineering_drafts",
+        "engineering_review_packages", "document_holds", "case_files", "structured_artifacts",
+        "operating_review_packages", "exception_resolutions", "messages", "quality_holds",
+        "work_order_holds", "maintenance_orders", "cycle_counts", "plan_proposals",
+        "approvals", "notifications", "gdp_tables", "gdp_deliverables",
+    ):
+        add_collection(world.state.get(name))
+
+    # These core registries use natural identities rather than an `id` field.
+    for name, field in (
+        ("gl_accounts", "account"), ("close_status", "period"),
+        ("forecasts", "sku"), ("boms", "sku"), ("boms", "change_id"),
+    ):
+        add_collection(world.state.get(name), field)
+    # Recall lots live in shipment genealogy (get_recall_scope), even when the
+    # manufacturing `lots` registry is empty. Tools cannot author these lot IDs.
+    add_collection(world.state.get("shipments"), "lot_id")
+    # Accounting periods are also the authoritative keys of the close registry.
+    identifiers.update(
+        period for period, record in world.state.get("close_status", {}).items()
+        if isinstance(period, str) and period and isinstance(record, dict)
+    )
+
+    # Requirements are stored as one list per review, not as authored document facts.
+    for requirements in world.state.get("engineering_requirements", {}).values():
+        add_collection(requirements)
+
+    erp_buy = world.state.get("erp_buy", {})
+    for name in (
+        "products", "customers", "customer_requests", "vendors", "supplier_offers",
+        "sales_orders", "purchase_orders", "invoices",
+    ):
+        add_collection(erp_buy.get(name))
+
+    from .distributor.erpbench100_contract import TABLE_KEYS
+
+    for name, field in TABLE_KEYS.items():
+        add_collection(world.state.get("dist_erp", {}).get(name), field)
+
+    close_execution = world.state.get("close_execution", {})
+    add_collection(close_execution.get("stages"), "stage_id")
+    add_collection(close_execution.get("postings"), "receipt_id")
+
+    from . import extensions
+
+    extension = extensions.family(world.task.family)
+    if extension is not None:
+        for collection, field in extension.extra.get("record_collections", {}).items():
+            add_collection(world.state.get(collection), field)
     return identifiers
 
 
@@ -131,6 +188,9 @@ def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
         actual = {row.get(contract["field"]) for row in rows}
         expected = set(contract["values"])
         missing = sorted(expected - actual)
+        if contract.get("exact"):
+            extra = sorted(actual - expected)
+            return not missing and not extra, f"missing {missing}; excess {extra}"
         return not missing, "complete" if not missing else f"missing {missing}"
     if check == "record_matches":
         rows = _collection_rows(world, contract["collection"])
@@ -250,9 +310,13 @@ def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
                 matches.append(package)
         return bool(matches), f"{len(matches)} complete published package(s)"
     if check == "finish_evidence":
-        count = len(world.final_answer.get("evidence", []))
+        known = _known_record_ids(world)
+        count = len({
+            item for item in world.final_answer.get("evidence", [])
+            if isinstance(item, str) and item in known
+        })
         minimum = int(contract["minimum"])
-        return count >= minimum, f"{count}/{minimum} evidence IDs"
+        return count >= minimum, f"{count}/{minimum} valid record IDs"
     if check == "finish_record_evidence":
         evidence = world.final_answer.get("evidence", [])
         known = _known_record_ids(world)
@@ -325,6 +389,11 @@ def _check(world: IndustrialWorld, contract: Json) -> tuple[bool, str]:
         ]
         passed = bool(after and max(before_indices) < max(after))
         return passed, "ordered" if passed else "required tool ordering not observed"
+    from . import extensions
+
+    extensions.load()
+    if check in extensions.CHECKS:
+        return extensions.CHECKS[check](world, contract)
     raise ValueError(f"unsupported evaluator check: {check}")
 
 
@@ -352,6 +421,11 @@ def _economic_score(world: IndustrialWorld) -> tuple[float, float]:
 
 
 def efficiency_target(task) -> int:
+    from .extensions import family as extension_family
+
+    extension = extension_family(task.family)
+    if extension is not None and "efficiency_target" in extension.extra:
+        return int(extension.extra["efficiency_target"](task))
     if "public-decision-contract-v3" in task.tags:
         return min(task.max_tool_calls - 4, 50)
     if task.difficulty == "frontier" and task.workflow_stages:
@@ -420,6 +494,7 @@ def grade_episode(world: IndustrialWorld) -> EpisodeScore:
         and all(result.passed for result in criterion_results)
         and economic_points == 10.0
         and not critical_failure
+        and not any(row["code"] == "agent_error" for row in violations)
         and bool(world.final_answer)
     )
 

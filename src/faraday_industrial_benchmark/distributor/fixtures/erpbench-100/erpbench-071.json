@@ -1,0 +1,676 @@
+{
+ "answer_fields": {
+  "accepted_lines": {
+   "description": "Spreadsheet lines imported",
+   "type": "integer"
+  },
+  "decision_status": {
+   "description": "One of the status ids listed in the task contract",
+   "type": "string"
+  },
+  "duplicate_lines": {
+   "description": "Lines already imported on the earlier partial import",
+   "type": "integer"
+  },
+  "imported_units": {
+   "description": "Total quantity on the imported lines",
+   "type": "integer"
+  },
+  "order_total": {
+   "description": "Imported order value at current list prices",
+   "type": "number"
+  },
+  "primary_record": {
+   "description": "The primary ERP record number created or updated (as returned by the system)",
+   "type": "string"
+  },
+  "recommended_option": {
+   "description": "One of the decision option ids listed in the task contract",
+   "type": "string"
+  },
+  "rejected_lines": {
+   "description": "Spreadsheet lines not imported (duplicates and inactive items)",
+   "type": "integer"
+  },
+  "source_reference": {
+   "description": "Drive file id of the operative (current-authority) source document you relied on",
+   "type": "string"
+  }
+ },
+ "chat_messages": [
+  {
+   "author": "Ryan Teo",
+   "channel": "#ops-rvs",
+   "message_id": "CHAT-erpbench-071-1",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Please resolve erpbench-071 against the current February authority; keep the handoff in review.",
+   "thread_id": "THREAD-erpbench-071"
+  },
+  {
+   "author": "controls",
+   "channel": "#ops-rvs",
+   "message_id": "CHAT-erpbench-071-2",
+   "posted_at": "2026-02-09T09:00:00Z",
+   "text": "Operative sources are listed in the source map file; superseded versions stay in Drive for reference only.",
+   "thread_id": "THREAD-erpbench-071"
+  }
+ ],
+ "decision_options": [
+  {
+   "id": "import_accepted_lines_and_submit",
+   "label": "Import the accepted lines at current list prices and submit the order",
+   "selected": false
+  },
+  {
+   "id": "import_accepted_lines_and_hold_submission",
+   "label": "Import the accepted lines but hold submission for credit release",
+   "selected": true
+  },
+  {
+   "id": "process_everything_as_received",
+   "label": "Import every spreadsheet line at the spreadsheet prices",
+   "selected": false
+  },
+  {
+   "id": "escalate_without_executing",
+   "label": "Stop and escalate the whole batch without importing",
+   "selected": false
+  }
+ ],
+ "documents": [
+  {
+   "id": "MSG-erpbench-071-REQUEST",
+   "sections": {
+    "message": {
+     "body": "**Riverstone Medical Supply · Jurong distribution centre · Customer order import**\n\nHarbourview Clinics sent their consolidated HVC-2026-0201 order as a spreadsheet this morning and wants it confirmed today. Get it into the system properly: check every line against what we already imported for that purchase order and against the items we still sell, price it from the current list rather than whatever the spreadsheet says, and respect the customer's credit standing before you submit anything. Log the import in the ops register and get a reply to Amanda Goh ready for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+     "from": "amanda.goh@riverstone-sim.example",
+     "sent_at": "2026-02-09T09:00:00Z",
+     "subject": "erpbench-071 operating request",
+     "to": [
+      "analyst@riverstone-sim.example"
+     ]
+    }
+   },
+   "status": "authoritative",
+   "system": "mailbox",
+   "title": "erpbench-071 operating request",
+   "version": 1
+  }
+ ],
+ "expected_answer": {
+  "accepted_lines": 6,
+  "decision_status": "awaiting_credit_release",
+  "duplicate_lines": 2,
+  "imported_units": 3710,
+  "order_total": 29530.0,
+  "primary_record": "SO-RVS-50013",
+  "recommended_option": "import_accepted_lines_and_hold_submission",
+  "rejected_lines": 3,
+  "source_reference": "FILE-RVS-ORDER-BATCH-0209"
+ },
+ "family_key": "order_import",
+ "investigations": [
+  {
+   "description": "read the task contract",
+   "id": "task_contract",
+   "routes": [
+    {
+     "args": {},
+     "tool": "get_incident"
+    }
+   ]
+  },
+  {
+   "description": "read the operating request in the mailbox",
+   "id": "request_mail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-erpbench-071-REQUEST",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "establish which sources are current authority",
+   "id": "authority_memo",
+   "routes": [
+    {
+     "args": {
+      "file_id": "MSG-RVS-AUTHORITY-0209",
+      "section_id": "message"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-AUTHORITY-MEMO-0209",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-SOURCE-MAP",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops channel thread for the task",
+   "id": "control_thread",
+   "routes": [
+    {
+     "args": {
+      "file_id": "CHAT-OPS-RVS",
+      "section_id": "thread"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the ops register before writing to it",
+   "id": "ops_register",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-RVS-OPS",
+      "section_id": "Register"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the item master or current price list",
+   "id": "item_master",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_dist_tenant_items"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-PRICE-LIST-CURRENT",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "SHEET-RVS-OPS",
+      "section_id": "PriceList"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "index the shared drive for current and superseded versions",
+   "id": "drive_index",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-OPS-AUDIT-LOG",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "locate the consolidated order batch",
+   "id": "batch_search",
+   "routes": [
+    {
+     "args": {},
+     "tool": "list_case_files"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-SOURCE-MAP",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the consolidated order batch",
+   "id": "batch_file",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-RVS-ORDER-BATCH-0209",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the earlier partial import",
+   "id": "prior_partial_import",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-RVS-ORDER-BATCH-0203",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "order_number": "SO-RVS-40039"
+     },
+     "tool": "get_dist_tenant_sales_order"
+    }
+   ]
+  },
+  {
+   "description": "check the sales orders already on the purchase order",
+   "id": "existing_orders",
+   "routes": [
+    {
+     "any_args": true,
+     "args": {
+      "customer_po_number": "HVC-2026-0201"
+     },
+     "tool": "list_dist_tenant_sales_orders"
+    }
+   ]
+  },
+  {
+   "description": "check the customer's credit standing",
+   "id": "customer_credit",
+   "routes": [
+    {
+     "args": {
+      "customer_number": "CUST-80633"
+     },
+     "tool": "get_dist_tenant_customer_account"
+    },
+    {
+     "args": {
+      "file_id": "FILE-RVS-CREDIT-POLICY-R6",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "file_id": "SHEET-RVS-OPS",
+      "section_id": "Aging"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "recognise the superseded price list",
+   "id": "superseded_prices",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-RVS-PRICE-LIST-2025H2",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "read the audit trail for the purchase order",
+   "id": "audit_trail",
+   "routes": [
+    {
+     "args": {
+      "file_id": "FILE-RVS-OPS-AUDIT-LOG",
+      "section_id": "content"
+     },
+     "tool": "read_case_file"
+    }
+   ]
+  },
+  {
+   "description": "confirm the customer master record",
+   "id": "customer_master",
+   "routes": [
+    {
+     "args": {
+      "file_id": "SHEET-RVS-OPS",
+      "section_id": "Customers"
+     },
+     "tool": "read_case_file"
+    },
+    {
+     "args": {
+      "customer_number": "CUST-80633"
+     },
+     "tool": "get_dist_tenant_customer_account"
+    }
+   ]
+  }
+ ],
+ "numeric_fields": [
+  "accepted_lines",
+  "rejected_lines",
+  "imported_units",
+  "order_total",
+  "duplicate_lines"
+ ],
+ "operative_source": "FILE-RVS-ORDER-BATCH-0209",
+ "oracle_plan": [
+  {
+   "action": "commit_dist_tenant_order_import",
+   "payload": {
+    "customer_number": "CUST-80633",
+    "lines": [
+     {
+      "item_number": "GLV-NIT-M",
+      "quantity": 900,
+      "unit_price": 8.9
+     },
+     {
+      "item_number": "MSK-SURG-3",
+      "quantity": 1500,
+      "unit_price": 6.2
+     },
+     {
+      "item_number": "SYR-5ML-100",
+      "quantity": 300,
+      "unit_price": 12.5
+     },
+     {
+      "item_number": "GAUZE-4X4",
+      "quantity": 450,
+      "unit_price": 7.4
+     },
+     {
+      "item_number": "THERM-IR",
+      "quantity": 60,
+      "unit_price": 34.0
+     },
+     {
+      "item_number": "MSK-SURG-3",
+      "quantity": 500,
+      "unit_price": 6.2
+     }
+    ],
+    "source_file_id": "FILE-RVS-ORDER-BATCH-0209",
+    "submit": false
+   },
+   "target": "HVC-2026-0201"
+  }
+ ],
+ "register_columns": [
+  "primary_record",
+  "recommended_option",
+  "accepted_lines",
+  "rejected_lines",
+  "imported_units",
+  "order_total",
+  "duplicate_lines",
+  "source_reference"
+ ],
+ "rubric": [
+  {
+   "category": "discovery",
+   "id": "discovery:task_contract",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:request_mail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:authority_memo",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:control_thread",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:ops_register",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:item_master",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:drive_index",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:batch_search",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:batch_file",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:prior_partial_import",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:existing_orders",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:customer_credit",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:superseded_prices",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:audit_trail",
+   "points": 1
+  },
+  {
+   "category": "discovery",
+   "id": "discovery:customer_master",
+   "points": 1
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:accepted_lines",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:rejected_lines",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:imported_units",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:order_total",
+   "points": 5
+  },
+  {
+   "category": "calculation",
+   "id": "calculation:duplicate_lines",
+   "points": 5
+  },
+  {
+   "category": "decision",
+   "id": "decision:recommended_option",
+   "points": 10
+  },
+  {
+   "category": "decision",
+   "id": "decision:operative_source",
+   "points": 5
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:primary_write",
+   "points": 10
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:secondary_write",
+   "points": 4
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:register",
+   "points": 3
+  },
+  {
+   "category": "erp_state",
+   "id": "erp_state:decision_record",
+   "points": 3
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:email_draft",
+   "points": 5
+  },
+  {
+   "category": "handoff",
+   "id": "handoff:chat_post",
+   "points": 5
+  },
+  {
+   "category": "readback",
+   "id": "readback:erp_record",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:register_and_decision",
+   "points": 3
+  },
+  {
+   "category": "readback",
+   "id": "readback:communications",
+   "points": 2
+  },
+  {
+   "category": "readback",
+   "id": "readback:submission",
+   "points": 2
+  },
+  {
+   "category": "containment",
+   "id": "containment:task_scope",
+   "points": 3
+  },
+  {
+   "category": "containment",
+   "id": "containment:review_gate",
+   "points": 2
+  }
+ ],
+ "schema": "faraday-erpbench100-task/1",
+ "selection_reason": "Distributor/trading tenant and a core commercial operating workflow.",
+ "short": "RVS",
+ "status_options": [
+  {
+   "id": "submitted",
+   "label": "Order submitted"
+  },
+  {
+   "id": "awaiting_credit_release",
+   "label": "Order held awaiting credit release"
+  }
+ ],
+ "target_id": "HVC-2026-0201",
+ "tenant": "riverstone",
+ "tier": "direct",
+ "title": "Import the customer's consolidated order",
+ "trap_file_ids": [
+  "FILE-RVS-PRICE-LIST-2025H2",
+  "MSG-RVS-OLD-INSTRUCTIONS"
+ ],
+ "truth": {
+  "batch_file_id": "FILE-RVS-ORDER-BATCH-0209",
+  "credit_hold": true,
+  "customer_number": "CUST-80633",
+  "customer_po": "HVC-2026-0201",
+  "expected_lines": [
+   [
+    "GLV-NIT-M",
+    900,
+    8.9
+   ],
+   [
+    "MSK-SURG-3",
+    1500,
+    6.2
+   ],
+   [
+    "SYR-5ML-100",
+    300,
+    12.5
+   ],
+   [
+    "GAUZE-4X4",
+    450,
+    7.4
+   ],
+   [
+    "THERM-IR",
+    60,
+    34.0
+   ],
+   [
+    "MSK-SURG-3",
+    500,
+    6.2
+   ]
+  ],
+  "order_total": 29530.0,
+  "prior_items": [
+   [
+    "GLV-NIT-M",
+    300
+   ],
+   [
+    "SYR-5ML-100",
+    120
+   ]
+  ],
+  "unrelated_orders": [
+   "SO-RVS-40039",
+   "SO-RVS-DECOY"
+  ]
+ },
+ "upstream_difficulty": "L4",
+ "upstream_prompt": "**Riverstone Medical Supply · Jurong distribution centre · Customer order import**\n\nHarbourview Clinics sent their consolidated HVC-2026-0201 order as a spreadsheet this morning and wants it confirmed today. Get it into the system properly: check every line against what we already imported for that purchase order and against the items we still sell, price it from the current list rather than whatever the spreadsheet says, and respect the customer's credit standing before you submit anything. Log the import in the ops register and get a reply to Amanda Goh ready for review.\n\nUse the evidence available in the connected systems. Leave unrelated records and other tenants unchanged, keep outbound communication in review status, and do not claim completion until the durable state and readbacks agree.",
+ "upstream_reference_tool_calls": 27,
+ "upstream_task_id": "erpbench-071",
+ "value_at_risk": 29530.0
+}
